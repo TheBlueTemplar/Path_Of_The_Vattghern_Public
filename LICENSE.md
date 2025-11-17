@@ -1,4 +1,4 @@
-# PoV Mod License
+# PoV Mod License v1.0
 -----
 **Last Updated:** _[17/11/2025]_
 
@@ -9,12 +9,12 @@
 **Current Maintener:** _The Blue Templar_
 
 -----
-## TL;DR (Not legally binding — see full license below)
+## TL;DR (Not legally binding: see full license below)
 - You may not redistribute PoV or any part of it without permission.
 - You may not sell, monetize, or earn money from PoV in any way.
 - You may request permission to use PoV assets in non-commercial BB mods.
 - Third-party components remain under their original licenses.
-- Contributions you submit become part of the project permanently
+- Contributions you submit become part of the project permanently.
 -----
 ## 1. Copyright and Ownership
 
@@ -54,7 +54,6 @@ Commercial use includes, but is not limited to:
 - Patreon-gated or paywalled content
 - ad-supported hosting
 - commercial services using PoV
-- donations
 - any scenario where revenue is generated
 
 Unauthorized commercial use is prohibited. This prohibition includes any form of monetization or revenue generation, including donations, tips, Ko-fi support, Patreon pledges, or similar funding mechanisms.
