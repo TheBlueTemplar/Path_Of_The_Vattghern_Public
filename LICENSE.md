@@ -18,7 +18,7 @@
 -----
 ## 1. Copyright and Ownership
 
-PoV (Path of the Vattghern) — including all original code, scripts, artwork, assets, and other creative materials — is the intellectual property of "The Blue Templar" (the original author).
+PoV (Path of the Vattghern) - including all original code, scripts, artwork, assets, and other creative materials - is the intellectual property of "The Blue Templar" (the original author).
 
 All rights not expressly granted in this License are reserved.
 
