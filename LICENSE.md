@@ -22,8 +22,6 @@ This license applies only to original, non-Vanilla, non-Legends assets and
 code created specifically for PoV. All third-party assets included in PoV
 remain under their original licenses.
 
-Commercial use of PoV, in whole or in part, is strictly prohibited.
-
 -----
 ## Contributor License Agreement (CLA)
 
