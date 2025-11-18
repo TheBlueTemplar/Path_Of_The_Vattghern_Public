@@ -1,7 +1,8 @@
 # Path of the Vatt'ghern - Public
-**Changelog in the Release Notes**...**Previous Changes Changelogs in changelog.md above, or the included .txt**
-
-**Also make sure to read the [License](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/blob/main/LICENSE.md) file, in the same github directory**
+- **Below you will find a brief explanation of the mod and its main features, as well as download instructions**
+- Before reading this and playing the mod, check out its [License](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/tree/main?tab=License-1-ov-file) and the Community's [Code of Conduct](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/tree/main?tab=coc-ov-file)
+- If you want to contribute to the mod, check out [Contributing](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/tree/main?tab=contributing-ov-file)
+-----
 <img width="1440" height="810" alt="pov_title" src="https://github.com/user-attachments/assets/d004b246-55ed-488f-9ec3-c57cf36c1826" />
 
 
