@@ -38,3 +38,4 @@ Recommended Base Modlist (All the Latest Versions):
 
 ### More Detailed Information:
 For detailed information about downloading the mod, and a nice vibrant community around it, check out the discord server of PoV. [Invite Link](https://discord.gg/zhHTjM5bBB)
+A Wiki is also in active development, any support appreciated
