@@ -6,6 +6,7 @@ or by providing your contribution to me via the PoV discord server.
 [License](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/tree/main?tab=License-1-ov-file), and especially 
 its included CLA (also presented below), regarding the contributions themselves, and the rights that PoV retains over them.
 - By submitting any contrubution to PoV, you agree to the aforementioned CLA.
+- As a little not of appreciation, contributors that are in my discord server get a nice little role!
 
 -----
 ## Contributor License Agreement (CLA)
