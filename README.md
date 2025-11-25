@@ -13,7 +13,7 @@ The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which w
 ### Main features:
 * **Vatt'ghern** - A powerful mid-late game upgrade for any mercenary, granting access to powerful scaling buffs and effects, special skills, contracts and more! Tied to most of the mod's mechanics
 * **Mutations** - Mutagenic effects are not just limited to the player, but enemies can also spawn with them, granting them new skills and effects, along with visuals
-* **Corpses** - Most enemies can drop corpses, that can be dissected in the crafting tent to yield resources (some exclusive to them, like special mutagens!)
+* **Corpses** - Most enemies can drop corpses, that can be dissected in the crafting tent to yield resources (some exclusive to them, like special mutagens, or crafting items!)
 * **Enemies** - Currently having expanded the ghost (geist) enemy type, with 9 New enemies (one is with 7 different variants), all with custom effects, skills, sounds, art and visuals.
 * **Events** -  (and encounters): 32 Total and counting, in an effort to provide narrative and immersion. Some of PoV's mechanics are even "locked" behind certain milestone events
 * **Starting Scenarios** - 3 Different ones, for different tastes (solo start, OP start, normal start), all fitting their niche. 
