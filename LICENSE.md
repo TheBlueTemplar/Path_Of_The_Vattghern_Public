@@ -35,4 +35,5 @@ Contributors retain copyright to their own work, but acknowledge that:
 
 By downloading, installing, or using PoV, you agree to the terms of this License.
 If you do not agree, you must not use the mod.
+
 -----
