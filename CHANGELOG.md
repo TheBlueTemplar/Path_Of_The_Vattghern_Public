@@ -1,6 +1,6 @@
-# v1.1.0 "Fix me Daddy"
+# v1.1.0 "Fix me Daddy" Edition
 
-## Changelog V1.1.0 "Fix me Daddy":
+## Changelog V1.1.0 "Fix me Daddy" Edition:
 
 ### BALANCE 
 * Enemy undead mutants HP penalty increased, resolve increased
