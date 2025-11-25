@@ -24,7 +24,7 @@ The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which w
 
 * If you have any earlier versions of PoV, remove them!
 * Download the zip of the [latest version](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/releases) and place into your battle brothers installation directory, in the data folder (Do not extract!) 
-* Download is in the 'releases', in this github page
+* You can see the full changelog [here](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/blob/main/CHANGELOG.md), tldr changelog in release notes
 
 Recommended Base Modlist (All the Latest Versions):
 * [MSU](https://github.com/MSUTeam/MSU) 
