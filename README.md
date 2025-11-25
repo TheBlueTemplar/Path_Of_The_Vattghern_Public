@@ -8,7 +8,7 @@
 
 ### PoV
 
-The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which we rewrote, and then I kept adding more and more. Currently, it stands on its own as a substantial overhaul/content mod, with quite a few things on the way. Priority is given to keep PoV as compatible as possible with other submods, as well as to strike a balance between challenge and fun.  
+The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which we rewrote, and then I kept adding more and more. Currently, it stands on its own as a substantial overhaul/content mod, with quite a few things on the way. Priority is given to strike a balance between challenge and fun, and to keep some reasonable level of compatibility with other legends Submods.  
 
 ### Main features:
 * **Vatt'ghern** - A powerful mid-late game upgrade for any mercenary, granting access to powerful scaling buffs and effects, special skills, contracts and more! Tied to most of the mod's mechanics
