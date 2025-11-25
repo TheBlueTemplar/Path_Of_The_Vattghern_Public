@@ -12,7 +12,7 @@
 ## License (All Rights Reserved)
 
 You are granted permission to download and use Path of the Vattghern (PoV)
-mod for personal, non-commercial use within the game "Battle Brothers" only.
+mod for personal, non-commercial use within a legal copy of the game "Battle Brothers" only.
 
 Redistribution, modification, reuploading, forking, public sharing, inclusion
 in modpacks, or any other form of distribution-modified or unmodified-is
