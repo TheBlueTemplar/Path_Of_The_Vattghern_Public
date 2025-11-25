@@ -35,12 +35,12 @@ this.pov_armor_ghost_racial <- this.inherit("scripts/skills/skill", {
 
 		if (actor.getArmor(_hitInfo.BodyPart) > 10)
 		{
-			//_hitInfo.DamageDirect = 0;
-			//_hitInfo.DamageMinimum = 0;
-			//_hitInfo.DamageRegular = 0;
+			// maybe overkill idk
+			_hitInfo.DamageDirect = 0;
+			_hitInfo.DamageMinimum = 0;
+			_hitInfo.DamageRegular = 0;
 			_properties.DamageReceivedDirectMult *= 0.00;
 			_properties.DamageReceivedRegularMult *= 0.00;
-			//_properties.DamageReceivedDirectMult *= 0.00;
 		}
 	}
 

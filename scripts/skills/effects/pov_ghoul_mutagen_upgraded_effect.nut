@@ -42,7 +42,7 @@ this.pov_ghoul_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gain the [color=" + this.Const.UI.Color.PositiveValue + "]Gruesome Feast[/color] skill, which can be used to consume a corpse and recover HP and from injuries."
+				text = "Gain the [color=" + this.Const.UI.Color.PositiveValue + "]Gruesome Feast[/color] skill, which can be used to consume a corpse and recover HP and/or injuries."
 			},
 			{
 				id = 11,
@@ -60,7 +60,7 @@ this.pov_ghoul_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "Lose [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] ranged skill."
+				text = "Lose [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] ranged skill."
 			},
 			{
 				id = 11,
@@ -97,7 +97,7 @@ this.pov_ghoul_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", {
 		_properties.MeleeDefense += 5.0;
 		_properties.Initiative += 5.0;
 		// Debuffs
-		_properties.RangedSkillMult *= 0.20;
+		_properties.RangedSkillMult *= 0.90;
 		_properties.MeleeDamageMult *= 0.96;
 	}
 

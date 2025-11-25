@@ -4,7 +4,7 @@ this.pov_autopsy_vampire_item <- this.inherit("scripts/items/misc/anatomist/anat
 	{
 		this.anatomist_potion_item.create();
 		this.m.ID = "misc.pov_autopsy_vampire_item";
-		this.m.Name = "Necrosavant Autopsy";
+		this.m.Name = "Necrosavant\'s Remains Autopsy";
 		this.m.Description = "Carefully gather dust, attempt to isolate organic fragments; a skilled brother may attempt to extract useful items from this necrosavant corpse.";
 		this.m.IconLarge = "";
 		this.m.Icon = "consumables/pov_autopsy_vampire.png";

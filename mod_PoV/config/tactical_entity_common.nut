@@ -31,3 +31,44 @@
 		_entity.onDamageReceived(_entity, null, hitInfo);
 	}			
 };
+
+// Edit Holy Flame skill - for compatibility
+::Const.Tactical.Common.onApplyHolyFlame = function(_tile, _entity, _killer = null)
+{
+	local sounds = [
+		"sounds/combat/pov_holy_fire_01.wav",
+		"sounds/combat/pov_holy_fire_02.wav",
+		"sounds/combat/pov_holy_fire_03.wav",
+		"sounds/combat/pov_holy_fire_04.wav",
+		"sounds/combat/pov_holy_fire_05.wav",
+		"sounds/combat/pov_holy_fire_06.wav"
+	];
+
+	this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Actor, _entity.getPos());
+
+	if (_entity.isNonCombatant() )
+	{
+		return;
+	}
+
+	local faction = _entity.getFaction();
+
+	if (_entity.getFlags().has("undead") || _entity.getFlags().has("cultist"))
+	{
+		if (!_entity.getSkills().hasEffect(::Legends.Effect.LegendConsecratedEffect))
+		{
+			::Legends.Effects.grant(_entity, ::Legends.Effect.LegendConsecratedEffect, function(_effect) {
+				if (_killer != null && _killer.getFaction() == this.Const.Faction.Player)
+					_effect.setActor(_killer);
+			}.bindenv(this));
+		}
+		return;
+	}
+	else if (faction == this.Const.Faction.Player || faction == this.Const.Faction.Civilian || faction == this.Const.Faction.NobleHouse)
+	{
+		if (!_entity.getSkills().hasEffect(::Legends.Effect.LegendSanctifiedEffect))
+		{
+			::Legends.Effects.grant(_entity, ::Legends.Effect.LegendSanctifiedEffect);
+		}
+	}
+};

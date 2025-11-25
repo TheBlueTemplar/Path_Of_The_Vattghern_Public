@@ -74,16 +74,16 @@ this.pov_spider_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", 
 		// More damage to poisoned enemies 10%
 		// Applies poison on atk
 		_properties.IsImmuneToPoison = true;
-		
+
 		// Debuffs
 		// Less damage to non poisoned enemies 12%
 	}
 
 	function onAdded()
 	{
-		local actor = this.getContainer().getActor();
-		local traitOld = actor.getSkills().getSkillByID("actives.web");
-   		actor.getSkills().remove(traitOld);
+		local actor = getContainer().getActor();
+		local traitOld = actor.getSkills().getSkillByID("actives.web")
+   		actor.getSkills().removeByID(traitOld);
 
 		if (!this.m.Container.hasSkill("actives.web"))
 		{
@@ -108,7 +108,7 @@ this.pov_spider_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", 
 			return;
 		}
 
-		if (_targetEntity.getSkills().getSkillByID("effects.pov_mutant_poison") != null || _targetEntity.getSkills().getSkillByID("effects.pov_vattghern_poison") != null || _targetEntity.getSkills().getSkillByID("effects.spider_poison") != null || _targetEntity.getSkills().getSkillByID("effects.goblin_poison") != null || _targetEntity.getSkills().getSkillByID("effects.legend_basilisk_poison") != null || _targetEntity.getSkills().getSkillByID("effects.pov_vattghern_upgraded_poison") != null | _targetEntity.getSkills().getSkillByID("effects.stench") != null)
+		if (_targetEntity.getSkills().getSkillByID("effects.pov_mutant_poison") != null || _targetEntity.getSkills().getSkillByID("effects.pov_vattghern_poison") != null || _targetEntity.getSkills().getSkillByID("effects.spider_poison") != null || _targetEntity.getSkills().getSkillByID("effects.goblin_poison") != null || _targetEntity.getSkills().getSkillByID("effects.legend_basilisk_poison") != null || _targetEntity.getSkills().getSkillByID("effects.pov_vattghern_upgraded_poison") != null || _targetEntity.getSkills().getSkillByID("effects.stench") != null)
 		{
 			_properties.DamageRegularMult *= 1.16;
 		}else{

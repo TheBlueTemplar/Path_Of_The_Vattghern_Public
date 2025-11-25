@@ -4,7 +4,7 @@ this.pov_autopsy_schrat2_item <- this.inherit("scripts/items/misc/anatomist/anat
 	{
 		this.anatomist_potion_item.create();
 		this.m.ID = "misc.pov_autopsy_schrat2_item";
-		this.m.Name = "Greenwood Schrat Autopsy";
+		this.m.Name = "Greenwood Schrat Experiment";
 		this.m.Description = "Attempt to extract useful items from this greenwood schrat corpse.";
 		this.m.IconLarge = "";
 		this.m.Icon = "consumables/pov_autopsy_schrat2.png";

@@ -231,6 +231,7 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
 		// No Normal Mutation For Ghosts Currently
+		//::TLW.MutateEntity.mutate_entity(this.actor,::TLW.EnemyMutChance.Test100,[::TLW.EnemyMut.Goblin,::TLW.EnemyMut.Sandgolem],false); //test
 	}
 
 	function onRender()

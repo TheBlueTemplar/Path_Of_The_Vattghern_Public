@@ -4,7 +4,7 @@
 	{
 		Flag = "pov_corpse_alp",
 		Script = "scripts/items/misc/corpse/pov_corpse_alp_item",
-		BaseDropChance = 18.0
+		BaseDropChance = 25.0
 	};
 
 	::TLW.Corpse.LegendDemonAlp <- 
@@ -18,21 +18,21 @@
 	{
 		Flag = "pov_corpse_demon_hound",
 		Script = "scripts/items/misc/corpse/pov_corpse_demonhound_item",
-		BaseDropChance = 25.0
+		BaseDropChance = 28.0
 	};
 
 	::TLW.Corpse.Direwolf <- 
 	{
 		Flag = "pov_corpse_direwolf",
 		Script = "scripts/items/misc/corpse/pov_corpse_direwolf_item",
-		BaseDropChance = 13.0
+		BaseDropChance = 17.5
 	};
 
 	::TLW.Corpse.LegendWhiteDirewolf <- 
 	{
 		Flag = "pov_corpse_white_direwolf",
 		Script = "scripts/items/misc/corpse/pov_corpse_direwolf2_item",
-		BaseDropChance = 30.0
+		BaseDropChance = 40.0
 	};
 
 	::TLW.Corpse.Ghost <- 
@@ -46,14 +46,14 @@
 	{
 		Flag = "pov_corpse_banshee",
 		Script = "scripts/items/misc/corpse/pov_corpse_ghost2_item",
-		BaseDropChance = 40.0
+		BaseDropChance = 45.0
 	};
 
 	::TLW.Corpse.Ghoul <- 
 	{
 		Flag = "pov_corpse_ghoul",
 		Script = "scripts/items/misc/corpse/pov_corpse_ghoul_item",
-		BaseDropChance = 10.0
+		BaseDropChance = 15.0
 	};
 
 	::TLW.Corpse.LegendSkinGhoul <- 
@@ -67,7 +67,7 @@
 	{
 		Flag = "pov_corpse_goblin",
 		Script = "scripts/items/misc/corpse/pov_corpse_goblin1_item",
-		BaseDropChance = 10.0
+		BaseDropChance = 12.5
 	};
 
 	::TLW.Corpse.GoblinShaman <- 
@@ -102,14 +102,14 @@
 	{
 		Flag = "pov_corpse_hyena",
 		Script = "scripts/items/misc/corpse/pov_corpse_hyena_item",
-		BaseDropChance = 12.0
+		BaseDropChance = 16.0
 	};
 
 	::TLW.Corpse.SandGolem <- 
 	{
 		Flag = "pov_corpse_sandgolem",
 		Script = "scripts/items/misc/corpse/pov_corpse_sandgolem_item",
-		BaseDropChance = 25.0
+		BaseDropChance = 22.0
 	};
 
 	::TLW.Corpse.Lindwurm <- 
@@ -130,21 +130,21 @@
 	{
 		Flag = "pov_corpse_mummy",
 		Script = "scripts/items/misc/corpse/pov_corpse_mummy_item",
-		BaseDropChance = 15.0
+		BaseDropChance = 16.0
 	};
 
 	::TLW.Corpse.OrcYoung <- 
 	{
 		Flag = "pov_corpse_orc_young",
 		Script = "scripts/items/misc/corpse/pov_corpse_orc_item",
-		BaseDropChance = 8.0
+		BaseDropChance = 10.0
 	};
 
 	::TLW.Corpse.OrcWarrior <- 
 	{
 		Flag = "pov_corpse_orc_warrior",
 		Script = "scripts/items/misc/corpse/pov_corpse_orc2_item",
-		BaseDropChance = 14.0
+		BaseDropChance = 15.0
 	};
 
 	::TLW.Corpse.OrcBerserker <- 
@@ -186,14 +186,14 @@
 	{
 		Flag = "pov_corpse_serpent",
 		Script = "scripts/items/misc/corpse/pov_corpse_serpent_item",
-		BaseDropChance = 20.0
+		BaseDropChance = 22.0
 	};
 
 	::TLW.Corpse.Skeleton <- 
 	{
 		Flag = "pov_corpse_skeleton",
 		Script = "scripts/items/misc/corpse/pov_corpse_skeleton_item",
-		BaseDropChance = 10.0
+		BaseDropChance = 12.5
 	};
 
 	::TLW.Corpse.SkeletonPriest <- 
@@ -214,7 +214,7 @@
 	{
 		Flag = "pov_corpse_spider",
 		Script = "scripts/items/misc/corpse/pov_corpse_spider_item",
-		BaseDropChance = 10.0
+		BaseDropChance = 12.5
 	};
 
 	::TLW.Corpse.LegendRedbackSpider <- 
@@ -228,7 +228,7 @@
 	{
 		Flag = "pov_corpse_unhold",
 		Script = "scripts/items/misc/corpse/pov_corpse_unhold_item",
-		BaseDropChance = 20.0
+		BaseDropChance = 22.0
 	};
 
 	::TLW.Corpse.UnholdFrost <- 
@@ -270,35 +270,35 @@
 	{
 		Flag = "pov_corpse_zombie",
 		Script = "scripts/items/misc/corpse/pov_corpse_zombie_item",
-		BaseDropChance = 5.0
+		BaseDropChance = 8.0
 	};
 
 	::TLW.Corpse.ZombieKnight <- 
 	{
 		Flag = "pov_corpse_zombie_knight",
 		Script = "scripts/items/misc/corpse/pov_corpse_zombie2_item",
-		BaseDropChance = 12.0
+		BaseDropChance = 13.0
 	};
 
 	::TLW.Corpse.ZombieNecromancer <- 
 	{
 		Flag = "pov_corpse_necro",
 		Script = "scripts/items/misc/corpse/pov_corpse_necro_item",
-		BaseDropChance = 25.0
+		BaseDropChance = 27.5
 	};
 
 	::TLW.Corpse.BasiliskDrone <- 
 	{
 		Flag = "pov_corpse_basilisk_drone",
 		Script = "scripts/items/misc/corpse/pov_corpse_basilisk_drone_item",
-		BaseDropChance = 20.0
+		BaseDropChance = 24.0
 	};
 
 	::TLW.Corpse.BasiliskSentry <- 
 	{
 		Flag = "pov_corpse_basilisk_sentry",
 		Script = "scripts/items/misc/corpse/pov_corpse_basilisk_sentry_item",
-		BaseDropChance = 40.0
+		BaseDropChance = 45.0
 	};
 
 	::TLW.Corpse.FleshGolem <- 

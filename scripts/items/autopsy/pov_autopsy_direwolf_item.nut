@@ -5,7 +5,7 @@ this.pov_autopsy_direwolf_item <- this.inherit("scripts/items/misc/anatomist/ana
 		this.anatomist_potion_item.create();
 		this.m.ID = "misc.pov_autopsy_direwolf_item";
 		this.m.Name = "Direwolf Autopsy";
-		this.m.Description = "Removing pelt, extract adrenal gland; a skilled brother may attempt to extract useful items from this nachzehrer corpse.";
+		this.m.Description = "Removing pelt, extract adrenal gland; a skilled brother may attempt to extract useful items from this direwolf corpse.";
 		this.m.IconLarge = "";
 		this.m.Icon = "consumables/pov_autopsy_direwolf.png";
 		this.m.Value = 300;

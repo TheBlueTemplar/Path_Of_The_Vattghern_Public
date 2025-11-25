@@ -18,7 +18,7 @@ this.pov_alchemist_wants_mutagen_encounter <- this.inherit("scripts/encounters/e
     {
         this.m.Screens.push({
             ID = "A",
-            Title = "An Alchamist wants your mutagen",
+            Title = "An Alchemist wants your mutagen",
             Text = "[img]gfx/ui/events/event_184.png[/img]{As you move through the town\'s muddy streets, your nose catches a sharp, acrid scent that cuts through the usual reek of livestock and sweat. Turning a corner, you nearly stumble into a man hunched over a bundle of bloodied cloths and bones, muttering to himself. His hair is a wild thicket of grey, and his robe is stitched together from so many different patches that it looks like a skinwalker\'s disguise. He peers up at you through round, fogged spectacles, his eyes glittering with a manic energy. %SPEECH_ON% Ah, a mercenary! Perfect, perfect. You have what I need, yes? Fresh samples, sinew, rare bone formations? %SPEECH_OFF% Without waiting for your reply, he circles you, sniffing like a hound. %SPEECH_ON% That specimen there, the %trophy%, magnificent! A real marvel. I\'ll give you %reward% crowns for it. No haggling, no questions. Only science! %SPEECH_OFF%}",
             Image = "",
             List = [],
@@ -191,7 +191,7 @@ this.pov_alchemist_wants_mutagen_encounter <- this.inherit("scripts/encounters/e
         }
 
         this.m.Item = candidates_items[this.Math.rand(0, candidates_items.len() - 1)];
-        this.m.Reward = this.m.Item.getValue() * 5;
+        this.m.Reward = (this.m.Item.getValue() * 5) + this.Math.rand(-150,150);
         local brothers = this.World.getPlayerRoster().getAll();
 
         if (brothers.len() < 3)

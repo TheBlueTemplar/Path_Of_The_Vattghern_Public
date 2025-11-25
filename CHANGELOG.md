@@ -1,4 +1,51 @@
-# v1.0.0 Public-Release
+# v1.1.0 "Fix me Daddy"
+
+## Changelog V1.1.0 "Fix me Daddy":
+
+### BALANCE 
+* Enemy undead mutants HP penalty increased, resolve increased
+* "Purify Location" vattghern contract's reward increased by 3.5x
+* Spawnlist of that contract slightly optimised, for a more balanced encounter
+* Lindwurm player mutation was buffed to be even more effective against armor. Also added a slight flat mdef penalty
+* Swertgeister were buffed, with 25% more HP, and a slight boost to attack and initiative
+* Rustungheists were buffed (and fixed), gaining +100 Body and Head armor, +25 Resolve (for fearsome), +5 Attack, but Halved ranged defense
+* Saplings spawining in early game via an enemy mutation were weakened, losing attack, HP and defense (medium nerf until day 30, small until day 50)
+* Enemy Possessed enemies morale and resolve were buffed (were too easy to route)
+* Corpse drop rate of ifrits slightly lowered (was slightly overtuned)
+* Corpse drop rate of many "swarm" type enemies increased (I lowered it too much in previous version, but now its still lower than pre 1.0.0)
+* The Fear/Hate Mutants traits were tweaked to be more interesting and impactful
+* Death chance of using the trial of the grasses raised by 10% (I lowered it more than intended in 1.0.0)
+* Player Ghoul Mutation's Penalty to ranged skill halved (to allow for some hybrid style skill/perk usage)
+
+### IMPROVEMENTS
+* Enforces Latest Legends Build
+* Autopsies of corpses named more consistently ("experiment" -> potion brewer, "autopsy" -> field triage) 
+* Tooltips describing effects both flat and percentile at the same time were made more clear
+* Vattghern background can no longer spawn with "dumb" or "superstitious" traits
+* Sale value for mutagens slightly randomised in a certain event
+* Some item names and tooltips were changed to be more accurate/consistent
+* The "Holy flame" skill tooltip now hints on some additional interactivity
+* The two vattghern ambitions will not be available on origins where you start with a fully geared vattghern (no duplicate vattghern swords)
+* PoV's "Intro" Event rewritten to be more to the point, and descriptive
+
+### FIXES / TYPOS / MISC
+* Player controlled mutants will not receive dynamic new names - caused a ui bug
+* (Credits to Pot) Fixed a fatal error with the Spider Upgraded mutation
+* Many, many typos on many different tooltips, events etc. (Credits to TYN, Lite, Dimon)
+* (Credits to Chopeks) Removed double calls of the same function in a few files
+* Fixed an issue occuring when enemy ghoul mutants use "Gruesome Feast"
+* Orc Bersekrers and Elites now properly get special injury effects (they didnt before)
+* Geisthasser trait will no longer spam icons in battle (lets make snow happy)
+* Attempted to fix the new PoV banners not properly appearing ingame sometimes
+* Fixed the "SSU Tweaks" option not properly working
+* Fixed ifrit mutations armor not properly applying on player and enemies
+* Fixed vattghern medallion sprite not appearing in battle on the one who wears It
+* Fixed the infamous dissapearing vattghern medallion!
+* Fixed a crash caused by using the Charge skill form the orc mutation, while having the ambidexterous Trait
+* Fixed various HP reducing effects causing low HP enemies to have 0 HP, crashing the game
+* Fixed rustunggheists being oneshot with direct damage skills (like shatter armor)
+* The "Consecrated" effect is now handled by pov in a way that is more compatible (Previously, there were conflicts with SSU)
+* PoV's github page also improved, with more clear instructions, a new License, and some other helpful files
 
 ## Changelog V1.0.0 Public Release:
 

@@ -189,25 +189,28 @@ this.pov_gruesome_feast_skill <- this.inherit("scripts/skills/skill", {
 			break;
 		}
 
-		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
-		foreach( a in actors )
+		if (_user.getFaction() == this.Const.Faction.Player)
 		{
-			if (a.getID() == _user.getID())
+			local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
+			foreach( a in actors )
 			{
-				continue;
-			}
+				if (a.getID() == _user.getID())
+				{
+					continue;
+				}
 
-			if (_user.getTile().getDistanceTo(a.getTile()) > 3)
-			{
-				continue;
-			}
+				if (_user.getTile().getDistanceTo(a.getTile()) > 3)
+				{
+					continue;
+				}
 
-			if (a.getFaction() != _user.getFaction())
-			{
-				continue;
-			}
+				if (a.getFaction() != _user.getFaction())
+				{
+					continue;
+				}
 
-			a.worsenMood(1.0, "Witnessed someone eat a corpse");
+				a.worsenMood(0.5, "Witnessed someone eat a corpse");
+			}
 		}
 
 		_user.onUpdateInjuryLayer();

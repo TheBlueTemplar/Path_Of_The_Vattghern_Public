@@ -4,7 +4,7 @@ this.pov_autopsy_sandgolem_item <- this.inherit("scripts/items/misc/anatomist/an
 	{
 		this.anatomist_potion_item.create();
 		this.m.ID = "misc.pov_autopsy_sandgolem_item";
-		this.m.Name = "Ifrit Examination";
+		this.m.Name = "Ifrit Experiment";
 		this.m.Description = "An anatomist can attempt to extract valuable minerals from these ifrit remains.";
 		this.m.IconLarge = "";
 		this.m.Icon = "consumables/pov_autopsy_ifrit.png";

@@ -54,7 +54,7 @@ this.pov_lindwurm_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_damage.png",
-				text = "Do [color=" + this.Const.UI.Color.PositiveValue + "]20% + 15[/color] more damage to armor."
+				text = "Increases effectiveness against armor by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color], with an additional flat bonus of [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]"
 			},
 			{
 				id = 11,
@@ -66,7 +66,7 @@ this.pov_lindwurm_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "This character\'s melee defense is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color]."
+				text = "This character\'s melee defense is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]12% + 4[/color]."
 			},
 			{
 				id = 11,
@@ -82,15 +82,16 @@ this.pov_lindwurm_mutagen_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		// Buffs
-		_properties.DamageArmorMult *= 1.2;
-		_properties.DamageArmorMult += 0.15;
+		_properties.DamageArmorMult *= 1.25;
+		_properties.DamageArmorMult += 0.20;
 		// Also causes acid effect on attackers
 		// Also gets coat with acid skill
 
 		// Debuffs
 		_properties.DailyWageMult *= 1.25;
 		_properties.HitpointsRecoveryRateMult *= 0.6;
-		_properties.MeleeDefenseMult *= 0.85;
+		_properties.MeleeDefenseMult *= 0.88;
+		_properties.MeleeDefense += -4;
 	}
 
 	function onAdded()

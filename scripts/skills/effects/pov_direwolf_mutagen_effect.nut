@@ -127,6 +127,12 @@ this.pov_direwolf_mutagen_effect <- this.inherit("scripts/skills/skill", {
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		local actor = this.getContainer().getActor();
+		// Fallback for a weird error
+		if (::MSU.isKindOf(_targetEntity, "lindwurm_tail")) 
+		{
+			return;
+		}
+
 		if (_targetEntity.getCurrentProperties().IsImmuneToBleeding || _damageInflictedHitpoints <= this.Const.Combat.MinDamageToApplyBleeding || _targetEntity.getHitpoints() <= 0)
 		{
 			return;

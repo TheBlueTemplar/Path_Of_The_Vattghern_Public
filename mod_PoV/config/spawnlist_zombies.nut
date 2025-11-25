@@ -36,9 +36,9 @@ if (!("Spawn" in ::Const.World))
             Weight = 0,
         }
     ],
-    Troops = [ // should be 38,26,12,8,10,6 (when you add soldiers)
+    Troops = [ // should be 42,27,11,6,9,5 (when you add soldiers)
         {
-            Weight = 38,
+            Weight = 42,
             Types = [ // defaults: 15, 16, 18, 25, 60, 24
                 {
                     Type = this.Const.World.Spawn.Troops.PossessedBanditRaider,
@@ -68,7 +68,7 @@ if (!("Spawn" in ::Const.World))
             ]
         },
         {
-            Weight = 26,
+            Weight = 27,
             Types = [
                 {
                     Type = this.Const.World.Spawn.Troops.Ghost,
@@ -77,7 +77,7 @@ if (!("Spawn" in ::Const.World))
             ]
         },
          {
-            Weight = 12,
+            Weight = 11,
             Types = [
                 {
                     Type = this.Const.World.Spawn.Troops.SwordGhost,
@@ -87,7 +87,7 @@ if (!("Spawn" in ::Const.World))
             ]
         },
          {
-            Weight = 8,
+            Weight = 6,
             Types = [
                 {
                     Type = this.Const.World.Spawn.Troops.ArmorGhost,
@@ -97,7 +97,7 @@ if (!("Spawn" in ::Const.World))
             ]
         },
         {
-            Weight = 10,
+            Weight = 9,
             Types = [
                 {
                     Type = this.Const.World.Spawn.Troops.LegendDemonHound,
@@ -107,7 +107,7 @@ if (!("Spawn" in ::Const.World))
             ]
         },
         {
-            Weight = 6,
+            Weight = 5,
             MinR = 700,
             Types = [
                 {

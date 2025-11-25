@@ -78,10 +78,10 @@ this.pov_possessed_enemy_effect <- this.inherit("scripts/skills/skill", {
 		// Buffs
 		_properties.DamageDirectMult += 0.15;
 		_properties.Threat += 5;
-		_properties.Bravery += 10;
+		_properties.Bravery += 20;
 		_properties.FatigueEffectMult *= 0.40;
 		_properties.StaminaMult *= 1.10;
-		_properties.MoraleEffectMult = 0.10;
+		_properties.MoraleEffectMult *= 0.10;
 		// Debuffs
 	}
 

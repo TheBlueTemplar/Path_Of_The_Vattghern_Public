@@ -3,7 +3,7 @@ this.pov_ghoul_mutagen_effect <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "effects.pov_ghoul_mutagen";
-		this.m.Name = "Mutation: Ghoul";
+		this.m.Name = "Mutation: Nachzehrer";
 		this.m.Icon = "skills/pov_ghoul.png";
 		this.m.IconMini = "";
 		//this.m.Overlay = "status_effect_149";
@@ -42,7 +42,7 @@ this.pov_ghoul_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gain the [color=" + this.Const.UI.Color.PositiveValue + "]Gruesome Feast[/color] skill, which can be used to consume a corpse and recover HP and from injuries."
+				text = "Gain the [color=" + this.Const.UI.Color.PositiveValue + "]Gruesome Feast[/color] skill, which can be used to consume a corpse and recover HP and/or injuries."
 			},
 			{
 				id = 11,
@@ -60,7 +60,7 @@ this.pov_ghoul_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "Lose [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] ranged skill."
+				text = "Lose [color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] ranged skill."
 			},
 			{
 				id = 11,
@@ -101,7 +101,7 @@ this.pov_ghoul_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		_properties.HitpointsRecoveryRateMult *= 3.0;
 		// Debuffs
 		_properties.ThresholdToReceiveInjuryMult *= 0.80;
-		_properties.RangedSkillMult *= 0.50;
+		_properties.RangedSkillMult *= 0.75;
 		_properties.MeleeDamageMult *= 0.92;
 	}
 

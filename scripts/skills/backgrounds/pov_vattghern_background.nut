@@ -15,7 +15,6 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.DailyCost = 50;
 		this.m.Excluded = [
 			::Legends.Traits.getID(::Legends.Trait.Weasel),
-			::Legends.Traits.getID(::Legends.Trait.Teamplayer),
 			::Legends.Traits.getID(::Legends.Trait.FearUndead),
 			::Legends.Traits.getID(::Legends.Trait.FearBeasts),
 			::Legends.Traits.getID(::Legends.Trait.FearGreenskins),
@@ -23,9 +22,7 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 			::Legends.Traits.getID(::Legends.Trait.Ailing),
 			::Legends.Traits.getID(::Legends.Trait.Swift),
 			::Legends.Traits.getID(::Legends.Trait.Clubfooted),
-			::Legends.Traits.getID(::Legends.Trait.Irrational),
 			::Legends.Traits.getID(::Legends.Trait.Hesistant),
-			::Legends.Traits.getID(::Legends.Trait.Loyal),
 			::Legends.Traits.getID(::Legends.Trait.Tiny),
 			::Legends.Traits.getID(::Legends.Trait.Fragile),
 			::Legends.Traits.getID(::Legends.Trait.Clumsy),
@@ -37,6 +34,8 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
 			::Legends.Traits.getID(::Legends.Trait.LegendLight),
 			::Legends.Traits.getID(::Legends.Trait.LegendFrail),
+			::Legends.Traits.getID(::Legends.Trait.Dumb),
+			::Legends.Traits.getID(::Legends.Trait.Superstitious),
 			"trait.pov_fear_mutants",
 			"trait.pov_nyctophobia"
 		];
@@ -61,7 +60,7 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Bodies = this.Const.Bodies.Muscular;
-		this.m.Level = this.Math.rand(3, 6);
+		this.m.Level = this.Math.rand(3, 5);
 
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];

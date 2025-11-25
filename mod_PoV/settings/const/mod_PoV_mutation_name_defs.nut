@@ -43,7 +43,8 @@ effects.pov_enemy_mutation_rot
 	["effects.pov_enemy_mutation_rot","effects.pov_enemy_mutation_unhold","Rotgut"],
 	["effects.pov_enemy_mutation_rot","effects.pov_enemy_mutation_ghost","Rotwraith"],
 	["effects.pov_enemy_mutation_rot","effects.pov_enemy_mutation_hexe","Cursestench"],
-	["effects.pov_enemy_mutation_direwolf","effects.pov_enemy_mutation_serpent","Wolfsnake"]
+	["effects.pov_enemy_mutation_direwolf","effects.pov_enemy_mutation_serpent","Wolfsnake"],
+	["effects.pov_enemy_mutation_alp","effects.pov_enemy_mutation_basilisk","Phallumbric"]
 ];
 
 

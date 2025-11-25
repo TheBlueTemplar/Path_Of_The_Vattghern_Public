@@ -4,7 +4,7 @@ this.pov_autopsy_ghoul2_item <- this.inherit("scripts/items/misc/anatomist/anato
 	{
 		this.anatomist_potion_item.create();
 		this.m.ID = "misc.pov_autopsy_ghoul2_item";
-		this.m.Name = "Skin Nachzehrer Autopsy";
+		this.m.Name = "Skin Ghoul Autopsy";
 		this.m.Description = "Removing horns, pulling teeth and extracting organs; and anatomist or surgeon may attempt to extract useful items from this nachzehrer corpse.";
 		this.m.IconLarge = "";
 		this.m.Icon = "consumables/pov_autopsy_ghoul2.png";

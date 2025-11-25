@@ -86,6 +86,7 @@ this.pov_enemy_mutation_schrat <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.HeadDamageTaken = 0;
 		this.m.BodyDamageTaken = 0;
+        this.m.Spawned = 0;
 	}
 
 	function onUpdate( _properties )
@@ -123,7 +124,13 @@ this.pov_enemy_mutation_schrat <- this.inherit("scripts/skills/skill", {
 				return;
 			}
 
-			//_properties.DamageArmorReduction += this.m.HeadArmorBoost - this.m.HeadDamageTaken;
+			// weird fix to weird issue
+			local cap = this.m.HeadArmorBoost - this.m.HeadDamageTaken;
+			if (cap > this.m.HeadArmorBoost/2)
+			{
+				cap = this.m.HeadArmorBoost/2;
+			}
+			_properties.DamageArmorReduction += cap;
 			this.m.HeadDamageTaken += _hitInfo.DamageArmor;
 		}
 		else if (_hitInfo.BodyPart == this.Const.BodyPart.Body)
@@ -133,7 +140,13 @@ this.pov_enemy_mutation_schrat <- this.inherit("scripts/skills/skill", {
 				return;
 			}
 
-			//_properties.DamageArmorReduction += this.m.BodyArmorBoost - this.m.BodyDamageTaken;
+			// weird fix to weird issue
+			local cap = this.m.BodyArmorBoost - this.m.BodyDamageTaken;
+			if (cap > this.m.BodyArmorBoost/2)
+			{
+				cap = this.m.BodyArmorBoost/2;
+			}
+			_properties.DamageArmorReduction += cap;
 			this.m.BodyDamageTaken += _hitInfo.DamageArmor;
 		}
 
@@ -181,9 +194,5 @@ this.pov_enemy_mutation_schrat <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onCombatFinished()
-	{
-		this.m.Spawned = 0;
-	}
 
 });

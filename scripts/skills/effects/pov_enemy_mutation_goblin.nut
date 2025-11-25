@@ -108,7 +108,8 @@ this.pov_enemy_mutation_goblin <- this.inherit("scripts/skills/skill", {
 		_properties.RangedDefenseMult *= 1.15;
 		_properties.RangedAttackBlockedChanceMult = this.Math.max(0, _properties.RangedAttackBlockedChanceMult - 0.20); //ty satan
 		// Debuffs
-		_properties.Hitpoints *= 0.80;
+		_properties.Hitpoints += 1; // Fallback for enemies with 1 maxHp
+		_properties.HitpointsMult *= 0.70;
 		_properties.MeleeDefenseMult *= 0.80;
 		_properties.BraveryMult *= 0.85;
 		_properties.Stamina += this.getPenalty();

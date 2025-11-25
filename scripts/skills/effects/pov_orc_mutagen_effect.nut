@@ -63,7 +63,7 @@ this.pov_orc_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "Gains a [color=" + this.Const.UI.Color.NegativeValue + "]15% + 7[/color] reduction to Ranged Defense."
+				text = "Loses [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color] plus flat [color=" + this.Const.UI.Color.NegativeValue + "]7[/color] Ranged Defense."
 			},
 			{
 				id = 11,
@@ -85,8 +85,8 @@ this.pov_orc_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		_properties.DamageTotalMult *= 1.10;
 		_properties.IsProficientWithHeavyWeapons = true;
 		// Debuffs
-		_properties.RangedDefense += -7;
 		_properties.RangedDefenseMult *= 0.85;
+		_properties.RangedDefense += -7;
 		_properties.SurroundedDefense -= 4;
 
 	}

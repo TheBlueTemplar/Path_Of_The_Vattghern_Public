@@ -34,8 +34,14 @@ this.pov_vattghern_sword_ambition <- this.inherit("scripts/ambitions/ambition", 
 			return;
 		}
 
-		// Enable only if has special event story_02 done, or PoV origin
+		// Enable only if has special event story_02 done
 		if (!::World.Flags.has("GotVattghern"))
+		{
+			return;
+		}
+
+		// not for PoV origins with starter vattghern
+		if (this.World.Assets.getOrigin().getID() == "scenario.pov_solo_last_witchers" || this.World.Assets.getOrigin().getID() == "scenario.pov_last_witchers")
 		{
 			return;
 		}
@@ -73,7 +79,7 @@ this.pov_vattghern_sword_ambition <- this.inherit("scripts/ambitions/ambition", 
 			}
 		}
 
-		if (alcohest == false && ingots < 2)
+		if (alcohest == false || ingots < 2)
 		{
 			return false;
 		}

@@ -1,4 +1,4 @@
-// New System
+// New System (but still, credits to Emo for allowing me to "look" at his code for my past system)
 ::TLW.MutagenDrop <-
 {
 	getMutagenDrop = function (_actor, _mutagen)
@@ -79,6 +79,12 @@
 	{
 		//skip check if actor isnt a mutant
 		if (!_actor.getFlags().has("mutant"))
+		{
+			return null;
+		}
+
+		// not for player controlled characters (to fix ui bug)
+		if(_actor.getFaction() == this.Const.Faction.Player))
 		{
 			return null;
 		}
@@ -324,9 +330,9 @@
 		if (_actor.isResurrected()){return;} //Fallback-Fix for enemies getting mutation when rising from dead
 
 		// Mutant name change!
-		// Only works the first time an entity is mutated
+		// Only works the first time an entity is mutated, and for non player faction chars
 		// Names depending on multiple mutations are handled on the end of mutate entity and/or add mutation all
-		if (!_actor.getFlags().has("mutant"))
+		if (!_actor.getFlags().has("mutant") && !_actor.getFaction() == this.Const.Faction.Player)
 		{
 			local prevName = _actor.m.Name;
 			_actor.m.Name = "[color="+ ::Const.UI.Color.povEnemyMutation + "]"+_title+"[/color] " + prevName;

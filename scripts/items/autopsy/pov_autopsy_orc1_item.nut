@@ -50,7 +50,7 @@ this.pov_autopsy_orc1_item <- this.inherit("scripts/items/misc/anatomist/anatomi
 			id = 11,
 			type = "text",
 			icon = "ui/icons/pov_mutagen_shard_icon.png",
-			text = "Acquire orc mutagen [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] chance."
+			text = "Acquire [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] orc mutagen.\n[color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] chance."
 		});
 
 		return result;

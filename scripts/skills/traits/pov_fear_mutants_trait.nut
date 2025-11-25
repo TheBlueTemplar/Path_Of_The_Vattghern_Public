@@ -43,14 +43,14 @@ this.pov_fear_mutants_trait <- this.inherit("scripts/skills/traits/character_tra
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6%[/color] Melee Skill when in battle with against mutants."
+				icon = "ui/icons/pov_melee_ranged_skill.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-4[/color] Melee and Ranged Skill when in battle with against mutants."
 			},
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6%[/color] Ranged Skill when in battle with against mutants."
+				icon = "ui/icons/damage_dealt.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-8%[/color] Damage against mutants."
 			}
 		];
 	}
@@ -79,13 +79,24 @@ this.pov_fear_mutants_trait <- this.inherit("scripts/skills/traits/character_tra
 		if (fightingMutants)
 		{
 			_properties.Bravery -= 10;
-			_properties.MeleeSkillMult *= 0.94;
-			_properties.RangedSkillMult *= 0.94;
+			_properties.MeleeSkill -= 4;
+			_properties.RangedSkill -= 4;
 			// Make this a status effect so it will be visible for the battle
 			this.m.Type = ::Const.SkillType.StatusEffect;
 		} else {
 			// Make this a trait so it will not be visible for the battle
 			this.m.Type = ::Const.SkillType.Trait;
+		}
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties)
+	{
+		if (_targetEntity != null)
+		{
+			if(_targetEntity.getFlags().has("mutant"))
+			{
+				_properties.DamageTotalMult *= 0.92;
+			}
 		}
 	}
 

@@ -4,8 +4,8 @@ this.pov_autopsy_demonhound_item <- this.inherit("scripts/items/misc/anatomist/a
 	{
 		this.anatomist_potion_item.create();
 		this.m.ID = "misc.pov_autopsy_demonhound_item";
-		this.m.Name = "Hellhound Autopsy";
-		this.m.Description = "There are residual energies residing within these bones.; a skilled brother may attempt to extract useful items from this hollenhund corpse.";
+		this.m.Name = "Hellhound Experiment";
+		this.m.Description = "There are residual energies residing within these bones; a skilled brother may attempt to extract useful items from this hollenhund corpse.";
 		this.m.IconLarge = "";
 		this.m.Icon = "consumables/pov_autopsy_demonhound.png";
 		this.m.Value = 300;

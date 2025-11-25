@@ -10,7 +10,7 @@ this.pov_near_ghost_hater_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IconMini = "pov_mini_hate_ghosts";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
-		this.m.IsStacking = true;
+		this.m.IsStacking = false;
 		this.m.IsRemovedAfterBattle = true;
 	}
 
@@ -19,10 +19,11 @@ this.pov_near_ghost_hater_effect <- this.inherit("scripts/skills/skill", {
 		return "This character is inspired by a nearby individual, gaining [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] Resolve.";
 	}
 
-	function onAdded() 
+	// Fires too often, better remove it
+	/*function onAdded() 
 	{
 		this.spawnIcon("pov_medium_hate_ghosts", this.getContainer().getActor().getTile());
-	}
+	}*/
 
 	function checkBuff()
 	{

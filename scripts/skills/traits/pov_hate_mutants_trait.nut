@@ -6,7 +6,7 @@ this.pov_hate_mutants_trait <- this.inherit("scripts/skills/traits/character_tra
 		this.m.ID = "trait.pov_hate_mutants";
 		this.m.Name = "Hate for Mutants";
 		this.m.Icon = "ui/traits/pov_hate_mutants.png";
-		this.m.Description = "\"You\'re completely unnatural… Just a mistake that should never have existed.\"";
+		this.m.Description = "\"They\'re completely unnatural… Just a mistake that should never have existed.\"";
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.craven",
@@ -34,19 +34,19 @@ this.pov_hate_mutants_trait <- this.inherit("scripts/skills/traits/character_tra
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Resolve when in a battle against mutants"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Resolve when in battle against mutants."
 			},
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+6%[/color] Melee Skill when in a battle against mutants"
+				icon = "ui/icons/pov_melee_ranged_skill.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] Melee and Ranged Skill when in battle with against mutants."
 			},
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+6%[/color] Ranged Skill when in a battle against mutants"
+				icon = "ui/icons/damage_dealt.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+8%[/color] Damage against mutants."
 			}
 		];
 	}
@@ -75,13 +75,25 @@ this.pov_hate_mutants_trait <- this.inherit("scripts/skills/traits/character_tra
 		if (fightingMutants)
 		{
 			_properties.Bravery += 10;
-			_properties.MeleeSkillMult *= 1.06;
-			_properties.RangedSkillMult *= 1.06;
+			_properties.MeleeSkill += 4;
+			_properties.RangedSkill += 4;
 			// Make this a status effect so it will be visible for the battle
 			this.m.Type = ::Const.SkillType.StatusEffect;
 		} else {
 			// Make this a trait so it will not be visible for the battle
 			this.m.Type = ::Const.SkillType.Trait;
+		}
+
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties)
+	{
+		if (_targetEntity != null)
+		{
+			if(_targetEntity.getFlags().has("mutant"))
+			{
+				_properties.DamageTotalMult *= 1.08;
+			}
 		}
 	}
 

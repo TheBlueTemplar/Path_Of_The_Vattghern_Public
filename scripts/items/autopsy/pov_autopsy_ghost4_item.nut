@@ -55,7 +55,7 @@ this.pov_autopsy_ghost4_item <- this.inherit("scripts/items/misc/anatomist/anato
 			id = 11,
 			type = "text",
 			icon = "ui/icons/pov_extra_special.png",
-			text = "Acquire [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] Spectral Plate Shards.\n[color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] chance."
+			text = "Acquire [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] Infused Shards.\n[color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] chance."
 		});
 		result.push({
 			id = 11,

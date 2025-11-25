@@ -2,10 +2,10 @@
 ::Const.Tactical.Actor.SwordGhost <- {
 	XP = 425,
 	ActionPoints = 9,
-	Hitpoints = 100,
+	Hitpoints = 125,
 	Bravery = 125,
 	Stamina = 100,
-	MeleeSkill = 75,
+	MeleeSkill = 80,
 	RangedSkill = 0,
 	MeleeDefense = 18,
 	RangedDefense = 30,
@@ -23,17 +23,17 @@
 	XP = 750,
 	ActionPoints = 9,
 	Hitpoints = 1,
-	Bravery = 100,
+	Bravery = 125,
 	Stamina = 100,
-	MeleeSkill = 80,
+	MeleeSkill = 90,
 	RangedSkill = 25,
 	MeleeDefense = 12,
-	RangedDefense = 12,
+	RangedDefense = 6,
 	Initiative = 60,
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [ // Body, Head
-		400,
-		350
+		500,
+		450
 	]
 };

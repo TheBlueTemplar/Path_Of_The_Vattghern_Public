@@ -82,10 +82,11 @@ this.pov_enemy_mutation_skeleton <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		// Buffs
-		_properties.StaminaMult *= 1.18;
+		_properties.StaminaMult *= 1.20;
 		_properties.BraveryMult *= 1.25;
 		// Debuffs
-		_properties.HitpointsMult *= 0.82;
+		_properties.Hitpoints += 1; // Fallback for enemies with 1 maxHp
+		_properties.HitpointsMult *= 0.75;
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
