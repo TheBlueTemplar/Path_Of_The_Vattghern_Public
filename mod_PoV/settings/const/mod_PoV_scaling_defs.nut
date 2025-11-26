@@ -25,3 +25,47 @@
 		Mult = 1.50
 	};
 
+	// Alternative 
+	::TLW.Scaling.Start <- 
+	{
+		Flag = "scaling_stage_start",
+		Day = 15,
+		Mult = 1.50
+	};
+	::TLW.Scaling.VEarly <- 
+	{
+		Flag = "scaling_stage_very_early",
+		Day = 30,
+		Mult = 1.50
+	};
+	::TLW.Scaling.Early <- 
+	{
+		Flag = "scaling_stage_early",
+		Day = 50,
+		Mult = 1.50
+	};
+	::TLW.Scaling.Mid <- 
+	{
+		Flag = "scaling_stage_mid",
+		Day = 80,
+		Mult = 1.50
+	};
+	::TLW.Scaling.Late <- 
+	{
+		Flag = "scaling_stage_late",
+		Day = 120,
+		Mult = 1.50
+	};
+	::TLW.Scaling.VLate <- 
+	{
+		Flag = "scaling_stage_very_late",
+		Day = 180,
+		Mult = 1.50
+	};
+	::TLW.Scaling.SLate <- 
+	{
+		Flag = "scaling_stage_super_late",
+		Day = 260,
+		Mult = 1.50
+	};
+

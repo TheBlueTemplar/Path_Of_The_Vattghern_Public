@@ -84,7 +84,7 @@
 		}
 
 		// not for player controlled characters (to fix ui bug)
-		if(_actor.getFaction() == this.Const.Faction.Player))
+		if(_actor.getFaction() == this.Const.Faction.Player)
 		{
 			return null;
 		}
@@ -140,17 +140,22 @@
 		local mutationChance = [_chance*0.5, _chance*0.75, _chance, _chance*1.8][::World.Assets.getCombatDifficulty()];
 		
 		// Mutation Chance further increased by passed days (optional)
+		// Idea is to start from rare -> frequent (intended for longer playthroughs)
 		if (::TLW.EnemyMutationScaling)
 		{
 			local day = this.World.getTime().Days;
 			if (day != null)
 			{
-				// These are defined in mod_PoV_scaling_defs.nut
-				// TLDR: every 70 days, +0.12 (*12%) to modifier
-				if (day >= ::TLW.Scaling.D.Day) {mutationChance *= ::TLW.Scaling.D.Mult;}
-				else if (day >= ::TLW.Scaling.C.Day) {mutationChance *= ::TLW.Scaling.C.Mult;}
-				else if (day >= ::TLW.Scaling.B.Day) {mutationChance *= ::TLW.Scaling.B.Mult;}
-				else if (day >= ::TLW.Scaling.A.Day) {mutationChance *= ::TLW.Scaling.A.Mult;}
+				// These are defined in mod_PoV_scaling_defs.nut (days: 15,30,50,80,120,180,260)
+				// Increments (days lasting): 15,15,20,30,40,60,80
+				if (day >= ::TLW.Scaling.SLate.Day) {mutationChance *= 1.80;}
+				else if (day >= ::TLW.Scaling.VLate.Day) {mutationChance *= 1.50;}
+				else if (day >= ::TLW.Scaling.Late.Day) {mutationChance *= 1.25;}
+				else if (day >= ::TLW.Scaling.Mid.Day) {mutationChance *= 1.1;}
+				else if (day >= ::TLW.Scaling.Early.Day) {mutationChance *= 1.0;}
+				else if (day >= ::TLW.Scaling.VEarly.Day) {mutationChance *= 0.9;}
+				else if (day >= ::TLW.Scaling.Start.Day) {mutationChance *= 0.8;}
+				else if (day < ::TLW.Scaling.Start.Day) {mutationChance *= 0.7;}
 			}
 		}
 
@@ -227,18 +232,22 @@
 		//mutationChance = 25.0; // Debug
 		
 		// Mutation Chance further increased by passed days (optional)
-		// Idea is to start from rare -> frequent (intended for longer playthroughs)
+		// Idea is to same as above, but crazier values (easier early game, chaotic late game)
 		if (::TLW.EnemyMutationScaling)
 		{
 			local day = this.World.getTime().Days;
 			if (day != null)
 			{
-				// These are defined in mod_PoV_scaling_defs.nut (70 day increment)
-				if (day >= ::TLW.Scaling.D.Day) {mutationChance *= 2.25;}
-				else if (day >= ::TLW.Scaling.C.Day) {mutationChance *= 1.75;}
-				else if (day >= ::TLW.Scaling.B.Day) {mutationChance *= 1.35;}
-				else if (day >= ::TLW.Scaling.A.Day) {mutationChance *= 1.0;}
-				else if (day < ::TLW.Scaling.A.Day) {mutationChance *= 0.7;}
+				// These are defined in mod_PoV_scaling_defs.nut (days: 15,30,50,80,120,180,260)
+				// Increments (days lasting): 15,15,20,30,40,60,80
+				if (day >= ::TLW.Scaling.SLate.Day) {mutationChance *= 2.00;}
+				else if (day >= ::TLW.Scaling.VLate.Day) {mutationChance *= 1.60;}
+				else if (day >= ::TLW.Scaling.Late.Day) {mutationChance *= 1.35;}
+				else if (day >= ::TLW.Scaling.Mid.Day) {mutationChance *= 1.15;}
+				else if (day >= ::TLW.Scaling.Early.Day) {mutationChance *= 1.0;}
+				else if (day >= ::TLW.Scaling.VEarly.Day) {mutationChance *= 0.9;}
+				else if (day >= ::TLW.Scaling.Start.Day) {mutationChance *= 0.75;}
+				else if (day < ::TLW.Scaling.Start.Day) {mutationChance *= 0.5;}
 			}
 		}
 
@@ -332,7 +341,7 @@
 		// Mutant name change!
 		// Only works the first time an entity is mutated, and for non player faction chars
 		// Names depending on multiple mutations are handled on the end of mutate entity and/or add mutation all
-		if (!_actor.getFlags().has("mutant") && !_actor.getFaction() == this.Const.Faction.Player)
+		if (!_actor.getFlags().has("mutant") && _actor.getFaction() != this.Const.Faction.Player)
 		{
 			local prevName = _actor.m.Name;
 			_actor.m.Name = "[color="+ ::Const.UI.Color.povEnemyMutation + "]"+_title+"[/color] " + prevName;

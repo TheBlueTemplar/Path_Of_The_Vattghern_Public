@@ -11,23 +11,23 @@ page.addDivider("divider");
 
 /*::TLW.EnableEnemyMutationID <- "EnableEnemyMutation"
 local settingEnableEnemyMutation = page.addBooleanSetting(::TLW.EnableEnemyMutationID, true, "Enemy Mutations", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Recommended to keep this on, as it is a core mechanic of PoV.[/color] \n\n All enemies may get various thematic and appropriate mutations, making them stronger and creating interesting adaptive gameplay.\n\n The enemies that get a mutation also have a very low chance to drop relevant mutagens.\n\n Also enables some events, items and traits related to mutated enemies. All chances scale with combat difficulty and enemy strength \n\n [color=" + this.Const.UI.Color.povPainEffect + "] DISABLING THIS WONT CHANGE ANYTHING CURRENTLY [/color] - Enemy mutations will appear normally.");*/
-::TLW.EnemyMutationScalingID <- "EnemyMutationScaling"
-local settingEnemyMutationScaling = page.addBooleanSetting(::TLW.EnemyMutationScalingID, true, "Enemy Mutations Scaling", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Scales the Enemy Mutations based on passed ingame days. Recommended to keep on, unless you have many other mods making late game more difficult.[/color] \n\n An attempt at keeping the endgame challenging - Enemy Mutations will appear more often on enemies, as the playthrough becomes longer. \n\n With chaos mode enabled, mutations will start appearing much less at the beginning, but over time their frequency will increase by a lot!");
-::TLW.ChaosID <- "ChaosMode"
+::TLW.EnemyMutationScalingID <- "EnemyMutationScaling";
+local settingEnemyMutationScaling = page.addBooleanSetting(::TLW.EnemyMutationScalingID, true, "Enemy Mutations Scaling", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Scales the Enemy Mutations based on passed ingame days. Recommended to keep on, unless you have many other mods making late game more difficult.[/color] \n\n An attempt at keeping the endgame challenging, but also tone down the very early stages of the game - Enemy Mutations will appear less often for the few first days, but then will appear more often, as the playthrough becomes longer. (increments start from -30% on day 5, to +75% on day 280) \n\n With chaos mode enabled, mutations will start appearing much less at the beginning, but over time their frequency will increase by a lot!");
+::TLW.ChaosID <- "ChaosMode";
 local settingChaos = page.addBooleanSetting(::TLW.ChaosID, false, "Chaos Mode", "[color=" + this.Const.UI.Color.povTooltipBlue + "]PoV is not balanced around this mode, it is only meant as a fun \"Challenge\". Off by default. [/color] \n\n All enemies can have multiple mutations, selected randomly from all of PoV\'s possible effects. Mutagen drop rates from enemy mutants will be lowered. \n\n Recommended to enable \"Enemy Mutations Scaling\" if you enable chaos mode.\n\n [b][color=" + this.Const.UI.Color.NegativeValue + "]MAY CHAOS TAKE THE WORLD![/color][/b]");
 
 
 page.addTitle("title3", "Customization - Tweaks");
 page.addDivider("divider2");
 
-::TLW.McTweaksID <- "McTweaks"
+::TLW.McTweaksID <- "McTweaks";
 local settingMcTweaks = page.addBooleanSetting(::TLW.McTweaksID, false, "MC Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Magic Concept\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between MC and PoV, and removes an annoying enemy ability or two. Look at the PoV server for details.\n\n Will only work with the MC mod installed. Not recommended to turn on and off multiple times during a save.");
 
-::TLW.FotnTweaksID <- "FotnTweaks"
+::TLW.FotnTweaksID <- "FotnTweaks";
 local settingFotnTweaks = page.addBooleanSetting(::TLW.FotnTweaksID, false, "FotN Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Fury of the Northmen\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and FotN, mainly messing with some new enemies.\n\n Will only work with the FotN mod installed. Not recommended to turn on and off multiple times during a save.");
 
-::TLW.SSUTweaksID <- "SSUTweaks"
-local settingSSUTweaks = page.addBooleanSetting(::TLW.SSUTweaksID, false, "SSU Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Fury of the Northmen\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and SSU. Removes sequences (drops,shop and effects) from players and enemies. \n\n Will only work with the SSU mod installed. Not recommended to turn on and off multiple times during a save. \n\n [color=" + this.Const.UI.Color.NegativeValue + "]Only toggle in main menu before a new game --- Requires Restart![/color]");
+::TLW.SSUTweaksID <- "SSUTweaks";
+local settingSSUTweaks = page.addBooleanSetting(::TLW.SSUTweaksID, false, "SSU Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Sellswords Updated\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and SSU. Removes sequences (drops,shop and effects) from players and enemies. \n\n Will only work with the SSU mod installed. Not recommended to turn on and off multiple times during a save. \n\n [color=" + this.Const.UI.Color.NegativeValue + "]Only toggle in main menu before a new game --- Requires Restart![/color]");
 
 //Callbacks
 /*settingEnableEnemyMutation.addCallback(function(_newValue)
@@ -111,7 +111,7 @@ local enemyMutationInfo = page.addBooleanSetting(
         "PovVision",
         true,
         "PoV\'s Wiki",
-        "[color=" + this.Const.UI.Color.povTooltipBlue + "]\"Path of the Vatt\'ghern\" (PoV)[/color], is a witcher-inspired legends submod, adding in a variety of new mechanics both related and unrelated to the witcher theme and universe. PoV also tweaks or reworks many vanilla/legends systems, like the injury system.\n\n Generally, the mod is designed to be intuitive, and most of its mechanics are explained ingame via various means. (item descriptions, events etc.) \n\n [color=" + this.Const.UI.Color.povTooltipBlue + "]This page here is meant to be a TLDR wiki of PoV, which you can access during gameplay to keep track of PoV\'s core mechanics. [/color]\n\n For more information, ask around in the PoV doscord server."
+        "[color=" + this.Const.UI.Color.povTooltipBlue + "]\"Path of the Vatt\'ghern\" (PoV)[/color], is a witcher-inspired legends submod, adding in a variety of new mechanics both related and unrelated to the witcher theme and universe. PoV also tweaks or reworks many vanilla/legends systems, like the injury system.\n\n Generally, the mod is designed to be intuitive, and most of its mechanics are explained ingame via various means. (item descriptions, events etc.) \n\n [color=" + this.Const.UI.Color.povTooltipBlue + "]This page here is meant to be a TLDR wiki of PoV, which you can access during gameplay to keep track of PoV\'s core mechanics. [/color]\n\n For more information, ask around in the PoV discord server."
     );
 
 local DiffBasedMechanics = page.addBooleanSetting(

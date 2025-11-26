@@ -1,4 +1,11 @@
-# v1.1.0 "Fix me Daddy" Edition
+# v1.1.1 "Fix me Daddy" Edition
+
+## Changelog V1.1.0 "Fix me Daddy" Edition:
+
+* Fixes a fatal issue with version 1.1.0
+* Enemy mutation scaling option tweaked, early game starts with less mutation chance for a smoother start, but as game progresses chances gets higher, for hopefully more interesting gameplay at lategame 
+   * (For example, on day 5 mutation chances are -30%, day 60 base chance, day 100 +10%, day 150 +25%, day 260+ +75%!)
+   * Additionally, with this option enabled, after day 120 mutagen drop rates will be slightly lower, to compensate for more mutants appearing (you should still get slighly more drops with this option enabled)
 
 ## Changelog V1.1.0 "Fix me Daddy" Edition:
 
