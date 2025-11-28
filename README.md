@@ -31,7 +31,6 @@ Recommended Base Modlist (All the Latest Versions):
 * [Modern Hooks](https://www.nexusmods.com/battlebrothers/mods/685) 
 * [Legends](https://discord.com/channels/547043336465154049/547427442818809881) 
 * [PoV](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/releases)
-* Emo's .exe (Instructions and file [Here](https://discord.com/channels/1332985519256113183/1333009819719958559/1403330906336399520))
 
 ### Incompatible Mods:
 * Anything incompatible with Legends!
