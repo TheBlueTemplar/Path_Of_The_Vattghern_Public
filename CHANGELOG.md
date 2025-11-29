@@ -1,4 +1,8 @@
-# v1.1.2 "Fix me Daddy" Edition
+# v1.1.3 "Fix me Daddy" Edition
+
+## Changelog V1.1.3 "Fix me Daddy" Edition:
+
+* Another fix for the vattghern medallion. Was not a "fatal" issue
 
 ## Changelog V1.1.2 "Fix me Daddy" Edition:
 

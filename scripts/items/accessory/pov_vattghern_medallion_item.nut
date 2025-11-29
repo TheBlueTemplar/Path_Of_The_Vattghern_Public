@@ -54,35 +54,53 @@ this.pov_vattghern_medallion_item <- this.inherit("scripts/items/accessory/acces
 			});
 		}
 
-		local actor = this.m.Container.getActor();
-		if (actor != null)
+		if (this.getContainer() != null)
 		{
-			if (actor.getSkills().hasSkill("trait.pov_witcher"))
+			local actor = this.getContainer().getActor();
+			if (actor != null)
 			{
-				result.push({
-					id = 10,
-					type = "text",
-					icon = "ui/icons/bravery.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Resolve"
-				});
-				result.push({
-					id = 11,
-					type = "text",
-					icon = "ui/icons/special.png",
-					text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color]"
-				});
-			} 
-			else
-			{
-				result.push({
-					id = 10,
-					type = "text",
-					icon = "ui/icons/hint.png",
-					text = "[color=" + this.Const.UI.Color.NegativeValue + "]Does Nothing[/color] - Not equipped by a vattghern"
-				});
+				if (actor.getSkills().hasSkill("trait.pov_witcher"))
+				{
+					result.push({
+						id = 10,
+						type = "text",
+						icon = "ui/icons/bravery.png",
+						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Resolve"
+					});
+					result.push({
+						id = 11,
+						type = "text",
+						icon = "ui/icons/special.png",
+						text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color]"
+					});
+				} 
+				else
+				{
+					result.push({
+						id = 10,
+						type = "text",
+						icon = "ui/icons/warning.png",
+						text = "[color=" + this.Const.UI.Color.NegativeValue + "]Does Nothing[/color] - Not equipped by a vattghern"
+					});
+				}
 			}
-		} 
-
+		}
+		else
+		{
+			result.push({
+						id = 10,
+						type = "text",
+						icon = "ui/icons/bravery.png",
+						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Resolve"
+					});
+			result.push({
+				id = 11,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color]"
+			});
+		}
+		
 		return result;
 	}
 
@@ -115,7 +133,7 @@ this.pov_vattghern_medallion_item <- this.inherit("scripts/items/accessory/acces
 	{
 		this.accessory.onUpdateProperties(_properties);
 
-		local actor = this.m.Container.getActor();
+		local actor = this.getContainer().getActor();
 		if (actor != null)
 		{
 			if (actor.getSkills().hasSkill("trait.pov_witcher"))
