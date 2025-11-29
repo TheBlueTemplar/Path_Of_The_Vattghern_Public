@@ -7,6 +7,10 @@
 // Skills / Perks
 ::Const.UI.Color.povMutationUpgrade <- "#012810"; // DARK GREEN - Vattghern Mutation Upgrade
 ::Const.UI.Color.povPerkBlue <- "#043abf"; // BLUE - For perks, skills and traits about mutations
+::Const.UI.Color.povPerkPurple <- "#400080"; // PURPLE - For referring to skills (like legends)
+::Const.UI.Color.povPerkBurgundy <- "#731f39"; // BURGUNDY - For referring to effects (like legends)
+::Const.UI.Color.povPerkOrange <- "#854104"; // ORANGE - For referring to camp stuff
+::Const.UI.Color.povPerkDarkOrange <- "#4f1800"; // DARK ORANGE - For referring "active"/"passive" skills
 ::Const.UI.Color.povTooltipBlue <- "#0b40b3"; // LIGHT BLUE - For tooltips in general
 ::Const.UI.Color.povTooltipRed <- "#520802"; // DEEP RED - For tooltips in general
 ::Const.UI.Color.povTooltipGray <- "#2a2c2c"; // GRAY - For tooltips in general

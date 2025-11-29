@@ -20,7 +20,7 @@
 ::TLW <- {
 	ID = "mod_PoV",
 	Name = "Path of the Vatt\'ghern", //PoV
-	Version = "1.1.1",
+	Version = "1.1.2",
 	//EnableEnemyMutation = true,	//default settings
 	EnemyMutationScaling = true,
 	ChaosMode = false,
@@ -32,7 +32,7 @@
 };
 
 ::TLW.HooksMod <- ::Hooks.register(::TLW.ID, ::TLW.Version, ::TLW.Name);
-::TLW.HooksMod.require("mod_legends >= 19.2.21", "mod_modern_hooks >= 0.4.0", "mod_msu >= 1.2.7");
+::TLW.HooksMod.require("mod_legends >= 19.2.32", "mod_modern_hooks >= 0.4.0", "mod_msu >= 1.2.7");
 ::TLW.HooksMod.conflictWith("mod_silver_weapons", "mod_PFI", "mod_TLW", "mod_weapons_updated", "mod_weapons", "mod_reforged"); 
 
 ::TLW.HooksMod.queue(">mod_legends", ">mod_msu", ">mod_nggh_magic_concept", ">mod_sellswords", ">mod_ROTUC", function() 

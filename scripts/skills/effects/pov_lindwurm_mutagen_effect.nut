@@ -36,7 +36,7 @@ this.pov_lindwurm_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "This character gains the [color=" + this.Const.UI.Color.PositiveValue + "]\"Coat With Acid\"[/color] skill"
+				text = "This character gains the [color=" + this.Const.UI.Color.povTooltipBlue + "]\"Coat With Acid\"[/color] skill"
 			},
 			{
 				id = 11,

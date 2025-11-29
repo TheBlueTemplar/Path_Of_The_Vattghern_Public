@@ -22,11 +22,6 @@ this.pov_serpent_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		return "[color=" + this.Const.UI.Color.povPerkBlue + "]Pack Instinct[/color]: The vatt\'ghern excels when fighting alongside allies, feeding off their presence to strike with greater precision. When surrounded themselves though, this inctinct can turn to panic, reducing the Vatt\'ghern\'s defense. They also get a skill to pull enemies in for the slaughter, or to save allies from a bad position.\n\n[color=" + this.Const.UI.Color.povPerkBlue + "]Endurance Boost[/color]: Enhanced stamina allows the vatt'ghern to recover fatigue more quickly each turn, keeping them in the fight longer.\n\n[color=" + this.Const.UI.Color.povPerkBlue + "]Singular Focus[/color]: When facing a single opponent, the vatt\'ghern gains a significant boost to melee and ranged defense. This defensive edge diminishes in chaotic skirmishes with multiple enemies.\n\n[color=" + this.Const.UI.Color.povPerkBlue + "]Reflexive Defense[/color]: The vatt\'ghern\'s quick reflexes grant them additional melee and ranged defense based on their current initiative.\n\n [color=" + this.Const.UI.Color.povPerkBlue + "]Frail Frame[/color]: The mutation weakens their overall health, reducing their maximum vitality and making them more vulnerable to damage.";
 	}
 
-	function isHidden()
-	{
-		return this.getBonus() == 0;
-	}
-
 	function getTooltip()
 	{
 		local ret = [
@@ -44,13 +39,13 @@ this.pov_serpent_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gain the [color=" + this.Const.UI.Color.PositiveValue + "]\"Serpentine Hook\"[/color] skill, gaining the ability to pull an enemy or ally close."
+				text = "Gain the [color=" + this.Const.UI.Color.povTooltipBlue + "]\"Serpentine Hook\"[/color] skill, gaining the ability to pull an enemy or ally close."
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gain the [color=" + this.Const.UI.Color.PositiveValue + "]\"Serpentine Agility\"[/color] effect while in battle, which increases defenses by 10% of current initiative, with an additional bonus when engaged with exactly [color=" + this.Const.UI.Color.PositiveValue + "]one[/color] enemy. This character also suffers a [color=" + this.Const.UI.Color.NegativeValue + "]-4[/color] melee defense penalty for each enemy surrounding them."
+				text = "Gain the [color=" + this.Const.UI.Color.povTooltipBlue + "]\"Serpentine Agility\"[/color] effect while in battle, which increases defenses by 10% of current initiative, with an additional bonus when engaged with exactly [color=" + this.Const.UI.Color.PositiveValue + "]one[/color] enemy. This character also suffers a [color=" + this.Const.UI.Color.NegativeValue + "]-4[/color] melee defense penalty for each enemy surrounding them."
 			},
 			{
 				id = 11,
@@ -115,6 +110,7 @@ this.pov_serpent_mutagen_effect <- this.inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
+        //return this.getBonus() == 0;
 		return this.inBattleHiddenCheck();
 	}
 

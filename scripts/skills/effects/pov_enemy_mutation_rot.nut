@@ -174,6 +174,11 @@ this.pov_enemy_mutation_rot <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
+			if (this.m.Container.getActor().isAlliedWith(a))
+			{
+				continue;
+			}
+			
 			if (a.getTile() == null)
 			{
 				continue;

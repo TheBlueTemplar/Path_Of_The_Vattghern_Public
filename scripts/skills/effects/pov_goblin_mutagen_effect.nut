@@ -60,13 +60,13 @@ this.pov_goblin_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "Aimed Shot AP cost reduced by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color], with a slightly increased fatigue cost."
+				text = "[color=" + this.Const.UI.Color.povPerkPurple + "]Aimed Shot[/color] AP cost reduced by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color], with a slightly increased fatigue cost. [color=" + this.Const.UI.Color.povPerkPurple + "]Reloading[/color] weapons Ap cost reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], and fatigue cost reduced by [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color]"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "All Ranged Damage increased by [color=" + this.Const.UI.Color.PositiveValue + "]12%[/color]."
+				text = "All Ranged Damage increased by [color=" + this.Const.UI.Color.PositiveValue + "]12%[/color]. Bonus increased to [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] when using goblin spiked balls."
 			},
 			{
 				id = 11,
@@ -121,7 +121,18 @@ this.pov_goblin_mutagen_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate(_properties)
 	{
-		
+		local reloadXbow = this.getContainer().getSkillByID("actives.reload_bolt");
+		if (reloadXbow != null)
+		{
+			reloadXbow.m.ActionPointCost -= 1;
+			reloadXbow.m.FatigueCost *= 0.85;
+		};
+		local reloadGun = this.getContainer().getSkillByID("actives.reload_handgonne");
+		if (reloadGun != null)
+		{
+			reloadGun.m.ActionPointCost -= 1;
+			reloadGun.m.FatigueCost *= 0.85;
+		};
 		local aimedShot = this.getContainer().getSkillByID("actives.aimed_shot");
 		if (aimedShot != null)
 		{

@@ -1,6 +1,36 @@
-# v1.1.1 "Fix me Daddy" Edition
+# v1.1.2 "Fix me Daddy" Edition
 
-## Changelog V1.1.0 "Fix me Daddy" Edition:
+## Changelog V1.1.2 "Fix me Daddy" Edition:
+
+### BALANCE
+* Vattghern Background gets +4 Threat, and an improved tooltip
+* Mortar shell damage greatly increased, effectiveness against armor doubled
+* Strain Mutagen XP gain increased from +20% to +30%
+* Goblin mutation tweaked:
+   * Also reduces AP and Fat cost of reloading ranged weapons
+   * Ranged damage bonus increased to +30% when using goblin spiked balls
+* Buffed the "ghost plates" armor attachment
+* Buffed Hollenhunds (decent bonus to HP and attack, slight bonus to mdef - buffs increase after day 70)
+* Darkflight cannot be used by player/enemy mutants if they are rooted, or under the holy water Effect
+* Vampire mutagen debuffs reduced from 15% to 10% when fighting at day
+* Adjusted enemy mutation appear chance with scaling option enabled
+* Tooltip of the silvering kit tweaked to better explain the damage bonus and penalty application conditions
+* Reduced Distilled Alcohol item value by half (you could get an infinite money loop before)
+
+### IMPROVEMENTS
+* Tweaked splash art of the "New Company (PoV)"
+* Tweaked art of the "Rotten Flesh Ammo Bag"
+* Improvements to Various Mutagen tooltips
+* Vampire mutation tooltip properly explains the addition of the darkflight skill
+
+### FIXES
+* Enforces Latest Legends Version (includes many fixes)
+* Rot mutation will now not apply to allies (so your mutant wardogs will now not iflict that on you)
+* Fixed an error caused by a missing item
+* Fixes a "holy fire" skill crash due to missing sound files
+
+
+## Changelog V1.1.1 "Fix me Daddy" Edition:
 
 * Fixes a fatal issue with version 1.1.0
 * Enemy mutation scaling option tweaked, early game starts with less mutation chance for a smoother start, but as game progresses chances gets higher, for hopefully more interesting gameplay at lategame 

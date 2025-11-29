@@ -57,6 +57,19 @@ this.pov_darkflight_skill <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
+	function isUsable()
+	{
+		local actor = this.getContainer().getActor();
+		if (actor.getCurrentProperties().IsRooted || actor.getSkills().hasSkill("effects.holy_water"))
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		if (!_targetTile.IsEmpty)

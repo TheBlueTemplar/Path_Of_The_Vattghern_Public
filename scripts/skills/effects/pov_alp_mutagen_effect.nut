@@ -42,7 +42,7 @@ this.pov_alp_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "Gain the [color=" + this.Const.UI.Color.PositiveValue + "]Third Eye[/color] skill, and an additional [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] vision"
+				text = "Gain the [color=" + this.Const.UI.Color.povTooltipBlue + "]Third Eye[/color] skill, and an additional [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] vision"
 			},
 			{
 				id = 11,

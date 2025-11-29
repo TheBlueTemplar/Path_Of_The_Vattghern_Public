@@ -23,7 +23,7 @@ this.pov_silvering_kit <- this.inherit("scripts/items/item", {
 		result.push({
 			id = 3,
 			type = "text",
-			text = "Use to coat a melee weapon in silver, causing it to deal [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] Damage to enemy beasts. Gain [color=" + this.Const.UI.Color.PositiveValue + "]half[/color] of this bonus against Mutants, and the Undead. Also, Deal [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Damage to enemy humans and other humanoids.\n\n The weapon will also lose [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color] of its maximum durability."
+			text = "Use to coat a melee weapon in silver, causing it to deal [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] Damage to enemy beasts. Gain [color=" + this.Const.UI.Color.PositiveValue + "]half[/color] of this bonus against Mutants, and the Undead. Deal [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Damage to anything else.\n\n The weapon will also lose [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color] of its maximum durability."
 		});
 		return result;
 	}

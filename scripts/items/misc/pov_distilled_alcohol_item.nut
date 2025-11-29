@@ -10,7 +10,7 @@ this.pov_distilled_alcohol_item <- this.inherit("scripts/items/item", {
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Loot | this.Const.Items.ItemType.Crafting ;
 		this.m.IsDroppedAsLoot = false;
-		this.m.Value = 750;
+		this.m.Value = 325;
 	}
 
 	function playInventorySound( _eventType )

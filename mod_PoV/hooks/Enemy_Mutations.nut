@@ -42,6 +42,27 @@
 			chance *= 1.15;
 		}
 
+		// Mutagen Drop Chance slighly tweakes with enemy mutation scaling enabled (optional)
+		// Specifically, chance is lowered in the lategame, as mutation chances there increase greatly
+		if (::TLW.EnemyMutationScaling)
+		{
+			local day = this.World.getTime().Days;
+			if (day != null)
+			{
+				// These are defined in mod_PoV_scaling_defs.nut (days: 15,30,50,80,120,180,260)
+				// Increments (days lasting): 15,15,20,30,40,60,80
+				// here I start from day 120
+				if (day >= ::TLW.Scaling.SLate.Day) {chance *= 0.7;}
+				else if (day >= ::TLW.Scaling.VLate.Day) {chance *= 0.8;}
+				else if (day >= ::TLW.Scaling.Late.Day) {chance *= 0.9;}
+				//else if (day >= ::TLW.Scaling.Mid.Day) {chance *= 1.1;}
+				//else if (day >= ::TLW.Scaling.Early.Day) {chance *= 1.0;}
+				//else if (day >= ::TLW.Scaling.VEarly.Day) {chance *= 0.9;}
+				//else if (day >= ::TLW.Scaling.Start.Day) {chance *= 0.8;}
+				//else if (day < ::TLW.Scaling.Start.Day) {chance *= 0.7;}
+			}
+		}
+
 		// Dont drop mutagen before killing first mutant
 		if(!::World.Flags.has("FirstMutantKilled"))
 		{
@@ -148,14 +169,14 @@
 			{
 				// These are defined in mod_PoV_scaling_defs.nut (days: 15,30,50,80,120,180,260)
 				// Increments (days lasting): 15,15,20,30,40,60,80
-				if (day >= ::TLW.Scaling.SLate.Day) {mutationChance *= 1.80;}
-				else if (day >= ::TLW.Scaling.VLate.Day) {mutationChance *= 1.50;}
-				else if (day >= ::TLW.Scaling.Late.Day) {mutationChance *= 1.25;}
+				if (day >= ::TLW.Scaling.SLate.Day) {mutationChance *= 1.75;}
+				else if (day >= ::TLW.Scaling.VLate.Day) {mutationChance *= 1.40;}
+				else if (day >= ::TLW.Scaling.Late.Day) {mutationChance *= 1.20;}
 				else if (day >= ::TLW.Scaling.Mid.Day) {mutationChance *= 1.1;}
 				else if (day >= ::TLW.Scaling.Early.Day) {mutationChance *= 1.0;}
 				else if (day >= ::TLW.Scaling.VEarly.Day) {mutationChance *= 0.9;}
-				else if (day >= ::TLW.Scaling.Start.Day) {mutationChance *= 0.8;}
-				else if (day < ::TLW.Scaling.Start.Day) {mutationChance *= 0.7;}
+				else if (day >= ::TLW.Scaling.Start.Day) {mutationChance *= 0.85;}
+				else if (day < ::TLW.Scaling.Start.Day) {mutationChance *= 0.75;}
 			}
 		}
 
@@ -247,7 +268,7 @@
 				else if (day >= ::TLW.Scaling.Early.Day) {mutationChance *= 1.0;}
 				else if (day >= ::TLW.Scaling.VEarly.Day) {mutationChance *= 0.9;}
 				else if (day >= ::TLW.Scaling.Start.Day) {mutationChance *= 0.75;}
-				else if (day < ::TLW.Scaling.Start.Day) {mutationChance *= 0.5;}
+				else if (day < ::TLW.Scaling.Start.Day) {mutationChance *= 0.55;}
 			}
 		}
 

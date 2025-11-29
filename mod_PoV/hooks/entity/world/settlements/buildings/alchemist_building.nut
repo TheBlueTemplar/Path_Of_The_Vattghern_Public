@@ -131,13 +131,13 @@
 		]);
 
 		// NEW AMMO
-		_list.extend([
+		/*_list.extend([
 			{
 				R = 75,
 				P = 1.0,
 				S = "ammo/pov_silver_bullets_bag"
 			}
-		]);
+		]);*/
 		
 		__original( _list, _stash, _priceMult, _allowDamagedEquipment);
 		

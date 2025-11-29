@@ -42,43 +42,43 @@ this.pov_vampire_day_effect <- this.inherit("scripts/skills/skill", {
 			    id = 11,
 			    type = "text",
 			    icon = "ui/icons/ranged_skill.png",
-			    text = "Ranged Skill reduced by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color]."
+			    text = "Ranged Skill reduced by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]."
 			},
 			{
 			    id = 11,
 			    type = "text",
 			    icon = "ui/icons/ranged_defense.png",
-			    text = "Ranged Defense reduced by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color]."
+			    text = "Ranged Defense reduced by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]."
 			},
 			{
 			    id = 11,
 			    type = "text",
 			    icon = "ui/icons/melee_skill.png",
-			    text = "Melee Skill reduced by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color]."
+			    text = "Melee Skill reduced by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]."
 			},
 			{
 			    id = 11,
 			    type = "text",
 			    icon = "ui/icons/melee_defense.png",
-			    text = "Melee Defense reduced by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color]."
+			    text = "Melee Defense reduced by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]."
 			},
 			{
 			    id = 11,
 			    type = "text",
 			    icon = "ui/icons/initiative.png",
-			    text = "Initiative reduced by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color]."
+			    text = "Initiative reduced by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]."
 			},
 			{
 			    id = 11,
 			    type = "text",
 			    icon = "ui/icons/bravery.png",
-			    text = "Resolve reduced by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color]."
+			    text = "Resolve reduced by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]."
 			},
 			{
 			    id = 11,
 			    type = "text",
 			    icon = "ui/icons/fatigue.png",
-			    text = "Stamina reduced by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color]."
+			    text = "Stamina reduced by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]."
 			}
 
 		];
@@ -88,13 +88,13 @@ this.pov_vampire_day_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.Vision += -1;
-		_properties.RangedSkillMult *= 0.85;
-		_properties.RangedDefenseMult *= 0.85;
-		_properties.MeleeSkillMult *= 0.85;
-		_properties.MeleeDefenseMult *= 0.85;
-		_properties.InitiativeMult *= 0.85;
-		_properties.BraveryMult *= 0.85;
-		_properties.StaminaMult *= 0.85;
+		_properties.RangedSkillMult *= 0.9;
+		_properties.RangedDefenseMult *= 0.9;
+		_properties.MeleeSkillMult *= 0.9;
+		_properties.MeleeDefenseMult *= 0.9;
+		_properties.InitiativeMult *= 0.9;
+		_properties.BraveryMult *= 0.9;
+		_properties.StaminaMult *= 0.9;
 	}
 
 });

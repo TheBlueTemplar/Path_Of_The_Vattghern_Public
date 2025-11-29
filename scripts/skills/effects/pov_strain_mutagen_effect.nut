@@ -36,7 +36,7 @@ this.pov_strain_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "This character gains the [color=#044391] Foul Stench [/color] Passive ability when in battle. Debuffing and damaging adjacent enemies."
+				text = "Gain the [color=" + this.Const.UI.Color.povTooltipBlue + "] Foul Stench [/color] Passive ability when in battle. Debuffing and damaging adjacent enemies."
 			},
 			{
 				id = 11,
@@ -48,7 +48,7 @@ this.pov_strain_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] Experience Gain"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] Experience Gain"
 			},
 			{
 				id = 11,
@@ -60,7 +60,7 @@ this.pov_strain_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "Lose [color=" + this.Const.UI.Color.NegativeValue + "]30% + 12[/color] Resolve, due to dark visions"
+				text = "Lose [color=" + this.Const.UI.Color.NegativeValue + "]30%[/color] plus flat [color=" + this.Const.UI.Color.NegativeValue + "]12[/color] Resolve, due to dark visions and rot"
 			},
 			{
 				id = 11,
@@ -81,7 +81,7 @@ this.pov_strain_mutagen_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		// Buffs
-		_properties.XPGainMult *= 1.20;
+		_properties.XPGainMult *= 1.30;
 		_properties.FatigueLossOnAnyAttackMult = 0.0;
 		_properties.ThresholdToReceiveInjuryMult *= 1.50;
 		// Debuffs

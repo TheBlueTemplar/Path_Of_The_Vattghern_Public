@@ -17,9 +17,9 @@ this.pov_ghost_plates_upgrade <- this.inherit("scripts/items/legend_armor/legend
 		this.m.SpriteCorpseBack = "pov_upgrade_ghost_plates_dead";
 
 		this.m.Value = 2400;
-		this.m.Condition = 60;
-		this.m.ConditionMax = 60;
-		this.m.StaminaModifier = -5;
+		this.m.Condition = 75;
+		this.m.ConditionMax = 75;
+		this.m.StaminaModifier = -6;
 	}
 
 	function getTooltip()

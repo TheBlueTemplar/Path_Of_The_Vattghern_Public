@@ -266,4 +266,32 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 		//items.equip(this.Const.World.Common.pickArmor([[ 1, "vattghern_armor_01" ]]));
 		//items.equip(this.Const.World.Common.pickHelmet([[ 1, "vattghern_helmet_01" ]]));
 	}
+
+	function getTooltip()
+	{
+		local ret = this.character_background.getTooltip();
+		ret.push(
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.PositiveValue + "]-4[/color]."
+			}
+		);
+		ret.push(
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Gets the [color=" + this.Const.UI.Color.povPerkBurgundy + "]Field Triage[/color] and the [color=" + this.Const.UI.Color.povPerkBurgundy + "]Potion Brewer[/color] perks."
+			}
+		);
+		return ret;
+	}
+
+	function onUpdate(_properties)
+	{
+		this.character_background.onUpdate(_properties);
+		_properties.Threat += 4;
+	}
 });

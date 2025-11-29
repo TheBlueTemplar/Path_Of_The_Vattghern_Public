@@ -43,6 +43,12 @@ this.pov_vampire_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
+				text = "Gain the [color=" + this.Const.UI.Color.povTooltipBlue + "]darkflight[/color] skill."
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/special.png",
 				text = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]immunity[/color] to nighttime penalties."
 			},
 			{
@@ -61,7 +67,7 @@ this.pov_vampire_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/pov_time_of_day.png",
-				text = "When fighting at [color=" + this.Const.UI.Color.NegativeValue + "]daytime[/color], all combat stats are decreased by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color]"
+				text = "When fighting at [color=" + this.Const.UI.Color.NegativeValue + "]daytime[/color], all combat stats are decreased by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]"
 			}
 		];
 		return ret;

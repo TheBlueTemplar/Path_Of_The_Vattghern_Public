@@ -37,13 +37,13 @@ this.pov_ghost_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gain the [color=" + this.Const.UI.Color.PositiveValue + "]Fearsome[/color] Perk. (Or gain +10 Resolve if the Vatt'ghern already had the perk)."
+				text = "Gain the [color=" + this.Const.UI.Color.povPerkBurgundy + "]Fearsome[/color] Perk. (Or gain +10 Resolve if the Vatt'ghern already had the perk)."
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gain the [color=" + this.Const.UI.Color.PositiveValue + "]Ghastly Touch[/color] Skill, an armor ignoring attack."
+				text = "Gain the [color=" + this.Const.UI.Color.povTooltipBlue + "]Ghastly Touch[/color] Skill, an armor ignoring attack."
 			},
 			{
 				id = 11,

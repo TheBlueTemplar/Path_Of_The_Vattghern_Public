@@ -44,7 +44,7 @@ this.pov_spider_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", 
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gets the \"Weave Web\" Skill (upgraded)."
+				text = "Gain the [color=" + this.Const.UI.Color.povTooltipBlue + "]\"Weave Web\"[/color] skill"
 			},
 			{
 				id = 11,

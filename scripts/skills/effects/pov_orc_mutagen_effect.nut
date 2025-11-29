@@ -51,7 +51,7 @@ this.pov_orc_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gains the ability to [color=" + this.Const.UI.Color.PositiveValue + "]charge[/color] and stun opponents."
+				text = "Gains the ability to [color=" + this.Const.UI.Color.povTooltipBlue + "]charge[/color] and stun opponents."
 			},
 			{
 				id = 11,

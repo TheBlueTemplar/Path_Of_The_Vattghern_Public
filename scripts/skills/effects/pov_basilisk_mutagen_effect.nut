@@ -38,7 +38,7 @@ this.pov_basilisk_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Adds the [color=" + this.Const.UI.Color.PositiveValue + "]\"Glare\"[/color] skill"
+				text = "Adds the [color=" + this.Const.UI.Color.povTooltipBlue + "]\"Glare\"[/color] skill"
 			},
 			{
 				id = 11,
