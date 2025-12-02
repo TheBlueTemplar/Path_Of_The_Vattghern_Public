@@ -1,4 +1,8 @@
-# v1.1.3 "Fix me Daddy" Edition
+# v1.1.4 "Fix me Daddy" Edition
+
+## Changelog V1.1.4 "Fix me Daddy" Edition:
+
+* Fixed an error with the flesh golems
 
 ## Changelog V1.1.3 "Fix me Daddy" Edition:
 
