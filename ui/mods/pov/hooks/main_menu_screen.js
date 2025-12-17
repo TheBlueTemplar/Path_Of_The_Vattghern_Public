@@ -8,7 +8,7 @@ MainMenuScreen.prototype.notifyBackendOnShown = function () {
 
 MainMenuScreen.prototype.updatePOVBackgroundImage = function (_isShow) {
     if (_isShow) {
-        this.mBackgroundImage.attr("src", Path.GFX + "ui/screens/pov_title.png");
+        this.mBackgroundImage.attr("src", Path.GFX + "ui/screens/pov_title_xmas.png");
     } else if (this.mOriginalBackgroundUrl !== null && this.mOriginalBackgroundUrl !== undefined) {
         this.mBackgroundImage.attr("src", this.mOriginalBackgroundUrl);
     }
