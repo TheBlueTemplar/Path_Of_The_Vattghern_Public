@@ -1,4 +1,8 @@
-# v1.1.4 "Fix me Daddy" Edition
+# v1.1.5 "Fix me Daddy" Edition
+
+## Changelog V1.1.5 "Fix me Daddy" Edition:
+
+* Added some xmas decoration in the main menu screen!
 
 ## Changelog V1.1.4 "Fix me Daddy" Edition:
 
