@@ -1,4 +1,14 @@
-# v1.1.6 "Fix me Daddy" Edition
+# v1.1.7 "Merry X-Mas" Edition
+
+## Changelog V1.1.7 "Merry X-Mas" Edition:
+
+* Updated Main Menu Art!
+* Added a new thematic celebratory hat! (vanity layer)
+   * Has 2 variants
+   * All scenarios start with 2 of these hats, one for each variant
+   * More can be found in marketplaces
+   * They also come with a few minor bonuses
+* (Clarification) If you do not want to see the main menu art, you can toggle it in mod options -> PoV   
 
 ## Changelog V1.1.6 "Fix me Daddy" Edition:
 
