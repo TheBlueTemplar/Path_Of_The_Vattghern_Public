@@ -4,7 +4,9 @@
 - If you want to contribute to the mod, check out [Contributing](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/tree/main?tab=contributing-ov-file)
 -----
 <!-- <img width="1440" height="810" alt="pov_title" src="https://github.com/user-attachments/assets/d004b246-55ed-488f-9ec3-c57cf36c1826" /> -->
-<img width="1440" height="810" alt="pov_title_xmasssss" src="https://github.com/user-attachments/assets/eacb10d9-b532-4ad6-bad3-3693cbb00388" />
+<img width="1440" height="810" alt="pov_title_xmas" src="https://github.com/user-attachments/assets/2eda811a-0b80-4b53-843c-d660703573ba" />
+
+
 
 
 ### PoV
