@@ -21,7 +21,7 @@ effects.pov_enemy_mutation_alp
 effects.pov_enemy_mutation_rot
 */
 
-//19 Effects 
+//23 Effects 
 ::TLW.EnemyMutationNames <-
 [
 	["effects.pov_enemy_mutation_sandgolem","effects.pov_enemy_mutation_basilisk","Stonecock"],
@@ -31,20 +31,22 @@ effects.pov_enemy_mutation_rot
 	["effects.pov_enemy_mutation_sandgolem","effects.pov_enemy_mutation_orc","Stonecrushing"],
 	["effects.pov_enemy_mutation_orc","effects.pov_enemy_mutation_lindurm","Corrosive Ravager"],
 	["effects.pov_enemy_mutation_orc","effects.pov_enemy_mutation_goblin","Supergreen"],
-	["effects.pov_enemy_mutation_orc","effects.pov_enemy_mutation_unhold","Hulking Brute"],
+	["effects.pov_enemy_mutation_orc","effects.pov_enemy_mutation_unhold","Giant Zerker"],
 	["effects.pov_enemy_mutation_orc","effects.pov_enemy_mutation_vampire","Veinrender"],
 	["effects.pov_enemy_mutation_orc","effects.pov_enemy_mutation_ghoul","Bloodgnash"],
 	["effects.pov_enemy_mutation_orc","effects.pov_enemy_mutation_ghost","Soulrage"],
 	["effects.pov_enemy_mutation_lindwurm","effects.pov_enemy_mutation_vampire","Crimson Wyrm"],
 	["effects.pov_enemy_mutation_hexe","effects.pov_enemy_mutation_alp","Dreamhag"],
 	["effects.pov_enemy_mutation_hexe","effects.pov_enemy_mutation_unhold","Hexhulk"],
+	["effects.pov_enemy_mutation_hexe","effects.pov_enemy_mutation_schrat","Cursebranch"],
+	["effects.pov_enemy_mutation_hexe","effects.pov_enemy_mutation_lindwurm","Acidic Hexblood"],
 	["effects.pov_enemy_mutation_goblin","effects.pov_enemy_mutation_spider","Venomstring"],
 	["effects.pov_enemy_mutation_goblin","effects.pov_enemy_mutation_unhold","Gobrute"],
 	["effects.pov_enemy_mutation_rot","effects.pov_enemy_mutation_unhold","Rotgut"],
 	["effects.pov_enemy_mutation_rot","effects.pov_enemy_mutation_ghost","Rotwraith"],
 	["effects.pov_enemy_mutation_rot","effects.pov_enemy_mutation_hexe","Cursestench"],
 	["effects.pov_enemy_mutation_direwolf","effects.pov_enemy_mutation_serpent","Wolfsnake"],
-	["effects.pov_enemy_mutation_alp","effects.pov_enemy_mutation_basilisk","Phallumbric"]
+	["effects.pov_enemy_mutation_alp","effects.pov_enemy_mutation_basilisk","Phallumbric"],
 ];
 
 

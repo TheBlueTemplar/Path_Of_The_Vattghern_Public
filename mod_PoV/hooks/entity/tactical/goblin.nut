@@ -36,11 +36,55 @@
             ::TLW.MutateEntity.mutate_entity(this.actor,::TLW.EnemyMutChance.Low,::TLW.EnemyMut.GoblinGroup,false);
         }
 
-
 		// Chaos Mutation
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
-
+		// Stats Changes
+		// Nerf on Goblins - REVERT IF LEGENDS NERFS TOO
+		local b = this.m.BaseProperties;
+		switch (this.World.Assets.getCombatDifficulty())
+		{
+			case this.Const.Difficulty.Easy:
+			{
+				b.Hitpoints *= 0.80;
+				b.RangedDamageMult *= 0.80;
+				b.DamageDirectMult *= 0.85;
+				b.MeleeDamageMult *= 0.80;
+				b.MeleeDefenseMult *= 0.85;
+				b.InitiativeMult *= 0.85;
+				break;
+			} 
+			case this.Const.Difficulty.Normal:
+			{
+				b.Hitpoints *= 0.85;
+				b.RangedDamageMult *= 0.85;
+				b.DamageDirectMult *= 0.85;
+				b.MeleeDamageMult *= 0.85;
+				b.MeleeDefenseMult *= 0.90;
+				b.InitiativeMult *= 0.90;
+				break;
+			}	
+			case this.Const.Difficulty.Hard:
+			{
+				b.Hitpoints *= 0.90;
+				b.RangedDamageMult *= 0.90;
+				b.DamageDirectMult *= 0.90;
+				b.MeleeDamageMult *= 0.90;
+				b.MeleeDefenseMult *= 0.95;
+				b.InitiativeMult *= 0.95;
+				break;
+			} 
+			case this.Const.Difficulty.Legendary:
+			{
+				b.Hitpoints *= 0.95;
+				b.RangedDamageMult *= 0.95;
+				b.DamageDirectMult *= 0.95;
+				b.MeleeDamageMult *= 0.95;
+				b.MeleeDefenseMult *= 0.95;
+				b.InitiativeMult *= 0.95;
+				break;
+			}
+		}
 	}
 
 });

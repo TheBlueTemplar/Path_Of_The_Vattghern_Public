@@ -25,7 +25,7 @@
 	Hitpoints = 1,
 	Bravery = 125,
 	Stamina = 100,
-	MeleeSkill = 90,
+	MeleeSkill = 80,
 	RangedSkill = 25,
 	MeleeDefense = 12,
 	RangedDefense = 6,
@@ -33,7 +33,7 @@
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [ // Body, Head
-		500,
-		450
+		475,
+		425
 	]
 };

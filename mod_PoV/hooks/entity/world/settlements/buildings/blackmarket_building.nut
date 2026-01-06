@@ -1,5 +1,11 @@
 ::TLW.HooksMod.hook("scripts/entity/world/settlements/buildings/blackmarket_building", function( q ) {
 
+	/*q.onUpdateDraftList = @(__original) function ( _list )
+	{
+		_list.push("pov_mutant_background");
+		__original( _list );
+	}*/
+
 	q.fillStash = @( __original ) function(_list, _stash, _priceMult, _allowDamagedEquipment = false)
 	{
 		if (::World.Flags.has("FirstMutantKilled"))
@@ -101,23 +107,23 @@
 				S = "misc/vampire_dust_item"
 			},*/
 			{
-				R = 96,
-				P = 4.2,
+				R = 95,
+				P = 4.0,
 				S = "misc/pov_distilled_alcohol_item"
 			},
 			{
-				R = 97,
-				P = 4.5,
+				R = 95,
+				P = 4.0,
 				S = "misc/unhold_heart_item"
 			},
 			{
-				R = 98,
-				P = 4.5,
+				R = 95,
+				P = 4.0,
 				S = "misc/third_eye_item"
 			},
 			{
-				R = 98,
-				P = 3.0,
+				R = 95,
+				P = 2.5,
 				S = "misc/sulfurous_rocks_item"
 			},
 			// OTHER ITEMS

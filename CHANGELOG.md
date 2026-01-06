@@ -1,4 +1,30 @@
-# v1.1.7 "Merry X-Mas" Edition
+# v1.1.8 "Afterparty" Edition
+
+## Changelog V1.1.8 "Afterparty" Edition:
+
+### NEW STUFF
+* A new event was added, ill not saying much the shadows are watching
+* As a thank you to the community members of PoV, who were active and/or helpful, their names are now immortalised in the mod. The next recruit or bandit champion might be someone you know
+   * I also memed with character names a bit
+* Also, some names were added for towns, castles, world locations, noble houses and mercenary companies
+* 35 New Loading screen "tips" were also added 
+
+### BALANCE
+* Ghouls were buffed
+* Alps, Direwolves were slightly buffed
+* Goblins nerfed across the board, nerf scales with combat difficulty, in Legendary is light, in beginner its big
+* Pov's buffs on flesh golems were greatly toned down
+* Rustunggheists (Armored Ghosts) were toned down a bit
+* Crafting materials for the trial of the grasses should be found more often and slightly cheaper on alchemists and black markets
+* The following starting scenarios have some additional starting items: poachers, ranger, beast hunters, anatomists
+
+### IMPROVEMENTS
+* Improved the original Main Menu art
+* The "camp report" text and art were redone
+
+### MISC
+* Removed the X-mas decoration (hats and main menu art)
+* 3 new unique names for enemy mutation combinations
 
 ## Changelog V1.1.7 "Merry X-Mas" Edition:
 

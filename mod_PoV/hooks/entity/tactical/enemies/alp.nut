@@ -2,7 +2,7 @@
 {
 	q.onInit = @(__original) function()
 	{
-		__original()
+		__original();
 		
 		// Corpse Drop
 		if (!::MSU.isKindOf(this.actor, "player")) 
@@ -25,7 +25,17 @@
 		// Chaos Mutation
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
-
+		//Stats Changes
+		local b = this.m.BaseProperties;
+		if (this.World.getTime().Days >= 75)
+		{
+			b.Hitpoints *= 1.15;
+			b.MeleeDefenseMult *= 1.10;
+		} else
+		{
+			b.Hitpoints *= 1.10;
+			b.MeleeDefenseMult *= 1.05;
+		}
 		
 	}
 

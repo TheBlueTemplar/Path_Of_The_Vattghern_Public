@@ -28,6 +28,23 @@
 		// Chaos Mutation
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
+		//Stats Changes
+		local b = this.m.BaseProperties;
+		if (this.World.getTime().Days >= 75)
+		{
+			b.Hitpoints *= 1.20;
+			b.MeleeSkillMult *= 1.20;
+			b.MeleeDamageMult *= 1.10;
+			b.MeleeDefenseMult *= 1.15;
+			b.InitiativeMult *= 1.15;
+		} else
+		{
+			b.Hitpoints *= 1.10;
+			b.MeleeSkillMult *= 1.10;
+			b.MeleeDamageMult *= 1.05;
+			b.MeleeDefenseMult *= 1.075;
+			b.InitiativeMult *= 1.075;
+		}
 
 	}
 

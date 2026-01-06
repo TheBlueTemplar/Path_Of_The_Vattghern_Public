@@ -37,13 +37,13 @@ this.pov_greater_flesh_golem_buff_effect <- this.inherit("scripts/skills/skill",
 				id = 11,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] hitpoint bonus."
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] hitpoint bonus."
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee attack."
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] melee attack."
 			},
 			{
 				id = 11,
@@ -70,8 +70,8 @@ this.pov_greater_flesh_golem_buff_effect <- this.inherit("scripts/skills/skill",
 	function onUpdate( _properties )
 	{
 		// Buffs
-		_properties.HitpointsMult *= 1.50;
-		_properties.MeleeSkill += 10;
+		_properties.HitpointsMult *= 1.10;
+		_properties.MeleeSkill += 5;
 		_properties.Threat += 3;
 		// Debuffs
 		_properties.MeleeDefense -= 6;

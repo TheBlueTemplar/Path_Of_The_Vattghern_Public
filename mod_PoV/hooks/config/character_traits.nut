@@ -41,21 +41,25 @@
 /*
 ::Const.CharacterTraits.extend(
 [
-	/*[
-		"trait.pov_seductive",
-		"scripts/skills/traits/pov_seductive_trait"
-	],*/
-	/*[
-		"trait.pov_psychopath",
-		"scripts/skills/traits/pov_psychopath_trait"
-	],*/
-	/*[
-		"trait.pov_witcher",
-		"scripts/skills/traits/pov_vattghern_trait"
-	],*/
-	/*[
-		"trait.pov_old_vattghern",
-		"scripts/skills/traits/pov_old_vattghern_trait"
-	],
+//	[
+//		"trait.pov_seductive",
+//		"scripts/skills/traits/pov_reader_trait"
+//	],
+//	[
+//		"trait.pov_seductive",
+//		"scripts/skills/traits/pov_seductive_trait"
+//	],
+//	[
+//		"trait.pov_psychopath",
+//		"scripts/skills/traits/pov_psychopath_trait"
+//	],
+//	[
+//		"trait.pov_witcher",
+//		"scripts/skills/traits/pov_vattghern_trait"
+//	],
+//	[
+//		"trait.pov_old_vattghern",
+//		"scripts/skills/traits/pov_old_vattghern_trait"
+//	],
 ]);
 */
