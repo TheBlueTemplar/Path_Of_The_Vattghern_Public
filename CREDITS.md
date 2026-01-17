@@ -13,6 +13,7 @@
 
 * Silver Weapons is included and tweaked in PoV, credits to Excalibird
 * Pain from injuries is included, tweaked and rewritten in PoV, creadits to Darxo
+* Elements of the Rise of the Usurper mod are tweaked and included, with the permission of Abysscrane
 
 ## Music
 
