@@ -17,4 +17,4 @@
 
 ## Music
 
-Wyrd bið ful āræd. By [Mark Lingard](https://freemusicarchive.org/music/mark-lingard/). Licensed under a [Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). Downloaded from [Free Music Archive](https://freemusicarchive.org/home).
+Wyrd bið ful āræd. By [Mark Lingard](https://freemusicarchive.org/music/mark-lingard/). Licensed under a [Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) (CC-BY 4.0). Downloaded from [Free Music Archive](https://freemusicarchive.org/home).
