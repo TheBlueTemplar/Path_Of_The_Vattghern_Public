@@ -20,7 +20,7 @@
 ::TLW <- {
 	ID = "mod_PoV",
 	Name = "Path of the Vatt\'ghern", //PoV
-	Version = "1.1.8",
+	Version = "1.1.9",
 	//EnableEnemyMutation = true,	//default settings
 	EnemyMutationScaling = true,
 	ChaosMode = false,
@@ -28,6 +28,7 @@
 	FotnTweaks = false,
 	SSUTweaks = false,
 	EnableMainMenuArt = true,
+	//EnablePovMainMusic = true,
 	EnablePovIntroEvent = true
 };
 
@@ -52,7 +53,6 @@
     // Load all files in afterHooks Folder
 	::includeFiles(::IO.enumerateFiles("mod_PoV/afterHooks"));
 }, ::Hooks.QueueBucket.AfterHooks);
-
 
 
 

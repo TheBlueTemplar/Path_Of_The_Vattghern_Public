@@ -1,4 +1,10 @@
-# v1.1.8 "Afterparty" Edition
+# v1.1.9 "Afterparty" Edition
+
+## Changelog V1.1.9 "Afterparty" Edition:
+
+* Solved an issue with the basilisk mutagen granting much more fatigue recovery than intended (issue was around for like 7 months xd)
+* Also, improved the mutagen's effects a bit, slightly buffing its buffs and nerfing its debuffs
+* Steps are being taken to improve compatibility with mods like fantasy bros. Not much present in this version, but in the next big update expect better compat.
 
 ## Changelog V1.1.8 "Afterparty" Edition:
 

@@ -50,7 +50,7 @@ this.pov_basilisk_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "Regenerate [color=" + this.Const.UI.Color.PositiveValue + "]7%[/color] of base fatigue when hitting an enemy to the head (once per turn)"
+				text = "Regenerate [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of base fatigue when hitting an enemy to the head (once per turn)"
 			},
 			{
 				id = 11,
@@ -62,7 +62,7 @@ this.pov_basilisk_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "Deal [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] less damage when hitting the body with any weapon"
+				text = "Deal [color=" + this.Const.UI.Color.NegativeValue + "]-12%[/color] less damage when hitting the body with any weapon"
 			},
 			{
 				id = 11,
@@ -81,7 +81,7 @@ this.pov_basilisk_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		_properties.HitChance[this.Const.BodyPart.Head] += 7;
 		_properties.DamageAgainstMult[this.Const.BodyPart.Head] += 0.10;
 		// Debuffs
-		_properties.DamageAgainstMult[this.Const.BodyPart.Body] += -0.15;
+		_properties.DamageAgainstMult[this.Const.BodyPart.Body] += -0.12;
 		_properties.FatigueEffectMult *= 1.15;
 	}
 
@@ -94,11 +94,12 @@ this.pov_basilisk_mutagen_effect <- this.inherit("scripts/skills/skill", {
 
 			if (_bodyPart == this.Const.BodyPart.Head)
 			{
+				// was *0.7, changed it to 0.07 cause it made sense, hope I did not bork stuff xd
 				if (!this.m.IsSpent)
 				{
 					this.m.IsSpent = true;
 					local actor = this.getContainer().getActor();
-					actor.setFatigue(this.Math.max(0, actor.getFatigue() - actor.getBaseProperties().Stamina * actor.getBaseProperties().StaminaMult * 0.70));
+					actor.setFatigue(this.Math.max(0, actor.getFatigue() - actor.getBaseProperties().Stamina * actor.getBaseProperties().StaminaMult * 0.10));
 					actor.setDirty(true);
 				}
 				if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
