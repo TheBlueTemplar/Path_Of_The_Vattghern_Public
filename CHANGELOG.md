@@ -1,4 +1,8 @@
-# v1.1.9 "Afterparty" Edition
+# v2.0.0 "Afterparty" Edition
+
+## Changelog V2.0.0 "Birthday" Edition:
+
+* WIP LOG - Too much to right and im exhausted hehe
 
 ## Changelog V1.1.9 "Afterparty" Edition:
 
