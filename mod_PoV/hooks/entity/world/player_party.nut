@@ -36,6 +36,24 @@
             }
             count++;
         }
+
+        if (::TLW.hasSSU && ::TLW.SSUTweaks)
+        {
+            local day = this.World.getTime().Days;
+            if (day != null)
+            {
+                // These are defined in mod_PoV_scaling_defs.nut (days: 15,30,50,80,120,180,260)
+                // Increments (days lasting): 15,15,20,30,40,60,80
+                if (day >= ::TLW.Scaling.SLate.Day) {this.m.Strength *= 0.6;}       // 260+
+                else if (day >= ::TLW.Scaling.VLate.Day) {this.m.Strength *= 0.7;}  // 180 - 260
+                else if (day >= ::TLW.Scaling.Late.Day) {this.m.Strength *= 0.8;}   // 120 - 180
+                else if (day >= ::TLW.Scaling.Mid.Day) {this.m.Strength *= 0.9;}    // 80 - 120
+                else if (day >= ::TLW.Scaling.Early.Day) {this.m.Strength *= 0.95;} // 50 - 80
+                else if (day >= ::TLW.Scaling.VEarly.Day) {this.m.Strength *= 1.0;} // 30 - 50
+                else if (day >= ::TLW.Scaling.Start.Day) {this.m.Strength *= 1.05;} // 15 - 30
+                else if (day < ::TLW.Scaling.Start.Day) {this.m.Strength *= 1.10;}  // <15
+            }
+        }
     }
 
     /*q.getBarterMult = @(__original) function()

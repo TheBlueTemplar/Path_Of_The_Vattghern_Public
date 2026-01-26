@@ -60,7 +60,7 @@ this.pov_darkflight_skill <- this.inherit("scripts/skills/skill", {
 	function isUsable()
 	{
 		local actor = this.getContainer().getActor();
-		if (actor.getCurrentProperties().IsRooted || actor.getSkills().hasSkill("effects.holy_water"))
+		if (actor.getCurrentProperties().YrdenTrapped || actor.getCurrentProperties().IsRooted || actor.getSkills().hasSkill("effects.holy_water"))
 		{
 			return false;
 		}

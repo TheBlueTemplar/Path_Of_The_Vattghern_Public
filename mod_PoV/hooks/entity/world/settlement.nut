@@ -1,5 +1,16 @@
 ::TLW.HooksMod.hook("scripts/entity/world/settlement", function ( q )
-{
+{	
+
+	q.getMutagenPriceMult <- function()
+	{
+		return this.m.Modifiers.PovMutagenPriceMult;
+	}
+
+	q.getCorpsePriceMult <- function()
+	{
+		return this.m.Modifiers.PoVCorpsePriceMult;
+	}
+
 	q.updateRoster = @(__original) function(_force = false)
 	{
         local bros = this.World.getPlayerRoster().getAll();

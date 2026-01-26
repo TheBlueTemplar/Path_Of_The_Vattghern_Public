@@ -5,7 +5,7 @@ this.pov_enemy_mutation_lindwurm <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "effects.pov_enemy_mutation_lindwurm";
-		this.m.Name = "[color="+ ::Const.UI.Color.povEnemyMutation + "] Wurm's Acid [/color]";
+		this.m.Name = "[color="+ ::Const.UI.Color.povEnemyMutation + "] Wurm\'s Acid [/color]";
 		this.m.Description = "This enemy has some properties of an Wurm! Their blood boils with acid, coating enemies that attack from close.";
 		this.m.Icon = "skills/pov_lindwurm_mutant.png";
 		this.m.IconMini = "pov_mini_lindwurm_mutant";
@@ -62,23 +62,27 @@ this.pov_enemy_mutation_lindwurm <- this.inherit("scripts/skills/skill", {
 		{
 			actor.m.OnDeathLootTable.push(::TLW.MutagenDrop.getMutagenDrop(actor, ::TLW.Mutation.Lindwurm));
 	  	}
+        actor.getFlags().add("body_immune_to_acid");
 	}
 
 	function onUpdate( _properties )
 	{
 		// Buffs
+		_properties.DamageArmorMult *= 1.20;
 		// Debuffs
 		_properties.MeleeDefense += -10;
 		_properties.RangedDefense += -5;
 	}
 
-	function onAdded()
-	{
-		this.m.Container.getActor().getFlags().add("body_immune_to_acid");
-	}
-
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
+		local actor = this.getContainer().getActor();
+
+		if (actor.getCurrentProperties().YrdenTrapped)
+		{
+			return;
+		}
+
 		if (_damageHitpoints <= 0)
 		{
 			return;
@@ -109,11 +113,12 @@ this.pov_enemy_mutation_lindwurm <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		local poison = _attacker.getSkills().getSkillByID("effects.lindwurm_acid");
+		local poison = _attacker.getSkills().getSkillByID("effects.acid");
 
 		if (poison == null)
 		{
-			_attacker.getSkills().add(this.new("scripts/skills/effects/lindwurm_acid_effect"));
+			local acid = this.new("scripts/skills/effects/acid_effect");
+			_attacker.getSkills().add(acid);
 		}
 		else
 		{

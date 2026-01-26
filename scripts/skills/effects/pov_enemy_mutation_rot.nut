@@ -122,6 +122,11 @@ this.pov_enemy_mutation_rot <- this.inherit("scripts/skills/skill", {
 			return 0;
 		}
 
+		if (actor.getCurrentProperties().YrdenTrapped)
+		{
+			return 0;
+		}
+
 		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
 		{
 			return 0;
@@ -189,7 +194,7 @@ this.pov_enemy_mutation_rot <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (a.getFlags().has("undead") || a.getSkills().hasSkill("effects.pov_alp_mutagen") || a.getSkills().hasSkill("effects.pov_skeleton_mutagen") || a.getSkills().hasSkill("effects.pov_strain_mutagen") || a.getSkills().hasSkill("effects.pov_ghoul_mutagen") || a.getSkills().hasSkill("effects.pov_enemy_mutation_alp"))
+			if (a.getFlags().has("undead") || a.getSkills().hasSkill("effects.pov_alp_mutagen") || a.getSkills().hasSkill("effects.pov_skeleton_mutagen") || a.getSkills().hasSkill("effects.pov_necromancy_mutagen") || a.getSkills().hasSkill("effects.pov_ghoul_mutagen") || a.getSkills().hasSkill("effects.pov_enemy_mutation_alp"))
 			{
 				continue;
 			}
@@ -236,7 +241,7 @@ this.pov_enemy_mutation_rot <- this.inherit("scripts/skills/skill", {
 		// Debuffs
 		_properties.MeleeDefense -= 4;
 		_properties.RangedDefense -= 4;
-		_properties.HitpointsMult *= 0.90;
+		_properties.HitpointsMult *= 1.05;
 		_properties.InitiativeMult *= 0.85;
 		_properties.BraveryMult *= 0.85;
 		// Takes more fire dmg

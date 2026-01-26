@@ -26,21 +26,30 @@ this.pov_autopsy_sandgolem_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function onCraft( _stash )
 	{
-		if (this.Math.rand(1, 100) <= 10)
+	    local item;
+	    if (this.Math.rand(1, 100) <= 10)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_sandgolem_mutagen_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_sandgolem_mutagen_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 40)
 			{
-				_stash.add(this.new("scripts/items/loot/glittering_rock_item"));
+				item = this.new("scripts/items/loot/glittering_rock_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 20)
 			{
-				_stash.add(this.new("scripts/items/trade/uncut_gems_item"));
+				item = this.new("scripts/items/trade/uncut_gems_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 35)
 		{
-			_stash.add(this.new("scripts/items/misc/sulfurous_rocks_item"));
+			item = this.new("scripts/items/misc/sulfurous_rocks_item");
+			_stash.add(item);
+			if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 		}
 	}
 

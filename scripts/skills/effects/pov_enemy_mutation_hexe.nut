@@ -82,6 +82,8 @@ this.pov_enemy_mutation_hexe <- this.inherit("scripts/skills/skill", {
     	if (_attacker == actor) return;
     	if (_attacker.getID() == actor.getID()) return;
 
+    	if (actor.getCurrentProperties().YrdenTrapped) {return;}
+
 		if (this.m.canHex == true && !_attacker.getSkills().hasSkill("effects.pov_hexe_mutagen"))
 		{
 			// 50% resist gate for status-resistant enemies

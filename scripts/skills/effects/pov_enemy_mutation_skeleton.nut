@@ -82,11 +82,11 @@ this.pov_enemy_mutation_skeleton <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		// Buffs
-		_properties.StaminaMult *= 1.20;
-		_properties.BraveryMult *= 1.25;
+		_properties.StaminaMult *= 1.25;
+		_properties.BraveryMult *= 1.50;
 		// Debuffs
 		_properties.Hitpoints += 1; // Fallback for enemies with 1 maxHp
-		_properties.HitpointsMult *= 0.75;
+		_properties.HitpointsMult *= 0.85;
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
@@ -123,7 +123,7 @@ this.pov_enemy_mutation_skeleton <- this.inherit("scripts/skills/skill", {
 			case this.Const.Damage.DamageType.Cutting:
 				if (_skill == null)
 				{
-					_properties.DamageReceivedRegularMult *= 0.85;
+					_properties.DamageReceivedRegularMult *= 0.75;
 				}
 				else
 				{
@@ -132,18 +132,18 @@ this.pov_enemy_mutation_skeleton <- this.inherit("scripts/skills/skill", {
 						local weapon = _skill.getItem();
 						if (weapon != null && weapon.isItemType(this.Const.Items.ItemType.Weapon))
 						{
-							_properties.DamageReceivedRegularMult *= 0.8;
+							_properties.DamageReceivedRegularMult *= 0.75;
 						}
 					}
 					else
 					{
-						_properties.DamageReceivedRegularMult *= 0.85;
+						_properties.DamageReceivedRegularMult *= 0.75;
 					}
 				}
 				break;
 				
 			case this.Const.Damage.DamageType.Burning:
-				_properties.DamageReceivedRegularMult *= 1.5;
+				_properties.DamageReceivedRegularMult *= 1.2;
 				break;
 		}
 	}

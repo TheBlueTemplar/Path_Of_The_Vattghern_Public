@@ -26,27 +26,40 @@ this.pov_autopsy_unhold2_blueprint <- this.inherit("scripts/crafting/blueprint",
 
 	function onCraft( _stash )
 	{
-		if (this.Math.rand(1, 100) <= 20)
+	    local item;
+	    if (this.Math.rand(1, 100) <= 20)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_unhold_mutagen_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_unhold_mutagen_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 50)
 			{
-				_stash.add(this.new("scripts/items/loot/deformed_valuables_item"));
+				item = this.new("scripts/items/loot/deformed_valuables_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 40)
 			{
-				_stash.add(this.new("scripts/items/misc/unhold_bones_item"));
+				item = this.new("scripts/items/misc/unhold_bones_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 40)
 			{
-				_stash.add(this.new("scripts/items/misc/frost_unhold_fur_item"));
+				item = this.new("scripts/items/misc/frost_unhold_fur_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 40)
 			{
-				_stash.add(this.new("scripts/items/misc/unhold_heart_item"));
+				item = this.new("scripts/items/misc/unhold_heart_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
-		_stash.add(this.new("scripts/items/supplies/strange_meat_item"));
+		item = this.new("scripts/items/supplies/strange_meat_item");
+		_stash.add(item);
+		if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 	}
 
 

@@ -25,7 +25,15 @@
 		// Chaos Mutation
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
-
+		// I do the meme
+		if (this.actor.getSkills().hasSkill("effects.pov_enemy_mutation_rot"))
+		{
+			local roll = this.Math.rand(1,100);
+			if (roll <= 10)
+			{
+				this.actor.m.Name = "[color="+ ::Const.UI.Color.povEnemyMutation + "]Stoolwurm[/color]";
+			}
+		}
 	}
 
 });

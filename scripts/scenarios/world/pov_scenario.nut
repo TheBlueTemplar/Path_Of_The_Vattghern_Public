@@ -9,7 +9,7 @@ this.pov_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	{
 		this.m.ID = "scenario.pov_last_witchers";
 		this.m.Name = "Path of the Vatt\'ghern";
-		this.m.Description = "[p=c][img]gfx/ui/events/pov_vattghern_origin.png[/img][/p][p] You are a Vatt\'ghern, a professional beastslayer who has come to these lands with the ambition of establishing a new School! The challenges are many, as most view you and your kin as mutants, thus it will be hard to earn the people\'s trust, except for those who also fight against vicious beasts...\n\n[color=" + this.Const.UI.Color.PositiveValue + "]Vatt\'ghern on the Path:[/color] Start with an experienced Vatt\'ghern, who has all the knowledge of mutagen creation and corpse dissection and has also brought a few Trial of the Grasses potions along, and also some strong gear. \n\n[color=" + this.Const.UI.Color.PositiveValue + "]Monster Hunters:[/color] Also start with a few powerful companions. Due to the expertise of your group, you can move faster on the map, and you can spot enemy tracks from further away. Additionally, beasthunting origins, including some rare ones, will appear more frequently and their skillset will be improved. \n\n[color=" + this.Const.UI.Color.NegativeValue + "]Mutants:[/color] Few people will trust you, and even fewer will want to deal with you. You start with significantly low reputation. Most recruits, excluding those who hate beasts and mutants, or are experienced at beasthunting, will demand much more pay to work for you. Also, you will get 15% worse prices overall. \n\n[color=" + this.Const.UI.Color.PositiveValue + "]Spoils Of The Hunt:[/color] 20% Chance for extra drops from monsters, and slightly increased (+15%) corpse and mutagen drop rates due to your knowledge and techniques. \n\n[color=" + this.Const.UI.Color.povEvent + "]This Origin is meant to be a \"headstart\" into PoV, easing the players into the mod by immediately granting access into some of its mid-late game mechanics. [/color][/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/pov_vattghern_origin.png[/img][/p][p] You are a Vatt\'ghern, a professional beastslayer who has come to these lands with the ambition of establishing a new School! The challenges are many, as most view you and your kin as mutants, thus it will be hard to earn the people\'s trust, except for those who also fight against vicious beasts...\n\n[color=" + this.Const.UI.Color.povOriginGood + "]Vatt\'ghern on the Path:[/color] Start with an experienced Vatt\'ghern, who has all the knowledge of mutagen creation and corpse dissection and has also brought a few Trial of the Grasses potions along, and also some strong gear. \n\n[color=" + this.Const.UI.Color.povOriginGood + "]Monster Hunters:[/color] Also start with a few powerful companions. Due to the expertise of your group, you can move faster on the map, and you can spot enemy tracks from further away. Additionally, beasthunting origins, including some rare ones, will appear more frequently and their skillset will be improved. \n\n[color=" + this.Const.UI.Color.povOriginBad + "]Mutants:[/color] Few people will trust you, and even fewer will want to deal with you. You start with significantly low reputation. Most recruits, excluding those who hate beasts and mutants, or are experienced at beasthunting, will demand much more pay to work for you. Also, you will get 15% worse prices overall. \n\n[color=" + this.Const.UI.Color.povOriginGood + "]Spoils Of The Hunt:[/color] 20% Chance for extra drops from monsters, and slightly increased (+15%) corpse and mutagen drop rates due to your knowledge and techniques. \n\n[color=" + this.Const.UI.Color.povEvent + "]This Origin is meant to be a \"headstart\" into PoV, easing the players into the mod by immediately granting access into some of its mid-late game mechanics. [/color][/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 37;
 		this.m.IsFixedLook = true;
@@ -59,8 +59,8 @@ this.pov_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		//bros[0].setName("Vesemir");
 		bros[0].setTitle("The Vatt'ghern");
 		bros[0].setPlaceInFormation(4);
-		bros[0].getSkills().add(this.new("scripts/skills/traits/pov_vattghern_trait"));
-		bros[0].getFlags().increment("pov_ActiveMutations");
+		//bros[0].getSkills().add(this.new("scripts/skills/traits/pov_vattghern_trait"));
+		//bros[0].getFlags().increment("pov_ActiveMutations");
 		bros[0].getSkills().add(this.new("scripts/skills/traits/pov_old_vattghern_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.LegendPotionBrewer);
@@ -137,6 +137,10 @@ this.pov_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		this.World.Flags.add("GotVattghernEvent");
 		this.World.Flags.add("GotVattghern");
 		this.World.Flags.add("GotMedallion");
+		//this.World.Flags.add("GotStrongVattghernEvent");
+		//this.World.Flags.add("GotStrongVattghern");
+		//this.World.Flags.add("DoneVattghernContract");
+		
 		// Reputation and Legends flags
 		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 		this.World.Flags.set("HasLegendCampCrafting", true);
@@ -173,7 +177,7 @@ this.pov_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 			case 11: this.World.Assets.getStash().add(this.new("scripts/items/misc/anatomist/pov_skeleton_mutagen_item")); break;
 			case 12: this.World.Assets.getStash().add(this.new("scripts/items/misc/anatomist/pov_spider_mutagen_item")); break;
 			case 13: this.World.Assets.getStash().add(this.new("scripts/items/misc/anatomist/pov_unhold_mutagen_item")); break;
-			case 14: this.World.Assets.getStash().add(this.new("scripts/items/misc/anatomist/pov_strain_mutagen_item")); break;
+			case 14: this.World.Assets.getStash().add(this.new("scripts/items/misc/anatomist/pov_necromancy_mutagen_item")); break;
 			default: ::TLW.Mod.Debug.printLog("No Mutation found to roll. Roll Number: " + roll);
 		}
 		// Starting Resource Modifiers
@@ -240,7 +244,14 @@ this.pov_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
-			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
+			if (::TLW.EnablePovMainMusic)
+			{
+				this.Music.setTrackList(this.Const.Music.PovMenuTracks, this.Const.Music.CrossFadeTime);
+			}
+			else
+			{
+				this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
+			}
 			this.World.Events.fire("event.pov_scenario_intro");
 		}, null);
 	}

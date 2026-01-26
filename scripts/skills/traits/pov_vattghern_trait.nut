@@ -17,17 +17,24 @@ this.pov_vattghern_trait <- this.inherit("scripts/skills/traits/character_trait"
 		KillsPerRegen = 14,
 		KillsPerDamage = 14,
 		KillsPerResolve = 13,
+		KillsPerIntensity = 14,
+		KillsPerWage = 2,
 		StartAction = 1,
 		StartInitiative = 1,
 		StartRegen = 0,
 		StartDamage = 0.5,
 		StartResolve = 3.5,
+		StartIntensity = 0,
+		StartWage = 25,
 		MaxScale = 201,
+		MaxScaleWage = 351,
 		MaxAction = 2,
 		MaxInitiative = 12,
 		MaxRegen = 15,
 		MaxDamage = 15,
 		MaxResolve = 20,
+		MaxIntensity = 15,
+		MaxWage = 200,
 		IsActivated = false
 
 		// Old Scaling
@@ -55,14 +62,14 @@ this.pov_vattghern_trait <- this.inherit("scripts/skills/traits/character_trait"
 		this.m.ID = "trait.pov_witcher";
 		this.m.Name = "Vatt'ghern";
 		this.m.Icon = "ui/traits/pov_vattghern.png";
-		this.m.Description = "%name% has survived the [color=" + this.Const.UI.Color.povPerkBlue + "]Trial of the grasses[/color] and became a Vatt'ghern. Specialized in killing monsters, they are faster and stronger than normal humans, and can ingest special [color=" + this.Const.UI.Color.povPerkBlue + "]mutagens[/color]. The amount of mutagens depends on the character\'s level, but there are exceptions. \n\n Their skills further improve over time as they get kills and mutations. Bonuses Cap at 200 kills. \n\n Due to the Vatt'ghern's skillset, they demand much larger pay than the common mercenary, and attract stronger opponents. [color=" + this.Const.UI.Color.povPerkBlue + "] Also, your company can now take special Vatt\'ghern contracts[/color]";
+		this.m.Description = "%name% has survived the [color=" + this.Const.UI.Color.povPerkBlue + "]Trial of the grasses[/color] and became a Vatt'ghern. They now are faster and stronger than normal humans, and can ingest special [color=" + this.Const.UI.Color.povPerkBlue + "]mutagens[/color]. The amount of mutagens depends on the character\'s level [color=" + this.Const.UI.Color.povTooltipGray + "](1 + 1 per 7 Levels), but there are exceptions[/color]. \n\n Their skills further improve over time as they get kills and mutations. [color=" + this.Const.UI.Color.povTooltipGray + "]Softcap at 200 kills - no cap for mutations scaling[/color]. \n\n Due to the Vatt'ghern's skillset, they demand much larger pay and attract stronger opponents. [color=" + this.Const.UI.Color.povPerkBlue + "] Also, your company can now take special Vatt\'ghern contracts[/color]";
 		this.m.Order = this.Const.SkillOrder.Background - 3;
 	}
 
 	getMutationLimit = function()
 	{
 		local actor = this.getContainer().getActor();
-		// Checks For Mutation Limit ( Currently its 1 + 7 per 6 Levels)
+		// Checks For Mutation Limit ( Currently its 1 + 1 per 7 Levels)
 		local mutationCount = this.getMutations();
 		local mutationLimit = 1 + this.Math.floor(actor.getLevel()/7);
 
@@ -198,18 +205,31 @@ this.pov_vattghern_trait <- this.inherit("scripts/skills/traits/character_trait"
 			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.round(resolve) + "[/color]% Resolve"
 		});
 
+		local intensity = this.getIntensityBonus();
+		result.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/pov_intensity.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.round(intensity) + "[/color]% Sign Intensity"
+		});
+
+		local wage = this.getWagePenalty();
+		// no wage mod if no wage paid
+		if(this.getContainer().getActor().getCurrentProperties().DailyWage != 0)
+		{
+			result.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/money2.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]+" + this.Math.round(wage) + "[/color]% Daily Wage"
+			});
+		}
+
 		result.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Greatly increased chance to [color=" + this.Const.UI.Color.PositiveValue + "]survive[/color] being struck down."
-		});
-
-		result.push({
-			id = 10,
-			type = "text",
-			icon = "ui/icons/money2.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]+100[/color]% Daily Wage"
 		});
 
 		result.push({
@@ -226,6 +246,12 @@ this.pov_vattghern_trait <- this.inherit("scripts/skills/traits/character_trait"
 	// Vattghern Eyes and Bust Effect
 	function onAdded()
 	{
+		// Skill Actives Test
+		/*if (!this.m.Container.hasSkill("actives.pov_igni"))
+		{
+			this.m.Container.add(::new("scripts/skills/actives/pov_igni_skill"));
+		}*/
+
 		// Check for story 03 special event to fire - not on PoV origins
 		if (!::World.Flags.has("GotVattghernEvent"))
 		{
@@ -258,12 +284,33 @@ this.pov_vattghern_trait <- this.inherit("scripts/skills/traits/character_trait"
 
 	function onUpdate( _properties )
 	{
-			_properties.InitiativeMult *= (1+ (0.01 * (this.getInitiativeBonus())));
-			_properties.ActionPoints += this.getActionBonus();
-			_properties.DamageTotalMult *= (1+ (0.01 * (this.getDamageBonus())));
-			_properties.BraveryMult *= (1+ (0.01 * (this.getResolveBonus())));
-			_properties.DailyWageMult *= 2;
-			_properties.SurviveWithInjuryChanceMult = 2.00; // 2 x 33 = 66%
+		_properties.InitiativeMult *= (1+ (0.01 * (this.getInitiativeBonus())));
+		_properties.ActionPoints += this.getActionBonus();
+		_properties.DamageTotalMult *= (1+ (0.01 * (this.getDamageBonus())));
+		_properties.BraveryMult *= (1+ (0.01 * (this.getResolveBonus())));
+		_properties.DailyWageMult *= (1+ (0.01 * (this.getWagePenalty())));
+		_properties.SignIntensity += (0.01 * (this.getIntensityBonus()));
+		_properties.SurviveWithInjuryChanceMult = 2.00; // +33% chance --> 2 x 33 = 66%	
+
+		if (!this.getContainer().getActor().isPlacedOnMap())
+		{
+			// If not in battle, then this should be a trait and not a status effect
+			this.m.Type = ::Const.SkillType.Trait;
+		}else
+		{
+			// If not in battle, then this should be a trait and not a status effect
+			this.m.Type = ::Const.SkillType.StatusEffect;
+			this.m.Order = this.Const.SkillOrder.Background - 3;
+		}
+
+		local actor = this.getContainer().getActor();
+		if (!::World.Flags.has("GotStrongVattghernEvent"))
+		{
+			if (actor.getLevel() >= 12 && this.getMutations() >= 2)
+			{
+				::World.Flags.add("GotStrongVattghernEvent");
+			}
+		}
 	}
 
 	function getMutations()
@@ -323,6 +370,28 @@ this.pov_vattghern_trait <- this.inherit("scripts/skills/traits/character_trait"
 		}else
 		{
 			return this.m.MaxResolve + (getMutations() * 1.50);
+		}
+	}
+
+	function getIntensityBonus()
+	{
+		if(this.getContainer().getActor().getLifetimeStats().Kills < this.m.MaxScale)
+		{
+			return this.m.StartIntensity + (this.getContainer().getActor().getLifetimeStats().Kills / this.m.KillsPerIntensity) + (getMutations() * 1.50);
+		}else
+		{
+			return this.m.MaxIntensity + (getMutations() * 1.50);
+		}
+	}
+
+	function getWagePenalty()
+	{
+		if(this.getContainer().getActor().getLifetimeStats().Kills < this.m.MaxScaleWage)
+		{
+			return this.m.StartWage + (this.getContainer().getActor().getLifetimeStats().Kills / this.m.KillsPerWage);
+		}else
+		{
+			return this.m.MaxWage;
 		}
 	}
 

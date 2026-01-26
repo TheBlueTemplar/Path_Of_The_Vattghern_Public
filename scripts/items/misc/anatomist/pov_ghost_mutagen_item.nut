@@ -5,7 +5,7 @@ this.pov_ghost_mutagen_item <- this.inherit("scripts/items/misc/anatomist/pov_an
 		this.pov_anatomist2_potion_item.create();
 		this.m.ID = "misc.pov_ghost_mutagen";
 		this.m.Name = "Spirit Mutagen";
-		this.m.Description = "Infused with the eerie essence of the otherworldly Geists, this mutagen imbues its bearer with a chilling aura of dread and supernatural power. The recipient gains the [color=" + this.Const.UI.Color.PositiveValue + "]Fearsome[/color] perk, overwhelming enemies with terror and breaking their resolve—or, if already Fearsome, their own Resolve is bolstered further, allowing them to remain steadfast even in the face of the gravest horrors.\n\n Their strikes gain spectral precision, penetrating armor with ease, aided by a flat bonus to armor penetration. However, this haunting power comes at a price: direct damage to armor is significantly reduced, forcing the bearer to bypass defenses rather than destroy them outright. An ideal choice for those who wish to instill fear and exploit vulnerability in their foes.";
+		this.m.Description = "Infused with the eerie essence of the otherworldly Geists, this mutagen imbues its bearer with a chilling aura of dread and supernatural power. The recipient gains the [color=" + this.Const.UI.Color.povTooltipRed + "]Fearsome perk[/color], overwhelming enemies with terror and breaking their resolve—or, if already Fearsome, their own Resolve is bolstered further, allowing them to remain steadfast even in the face of the gravest horrors.\n\n Their strikes gain spectral precision, [color=" + this.Const.UI.Color.povTooltipRed + "]penetrating armor with ease[/color]. They also get the ability to completely ignore enemie\'s armor with a [color=" + this.Const.UI.Color.povTooltipRed + "]ghastly attack[/color]. \n\n However, this haunting power comes at a price: [color=" + this.Const.UI.Color.povTooltipRed + "]Damage to armor is significantly reduced[/color], forcing the bearer to bypass defenses rather than destroy them outright. An ideal choice for those who wish to instill fear and exploit vulnerability in their foes.";
 		this.m.IconLarge = "";
 		this.m.Icon = "consumables/pov_potion_ghost.png";
 		this.m.Value = 500;
@@ -61,7 +61,7 @@ this.pov_ghost_mutagen_item <- this.inherit("scripts/items/misc/anatomist/pov_an
 			id = 65,
 			type = "text",
 			icon = "ui/tooltips/warning.png",
-			text = "Must have Witcher Mutation and not already used this mutagen."
+			text = "Must be a Vatt\'ghern or a Mutant, and not already used this mutagen."
 		});
 
 		return result;

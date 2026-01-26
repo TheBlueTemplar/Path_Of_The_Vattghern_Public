@@ -3,7 +3,7 @@ this.pov_hexe_curse_slave_effect <- this.inherit("scripts/skills/skill", {
 		Master = null,
 		Color = this.createColor("#ffffff"),
 		IsActivated = false,
-		TurnsLeft = 3,
+		TurnsLeft = 2,
 		HpReduction = 0
 	},
 	function activate()
@@ -65,7 +65,7 @@ this.pov_hexe_curse_slave_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local maxHp = actor.getHitpointsMax();
-		local damageTaken = ((_damage / 100) * maxHp) * 0.5;
+		local damageTaken = ((_damage / 100) * maxHp) * 0.65;
 		this.m.HpReduction += (damageTaken / maxHp) * 50;
 
 		if (this.m.SoundOnUse.len() != 0)

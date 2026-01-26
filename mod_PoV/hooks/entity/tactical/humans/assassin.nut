@@ -1,7 +1,7 @@
 ::TLW.HooksMod.hook("scripts/entity/tactical/humans/assassin", function ( q ) {
 
 	q.onInit = @(__original) function()
-	{
+    {
 		__original()
 
 		// Enemy Mutation System

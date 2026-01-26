@@ -5,7 +5,7 @@ this.pov_hexe_mutagen_item <- this.inherit("scripts/items/misc/anatomist/pov_ana
 		this.pov_anatomist2_potion_item.create();
 		this.m.ID = "misc.pov_hexe_mutagen";
 		this.m.Name = "Hexe Mutagen";
-		this.m.Description = "This mutagen weaves an aura of unnatural charm and influence, subtly bending fate and fortune to the user\'s favor. Their words carry a strange weight, making deals and bargains more favorable, while prospective recruits seem drawn to their presence, their hiring costs mysteriously lowered.\n\n A sinister luck follows them into battle, warping probability itself...foes may find their strikes inexplicably missing, as if some unseen force denies them a clean hit. Additionally, they gain the ability to strengthen an ally or weaken an enemy by beguiling them.\n\n However, this power comes at a price. The same eerie presence that twists fate also provokes unease, drawing enemy attention more than it should. Worse still, unseen forces stir around them, leading to unpredictable misfortunes that can manifest at the most inopportune moments.";
+		this.m.Description = "This mutagen weaves an aura of unnatural charm and influence, subtly bending fate and fortune to the user\'s favor. Their words carry a strange weight, [color=" + this.Const.UI.Color.povTooltipRed + "]making deals and bargains more favorable, while prospective recruits seem drawn to their presence, their hiring costs mysteriously lowered[/color].\n\n A [color=" + this.Const.UI.Color.povTooltipRed + "]sinister luck[/color] follows them into battle, warping probability itself...foes may find their strikes inexplicably missing, as if some unseen force denies them a clean hit. Additionally, they gain the [color=" + this.Const.UI.Color.povTooltipRed + "]ability to strengthen an ally or weaken an enemy[/color] by beguiling them.\n\n However, this power comes at a price. The same eerie presence that twists fate also provokes unease, drawing enemy attention more than it should. Worse still, [color=" + this.Const.UI.Color.povTooltipRed + "]unseen forces stir around them, leading to unpredictable misfortunes[/color] that can manifest at the most inopportune moments.";
 		this.m.IconLarge = "";
 		this.m.Icon = "consumables/pov_potion_hexe.png";
 		this.m.Value = 600;
@@ -79,11 +79,19 @@ this.pov_hexe_mutagen_item <- this.inherit("scripts/items/misc/anatomist/pov_ana
 		local brothers = this.World.getPlayerRoster().getAll();
 		foreach( bro in brothers )
 		{
-			if(bro.getSkills().hasSkill("effects.pov_hexe_mutagen"))
+			if(bro.getSkills().hasSkill("effects.pov_hexe_mutagen") || bro.getSkills().hasSkill( "effects.pov_hexe_mutagen_upgraded"))
 			{
 				this.Sound.play("sounds/bottle_01.wav", this.Const.Sound.Volume.Inventory);
+				::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip("You already have someone with the hexe mutation in your company."));
 				return;
 			}
+		}
+
+		if (_actor.getSkills().hasSkill( "effects.pov_hexe_mutagen_upgraded"))
+		{
+			this.Sound.play("sounds/bottle_01.wav", this.Const.Sound.Volume.Inventory);
+			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip("This character cannot get the base mutation effect, when its upgraded version is active. Nice try."));
+			return false;
 		}
 		
 		return ::TLW.MutatePlayer.mutatePlayer(_actor, ::TLW.PlayerMutation.Hexe);

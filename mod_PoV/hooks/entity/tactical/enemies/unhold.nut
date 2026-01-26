@@ -71,7 +71,7 @@
 		if (this.actor.getSkills().hasSkill("effects.pov_enemy_mutation_vampire"))
 		{
 			local roll = this.Math.rand(1,100);
-			if (roll <= 3)
+			if (roll <= 10)
 			{
 				if (this.actor.hasSprite("pov_head_effect"))
 				{
@@ -106,7 +106,7 @@
 		if (this.actor.getSkills().hasSkill("effects.pov_enemy_mutation_rot"))
 		{
 			local roll = this.Math.rand(1,100);
-			if (roll <= 4)
+			if (roll <= 10)
 			{
 				this.actor.m.Name = "[color="+ ::Const.UI.Color.povEnemyMutation + "]Farthold[/color]";
 			}

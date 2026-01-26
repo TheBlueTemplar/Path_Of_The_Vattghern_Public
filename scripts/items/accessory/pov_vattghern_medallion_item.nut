@@ -54,6 +54,7 @@ this.pov_vattghern_medallion_item <- this.inherit("scripts/items/accessory/acces
 			});
 		}
 
+		// weird way to implement different tooltips depending on who equips them
 		if (this.getContainer() != null)
 		{
 			local actor = this.getContainer().getActor();
@@ -73,6 +74,12 @@ this.pov_vattghern_medallion_item <- this.inherit("scripts/items/accessory/acces
 						icon = "ui/icons/special.png",
 						text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color]"
 					});
+					result.push({
+						id = 11,
+						type = "text",
+						icon = "ui/icons/damage_dealt.png",
+						text = "Increases all damage vs mutants, beasts, undead and spirits by [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color]"
+					});
 				} 
 				else
 				{
@@ -88,16 +95,22 @@ this.pov_vattghern_medallion_item <- this.inherit("scripts/items/accessory/acces
 		else
 		{
 			result.push({
-						id = 10,
-						type = "text",
-						icon = "ui/icons/bravery.png",
-						text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Resolve"
-					});
+				id = 10,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Resolve"
+			});
 			result.push({
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color]"
+			});
+			result.push({
+				id = 11,
+				type = "text",
+				icon = "ui/icons/damage_dealt.png",
+				text = "Increases all damage vs mutants, beasts, undead and spirits by [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color]"
 			});
 		}
 		
@@ -147,5 +160,25 @@ this.pov_vattghern_medallion_item <- this.inherit("scripts/items/accessory/acces
 			}
 		}
 	}	
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties)
+	{
+		this.accessory.onAnySkillUsed(_skill, _targetEntity, _properties);
+		if (_targetEntity != null)
+		{
+			local actor = this.getContainer().getActor();
+			if (actor != null)
+			{
+				if (actor.getSkills().hasSkill("trait.pov_witcher"))
+				{
+					if(this.Const.EntityType.getDefaultFaction(_targetEntity.getType()) == this.Const.FactionType.Beasts || _targetEntity.getFlags().has("ghost") || _targetEntity.getFlags().has("undead") || _targetEntity.getFlags().has("mutant"))
+					{
+						_properties.DamageTotalMult *= 1.05;
+					}
+				}	
+			}
+		}	
+	}
+
 });
 

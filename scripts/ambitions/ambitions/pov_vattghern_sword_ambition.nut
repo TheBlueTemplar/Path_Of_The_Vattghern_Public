@@ -22,7 +22,7 @@ this.pov_vattghern_sword_ambition <- this.inherit("scripts/ambitions/ambition", 
 		{
 			if (bro.getSkills().hasSkill("trait.pov_witcher"))
 			{
-				if (bro.getLevel() >= 5)
+				if (bro.getLevel() >= 10)
 				{
 					valid = true;
 				}

@@ -101,17 +101,20 @@ this.pov_enemy_mutation_goblin <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		// Buffs
-		_properties.MovementFatigueCostAdditional += -2;
-		_properties.RangedSkillMult *= 1.18;
-		_properties.RangedDamageMult *= 1.12;
-		_properties.RangedDefenseMult *= 1.15;
-		_properties.RangedAttackBlockedChanceMult = this.Math.max(0, _properties.RangedAttackBlockedChanceMult - 0.20); //ty satan
+		if(_properties.YrdenTrapped == false)
+		{
+			// Buffs
+			_properties.MovementFatigueCostAdditional += -2;
+			_properties.RangedSkillMult *= 1.15;
+			_properties.RangedDamageMult *= 1.15;
+			_properties.RangedDefenseMult *= 1.15;
+			_properties.RangedAttackBlockedChanceMult = this.Math.max(0, _properties.RangedAttackBlockedChanceMult - 0.20); //ty satan
+		}
 		// Debuffs
 		_properties.Hitpoints += 1; // Fallback for enemies with 1 maxHp
-		_properties.HitpointsMult *= 0.70;
+		_properties.HitpointsMult *= 0.65;
 		_properties.MeleeDefenseMult *= 0.80;
-		_properties.BraveryMult *= 0.85;
+		_properties.BraveryMult *= 0.80;
 		_properties.Stamina += this.getPenalty();
 		_properties.Initiative += this.getPenalty();
 	}

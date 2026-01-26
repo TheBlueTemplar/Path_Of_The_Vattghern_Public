@@ -26,19 +26,25 @@ this.pov_autopsy_ghost4_blueprint <- this.inherit("scripts/crafting/blueprint", 
 
 	function onCraft( _stash )
 	{
-		if (this.Math.rand(1, 100) <= 25)
+    	local item;
+    	if (this.Math.rand(1, 100) <= 25)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_ghost_mutagen_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_ghost_mutagen_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 20)
 			{
-				_stash.add(this.new("scripts/items/armor_upgrades/pov_ghost_plates_upgrade"));
+				item = this.new("scripts/items/armor_upgrades/pov_ghost_plates_upgrade");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 40)
 			{
-				_stash.add(this.new("scripts/items/loot/pov_old_crest_item"));
+				item = this.new("scripts/items/loot/pov_old_crest_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}	
-
 	}
 
 });

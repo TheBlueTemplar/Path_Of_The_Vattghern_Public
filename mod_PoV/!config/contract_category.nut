@@ -8,8 +8,8 @@
 ::Const.Contracts.CategoryLimits.Vattghern <- [1,1,1]
 
 // Add my contracts to existing legends system (can be Economy,Battle,Hunt,Legendary types)
-//::Const.Contracts.ContractCategoryMap.destroy_geists_location_contract <- this.Const.Contracts.Categories.Battle;
 ::Const.Contracts.ContractCategoryMap.destroy_geists_location_contract <- this.Const.Contracts.Categories.Vattghern;
+::Const.Contracts.ContractCategoryMap.destroy_forsaken_location_contract <- this.Const.Contracts.Categories.Vattghern;
 
 // Map the contract category icons that will be used in the settlement screen
 ::Const.Contracts.ContractCategoryIconMap.Vattghern <- "ui/icons/contract_type_vattghern"

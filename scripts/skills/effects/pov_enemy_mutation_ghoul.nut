@@ -69,7 +69,9 @@ this.pov_enemy_mutation_ghoul <- this.inherit("scripts/skills/skill", {
 	}
 
 	function calculateBonus()
-	{
+	{	
+		local actor = this.getContainer().getActor();
+
 		if (!("Entities" in this.Tactical))
 		{
 			return [0, 0];
@@ -83,7 +85,11 @@ this.pov_enemy_mutation_ghoul <- this.inherit("scripts/skills/skill", {
 			return [0, 0];
 		}
 
-		local actor = this.getContainer().getActor();
+		if (actor.getCurrentProperties().YrdenTrapped)
+		{
+			return [0, 0];
+		}
+
 		local entities = this.Tactical.Entities.getAllInstancesAsArray();
 		local allies = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
 		local allyCount = 0;
@@ -172,7 +178,7 @@ this.pov_enemy_mutation_ghoul <- this.inherit("scripts/skills/skill", {
 		}
 		_properties.Threat += 8;
 		// Debuffs
-		_properties.ThresholdToReceiveInjuryMult *= 0.75;
+		_properties.ThresholdToReceiveInjuryMult *= 0.66;
 		_properties.RangedSkillMult *= 0.80;
 		_properties.MeleeDamageMult *= 0.92;
 	}

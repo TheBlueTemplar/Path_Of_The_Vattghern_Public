@@ -15,9 +15,10 @@
 		if (!::MSU.isKindOf(this.actor, "player")) 
 		{
 			// Corpse Rate Modifier Example
-			local corpseDrop = ::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.FleshGolem);
-			corpseDrop[0] += 12; // Increase corpse drop chance
-			this.actor.m.OnDeathLootTable.push([corpseDrop[0],corpseDrop[1]]);
+			//local corpseDrop = ::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.FleshGolem);
+			//corpseDrop[0] += 12; // Increase corpse drop chance
+			//this.actor.m.OnDeathLootTable.push([corpseDrop[0],corpseDrop[1]]);
+			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.GreaterFleshGolem));
 	  	}
 		
 		/// Enemy Mutation System
@@ -29,7 +30,19 @@
 		// Chaos Mutation
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
-
+		// Remove some shit
+		if (this.actor.getSkills().hasSkill("perk.nimble"))
+		{
+			this.actor.getSkills().removeByID("perk.nimble");
+		}
+		if (this.actor.getSkills().hasSkill("perk.legend_anchor"))
+		{
+			this.actor.getSkills().removeByID("perk.legend_anchor");
+		}
+		if (this.actor.getSkills().hasSkill("perk.legend_battleheart"))
+		{
+			this.actor.getSkills().removeByID("perk.legend_battleheart");
+		}
 	}
 
 });

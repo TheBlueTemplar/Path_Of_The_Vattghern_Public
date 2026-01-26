@@ -19,7 +19,7 @@ this.pov_ghost_plates_upgrade <- this.inherit("scripts/items/legend_armor/legend
 		this.m.Value = 2400;
 		this.m.Condition = 75;
 		this.m.ConditionMax = 75;
-		this.m.StaminaModifier = -6;
+		this.m.StaminaModifier = -5;
 	}
 
 	function getTooltip()

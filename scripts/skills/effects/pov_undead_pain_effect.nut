@@ -42,7 +42,7 @@ this.pov_undead_pain_effect <- this.inherit("scripts/skills/skill", {
 			{
 				id = 11,
 				type = "text",
-				icon = "ui/icons/melee_defense.png",
+				icon = "ui/icons/pov_melee_ranged_defense.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-12%[/color] Melee and Ranged Defense"
 			},
 			{

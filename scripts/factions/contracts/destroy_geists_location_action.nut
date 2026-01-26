@@ -3,7 +3,7 @@ this.destroy_geists_location_action <- this.inherit("scripts/factions/faction_ac
 	function create()
 	{
 		this.m.ID = "destroy_geists_location_action";
-		this.m.Cooldown = this.World.getTime().SecondsPerDay * 14;
+		this.m.Cooldown = this.World.getTime().SecondsPerDay * 18;
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();

@@ -128,7 +128,7 @@ this.Const.World.Spawn.Zombies.Troops.extend([
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.SwordGhost,
-                MinR = 125,
+                MinR = 225,
                 Cost = 45
             }
         ]
@@ -138,8 +138,8 @@ this.Const.World.Spawn.Zombies.Troops.extend([
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.ArmorGhost,
-                MinR = 400,
-                Cost = 55
+                MinR = 475,
+                Cost = 60
             }
         ]
     }
@@ -152,7 +152,7 @@ this.Const.World.Spawn.ZombiesAndGhosts.Troops.extend([
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.SwordGhost,
-                MinR = 150,
+                MinR = 250,
                 Cost = 30
             }
         ]
@@ -162,8 +162,8 @@ this.Const.World.Spawn.ZombiesAndGhosts.Troops.extend([
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.ArmorGhost,
-                MinR = 400,
-                Cost = 50
+                MinR = 500,
+                Cost = 55
             }
         ]
     }
@@ -176,7 +176,7 @@ this.Const.World.Spawn.ZombiesOrZombiesAndGhosts.Troops.extend([
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.SwordGhost,
-                MinR = 150,
+                MinR = 250,
                 Cost = 30
             }
         ]
@@ -186,8 +186,8 @@ this.Const.World.Spawn.ZombiesOrZombiesAndGhosts.Troops.extend([
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.ArmorGhost,
-                MinR = 400,
-                Cost = 50
+                MinR = 500,
+                Cost = 55
             }
         ]
     }
@@ -200,7 +200,7 @@ this.Const.World.Spawn.Ghosts.Troops.extend([
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.SwordGhost,
-                MinR = 150,
+                MinR = 250,
                 Cost = 30
             }
         ]
@@ -210,8 +210,8 @@ this.Const.World.Spawn.Ghosts.Troops.extend([
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.ArmorGhost,
-                MinR = 400,
-                Cost = 50
+                MinR = 500,
+                Cost = 55
             }
         ]
     }
@@ -224,7 +224,7 @@ this.Const.World.Spawn.Necromancer.Troops.extend([
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.SwordGhost,
-                MinR = 150,
+                MinR = 250,
                 Cost = 30
             }
         ]
@@ -234,8 +234,8 @@ this.Const.World.Spawn.Necromancer.Troops.extend([
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.ArmorGhost,
-                MinR = 400,
-                Cost = 50
+                MinR = 500,
+                Cost = 55
             }
         ]
     }
@@ -248,7 +248,7 @@ this.Const.World.Spawn.NecromancerSouthern.Troops.extend([
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.SwordGhost,
-                MinR = 150,
+                MinR = 250,
                 Cost = 30
             }
         ]
@@ -258,9 +258,20 @@ this.Const.World.Spawn.NecromancerSouthern.Troops.extend([
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.ArmorGhost,
-                MinR = 400,
-                Cost = 50
+                MinR = 500,
+                Cost = 55
             }
         ]
-    }
+    },
+    {
+        Weight = 10,
+        Types = [
+            {
+                Type = this.Const.World.Spawn.Troops.ZombieTreasureHunter,
+                MinR = 300,
+                Cost = 25
+            }
+        ]
+    },
+
 ]);

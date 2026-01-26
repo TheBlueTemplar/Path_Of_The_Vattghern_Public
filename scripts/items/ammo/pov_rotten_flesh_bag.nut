@@ -5,7 +5,7 @@ this.pov_rotten_flesh_bag <- this.inherit("scripts/items/ammo/ammo", {
 		this.ammo.create();
 		this.m.ID = "ammo.powder";
 		this.m.Name = "Rotten Flesh Powder Bag";
-		this.m.Description = "A bag of black powder, grotesqely infused with grafted flesh and the essence of rot. Used for arming exotic firearms, to rain death and rot to any enemy, at the cost of damage. \n\n Is automatically refilled after each battle if you have enough ammunition, and the stomach for it.";
+		this.m.Description = "A bag of black powder, grotesquely infused with grafted flesh and the essence of rot. Used for arming exotic firearms, to rain death and rot to any enemy, at the cost of damage. \n\n Is automatically refilled after each battle if you have enough ammunition, and the stomach for it.";
 		this.m.Icon = "ammo/pov_flesh_powder_bag.png";
 		this.m.IconEmpty = "ammo/pov_flesh_powder_bag_empty.png";
 		this.m.SlotType = this.Const.ItemSlot.Ammo;
@@ -82,19 +82,19 @@ this.pov_rotten_flesh_bag <- this.inherit("scripts/items/ammo/ammo", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Applies the [color=" + this.Const.UI.Color.PositiveValue + "]\"Foul Stench\"[/color] effect, as well as lower the morale of enemies hit."
+			text = "Applies the [color=" + this.Const.UI.Color.PositiveValue + "]\"Foul Stench\"[/color] effect, and has a chance to lower the morale of enemies hit."
 		});
 		result.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/bravery.png",
-			text = "User has [color=" + this.Const.UI.Color.NegativeValue + "]-5 [/color] Resolve, due to the ammo\'s sickening stench."
+			text = "User has [color=" + this.Const.UI.Color.NegativeValue + "]-8[/color] Resolve, due to the ammo\'s sickening stench."
 		});
 		result.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/ranged_skill.png",
-			text = "Deals [color=" + this.Const.UI.Color.NegativeValue + "]-15% [/color] ranged damage, with [color=" + this.Const.UI.Color.NegativeValue + "]-25% [/color] effectiveness against armor"
+			text = "Deals [color=" + this.Const.UI.Color.NegativeValue + "]-12%[/color] Ranged Damage, with [color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Effectiveness against armor"
 		});
 
 		return result;

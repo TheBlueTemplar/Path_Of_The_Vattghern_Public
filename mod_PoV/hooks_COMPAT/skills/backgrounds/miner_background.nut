@@ -1,0 +1,28 @@
+::TLW.HooksMod.hook("scripts/skills/backgrounds/miner_background", function(q)
+{
+	q.getTooltip = @(__original) function()
+	{
+		local ret = __original();
+		ret.push(
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/damage_dealt.png",
+				text = "Damage done against ifrits and rock unholds increased by [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color]."
+			}
+		);
+		return ret;
+	}
+
+	q.onAnySkillUsed = @(__original) function (_skill, _targetEntity, _properties)
+	{
+		__original(_skill, _targetEntity, _properties);
+		if (_skill != null && _targetEntity != null)
+		{
+			if(_targetEntity.getType() == this.Const.EntityType.LegendRockUnhold || _targetEntity.getType() == this.Const.EntityType.SandGolem || _targetEntity.getFlags().has("pov_mutant_sandgolem"))
+			{
+				_properties.DamageTotalMult *= 1.15;
+			}
+		}	
+	}
+})

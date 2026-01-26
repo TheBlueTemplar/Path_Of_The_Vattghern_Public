@@ -1,8 +1,8 @@
 this.pov_enemy_mutation_schrat <- this.inherit("scripts/skills/skill", {
 	m = {
-		HeadArmorBoost = 40,
+		HeadArmorBoost = 45,
 		HeadDamageTaken = 0,
-		BodyArmorBoost = 40,
+		BodyArmorBoost = 45,
 		BodyDamageTaken = 0,
 		Spawned = 0
 	},
@@ -98,7 +98,7 @@ this.pov_enemy_mutation_schrat <- this.inherit("scripts/skills/skill", {
 		_properties.ArmorMax[this.Const.BodyPart.Body] += this.m.BodyArmorBoost;
 		_properties.IsImmuneToKnockBackAndGrab = true;
 		// DEBUFFS
-		_properties.MovementFatigueCostMult *= 1.3;
+		_properties.MovementFatigueCostMult *= 1.5;
 
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
@@ -162,7 +162,7 @@ this.pov_enemy_mutation_schrat <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 
 		// Max 3 Spawn per battle
-		if (_damageHitpoints >= actor.getHitpointsMax() * 0.15 && this.m.Spawned < 3)
+		if (_damageHitpoints >= actor.getHitpointsMax() * 0.15 && this.m.Spawned < 3 && !actor.getCurrentProperties().YrdenTrapped)
 		{
 			local candidates = [];
 			local myTile = actor.getTile();

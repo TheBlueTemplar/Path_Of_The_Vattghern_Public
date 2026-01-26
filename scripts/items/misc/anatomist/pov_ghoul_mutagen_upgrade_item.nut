@@ -5,7 +5,7 @@ this.pov_ghoul_mutagen_upgrade_item <- this.inherit("scripts/items/misc/anatomis
 		this.pov_anatomist2_potion_item.create();
 		this.m.ID = "misc.pov_ghoul_mutagen_upgrade";
 		this.m.Name = "[color="+ ::Const.UI.Color.povEnemyMutation + "]Skin Ghoul Mutagen[/color]";
-		this.m.Description = "This mutagen is of a very rare and special kind, only able to be of use to those already attuned to the ghoul's mutations. Instead of granting new boons to the Vatt\'ghern, it instead improves their already existing ghoul mutation, thanks to the far more potent genes and characteristics of this mutagen. \n\n Expect this process to improve every aspect of the previous mutation, as well as limiting its drawbacks, without limiting the mutagenic potential of the Vatt\'ghern. Make good use of this!";
+		this.m.Description = "This mutagen is of a very rare and special kind, only able to be of use to those already attuned to the nachzehrer's mutations. Instead of granting new boons to the Vatt\'ghern, it instead improves their already existing nachzehrer mutation, thanks to the far more potent genes and characteristics of this mutagen. \n\n Expect this process to improve every aspect of the previous mutation, as well as limiting its drawbacks, without limiting the mutagenic potential of the Vatt\'ghern. Make good use of this!";
 		this.m.IconLarge = "";
 		this.m.Icon = "consumables/pov_potion_ghoul_upgrade.png";
 		this.m.Value = 2500;
@@ -61,14 +61,14 @@ this.pov_ghoul_mutagen_upgrade_item <- this.inherit("scripts/items/misc/anatomis
 			id = 65,
 			type = "text",
 			icon = "ui/tooltips/warning.png",
-			text = "Must have Witcher Mutation AND the Spider Mutation to use this mutagen."
+			text = "Must be a Vatt\'ghern AND have the Nachzehrer Mutation to use this mutagen."
 		});
 
 		result.push({
 			id = 65,
 			type = "text",
 			icon = "ui/tooltips/warning.png",
-			text = "Upgrades the Ghoul Mutation. Does not count to mutation limit"
+			text = "Upgrades the Nachzehrer Mutation. Does not count to mutation limit"
 		});
 
 		return result;

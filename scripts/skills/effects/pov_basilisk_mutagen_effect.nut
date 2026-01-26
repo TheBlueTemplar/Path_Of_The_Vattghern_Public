@@ -122,7 +122,6 @@ this.pov_basilisk_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Container.add(::new("scripts/skills/actives/pov_glare_skill"));
 		}
-
 	}
 
 	function onTurnStart()

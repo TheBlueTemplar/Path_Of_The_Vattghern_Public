@@ -26,27 +26,37 @@ this.pov_autopsy_hexe_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function onCraft( _stash )
 	{
-		if (this.Math.rand(1, 100) <= 15)
+	    local item;
+	    if (this.Math.rand(1, 100) <= 15)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_hexe_mutagen_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_hexe_mutagen_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 30)
 			{
-				_stash.add(this.new("scripts/items/misc/witch_hair_item"));
+				item = this.new("scripts/items/misc/witch_hair_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 30)
 			{
-				_stash.add(this.new("scripts/items/misc/mysterious_herbs_item"));
+				item = this.new("scripts/items/misc/mysterious_herbs_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 25)
 			{
-				_stash.add(this.new("scripts/items/loot/jade_broche_item"));
+				item = this.new("scripts/items/loot/jade_broche_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}	
 		if (this.Math.rand(1, 100) <= 30)
 			{
-				_stash.add(this.new("scripts/items/misc/poisoned_apple_item"));
+				item = this.new("scripts/items/misc/poisoned_apple_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
-
 	}
 
 });

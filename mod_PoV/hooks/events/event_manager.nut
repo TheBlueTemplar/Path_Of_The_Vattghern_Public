@@ -13,6 +13,7 @@
 		this.addSpecialEvent("event.pov_story_01");
 		this.addSpecialEvent("event.pov_story_02");
 		this.addSpecialEvent("event.pov_story_03");
+		this.addSpecialEvent("event.pov_story_04");
 		this.addSpecialEvent("event.pov_mutant_scaling");
 		this.m.LastEventTime = this.Time.getVirtualTimeF();
 	}

@@ -92,8 +92,8 @@ this.pov_enemy_mutation_unhold <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate(_properties)
 	{
-		_properties.HitpointsMult *= 1.40;
-		_properties.Hitpoints += 25;
+		_properties.HitpointsMult *= 1.50;
+		_properties.Hitpoints += 30;
 		_properties.DamageTotalMult *= 1.08;
 	}
 
@@ -105,7 +105,7 @@ this.pov_enemy_mutation_unhold <- this.inherit("scripts/skills/skill", {
 		local healthMax = actor.getHitpointsMax();
 		local healthAdded = this.Math.min(healthMissing, healthMax*0.1);
 
-		if (healthAdded <= 0)
+		if (healthAdded <= 0 || actor.getCurrentProperties().YrdenTrapped)
 		{
 			return;
 		}

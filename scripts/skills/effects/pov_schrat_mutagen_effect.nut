@@ -48,7 +48,7 @@ this.pov_schrat_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "If attacked and damaged for more than 15% of their max HP, [color=" + this.Const.UI.Color.PositiveValue + "]Spawns a sapling[/color], if there is a tile available. [color=" + this.Const.UI.Color.NegativeValue + "]3[/color] times per battle."
+				text = "If attacked and damaged for more than 5% of their max HP, [color=" + this.Const.UI.Color.PositiveValue + "]Spawns a sapling[/color], if there is a tile available. [color=" + this.Const.UI.Color.NegativeValue + "]4[/color] times per battle."
 			},
 			{
 				id = 11,
@@ -60,7 +60,13 @@ this.pov_schrat_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/shield_damage.png",
-				text = "When equipped with a shield, gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] to all defences, and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] damage resistance"
+				text = "When equipped with a shield, gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] to all defences, and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] damage resistance."
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/damage_dealt.png",
+				text = "Attacks with shields do [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] damage."
 			},
 			{
 				id = 11,
@@ -128,6 +134,18 @@ this.pov_schrat_mutagen_effect <- this.inherit("scripts/skills/skill", {
         this.m.Spawned = 0;
 	}
 
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		local item = _skill.getItem();
+		if (item != null)
+		{
+			if (_skill.isAttack() && item.isItemType(this.Const.Items.ItemType.Shield))
+			{
+				_properties.DamageTotalMult *= 1.25;
+			}
+		}
+	}
+
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
 		if (_hitInfo.BodyPart == this.Const.BodyPart.Head)
@@ -173,8 +191,8 @@ this.pov_schrat_mutagen_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 
-		// Max 3 Spawn per battle
-		if (_damageHitpoints >= actor.getHitpointsMax() * 0.15 && this.m.Spawned < 3)
+		// Max 4 Spawn per battle
+		if (_damageHitpoints >= actor.getHitpointsMax() * 0.05 && this.m.Spawned < 4)
 		{
 			local candidates = [];
 			local myTile = actor.getTile();

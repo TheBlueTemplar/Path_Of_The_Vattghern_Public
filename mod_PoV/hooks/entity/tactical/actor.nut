@@ -30,11 +30,18 @@
 			if (_layerID == "head")
 			{
 				old_addSprite("pov_head_effect");
+				//old_addSprite("pov_front_socket");
+			}
+
+			//status_rooted (front part, used for Front effects)
+			if (_layerID == "status_rooted")
+			{
+				old_addSprite("pov_front_socket");
 			}
 
 			/*if (_layerID == "bust")
 			{
-				old_addSprite("pov_bust_effect");
+				old_addSprite("pov_bust");
 			}*/
 
 			return ret;
@@ -66,6 +73,11 @@
 		if (this.hasSprite("pov_head_effect"))
 		{
 			this.getSprite("pov_head_effect").Visible = false;
+		}
+
+		if (this.hasSprite("pov_front_socket"))
+		{
+			this.getSprite("pov_front_socket").Visible = false;
 		}
 
 		__original(_killer, _skill, _tile, _fatalityType);

@@ -7,21 +7,27 @@
 				R = 75,
 				P = 1.0,
 				S = "weapons/pov_whip_mace"
-			}
-		]);
-		_list.extend([
+			},
 			{
 				R = 97,
 				P = 2.0,
 				S = "weapons/named/pov_whip_mace_named"
-			}
-		]);
-		_list.extend([
+			},
 			{
 				R = 97,
 				P = 2.0,
 				S = "special/pov_silvering_kit"
 			},
+			{
+				R = 80,
+				P = 1.0,
+				S = "weapons/pov_feuerbuchse"
+			},
+			{
+				R = 90,
+				P = 1.0,
+				S = "weapons/pov_feuerspeier"
+			}
 		]);
 		__original( _list, _stash, _priceMult, _allowDamagedEquipment);
 	}

@@ -4,6 +4,12 @@
 	{
 		__original()
 
+		// Mutagen Drop (meme)
+		if (!::MSU.isKindOf(this.actor, "player")) 
+		{
+			this.actor.m.OnDeathLootTable.push([1.00,"scripts/items/misc/anatomist/pov_dog_mutagen_item"]);
+		}
+
 		// Racial
 	  	this.m.Skills.add(this.new("scripts/skills/racial/pov_direwolf_racial")); //25% fire weakness
 

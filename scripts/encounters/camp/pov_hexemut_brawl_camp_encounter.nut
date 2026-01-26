@@ -53,7 +53,7 @@ this.pov_hexemut_brawl_camp_encounter <- this.inherit("scripts/encounters/encoun
                     {
                         if (this.Math.rand(1, 100) <= 20)
                         {
-                            bro.improveMood(0.5, "Feels uneasy after a brawl");
+                            bro.worsenMood(0.5, "Feels uneasy after a brawl");
 
                             if (bro.getMoodState() > this.Const.MoodState.Neutral)
                             {

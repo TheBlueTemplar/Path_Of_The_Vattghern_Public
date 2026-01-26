@@ -48,7 +48,7 @@ this.pov_schrat_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", 
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "If attacked and damaged for more than 15% of their max HP, [color=" + this.Const.UI.Color.PositiveValue + "]Spawns a sapling[/color], if there is a tile available. [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] times per battle."
+				text = "If attacked and damaged for more than 5% of their max HP, [color=" + this.Const.UI.Color.PositiveValue + "]Spawns a sapling[/color], if there is a tile available. [color=" + this.Const.UI.Color.NegativeValue + "]6[/color] times per battle."
 			},
 			{
 				id = 11,
@@ -61,6 +61,12 @@ this.pov_schrat_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", 
 				type = "text",
 				icon = "ui/icons/shield_damage.png",
 				text = "When equipped with a shield, gain [color=" + this.Const.UI.Color.PositiveValue + "]+16[/color] to all defences, and [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] damage resistance"
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/damage_dealt.png",
+				text = "Attacks with shields do [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] damage."
 			},
 			{
 				id = 11,
@@ -78,7 +84,7 @@ this.pov_schrat_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", 
 				id = 11,
 				type = "text",
 				icon = "ui/icons/shield_damage.png",
-				text = "This character takes [color=" + this.Const.UI.Color.NegativeValue + "]+10%[/color] damage when not using a shield."
+				text = "This character takes [color=" + this.Const.UI.Color.NegativeValue + "]+14%[/color] damage when not using a shield."
 			}
 			
 		];
@@ -106,7 +112,7 @@ this.pov_schrat_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", 
 			_properties.MeleeDefense += 16;
 			_properties.RangedDefense += 16;
 		}else{
-			_properties.DamageReceivedRegularMult *= 1.10;
+			_properties.DamageReceivedRegularMult *= 1.14;
 			if (!actor.getSkills().hasSkill("scripts/skills/effects/pov_schrat_no_shield_effect"))
 			{
 				actor.getSkills().add(this.new("scripts/skills/effects/pov_schrat_no_shield_effect"));
@@ -126,6 +132,18 @@ this.pov_schrat_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", 
 		this.m.HeadDamageTaken = 0;
 		this.m.BodyDamageTaken = 0;
         this.m.Spawned = 0;
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		local item = _skill.getItem();
+		if (item != null)
+		{
+			if (_skill.isAttack() && item.isItemType(this.Const.Items.ItemType.Shield))
+			{
+				_properties.DamageTotalMult *= 1.50;
+			}
+		}
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
@@ -174,7 +192,7 @@ this.pov_schrat_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", 
 		local actor = this.getContainer().getActor();
 
 		// Max 5 Spawn per battle
-		if (_damageHitpoints >= actor.getHitpointsMax() * 0.15 && this.m.Spawned < 5)
+		if (_damageHitpoints >= actor.getHitpointsMax() * 0.05 && this.m.Spawned < 6)
 		{
 			local candidates = [];
 			local myTile = actor.getTile();

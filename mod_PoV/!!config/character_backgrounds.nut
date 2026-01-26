@@ -4,3 +4,18 @@
 	"legend_noble_2h",
 	"legend_noble_ranged"
 ];
+// same as above
+::Const.PovMutantBackgrounds <- [
+	"pov_mutant_background"
+];
+
+// These backgrounds can appear in random start scenarios (solo, trio, company)
+::Const.CharacterBackgroundsRandom.extend([
+	"pov_vattghern_background",
+	"pov_mutant_background"
+]);
+
+// I dont NEED to do this, but oh well why not
+::Const.CharacterCombatBackgrounds.extend([
+	"pov_mutant_background"
+]);

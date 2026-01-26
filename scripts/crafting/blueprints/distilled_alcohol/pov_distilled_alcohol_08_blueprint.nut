@@ -7,7 +7,7 @@ this.pov_distilled_alcohol_08_blueprint <- this.inherit("scripts/crafting/bluepr
 		this.m.ID = "blueprint.pov_distilled_alcohol_08";
 		this.m.Type = this.Const.Items.ItemType.Usable;
 		this.m.PreviewCraftable = this.new("scripts/items/misc/pov_distilled_alcohol_item");
-		this.m.Cost = 125;
+		this.m.Cost = 95;
 		local ingredients = [
 			{ 
 				Script = "scripts/items/supplies/beer_item", 

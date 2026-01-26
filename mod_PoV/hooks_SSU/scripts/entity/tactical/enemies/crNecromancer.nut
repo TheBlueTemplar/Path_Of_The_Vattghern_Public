@@ -12,7 +12,7 @@
 
 
 		// Chaos Mutation
-		::TLW.Chaos.add_mutation_all(this.actor, false)
+		::TLW.Chaos.add_mutation_all(this.actor, false);
 
 
 		// Corpse Drop

@@ -6,7 +6,7 @@ this.pov_nyctophobia_trait <- this.inherit("scripts/skills/traits/character_trai
 		this.m.ID = "trait.pov_nyctophobia";
 		this.m.Name = "Nyctophobia";
 		this.m.Icon = "ui/traits/pov_nyctophobia.png";
-		this.m.Description = "There\'s a reason he won\'t stand the nightwatch. Says the dark remembers him… and one night, it\'ll come collect";
+		this.m.Description = "There\'s a reason he won\'t stand the nightwatch. Says the dark remembers him… and one night, it\'ll come collect. (This trait may be removed by acquiring specific perks, traits or effects.";
 		this.m.Excluded = [
 			"trait.fearless",
 			"trait.brave",

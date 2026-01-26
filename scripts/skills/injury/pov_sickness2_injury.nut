@@ -5,13 +5,13 @@ this.pov_sickness2_injury <- this.inherit("scripts/skills/injury/injury", {
 		this.injury.create();
 		this.m.ID = "injury.pov_sickness2";
 		this.m.Name = "Mutation Aftermath";
-		this.m.Description = "This character has undergone a mutation. They are left in a horrible condition which will last for days, [color=" + this.Const.UI.Color.NegativeValue + "]and should avoid any and all fighting[/color]. \n\n While recovering, they will need to consume much more resources. \n\n This debuff is applied each time the Vatt\'ghern is mutated, but its duration is reduced each time a mutation happens.";
+		this.m.Description = "This character has undergone a mutation. They are left in a horrible condition which will last for days, [color=" + this.Const.UI.Color.NegativeValue + "]and should avoid any and all fighting[/color]. \n\n While recovering, they will need to consume much more resources. \n\n This debuff is applied each time this character is mutated, but its duration is reduced each time by 1-2 days.";
 		this.m.Type = this.m.Type | this.Const.SkillType.TemporaryInjury;
 		this.m.DropIcon = "injury_mutation_aftermath";
 		this.m.Icon = "ui/injury/pov_injury_mutation_aftermath.png";
 		this.m.IconMini = "pov_injury_mutation_aftermath_mini";
-		this.m.HealingTimeMin = 5;
-		this.m.HealingTimeMax = 8;
+		this.m.HealingTimeMin = 4;
+		this.m.HealingTimeMax = 7;
 		this.m.IsAlwaysInEffect = true;
 	}
 
@@ -38,31 +38,31 @@ this.pov_sickness2_injury <- this.inherit("scripts/skills/injury/injury", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-70%[/color] Max Fatigue"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-60%[/color] Max Fatigue"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-70%[/color] Initiative"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-60%[/color] Initiative"
 			},
 			{
 				id = 13,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-70%[/color] Resolve"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-60%[/color] Resolve"
 			},
 			{
 				id = 14,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-70%[/color] Melee Skill"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-60%[/color] Melee Skill"
 			},
 			{
 				id = 15,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-70%[/color] Ranged Skill"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-60%[/color] Ranged Skill"
 			},
 			{
 				id = 16,
@@ -74,13 +74,13 @@ this.pov_sickness2_injury <- this.inherit("scripts/skills/injury/injury", {
 				id = 17,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-60%[/color] Ranged Defense"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] Ranged Defense"
 			},
 			{
 				id = 18,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-4[/color] Vision"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Vision"
 			},
 			{
 				id = 19,
@@ -133,7 +133,7 @@ this.pov_sickness2_injury <- this.inherit("scripts/skills/injury/injury", {
 
 	function onTurnStart()
 	{
-		if (this.Math.rand(1, 100) <= 90)
+		if (this.Math.rand(1, 100) <= 40)
 		{
 			return;
 		}
@@ -173,14 +173,14 @@ this.pov_sickness2_injury <- this.inherit("scripts/skills/injury/injury", {
 	{
 		this.injury.onUpdate(_properties);
 		_properties.HitpointsMult *= 0.50;
-		_properties.BraveryMult *= 0.30;
-		_properties.InitiativeMult *= 0.30;
-		_properties.StaminaMult *= 0.30;
-		_properties.MeleeSkill *= 0.30;
-		_properties.RangedSkill *= 0.30;
+		_properties.BraveryMult *= 0.40;
+		_properties.InitiativeMult *= 0.40;
+		_properties.StaminaMult *= 0.40;
+		_properties.MeleeSkill *= 0.40;
+		_properties.RangedSkill *= 0.40;
 		_properties.MeleeDefense *= 0.40;
-		_properties.RangedDefense *= 0.40;
-		_properties.Vision += -4;
+		_properties.RangedDefense *= 0.50;
+		_properties.Vision += -3;
 		_properties.DailyFood += 2.0;
 	}
 

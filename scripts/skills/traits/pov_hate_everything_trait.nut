@@ -38,7 +38,7 @@ this.pov_hate_everything_trait <- this.inherit("scripts/skills/traits/character_
 	function changeTraits()
 	{
 		//Possible Hate Perks
-		local traitList = ["scripts/skills/traits/hate_undead_trait","scripts/skills/traits/hate_greenskins_trait","scripts/skills/traits/hate_beasts_trait","scripts/skills/traits/pov_hate_mutants_trait","scripts/skills/traits/pov_hate_ghosts_trait","scripts/skills/traits/pov_misanthropist_trait","scripts/skills/traits/legend_hate_nobles_trait"];
+		local traitList = ["scripts/skills/traits/hate_undead_trait","scripts/skills/traits/hate_greenskins_trait","scripts/skills/traits/hate_beasts_trait","scripts/skills/traits/pov_hate_mutants_trait","scripts/skills/traits/pov_hate_ghosts_trait","scripts/skills/traits/pov_misanthropist_trait","scripts/skills/traits/legend_hate_nobles_trait","scripts/skills/traits/pov_hate_dogs_trait"];
 
 		local actor = this.getContainer().getActor();
 
@@ -49,7 +49,7 @@ this.pov_hate_everything_trait <- this.inherit("scripts/skills/traits/character_
 			local oldTrait1 = this.new(this.m.Trait1);
 			local oldTrait2 = this.new(this.m.Trait2);
 			//Debug
-			::TLW.Mod.Debug.printLog("Checking Hate Everything Trait || Trying to Remove Old Traits:  " + oldTrait1.getName()+" and "+oldTrait1.getName());
+			::TLW.Mod.Debug.printLog("Checking Hate Everything Trait || Trying to Remove Old Traits:  " + oldTrait1.getName()+" and "+oldTrait2.getName());
 
 			//Remove traits from actor and array, with fallback
 			if (actor.getSkills().hasSkill(oldTrait1))

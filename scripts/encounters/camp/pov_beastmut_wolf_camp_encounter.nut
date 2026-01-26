@@ -58,6 +58,11 @@ this.pov_beastmut_wolf_camp_encounter <- this.inherit("scripts/encounters/encoun
         {
             return false;
         }
+
+        if (!this.World.Assets.getStash().hasEmptySlot())
+        {
+            return false;
+        }
     }
 
     function isValid(_camp)

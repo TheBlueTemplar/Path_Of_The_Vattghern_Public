@@ -1,0 +1,243 @@
+this.pov_schrat_weak_mutagen_effect <- this.inherit("scripts/skills/skill", {
+	m = {
+		HeadArmorBoost = 15,
+		HeadDamageTaken = 0,
+		BodyArmorBoost = 15,
+		BodyDamageTaken = 0,
+		Spawned = 0
+	},
+	function create()
+	{
+		this.m.ID = "effects.pov_schrat_weak_mutagen";
+		this.m.Name = "Barkskin";
+		this.m.Icon = "skills/pov_schrat_mutant.png";
+		this.m.IconMini = "pov_mini_schrat_mutant";
+		this.m.Overlay = "schrat";
+		this.m.Type = this.Const.SkillType.Trait;
+		this.m.IsActive = false;
+		this.m.IsRemovedAfterBattle = false;
+		this.m.IsStacking = false;
+		this.m.Order = this.Const.SkillOrder.Background + 1;
+	}
+
+	function getDescription()
+	{
+		return "[color=" + this.Const.UI.Color.povPerkBlue + "]Flexile Ligaments[/color]: This character\'s legs have mutated to respond with unnatural force and stability, allowing them to resist any attempt to be displaced. Their stance remains firm, even against powerful external forces.\n\n[color=" + this.Const.UI.Color.povPerkBlue + "]Barkskin[/color]: This character\'s skin has become incredibly rigid, forming a natural armor that absorbs a portion of incoming damage. When bearing a shield, their defensive instincts sharpen further, allowing them to weather strikes with even greater resilience. If damaged substantially by an attack, a sapling sprouts from their spilled blood to defend them.\n\n[color=" + this.Const.UI.Color.povPerkBlue + "]Encumbered Frame[/color]: The weight of their altered form makes movement far more taxing, causing them to tire quickly when repositioning. Without a shield to balance their hardened structure, they become significantly more vulnerable to incoming attacks.\n\n [color=" + this.Const.UI.Color.povPerkBlue + "]Flammable Carapace[/color]: The mutation has an unfortunate drawback—while their body is tougher than normal, it is also highly susceptible to fire, causing them to suffer extreme burns when exposed to flames.";
+	}
+
+	function getTooltip()
+	{
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Immunity to being moved."
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "If attacked and damaged for more than 15% of their max HP, [color=" + this.Const.UI.Color.PositiveValue + "]Spawns a sapling[/color], if there is a tile available. [color=" + this.Const.UI.Color.NegativeValue + "]3[/color] times per battle."
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/armor_body.png",
+				text = "This character\'s skin is hard, granting [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] points of natural armor"
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/shield_damage.png",
+				text = "When equipped with a shield, gain [color=" + this.Const.UI.Color.PositiveValue + "]+6[/color] to all defences, and [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage resistance."
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/damage_dealt.png",
+				text = "Attacks with shields do [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage."
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "Movement costs [color=" + this.Const.UI.Color.NegativeValue + "]30%[/color] more fatigue."
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/pov_fire.png",
+				text = "This character takes [color=" + this.Const.UI.Color.NegativeValue + "]250%[/color] more damage from fire attacks."
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/shield_damage.png",
+				text = "This character takes [color=" + this.Const.UI.Color.NegativeValue + "]+20%[/color] damage when not using a shield."
+			}
+			
+		];
+		return ret;
+	}
+
+	function onUpdate( _properties )
+	{		
+		// Buffs
+		_properties.IsImmuneToKnockBackAndGrab = true;
+		_properties.Armor[this.Const.BodyPart.Head] += this.Math.max(0.0, this.m.HeadArmorBoost - this.m.HeadDamageTaken);
+		_properties.Armor[this.Const.BodyPart.Body] += this.Math.max(0.0, this.m.BodyArmorBoost - this.m.BodyDamageTaken);
+		_properties.ArmorMax[this.Const.BodyPart.Head] += this.m.HeadArmorBoost;
+		_properties.ArmorMax[this.Const.BodyPart.Body] += this.m.BodyArmorBoost;
+		// Debuffs
+		_properties.MovementFatigueCostMult *= 1.3;
+		// No shield Effect
+
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		if (item != null && item.isItemType(this.Const.Items.ItemType.Shield))
+		{
+			_properties.DamageReceivedRegularMult *= 0.85;
+			_properties.MeleeDefense += 6;
+			_properties.RangedDefense += 6;
+		}else{
+			_properties.DamageReceivedRegularMult *= 1.20;
+			if (!actor.getSkills().hasSkill("scripts/skills/effects/pov_schrat_no_shield_effect"))
+			{
+				actor.getSkills().add(this.new("scripts/skills/effects/pov_schrat_no_shield_effect"));
+			}
+		}
+	}
+	
+	function onCombatStarted()
+	{
+		this.m.HeadDamageTaken = 0;
+		this.m.BodyDamageTaken = 0;
+		this.m.Spawned = 0;
+	}
+
+	function onCombatFinished()
+	{
+		this.m.HeadDamageTaken = 0;
+		this.m.BodyDamageTaken = 0;
+        this.m.Spawned = 0;
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		local item = _skill.getItem();
+		if (item != null)
+		{
+			if (_skill.isAttack() && item.isItemType(this.Const.Items.ItemType.Shield))
+			{
+				_properties.DamageTotalMult *= 1.15;
+			}
+		}
+	}
+
+	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	{
+		if (_hitInfo.BodyPart == this.Const.BodyPart.Head)
+		{
+			if (this.m.HeadDamageTaken >= this.m.HeadArmorBoost)
+			{
+				return;
+			}
+
+			// weird fix to weird issue
+			local cap = this.m.HeadArmorBoost - this.m.HeadDamageTaken;
+			if (cap > this.m.HeadArmorBoost/2)
+			{
+				cap = this.m.HeadArmorBoost/2;
+			}
+			_properties.DamageArmorReduction += cap;
+			this.m.HeadDamageTaken += _hitInfo.DamageArmor;
+		}
+		else if (_hitInfo.BodyPart == this.Const.BodyPart.Body)
+		{
+			if (this.m.BodyDamageTaken >= this.m.BodyArmorBoost)
+			{
+				return;
+			}
+
+			// weird fix to weird issue
+			local cap = this.m.BodyArmorBoost - this.m.BodyDamageTaken;
+			if (cap > this.m.BodyArmorBoost/2)
+			{
+				cap = this.m.BodyArmorBoost/2;
+			}
+			_properties.DamageArmorReduction += cap;
+			this.m.BodyDamageTaken += _hitInfo.DamageArmor;
+		}
+
+		if (_hitInfo.DamageType == this.Const.Damage.DamageType.Burning)
+		{
+			_properties.DamageReceivedRegularMult *= 2.5;
+		}
+	}
+
+	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
+	{
+		local actor = this.getContainer().getActor();
+
+		// Max 3 Spawn per battle
+		if (_damageHitpoints >= actor.getHitpointsMax() * 0.15 && this.m.Spawned < 3)
+		{
+			local candidates = [];
+			local myTile = actor.getTile();
+
+			for( local i = 0; i < 6; i = ++i )
+			{
+				if (!myTile.hasNextTile(i))
+				{
+				}
+				else
+				{
+					local nextTile = myTile.getNextTile(i);
+
+					if (nextTile.IsEmpty && this.Math.abs(myTile.Level - nextTile.Level) <= 1)
+					{
+						candidates.push(nextTile);
+					}
+				}
+			}
+
+			if (candidates.len() != 0)
+			{
+				local spawnTile = candidates[this.Math.rand(0, candidates.len() - 1)];
+				local sapling = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/schrat_small", spawnTile.Coords);
+				sapling.setFaction(actor.getFaction());
+				sapling.riseFromGround();
+				this.m.Spawned += 1;
+			}
+		}
+	}
+
+	function isHidden()
+	{
+		return this.inBattleHiddenCheck();
+	}
+
+	function inBattleHiddenCheck()
+	{
+		if (!("State" in this.Tactical) || this.Tactical.State == null)
+		{
+			return false;
+		}
+
+		return true;
+	}
+});
+
+

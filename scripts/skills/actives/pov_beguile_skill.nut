@@ -70,13 +70,19 @@ this.pov_beguile_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "If targeting an ally, grants it a [color=" + this.Const.UI.Color.PositiveValue + "]10%,[/color] bonus on all stats, [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] on resolve, and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] fatigue recovery, but attracts more enemy attention."	//im not good at this
+				text = "If targeting an ally, grants it a [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] bonus on all stats, [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] on resolve, and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] fatigue recovery, but makes it attract more enemy attention."	//im not good at this
 			},
 			{
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "If casted on an enemy, makes it take [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] more damage from all sources, but also do [color=" + this.Const.UI.Color.NegativeValue + "]12%[/color] more. Both effects last for two turns."	//well I am
+				text = "If casted on an enemy, makes it take [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] more damage from all sources, but also do [color=" + this.Const.UI.Color.NegativeValue + "]12%[/color] more."	//well I am
+			},
+			{
+				id = 7,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Both effects last for two turns."	//well I am
 			}
 		];
 

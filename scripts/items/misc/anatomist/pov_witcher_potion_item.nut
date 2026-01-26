@@ -75,20 +75,29 @@ this.pov_witcher_potion_item <- this.inherit("scripts/items/misc/anatomist/pov_a
 					return true;
 				}else{
 					this.Sound.play("sounds/bottle_01.wav", this.Const.Sound.Volume.Inventory);
+					::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip("Vattghern mutations cannot be used togeather with SSU and Vanilla sequences/anatomist effects."));
 					return false;
 				}
 			}
 
+			// A mutant cannot become a Vattghern (done at tog)
+			if (_actor.getSkills().hasSkill("trait.pov_unstable_mutant"))
+			{
+				this.Sound.play("sounds/bottle_01.wav", this.Const.Sound.Volume.Inventory);
+				::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip("A Mutant cannot become a Vattghern."));
+				return false;
+			}
+
 			// Check for brother's level, if not high enough, KILL HIM
-			// Example: Base Chance 120 means that there is 0% final chance on bro lvl 12
+			// Example: Base Chance 110 (expert) means that there is 0% final chance on bro lvl 11
 			local deathChanceBase = 0;
 			// Base Death Chance Modified By Game Diff
 			switch (this.World.Assets.getCombatDifficulty())
 			{
-				case this.Const.Difficulty.Easy: deathChanceBase = 70; break
-				case this.Const.Difficulty.Normal: deathChanceBase = 90; break
-				case this.Const.Difficulty.Hard: deathChanceBase = 100; break
-				case this.Const.Difficulty.Legendary: deathChanceBase = 110; break
+				case this.Const.Difficulty.Easy: deathChanceBase = 80; break
+				case this.Const.Difficulty.Normal: deathChanceBase = 100; break
+				case this.Const.Difficulty.Hard: deathChanceBase = 110; break
+				case this.Const.Difficulty.Legendary: deathChanceBase = 120; break
 			}
 			local deathChanceFinal = 0;
 			local deathChanceLevelReduction = _actor.getLevel()*10;
@@ -128,12 +137,13 @@ this.pov_witcher_potion_item <- this.inherit("scripts/items/misc/anatomist/pov_a
 				_actor.getSkills().onDeath(this.Const.FatalityType.None);
 				::Legends.addFallen(_actor, "Succumbed to the Trial of the Grasses.");
 				this.World.getPlayerRoster().remove(_actor);
+				::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip("This person did not survive the trial of the grasses..."));
 
 				// THERE IS A DEBUGGING THING BELOW 
 				// (no more lmao, I used this worsen mood to debug XDD what a noob)
 				foreach( bro in brothers )
 				{
-					bro.worsenMood(3, "Lost a Brother to the Horrifying Trial of the Grasses");
+					bro.worsenMood(2, "Lost a Brother to the Horrifying Trial of the Grasses");
 				}
 
 				this.Sound.play("sounds/combat/poison_applied_02.wav", this.Const.Sound.Volume.Inventory);
@@ -151,13 +161,13 @@ this.pov_witcher_potion_item <- this.inherit("scripts/items/misc/anatomist/pov_a
 				}
 				else if(bro.getCurrentProperties().getBravery() > 70 || bro.getSkills().hasSkill("trait.brave") || bro.getSkills().hasSkill("trait.fearless") || bro.getSkills().hasSkill("trait.pov_witcher"))
 				{
-					bro.worsenMood(1, "Unsettled By The Trial Of The Grasses");
+					bro.worsenMood(0.5, "Unsettled By The Trial Of The Grasses");
 				}else if(bro.getCurrentProperties().getBravery() < 35 || bro.getSkills().hasSkill("trait.craven") || bro.getSkills().hasSkill("trait.dastard") || bro.getSkills().hasSkill("trait.fainthearted") || bro.getSkills().hasSkill("trait.superstitious") || bro.getSkills().hasSkill("trait.pov_fear_mutants"))
 				{
-					bro.worsenMood(3, "Traumatised By The Trial Of The Grasses");
+					bro.worsenMood(1.5, "Traumatised By The Trial Of The Grasses");
 				}else
 				{
-					bro.worsenMood(2, "Horrified By The Trial Of The Grasses");
+					bro.worsenMood(1, "Horrified By The Trial Of The Grasses");
 				}
 			}
 

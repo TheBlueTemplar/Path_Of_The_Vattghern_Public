@@ -6,10 +6,10 @@
 		__original()
 
 		// Corpse Drop
-		/*if (!::MSU.isKindOf(this.actor, "player")) 
+		if (!::MSU.isKindOf(this.actor, "player")) 
 		{
-			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.ZombieNecromancer));
-	  	}*/
+			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.FaultFinder));
+	  	}
 
 	  	// Racial
 	  	this.m.Skills.add(this.new("scripts/skills/racial/pov_fault_finder_racial"));

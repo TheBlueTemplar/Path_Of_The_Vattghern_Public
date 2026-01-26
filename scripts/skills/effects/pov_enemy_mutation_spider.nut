@@ -88,8 +88,10 @@ this.pov_enemy_mutation_spider <- this.inherit("scripts/skills/skill", {
 		if (_targetEntity.getSkills().getSkillByID("effects.pov_mutant_poison") != null || _targetEntity.getSkills().getSkillByID("effects.spider_poison") != null || _targetEntity.getSkills().getSkillByID("effects.goblin_poison") != null || _targetEntity.getSkills().getSkillByID("effects.legend_basilisk_poison") != null || _targetEntity.getSkills().getSkillByID("effects.pov_vattghern_upgraded_poison") != null || _targetEntity.getSkills().getSkillByID("effects.stench") != null)
 		{
 			_properties.DamageRegularMult *= 1.15;
+			_properties.MeleeSkillMult *= 1.10;
+			_properties.RangedSkillMult *= 1.10;
 		}else{
-			_properties.DamageRegularMult *= 0.85;
+			_properties.DamageRegularMult *= 0.88;
 		}
 	}
 

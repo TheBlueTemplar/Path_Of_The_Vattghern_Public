@@ -78,7 +78,7 @@ this.pov_enemy_mutation_alp <- this.inherit("scripts/skills/skill", {
 			case this.Const.Damage.DamageType.Piercing:
 				if (_skill == null)
 				{
-					_properties.DamageReceivedRegularMult *= 0.70; 
+					_properties.DamageReceivedRegularMult *= 0.60; 
 				}
 				else
 				{					
@@ -89,36 +89,36 @@ this.pov_enemy_mutation_alp <- this.inherit("scripts/skills/skill", {
 						{
 							if (weapon.isWeaponType(this.Const.Items.WeaponType.Bow))
 							{
-								_properties.DamageReceivedRegularMult *= 0.4;
+								_properties.DamageReceivedRegularMult *= 0.30;
 							}
 							else if (weapon.isWeaponType(this.Const.Items.WeaponType.Crossbow) || weapon.isWeaponType(this.Const.Items.WeaponType.Firearm))
 							{
-								_properties.DamageReceivedRegularMult *= 0.55;
+								_properties.DamageReceivedRegularMult *= 0.45;
 							}
 							else if (weapon.isWeaponType(this.Const.Items.WeaponType.Throwing))
 							{
 								if (_skill.getID() == "actives.throw_spear")
 								{
-									_properties.DamageReceivedRegularMult *= 0.65;
+									_properties.DamageReceivedRegularMult *= 0.55;
 								}
 								else
 								{
-									_properties.DamageReceivedRegularMult *= 0.5;
+									_properties.DamageReceivedRegularMult *= 0.4;
 								}								
 							}
 							else
 							{
-								_properties.DamageReceivedRegularMult *= 0.5;
+								_properties.DamageReceivedRegularMult *= 0.4;
 							}
 						}
 						else
 						{
-							_properties.DamageReceivedRegularMult *= 0.7;
+							_properties.DamageReceivedRegularMult *= 0.6;
 						}
 					}
 					else
 					{
-						_properties.DamageReceivedRegularMult *= 0.7;
+						_properties.DamageReceivedRegularMult *= 0.6;
 					}
 				}
 				break;

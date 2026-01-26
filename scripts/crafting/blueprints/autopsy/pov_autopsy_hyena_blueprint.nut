@@ -26,23 +26,34 @@ this.pov_autopsy_hyena_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function onCraft( _stash )
 	{
-		if (this.Math.rand(1, 100) <= 8)
+	    local item;
+	    if (this.Math.rand(1, 100) <= 8)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_direwolf_mutagen_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_direwolf_mutagen_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 20)
 			{
-				_stash.add(this.new("scripts/items/loot/sabertooth_item"));
+				item = this.new("scripts/items/loot/sabertooth_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 30)
 			{
-				_stash.add(this.new("scripts/items/misc/hyena_fur_item"));
+				item = this.new("scripts/items/misc/hyena_fur_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 30)
 			{
-				_stash.add(this.new("scripts/items/misc/acidic_saliva_item"));
+				item = this.new("scripts/items/misc/acidic_saliva_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
-		_stash.add(this.new("scripts/items/supplies/strange_meat_item"));
+		item = this.new("scripts/items/supplies/strange_meat_item");
+		_stash.add(item);
+		if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 	}
 
 });

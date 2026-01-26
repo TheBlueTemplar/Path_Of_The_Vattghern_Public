@@ -10,11 +10,13 @@ this.pov_direwolf_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "skills/pov_direwolf.png";
 		this.m.IconMini = "";
 		this.m.Overlay = "werewolf";
+		//this.m.Type = this.Const.SkillType.Trait;
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = false;
 		this.m.IsStacking = false;
+		//this.m.Order = this.Const.SkillOrder.Background + 1;
 	}
 
 	function getDescription()
@@ -63,7 +65,7 @@ this.pov_direwolf_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
-				text = "All attacks can cause [color=" + this.Const.UI.Color.PositiveValue + "]Bleeding[/color] equal to [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] of inflicted damage."
+				text = "All attacks can cause [color=" + this.Const.UI.Color.PositiveValue + "]Bleeding[/color] equal to [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] of inflicted hitpoint damage."
 			},
 			{
 				id = 11,

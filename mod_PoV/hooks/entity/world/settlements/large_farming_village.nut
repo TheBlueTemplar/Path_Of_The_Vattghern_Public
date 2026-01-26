@@ -1,0 +1,11 @@
+::TLW.HooksMod.hook("scripts/entity/world/settlements/large_farming_village", function(q) 
+{
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.DraftList.extend([
+			"pov_mutant_background"
+		]);
+	}
+
+});

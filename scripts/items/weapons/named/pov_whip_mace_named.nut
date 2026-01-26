@@ -6,13 +6,12 @@ this.pov_whip_mace_named <- this.inherit("scripts/items/weapons/named/named_weap
 	},
 	function create()
 	{
-
-		local NameList = ["Belmond\'s Wrath","Chain Flail of the Belmonds","Belmond\'s Vengeance","Scourge of the Undead", "Blessed Ironlash", "Vampirebane Whip", "Spanakopita", "Frog\'s Tongue", "Belmond's Caress","Sunfire Pendulum","Instrument of Cleansing","Holy Flail"];
+		//local NameList = ["Belmond\'s Wrath","Chain Flail of the Belmonds","Belmond\'s Vengeance","Scourge of the Undead", "Blessed Ironlash", "Vampirebane Whip", "Spanakopita", "Frog\'s Tongue", "Belmond's Caress","Sunfire Pendulum","Instrument of Cleansing","Holy Flail"];
 
 		this.named_weapon.create();
 		this.m.ID = "weapon.pov_whip_mace_named";
-		this.m.Name = NameList[this.Math.rand(0, NameList.len() - 1)];
-		//this.m.NameList = ["name1","name2","name3"];
+		//this.m.Name = NameList[this.Math.rand(0, NameList.len() - 1)];
+		this.m.NameList = this.Const.Strings.PovWhipFlailNames;
 		this.m.Description = "An ancient relic. No one knows about its origin, or why it retaining a pristine condition despite its obvious centuries of use.\n\nIt is like a morning star, tied at the end of a metal whip. While elaborate in it's design, it is in many ways impractical and hard to handle, only a skilled individual could use this properly. \n\n It appears to bear traces of an old blessing or enchantment against undead.";
 		this.m.IconLarge = "weapons/melee/pov_mace_whip_01_named.png";
 		this.m.Icon = "weapons/melee/pov_mace_whip_01_named_70x70.png";
@@ -116,7 +115,7 @@ this.pov_whip_mace_named <- this.inherit("scripts/items/weapons/named/named_weap
 
 				//if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer && !_targetEntity.isHiddenToPlayer())
 				//{
-				//	this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that concecrated " + this.Const.UI.getColorizedEntityName(_targetEntity));
+				//	this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " struck a hit that consecrated " + this.Const.UI.getColorizedEntityName(_targetEntity));
 				//}
 			}
 	}

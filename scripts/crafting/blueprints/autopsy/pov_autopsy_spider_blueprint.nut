@@ -26,17 +26,24 @@ this.pov_autopsy_spider_blueprint <- this.inherit("scripts/crafting/blueprint", 
 
 	function onCraft( _stash )
 	{
-		if (this.Math.rand(1, 100) <= 8)
+	    local item;
+	    if (this.Math.rand(1, 100) <= 8)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_spider_mutagen_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_spider_mutagen_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 30)
 			{
-				_stash.add(this.new("scripts/items/misc/spider_silk_item"));
+				item = this.new("scripts/items/misc/spider_silk_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 30)
 			{
-				_stash.add(this.new("scripts/items/misc/poison_gland_item"));
+				item = this.new("scripts/items/misc/poison_gland_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 	}
 

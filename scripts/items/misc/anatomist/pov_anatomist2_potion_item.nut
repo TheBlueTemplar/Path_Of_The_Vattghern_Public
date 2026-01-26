@@ -25,6 +25,17 @@ this.pov_anatomist2_potion_item <- this.inherit("scripts/items/item", {
 		}
 	}
 
+	// Are now considered Beast Parts AND Corpse Items, for modifying prices
+	function getSellPriceMult()
+	{
+		return this.World.State.getCurrentTown().getMutagenPriceMult();
+	}
+
+	function getBuyPriceMult()
+	{
+		return this.World.State.getCurrentTown().getMutagenPriceMult();
+	}
+
 	function onUse( _actor, _item = null )
 	{
 		

@@ -35,6 +35,11 @@ this.pov_enemy_mutation_serpent <- this.inherit("scripts/skills/skill", {
 			return 0;
 		}
 
+		if (actor.getCurrentProperties().YrdenTrapped)
+		{
+			return 0;
+		}
+		
 		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
 		{
 			return 0;
@@ -185,6 +190,7 @@ this.pov_enemy_mutation_serpent <- this.inherit("scripts/skills/skill", {
 		//_properties.SurroundedDefense -= 3;
 		local surrAmount = this.getPenalty();
 		_properties.MeleeDefense += - surrAmount;
+		_properties.InitiativeMult *= 1.15;
 	}
 
 	function onAfterUpdate( _properties )

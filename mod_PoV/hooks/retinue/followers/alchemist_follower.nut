@@ -1,3 +1,5 @@
+/*
+// NO LONGER USED, EFFECT MERGED AND IMPROVED INTO NEW POV RETINUE
 ::TLW.HooksMod.hook("scripts/retinue/followers/alchemist_follower", function (q) {
 	
 	q.create = @(__original) function()
@@ -8,4 +10,4 @@
 	}
 
 });
-
+*/

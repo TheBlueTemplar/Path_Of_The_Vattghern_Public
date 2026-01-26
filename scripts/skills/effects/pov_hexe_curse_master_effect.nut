@@ -3,7 +3,7 @@ this.pov_hexe_curse_master_effect <- this.inherit("scripts/skills/skill", {
 		Slave = null,
 		Color = this.createColor("#ffffff"),
 		IsActivated = false,
-		TurnsLeft = 4
+		TurnsLeft = 2
 	},
 	function activate()
 	{
@@ -86,9 +86,14 @@ this.pov_hexe_curse_master_effect <- this.inherit("scripts/skills/skill", {
 			if (damageTaken > currentHP)
 			{
 				//damageTaken = maxHP + damageTaken * 0.2; Experimental, leave it like that
-				damageTaken = currentHP + 1;
+				damageTaken = currentHP + damageTaken * 0.25;
 			}
 
+			//fallback
+			if (damageTaken > maxHp)
+			{
+				damageTaken = maxHp
+			}
 			damagePercent = (damageTaken / maxHp) * 100;
 			//fallback
 			if (damagePercent <= 1){return;}

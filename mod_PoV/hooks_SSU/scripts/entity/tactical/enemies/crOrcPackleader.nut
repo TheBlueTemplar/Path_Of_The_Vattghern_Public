@@ -2,7 +2,7 @@
 {
 	q.onInit = @(__original) function()
 	{
-		__original()
+		__original();
 
 		// Corpse Drop
 		if (!::MSU.isKindOf(this.actor, "player")) 
@@ -17,7 +17,7 @@
 
 
 		// Chaos Mutation
-		::TLW.Chaos.add_mutation_all(this.actor, false)
+		::TLW.Chaos.add_mutation_all(this.actor, false);
 
 
 	}

@@ -81,15 +81,18 @@ this.pov_enemy_mutation_orc <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		// Buffs
-		_properties.MeleeSkill += 8;
-		_properties.MeleeSkillMult *= 1.10;
-		_properties.MeleeDamageMult *= 1.10;
+		if(_properties.YrdenTrapped == false)
+		{
+			// Buffs
+			_properties.MeleeSkill += 10;
+			_properties.MeleeSkillMult *= 1.14;
+			_properties.MeleeDamageMult *= 1.12;
+		}	
 		// Debuffs
-		_properties.MeleeDefense += -5;
-		_properties.MeleeDefenseMult *= 0.90;
-		_properties.RangedDefense += -5;
-		_properties.RangedDefenseMult *= 0.90;
+		_properties.MeleeDefense += -6;
+		_properties.MeleeDefenseMult *= 0.88;
+		_properties.RangedDefense += -6;
+		_properties.RangedDefenseMult *= 0.88;
 		_properties.SurroundedDefense -= 3;
 	}
 

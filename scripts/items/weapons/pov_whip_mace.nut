@@ -45,7 +45,7 @@ this.pov_whip_mace <- this.inherit("scripts/items/weapons/weapon", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts an additional [color=" + this.Const.UI.Color.DamageValue + "]50%[/color] damage to monstesr."
+			text = "Inflicts an additional [color=" + this.Const.UI.Color.DamageValue + "]50%[/color] damage to monsters."
 		});
 		return result;
 	}

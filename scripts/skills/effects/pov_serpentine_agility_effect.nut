@@ -134,7 +134,7 @@ this.pov_serpentine_agility_effect <- this.inherit("scripts/skills/skill", {
 			{
 			    id = 11,
 			    type = "text",
-			    icon = "ui/icons/ranged_skill.png",
+			    icon = "ui/icons/pov_melee_ranged_defense.png",
 			    text = "Currently has +[color=" + this.Const.UI.Color.PositiveValue + "]"+bonus+"[/color] Melee Defense, and +[color=" + this.Const.UI.Color.PositiveValue + "]"+bonus/2+"[/color] Ranged Defense (Bonuses active when engaged with exactly [color=" + this.Const.UI.Color.NegativeValue + "]one[/color] enemy)."
 			},
 			{

@@ -145,25 +145,32 @@ this.pov_sword_ghost <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 200)
 		{
-			b.DamageTotalMult *= 1.21;
+			b.DamageTotalMult *= 1.20;
 			b.RangedDefense += 14;
 			b.MeleeDefense += 14;
 			b.MeleeSkill += 21;
 			b.Hitpoints += 100;
-		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 140)
+		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 150)
 		{
-			b.DamageTotalMult *= 1.14;
+			b.DamageTotalMult *= 1.15;
 			b.RangedDefense += 8;
 			b.MeleeDefense += 8;
 			b.MeleeSkill += 14;
 			b.Hitpoints += 50;
-		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 70)
+		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 100)
 		{
 			b.DamageTotalMult *= 1.07;
 			b.RangedDefense += 4;
 			b.MeleeDefense += 4;
 			b.MeleeSkill += 7;
 			b.Hitpoints += 25;
+		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 50)
+		{
+			b.DamageTotalMult *= 1.04;
+			b.RangedDefense += 2;
+			b.MeleeDefense += 2;
+			b.MeleeSkill += 5;
+			b.Hitpoints += 15;
 		}
 		// On legendary, bonus skills and perks added below
 
@@ -218,11 +225,20 @@ this.pov_sword_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			// Stats
 			b.DamageTotalMult *= 1.10;
-			b.RangedDefense += 7;
-			b.MeleeDefense += 5;
-			b.MeleeSkill += 10;
-			b.Hitpoints += 50;
-			b.Bravery += 25;
+
+			// Time-based difficulty scaling
+			local day = this.World.getTime().Days;
+			local scale = this.Math.floor(day/50) + this.Math.floor(day/100) + this.Math.floor(day/150);
+
+			// Soft cap to prevent runaway stats
+			scale = this.Math.min(scale, 8 + this.Math.floor(day/100));
+
+			// Apply scaled bonuses
+			b.MeleeSkill	+= 1.3 * scale;  // ~+10 at day 200
+			b.MeleeDefense	+= 0.7 * scale;  // ~+5
+			b.RangedDefense	+= 1.0 * scale;  // ~+7
+			b.Hitpoints		+= 6.7 * scale;  // ~+50
+			b.Bravery		+= 3.3 * scale;  // ~+25
 			// Perks
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));

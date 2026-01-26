@@ -114,6 +114,6 @@
 	::TLW.Mutation.Rot <- 
 	{
 		Flag = "pov_mutant_rot",
-		Script = "scripts/items/misc/anatomist/pov_strain_mutagen_item",
+		Script = "scripts/items/misc/anatomist/pov_rot_mutagen_item",
 		BaseDropChance = 1.90
 	};

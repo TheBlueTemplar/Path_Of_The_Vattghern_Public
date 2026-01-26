@@ -15,22 +15,24 @@
 		// Third arg (array) reference in Enemy_Mutation_Arrays.nut, in afterhooks (rest in prev file, bottom)
 		::TLW.MutateEntity.mutate_entity(this.actor,::TLW.EnemyMutChance.High,::TLW.EnemyMut.SkeletonGroup,false);
 
-
 		// Chaos Mutation
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
 		//Stats Changes
 		local b = this.m.BaseProperties;
-		b.Hitpoints *= 1.35;
-		b.MeleeSkillMult *= 1.25;
-		b.MeleeDefenseMult *= 1.20;
 		if (this.World.getTime().Days >= 75)
 		{
-			//double buff
+			b.Hitpoints *= 1.50;
+			b.MeleeSkillMult *= 1.40;
+			b.MeleeDefenseMult *= 1.35;
+			b.InitiativeMult *= 1.15;
+		} else
+		{
 			b.Hitpoints *= 1.35;
 			b.MeleeSkillMult *= 1.25;
 			b.MeleeDefenseMult *= 1.20;
-		} 
+			b.InitiativeMult *= 1.075;
+		}
 
 	}
 

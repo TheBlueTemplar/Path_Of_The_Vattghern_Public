@@ -61,7 +61,7 @@ this.pov_spider_mutagen_upgrade_item <- this.inherit("scripts/items/misc/anatomi
 			id = 65,
 			type = "text",
 			icon = "ui/tooltips/warning.png",
-			text = "Must have Witcher Mutation AND the Spider Mutation to use this mutagen."
+			text = "Must be a Vatt\'ghern AND have the Spider Mutation to use this mutagen."
 		});
 
 		result.push({

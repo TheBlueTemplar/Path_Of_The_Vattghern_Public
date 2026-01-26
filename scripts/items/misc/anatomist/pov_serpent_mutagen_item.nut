@@ -5,7 +5,7 @@ this.pov_serpent_mutagen_item <- this.inherit("scripts/items/misc/anatomist/pov_
 		this.pov_anatomist2_potion_item.create();
 		this.m.ID = "misc.pov_serpent_mutagen";
 		this.m.Name = "Mutagen: Serpent";
-		this.m.Description = "Suffused with the sly and lethal essence of serpents, this mutagen transforms its bearer into a master of precision and cunning on the battlefield, being able to pull enemies in to deliver a strike, or allies to save them from an unfavorable position. Each strike is calculated, benefiting from increased accuracy when allies surround the target, turning cooperation into a deadly advantage. The bearer\'s agility is unmatched, recovering fatigue at an accelerated rate, enabling relentless combat and nimble repositioning. Additionally, their initiative fuels their defensive prowess, granting them both melee and ranged defense that scales with their speed.\n\nHowever, this serpentine gift is not without its drawbacks. The mutation demands a physical toll, reducing the bearer’s maximum health and increasing the damage they sustain from attacks. Furthermore, when cornered by multiple enemies, the bearer’s defenses falter, making them vulnerable in the midst of chaos. A double-edged boon, perfect for those who value precision and strategy over brute strength.";
+		this.m.Description = "Suffused with the sly and lethal essence of serpents, this mutagen transforms its bearer into a master of precision and cunning on the battlefield, being able to pull enemies in to deliver a strike, or allies to save them from an unfavorable position. Each strike is calculated, benefiting from [color=" + this.Const.UI.Color.povTooltipRed + "]increased accuracy when allies surround the target[/color], turning cooperation into a deadly advantage. The bearer\'s agility is unmatched, [color=" + this.Const.UI.Color.povTooltipRed + "]recovering fatigue at an accelerated rate[/color], enabling relentless combat and nimble repositioning. Additionally, [color=" + this.Const.UI.Color.povTooltipRed + "]their initiative fuels their defensive prowess[/color], granting them both melee and ranged defense that scales with their speed.\n\nHowever, this serpentine gift is not without its drawbacks. The mutation demands a physical toll, [color=" + this.Const.UI.Color.povTooltipRed + "]reducing the bearer\'s maximum health and increasing the damage they sustain from attacks[/color]. Furthermore, [color=" + this.Const.UI.Color.povTooltipRed + "]when cornered by multiple enemies, the bearer\'s defenses falter[/color], making them vulnerable in the midst of chaos. A double-edged boon, perfect for those who value precision and strategy over brute strength.";
 		this.m.IconLarge = "";
 		this.m.Icon = "consumables/pov_potion_serpent.png";
 		this.m.Value = 500;
@@ -61,7 +61,7 @@ this.pov_serpent_mutagen_item <- this.inherit("scripts/items/misc/anatomist/pov_
 			id = 65,
 			type = "text",
 			icon = "ui/tooltips/warning.png",
-			text = "Must have Witcher Mutation and not already used this mutagen."
+			text = "Must be a Vatt\'ghern or a Mutant, and not already used this mutagen."
 		});
 
 		return result;

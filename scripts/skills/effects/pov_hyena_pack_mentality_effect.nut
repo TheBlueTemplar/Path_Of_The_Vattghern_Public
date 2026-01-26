@@ -95,7 +95,7 @@ this.pov_hyena_pack_mentality_effect <- this.inherit("scripts/skills/skill", {
 			_properties.MeleeSkill += 20;
 			_properties.Bravery += 30;
 			_properties.Initiative += 20;
-			_properties.SurroundedBonus += 3;
+			_properties.SurroundedBonus += 4;
 		}
 		else if (allies < 5)
 		{

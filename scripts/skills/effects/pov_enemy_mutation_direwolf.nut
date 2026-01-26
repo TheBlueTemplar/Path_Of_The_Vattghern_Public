@@ -104,6 +104,12 @@ this.pov_enemy_mutation_direwolf <- this.inherit("scripts/skills/skill", {
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		local actor = this.getContainer().getActor();
+
+		if (actor.getCurrentProperties().YrdenTrapped)
+		{
+			return;
+		}
+
 		if (_targetEntity.getCurrentProperties().IsImmuneToBleeding || _damageInflictedHitpoints <= this.Const.Combat.MinDamageToApplyBleeding || _targetEntity.getHitpoints() <= 0)
 		{
 			return;
@@ -146,8 +152,11 @@ this.pov_enemy_mutation_direwolf <- this.inherit("scripts/skills/skill", {
 		// Buffs
 		_properties.MovementFatigueCostMult *= 0.5;
 		_properties.FatigueEffectMult *= 0.75;
-		_properties.StaminaMult *= 1.10;
-		_properties.IsImmuneToBleeding = true; // Too Op On Light Enemies (Idc)
+		_properties.StaminaMult *= 1.15;
+		_properties.MeleeSkillMult *= 1.06;
+		_properties.MeleeSkill += 4;
+		_properties.InitiativeMult *= 1.10;
+		_properties.IsImmuneToBleeding = true; // Too Op On Light Enemies? (Idc)
 		if (this.getContainer().hasSkill("special.night") && _properties.IsAffectedByNight)
 		{
 			_properties.Vision += 1;

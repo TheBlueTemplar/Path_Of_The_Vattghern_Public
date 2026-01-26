@@ -35,7 +35,7 @@ this.pov_charge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsUsingActorPitch = true;
 		this.m.DirectDamageMult = 0.25;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 25;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;
 		this.m.MaxLevelDifference = 1;
@@ -356,7 +356,7 @@ this.pov_charge_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 			_properties.DamageTotalMult *= 0.3;
-			_properties.DamageArmorMult *= 1.25;
+			_properties.DamageArmorMult *= 1.3;
 			//_properties.DamageRegularMin = 10;
 			//_properties.DamageRegularMax = 20;
 	}

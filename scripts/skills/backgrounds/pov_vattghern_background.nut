@@ -7,11 +7,11 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.character_background.create();
 		this.m.ID = "background.pov_vattghern";
 		this.m.Name = "Experienced Vatt\'ghern";
-		this.m.Icon = "ui/traits/pov_vattghern_background.png";
-		this.m.BackgroundDescription = "This one has lost all interest in glory and gold. With nothing else to prove but to themselves.";
+		this.m.Icon = "ui/backgrounds/pov_vattghern_background.png";
+		this.m.BackgroundDescription = "An expert monster hunter, though what is considered a monster these days can be broad...";
 		this.m.GoodEnding = "%name% has achieved something noone from their kind has easily done - mercenary or vattghern - and that is a peaceful retirement. Noone knows of their whereabouts, and noone really dares, or cares enough to look into it. What is sure, is that they have left a shining legacy behind in the %companyname%, and now are likely enjoying some great wine in a comfortable cottage, in a lush green field...";
 		this.m.BadEnding = "Not much was known of %name% and what happened to them, other than to assume a fate most common. Last time anyone saw %name%, they were tracking an especially vicious beast, a \"bruxa\", which might have been their last...";
-		this.m.HiringCost = 500;
+		this.m.HiringCost = 700;
 		this.m.DailyCost = 50;
 		this.m.Excluded = [
 			::Legends.Traits.getID(::Legends.Trait.Weasel),
@@ -61,6 +61,7 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(3, 5);
+		this.m.BackgroundType = this.Const.BackgroundType.Combat;
 
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[1];
@@ -101,7 +102,6 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.FlailTree,
-				this.Const.Perks.SwordTree,
 				this.Const.Perks.HammerTree
 			],
 			Defense = [
@@ -120,8 +120,8 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.IntelligentTree
 			],
 			Enemy = [
-				this.Const.Perks.SchratTree,
-				this.Const.Perks.LindwurmTree,
+				this.Const.Perks.SchratTree, // ABYSS !!! this will need UPDATE
+				this.Const.Perks.LindwurmTree, // JUST ADD THE BEASTS,UNDEAD,GREENSKINS,OCCULT groups ty :)
 				this.Const.Perks.AlpTree,
 				this.Const.Perks.HexenTree,
 				this.Const.Perks.DirewolfTree,
@@ -134,7 +134,9 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.HealerClassTree,
 				this.Const.Perks.HerbalistProfessionTree
 			],
-			Magic = []
+			Magic = [
+				this.Const.Perks.VattghernMagicTree
+			]
 		}
 	}
 
@@ -155,7 +157,7 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function onBuildDescription()
 	{
-		return "{Unnaturally skilled, | Born almost a master already, | Skilled enough to be considered supernatural,} {%name% has worked hard to refine their natural talent. | %name% has managed to stay above ground by honing their natural skill. | %name% claims their skill is as natural as yours.} {Eitherway, %they% demonstrates a honed mind and body to match. | They twirl a blade with an ease that would take years for you to learn yourself. | Hailing from faraway lands, they have gone far and wide to test their skills. | Urged by %their% parents to stay away from knights and mercenaries, they took time to travel and see the world. | One thing has led to another, %they% can barely recall what led them here in the first place.} {With no interest in work for crowns, %name% has found it fitting to join you on your journey. | Likely to be used as fodder, bait or a shield made of flesh by any mercenary company, %name% decided to stick with you instead. | %name% has much more to learn still, and your journey through the lands is the best way to test their skills.}";
+		return "{Little is known of where the vattghern comes from. | %They% never speak of %their% origins, and few dare to ask. | Rumors surround %their% past, each more uncertain than the last. | Whatever life %they% lived before, it has long since been abandoned. | Even among witchers, %their% beginnings remain obscure.} {%Their% movements defy common training, sharp and unnervingly precise. | %They% react faster than thought, as if instinct has replaced hesitation. | There is something unnatural in the way %they% fight, beyond talent alone. | Steel seems to follow %their% will without conscious effort. | Watching %them% in combat feels like witnessing something engineered rather than taught.} {Such ability was not born - it was carved through relentless discipline. | %They% have subjected mind and body to trials few could survive. | Countless hours of training hardened %them% beyond exhaustion. | Pain, repetition, and focus shaped %them% into what %they% are now. | Every motion reflects years of refinement, not chance.} {%They% specialize in threats others refuse to name. | Creatures of curse, spirit, and nightmare fall to %their% blade. | %They% understand the unnatural, not as myth, but as prey. | From twisted beasts to metaphysical horrors, %they% know how to kill what should not exist. | Where superstition fails, %their% knowledge prevails.} {Even so, %their% limits remain untested. | There is a sense that %they% are far from finished. | Experience has tempered %them%, but not exhausted %their% growth. | What %they% have mastered so far may only be the foundation. | In time, %they% could become something even legends struggle to describe.}";
 	}
 
 	function onChangeAttributes()
@@ -197,10 +199,20 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 		return c;
 	}
 
-	function onAdded() // enables relationships
+	// enables relationships
+	// the only relationship that was enabled was between me and alcohol...for me to find out that this trait made wage = 0
+	function onAdded() 
 	{
 		this.character_background.onAdded();
-		::Legends.Traits.grant(this, ::Legends.Trait.LegendLWRelationship);
+		local actor = this.getContainer().getActor();
+		//::Legends.Traits.grant(this, ::Legends.Trait.LegendLWRelationship); // fu,trait
+
+		// Add Vattghern Trait
+		if (!actor.getSkills().hasSkill("trait.pov_witcher"))
+		{
+			actor.getSkills().add(this.new("scripts/skills/traits/pov_vattghern_trait"));
+			actor.getFlags().increment("pov_ActiveMutations");
+		}
 	}
 
 	function onSetAppearance()
@@ -275,7 +287,7 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 				id = 13,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.PositiveValue + "]-4[/color]."
+				text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.PositiveValue + "]-5[/color]."
 			}
 		);
 		ret.push(
@@ -292,6 +304,6 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 	function onUpdate(_properties)
 	{
 		this.character_background.onUpdate(_properties);
-		_properties.Threat += 4;
+		_properties.Threat += 5;
 	}
 });

@@ -1,10 +1,10 @@
 ::TLW.HooksMod.hook("scripts/entity/world/settlements/buildings/blackmarket_building", function( q ) {
 
-	/*q.onUpdateDraftList = @(__original) function ( _list )
+	q.onUpdateDraftList = @(__original) function ( _list )
 	{
 		_list.push("pov_mutant_background");
 		__original( _list );
-	}*/
+	}
 
 	q.fillStash = @( __original ) function(_list, _stash, _priceMult, _allowDamagedEquipment = false)
 	{
@@ -20,7 +20,7 @@
 				{
 					R = 99,
 					P = 45.0,
-					S = "misc/anatomist/pov_strain_mutagen_item"
+					S = "misc/anatomist/pov_necromancy_mutagen_item"
 				},
 				{
 					R = 97,

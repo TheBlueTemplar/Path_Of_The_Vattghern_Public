@@ -61,7 +61,7 @@ this.pov_lindwurm_mutagen_upgrade_item <- this.inherit("scripts/items/misc/anato
 			id = 65,
 			type = "text",
 			icon = "ui/tooltips/warning.png",
-			text = "Must have Witcher Mutation AND the Lindwurm Mutation to use this mutagen."
+			text = "Must be a Vatt\'ghern AND have the Lindwurm Mutation to use this mutagen."
 		});
 
 		result.push({

@@ -139,11 +139,11 @@ this.pov_lindwurm_mutagen_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		local poison = _attacker.getSkills().getSkillByID("effects.lindwurm_acid");
+		local poison = _attacker.getSkills().getSkillByID("effects.acid");
 
 		if (poison == null)
 		{
-			_attacker.getSkills().add(this.new("scripts/skills/effects/lindwurm_acid_effect"));
+			_attacker.getSkills().add(this.new("scripts/skills/effects/acid_effect"));
 		}
 		else
 		{

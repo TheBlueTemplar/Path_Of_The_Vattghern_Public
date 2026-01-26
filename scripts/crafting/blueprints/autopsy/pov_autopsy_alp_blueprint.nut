@@ -26,25 +26,36 @@ this.pov_autopsy_alp_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function onCraft( _stash )
 	{
-		if (this.Math.rand(1, 100) <= 10)
+    	local item;
+    	if (this.Math.rand(1, 100) <= 10)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_alp_mutagen_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_alp_mutagen_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 30)
 			{
-				_stash.add(this.new("scripts/items/loot/soul_splinter_item"));
+				item = this.new("scripts/items/loot/soul_splinter_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 30)
 			{
-				_stash.add(this.new("scripts/items/misc/parched_skin_item"));
+				item = this.new("scripts/items/misc/parched_skin_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 30)
 			{
-				_stash.add(this.new("scripts/items/misc/third_eye_item"));
+				item = this.new("scripts/items/misc/third_eye_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 30)
 			{
-				_stash.add(this.new("scripts/items/misc/petrified_scream_item"));
+				item = this.new("scripts/items/misc/petrified_scream_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 	}
 

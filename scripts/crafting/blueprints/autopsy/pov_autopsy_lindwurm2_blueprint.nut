@@ -26,25 +26,36 @@ this.pov_autopsy_lindwurm2_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function onCraft( _stash )
 	{
-		if (this.Math.rand(1, 100) <= 15)
+	    local item;
+	    if (this.Math.rand(1, 100) <= 15)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_lindwurm_mutagen_upgrade_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_lindwurm_mutagen_upgrade_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 40)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_lindwurm_mutagen_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_lindwurm_mutagen_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 75)
 			{
-				_stash.add(this.new("scripts/items/misc/lindwurm_blood_item"));
+				item = this.new("scripts/items/misc/lindwurm_blood_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 75)
 			{
-				_stash.add(this.new("scripts/items/misc/lindwurm_scales_item"));
+				item = this.new("scripts/items/misc/lindwurm_scales_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 75)
 			{
-				_stash.add(this.new("scripts/items/misc/lindwurm_bones_item"));
+				item = this.new("scripts/items/misc/lindwurm_bones_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 	}
 

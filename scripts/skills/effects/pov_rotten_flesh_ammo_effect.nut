@@ -43,7 +43,7 @@ this.pov_rotten_flesh_ammo_effect <- this.inherit("scripts/skills/skill", {
 		if (_skill.isAttack() && item != null && item.isItemType(this.Const.Items.ItemType.Weapon) && item.isWeaponType(this.Const.Items.WeaponType.Firearm))
 		{
 			_properties.DamageArmorMult *= 0.75;
-			_properties.RangedDamageMult *= 0.85;
+			_properties.RangedDamageMult *= 0.88;
 		}
 	}
 
@@ -58,7 +58,7 @@ this.pov_rotten_flesh_ammo_effect <- this.inherit("scripts/skills/skill", {
 		// Add Rot Effect on Hit
 		if (_damageInflictedHitpoints > 0 || _damageInflictedArmor > 0)
 		{
-			if (!_targetEntity.getFlags().has("undead") && !_targetEntity.getSkills().hasSkill("effects.pov_alp_mutagen") && !_targetEntity.getSkills().hasSkill("effects.pov_skeleton_mutagen") && !_targetEntity.getSkills().hasSkill("effects.pov_strain_mutagen") && !_targetEntity.getSkills().hasSkill("effects.pov_ghoul_mutagen") && !_targetEntity.getSkills().hasSkill("effects.pov_enemy_mutation_alp"))
+			if (!_targetEntity.getFlags().has("undead") && !_targetEntity.getSkills().hasSkill("effects.pov_alp_mutagen") && !_targetEntity.getSkills().hasSkill("effects.pov_skeleton_mutagen") && !_targetEntity.getSkills().hasSkill("effects.pov_necromancy_mutagen") && !_targetEntity.getSkills().hasSkill("effects.pov_ghoul_mutagen") && !_targetEntity.getSkills().hasSkill("effects.pov_enemy_mutation_alp"))
 			{
 				_targetEntity.getSkills().add(this.new("scripts/skills/effects/pov_stench_effect"));
 				_targetEntity.checkMorale(-1, 10);
@@ -69,7 +69,7 @@ this.pov_rotten_flesh_ammo_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate(_properties)
 	{
-		_properties.Bravery -= 5;
+		_properties.Bravery -= 8;
 	}
 
 });

@@ -57,6 +57,12 @@ this.pov_unhold_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				text = "Does [color=" + this.Const.UI.Color.PositiveValue + "]more[/color] damage based on max HP, when over 75% Health. When under that point, deals [color=" + this.Const.UI.Color.NegativeValue + "]less[/color]. Scales linearly with current Hp."
 			},
 			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/damage_dealt.png",
+				text = "Punching also does [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] damage and is [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] more effective against armor."
+			},
+			{
 				id = 19,
 				type = "text",
 				icon = "ui/icons/asset_food.png",
@@ -128,6 +134,15 @@ this.pov_unhold_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		// Debuffs
 		// Lower HP% = Less Dmg%
 		_properties.DailyFood += 1.0;
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill != null && _skill.getID() == "actives.hand_to_hand")
+		{
+			_properties.DamageTotalMult *= 1.30;
+			_properties.DamageArmorMult *= 1.20;
+		}
 	}
 
 	function isHidden()

@@ -3,7 +3,7 @@
 // South is about southern biome (-no. 1,10), North about barbarian, snow biome (-no. 6,8)
 // Vars n Objects used in these arrays are defined in Enemy_Mutations.nut, at bottom
 
-::logInfo("PoV Enemy Mutation Arrays Loaded");
+::logInfo("[PoV] Enemy Mutation Arrays Loaded");
 // Tanky Versions, for enemies that benefit most from survivability
 ::TLW.EnemyMut.Tank <- ::TLW.EnemyMut.AllExcept(::TLW.EnemyMut.Vampire,::TLW.EnemyMut.Spider,::TLW.EnemyMut.Orc,::TLW.EnemyMut.Lindwurm,::TLW.EnemyMut.Ghost,::TLW.EnemyMut.Ghoul,::TLW.EnemyMut.Basilisk,::TLW.EnemyMut.Direwolf,::TLW.EnemyMut.Goblin,::TLW.EnemyMut.Rot);
 ::TLW.EnemyMut.TankSouth <- ::TLW.EnemyMut.AllExcept(::TLW.EnemyMut.Unhold,::TLW.EnemyMut.Vampire,::TLW.EnemyMut.Spider,::TLW.EnemyMut.Orc,::TLW.EnemyMut.Lindwurm,::TLW.EnemyMut.Ghost,::TLW.EnemyMut.Ghoul,::TLW.EnemyMut.Basilisk,::TLW.EnemyMut.Direwolf,::TLW.EnemyMut.Goblin,::TLW.EnemyMut.Rot);

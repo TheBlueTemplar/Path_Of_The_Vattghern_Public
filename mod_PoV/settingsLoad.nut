@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////
-// 	               Author: The Blue Templar 		   //
-// 	    Not to be used elsewhere or tampered with, 2025.       //
+// 	                 Author: The Blue Templar 		               //
+// 	      Not to be used elsewhere or tampered with, 2025.         //
 /////////////////////////////////////////////////////////////////////
 
 // Gameplay Settings 
@@ -9,16 +9,30 @@ page.addTitle("title", "Gameplay Settings");
 page.addTitle("title2", "Main - Default Values Recommended");
 page.addDivider("divider");
 
+
+page.addSpacer("Spacer", "72rem", "1rem");
+/*
+// create a spacer that "puts" this button at center
+// full page = 72 rem, button height = 4 rem
+page.addSpacer("Spacer1", "18rem", "4rem");
+
+::TLW.OverhaulID <- "Overhaul";
+local settingOverhaul = page.addBooleanSetting(::TLW.OverhaulID, true, "PoV: Overhaul Edition", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Toggles the overhauling of various vanilla/legends systems by PoV. Default (and recommended) = on[/color] \n\n Pov is designed to also be an overhaul type mod, and the mod is balanced with this setting being on. These changes include weapons, items, skills, effects, perks, backgrounds etc. rebalance, to fit PoV\'s vision. \n\n This setting exists mainly for compatibility reasons, so pov can be easily playable with other big overhaul mods, and for people who really dislike pov\'s new balance.\n\n [color=" + this.Const.UI.Color.povTooltipBlue + "] Unless stated otherwise, it is recommended to keep this setting on. Balance feedback on pov will be void if you turn this off![/color] \n\n [color=" + this.Const.UI.Color.povPainEffect + "] Toggle this OFF if playing with the following mods: FOTN. \n ONLY TOGGLE IN MAIN MENU![/color]");
+
+page.addSpacer("Spacer2", "72rem", "1rem");
+page.addDivider("divider2");
+*/
+// removed this setting, it was for toggling enemy mutations
 /*::TLW.EnableEnemyMutationID <- "EnableEnemyMutation"
 local settingEnableEnemyMutation = page.addBooleanSetting(::TLW.EnableEnemyMutationID, true, "Enemy Mutations", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Recommended to keep this on, as it is a core mechanic of PoV.[/color] \n\n All enemies may get various thematic and appropriate mutations, making them stronger and creating interesting adaptive gameplay.\n\n The enemies that get a mutation also have a very low chance to drop relevant mutagens.\n\n Also enables some events, items and traits related to mutated enemies. All chances scale with combat difficulty and enemy strength \n\n [color=" + this.Const.UI.Color.povPainEffect + "] DISABLING THIS WONT CHANGE ANYTHING CURRENTLY [/color] - Enemy mutations will appear normally.");*/
 ::TLW.EnemyMutationScalingID <- "EnemyMutationScaling";
 local settingEnemyMutationScaling = page.addBooleanSetting(::TLW.EnemyMutationScalingID, true, "Enemy Mutations Scaling", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Scales the Enemy Mutations based on passed ingame days. Recommended to keep on, unless you have many other mods making late game more difficult.[/color] \n\n An attempt at keeping the endgame challenging, but also tone down the very early stages of the game - Enemy Mutations will appear less often for the few first days, but then will appear more often, as the playthrough becomes longer. (increments start from -30% on day 5, to +75% on day 280) \n\n With chaos mode enabled, mutations will start appearing much less at the beginning, but over time their frequency will increase by a lot!");
 ::TLW.ChaosID <- "ChaosMode";
-local settingChaos = page.addBooleanSetting(::TLW.ChaosID, false, "Chaos Mode", "[color=" + this.Const.UI.Color.povTooltipBlue + "]PoV is not balanced around this mode, it is only meant as a fun \"Challenge\". Off by default. [/color] \n\n All enemies can have multiple mutations, selected randomly from all of PoV\'s possible effects. Mutagen drop rates from enemy mutants will be lowered. \n\n Recommended to enable \"Enemy Mutations Scaling\" if you enable chaos mode.\n\n [b][color=" + this.Const.UI.Color.NegativeValue + "]MAY CHAOS TAKE THE WORLD![/color][/b]");
+local settingChaos = page.addBooleanSetting(::TLW.ChaosID, false, "Chaos Mode", "[color=" + this.Const.UI.Color.povTooltipBlue + "]PoV is not balanced around this mode, it is only meant as a fun \"Challenge\". Off by default. [/color] \n\n All enemies can have multiple mutations, selected randomly from all of PoV\'s possible effects. Mutagen drop rates from enemy mutants will be lowered. \n\n Recommended to enable \"Enemy Mutations Scaling\" if you enable chaos mode.\n\n [b][color=" + this.Const.UI.Color.povPainEffect + "]MAY CHAOS TAKE THE WORLD![/color][/b]");
 
-
+page.addSpacer("Spacer3", "72rem", "1rem");
 page.addTitle("title3", "Customization - Tweaks");
-page.addDivider("divider2");
+page.addDivider("divider3");
 
 ::TLW.McTweaksID <- "McTweaks";
 local settingMcTweaks = page.addBooleanSetting(::TLW.McTweaksID, false, "MC Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Magic Concept\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between MC and PoV, and removes an annoying enemy ability or two. Look at the PoV server for details.\n\n Will only work with the MC mod installed. Not recommended to turn on and off multiple times during a save.");
@@ -27,7 +41,7 @@ local settingMcTweaks = page.addBooleanSetting(::TLW.McTweaksID, false, "MC Twea
 local settingFotnTweaks = page.addBooleanSetting(::TLW.FotnTweaksID, false, "FotN Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Fury of the Northmen\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and FotN, mainly messing with some new enemies.\n\n Will only work with the FotN mod installed. Not recommended to turn on and off multiple times during a save.");
 
 ::TLW.SSUTweaksID <- "SSUTweaks";
-local settingSSUTweaks = page.addBooleanSetting(::TLW.SSUTweaksID, false, "SSU Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Sellswords Updated\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and SSU. Removes sequences (drops,shop and effects) from players and enemies. \n\n Will only work with the SSU mod installed. Not recommended to turn on and off multiple times during a save. \n\n [color=" + this.Const.UI.Color.NegativeValue + "]Only toggle in main menu before a new game --- Requires Restart![/color]");
+local settingSSUTweaks = page.addBooleanSetting(::TLW.SSUTweaksID, false, "SSU Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Sellswords Updated\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and SSU. Removes sequences (drops,shop and effects) from players and enemies. Also tones down the crazy lategame scaling.\n\n Will only work with the SSU mod installed. Not recommended to turn on and off multiple times during a save. \n\n [color=" + this.Const.UI.Color.povPainEffect + "]Only toggle in main menu before a new game --- Requires Restart![/color]");
 
 //Callbacks
 /*settingEnableEnemyMutation.addCallback(function(_newValue)
@@ -35,13 +49,18 @@ local settingSSUTweaks = page.addBooleanSetting(::TLW.SSUTweaksID, false, "SSU T
         // Setting Always Enabled
 	::TLW.EnableEnemyMutation = true
 })*/
+/*settingOverhaul.addCallback(function(_newValue)
+{
+    if (::MSU.Utils.getActiveState() != "main_menu_state")
+        return false;
+})*/
 settingEnemyMutationScaling.addCallback(function(_newValue)
 {
     ::TLW.EnemyMutationScaling = _newValue
 })
 settingChaos.addCallback(function(_newValue)
 {
-        ::TLW.ChaosMode = _newValue
+    ::TLW.ChaosMode = _newValue
 })
 settingMcTweaks.addCallback(function(_newValue)
 {
@@ -60,9 +79,13 @@ settingSSUTweaks.addCallback(function(_newValue)
 local page = ::TLW.Mod.ModSettings.addPage("Misc");
 page.addTitle("title", "Misc Settings");
 page.addDivider("divider");
+page.addSpacer("Spacer", "72rem", "1rem");
 
 ::TLW.EnableMainMenuArtID <- "EnableMainMenuArt"
-local settingEnableMainMenuArt = page.addBooleanSetting(::TLW.EnableMainMenuArtID, true, "PoV Main Menu Art", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Toggle the display of PoV's main menu art.[/color] \n\n Disable this if you want another mod's or Vanilla art. Immediately works, no restart required. \n\n [color=" + this.Const.UI.Color.povPainEffect + "]Only toggle this while in the main menu screen. It will not work if you toggle ingame.[/color]");
+local settingEnableMainMenuArt = page.addBooleanSetting(::TLW.EnableMainMenuArtID, true, "PoV Main Menu Art", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Toggle the display of PoV\'s main menu art.[/color] \n\n Disable this if you want another mod\'s or Vanilla art. Immediately works, no restart required. \n\n [color=" + this.Const.UI.Color.povPainEffect + "]Only toggle this while in the main menu screen. It will not work if you toggle ingame.[/color]");
+
+::TLW.EnablePovMainMusicID <- "EnablePovMainMusic"
+local settingEnablePovMainMusic = page.addBooleanSetting(::TLW.EnablePovMainMusicID, true, "PoV Main Menu Music", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Toggle PoV\'s main menu music.[/color] \n\n Disable this if you want another mod\'s or Vanilla music.\n\n All music used is legally obtained and licensed, credits at the mod\'s github page. \n\n [color=" + this.Const.UI.Color.povPainEffect + "]Only toggle this while in the main menu screen.[/color]");
 
 ::TLW.EnablePovIntroEventID <- "EnablePovIntroEvent"
 local settingEnablePovIntroEvent = page.addBooleanSetting(::TLW.EnablePovIntroEventID, true, "PoV Intro Event", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Toggle PoV\'s Intro event[/color] \n\n On by default. Disable this if you do not want to see PoV\'s intro event into your new playthroughs. Does not affect gameplay in any way.");
@@ -76,21 +99,53 @@ settingEnableMainMenuArt.addAfterChangeCallback(function(_oldValue)
     main_menu.m.JSHandle.asyncCall("updatePOVBackgroundImage", getValue());
 })
 
+settingEnablePovMainMusic.addBeforeChangeCallback(function(_newValue)
+{
+    //::TLW.EnablePovMainMusic = _newValue;
+    if (::MSU.Utils.getActiveState() != "main_menu_state")
+        return false;
+});
+
+settingEnablePovMainMusic.addAfterChangeCallback(function(_oldValue)
+{
+    local state = ::MSU.Utils.getState("main_menu_state");
+    if (::MSU.isNull(state)) return;
+
+    // Ensure the UI is connected (idk if thats actually needed?):
+    if (state.m.MainMenuScreen == null || state.m.MainMenuScreen.m.JSHandle == null) return;
+
+    // Current value, after change:
+    local enabled = this.getValue();
+
+    if (enabled)
+    {
+        this.Music.setTrackList(this.Const.Music.PovMenuTracks, this.Const.Music.CrossFadeTime + 1000);
+        // set variable for ez reference, check test scenario
+        ::TLW.EnablePovMainMusic = enabled;
+    }
+    else
+    {
+        this.Music.setTrackList(this.Const.Music.MenuTracks, this.Const.Music.CrossFadeTime + 1000);
+        ::TLW.EnablePovMainMusic = enabled;
+    }
+});
+
 settingEnablePovIntroEvent.addCallback(function(_newValue)
 {       
-        ::TLW.EnablePovIntroEvent = _newValue
+    ::TLW.EnablePovIntroEvent = _newValue;
 })
-
-
 
 // Debug Settings 
 local page = ::TLW.Mod.ModSettings.addPage("Debug");
 page.addTitle("title", "Debug Settings - Advanced");
 page.addDivider("divider");
+page.addSpacer("Spacer", "72rem", "1rem");
 
 ::TLW.LogID <- "Log";
 local log = page.addBooleanSetting(::TLW.LogID, false, "Enable Logging", "[color=" + this.Const.UI.Color.povTooltipBlue + "] Recommended to keep this on, when playing Beta versions of PoV.[/color]\n\nCurrently on by default. Enable this for testing, dev, streams or when you want to re-create an error to send a good log. \n\n For modders: Logs may be somewhat flooded");
-page.addDivider("divider2");
+
+//page.addDivider("divider2");
+
 ::TLW.MysteryButtonID <- "MysteryButton";
 local mysteryButton = page.addBooleanSetting(::TLW.MysteryButtonID, false, "Mystery Option", "[color=" + this.Const.UI.Color.povTooltipBlue + "]You never know, maybe this will bring you luck? Or...[/color]");
 
@@ -105,6 +160,7 @@ local page = ::TLW.Mod.ModSettings.addPage("PoV Wiki");
 page.addTitle("title", "Hover over the titles below for info");
 page.addTitle("title2", "Toggling them does nothing");
 page.addDivider("divider");
+page.addSpacer("Spacer", "72rem", "1rem");
 page.addTitle("Main", "Main");
 
 local enemyMutationInfo = page.addBooleanSetting(

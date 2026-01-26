@@ -26,29 +26,42 @@ this.pov_autopsy_alp2_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function onCraft( _stash )
 	{
-		if (this.Math.rand(1, 100) <= 15)
+    	local item;
+    	if (this.Math.rand(1, 100) <= 15)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_alp_mutagen_upgrade_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_alp_mutagen_upgrade_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 40)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_alp_mutagen_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_alp_mutagen_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 50)
 			{
-				_stash.add(this.new("scripts/items/loot/soul_splinter_item"));
+				item = this.new("scripts/items/loot/soul_splinter_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 40)
 			{
-				_stash.add(this.new("scripts/items/misc/legend_demon_alp_skin_item"));
+				item = this.new("scripts/items/misc/legend_demon_alp_skin_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 40)
 			{
-				_stash.add(this.new("scripts/items/misc/legend_demon_third_eye_item"));
+				item = this.new("scripts/items/misc/legend_demon_third_eye_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 70)
 			{
-				_stash.add(this.new("scripts/items/misc/petrified_scream_item"));
+				item = this.new("scripts/items/misc/petrified_scream_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 	}
 

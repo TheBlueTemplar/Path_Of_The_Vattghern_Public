@@ -20,20 +20,21 @@
 ::TLW <- {
 	ID = "mod_PoV",
 	Name = "Path of the Vatt\'ghern", //PoV
-	Version = "1.1.9",
+	Version = "2.0.0",
 	//EnableEnemyMutation = true,	//default settings
+	//Overhaul = true,
 	EnemyMutationScaling = true,
 	ChaosMode = false,
 	McTweaks = false,
 	FotnTweaks = false,
 	SSUTweaks = false,
 	EnableMainMenuArt = true,
-	//EnablePovMainMusic = true,
+	EnablePovMainMusic = true,
 	EnablePovIntroEvent = true
 };
 
 ::TLW.HooksMod <- ::Hooks.register(::TLW.ID, ::TLW.Version, ::TLW.Name);
-::TLW.HooksMod.require("mod_legends >= 19.2.32", "mod_modern_hooks >= 0.4.0", "mod_msu >= 1.2.7");
+::TLW.HooksMod.require("mod_legends >= 19.2.41", "mod_modern_hooks >= 0.4.0", "mod_msu >= 1.2.7");
 ::TLW.HooksMod.conflictWith("mod_silver_weapons", "mod_PFI", "mod_TLW", "mod_weapons_updated", "mod_weapons", "mod_reforged"); 
 
 ::TLW.HooksMod.queue(">mod_legends", ">mod_msu", ">mod_nggh_magic_concept", ">mod_sellswords", ">mod_ROTUC", function() 
@@ -47,6 +48,8 @@
     ::include("mod_PoV/load.nut");
     // load mod settings 
     ::include("mod_PoV/settingsLoad.nut");
+    // Load later (Depend on Settings being loaded) 
+    //::include("mod_PoV/afterLoad.nut");
 });
 
 ::TLW.HooksMod.queue(">mod_legends", ">mod_msu", ">mod_nggh_magic_concept", ">mod_sellswords", ">mod_ROTUC", function() {

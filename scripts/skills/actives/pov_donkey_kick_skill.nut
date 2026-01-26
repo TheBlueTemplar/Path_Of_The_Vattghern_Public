@@ -6,7 +6,7 @@ this.pov_donkey_kick_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.pov_donkey_kick";
 		this.m.Name = "Powerful Kick";
-		this.m.Description = "The main attack of a donkey, more for defense than attack. Maximum damage is the average of your hitpoints and initiative minus 85.";
+		this.m.Description = "The main attack of a donkey, more for defense than attack. Maximum damage is the average of your hitpoints and initiative minus 85, with a damage cap on 50 - 70. \n\n Has 1 Turn Cooldown";
 		this.m.KilledString = "Kicked to death";
 		this.m.Icon = "skills/horse_kick.png";
 		this.m.IconDisabled = "skills/horse_kick_bw.png";
@@ -238,8 +238,8 @@ this.pov_donkey_kick_skill <- this.inherit("scripts/skills/skill", {
 				damageMax += muscularity;
 			}
 
-			if (damageMin > 60) {damageMin = 60;}
-			if (damageMax > 80) {damageMax = 80;}
+			if (damageMin > 50) {damageMin = 50;}
+			if (damageMax > 70) {damageMax = 70;}
 
 			_properties.DamageRegularMin = this.Math.floor(damageMin);
 			_properties.DamageRegularMax = this.Math.floor(damageMax);

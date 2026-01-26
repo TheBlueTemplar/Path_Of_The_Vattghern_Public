@@ -104,6 +104,8 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 
+		// Scaling stats and skills
+		// scaling points: 50,100,150,200
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 200)
 		{
 			b.DamageTotalMult *= 1.15;
@@ -115,7 +117,7 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 			b.ArmorMax[this.Const.BodyPart.Head] += 225;
 			b.Armor[this.Const.BodyPart.Body] += 225;
 			b.ArmorMax[this.Const.BodyPart.Body] += 225;
-		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 140)
+		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 150)
 		{
 			b.DamageTotalMult *= 1.10;
 			b.RangedDefense += 7;
@@ -126,18 +128,31 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 			b.ArmorMax[this.Const.BodyPart.Head] += 125;
 			b.Armor[this.Const.BodyPart.Body] += 125;
 			b.ArmorMax[this.Const.BodyPart.Body] += 125;
-		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 70)
+		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 100)
 		{
-			b.DamageTotalMult *= 1.05;
-			b.RangedDefense += 4;
-			b.MeleeDefense += 4;
-			b.MeleeSkill += 6;
+			b.DamageTotalMult *= 1.07;
+			b.RangedDefense += 5;
+			b.MeleeDefense += 5;
+			b.MeleeSkill += 8;
+			b.Bravery += 15;
+			b.Armor[this.Const.BodyPart.Head] += 65;
+			b.ArmorMax[this.Const.BodyPart.Head] += 65;
+			b.Armor[this.Const.BodyPart.Body] += 65;
+			b.ArmorMax[this.Const.BodyPart.Body] += 65;
+		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 50)
+		{
+			b.DamageTotalMult *= 1.03;
+			b.RangedDefense += 3;
+			b.MeleeDefense += 3;
+			b.MeleeSkill += 5;
 			b.Bravery += 10;
-			b.Armor[this.Const.BodyPart.Head] += 50;
-			b.ArmorMax[this.Const.BodyPart.Head] += 50;
-			b.Armor[this.Const.BodyPart.Body] += 50;
-			b.ArmorMax[this.Const.BodyPart.Body] += 50;
+			b.Armor[this.Const.BodyPart.Head] += 30;
+			b.ArmorMax[this.Const.BodyPart.Head] += 30;
+			b.Armor[this.Const.BodyPart.Body] += 30;
+			b.ArmorMax[this.Const.BodyPart.Body] += 30;
 		}
+
+
 		// On legendary, bonus skills and perks added below
 
 		this.m.ActionPoints = b.ActionPoints;
@@ -183,15 +198,26 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			// Stats
 			b.DamageTotalMult *= 1.10;
-			b.RangedDefense += 4;
-			b.MeleeDefense += 4;
-			b.MeleeSkill += 8;
-			//b.Hitpoints += 50;
-			b.Bravery += 15;
-			b.Armor[this.Const.BodyPart.Head] += 75;
-			b.ArmorMax[this.Const.BodyPart.Head] += 75;
-			b.Armor[this.Const.BodyPart.Body] += 75;
-			b.ArmorMax[this.Const.BodyPart.Body] += 75;
+
+			// Time-based difficulty scaling
+			local day = this.World.getTime().Days;
+			local scale = this.Math.floor(day/50) + this.Math.floor(day/100) + this.Math.floor(day/150);
+
+			// Soft cap so scaling stays controlled
+			scale = this.Math.min(scale, 8 + this.Math.floor(day/100));
+
+			// Core combat stats
+			b.MeleeSkill	+= 1.15 * scale;   // ~+8 at day 200
+			b.MeleeDefense	+= 0.5 * scale;   // ~+4
+			b.RangedDefense	+= 0.5 * scale;   // ~+4
+			b.Bravery		+= 2.0 * scale;   // ~+14
+
+			// Armor scaling (heavier late-game pressure)
+			b.Armor[this.Const.BodyPart.Head]		+= 11 * scale; // ~+75
+			b.ArmorMax[this.Const.BodyPart.Head]	+= 11 * scale;
+			b.Armor[this.Const.BodyPart.Body]		+= 11 * scale; // ~+75
+			b.ArmorMax[this.Const.BodyPart.Body]	+= 11 * scale;
+
 			// Perks
 			//this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_feint"));
@@ -209,10 +235,10 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 			b.MeleeSkill -= 6;
 			//b.Hitpoints += 50;
 			b.Bravery -= 20;
-			b.Armor[this.Const.BodyPart.Head] -= 50;
-			b.ArmorMax[this.Const.BodyPart.Head] -= 50;
-			b.Armor[this.Const.BodyPart.Body] -= 50;
-			b.ArmorMax[this.Const.BodyPart.Body] -= 50;
+			b.Armor[this.Const.BodyPart.Head] -= 40;
+			b.ArmorMax[this.Const.BodyPart.Head] -= 40;
+			b.Armor[this.Const.BodyPart.Body] -= 40;
+			b.ArmorMax[this.Const.BodyPart.Body] -= 40;
 		}
 
 		// CORPSE - MUTATION STUFF

@@ -71,7 +71,7 @@ this.pov_flesh_golem_buff_effect <- this.inherit("scripts/skills/skill", {
 	{
 		// Buffs
 		_properties.HitpointsMult *= 1.20;
-		_properties.MeleeSkill += 8;
+		_properties.MeleeSkill += 6;
 		_properties.Threat += 3;
 		// Debuffs
 		_properties.MeleeDefense -= 4;

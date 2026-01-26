@@ -306,7 +306,20 @@
 		Flag = "pov_corpse_flesh_golem",
 		Script = "scripts/items/misc/corpse/pov_corpse_flesh_golem_item",
 		BaseDropChance = 24.0
-		// it is 40 for greater flesh golem, see its hook file
+	};
+
+	::TLW.Corpse.GreaterFleshGolem <- 
+	{
+		Flag = "pov_corpse_flesh_golem2",
+		Script = "scripts/items/misc/corpse/pov_corpse_flesh_golem2_item",
+		BaseDropChance = 35.0
+	};
+
+	::TLW.Corpse.FaultFinder <- 
+	{
+		Flag = "pov_corpse_fault_finder",
+		Script = "scripts/items/misc/corpse/pov_corpse_fault_finder_item",
+		BaseDropChance = 45.0
 	};
 
 	::TLW.Corpse.SwordGhost <- 
@@ -322,3 +335,11 @@
 		Script = "scripts/items/misc/corpse/pov_corpse_ghost4_item",
 		BaseDropChance = 45.0
 	};
+
+	::TLW.Corpse.Forsaken <- 
+	{
+		Flag = "pov_corpse_forsaken",
+		Script = "scripts/items/misc/corpse/pov_corpse_forsaken_item",
+		BaseDropChance = 25.0
+	};
+

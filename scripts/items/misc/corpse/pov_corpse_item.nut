@@ -18,5 +18,16 @@ this.pov_corpse_item <- this.inherit("scripts/items/supplies/food_item", {
 		return false;
 	}
 
+	// Are now considered Beast Parts AND Corpse Items, for modifying prices
+	function getSellPriceMult()
+	{
+		return (this.World.State.getCurrentTown().getBeastPartsPriceMult() * this.World.State.getCurrentTown().getCorpsePriceMult());
+	}
+
+	function getBuyPriceMult()
+	{
+		return (this.World.State.getCurrentTown().getBeastPartsPriceMult() * this.World.State.getCurrentTown().getCorpsePriceMult());
+	}
+
 });
 

@@ -52,6 +52,12 @@ this.pov_witcher_longsword <- this.inherit("scripts/items/weapons/weapon", {
 			icon = "ui/icons/special.png",
 			text = "Not as [color=" + this.Const.UI.Color.DamageValue + "]effective[/color] when wielded by someone who is not a vatt\'ghern"
 		});
+		result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/pov_intensity.png",
+			text = "Sign Intensity of the wielder increased by [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color]."
+		});
 		return result;
 	}
 
@@ -99,7 +105,9 @@ this.pov_witcher_longsword <- this.inherit("scripts/items/weapons/weapon", {
 		if (!actor.getSkills().hasSkill("trait.pov_witcher"))
 		{
 			actor.getSkills().add(this.new("scripts/skills/effects/pov_non_vattghern_sword_effect"));
-		}	
+		}
+
+		_properties.SignIntensity += 0.05;	
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties)
@@ -115,7 +123,8 @@ this.pov_witcher_longsword <- this.inherit("scripts/items/weapons/weapon", {
 			if(this.Const.EntityType.getDefaultFaction(_targetEntity.getType()) == this.Const.FactionType.Beasts || _targetEntity.getFlags().has("ghost"))
 			{
 				_properties.DamageTotalMult *= 1.20;
-			}else if(_targetEntity.getFlags().has("undead") || _targetEntity.getFlags().has("mutant"))
+			}
+			else if(_targetEntity.getFlags().has("undead") || _targetEntity.getFlags().has("mutant"))
 			{
 				_properties.DamageTotalMult *= 1.10;
 			}

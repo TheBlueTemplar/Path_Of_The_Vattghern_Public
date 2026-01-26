@@ -1,5 +1,82 @@
+// All Of PoV's Mutagens
+// Look at starting scenario code or at forsaken autopsy to see a use case!
+::TLW.MutagensAll <- [
+	"scripts/items/misc/anatomist/pov_alp_mutagen_item",
+	"scripts/items/misc/anatomist/pov_alp_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_basilisk_mutagen_item",
+	"scripts/items/misc/anatomist/pov_beautiful_potion_item",
+	"scripts/items/misc/anatomist/pov_direwolf_mutagen_item",
+	"scripts/items/misc/anatomist/pov_direwolf_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_donkey_mutagen_item",
+	"scripts/items/misc/anatomist/pov_ghost_mutagen_item",
+	"scripts/items/misc/anatomist/pov_ghoul_mutagen_item",
+	"scripts/items/misc/anatomist/pov_ghoul_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_goblin_mutagen_item",
+	"scripts/items/misc/anatomist/pov_hexe_mutagen_item",
+	"scripts/items/misc/anatomist/pov_hexe_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_lindwurm_mutagen_item",
+	"scripts/items/misc/anatomist/pov_lindwurm_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_orc_mutagen_item",
+	"scripts/items/misc/anatomist/pov_sandgolem_mutagen_item",
+	"scripts/items/misc/anatomist/pov_schrat_mutagen_item",
+	"scripts/items/misc/anatomist/pov_schrat_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_serpent_mutagen_item",
+	"scripts/items/misc/anatomist/pov_skeleton_mutagen_item",
+	"scripts/items/misc/anatomist/pov_spider_mutagen_item",
+	"scripts/items/misc/anatomist/pov_spider_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_necromancy_mutagen_item",
+	"scripts/items/misc/anatomist/pov_unhold_mutagen_item",
+	"scripts/items/misc/anatomist/pov_unhold_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_dog_mutagen_item",
+	"scripts/items/misc/anatomist/pov_vampire_mutagen_item",
+	"scripts/items/misc/anatomist/pov_rot_mutagen_item"
+];
+
+::TLW.MutagensNormal <- [
+	"scripts/items/misc/anatomist/pov_alp_mutagen_item",
+	"scripts/items/misc/anatomist/pov_basilisk_mutagen_item",
+	"scripts/items/misc/anatomist/pov_direwolf_mutagen_item",
+	"scripts/items/misc/anatomist/pov_ghost_mutagen_item",
+	"scripts/items/misc/anatomist/pov_ghoul_mutagen_item",
+	"scripts/items/misc/anatomist/pov_goblin_mutagen_item",
+	"scripts/items/misc/anatomist/pov_hexe_mutagen_item",
+	"scripts/items/misc/anatomist/pov_lindwurm_mutagen_item",
+	"scripts/items/misc/anatomist/pov_orc_mutagen_item",
+	"scripts/items/misc/anatomist/pov_sandgolem_mutagen_item",
+	"scripts/items/misc/anatomist/pov_schrat_mutagen_item",
+	"scripts/items/misc/anatomist/pov_serpent_mutagen_item",
+	"scripts/items/misc/anatomist/pov_skeleton_mutagen_item",
+	"scripts/items/misc/anatomist/pov_spider_mutagen_item",
+	"scripts/items/misc/anatomist/pov_necromancy_mutagen_item",
+	"scripts/items/misc/anatomist/pov_unhold_mutagen_item",
+	"scripts/items/misc/anatomist/pov_vampire_mutagen_item",
+	"scripts/items/misc/anatomist/pov_rot_mutagen_item"
+];
+
+::TLW.MutagensUpgrades <- [
+	"scripts/items/misc/anatomist/pov_alp_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_direwolf_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_ghoul_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_hexe_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_lindwurm_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_schrat_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_spider_mutagen_upgrade_item",
+	"scripts/items/misc/anatomist/pov_unhold_mutagen_upgrade_item"
+];
+
+::TLW.MutagensLegendary <- [
+	// Placeholder
+];
+
+::TLW.MutagensMeme <- [
+	"scripts/items/misc/anatomist/pov_beautiful_potion_item",
+	"scripts/items/misc/anatomist/pov_donkey_mutagen_item",
+	"scripts/items/misc/anatomist/pov_dog_mutagen_item"
+];
+
 // All Of PoV's Corpses
 // Look at starting scenario code to see a use case!
+
 ::TLW.Corpses <- [
 	"scripts/items/misc/corpse/pov_corpse_alp_item",
 	"scripts/items/misc/corpse/pov_corpse_alp2_item",
@@ -10,6 +87,8 @@
 	"scripts/items/misc/corpse/pov_corpse_direwolf2_item",
 	"scripts/items/misc/corpse/pov_corpse_ghost_item",
 	"scripts/items/misc/corpse/pov_corpse_ghost2_item",
+	"scripts/items/misc/corpse/pov_corpse_ghost3_item",
+	"scripts/items/misc/corpse/pov_corpse_ghost4_item",
 	"scripts/items/misc/corpse/pov_corpse_ghoul_item",
 	"scripts/items/misc/corpse/pov_corpse_ghoul2_item",
 	"scripts/items/misc/corpse/pov_corpse_goblin1_item",
@@ -41,7 +120,10 @@
 	"scripts/items/misc/corpse/pov_corpse_vampire2_item",
 	"scripts/items/misc/corpse/pov_corpse_zombie_item",
 	"scripts/items/misc/corpse/pov_corpse_zombie2_item",
-	"scripts/items/misc/corpse/pov_corpse_flesh_golem_item"
+	"scripts/items/misc/corpse/pov_corpse_flesh_golem_item",
+	"scripts/items/misc/corpse/pov_corpse_flesh_golem2_item",
+	"scripts/items/misc/corpse/pov_corpse_fault_finder_item",
+	"scripts/items/misc/corpse/pov_corpse_forsaken_item"
 ];
 
 ::TLW.SpecialCorpses <- [
@@ -55,7 +137,8 @@
 	"scripts/items/misc/corpse/pov_corpse_schrat2_item",
 	"scripts/items/misc/corpse/pov_corpse_spider2_item",
 	"scripts/items/misc/corpse/pov_corpse_unhold4_item",
-	"scripts/items/misc/corpse/pov_corpse_flesh_golem_item"
+	"scripts/items/misc/corpse/pov_corpse_flesh_golem_item",
+	"scripts/items/misc/corpse/pov_corpse_ghost4_item"
 ];
 
 ::TLW.CorpsesID <- [
@@ -68,6 +151,8 @@
 	"supplies.pov_corpse_direwolf2",
 	"supplies.pov_corpse_ghost",
 	"supplies.pov_corpse_ghost2",
+	"supplies.pov_corpse_ghost3",
+	"supplies.pov_corpse_ghost4",
 	"supplies.pov_corpse_ghoul",
 	"supplies.pov_corpse_ghoul2",
 	"supplies.pov_corpse_goblin1",
@@ -98,6 +183,9 @@
 	"supplies.pov_corpse_vampire2",
 	"supplies.pov_corpse_zombie",
 	"supplies.pov_corpse_zombie2",
-	"supplies.pov_corpse_flesh_golem"
+	"supplies.pov_corpse_flesh_golem",
+	"supplies.pov_corpse_flesh_golem2",
+	"supplies.pov_corpse_fault_finder",
+	"supplies.pov_corpse_forsaken"
 ];
 

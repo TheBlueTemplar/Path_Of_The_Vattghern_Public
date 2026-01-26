@@ -31,6 +31,17 @@ if (::TLW.hasMC){::includeFiles(::IO.enumerateFiles("mod_PoV/hooks_MC"));}
 // Load FOTN shit, if exists
 if (::TLW.hasFOTN){::includeFiles(::IO.enumerateFiles("mod_PoV/hooks_FOTN"));}
 
+// Load the rest of PoV: If some mods are not present (for compatibility)
+// Current mod list: Fotn
+if (!::TLW.hasFOTN)
+{
+	::includeFiles(::IO.enumerateFiles("mod_PoV/hooks_COMPAT"));
+	::logInfo("[PoV] Overhaul Hooks Loaded!");
+} else
+{
+	::logInfo("[PoV] Overhaul Hooks NOT Loaded (Intended - Other Overhaul Mods Present)");
+}
+
 // update the perk tooltips (done by legends)
 //::Const.Perks.updatePerkGroupTooltips();
 

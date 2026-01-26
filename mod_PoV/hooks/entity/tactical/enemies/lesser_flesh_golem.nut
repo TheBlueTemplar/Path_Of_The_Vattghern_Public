@@ -22,11 +22,22 @@
 		// Third arg (array) reference in Enemy_Mutation_Arrays.nut, in afterhooks (rest in prev file, bottom)
 		::TLW.MutateEntity.mutate_entity(this.actor,::TLW.EnemyMutChance.High,::TLW.EnemyMut.Tank,false);
 	 
-
 		// Chaos Mutation
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
-
+		// Remove some shit
+		if (this.actor.getSkills().hasSkill("perk.nimble"))
+		{
+			this.actor.getSkills().removeByID("perk.nimble");
+		}
+		if (this.actor.getSkills().hasSkill("perk.legend_anchor"))
+		{
+			this.actor.getSkills().removeByID("perk.legend_anchor");
+		}
+		if (this.actor.getSkills().hasSkill("perk.legend_battleheart"))
+		{
+			this.actor.getSkills().removeByID("perk.legend_battleheart");
+		}
 	}
 
 });

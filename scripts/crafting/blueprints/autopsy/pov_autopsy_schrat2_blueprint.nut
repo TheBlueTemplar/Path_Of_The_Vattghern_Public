@@ -26,29 +26,42 @@ this.pov_autopsy_schrat2_blueprint <- this.inherit("scripts/crafting/blueprint",
 
 	function onCraft( _stash )
 	{
-		if (this.Math.rand(1, 100) <= 15)
+	    local item;
+	    if (this.Math.rand(1, 100) <= 15)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_schrat_mutagen_upgrade_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_schrat_mutagen_upgrade_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 30)
 			{
-				_stash.add(this.new("scripts/items/misc/anatomist/pov_schrat_mutagen_item"));
+				item = this.new("scripts/items/misc/anatomist/pov_schrat_mutagen_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 70)
 			{
-				_stash.add(this.new("scripts/items/loot/ancient_amber_item"));
+				item = this.new("scripts/items/loot/ancient_amber_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 50)
 			{
-				_stash.add(this.new("scripts/items/misc/legend_ancient_green_wood_item"));
+				item = this.new("scripts/items/misc/legend_ancient_green_wood_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 50)
 			{
-				_stash.add(this.new("scripts/items/misc/glowing_resin_item"));
+				item = this.new("scripts/items/misc/glowing_resin_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 		if (this.Math.rand(1, 100) <= 50)
 			{
-				_stash.add(this.new("scripts/items/misc/heart_of_the_forest_item"));
+				item = this.new("scripts/items/misc/heart_of_the_forest_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 	}
 

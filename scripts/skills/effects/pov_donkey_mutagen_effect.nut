@@ -36,7 +36,7 @@ this.pov_donkey_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gets the [color=" + this.Const.UI.Color.NegativeValue + "]Powerful Kick[/color] Skill"
+				text = "Gets the [color=" + this.Const.UI.Color.povTooltipBlue + "]Powerful Kick[/color] Skill"
 			},
 			{
 				id = 11,

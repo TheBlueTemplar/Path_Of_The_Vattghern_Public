@@ -62,7 +62,7 @@ this.pov_donkey_mutagen_item <- this.inherit("scripts/items/misc/anatomist/pov_a
 			id = 65,
 			type = "text",
 			icon = "ui/tooltips/warning.png",
-			text = "Must have Witcher Mutation and not already used this mutagen."
+			text = "Must be a Vatt\'ghern or a Mutant, and not already used this mutagen."
 		});
 
 		result.push({

@@ -114,7 +114,7 @@ this.pov_enemy_mutation_sandgolem <- this.inherit("scripts/skills/skill", {
 		_properties.ArmorMax[this.Const.BodyPart.Head] += this.m.HeadArmorBoost;
 		_properties.ArmorMax[this.Const.BodyPart.Body] += this.m.BodyArmorBoost;
 		// DEBUFFS
-		_properties.Initiative *= 0.75;
+		_properties.Initiative *= 0.70;
 		_properties.StaminaMult *= 0.90;
 		_properties.FatigueEffectMult *= 1.15;
 		_properties.FatigueRecoveryRate += -3;
@@ -122,8 +122,11 @@ this.pov_enemy_mutation_sandgolem <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		_properties.DamageReceivedTotalMult *= 0.85;
-
+		if(_properties.YrdenTrapped == false)
+		{
+			_properties.DamageReceivedTotalMult *= 0.85;
+		}
+		
 		if (_hitInfo.BodyPart == this.Const.BodyPart.Head)
 		{
 			if (this.m.HeadDamageTaken >= this.m.HeadArmorBoost)

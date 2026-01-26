@@ -61,7 +61,7 @@ this.pov_hexe_mutagen_upgrade_item <- this.inherit("scripts/items/misc/anatomist
 			id = 65,
 			type = "text",
 			icon = "ui/tooltips/warning.png",
-			text = "Must have Witcher Mutation AND the Hexe Mutation to use this mutagen."
+			text = "Must be a Vatt\'ghern AND have the Hexe Mutation to use this mutagen."
 		});
 
 		result.push({

@@ -26,9 +26,12 @@ this.pov_autopsy_zombie2_blueprint <- this.inherit("scripts/crafting/blueprint",
 
 	function onCraft( _stash )
 	{
-		if (this.Math.rand(1, 100) <= 20)
+	    local item;
+	    if (this.Math.rand(1, 100) <= 20)
 			{
-				_stash.add(this.new("scripts/items/pov_undead_alpha_item"));
+				item = this.new("scripts/items/pov_undead_alpha_item");
+				_stash.add(item);
+				if (this.World.Assets.isCamping()){this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting).addCraftedItem(item);}
 			}
 
 	}

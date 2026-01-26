@@ -55,7 +55,7 @@ this.pov_orc_pain_effect <- this.inherit("scripts/skills/skill", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Initiative"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] Initiative"
 			}
 		];
 	}
@@ -85,7 +85,7 @@ this.pov_orc_pain_effect <- this.inherit("scripts/skills/skill", {
 		_properties.MeleeSkillMult *= 1.08;
 		_properties.BraveryMult *= 1.15;
 		//Debuffs
-		_properties.InitiativeMult *= 0.85;
+		_properties.InitiativeMult *= 0.80;
 	}
 
 	function onTurnEnd()

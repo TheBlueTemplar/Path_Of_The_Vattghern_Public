@@ -1,3 +1,31 @@
+::Const.Tactical.Common.onApplyPovYrden <- function(_tile, _entity)
+{
+	local sounds = [];
+	sounds = [
+		"sounds/enemies/miasma_appears_01.wav",
+		"sounds/enemies/miasma_appears_02.wav",
+		"sounds/enemies/miasma_appears_03.wav"
+	];	
+
+	local faction = _entity.getFaction();
+
+	if (faction == this.Const.Faction.Player)
+	{
+		// Some kind of "good" effect? or nothing lel
+	}
+	else 
+	{
+		if (!_entity.getSkills().hasSkill("effect.pov_yrden"))
+		{
+			_entity.getSkills().add(this.new("scripts/skills/effects/pov_yrden_effect"));
+		}
+		//return;
+	}
+	
+	::Sound.play(sounds[::Math.rand(0, sounds.len() - 1)], ::Const.Sound.Volume.Actor, _entity.getPos());
+		
+};
+
 ::Const.Tactical.Common.onApplyPovMiasma <- function(_tile, _entity)
 {
 	if (!_entity.getFlags().has("undead") && !_entity.getCurrentProperties().IsImmuneToPoison)

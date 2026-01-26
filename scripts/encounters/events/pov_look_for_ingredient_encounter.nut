@@ -196,6 +196,7 @@ this.pov_look_for_ingredient_encounter <- this.inherit("scripts/encounters/encou
             ],
             function start( _event )
             {
+                //this.Characters.push(_event.m.OtherGuy.getImagePath());
                 eventResult(_event,"scripts/items/misc/unhold_heart_item");
             }
         });
@@ -347,6 +348,11 @@ this.pov_look_for_ingredient_encounter <- this.inherit("scripts/encounters/encou
             return false;
         }
 
+        if (!this.World.Assets.getStash().hasEmptySlot())
+        {
+            return;
+        }
+        
         this.m.OtherGuy = other_candidates[this.Math.rand(0, other_candidates.len() - 1)];
 
         return !isOnCooldown();

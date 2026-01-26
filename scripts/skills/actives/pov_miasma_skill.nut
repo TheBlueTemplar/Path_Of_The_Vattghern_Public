@@ -85,7 +85,9 @@ this.pov_miasma_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		if (this.m.Cooldown <= 0){
+		local actor = this.getContainer().getActor();
+
+		if (this.m.Cooldown <= 0 && !actor.getCurrentProperties().YrdenTrapped){
 			return true;
 		}else{
 			return false;

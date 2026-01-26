@@ -9,7 +9,6 @@ this.pov_serpent_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "skills/pov_serpent.png";
 		this.m.IconMini = "";
 		this.m.Overlay = "serpent";
-		//this.m.Overlay = "status_effect_87";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
@@ -69,7 +68,7 @@ this.pov_serpent_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = "Lose [color=" + this.Const.UI.Color.NegativeValue + "]12%[/color] of max health"
+				text = "Lose [color=" + this.Const.UI.Color.NegativeValue + "]8%[/color] of max health"
 			}
 		];
 		return ret;
@@ -99,7 +98,7 @@ this.pov_serpent_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		// Debuffs
 		// ADDED VIA SERPENTINE EFFECT
 		//_properties.SurroundedDefense -= 4;
-		_properties.HitpointsMult *= 0.88;
+		_properties.HitpointsMult *= 0.92;
 		// Takes 10% More dmg
 	}
 

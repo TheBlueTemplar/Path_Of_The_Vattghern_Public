@@ -38,7 +38,7 @@ this.pov_psychopath_trait <- this.inherit("scripts/skills/traits/character_trait
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/melee_skill.png",
+				icon = "ui/icons/pov_melee_ranged_skill.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+8[/color] Melee and Ranged Skill when in a battle against humans"
 			},
 			{
@@ -62,7 +62,7 @@ this.pov_psychopath_trait <- this.inherit("scripts/skills/traits/character_trait
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/melee_skill.png",
+				icon = "ui/icons/pov_melee_ranged_skill.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-4[/color] Melee and Ranged Skill when not in a battle against humans"
 			},
 			{

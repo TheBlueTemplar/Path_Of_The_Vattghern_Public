@@ -1,6 +1,7 @@
 // Defining new entity actor ID
 ::Const.AI.Agent.ID.SwordGhost <- "agent.sword_ghost";
 ::Const.AI.Agent.ID.ArmorGhost <- "agent.armor_ghost";
+::Const.AI.Agent.ID.PovSeer <- "agent.pov_seer";
 
 // Adding new skillz
 local count = ::Const.AI.Behavior.ID.COUNT;

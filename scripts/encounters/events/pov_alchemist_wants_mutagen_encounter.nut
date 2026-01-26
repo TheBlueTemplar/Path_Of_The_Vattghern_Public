@@ -55,7 +55,7 @@ this.pov_alchemist_wants_mutagen_encounter <- this.inherit("scripts/encounters/e
 
                 },
                 {
-                    Text = "No deal.",
+                    Text = "Hell No!",
                     function getResult( _event )
                     {
                         if (_event.m.Merchant != null)
@@ -178,7 +178,7 @@ this.pov_alchemist_wants_mutagen_encounter <- this.inherit("scripts/encounters/e
         {
             if (item != null)
             {
-                if (item.getID() == "misc.pov_alp_mutagen" || item.getID() == "misc.pov_direwolf_mutagen" || item.getID() == "misc.pov_ghost_mutagen" || item.getID() == "misc.pov_ghoul_mutagen" || item.getID() == "misc.pov_goblin_mutagen" || item.getID() == "misc.pov_hexe_mutagen" || item.getID() == "misc.pov_lindwurm_mutagen" || item.getID() == "misc.pov_vampire_mutagen" || item.getID() == "misc.pov_orc_mutagen" || item.getID() == "misc.pov_schrat_mutagen" || item.getID() == "misc.pov_skeleton_mutagen" || item.getID() == "misc.pov_spider_mutagen" || item.getID() == "misc.pov_unhold_mutagen" || item.getID() == "misc.pov_strain_mutagen" || item.getID() == "misc.pov_basilisk_mutagen" || item.getID() == "misc.pov_sandgolem_mutagen" || item.getID() == "misc.pov_serpent_mutagen")
+                if (item.getID() == "misc.pov_alp_mutagen" || item.getID() == "misc.pov_direwolf_mutagen" || item.getID() == "misc.pov_ghost_mutagen" || item.getID() == "misc.pov_ghoul_mutagen" || item.getID() == "misc.pov_goblin_mutagen" || item.getID() == "misc.pov_hexe_mutagen" || item.getID() == "misc.pov_lindwurm_mutagen" || item.getID() == "misc.pov_vampire_mutagen" || item.getID() == "misc.pov_orc_mutagen" || item.getID() == "misc.pov_schrat_mutagen" || item.getID() == "misc.pov_skeleton_mutagen" || item.getID() == "misc.pov_spider_mutagen" || item.getID() == "misc.pov_unhold_mutagen" || item.getID() == "misc.pov_necromancy_mutagen" || item.getID() == "misc.pov_basilisk_mutagen" || item.getID() == "misc.pov_sandgolem_mutagen" || item.getID() == "misc.pov_serpent_mutagen")
                 {
                     candidates_items.push(item);                    
                 }
@@ -191,7 +191,7 @@ this.pov_alchemist_wants_mutagen_encounter <- this.inherit("scripts/encounters/e
         }
 
         this.m.Item = candidates_items[this.Math.rand(0, candidates_items.len() - 1)];
-        this.m.Reward = (this.m.Item.getValue() * 5) + this.Math.rand(-150,150);
+        this.m.Reward = (this.m.Item.getValue() * 8) + this.Math.rand(-150,150);
         local brothers = this.World.getPlayerRoster().getAll();
 
         if (brothers.len() < 3)

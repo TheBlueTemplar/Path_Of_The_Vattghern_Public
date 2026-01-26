@@ -20,33 +20,36 @@
 		chance *= difficultyModifier;	
 
 		// Scenario Based Modifiers
-		if (this.World.Assets.getOrigin().getID() == "scenario.pov_last_witchers" || this.World.Assets.getOrigin().getID() == "scenario.legends_rangers")
+		if (::World.Assets.getOrigin() != null)
 		{
-			chance *= 1.15;
-		} 
-		else if (this.World.Assets.getOrigin().getID() == "scenario.pov_solo_last_witchers")
+			if (this.World.Assets.getOrigin().getID() == "scenario.pov_last_witchers" || this.World.Assets.getOrigin().getID() == "scenario.legends_rangers")
+			{
+				chance *= 1.15;
+			} 
+			else if (this.World.Assets.getOrigin().getID() == "scenario.pov_solo_last_witchers")
+			{
+				chance *= 1.20;
+			}
+			else if (this.World.Assets.getOrigin().getID() == "scenario.beast_hunters" || this.World.Assets.getOrigin().getID() == "scenario.anatomists" || this.World.Assets.getOrigin().getID() == "scenario.rangers")
+			{
+				chance *= 1.10;
+			}
+		}		
+
+		// Mutagen Research Retinue increases corpse drop rates
+		local hasResearch = this.World.Retinue.hasFollower("follower.pov_mutagen_research");
+		if (hasResearch)
 		{
 			chance *= 1.20;
 		}
-		else if (this.World.Assets.getOrigin().getID() == "scenario.beast_hunters" || this.World.Assets.getOrigin().getID() == "scenario.anatomists" || this.World.Assets.getOrigin().getID() == "scenario.rangers")
-		{
-			chance *= 1.10;
-		}	
-
-		// Alchemist Retinue increases corpse drop rates
-		local hasAlchemist = this.World.Retinue.hasFollower("follower.alchemist");
-		if (hasAlchemist)
-		{
-			chance *= 1.15;
-		}
-		
-		//chance = 100; //For Testing Only
 
 		// Dont drop corpse before killing first mutant
 		if(!::World.Flags.has("FirstMutantKilled"))
 		{
 			chance = 0;
 		}
+
+		//chance = 100; //For Testing Only
 
 		::TLW.Mod.Debug.printLog("Rolling for Corpse || Chance: " + chance);
 		return [chance, _corpse.Script];

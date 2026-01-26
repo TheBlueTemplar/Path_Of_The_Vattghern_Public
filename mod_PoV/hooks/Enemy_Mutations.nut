@@ -8,11 +8,11 @@
 		// Quick way to adjust drop rates, best to keep at 1
 		local generalModifier = 1.0;
 		chance *= generalModifier;
-		
-		// Base Drop chance is 2%. Use diff based var belos as general modifier
+
+		// Base Drop chance is 2%. Use diff based var below as general modifier
 		// This means a modifier of 200% (4), 125% (2.5), 100% (2) and 70% (1.4)
 		// Keep in mind that in lower diffs, less mutants appear
-		local difficultyModifier = [2.0, 1.25, 1.0, 0.70][::World.Assets.getCombatDifficulty()];
+		local difficultyModifier = [1.75, 1.25, 1.0, 0.70][::World.Assets.getCombatDifficulty()];
 		chance *= difficultyModifier;
 
 		if (::TLW.ChaosMode)
@@ -22,24 +22,27 @@
 		}
 
 		// Scenario Based Modifiers
-		if (::World.Assets.getOrigin().getID() == "scenario.pov_last_witchers" || ::World.Assets.getOrigin().getID() == "scenario.legends_rangers")
+		if (::World.Assets.getOrigin() != null)
 		{
-			chance *= 1.15;
-		} 
-		else if (::World.Assets.getOrigin().getID() == "scenario.pov_solo_last_witchers")
+			if (::World.Assets.getOrigin().getID() == "scenario.pov_last_witchers" || ::World.Assets.getOrigin().getID() == "scenario.legends_rangers")
+			{
+				chance *= 1.15;
+			}
+			else if (::World.Assets.getOrigin().getID() == "scenario.pov_solo_last_witchers")
+			{
+				chance *= 1.20;
+			}
+			else if (this.World.Assets.getOrigin().getID() == "scenario.anatomists")
+			{
+				chance *= 1.10;
+			}
+		}
+		
+		// Mutagen Research Retinue increases mutagen drop rates
+		local hasResearch = this.World.Retinue.hasFollower("follower.pov_mutagen_research");
+		if (hasResearch)
 		{
 			chance *= 1.20;
-		}
-		else if (this.World.Assets.getOrigin().getID() == "scenario.anatomists")
-		{
-			chance *= 1.10;
-		}	
-
-		// Alchemist Retinue increases corpse drop rates
-		local hasAlchemist = this.World.Retinue.hasFollower("follower.alchemist");
-		if (hasAlchemist)
-		{
-			chance *= 1.15;
 		}
 
 		// Mutagen Drop Chance slighly tweakes with enemy mutation scaling enabled (optional)
@@ -76,10 +79,10 @@
 }
 
 // Enemy Mutation Chances Const
-::TLW.EnemyMutChance <- 
+::TLW.EnemyMutChance <-
 {
 	// old values: 5,7,8,9,10,12,15,20.. (reduced by 1% to 3% - from low to high values)
-	SLow = 5, 
+	SLow = 5,
 	VLow = 6,
 	Low = 7,
 	Medium = 8,
@@ -88,12 +91,13 @@
 	VHigh = 13,
 	SHigh = 17,
 	Test50 = 50,
-	Test100 = 100
+	Test100 = 100,
+	Always = 999,
 }
 
 // Enemy Mutations Integration and other functions at the end of this file!
-// Enemy Mutatuin System	
-::TLW.MutateEntity <- 
+// Enemy Mutatuin System
+::TLW.MutateEntity <-
 {
 	// Function that handles actor's name change if he has multiple mutations
 	function renameActor(_actor, _oldName)
@@ -104,28 +108,35 @@
 			return null;
 		}
 
+		//skip check if actor already has special name
+		if (_actor.getFlags().has("povSpecialName"))
+		{
+			return null;
+		}
+
 		// not for player controlled characters (to fix ui bug)
 		if(_actor.getFaction() == this.Const.Faction.Player)
 		{
 			return null;
 		}
 
-    local skills = _actor.getSkills();
-    if (skills == null) return null; // fallback
+	    local skills = _actor.getSkills();
+	    if (skills == null) return null; // fallback
 
-    foreach (pair in ::TLW.EnemyMutationNames)
-    {
-        if (skills.hasSkill(pair[0]) && skills.hasSkill(pair[1]))
-        {
-        	local newName = pair[2];
-					if (newName != null) // fallback
-					{
-						_actor.m.Name = "[color="+ ::Const.UI.Color.povSpecialEnemyMutation + "]"+newName+"[/color] " + _oldName;
-						break;
+	    foreach (pair in ::TLW.EnemyMutationNames)
+	    {
+	        if (skills.hasSkill(pair[0]) && skills.hasSkill(pair[1]))
+	        {
+	        	local newName = pair[2];
+						if (newName != null) // fallback
+						{
+							_actor.m.Name = "[color="+ ::Const.UI.Color.povSpecialEnemyMutation + "]"+newName+"[/color] " + _oldName;
+							_actor.getFlags().add("povSpecialName");
+							break;
+						}
 					}
-				}
-    }
-    return null; // no match found
+	    }
+	    return null; // no match found
 	}
 
 	// New Enemy Mutation System ('Dynamic')
@@ -153,13 +164,13 @@
     	::TLW.Mod.Debug.printLog("Possible Error: Mutation array is empty. Skipping mutation.");
     	return;
 		}
-		
+
 		// Mutation Chances Calculations Based on CombatDiff (from ez to legenddary)
 		// Fallback (might not even work)
 		if (_chance == null) {_chance = ::TLW.EnemyMutChance.Default;}
-		// Example for most cases with base chance 10. Actual numbers would be: 5,7,10,20
-		local mutationChance = [_chance*0.5, _chance*0.75, _chance, _chance*1.8][::World.Assets.getCombatDifficulty()];
-		
+		// Example for most cases with base chance 10. Actual numbers would be: 6.5,8,10,17.5
+		local mutationChance = [_chance*0.65, _chance*0.8, _chance, _chance*1.75][::World.Assets.getCombatDifficulty()];
+
 		// Mutation Chance further increased by passed days (optional)
 		// Idea is to start from rare -> frequent (intended for longer playthroughs)
 		if (::TLW.EnemyMutationScaling)
@@ -169,15 +180,22 @@
 			{
 				// These are defined in mod_PoV_scaling_defs.nut (days: 15,30,50,80,120,180,260)
 				// Increments (days lasting): 15,15,20,30,40,60,80
-				if (day >= ::TLW.Scaling.SLate.Day) {mutationChance *= 1.75;}
-				else if (day >= ::TLW.Scaling.VLate.Day) {mutationChance *= 1.40;}
-				else if (day >= ::TLW.Scaling.Late.Day) {mutationChance *= 1.20;}
-				else if (day >= ::TLW.Scaling.Mid.Day) {mutationChance *= 1.1;}
-				else if (day >= ::TLW.Scaling.Early.Day) {mutationChance *= 1.0;}
-				else if (day >= ::TLW.Scaling.VEarly.Day) {mutationChance *= 0.9;}
-				else if (day >= ::TLW.Scaling.Start.Day) {mutationChance *= 0.85;}
-				else if (day < ::TLW.Scaling.Start.Day) {mutationChance *= 0.75;}
+				if (day >= ::TLW.Scaling.SLate.Day) {mutationChance *= 1.75;}		// 260+
+				else if (day >= ::TLW.Scaling.VLate.Day) {mutationChance *= 1.4;}	// 180 - 260
+				else if (day >= ::TLW.Scaling.Late.Day) {mutationChance *= 1.2;}	// 120 - 180
+				else if (day >= ::TLW.Scaling.Mid.Day) {mutationChance *= 1.1;}		// 80 - 120
+				else if (day >= ::TLW.Scaling.Early.Day) {mutationChance *= 1.0;}	// 50 - 80
+				else if (day >= ::TLW.Scaling.VEarly.Day) {mutationChance *= 0.9;}	// 30 - 50
+				else if (day >= ::TLW.Scaling.Start.Day) {mutationChance *= 0.85;}	// 15 - 30
+				else if (day < ::TLW.Scaling.Start.Day) {mutationChance *= 0.75;}	// <15
 			}
+		}
+
+		// Mutagen Research Retinue increases mutation rates
+		local hasResearch = this.World.Retinue.hasFollower("follower.pov_mutagen_research");
+		if (hasResearch)
+		{
+			mutationChance *= 1.15;
 		}
 
 		// Second Mutation Chances Calculation
@@ -213,7 +231,7 @@
 				    possibleMutations.remove(possibleMutations.find(mutations))
 				    // Fallback for second mut
 				    if (possibleMutations.len() !=0)
-				    {	
+				    {
 				    	// Pick a second mutation from the remaining options
 				    	local secondMutations = possibleMutations[this.Math.rand(0, possibleMutations.len() - 1)]
 					    // Apply the second mutation
@@ -229,7 +247,7 @@
 	}
 }
 
-::TLW.Chaos <- 
+::TLW.Chaos <-
 {
 	// Full credits to pot here (well, and Chopeks, and myself at that point xd)
 	add_mutation_all = function(_actor, _hard)	// _hard argument is just to pass it to other functions
@@ -245,13 +263,13 @@
 		{
 			return;
 		}
-	
+
 		local prevName = _actor.m.Name; // Saves actors original name, can be used in other funcs below
 		local roll;
 		// Mutation Chance modification based on game's combat diff
 		local mutationChance = [3.0, 4.0, 5.0, 8.0][::World.Assets.getCombatDifficulty()];
 		//mutationChance = 25.0; // Debug
-		
+
 		// Mutation Chance further increased by passed days (optional)
 		// Idea is to same as above, but crazier values (easier early game, chaotic late game)
 		if (::TLW.EnemyMutationScaling)
@@ -270,6 +288,14 @@
 				else if (day >= ::TLW.Scaling.Start.Day) {mutationChance *= 0.75;}
 				else if (day < ::TLW.Scaling.Start.Day) {mutationChance *= 0.55;}
 			}
+		}
+
+
+		// Mutagen Research Retinue increases mutation rates
+		local hasResearch = this.World.Retinue.hasFollower("follower.pov_mutagen_research");
+		if (hasResearch)
+		{
+			mutationChance *= 1.15;
 		}
 
 		// Create a list of all possible mutations (defined below)
@@ -294,7 +320,7 @@
 
 ::TLW.MutantEffect <-
 {
-	add_mutant_effect = function(_actor)
+	addMutantEffect = function(_actor)
 	{
 		// Adds sprite for the mutation effect (glow)
 		if (_actor.hasSprite("pov_back_socket"))
@@ -322,7 +348,75 @@
 			mutant_bust_sprite.setBrush("pov_mutant_bust");
 			mutant_bust_sprite.Saturation = 0.8;
 			mutant_bust_sprite.varySaturation(0.1);
-			mutant_bust_sprite.varyColor(0.15, 0.15, 0.15); 
+			mutant_bust_sprite.varyColor(0.15, 0.15, 0.15);
+			mutant_bust_sprite.Visible = true;
+		}
+	}
+
+	// Stronget Version of function above
+	addForsakenEffect = function(_actor)
+	{
+		// Adds sprite for the mutation effect (glow)
+		if (_actor.hasSprite("pov_back_socket"))
+		{
+			local mutant_glow_sprite = _actor.getSprite("pov_back_socket");
+			mutant_glow_sprite.setBrush("pov_mutant_glow"); //credit to ROTU mod for base art
+			mutant_glow_sprite.Color = this.createColor("#3" + this.Math.rand(0,9) + "0" + this.Math.rand(0,9) + this.Math.rand(3,6) + this.Math.rand(0,9)); // random fouksia (gr xd) / purple
+			mutant_glow_sprite.Saturation = 0.8;
+			mutant_glow_sprite.Scale = 0.9;
+			//mutant_glow_sprite.varySaturation(0.1);
+			//mutant_glow_sprite.varyColor(0.05, 0.05, 0.05);
+			mutant_glow_sprite.Visible = true;
+
+			// Adds Effect to animate above sprite
+			if (!_actor.getSkills().hasSkill("effects.pov_enemy_mutation_effect"))
+			{
+				_actor.getSkills().add(this.new("scripts/skills/effects/pov_enemy_mutation_effect"));
+			}
+		}
+
+		// Adds sprite for the mutation effect (bust)
+		if (_actor.hasSprite("pov_bust"))
+		{
+			local mutant_bust_sprite = _actor.getSprite("pov_bust");
+			mutant_bust_sprite.setBrush("pov_forsaken_bust");
+			mutant_bust_sprite.Saturation = 0.8;
+			mutant_bust_sprite.varySaturation(0.1);
+			mutant_bust_sprite.varyColor(0.15, 0.15, 0.15);
+			mutant_bust_sprite.Visible = true;
+		}
+	}
+
+	// WIP
+	addForsakenBossEffect = function(_actor)
+	{
+		// Adds sprite for the mutation effect (glow)
+		if (_actor.hasSprite("pov_back_socket"))
+		{
+			local mutant_glow_sprite = _actor.getSprite("pov_back_socket");
+			mutant_glow_sprite.setBrush("pov_mutant_glow"); //credit to ROTU mod for base art
+			mutant_glow_sprite.Color = this.createColor("#a6000c"); // Deep red
+			mutant_glow_sprite.Saturation = 0.9;
+			mutant_glow_sprite.Scale = 1.2;
+			//mutant_glow_sprite.varySaturation(0.1);
+			//mutant_glow_sprite.varyColor(0.05, 0.05, 0.05);
+			mutant_glow_sprite.Visible = true;
+
+			// Adds Effect to animate above sprite
+			if (!_actor.getSkills().hasSkill("effects.pov_enemy_mutation_effect"))
+			{
+				_actor.getSkills().add(this.new("scripts/skills/effects/pov_enemy_mutation_effect"));
+			}
+		}
+
+		// Adds sprite for the mutation effect (bust)
+		if (_actor.hasSprite("pov_bust"))
+		{
+			local mutant_bust_sprite = _actor.getSprite("pov_bust");
+			mutant_bust_sprite.setBrush("pov_forsaken_boss_bust");
+			//mutant_bust_sprite.Saturation = 0.8;
+			//mutant_bust_sprite.varySaturation(0.1);
+			//mutant_bust_sprite.varyColor(0.15, 0.15, 0.15);
 			mutant_bust_sprite.Visible = true;
 		}
 	}
@@ -381,15 +475,19 @@
 			_actor.getFlags().add(_tag)
 		}
 		// Mutation addition
-		if (_hard) 
+		if (_hard)
 		{
 			// Placeholder, may be used may not be used, we shall see
 		}else
 		{
 			// Enemy mutation added with fallback
-			if (!_actor.getSkills().hasSkill("effects.pov_enemy_mutation_"+_name+""))
+			if (!_actor.getSkills().hasSkill("racial.pov_mutant"))
 				_actor.getSkills().add(this.new("scripts/skills/effects/pov_enemy_mutation_"+_name+""))
 		}
+
+		// Mutants get the invisible "Mutant" Racial - Used to make global edits on mutants
+		if (!_actor.getSkills().hasSkill("effects.pov_enemy_mutation_"+_name+""))
+				_actor.getSkills().add(this.new("scripts/skills/racial/pov_mutant_racial"))
 
 		// If first ever mutant - Take note of it
 		if (!::World.Flags.has("FirstMutantSpawned"))
@@ -398,7 +496,7 @@
 		}
 
 		// Add the Mutation effect Sprite
-		::TLW.MutantEffect.add_mutant_effect(_actor);
+		::TLW.MutantEffect.addMutantEffect(_actor);
 	}
 
 	add_mutation_enemy_serpent = function(_actor, _hard)
@@ -497,7 +595,7 @@
   MutationFactory = [],
 
   // Add new mutation function
-  add = function(_factory) 
+  add = function(_factory)
   {
     local index = ::TLW.EnemyMut.All.len()+1;
     ::TLW.EnemyMut.All.push(index);

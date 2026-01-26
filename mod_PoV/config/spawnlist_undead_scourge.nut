@@ -1,3 +1,13 @@
+if (!("World" in ::Const))
+{
+    ::Const.World <- {};
+}
+
+if (!("Spawn" in ::Const.World))
+{
+    ::Const.World.Spawn <- {};
+}
+
 // Undead Crisis Armies
 this.Const.World.Spawn.UndeadScourge.Troops.extend([
      {

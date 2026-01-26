@@ -11,7 +11,7 @@ this.pov_ghost_plates_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			{
 				Script = "scripts/items/trade/legend_iron_ingots_item",
 				Num = 1
-			}
+			},
 			{
 				Script = "scripts/items/loot/pov_ghost_plates_special_item",
 				Num = 1
