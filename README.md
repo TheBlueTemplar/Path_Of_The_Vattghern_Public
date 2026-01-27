@@ -38,6 +38,8 @@ Recommended Base Modlist (All the Latest Versions):
 
 ### Incompatible Mods:
 * Anything incompatible with Legends!
+* Mod_Hooks (Integrated Into Legends)
+* The old last Witchers mod, obviously
 * Using Bredditor and similar mods improperly can cause millions of issues, keep this in mind!
 
 ### More Detailed Information:
