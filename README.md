@@ -26,6 +26,8 @@ The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which w
 * **Starting Scenarios** - 3 Different ones, for different tastes (solo start, OP start, normal start), all fitting their niche. 
 * **New Items and Weapons** - Quite a few new items like weapons, armor, shields, ammo and accessories to complement a player's options (Currently: 25 Items)
 * **Contracts** - Currently including 2 and counting. Special strong encounters, that do require the assistance of all the goodies PoV has to offer!
+* **Challenging Legendary Difficulty** - Now renamed to "Death March", many of PoV's additions are meant to increase the game's legendary difficulty. PoV might not be the most hardcore mod around, but it sureoffers some challenge.
+* **Adaptive Difficulty** - On the other hand, most of PoV's mechanics are directly tied to the game's combat difficulty, meaning that players have some control over tailoring their desired experience
 * **Other Additions** - Include a new retinue, new player background, settlement situations, music, enemy locations, ambitions, and more...
 
 ### And now, for some additional numbers:
