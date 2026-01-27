@@ -20,6 +20,7 @@ The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which w
 * **Mutations** - Mutagenic effects are not just limited to the player, but enemies can also spawn with them, granting them new skills and effects, along with visuals
 * **Corpses** - Most enemies can drop corpses (almost 50 currently), that can be dissected in the crafting tent to yield resources (some exclusive to them, like special mutagens, or crafting items!)
 * **Enemies** - 20 Enemies total added to the mod! Expanding the geist, undead, noble, mercenary and bandit factions currently! And of course, with more on the way!
+* **Skills** - More than 35 Skills added, including special mutagen skills, vattghern signs and weapon skills!
 * **Events** -  (and encounters): 45 Total and counting, in an effort to provide narrative and immersion. Some of PoV's mechanics are even "locked" behind certain "story" events
 * **Starting Scenarios** - 3 Different ones, for different tastes (solo start, OP start, normal start), all fitting their niche. 
 * **New Items and Weapons** - Quite a few new items like weapons, armor, shields, ammo and accessories to complement a player's options (Currently: 25 Items)
@@ -29,7 +30,6 @@ The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which w
 ### And now, for some additional numbers:
 **PoV's Total Additions**
 * **160 Items**, including corpse items, autopsies, weapons, shields, ranged weapons, potions, accessories, armor, helmets, loot etc.
-* **35 Active skills**, both new and reworked!
 * **130 Different effects**, including new racial ones, buffs, debuffs, mutagens etc.
 * **60 New Crafting Recipes**, which you understand why, if you play the mod
 * **50 Custom Sound Effects**, for all the different additions
