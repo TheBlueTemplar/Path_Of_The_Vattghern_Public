@@ -30,7 +30,7 @@ The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which w
 * Download the zip of the [latest version](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/releases) and place into your battle brothers installation directory, in the data folder (Do not extract!) 
 * You can see the full changelog [here](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/blob/main/CHANGELOG.md), tldr changelog in release notes
 
-Recommended Base Modlist (All the Latest Versions):
+### Recommended Base Modlist (All the Latest Versions):
 * [MSU](https://github.com/MSUTeam/MSU) 
 * [Modern Hooks](https://www.nexusmods.com/battlebrothers/mods/685) 
 * [Legends](https://discord.com/channels/547043336465154049/547427442818809881) 
