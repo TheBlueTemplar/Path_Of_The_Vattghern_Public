@@ -1,8 +1,324 @@
-# v2.0.0 "Afterparty" Edition
+# v2.0.0 "Birthday" Edition
 
 ## Changelog V2.0.0 "Birthday" Edition:
 
-* WIP LOG - Too much to right and im exhausted hehe
+### NEW FEATURES
+
+*Some of the features I present here are further analyzed in the PoV discord server, in `#progress_report` channel. This section will also have a seperate "ENEMIES" section, cause I added quite a few so they get their own spot*
+* Before we begin, let me highlight that fire damage has much more presence in pov, both in enemies and the player. Many things get weakness or resistance to fire, and now there are more stuff that can do fire damage, so its overall becoming more important. Keep that in mind regarding game balance.
+* **New Mechanic: Vatt'ghern Signs** Aka. Fantasy Gang Signs
+   * This is a big big part of the new PoV Update...as Vattgherns now have limited access to magic!
+   * There is also a new stat added, called **Sign Intensity** All characters start with 0, but this number can increase
+     * Sign Intensity directly increases a sign's overall power, including its damage, but also its chance to afflict enemies with specific effects
+     * It can be increased by: The vattghern trait (scales up like other stats), items, perks and other effects
+   * Signs are added via perks, as now **Vatt'ghern have an additional perk tree (with currently 4 perks)**
+     * Making someone a vattghern also grants them access to these perks
+     * Signs themselves have a shared cooldown between them, with a base value of 2 turns. (can be reduced)
+   * *Here are what these perks are, and what they do*:
+   * **Defense Signs** (tier 1)
+     * Grants the Quen and Yrden signs, and also +2% sign intensity
+   * **Control Signs** (tier 2)
+     * Grants the Aard and Axii signs, and also +2% sign intensity
+   * **Offense Signs** (tier 3)
+     * Grants the Igni and Bront signs, and also +2% sign intensity
+   * **Signs Mastery** (tier 4)
+     * Grants +20% sign intensity, -25% fatigue and -1 Ap costs for signs, and -1 to their cooldown 
+   * *About the Signs themselves:*
+     * **Quen**: Grants a shield, that blocks an amount of damage once. That damage is then reflected on the attacker. Damage blokced and reflected scales with Sign intensity (SI)
+     * **Yrden**: Marks an area with the yrden trap, debuffing enemy stats, and also preventing the use of some special abilities (like the enemy mutant ones). Cast range and duration scale with SI
+     * **Aard**: AOE attack (like handgonne), 1 range. Deals minor blunt damage. with a chance to push back and stagger enemies. Damage and effect chances scale with SI
+     * **Axii**: Single Target sign, seperate chances to baffle, daze and stun an opponent. Chances scale with SI
+     * **Igni**: 1 Range sweep fire attack, deals good damage, with a chance of causing enemies to burn, for 20% of damage dealt. (And burn also debuffs some of their stats). Damage and burn chance scale with SI
+     * **Bront**: An original inspiration of mine, functions like the chain lighting attack you might have seen in other mods like rotu. Deals armor ignoring damage, which chains to other opponents, and also causing a negative morale check to them. Damage, chain amount, and morale check difficulty all scale with SI.    
+* A new player background (recruitable) was added: **The Mutant**
+   * The Mutant is a combat oriented background, capable of both melee and ranged. It has access to mutations, but they are not as stable and refined as the vattghern ones.
+   * Starts with a random mutation (you can see which one if you "try out" before you hire them), and it can get one more, by using a mutagen on it!
+   * To balance things out, it has a unique trait with some light/moderate debuffs
+   * Also, these mutations themselves are not as strong as the vattghern ones, but still follow the same logic. Usually they have slightly reduced benefits, and/or slightly increased penalties
+   * Finally, they are incapable of becoming a vattghern (they are already deeply mutated)
+     * Generally High HP, but Low Resolve (generally strong, but not as much as a hedge knight for example)
+     * They are of "Medium" cost and wage
+     * They start with simple but decent equipment
+   * They can be rarely found in any settlement, with an increased chance for the settlements containing a black market
+   * You also have a chance to recruit them for free, after doing a certain new contract...
+* **2 New settlement situations** were added:
+   * One is directly related to the aforementioned mutants, anc can appear on almost any settlement, and is more likely to appear during any crisis. Its effects are: less items on sale, increased buy and sell prices, but also adds mutants to possible recruit pool
+   * The other one is about alchemists visiting a settlement. This makes selling your mutagens, corpses and monster parts there more viable, and also adds some alchemist related backgrounds in the recruit pool 
+* Remember the **Seer**? Now he's recruitable, though hes now an old guy.
+   * He will ask you to join in a camp encounter, should you be powerful enough
+   * For balance, and not to overshadow the seer origin, PoV's seer was made weaker (less stats, gets the old trait), and should be considered a support mage, with dps potential if you specifically build for it.
+* **2 New Vattghern Mutations**
+   * This is actually the rework of the past "Strain" Mutation, which was now split in 2:
+   * **Necromancy Mutation**
+     * This is the old "Strain Mutagen". It no longer grants the "aura of rot", but instead, grants the **Raise Dead** skill
+   * **Rot Mutation**
+     * This is a brand new mutation, that grants the "aura of rot" passive, but also the **Corpse Explosion** active skill (the one fault finders use)
+     * It also increases health, but its debuffs are reduced initiative and defenses, on top of weakness to fire
+   * To facilitate the rot mutation, now the flesh golem faction was fleshed out (hehe) with 3 corpse items in total (2 of them new). Corpses can drop from flesh golems, greater flesh golems and fault finders, all granting a chance to get the new rot mutagen, along with other goodies
+   * The enemy mutations remain unaffected by this new thing     
+* A new retinue/follower was added, **Mutagen Research Tools**
+   * It increases corpse and mutagen drop rates by 20%, and makes enemy mutants take 10% more damage. 
+   * It also increases the appearance rate of enemy mutants by 15%
+   * To unlock, it requires: having obtained at least on mutagen, have in your party one of the following: Alchemist, Taxidermist, Anatomist, Inventor, Druid, Vattghern (background, not trait), and also 4750 gold to buy it.
+* **Sling Ammunition**
+   * Sling ammunition can be used with slings, consuming ammo upon use. But, if this ammo runs out, people can still use slings with normal stones!
+   * There are 4 new sling ammunition options, 3 can be found in fletchers, and 1 is craftable, here are their names and what they do:
+   * *Limestone Pebbles*
+     * Light and shaped rocks, they allow higher effective range, higher velocity (+ armor pen) and slightly less fatigue to use, but at the cost of damage and dmg vs armor
+   * *Basalt Stones*
+     * Heavy, hard rocks, meant to maximise damage but at a steep cost. They Increase damage and dmg vs armor by 20%, but at the cost of 2 range, and +40% fatigue required to use!
+   * *Pumice Stones*
+     * Super light and porous, they are not that damaging, but they are meant to be fired at a high volume. They provide +2 range, and less ap (-1 to -3, dependig on weapon and skill) and -30% fatigue to use. They also make an intense sound while flying at high speed, offering the capability of scaring those of weak heart (weak morale check on hit). On the other hand, they have much less damage and dmg vs armor
+   * *Ifrit Rocks*
+     *  Hard rocks, but not as heavy as basalt, capable of breaking into pieces upon contact, breaking down to sand that can distract enemies. They also offer additional damage, effectiveness against armor. Their drawback is that they must be crafted by shimmering stones (from ifritrs), and they are few in number (8). They also cost slightly more fatigue to use, but with no ranged penalty
+* New Ammo: **Silver Arrows, Bolts and Bullets**
+   * All these offer additional damage against beasts and undead, and also mutatns
+   * Attacks with this ammo can also injure these enemies easier
+   * On the downside, they are less effective against armor, and do less damage against other enemies
+   * All can be quite expensive to buy. They are found at fletchers and black markets
+   * Finally, they do not have "large" quiver variants, making them limited in bigger battles    
+* New Contract: "Kill Forsaken Leader" (see details below, in the new enemies section)     
+* New Weapon: **Feuerbusche**
+   * Very similar to the original handgonne, main differences are: less damage and durability, more weight, but also much more effectiveness against armor
+   * Also has a named variant
+   * Both can be found on some new pov enemies, and rarely sold
+* New Weapon: **Feuerspeier**
+   * An expensive and strong firearm. Its aoe attack being the same with the firelance, but allowing for slightly more range.
+   * Deals pure fire damage
+   * High damage and armor effectiveness, but quite low armor penetration. Chance to hit is relatively low
+   * Has an increased chance to hit head
+   * Also allows for 2 Melee attacks (like a hybrid weapon). "Improvised Strike" and "Heavy Thrust". Both these attacks are stronger than what you will see on other ranged weapons
+   * Has a named variant as well, which also improves the aforementioned attacks.
+   * Also, this weapon can shoot in melee too.
+   * Can be found on a strong new enemy, and very rarely sold
+* New Weapon: **Rough Staff**
+   * Just like the mystic staff, just a weaker variant overall, but much more viable against armor (with melee attacks)
+   * Has a named variant, which buffs all spell damage! 
+   * Both can be found on another new PoV enemy!   
+* New shield: **Steel Buckler**
+   * Steel bucklers are a direct upgrade to the simple bucklers, or the mummy small shields. They offer greater protection (and improved passive def) at the cost of weight, but they have much more durability, giving buckler builds more viability now, as previously they were far too easy to break. 
+   * They can be bought in armorsmiths of the north! There are 3 different art variants.
+   * They also have a named variation, which can be bought, or looted from certain champions that might wield them. They also have 3 art variants.
+* New Gauntlet: *Silver Gauntlets**
+   * Similar statline to the spiked gauntlet, but its slightly weaker and more expensive
+   * Its important part though, is that its very efficient against mutants, undead, and beasts, granting +35% unarmed damage, and increased injury chance
+   * They can be found wherever you would find other gauntlets   
+* Oathtakers now get a new trait - "Oathsworn": granting them a random *minor oath* each week
+   * Minor oaths are lesser effects of the oaths you can get in the Oathtakers origin
+* Added **New Main Menu Music**!
+   * Also plays when starting with the vattghern origins
+   * Toggleable in PoV Mod Settings      
+* A brand **new company banner**! "Rose"     
+* A new pov "story" event, directing the player to do a vattghern contract (part of a yet WIP expansion to pov)    
+* A **new meme mutagen** was added....woof woof.
+* **Donkeys can now FIGHT**...dont underestimate them, lest you get kicked where you don't want to.
+* Added a new semi-meme encounter, commemorating a great communication ive once had in PoV discord server
+
+### NEW FEATURES: ENEMIES
+
+*An important note for the newly added enemies, is that most of them will not spawn on day 1, especially in large numbers (unless stated otherwise). There has been lots of effort into making these enemies gradually appear as you also get stronger.*
+* Major new enemy: **The Forsaken**
+   * I say "major", cause this enemy comes with its own new location, loot, and even a new vattghern contract
+   * Inspired by SSU's desperados, they are heavy hitters, but mutated to the point that they have lost all sanity and humanity! The design goal is to add a scary and strong new enemy, to keep players on their toes in the early/mid game. This enemy should kinda work like a benchmark, for when a player gets strong enough. Here are the details:
+     * They are similar to SSU's desperados. Heavy armor, heavy hitters, but can be tired out, stunned etc.
+     * They always have at least 2 mutations! (meaning also an opportunity for getting mutagens...)
+     * They may drop a new corpse, which when dissected, has a change to grant a random mutagen!
+     * Their locations and parties hold more valuable loot than your typical bandit nobodies
+     * There is randomness in their equipment, some weapons they can get are weaker than others
+     * They also get a unique visual effect to highlight their wild mutations
+     * These enemies can also become champions, making them much stronger
+     * In lategame, more stronger variants of this enemy will be spawning
+   * When/where they appear:
+     * They are part of the bandit faction, and as such, they will take over a few of the bandit locations
+     * Their spawn rate (both location and roaming party - wise) is scaled over days passed, starting from 10% of all bandit locations and parties on day one, to 25% on day 200
+     * They can also be found roaming the map, with a similar chance based formula
+     * The new location they spawn in has some custom and unique art, you will be able to tell it apart on the map!
+   * **Forsaken Vattghern Contract**
+     * A new vattghern contract was also added, to go to a location and kill a leader of the forsaken, along with his minions.
+     * For this contract, you can also hire some support, in the form of mercenaries (works similarly to the poachers you can get in another quest)
+     * The catch here is: the contract is about killing the enemy leader (see screenshot, also new effect). He is a very beefed up forsaken champion, usually with 4 mutations
+     * The reward though, is very well worth it, as he is equipped with a named weapon, a T2 named armor, and T2 named helmet! The champion can also drop legends masterwork crafting items! Worth the kill!
+     * Winning this battle also gives a chance for a mutant with better stats wanting to join you for free! And if the mercenaries survive, the quest giver might be thankful.
+     * The contract adds the ambushed trade routes situation in a settlement, until resolved. An important detail, and opportunity...
+     * Finally, the party accompanying their leader, has a slightly higher chance of containing champions.
+* **New Enemy: Seers**
+   * Yes, you read right, eemember the seer background? Now you can find them rarely in some enemy groups. With skills like magic missile, entice, stun, daze, etc, they are bound to be a menace.
+   * They are lightly armored, with perks like nimble, and rely on the damage and disruption their magic can cause.
+   * Most variants are equipped with a new magic staff, which is a slightly weaker variant of the normal seer staff.
+   * They can also become champions, which gives them much more power, and a named version of the new staff (which increases spell damage)
+   * They have a small chance of dropping ancient scrolls!
+   * There are 2 Variants of this enemy:
+   * **Rogue Seer**
+     * A self-serving seer that for one reason or the other has gone rogue, now putting his skills in different use.
+     * Generally, its slightly more tanky and less damaging than the other variant
+     * Can be part of enemy brigand parties and camps
+     * Can also be part of mercenary groups!
+   * **Noble Seer**
+     * A nice and proper seer, if not a little pompous
+     * Is a lighter, but more damaging variant
+     * Is found in noble parties
+* **New Enemy: Gunners**
+   * Brigands and mercenaries are adapting, and now they have access to guns of their own!
+   * They come with a new kind of handgonne, that while dealing less damage, it is far more effective against armor (considering that in the north, people are dressed like tin cans)  
+   * They also can become champions, with a named version of the aforementioned gun, and with some interesting additional perks!
+   * They also come in 2 Variants:
+   * **Brigand Gunner**
+     * Pretty self explanatory, these ones are wearing medium armor, and also decent in melee.They can be quite the threat if you let them
+     * Can be found in roaming brigand parties and camps
+   * **Mercenary Gunner**
+     * Stronger and slightly better equipped than their brigand counterparts, they are also a threat to take note of!
+     * They can be found in enemy mercenary companies, and bounty hunters!
+* **New Enemy: Flammenritter**
+   * A spicy new enemy: "Flame Knights"
+   * They come equipped with a new kind of handgonne, the Feuerspeier, that you can read about in the New Features section!
+   * The enemy wielding this new weapon is a skilled, heavily armored knight, able to afford such a rare and expensive armament!
+   * They are pretty capable in both melee and ranged combat (and have nice drip on top) 
+   * They can also become champions, making them one of the most dangerous enemies PoV adds
+   * Of course, they appear as part of noble armies    
+* Mercenaries can appear in noble parties
+* Lost Treasure Hunters can appear in southern necromancer parties
+
+### OVERHAUL / REWORKS
+
+*Many systems were extensively reworked, including: background effects, shields, all ranged weapons, craftable items from monster parts, many perks and legends skills, tier V armor attachments, and more... These reworks will be present in most cases, unless you are playing with the Fotn mod, where they are overwritten for best compatibility*
+* **Monster Craftables and Armor Attachments Rework** (~40 Items Changed)
+   * All armor attachments, weapons, shields, and accessories that are craftable from monster parts were buffed, with the intention of making them a more viable choice, compared to what you can buy
+   * The buffs are especially big on stuff that requires more rare materials
+   * On a sidenote, the ancient armors you could restore were also buffed to be more viable
+   * Specifically, Monster trophies and legendary items were buffed the most!
+   * Some of these items were also marked as "precious", so you dont sell them on accident 
+   * About the armor attachments, all tier V armor attachments were reworked, with edits to most of their stats and values, with the intention of: Differentiationg them from each other more, giving some less used one an additional highlight, and in general, made most of them weaker when compared to their craftable counterparts, to reward crafting.
+     * Specifically, the "pauldron" items were the workst offenders, where they all were doing pretty much the same thing, with extremely minor differences (+- 5 armor, 1 fatigue etc.). Now all pauldron items have different uses, and pricepoints (almost like a tiered system between them)  
+* **Backgrounds Rework** (~80 Backgrounds total)
+   * Most recruitable backgrounds now come with some minor thematic effects (buffs most of the time). Woodcutters will be better with axes for example. The intention behind this is to add a little bit of flavor, uniqueness and roleplay
+   * Not all effects are made equal! Some rare bckgrounds enjoy unique benefis
+   * An example is the new minor oaths system for oathtakers (see at the New Features section)
+* **Shields Rework**
+   * On top of the new shield item added, shields were slightly reworked, so they can be more viable equipment.
+   * Specifically, I focused on the damage aspect, where the shield bash and buckler bash skills now do more damage depending on the shield's max condition. This is unlocked by the relevant shield perks.
+   * Shield expert now further increases that damage. And the schrat mutation can boost it more.
+   * These skills also have by default increased effectiveness against armor, as their attacks are essentially from blunt instruments.
+   * So, I think at this point you may notice how these changes can combine into an interesting build. As for example, the ambidexterous perk makes you attack automatically with your buckler, if you are equipped with one! Of course, this may not be able to compete with pure dps builds, but it should offer more usefulness and utility to shield tanks, or light duelist type characters!
+* **Skill Books Rework**
+   * In general, I liked the new skill books addition, but it did feel "shallow" to use. So I did add some depth to the book reading mechanics!
+   * People will now need to "know how to read", to benefit from skillbooks
+   * Depending on different backgrounds, perks and traits, the readable books limit can be either 1,2,3 or infinite! 
+   * Most educated backgrounds already know, and this is highlighted in their background tooltip. On top of that, ppl with the bright trait can also read.
+   * Some very few exceptions: people with brain damage, dumb trait, or wildmen cannot read, and they cant learn to read either
+   * The other backgrounds can "learn to read". This can either happen by picking the "student" perk, or by a special new camp encounter, where an educated member can help teach someone else.
+   * Learning to read takes a few days, and usually gives a debuff to the one learning, but after that, they can benefit from skill books too! They also get a small permanent xp boost, as a little bonus!
+   * On a minor note, skill books now have new art (different book color by type, like armor, weapon, class etc.) and are now also slightly more expensive
+* **Ranged Weapons Rework** (~45 Items changed)
+   * Let me just say that this would be SUPER LONG if I wrote in detail, so ill try to keep this part compact. Look at PoV Server, at the progress_report channel for more details
+   * Here is my general design around it: Make some usually disregarded weapon choices more viable, town down the latest ranged weapon superiority with recent legends updates, and also provide some new spicy stuff. Here comes:
+   * **Throwing Weapons**
+     * Most thrown weapons allow for melee attacks, usually a weak variant of the weapon's type. So Throwing axes would get "Weak Chop". The damage of these skills can be improved with relevant perks
+     * Also reworked the goblin bolas, to make them an actually viable choice among the others, now they require less ap to use, and have slightly more ammunition. Also, there was a named version of them made
+     * Throwing axes get the "Ranged Split Shield" skill, if the user has the "Shield Breaker" perk. The skill functions like the throw spear skill, targeting enemy shields. 
+   * **Bows**
+     * Their damage, armor penetration and armor effectiveness was slightly lowered, with the higher tier weapons getting less nerfs (so now higher tier weapons are even more worth getting, and dangerous to fight against). Some bows were treated differently:
+     * The wonky bow was nerfed a lot, its practically useless now
+     * The masterwork bow on the other hand, was buffed to the point that its now on par, or even better than named bows, getting increased damage, armor pen and range.
+     * The composite bow was also changed, it is now the most efficient option for damaging armor, and decently strong, resting between the hunting and war bow in strength
+   * **Handguns**
+     * Slightly increased damage against armor, but also slightly reduced the weapons durability
+     * 2 New handgonne weapons were also added to PoV, as part of new enemy additions. Details in New Features
+     * Also, handguns were made to be more weighty
+   * **Crossbows**
+     * Now all crossbows have 6 range (the weaker ones had 5 before)
+     * Their damage remains the same, but their damage vs armor was very slightly lowered.
+     * Instead of all crossbows having flat 50% armor penetration, now the weaker ones have 40, going up to 50 with the stronger ones
+     * The goblin crossbow specifically was changed differently to differentiate it more from the heavy crossbow, and is now weaker in armor penetration, but much stronger in armor effectiveness (95%)
+     * Named Crossbows will now do more damage with the "improvised strike" skill
+   * **Slings**
+     * Slings were essentially treated in 2 categories, the one handed and the staff sling variants
+     * Both see reduced damage, armor effectivness and especially armor ignore. The buffs are especially larger on the staff slings, as I think they were previously overtuned
+     * These changes might sound like "too much" but slings were pretty dominant lately, and I believe they overshadowed some other weapon choices (and enemies)
+     * On the other hand, I gave players a new toy for slings: **Sling Ammunition** (Described in New Features)
+   * **Special Ammunition Rework**
+     * In general, both the armor piercing and broadhead arrows and bolts were significantly altered, to make them more viable to use, increasing the power of both their strengths and their weaknesses
+     * Armor piercing ammo does less damage and is less effective against armor, but offers higher injury chance, and more armor penetration
+     * Broadhead ammo is meand for lightly armored opponents, so while easily stopped by armor, it does more damage overall
+* **Soft Skills Rework** (~ 10 Skills Total)
+   * Some legends and vanilla skills, new and old, were tweaked. Some are indirectly described in the aforementioned sections.
+     * The monk prayer skills cost less ap and fatigue
+     * The "hartseeker" skill now does more damage and has higher armor penetration
+     * The company banner item also gets the heartseeker skill  
+     * Improvised Strike: Increased damage and armor effectiveness. Added the skill on handgonnes too. This skills damage is further increased, and fatigue costs reduced, when having the crossbow mastery perk.
+* **Soft Perks Rework** (~ 35 Perks total)
+   * By soft I mean that the perk system was left largely unchanged, I only made small changes, tweaks and additions where I felt like :). A big drive behind these changes was to give the perks interaction with legends camp mechanics, so now some perks can for example increase a character's "Gathering" skill.
+   * Most changes are indirectly described in the aforementioned overhauls, so here ill focus on only some new stuff (tldr)
+     * Ore hunter, Pathfinder, Herbcraft, Medicine perks, bags and belts, woodworking, bard perks, cooking perks, falcon: All grant some camp benefit, or world movespeed, or stash space
+     * Recuperation perk reduces chance to get drunk, and prevents the hangover effect
+     * Pugilist perk: Further improves kick skill, with increased damage, that now also scales with current body armor!
+     * Field Triage: Active skill was buffed, now does a heal with both a flat value and one based on max Hp
+     * Thrust Master: Also slightly increases damage with Javelins and Thrown spears     
+* **Holy Water Rework**
+   * No longer requires a retinue to refill, now just costs ammo
+   * Its damage is changed, instead of doing flat damage, it now does less flat damage, but with % Health damage on top. This way, lower health enemies (like skeletons) will take slightly less damage from it, but most other undead, or undead mutants, especially with high hp, will take more
+   * On top of that, the holy water effect now reduces the target's damage done and increases the damage they take.     
+
+### QoL / IMPROVEMENTS
+
+* **When Dissecting corpses in crafting tent, you will now see in the camp report exactly what items you got**
+* **Vastly improved Pov's compatibility with Fotn** (PoV's overhaul changes wont apply when playing with them both)
+* Compatibility with Accessory Companions was improved
+* Compatibility with Fantasy Bros was improved
+* Many **new popups were added**, explaining mechanics and what happens, when using the trial of the grasses, mutagens, or skill books.
+* Vattghern trait tooltip will not display wage multiplier, if the Vattghern is paid 0 money 
+* Having a vattghern in your company can now unlock some retinues
+* All mutagen tooltips and item descriptions were improved
+* Improved compatibility with latest legends updates
+* Also, in the process of preparing for some new legends updates and compat with them
+* All bucklers tooltips improved, to describe their additional effect
+* The tooltips of PoV origins were reviewed and improved
+
+### BALANCE / TWEAKS
+
+* **Vatt'ghern Tweaks**
+   * Making a vattghern is slightly easier, as the mood penalty of using the trial of the grasses was reduced a bit
+   * Mutation sickness duration slightly reduced
+   * The "Vatt'ghern" trait is visible in combat, to keep track of effects like regeneration
+   * Vattghern Trait's wage increase now scales with kills like the other vattghern starts, starting lower but ending higher. Meant for a more smooth and believable transition and actually a buff to supporting vattgherns, who dont get many kills (like the hexe one)
+* **All new PoV's Enemies now have improved scaling with difficulty, and time passed**
+   * New formulas were used, for a more smooth and controlled effect, which I can edit easily
+   * Especially in Legendary, enemies will be formidable indeed!   
+* Unhold mutation now also buffs unarmed damage
+* Schrat Mutation now also increases shield skill damage
+* Flesh golems no longer get battleheart, nimble, or anchor, but they do get increased health now
+* The vattghern miasma skill now has 2 turns cooldown, instead of being usable just once per battle (applies to enemy undead mutants too)
+* The lindwurm acid of the player mutations was buffed
+* Some of the weaker enemy mutations (like beast) were buffed
+* Alcohol distillation time now varies depending on items used (less alcoholic items = more time)
+* With the *SSU Tweaks* setting enabled, enemy scaling will be slower when playing with SSU!
+* Beasthunters, Ranger, Poachers origins start with some additional goodies
+* Increased the fatigue cost of the "PoV Charge" skill - blame snow :)
+* Enemy Hex mutation buffed a bit - also blame snoe :)))
+* Slightly increased mutants spawn rate in lower combat difficulties
+* Arena Armor attachments removed from armorsmiths
+* You will now be offered a better price for your mutagen, in the mutagen sale event!
+* Vattghern medallion now also grants +5% damage vs mutants, beasts, undead
+
+### ART
+
+*Of course, this is about changes or tweaks to existing art, for as you can imagine with so many new things tons of shit were added*
+* Improvements to main menu, origin and some events art
+* Improved the rustungeist art perspective
+
+### MISC
+
+* 20 More PoV loading screen tips were added
+* Vattghern (and the new mutant background) can now appear in random company scenarios
+* Memed with the hates everything perk a little bit (new possible trait unique to it)
+* Enforces a more recent legends version
+* As always, memed around :))
+
+### FIXES
+
+* Fixed some enemy mutants getting 2 special prefix names instead of 1
+* Fixed Rot mutation affecting allies (wardogs could do that xd)
+* Resolved potential issues with some new PoV Events
+* Fixes a minor issue with mutagen upgrades
 
 ## Changelog V1.1.9 "Afterparty" Edition:
 
