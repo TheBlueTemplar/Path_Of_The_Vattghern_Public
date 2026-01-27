@@ -15,14 +15,16 @@
 The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which we rewrote, and then I kept adding more and more. Currently, it stands on its own as a substantial overhaul/content mod, with quite a few things on the way. Priority is given to strike a balance between challenge and fun, and to keep some reasonable level of compatibility with other legends Submods.  
 
 ### Main features:
-* **Overhaul** -  PoV is also an overhaul mod, touching many different aspects of vanilla and legends. Some of these aspects include: Injury System, Fire Damage, New Monster Effects, Armor Attachments, Armor Trophies, Skills, Perks, Traits, Backgrounds, Shields, Ranged Weapons, Skill Books, and much more!
+* **Overhaul** -  PoV is also an overhaul mod, touching many different aspects of vanilla and legends. Some of these aspects include: *Injury System, Fire Damage, New Monster Effects, Armor Attachments, Monster Trophies, Skills, Perks, Traits, Backgrounds, Shields, Ranged Weapons, Skill Books, and much more!*
 * **Vatt'ghern** - A powerful mid-late game upgrade for any mercenary, granting access to powerful scaling buffs and effects, special skills, vattghern signs, contracts and more! Tied to most of the mod's mechanics
 * **Mutations** - Mutagenic effects are not just limited to the player, but enemies can also spawn with them, granting them new skills and effects, along with visuals
-* **Corpses** - Most enemies can drop corpses, that can be dissected in the crafting tent to yield resources (some exclusive to them, like special mutagens, or crafting items!)
+* **Corpses** - Most enemies can drop corpses (almost 50 currently), that can be dissected in the crafting tent to yield resources (some exclusive to them, like special mutagens, or crafting items!)
 * **Enemies** - 20 Enemies total added to the mod! Expanding the geist, undead, noble, mercenary and bandit factions currently! And of course, with more on the way!
-* **Events** -  (and encounters): 45 Total and counting, in an effort to provide narrative and immersion. Some of PoV's mechanics are even "locked" behind certain milestone events
+* **Events** -  (and encounters): 45 Total and counting, in an effort to provide narrative and immersion. Some of PoV's mechanics are even "locked" behind certain "story" events
 * **Starting Scenarios** - 3 Different ones, for different tastes (solo start, OP start, normal start), all fitting their niche. 
 * **New Items and Weapons** - Quite a few new items like weapons, armor, shields, ammo and accessories to complement a player's options (Currently: 25 Items)
+* **Contracts** - Currently including 2 and counting. Special strong encounters, that do require the assistance of all the goodies PoV has to offer!
+* **Other Additions** - Include a new retinue, new music, enemy locations, 2 new ambitions, and more...
 
 ### And now, for some additional numbers:
 **PoV's Total Additions**
