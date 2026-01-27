@@ -24,7 +24,7 @@ The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which w
 * **Starting Scenarios** - 3 Different ones, for different tastes (solo start, OP start, normal start), all fitting their niche. 
 * **New Items and Weapons** - Quite a few new items like weapons, armor, shields, ammo and accessories to complement a player's options (Currently: 25 Items)
 * **Contracts** - Currently including 2 and counting. Special strong encounters, that do require the assistance of all the goodies PoV has to offer!
-* **Other Additions** - Include a new retinue, new music, enemy locations, 2 new ambitions, and more...
+* **Other Additions** - Include a new retinue, new player background, settlement situations, music, enemy locations, ambitions, and more...
 
 ### And now, for some additional numbers:
 **PoV's Total Additions**
