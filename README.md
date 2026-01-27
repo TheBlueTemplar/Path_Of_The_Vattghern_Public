@@ -42,6 +42,16 @@ Recommended Base Modlist (All the Latest Versions):
 * The old last Witchers mod, obviously
 * Using Bredditor and similar mods improperly can cause millions of issues, keep this in mind!
 
+### Recommended Mod Settings
+* **For Legends**: You are recommended to tweak some settings, for the best PoV experience
+   * In the Misc tab, change the `show blueprints when` to `One Ingredient Available`
+* **For PoV**: You are recommended to keep most PoV Settings at default for the smoothest experience. Some exceptions are:
+   * In Gameplay Tab:
+     * Chaos Mode: Enable it for an additional - chaotic - challenge
+     * In the Customazation - Tweaks section, hover over the option and decide what you want enabled
+   * Feel free to play around with the Misc Tab
+   * The Wiki tab is exactly that - a Wiki. Check it out!
+
 ### More Detailed Information:
 For detailed information about downloading the mod, and a nice vibrant community around it, check out the discord server of PoV. [Invite Link](https://discord.gg/zhHTjM5bBB)
 A Wiki is also in active development, any support appreciated
