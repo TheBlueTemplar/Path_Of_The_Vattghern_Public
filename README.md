@@ -58,11 +58,11 @@ The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which w
 * [PoV](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/releases)
 
 ### Incompatible Mods:
-* Any kind of "Settlement Situation Tooltip" Mods (There is an internal PoV Version)
+* Any kind of *"Settlement Situation Tooltip"* Mods (There is an internal PoV Version)
 * Anything incompatible with Legends!
-* Mod_Hooks (Integrated Into Legends)
-* The old last Witchers mod, obviously
-* Using Bredditor and similar mods improperly can cause millions of issues, keep this in mind!
+* *Mod_Hooks* (Integrated Into Legends)
+* The old *Last Witchers* mod, obviously
+* Using *Bredditor* and similar mods improperly can cause millions of issues, keep this in mind!
 
 ### Recommended Mod Settings
 * **For Legends**: You are recommended to tweak some settings, for the best PoV experience
