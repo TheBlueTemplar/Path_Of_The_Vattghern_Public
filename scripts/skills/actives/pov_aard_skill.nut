@@ -68,7 +68,7 @@ this.pov_aard_skill <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Hits have [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.round(knockChance) + "%[/color] chance of knocking the enemy back, and [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.round(staggerChance) + "%[/color] chance of [color=" + this.Const.UI.Color.PositiveValue + "]Staggering[/color] them. Both chances increase by 1% for each point of Sign intensity."
+			text = "Hits have [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.round(knockChance) + "%[/color] chance of knocking the enemy back, and [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.round(staggerChance) + "%[/color] chance of [color=" + this.Const.UI.Color.PositiveValue + "]Staggering[/color] them. Both chances increased by 1% for each point of Sign intensity."
 		});
 
 		ret.push({
@@ -125,10 +125,7 @@ this.pov_aard_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
-	// ----------------------------
 	// Vanilla handgonne-style AoE
-	// ----------------------------
-
 	function wrapDir( d )
 	{
 		local c = this.Const.Direction.COUNT;
@@ -137,8 +134,8 @@ this.pov_aard_skill <- this.inherit("scripts/skills/skill", {
 		return d;
 	}
 
-	// EXACT same shape logic as vanilla handgonne (but with height diff <= 1 like your old Aard)
-	// Returns TILES (not entities)
+	// EXACT same shape logic as vanilla handgonne (but with height diff <= 1 like old Aard)
+	// Returns TILES 
 	function getAffectedTiles( _targetTile )
 	{
 		local ret = [ _targetTile ];
@@ -233,9 +230,7 @@ this.pov_aard_skill <- this.inherit("scripts/skills/skill", {
 
 		local dir = myTile.getDirectionTo(targetTile);
 
-		// -----------------------------
 		// PARTICLES: DO NOT CHANGE
-		// -----------------------------
 		local particleSet = this.getSweepParticleSetByDir(dir);
 
 		if (myTile.IsVisibleForPlayer)
@@ -256,7 +251,6 @@ this.pov_aard_skill <- this.inherit("scripts/skills/skill", {
 				);
 			}
 		}
-		// -----------------------------
 
 		// Vanilla handgonne AoE tiles
 		local affectedTiles = this.getAffectedTiles(targetTile);

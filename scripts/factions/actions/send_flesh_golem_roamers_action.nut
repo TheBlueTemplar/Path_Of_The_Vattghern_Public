@@ -13,7 +13,7 @@ this.send_flesh_golem_roamers_action <- this.inherit("scripts/factions/faction_a
 	{
 		// Also a city encounter that fires after this time has passed
 		// Flavor event: Flesh Constructs roam the lands!
-		if (this.World.getTime().Days < 50)
+		if (this.World.getTime().Days < 15)
 		{
 			return;
 		}

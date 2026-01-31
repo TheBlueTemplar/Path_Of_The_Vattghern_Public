@@ -12,7 +12,7 @@ this.pov_noble_gunner_knight <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/military_gunner_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/pov_gunner_hybrid_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -62,11 +62,11 @@ this.pov_noble_gunner_knight <- this.inherit("scripts/entity/tactical/human", {
 
 				if (day >= 100)
 				{										
-					b.MeleeDefense += 1;
-					b.RangedSkill += 2;
-					b.RangedDefense += 2;
+					b.MeleeDefense += 2;
+					b.RangedSkill += 3;
+					b.RangedDefense += 3;
 					b.Hitpoints += 6;			
-					b.Bravery += 3;
+					b.Bravery += 4;
 					b.DamageTotalMult += 0.05;
 					::Legends.Perks.grant(this, ::Legends.Perk.SteelBrow);					
 
@@ -95,13 +95,13 @@ this.pov_noble_gunner_knight <- this.inherit("scripts/entity/tactical/human", {
 
 							if (day >= 250)
 							{
-								b.MeleeSkill += 4;	
-								b.Initiative += 4;
-								b.MeleeDefense += 3;
-								b.RangedSkill += 4;
-								b.RangedDefense += 3;
-								b.Hitpoints += 10;			
-								b.Bravery += 5;	
+								b.MeleeSkill += 5;	
+								b.Initiative += 5;
+								b.MeleeDefense += 4;
+								b.RangedSkill += 5;
+								b.RangedDefense += 4;
+								b.Hitpoints += 12;			
+								b.Bravery += 7;	
 								::Legends.Perks.grant(this, ::Legends.Perk.Fearsome);
 							}						
 						}						
@@ -145,7 +145,7 @@ this.pov_noble_gunner_knight <- this.inherit("scripts/entity/tactical/human", {
 			b.RangedSkill    += 2.10 * scale;   // ~+15
 			b.RangedDefense  += 1.00 * scale;   // ~+7
 			b.Bravery        += 2.10 * scale;   // ~+15
-			b.Hitpoints      += 2.80 * scale;   // ~+20
+			b.Hitpoints      += 3.50 * scale;   // ~+25
 		}
 
 		// Beginner Modifiers

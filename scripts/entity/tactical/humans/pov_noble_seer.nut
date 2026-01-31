@@ -67,32 +67,32 @@ this.pov_noble_seer <- this.inherit("scripts/entity/tactical/human", {
 			{		
 								
 				b.MeleeDefense += 1;
-				b.RangedSkill += 2;
-				b.Initiative += 2;
+				b.RangedSkill += 1;
+				b.Initiative += 1;
 				b.RangedDefense += 2;
 				b.Hitpoints += 3;
-				b.DamageTotalMult += 0.04;
+				b.DamageTotalMult += 0.03;
 				::Legends.Perks.grant(this, ::Legends.Perk.LegendTerrifyingVisage);
 				::Legends.Perks.grant(this, ::Legends.Perk.LegendOnslaught);				
 
 				if (day >= 100)
 				{										
 					b.MeleeDefense += 1;
-					b.RangedSkill += 2;
-					b.Initiative += 3;
+					b.RangedSkill += 1;
+					b.Initiative += 2;
 					b.RangedDefense += 2;
 					b.Hitpoints += 3;			
 					b.Bravery += 3;
-					b.DamageTotalMult += 0.06;
+					b.DamageTotalMult += 0.04;
 					::Legends.Perks.grant(this, ::Legends.Perk.Relentless);
 					::Legends.Perks.grant(this, ::Legends.Perk.FortifiedMind);
 
 					if (day >= 150)
 					{
 						b.MeleeSkill += 2;	
-						b.Initiative += 5;
+						b.Initiative += 3;
 						b.MeleeDefense += 1;
-						b.RangedSkill += 4;
+						b.RangedSkill += 3;
 						b.RangedDefense += 3;
 						b.Hitpoints += 3;			
 						b.Bravery += 3;
@@ -101,22 +101,22 @@ this.pov_noble_seer <- this.inherit("scripts/entity/tactical/human", {
 						if (day >= 200)
 						{
 							b.MeleeSkill += 2;	
-							b.Initiative += 5;
+							b.Initiative += 4;
 							b.MeleeDefense += 1;
-							b.RangedSkill += 4;
+							b.RangedSkill += 2;
 							b.RangedDefense += 3;
 							b.Hitpoints += 3;			
 							b.Bravery += 3;	
-							b.DamageTotalMult += 0.06;	
+							b.DamageTotalMult += 0.04;	
 							::Legends.Perks.grant(this, ::Legends.Perk.LoneWolf);
 							::Legends.Perks.grant(this, ::Legends.Perk.LegendClarity);	
 
 							if (day >= 250)
 							{
 								b.MeleeSkill += 4;	
-								b.Initiative += 6;
+								b.Initiative += 5;
 								b.MeleeDefense += 2;
-								b.RangedSkill += 5;
+								b.RangedSkill += 4;
 								b.RangedDefense += 3;
 								b.Hitpoints += 3;			
 								b.Bravery += 3;							
@@ -137,7 +137,7 @@ this.pov_noble_seer <- this.inherit("scripts/entity/tactical/human", {
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendFeint);
 
 			// stable stat increase
-			b.DamageTotalMult *= 1.06;
+			b.DamageTotalMult *= 1.04;
 			// Scaled stat increase
 			local day = this.World.getTime().Days;
 
@@ -156,10 +156,10 @@ this.pov_noble_seer <- this.inherit("scripts/entity/tactical/human", {
 			// Example: at day 200 → scale = 7
 			b.MeleeSkill     += 0.70 * scale;   // ~+5
 			b.MeleeDefense   += 0.70 * scale;   // ~+5
-			b.RangedSkill    += 1.40 * scale;   // ~+10
+			b.RangedSkill    += 1.00 * scale;   // ~+7
 			b.RangedDefense  += 1.00 * scale;   // ~+7
 			b.Bravery        += 2.10 * scale;   // ~+15
-			b.Initiative	 += 2.10 * scale;	// ~+15
+			b.Initiative	 += 1.40 * scale;	// ~+10
 			b.Hitpoints      += 1.40 * scale;   // ~+10
 		}
 

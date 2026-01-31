@@ -43,7 +43,7 @@ this.pov_axii_skill <- this.inherit("scripts/skills/skill", {
 
 		local actor = this.getContainer().getActor();
 		local intensity = 100 * actor.getCurrentProperties().SignIntensity;
-		local baffleChance = 	70 + intensity * 1.0;	// e.g. 70% base + 1% per intensity
+		local baffleChance = 	65 + intensity * 1.0;	// e.g. 65% base + 1% per intensity
 		local dazeChance = 		50 + intensity * 1.0;	// e.g. 50% base + 1% per intensity
 		local stunChance = 		40 + intensity * 1.0;	// e.g. 40% base + 1% per intensity
 
@@ -84,7 +84,7 @@ this.pov_axii_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local intensity = 100 * actor.getCurrentProperties().SignIntensity;
-		local baffleChance = 	70 + intensity * 1.0;	// e.g. 70% base + 1% per intensity
+		local baffleChance = 	65 + intensity * 1.0;	// e.g. 65% base + 1% per intensity
 		local dazeChance = 		50 + intensity * 1.0;	// e.g. 50% base + 1% per intensity
 		local stunChance = 		40 + intensity * 1.0;	// e.g. 40% base + 1% per intensity
 

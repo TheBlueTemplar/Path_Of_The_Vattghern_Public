@@ -8,7 +8,7 @@
 				id = 13,
 				type = "text",
 				icon = "ui/icons/pov_extra_special.png",
-				text = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+6%[/color] on all stats when fighting in [color=" + this.Const.UI.Color.PositiveValue + "]forests[/color]."
+				text = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+6%[/color] on all stats when fighting in [color=" + this.Const.UI.Color.PositiveValue + "]deserts[/color]."
 			}
 		);
 		return ret;

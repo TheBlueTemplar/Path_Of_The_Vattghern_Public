@@ -20,14 +20,16 @@
 ::TLW <- {
 	ID = "mod_PoV",
 	Name = "Path of the Vatt\'ghern", //PoV
-	Version = "2.0.0",
+	Version = "2.1.0",
 	//EnableEnemyMutation = true,	//default settings
 	//Overhaul = true,
 	EnemyMutationScaling = true,
 	ChaosMode = false,
+	PovSituation = true,
 	McTweaks = false,
 	FotnTweaks = false,
 	SSUTweaks = false,
+	RotuTweaks = false,
 	EnableMainMenuArt = true,
 	EnablePovMainMusic = true,
 	EnablePovIntroEvent = true

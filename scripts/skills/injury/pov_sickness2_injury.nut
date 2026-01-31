@@ -77,6 +77,12 @@ this.pov_sickness2_injury <- this.inherit("scripts/skills/injury/injury", {
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] Ranged Defense"
 			},
 			{
+				id = 17,
+				type = "text",
+				icon = "ui/icons/pov_intensity.png",
+				text = "Sign Intensity reduced by [color=" + this.Const.UI.Color.NegativeValue + "]70%[/color] (mult)."
+			},
+			{
 				id = 18,
 				type = "text",
 				icon = "ui/icons/vision.png",
@@ -180,6 +186,7 @@ this.pov_sickness2_injury <- this.inherit("scripts/skills/injury/injury", {
 		_properties.RangedSkill *= 0.40;
 		_properties.MeleeDefense *= 0.40;
 		_properties.RangedDefense *= 0.50;
+		_properties.SignIntensity *= 0.30;
 		_properties.Vision += -3;
 		_properties.DailyFood += 2.0;
 	}

@@ -125,6 +125,17 @@ this.pov_fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		if (this.getContainer().hasPerk(::Legends.Perk.LegendPiercingShot))
+		{
+			local perk = ::Legends.Perks.get(this, ::Legends.Perk.LegendPiercingShot);
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/tooltips/positive.png",
+				text = "Max Range [color=%positive%]+" + perk.m.BonusRange + "[/color] from " + perk.getName()
+			});
+		}
+
 		return ret;
 	}
 

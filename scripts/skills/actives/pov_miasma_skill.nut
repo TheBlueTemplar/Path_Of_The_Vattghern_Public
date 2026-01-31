@@ -6,7 +6,7 @@ this.pov_miasma_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.pov_miasma";
 		this.m.Name = "Disturbing Miasma";
-		this.m.Description = "Cast a cursed, foul miasma upon your living enemies, reducing their ranged capabilities and harming them.\n\n [color=" + this.Const.UI.Color.NegativeValue + "]Can use once per Battle[/color]";
+		this.m.Description = "Cast a cursed, foul miasma upon your living enemies, reducing their ranged capabilities and harming them. 2 Turns Cooldown.";
 		this.m.Icon = "skills/pov_active_miasma.png";
 		this.m.IconDisabled = "skills/pov_active_miasma_sw.png";
 		this.m.Overlay = "pov_active_miasma";
@@ -37,7 +37,7 @@ this.pov_miasma_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsDoingForwardMove = false;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 10;
+		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
 		this.m.MaxLevelDifference = 4;

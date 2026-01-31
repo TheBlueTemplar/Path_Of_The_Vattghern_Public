@@ -2,6 +2,7 @@
 ::Const.AI.Agent.ID.SwordGhost <- "agent.sword_ghost";
 ::Const.AI.Agent.ID.ArmorGhost <- "agent.armor_ghost";
 ::Const.AI.Agent.ID.PovSeer <- "agent.pov_seer";
+::Const.AI.Agent.ID.PovGunnerHybrid <- "agent.pov_gunner_hybrid";
 
 // Adding new skillz
 local count = ::Const.AI.Behavior.ID.COUNT;

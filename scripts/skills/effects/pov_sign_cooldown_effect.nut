@@ -22,11 +22,14 @@ this.pov_sign_cooldown_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded() 
 	{
-		this.spawnIcon("pov_medium_sign_cooldown", this.getContainer().getActor().getTile());
-		local actor = this.getContainer().getActor();
-		if (actor.getCurrentProperties().IsSpecializedInSigns)
+		if (this.Tactical.isActive())
 		{
-			this.m.TurnsLeft = 1;
+			this.spawnIcon("pov_medium_sign_cooldown", this.getContainer().getActor().getTile());
+			local actor = this.getContainer().getActor();
+			if (actor.getCurrentProperties().IsSpecializedInSigns)
+			{
+				this.m.TurnsLeft = 1;
+			}
 		}
 	}
 

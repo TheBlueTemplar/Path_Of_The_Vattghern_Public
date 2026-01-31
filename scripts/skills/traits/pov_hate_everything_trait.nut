@@ -14,6 +14,10 @@ this.pov_hate_everything_trait <- this.inherit("scripts/skills/traits/character_
 		this.m.Name = "Hates Everything";
 		this.m.Icon = "ui/traits/pov_hate_everything.png";
 		this.m.Description = "It is a curious question, whether there is something that %name% likes.";
+		this.m.Titles = [
+			"the Hater",
+			"All-Hating"
+		];
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.craven",

@@ -31,8 +31,15 @@ local settingEnemyMutationScaling = page.addBooleanSetting(::TLW.EnemyMutationSc
 local settingChaos = page.addBooleanSetting(::TLW.ChaosID, false, "Chaos Mode", "[color=" + this.Const.UI.Color.povTooltipBlue + "]PoV is not balanced around this mode, it is only meant as a fun \"Challenge\". Off by default. [/color] \n\n All enemies can have multiple mutations, selected randomly from all of PoV\'s possible effects. Mutagen drop rates from enemy mutants will be lowered. \n\n Recommended to enable \"Enemy Mutations Scaling\" if you enable chaos mode.\n\n [b][color=" + this.Const.UI.Color.povPainEffect + "]MAY CHAOS TAKE THE WORLD![/color][/b]");
 
 page.addSpacer("Spacer3", "72rem", "1rem");
-page.addTitle("title3", "Customization - Tweaks");
+page.addTitle("title3", "Optional - QoL Stuff");
 page.addDivider("divider3");
+
+::TLW.PovSituationID <- "PovSituation";
+local settingPovSituation = page.addBooleanSetting(::TLW.PovSituationID, true, "PoV Situation Tooltips", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional QoL addition for the settlement\'s situation tooltips.[/color] \n\n On by default. The settlements situatations will now display additional, detailed info about their current effect. (As an example, \"+ 20% Sale Prices\").\n\n As PoV is incompatible with other situation tooltips mods, this option is meant to provide that QoL instead.");
+
+page.addSpacer("Spacer4", "72rem", "1rem");
+page.addTitle("title4", "Other Mods Tweaks");
+page.addDivider("divider4");
 
 ::TLW.McTweaksID <- "McTweaks";
 local settingMcTweaks = page.addBooleanSetting(::TLW.McTweaksID, false, "MC Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Magic Concept\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between MC and PoV, and removes an annoying enemy ability or two. Look at the PoV server for details.\n\n Will only work with the MC mod installed. Not recommended to turn on and off multiple times during a save.");
@@ -42,6 +49,9 @@ local settingFotnTweaks = page.addBooleanSetting(::TLW.FotnTweaksID, false, "Fot
 
 ::TLW.SSUTweaksID <- "SSUTweaks";
 local settingSSUTweaks = page.addBooleanSetting(::TLW.SSUTweaksID, false, "SSU Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Sellswords Updated\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and SSU. Removes sequences (drops,shop and effects) from players and enemies. Also tones down the crazy lategame scaling.\n\n Will only work with the SSU mod installed. Not recommended to turn on and off multiple times during a save. \n\n [color=" + this.Const.UI.Color.povPainEffect + "]Only toggle in main menu before a new game --- Requires Restart![/color]");
+
+::TLW.RotuTweaksID <- "RotuTweaks";
+local settingRotuTweaks = page.addBooleanSetting(::TLW.RotuTweaksID, false, "Rotu Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Rise of the Userper\" (Rotu) mod[/color] \n\n What are you looking for here? That mod is fine as it is :)");
 
 //Callbacks
 /*settingEnableEnemyMutation.addCallback(function(_newValue)
@@ -62,6 +72,10 @@ settingChaos.addCallback(function(_newValue)
 {
     ::TLW.ChaosMode = _newValue
 })
+settingPovSituation.addCallback(function(_newValue)
+{
+    ::TLW.PovSituation = _newValue
+})
 settingMcTweaks.addCallback(function(_newValue)
 {
     ::TLW.McTweaks = _newValue
@@ -73,6 +87,10 @@ settingFotnTweaks.addCallback(function(_newValue)
 settingSSUTweaks.addCallback(function(_newValue)
 {
     ::TLW.SSUTweaks = _newValue
+})
+settingRotuTweaks.addCallback(function(_newValue)
+{
+    ::TLW.RotuTweaks = _newValue
 })
 
 // Misc Settings  

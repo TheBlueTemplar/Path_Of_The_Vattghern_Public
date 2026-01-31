@@ -45,7 +45,7 @@ this.pov_flesh_golem_rumor_encounter <- this.inherit("scripts/encounters/encount
 
     function isValid(_settlement)
     {
-        if (this.World.getTime().Days <= 50)
+        if (this.World.getTime().Days <= 15)
         {
             return false;
         }

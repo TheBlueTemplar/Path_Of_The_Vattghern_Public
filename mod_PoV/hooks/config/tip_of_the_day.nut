@@ -1,5 +1,5 @@
 local tips = [
-// 50 Total As Of Now
+// 55 Total As Of Now
 // BS - Memes - References etc.
 	"(PoV) The shadows are watching...",
 	"(PoV) Some are whispering that Goblin\'s woodwork ain\'t that good...",
@@ -35,6 +35,7 @@ local tips = [
 	"(PoV) There are more than 40 events added in the mod, and I like doing them. Feel free to suggest, or even help with making more!",
 	"(PoV) Beware when travelling...Powerful new enemies roam the lands",
 	"(PoV) Rumors say that the fire spewing weapons of the east have also found a home north. With some adaptations...",
+	"(PoV) Flesh golems and their creators now roam the land, looking for more victims...",
 // Specific Mechanics Advice
 	"(PoV) Looking for specific crafting materials or mutations? Make sure to check out Alchemists, and Black Markets!",
 	"(PoV) Your crafting options are greatly expanded with PoV, check them out!",
@@ -50,6 +51,10 @@ local tips = [
 	"(PoV) Many options to deal fire damage were added, which might prove very useful against mutants, undead, beasts and more!",
 	"(PoV) Vatt\'ghers may not be wizards, but they can still use *some* magic in the form of \"signs\"...",
 	"(PoV) \"Sign Intensity\" increase the overall power of signs. Both their damage, and their chance to inflict ailments.",
+	"(PoV) Enemy Seer\'s damage scales with their initiative, so reducing that is their counter.",
+	"(PoV) Enemy forsaken are always mutated, which could be used against them...",
+	"(PoV) Holy water can disrupt enemy geist unique skills, and it severely weakens all undead.",
+	"(PoV) The Yrden Sign can disrupt the unique abilities and buffs of most enemy mutants",
 // Misc
 	"(PoV) I am eager to see your feedback on the mod!",
 	"(PoV) Did you know that the PoV mod adds 2 new company banners?",

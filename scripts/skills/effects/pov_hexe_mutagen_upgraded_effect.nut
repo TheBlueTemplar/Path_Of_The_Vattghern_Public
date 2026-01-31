@@ -56,7 +56,13 @@ this.pov_hexe_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/pov_luck.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] chance to have any attacker require two successful attack rolls in order to hit."
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] chance to have any attacker require two successful attack rolls in order to hit."
+			},
+			{
+				id = 17,
+				type = "text",
+				icon = "ui/icons/pov_intensity.png",
+				text = "Sign Intensity increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]."
 			},
 			{
 				id = 11,
@@ -88,7 +94,8 @@ this.pov_hexe_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		// Buffs
-		_properties.RerollDefenseChance += 20;
+		_properties.RerollDefenseChance += 15;
+		_properties.SignIntensity += 0.20;
 		// Debuffs
 		//_properties.TargetAttractionMult *= 1.2;
 	}

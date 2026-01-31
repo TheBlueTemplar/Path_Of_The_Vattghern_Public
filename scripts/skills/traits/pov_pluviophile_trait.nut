@@ -7,6 +7,9 @@ this.pov_pluviophile_trait <- this.inherit("scripts/skills/traits/character_trai
 		this.m.Name = "Pluviophile";
 		this.m.Icon = "ui/traits/pov_pluviophile.png";
 		this.m.Description = "Where others see gloom, this character finds renewal. The rain sharpens their senses and steadies their heart.";
+		this.m.Titles = [
+			"the Romantic"
+		];
 		this.m.Excluded = [
 			"trait.irrational",
 			"trait.paranoid",

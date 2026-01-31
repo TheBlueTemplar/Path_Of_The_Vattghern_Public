@@ -14,5 +14,18 @@
 		this.m.ArmorDamageMult = 0.65;	//-0.05
 	}
 
+	q.onEquip = @(__original) function ()
+	{
+		__original();
+		local actor = this.getContainer().getActor();
+		local skill;
+		if (actor != null && actor.getSkills().hasSkill("actives.legend_sprint"))
+		{
+			skill = actor.getSkills().getSkillByID("actives.legend_sprint");
+			actor.getSkills().remove(skill);
+			// The getTooltip() function in fire_handgonne_skill has logic to display this bonus
+		}
+	}
+	
 });
 

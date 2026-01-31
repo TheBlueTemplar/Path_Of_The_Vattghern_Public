@@ -23,13 +23,13 @@ if (!("Perks" in ::Const))
 			::Legends.Perk.PovSignMastery
 		],
 		[
-			// championslayer (champ icon skull)
+			::Legends.Perk.PovChampionSlayer
 		],
 		[
-			// refined witcher (vattghern icon)
+			::Legends.Perk.PovStabilizedMutations
 		],
 		[
-			// reserved for future: atks and signs interchanged perk!
+			// reserved for future: atks and signs interchanged perk OR sth related to v.pots.
 		]
 	]
 };

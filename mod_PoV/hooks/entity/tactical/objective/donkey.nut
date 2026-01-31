@@ -21,28 +21,31 @@
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
 		// Skills Additions
+		local b = this.m.BaseProperties;		
 		::Legends.Actives.grant(this, ::Legends.Active.LegendDonkeyKick);
 		if(::Legends.isLegendaryDifficulty())
 		{
 			::Legends.Perks.grant(this, ::Legends.Perk.LegendMuscularity);
 			::Legends.Perks.grant(this, ::Legends.Perk.Steadfast);
 			//::Legends.Perks.grant(this, ::Legends.Perk.Stalwart);
-			b.Hitpoints += 40;
+			b.Hitpoints += 20;
 			b.MeleeSkill += 10;
+			b.MeleeDamageMult *= 1.05;
 			b.MeleeDefense += 10;
-			b.Initiative += 15;
+			b.Initiative += 10;
 			b.ActionPoints += 1;
 		}
 		this.m.Skills.update();
 
 		//Stats Changes
-		local b = this.m.BaseProperties;
-		//b.MovementAPCostAdditional += 10; // cant move pretty much
+		b.MovementAPCostAdditional += 6; // very limited movement
 		b.IsImmuneToBleeding = false;
 		b.IsImmuneToStun = false;
 		b.IsImmuneToRoot = false;
 		b.IsImmuneToPoison = false;
 		b.IsAffectedByNight = true;
+		b.DamageArmorMult *= 1.2;
+		
 		if (this.World.getTime().Days >= 75)
 		{
 			b.Hitpoints += 80;

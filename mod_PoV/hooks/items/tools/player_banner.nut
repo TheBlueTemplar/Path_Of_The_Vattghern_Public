@@ -1,5 +1,12 @@
 ::TLW.HooksMod.hook("scripts/items/tools/player_banner", function (q) {
 	
+	q.create = @(__original) function ()
+	{
+		__original();
+		this.m.Variants.push(1822);
+		this.m.Variants.push(1823);
+	}
+
 	q.onEquip = @(__original) function ()
 	{
 		__original();

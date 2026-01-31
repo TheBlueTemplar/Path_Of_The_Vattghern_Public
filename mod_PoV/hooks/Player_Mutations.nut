@@ -71,6 +71,13 @@
 			{
 				mutationLimit = 2;				
 			}
+
+			// limit + 1 if has the stabilized mutations perk
+			if (_actor.getSkills().hasPerk(::Legends.Perk.PovStabilizedMutations))
+			{
+				mutationLimit += 1;
+			}
+
 			// Debug - Testing
 			//mutationLimit = 999;
 
@@ -172,7 +179,15 @@
 		// Base additional durations: Vattghern -> 7 , Mutant -> 3
 		if (_actor.getSkills().hasSkill("trait.pov_witcher"))
 		{
-			_actor.getSkills().getSkillByID("injury.pov_sickness2").addHealingTime(7 - _actor.getFlags().getAsInt("pov_ActiveMutations"));
+			// less mutation time if has stabilized perk
+			if (_actor.getSkills().hasPerk(::Legends.Perk.PovStabilizedMutations))
+			{
+				_actor.getSkills().getSkillByID("injury.pov_sickness2").addHealingTime(4 - _actor.getFlags().getAsInt("pov_ActiveMutations"));
+			}
+			else
+			{
+				_actor.getSkills().getSkillByID("injury.pov_sickness2").addHealingTime(7 - _actor.getFlags().getAsInt("pov_ActiveMutations"));
+			}
 		}
 		else if (_actor.getSkills().hasSkill("trait.pov_unstable_mutant"))
 		{

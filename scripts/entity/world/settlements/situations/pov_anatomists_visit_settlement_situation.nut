@@ -18,6 +18,51 @@ this.pov_anatomists_visit_settlement_situation <- this.inherit("scripts/entity/w
 		this.m.ValidDays = 4;
 	}
 
+	function getTooltip()
+	{
+		local ret = this.situation.getTooltip();
+		if(::TLW.PovSituation)
+		{
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/pov_situation_money.png",
+				text = "Buying Prices increased by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]"
+			});
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/pov_situation_mutagen.png",
+				text = "Mutagen Value increased by [color=" + this.Const.UI.Color.PositiveValue + "]15x[/color] Times."
+			});
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/pov_situation_corpse.png",
+				text = "Corpse Items value increased by [color=" + this.Const.UI.Color.PositiveValue + "]250%[/color]"
+			});
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/pov_situation_bag.png",
+				text = "Available Items for sale increased by [color=" + this.Const.UI.Color.PositiveValue + "]40%[/color]"
+			});
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/pov_situation_person.png",
+				text = "Available Recruits increased by [color=" + this.Const.UI.Color.PositiveValue + "]40%[/color]"
+			});
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/pov_situation_person.png",
+				text = "The following backgrounds are added to the recruit pool: [color=" + this.Const.UI.Color.povPerkDarkOrange + "]Anatomists, Alchemists, Taxidermists, Beast Slayers, Peddlers, Inventors[/color]"
+			});
+		}
+		return ret;
+	}
+
 	function onAdded( _settlement ) //most bad events except the major ones.
 	{
 		_settlement.resetRoster(true);

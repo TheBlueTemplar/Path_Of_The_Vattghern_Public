@@ -11,6 +11,9 @@ this.pov_misanthropist_trait <- this.inherit("scripts/skills/traits/character_tr
 		this.m.Name = "Misanthropist";
 		this.m.Icon = "ui/traits/pov_misanthropist.png";
 		this.m.Description = "%name% seems like your average mercenary. But this one does not kill only for coin, but also for blood. Noone knows how this came to be, but an eerie [color=" + this.Const.UI.Color.NegativeValue + "]grin[/color] appears whenever he slays a human enemy, his smile widening ever so slightly, his eyes glinting at the sight of a life being taken. \n\n Sometimes at night, this individual can be heard mumbling the number of enemies killed, with increasing satisfaction...";
+		this.m.Titles = [
+			"the Misanthropist"
+		];
 		this.m.IsSerialized = true;
 	}
 

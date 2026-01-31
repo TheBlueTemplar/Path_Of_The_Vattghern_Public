@@ -3,7 +3,7 @@
 // MERCENARY FACTION
 ::Const.World.Spawn.Troops.PovMercenaryGunner <- {
 	ID = this.Const.EntityType.PovMercenaryGunner,
-	Variant = 1,
+	Variant = 1, // slight increase to champ chance
 	Strength = 30,
 	Cost = 30,
 	Row = 2,
@@ -18,7 +18,7 @@
 	Variant = 2, //def 2 -> increases champ chance
 	Strength = 85,
 	Cost = 85,
-	Row = 2,
+	Row = 3,
 	Script = "scripts/entity/tactical/humans/pov_noble_seer",
 	NameList = ::Const.Strings.PovWizardNames,
 	TitleList = ::Const.Strings.PovWizardTitles
@@ -26,10 +26,10 @@
 
 ::Const.World.Spawn.Troops.PovGunnerKnight <- {
 	ID = this.Const.EntityType.PovGunnerKnight,
-	Variant = 255, //def 3 -> increases champ chance
+	Variant = 3, //def 3 -> increases champ chance
 	Strength = 85,
 	Cost = 85,
-	Row = 1,
+	Row = 2,
 	Script = "scripts/entity/tactical/humans/pov_noble_gunner_knight",
 	NameList = ::Const.Strings.KnightNames,
 	TitleList = ::Const.Strings.HedgeKnightTitles
@@ -52,7 +52,7 @@
 	Variant = 2, //def 2 -> increases champ chance
 	Strength = 75,
 	Cost = 75,
-	Row = 0,
+	Row = 3,
 	Script = "scripts/entity/tactical/humans/pov_rogue_seer",
 	NameList = ::Const.Strings.PovWizardNames,
 	TitleList = ::Const.Strings.PovWizardTitles
@@ -62,8 +62,8 @@
 ::Const.World.Spawn.Troops.PovForsaken <- {
 	ID = this.Const.EntityType.PovForsaken,
 	Variant = 0,
-	Strength = 45,
-	Cost = 45,
+	Strength = 40,
+	Cost = 40,
 	Row = 0,
 	Script = "scripts/entity/tactical/humans/pov_forsaken",
 	NameList = ::Const.Strings.ForsakenNames,
@@ -72,9 +72,9 @@
 
 ::Const.World.Spawn.Troops.PovForsaken_High <- {
 	ID = this.Const.EntityType.PovForsaken_High,
-	Variant = 100, // guarantees champion spawn
-	Strength = 70,
-	Cost = 70,
+	Variant = 100, // almost guarantees champion spawn
+	Strength = 65,
+	Cost = 65,
 	Row = 0,
 	Script = "scripts/entity/tactical/humans/pov_forsaken_high",
 	NameList = ::Const.Strings.ForsakenNames,
@@ -83,7 +83,7 @@
 
 ::Const.World.Spawn.Troops.PovForsaken_Boss <- {
 	ID = this.Const.EntityType.PovForsaken_Boss,
-	Variant = 255, // guarantees champion spawn (Needs to be 255 if for Fixed Spawn)
+	Variant = 255, // guarantees champion spawn (Needs to be 255 if for Fixed Spawn?)
 	Strength = 100,
 	Cost = 100,
 	Row = 0,

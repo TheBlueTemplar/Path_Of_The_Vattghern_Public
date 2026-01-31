@@ -106,5 +106,15 @@ this.Const.World.Spawn.MixedNobleCaravan.Troops.extend([
                 Cost = 85
             }
         ]
+    },
+    {
+        Weight = 7, //def 7
+        MinR = 125,
+        Types = [
+            {
+                Type = this.Const.World.Spawn.Troops.PovMercenaryGunner,
+                Cost = 30 //def 30
+            }
+        ]
     }
 ]);

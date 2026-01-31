@@ -1,7 +1,7 @@
 this.pov_feuerbuchse <- this.inherit("scripts/items/weapons/weapon", {
 	m = {
 		IsLoaded = true,
-		IsOverloaded = false
+		isOverloaded = false // yes, its like that
 	},
 
 	function create()
@@ -120,12 +120,12 @@ this.pov_feuerbuchse <- this.inherit("scripts/items/weapons/weapon", {
 	//ABYSS
 	function isOverloaded()
 	{
-		return this.m.IsOverloaded;
+		return this.m.isOverloaded;
 	}
 
 	function setOverloaded(_bool)
 	{
-		return this.m.IsOverloaded = _bool;
+		return this.m.isOverloaded = _bool;
 	}
 
 	

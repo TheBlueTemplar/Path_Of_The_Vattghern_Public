@@ -3,6 +3,7 @@
 	{
 		__original();
 		this.m.Variants.push(1822);
+		this.m.Variants.push(1823);
 	}
 
 });

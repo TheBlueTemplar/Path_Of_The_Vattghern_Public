@@ -207,7 +207,7 @@ if (!::TLW.hasSSU && !::TLW.hasFOTN)
 		if (!(key in ::Const.Strings.PerkDescription))
 		{
 			// if this floods peoples logs comment it out lel
-		    ::logInfo("Tried to edit the following perk text and failed (not a fatal error): " + key);
+		    ::logInfo("[PoV] Tried to edit the following perk text and failed (not a fatal error): " + key);
 		    continue;
 		}
 

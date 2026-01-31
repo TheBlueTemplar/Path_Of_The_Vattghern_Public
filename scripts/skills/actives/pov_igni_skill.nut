@@ -52,7 +52,7 @@ this.pov_igni_skill <- this.inherit("scripts/skills/skill", {
 
 		local actor = this.getContainer().getActor();
 		local intensity = 100 * actor.getCurrentProperties().SignIntensity;
-		local chance = 30 + intensity; // burn chance = 30 + sign intensity
+		local chance = 35 + intensity; // burn chance = 35 + sign intensity
 
 		ret.push({
 			id = 6,
@@ -295,7 +295,7 @@ this.pov_igni_skill <- this.inherit("scripts/skills/skill", {
 			_properties.MeleeSkill -= 5;
 			_properties.RangedSkill -= 5;
 			// Skill Stats
-			_properties.DamageRegularMin = 30 * intensity;
+			_properties.DamageRegularMin = 40 * intensity;
 			_properties.DamageRegularMax = 55 * intensity;
 			_properties.DamageArmorMult = 1.15;
 
@@ -321,7 +321,7 @@ this.pov_igni_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local intensity = 100 * actor.getCurrentProperties().SignIntensity;
-		local chance = 30 + intensity; // burn chance = 30 + sign intensity
+		local chance = 35 + intensity; // burn chance = 35 + sign intensity
 		local damage = (_damageInflictedHitpoints + _damageInflictedArmor) * 0.20; // damage = 20% of inflicted dmg
 
 		if (_skill == this)

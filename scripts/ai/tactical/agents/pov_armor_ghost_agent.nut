@@ -24,7 +24,7 @@ this.pov_armor_ghost_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.EngageOnBadTerrainPenaltyMult = 1.1;
 		this.m.Properties.EngageAgainstSpearwallMult = 1.25;
 		this.m.Properties.EngageAgainstSpearwallWithShieldwallMult = 1.25;
-		this.m.Properties.EngageTargetArmedWithRangedWeaponMult = 1.0;
+		this.m.Properties.EngageTargetArmedWithRangedWeaponMult = 0.7;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.1;
 		this.m.Properties.EngageLockDownTargetMult = 1.0;
 		//this.m.Properties.EngageRangeMin = 1;

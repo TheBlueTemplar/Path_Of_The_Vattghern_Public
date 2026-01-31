@@ -5,6 +5,7 @@ this.pov_bront_skill <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
+		// This file was taken from Rotu and tweaked for PoV, credits to Abysscrane
 		this.m.ID = "actives.pov_bront";
 		this.m.Name = "Bront Sign";
 		this.m.Description = "Cast thunder upon your enemies from the palm of your hand. Its damage ignores armor, tests the resolve of the enemy and can chain to multiple opponents. \n\n Vattghern signs have a base cooldown of 2 turns (shared among all of them). Sign intensity affects this sign\'s damage, morale damage, and chain-hit amount.";
@@ -113,8 +114,11 @@ this.pov_bront_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local myTile = _user.getTile(), currentTargetTile = _targetTile, selectedTargets = [];
 		local target = currentTargetTile.getEntity();
-		selectedTargets.push(target.getID());
-
+		if (target != null)
+		{
+			selectedTargets.push(target.getID());
+		}
+		
 		this.applyEffect({
 			Skill = this,
 			User = _user,

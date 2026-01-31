@@ -7,6 +7,10 @@ this.pov_monster_hunter_trait <- this.inherit("scripts/skills/traits/character_t
 		this.m.Name = "Monster Hunter";
 		this.m.Icon = "ui/traits/pov_monster_hunter.png";
 		this.m.Description = "This character has all the right skills and passion to fight against all kinds of monsters, yet they do not show the same effectiveness against humans...";
+		this.m.Titles = [
+			"the Monster Hunter",
+			"the Beast Slayer"
+		];
 		this.m.Excluded = [
 			"trait.fearless",
 			"trait.brave",

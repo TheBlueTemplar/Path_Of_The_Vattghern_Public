@@ -17,6 +17,51 @@ this.pov_mutants_visit_settlement_situation <- this.inherit("scripts/entity/worl
 		this.m.ValidDays = 3;
 	}
 
+	function getTooltip()
+	{
+		local ret = this.situation.getTooltip();
+		if(::TLW.PovSituation)
+		{
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/pov_situation_money.png",
+				text = "Buying Prices increased by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]"
+			});
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/pov_situation_money.png",
+				text = "Selling Prices increased by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color]"
+			});
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/pov_situation_bag.png",
+				text = "Available Items for sale reduced by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]"
+			});
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/pov_situation_mutagen.png",
+				text = "Mutagen Value reduced by [color=" + this.Const.UI.Color.PositiveValue + "]75%[/color]"
+			});
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/pov_situation_person.png",
+				text = "Available Recruits increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color]"
+			});
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/pov_situation_person.png",
+				text = "The following backgrounds are added to the recruit pool: [color=" + this.Const.UI.Color.povPerkDarkOrange + "]Mutants[/color]"
+			});
+		}
+		return ret;
+	}
+
 	function onAdded( _settlement ) //most bad events except the major ones.
 	{
 		_settlement.resetRoster(true);

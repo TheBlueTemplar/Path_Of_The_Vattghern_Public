@@ -1,4 +1,63 @@
-# v2.0.0 "Birthday" Edition
+# v2.1.0 "Birthday" Edition
+
+## Changelog V2.1.0 "Birthday" Edition:
+
+### NEW FEATURES
+
+* **PoV Settlement Situation Tooltips**
+   * Now all situations (vanilla,legends,pov and other mods) will have tooltips better explaining their effects
+   * This can be disabled in PoV mod settings, no restart required
+   * This was done cause I wanted a better, PoV-Integrated version of these QoL mods. The other reason is that these same mods had some issues with PoV's new situations, so id rather do my own version, which I have control and responsibility of
+   * This makes other mods that do that incompatible - if enabled in PoV
+* **2 New Vattghern Perks**
+   * One is about fighting champion enemies
+   * The other is about increasing mutation limit and reducing mutagen sickness time   
+
+### IMPROVEMENTS - QoL
+
+* Gunner Knights (Flammenritter) should now behave much more agressively - as they should
+* Enemy Donkeys were either too agressive in some cases, or too inactive in others. Tweaked their stats for a middle approach. Now they will fight, but mostly if cornered, or an enemy is close
+* Armor and Sword ghosts will be a litte more "straightforward" in fights, and attempt to flank slightly less
+* There are two main, but different tabard types ingame, did you know it? Know you will as they are named differently
+* Sureshot trait's ranged penalty halved (-5 from -10)
+* Improved the tooltips of the vattghern trait and mutagen, to describe the new perks acquired
+* Some new PoV traits may affect the title that a bro spawns with (eg "the Hater")
+* The noble mixed caravan (the one with mercenaries too) will now also include mercenary gunners
+* Piercing shot perk will now increase the attack range of new PoV firearms
+
+### BALANCE
+
+* Due to recent PoV rebalance, the "strafing run" skill was removed from crossbows
+* Mutation Aftermath now greatly reduces sign intensity (-75%)
+* Both Hexe mutations now also increase sign intensity (+10 / 20%)
+* Fleshcultist boss Tabard item buffed, to make it more unique
+* Flammenritter were buffed, made more of a threat (more hp and some stats)
+* Enemy seers were slightly weakened - their damage was kinda overtuned (less dmg)
+* Dumb trait is no longer a pure negative, now it also grants damage resistance (+15%) when a dumb bros head is hit
+* Wildmen were given some love, and have now buffed unarmed damage (10%), and a combat bonus in forests (5%)
+* Enemy forsaken parties will spawn with very slightly more forsaken (like +1 / 2 at most)
+* Axii Sign base baffle chance slightly reduced (-5%)
+* Igni Sign damage was buffed (+15 min. dmg)
+* The brawler background unarmed damage bonus was increased (from +5% to +15%)
+* Flesh golem roaming parties will now spawn much earlier (day 15 instead of 50) due to their recent balance changes
+   * The event announcing that adjusted accordingly
+
+### FIXES
+
+* The company banner (and shield/tabard) textures should now apply correctly 
+* Fixed pov miasma skill tooltip, to reflect latest balance changes (in V2.0.0)
+* Fixes an error with the PoV Charge skill causing a crash
+* Fixes an error with the Bront Sign skill causing a crash
+* Fixed some typos in new pov skills and perks, and the nomad background
+* Fixed the gunner knights always spawning as champions
+* Fixed an issue with using handgonnes, when playing with Fotn mod
+
+### MISC
+
+* Some work done for future compatibility
+* Added 5 more loading screen tips
+* PoV logging improved on some parts
+* As always, memed a bit
 
 ## Changelog V2.0.0 "Birthday" Edition:
 

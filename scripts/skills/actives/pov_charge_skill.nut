@@ -300,6 +300,7 @@ this.pov_charge_skill <- this.inherit("scripts/skills/skill", {
 			_tag.Skill.attackEntity(_entity, victim.getTile().getEntity());
 			//_tag.Skill.m.IsCharging = false;
 
+
 			if (victim.isArmedWithShield())
 			{
 				local shield = victim.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
@@ -309,6 +310,11 @@ this.pov_charge_skill <- this.inherit("scripts/skills/skill", {
 				{
 					chance = chance - shield.getMeleeDefense()*3;
 				}
+			}
+
+			if (!victim.isAlive() || victim.isDying())
+			{
+				return;
 			}
 
 			if (_tag.Skill.m.SoundOnHit.len() != 0)
