@@ -1,0 +1,16 @@
+::TLW.HooksMod.hook("scripts/items/weapons/goedendag", function (q) {
+
+	q.onEquip = @(__original) function ()
+	{
+		__original();
+
+		::Legends.Actives.grant(this, ::Legends.Active.Cudgel, function (_skill) {
+			//_skill.m.Icon = "skills/active_132.png";
+			//_skill.m.IconDisabled = "skills/active_132_sw.png";
+			//_skill.m.Overlay = "active_132";
+			_skill.setFatigueCost(_skill.getFatigueCostRaw() + 5);
+		}.bindenv(this));
+	}
+
+});
+

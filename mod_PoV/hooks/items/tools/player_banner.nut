@@ -17,6 +17,9 @@
 		//heartseeker.m.Overlay = "pov_active_silver_heartseeker";
 		heartseeker.m.IsPolearm = true;
 		this.addSkill(heartseeker);
+
+		local bannerSpecial = this.new("scripts/skills/actives/pov_raise_banner");
+		this.addSkill(bannerSpecial);
 	}
 
 });

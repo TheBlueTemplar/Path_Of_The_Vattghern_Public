@@ -1,4 +1,47 @@
-# v2.1.0 "Birthday" Edition
+# v2.1.1 "Birthday" Edition
+
+## Changelog V2.1.1 "Birthday" Edition:
+
+### NEW FEATURES
+
+* **Raise The Banner!!**
+   * A new skill added to the Company Banner item
+   * Functions similarly to the rally skill, but a much stronger, yet taxing, effect.
+   * The design of the skill is to have a powerful ability you can use if things get dire, but it comes with a cost. The skill's effects are:
+     * Attempt to rally, cure charm or sleep, and raise morale of allies in 8 tile radius
+     * Also attempt to reduce the morale of enemies in the same radius
+     * All chances depend on user's resolve, plus a penalty of 5 for each tile of distance
+   * Using the skill has a 3 **day** cooldown, and during that time, the user's resolve is also reduced
+   * Cooldown is 2 days, if the user has the Inspiring Presence Perk
+   * Of course, this skill comes with its own art, effects, and sound
+
+### OVERHAUL / REWORKS
+
+* A slight retouch was done to the dagger weapons, mainly to make higher tier daggers a more valid choice, between them and the qatal
+   * All knives (excluding qatal) saw an increase to damage (~+5), and value
+   * They also saw much increased armor penetration
+   * The qatal is still the stronger version dps wise, but now the rondel dagger is much more of a competition
+   * The shiv was left untouched
+   * The legendary obsidian dagger was similarly buffed.
+   * Redback dagger was buffed in version 2.0.0 already
+* The Goedendags now get the Cudgel skill (the one great maces have)
+   * It has increased fatigue cost though (20 instead of 15)  
+   * So now, great maces are still performing better with their skill, but Goedendags offer more utility
+   * To further balance things out (and differentiate 2 high tier weapons more):
+     * Great flanged mace is 5% more effective against armor
+     * Military Goedendag is 5% less effective against armor
+* The Swordstaff gets the "Heartpiercer" and "Lunge" skills
+* Vala dress now offers half armor (60 for 0 weight was too much, too exploitable. 30 for 0 is still very nice)
+
+### BALANCE
+
+* Enemy forsaken parties will include slightly less forsaken
+* Mutants settlement situation: Much more possible to actually find mutants in that settlement
+* Caravan hands were slightly buffed
+
+### FIXES
+
+* Fixed (for real, this time) an error between PoV and Fotn, about PoV's new guns
 
 ## Changelog V2.1.0 "Birthday" Edition:
 

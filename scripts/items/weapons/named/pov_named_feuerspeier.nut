@@ -1,6 +1,7 @@
 this.pov_named_feuerspeier <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	m = {
-		IsLoaded = true
+		IsLoaded = true,
+		isOverloaded = false // yes, its like that
 	},
 
 	function create()
@@ -145,6 +146,18 @@ this.pov_named_feuerspeier <- this.inherit("scripts/items/weapons/named/named_we
 	{
 		this.named_weapon.onCombatFinished();
 		this.m.IsLoaded = true;
+	}
+
+	//Fotn Stuff 
+	//ABYSS
+	function isOverloaded()
+	{
+		return this.m.isOverloaded;
+	}
+
+	function setOverloaded(_bool)
+	{
+		return this.m.isOverloaded = _bool;
 	}
 
 });

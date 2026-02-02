@@ -62,8 +62,8 @@
 ::Const.World.Spawn.Troops.PovForsaken <- {
 	ID = this.Const.EntityType.PovForsaken,
 	Variant = 0,
-	Strength = 40,
-	Cost = 40,
+	Strength = 50,
+	Cost = 50,
 	Row = 0,
 	Script = "scripts/entity/tactical/humans/pov_forsaken",
 	NameList = ::Const.Strings.ForsakenNames,
@@ -73,8 +73,8 @@
 ::Const.World.Spawn.Troops.PovForsaken_High <- {
 	ID = this.Const.EntityType.PovForsaken_High,
 	Variant = 100, // almost guarantees champion spawn
-	Strength = 65,
-	Cost = 65,
+	Strength = 75,
+	Cost = 75,
 	Row = 0,
 	Script = "scripts/entity/tactical/humans/pov_forsaken_high",
 	NameList = ::Const.Strings.ForsakenNames,

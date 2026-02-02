@@ -83,6 +83,19 @@ this.pov_mutants_visit_settlement_situation <- this.inherit("scripts/entity/worl
 
 	function onUpdateDraftList( _draftList )
 	{
+		// 20 Total
+		_draftList.push("pov_mutant_background");
+		_draftList.push("pov_mutant_background");
+		_draftList.push("pov_mutant_background");
+		_draftList.push("pov_mutant_background");
+		_draftList.push("pov_mutant_background");
+		_draftList.push("pov_mutant_background");
+		_draftList.push("pov_mutant_background");
+		_draftList.push("pov_mutant_background");
+		_draftList.push("pov_mutant_background");
+		_draftList.push("pov_mutant_background");
+		_draftList.push("pov_mutant_background");
+		_draftList.push("pov_mutant_background");
 		_draftList.push("pov_mutant_background");
 		_draftList.push("pov_mutant_background");
 		_draftList.push("pov_mutant_background");

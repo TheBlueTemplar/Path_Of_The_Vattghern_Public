@@ -138,6 +138,10 @@ if (!::TLW.hasFOTN)
 • Can craft silver ingots from melted silver scrap (silver bowl and silverware)";
 ::Const.Perks.PerkDefObjects[::Legends.Perk.LegendToolsSpares].Tooltip = ::Const.Strings.PerkDescription.LegendToolsSpares;
 
+::Const.Strings.PerkDescription.InspiringPresence +=@"
+• Reduces cooldown of the [color="+ ::Const.UI.Color.povPerkBlue + "]Raise the Banner!![/color] skill by 1 day";
+::Const.Perks.PerkDefObjects[::Legends.Perk.InspiringPresence].Tooltip = ::Const.Strings.PerkDescription.InspiringPresence;
+
 // Conditional edits
 if (!::TLW.hasSSU)
 {

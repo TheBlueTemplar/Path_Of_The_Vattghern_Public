@@ -26,7 +26,7 @@ if (!("Spawn" in ::Const.World))
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.PovForsaken,
-					Cost = 40
+					Cost = 46
 				}
 			]
 		},
@@ -37,7 +37,7 @@ if (!("Spawn" in ::Const.World))
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.PovForsaken_High,
-					Cost = 70
+					Cost = 80
 				}
 			]
 		}	
@@ -68,7 +68,7 @@ if (!("Spawn" in ::Const.World))
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.PovForsaken,
-					Cost = 36
+					Cost = 44
 				}
 			]
 		},
@@ -79,7 +79,7 @@ if (!("Spawn" in ::Const.World))
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.PovForsaken_High,
-					Cost = 65
+					Cost = 75
 				}
 			]
 		}	
