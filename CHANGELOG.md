@@ -29,6 +29,7 @@
      * Players get slightly less bonuses AND penalties from what is described above (to make up for the player being smart, and using this system better, but also add some nice counterplay)
      * The appearance of these tooltips is optional (in case one does not want to see them). They can be toggled in PoV mod options. Disabling them DOES NOT DISABLE the effects, only their tooltips.
      * This effect also has an adaptive name and icon, showcasing the condition of the effect and its armor (stuff like "good","breaking","ruined" etc.)
+     * Direct damage skills, like Puncture, Poisons, or the Bront Sign, work normally, unaffected by these damage resistances
    * Regarding compatibility with other mods
      * All these changes will not apply if you are Running PoV + Fotn (fotn has its own balance)
      * As for SSU, you are recommended to enable SSU Tweaks in PoV Mod options, as this now also removes SSU's armor encumburance effect, allowing PoV's version to take over    
