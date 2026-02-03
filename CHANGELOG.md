@@ -4,7 +4,7 @@
 
 ### OVERHAUL / REWORKS
 
-*The main focus of today's patch is a broad rework of the armor system! Instead of changes the values of the individual armor pieces, ive changed how being armored reacts to taking damage instead! General philoshophy is to make armor a LITTLE bit more believable.*
+*The main focus of today's patch is a broad rework of the armor system! Instead of changing the values of the individual armor pieces, ive changed how being armored reacts to taking damage instead! General philoshophy is to make armor a LITTLE bit more believable.*
 * **Armor Mechanics Rework!**
    * All armor will now grant a resistance against direct damage (the AP part of skills)
      * That resistance depends on current armor. So as it gets reduced, resistance is lowered
