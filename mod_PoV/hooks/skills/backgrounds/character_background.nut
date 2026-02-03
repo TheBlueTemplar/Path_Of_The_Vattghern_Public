@@ -109,7 +109,7 @@
 			{
 				this.m.Modifiers.Barter += 0.0075;
 			}
-		}
+		} // end of sec stuff
 
 		// POV ADDITIONS - ALWAYS APPLY
 		// CAMP MODIFIERS

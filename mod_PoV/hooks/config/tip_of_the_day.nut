@@ -1,5 +1,5 @@
 local tips = [
-// 55 Total As Of Now
+// 60 Total As Of Now
 // BS - Memes - References etc.
 	"(PoV) The shadows are watching...",
 	"(PoV) Some are whispering that Goblin\'s woodwork ain\'t that good...",
@@ -36,6 +36,7 @@ local tips = [
 	"(PoV) Beware when travelling...Powerful new enemies roam the lands",
 	"(PoV) Rumors say that the fire spewing weapons of the east have also found a home north. With some adaptations...",
 	"(PoV) Flesh golems and their creators now roam the land, looking for more victims...",
+	"(PoV) The armor system is now reworked, increasing the protection of high armor, but with a cost...",
 // Specific Mechanics Advice
 	"(PoV) Looking for specific crafting materials or mutations? Make sure to check out Alchemists, and Black Markets!",
 	"(PoV) Your crafting options are greatly expanded with PoV, check them out!",
@@ -55,6 +56,10 @@ local tips = [
 	"(PoV) Enemy forsaken are always mutated, which could be used against them...",
 	"(PoV) Holy water can disrupt enemy geist unique skills, and it severely weakens all undead.",
 	"(PoV) The Yrden Sign can disrupt the unique abilities and buffs of most enemy mutants",
+	"(PoV) Increasing your armor over a certain threshold will yield diminishing defensive returns...",
+	"(PoV) When having high armor, it being damaged lowers its defensive capabilities less than it would light armors.",
+	"(PoV) Heavy armors apply a scaling penalty to the wearer when heavily damaged. Light armors apply none!",
+	"(PoV) The armor mechanics rework affects player and enemy *almost* equally...",
 // Misc
 	"(PoV) I am eager to see your feedback on the mod!",
 	"(PoV) Did you know that the PoV mod adds 2 new company banners?",

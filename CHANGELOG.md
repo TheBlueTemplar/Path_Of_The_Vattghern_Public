@@ -1,4 +1,48 @@
-# v2.1.1 "Birthday" Edition
+# v2.2.0 "Birthday" Edition
+
+## Changelog V2.2.0 "Birthday" Edition:
+
+### OVERHAUL / REWORKS
+
+*The main focus of today's patch is a broad rework of the armor system! Instead of changes the values of the individual armor pieces, ive changed how being armored reacts to taking damage instead! General philoshophy is to make armor a LITTLE bit more believable.*
+* **Armor Mechanics Rework!**
+   * All armor will now grant a resistance against direct damage (the AP part of skills)
+     * That resistance depends on current armor. So as it gets reduced, resistance is lowered
+     * That resistance grows quickly, but it grants diminishing returns as armor gets higher
+     * On 500 armor, this bonus is capped to +35% resistance
+     * There are seperate resistances depending on body parts (body/head). Head resistance has a cap of 30% instead
+     * The diminishing returns are not necessarily a drawback, as when having higher armor, losing some of it will result in less resistance loss
+     * (Rough example - Random Numbers: from 500 to 400 armor -5% resistance. from 200 to 100 -12%)
+   * There is also a new drawback to stacking armor though...
+     * As a character takes armor damage, aside from having the bonus resistances reduced, they also get a linearly scaling penalty (as having the armor being bent, broken etc slowly makes it more of a hinderance than an asset)
+     * That penalty Reduces the wearers Melee and Ranged defense, and also increases their fatigue Cost
+     * Its severity depends on how much % of total armor (Head + Body) is lost. Low loss = low penalty
+     * When current armor is over 85% of its total durability, then there is no penalty
+     * After that, penalty starts from a minimum of 5% and can grow up to the following:
+     * Max penalty varies between 15% and 35%.
+     * These numbers depend on maximum combined armor, with the minimim penalty on 200 armor, and the maximum one at 1000.
+     * Keep in mind, that its rare to get so low armor that you will actually reach these numbers. But it still is a substantial penalty!
+     * Anyone with less than 200 armor will not be affected by that penalty at all (helping lightly armored bros - and to make up for the reduced resistance)
+   * These changes are explained on the campaign and in battle by a new effect that will appear on any bro that does not have 0 armor
+   * A few important things to note:
+     * These effects apply to BOTH the player AND the enemies.
+     * Players get slightly less bonuses AND penalties from what is described above (to make up for the player being smart, and using this system better, but also add some nice counterplay)
+     * The appearance of these tooltips is optional (in case one does not want to see them). They can be toggled in PoV mod options. Disabling them DOES NOT DISABLE the effects, only their tooltips.
+     * This effect also has an adaptive name and icon, showcasing the condition of the effect and its armor (stuff like "good","breaking","ruined" etc.)
+   * Regarding compatibility with other mods
+     * All these changes will not apply if you are Running PoV + Fotn (fotn has its own balance)
+     * As for SSU, you are recommended to enable SSU Tweaks in PoV Mod options, as this now also removes SSU's armor encumburance effect, allowing PoV's version to take over    
+
+### BALANCE
+
+*An effort was done to prevent reaching huge amounts of armor penetration with ranged with just a few skills/perks. Made it still be possible, but harder to achieve*
+* AP Bolts and Arrows nerfed
+* Crossbow Mastery grants +10 additive armor pen, instead of +20
+* The Shortbow perk's further buff to armor pen and broadhead arrows was remove (rest of perk is intact) 
+* Yrden sign can now prevent a hexe mutant from hexing someone
+* Enemy Seers will spawn slightly later ingame
+   * They also have very slightly less HP
+* The donkey thing is fun, but damn they need some nerf. They lose some little HP (translates to - dmg too)   
 
 ## Changelog V2.1.1 "Birthday" Edition:
 

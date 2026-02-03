@@ -1,5 +1,11 @@
 ::TLW.HooksMod.hook("scripts/entity/tactical/player", function ( q ) {
 // ALT LOGS HERE
+	q.onInit = @(__original) function()
+	{
+		__original();
+		this.m.Skills.add(this.new("scripts/skills/special/pov_armor_changes_special"));
+	}
+	
     q.getBarterModifier = @() function()
     {
         local bg = this.getBackground();

@@ -23,14 +23,14 @@
 ::Const.Tactical.Actor.PovRogueSeer <- {
 	XP = 600,
 	ActionPoints = 10,
-	Hitpoints = 70,
+	Hitpoints = 60,
 	Bravery = 80,
 	Stamina = 175,
 	MeleeSkill = 60,
 	RangedSkill = 70,
 	MeleeDefense = 5,
 	RangedDefense = 5,
-	Initiative = 150,
+	Initiative = 145,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	Armor = [

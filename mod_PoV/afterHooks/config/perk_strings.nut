@@ -7,6 +7,7 @@
 
 if (!::TLW.hasFOTN)
 {
+	// Replacements (Less compatible)
 	::Const.Strings.PerkDescription.LegendFieldTriage = "Spend medicine to heal a unit on the battlefield.\n\n[color="+ ::Const.UI.Color.povPerkDarkOrange + "][u]Active:[/u][/color]\n• Unlocks the [color="+ ::Const.UI.Color.povPerkPurple + "]Field Triage[/color] skill which heals any adjacent ally by up to [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] Hitpoints, plus [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of their maxHp.\n\n• Uses [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] medicine per [color=" + this.Const.UI.Color.PositiveValue + "]2 + 1%[/color] Hitpoints healed, with a limit of 10 medicine per skill use.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]4[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]16[/color] Fatigue."
 	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendFieldTriage].Tooltip = ::Const.Strings.PerkDescription.LegendFieldTriage;
 
@@ -21,6 +22,12 @@ if (!::TLW.hasFOTN)
 
 	::Const.Strings.PerkDescription.ShieldBash = "'Knock them back!'\n\n[color="+ ::Const.UI.Color.povPerkDarkOrange + "][u]Passive:[/u][/color]\n• The [color="+ ::Const.UI.Color.povPerkPurple + "]Knock Back[/color] skill now inflicts [color=" + this.Const.UI.Color.PositiveValue + "]10-25[/color] Damage (90% effective against armor) and [color=" + this.Const.UI.Color.DamageValue + "]10[/color] Fatigue Damage.\n\n• [color="+ ::Const.UI.Color.povPerkPurple + "]Buckler Bash[/color] will do [color=" + this.Const.UI.Color.PositiveValue + "]10-15[/color] damage (115% effective against armor).\n\n• Both skill\'s damage will also scale by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] of your shield\'s maximum condition with a maximum bonus of 15.\n\n• Both skills will also cost [color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] less Fatigue and [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] less Action Point to use.";
 	::Const.Perks.PerkDefObjects[::Legends.Perk.ShieldBash].Tooltip = ::Const.Strings.PerkDescription.ShieldBash;
+
+	::Const.Strings.PerkDescription.SpecCrossbow = "Master crossbows and firearms, and learn where to aim best.\n\n[color="+ ::Const.UI.Color.povPerkDarkOrange + "][u]Passive:[/u][/color]\n• Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\n• An additional [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of damage inflicted with crossbows ignores armor.\n\n• Handgonnes now require [color=" + this.Const.UI.Color.NegativeValue + "]6[/color] Action Points to reload and can be fired every turn instead of every other turn.";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.SpecCrossbow].Tooltip = ::Const.Strings.PerkDescription.SpecCrossbow;
+
+	::Const.Strings.PerkDescription.LegendSpecialistPoacher = "From small game to big bounties.\n\n[color="+ ::Const.UI.Color.povPerkDarkOrange + "][u]Passive:[/u][/color]\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] chance to hit while using a Wonky Bow or Short Bow.\n\n• When taking [color="+ ::Const.UI.Color.povPerkPurple + "]Bow Mastery[/color] you will also gain [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] bonus damage. \n\n• For other weapons classified as Bows, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation. \n\n• The bonus will be doubled against Wolves and Hyenas.";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistPoacher].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistPoacher;
 
 	// Additions to Perks (very compatible)
 	::Const.Strings.PerkDescription.SpecCrossbow +=@"

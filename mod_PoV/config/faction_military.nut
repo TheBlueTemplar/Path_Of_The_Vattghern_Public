@@ -3,14 +3,14 @@
 ::Const.Tactical.Actor.PovNobleSeer <- {
 	XP = 700,
 	ActionPoints = 10,
-	Hitpoints = 60,
+	Hitpoints = 55,
 	Bravery = 90,
 	Stamina = 180,
 	MeleeSkill = 50,
 	RangedSkill = 72,
 	MeleeDefense = 2,
 	RangedDefense = 8,
-	Initiative = 160,
+	Initiative = 155,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	Armor = [

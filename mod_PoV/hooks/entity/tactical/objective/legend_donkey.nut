@@ -48,7 +48,7 @@
 
 		if (this.World.getTime().Days >= 75)
 		{
-			b.Hitpoints += 80;
+			b.Hitpoints += 60;
 			b.MeleeSkill += 75;
 			b.MeleeDamageMult *= 1.10;
 			b.MeleeDefense += 35;
@@ -56,7 +56,7 @@
 			b.ActionPoints += 7;
 		} else
 		{
-			b.Hitpoints += 40;
+			b.Hitpoints += 30;
 			b.MeleeSkill += 50;
 			b.MeleeDamageMult *= 1.05;
 			b.MeleeDefense += 20;

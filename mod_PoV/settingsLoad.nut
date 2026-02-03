@@ -37,6 +37,9 @@ page.addDivider("divider3");
 ::TLW.PovSituationID <- "PovSituation";
 local settingPovSituation = page.addBooleanSetting(::TLW.PovSituationID, true, "PoV Situation Tooltips", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional QoL addition for the settlement\'s situation tooltips.[/color] \n\n On by default. The settlements situatations will now display additional, detailed info about their current effect. (As an example, \"+ 20% Sale Prices\").\n\n As PoV is incompatible with other situation tooltips mods, this option is meant to provide that QoL instead.");
 
+::TLW.PovShowArmorID <- "PovShowArmor";
+local settingPovShowArmor = page.addBooleanSetting(::TLW.PovShowArmorID, true, "Display Armor Protection", "This option is present here in case you want to disable the appearance of the \"Armor Protection\" skill that appears on all allies and enemies, for debloating. \n\n [color=" + this.Const.UI.Color.povTooltipBlue + "]On by default, and recommended to keep this way.[/color] \n\n This specific skill explains the Overhauled armor mechanics in PoV, and provides visual feedback in battle. \n\n [color=" + this.Const.UI.Color.povPainEffect + "]Disabling it does NOT remove it from players or enemies, it just makes it invisible![/color]");
+
 page.addSpacer("Spacer4", "72rem", "1rem");
 page.addTitle("title4", "Other Mods Tweaks");
 page.addDivider("divider4");
@@ -48,7 +51,7 @@ local settingMcTweaks = page.addBooleanSetting(::TLW.McTweaksID, false, "MC Twea
 local settingFotnTweaks = page.addBooleanSetting(::TLW.FotnTweaksID, false, "FotN Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Fury of the Northmen\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and FotN, mainly messing with some new enemies.\n\n Will only work with the FotN mod installed. Not recommended to turn on and off multiple times during a save.");
 
 ::TLW.SSUTweaksID <- "SSUTweaks";
-local settingSSUTweaks = page.addBooleanSetting(::TLW.SSUTweaksID, false, "SSU Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Sellswords Updated\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and SSU. Removes sequences (drops,shop and effects) from players and enemies. Also tones down the crazy lategame scaling.\n\n Will only work with the SSU mod installed. Not recommended to turn on and off multiple times during a save. \n\n [color=" + this.Const.UI.Color.povPainEffect + "]Only toggle in main menu before a new game --- Requires Restart![/color]");
+local settingSSUTweaks = page.addBooleanSetting(::TLW.SSUTweaksID, false, "SSU Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Sellswords Updated\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and SSU. Removes sequences (drops,shop and effects) from players and enemies. Tones down the crazy lategame scaling. Also removes the \"Encumbrance\" effect from everyone, as pov has its own version of armor balance.\n\n Will only work with the SSU mod installed. Not recommended to turn on and off multiple times during a save. \n\n [color=" + this.Const.UI.Color.povPainEffect + "]Only toggle in main menu before a new game --- Requires Restart![/color]");
 
 ::TLW.RotuTweaksID <- "RotuTweaks";
 local settingRotuTweaks = page.addBooleanSetting(::TLW.RotuTweaksID, false, "Rotu Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Rise of the Userper\" (Rotu) mod[/color] \n\n What are you looking for here? That mod is fine as it is :)");
@@ -75,6 +78,10 @@ settingChaos.addCallback(function(_newValue)
 settingPovSituation.addCallback(function(_newValue)
 {
     ::TLW.PovSituation = _newValue
+})
+settingPovShowArmor.addCallback(function(_newValue)
+{
+    ::TLW.PovShowArmor = _newValue
 })
 settingMcTweaks.addCallback(function(_newValue)
 {

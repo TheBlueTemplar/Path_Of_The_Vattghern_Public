@@ -33,7 +33,7 @@ this.Const.World.Spawn.Noble.Troops.extend([
     },
     {
         Weight = 2, //def 2
-        MinR = 250,
+        MinR = 300,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovNobleSeer,
@@ -43,7 +43,7 @@ this.Const.World.Spawn.Noble.Troops.extend([
     },
     {
         Weight = 3, //def 3
-        MinR = 300,
+        MinR = 325,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovGunnerKnight,
@@ -75,7 +75,7 @@ this.Const.World.Spawn.NobleCaravan.Troops.extend([
     },
     {
         Weight = 2,
-        MinR = 250,
+        MinR = 300,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovNobleSeer,
@@ -85,7 +85,7 @@ this.Const.World.Spawn.NobleCaravan.Troops.extend([
     }
     {
         Weight = 2, //def 2
-        MinR = 300,
+        MinR = 325,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovGunnerKnight,
@@ -99,7 +99,7 @@ this.Const.World.Spawn.NobleCaravan.Troops.extend([
 this.Const.World.Spawn.MixedNobleCaravan.Troops.extend([
     {
         Weight = 2,
-        MinR = 250,
+        MinR = 300,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovNobleSeer,

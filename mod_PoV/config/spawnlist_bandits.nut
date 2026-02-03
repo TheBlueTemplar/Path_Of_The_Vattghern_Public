@@ -22,7 +22,7 @@ this.Const.World.Spawn.BanditArmy.Troops.extend([
     },
     {
         Weight = 3,
-        MinR = 250,
+        MinR = 300,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -46,7 +46,7 @@ this.Const.World.Spawn.BanditBoss.Troops.extend([
     },
     {
         Weight = 3,
-        MinR = 250,
+        MinR = 275,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -71,7 +71,7 @@ this.Const.World.Spawn.BanditDefenders.Troops.extend([
     ,
     {
         Weight = 2,
-        MinR = 250,
+        MinR = 280,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -95,7 +95,7 @@ this.Const.World.Spawn.BanditRaiders.Troops.extend([
     },
     {
         Weight = 2, // def 2
-        MinR = 275,
+        MinR = 300,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -119,7 +119,7 @@ this.Const.World.Spawn.BanditScouts.Troops.extend([
     },
     {
         Weight = 1, // def 1
-        MinR = 250,
+        MinR = 300,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,

@@ -80,7 +80,8 @@
 	"Movarth",
 	"Morokei",
 	"Nahkriin",
-	"Serenus"
+	"Serenus",
+	"CultistBoy"
 ];
 
 ::Const.Strings.PovWizardTitles <- [

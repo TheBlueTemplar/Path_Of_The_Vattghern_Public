@@ -3,6 +3,7 @@
 	// Custom Srprite Layers Addition
 	q.onInit = @(__original) function()
 	{
+		// Original below and must stay there
 		// Add a new Sprite Layer
 		local self = this;
 		local old_addSprite = self.addSprite;
@@ -49,7 +50,28 @@
 		};
 		__original();
 		//self.addSprite = old_addSprite;
+
+		// If in battle, add special effects ("special skill" - for all entities)
+		// This is FOR ENEMY! See player.nut hook for player!
+		if (::World.State.getPlayer() != null && this.Tactical.isActive())
+		{
+			// Balance / Overhaul change. Dont apply when loaded with some mods
+			if (!::TLW.hasFOTN)
+			{
+				this.getSkills().add(this.new("scripts/skills/special/pov_armor_changes_special"));
+			}
+		}
+
+		// If SSU Tweaks enabled, remove their Armor Encumburance Effect
+		if (::TLW.hasSSU && ::TLW.SSUTweaks)
+		{
+			if (this.getSkills().hasSkill("effects.ptr_armor_fatigue_recovery"))
+			{
+				this.getSkills().removeByID("effects.ptr_armor_fatigue_recovery");
+			}
+		}
 	}
+
 
 	q.onDeath = @(__original) function(_killer, _skill, _tile, _fatalityType)
 	{

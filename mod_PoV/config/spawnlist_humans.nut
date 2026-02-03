@@ -12,7 +12,7 @@ if (!("Spawn" in ::Const.World))
 this.Const.World.Spawn.Mercenaries.Troops.extend([
     {
         Weight = 3,
-        MinR = 250,
+        MinR = 280,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -35,7 +35,7 @@ this.Const.World.Spawn.Mercenaries.Troops.extend([
 this.Const.World.Spawn.BountyHunters.Troops.extend([
     {
         Weight = 2,
-        MinR = 250,
+        MinR = 280,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovNobleSeer,
@@ -44,5 +44,31 @@ this.Const.World.Spawn.BountyHunters.Troops.extend([
         ]
     }
 ]);
+
+//Caravans (north) (south on different file - not edited now)
+this.Const.World.Spawn.Caravan.MaxR = 375; // + 125
+this.Const.World.Spawn.Caravan.Troops.extend([
+    {
+        Weight = 3,
+        MinR = 350,
+        Types = [
+            {
+                Type = this.Const.World.Spawn.Troops.Mercenary,
+                Cost = 35
+            }
+        ]
+    },
+    {
+        Weight = 3,
+        MinR = 350,
+        Types = [
+            {
+                Type = this.Const.World.Spawn.Troops.MercenaryRanged,
+                Cost = 35
+            }
+        ]
+    }
+]);
+
 
 
