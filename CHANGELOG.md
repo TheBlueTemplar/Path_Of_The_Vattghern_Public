@@ -1,6 +1,6 @@
-# v2.2.0 "Birthday" Edition
+# v2.2.0 "Armored" Edition
 
-## Changelog V2.2.0 "Birthday" Edition:
+## Changelog V2.2.0 "Armored" Edition:
 
 ### OVERHAUL / REWORKS
 
