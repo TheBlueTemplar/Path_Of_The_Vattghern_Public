@@ -9,7 +9,7 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 		this.m.IconMini = "";
 		this.m.Type = this.Const.SkillType.StatusEffect | this.Const.SkillType.Special;
 		this.m.IsActive = false;
-		this.m.IsRemovedAfterBattle = true;
+		this.m.IsRemovedAfterBattle = false;
 		this.m.IsHidden = false;
 	}
 
@@ -62,7 +62,7 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 		    text = "Damage ignoring armor reduced by [color=" + this.Const.UI.Color.PositiveValue + "]"+headMod+"[/color]% when being hit at the head, and [color=" + this.Const.UI.Color.PositiveValue + "]"+bodyMod+"[/color]% when hit at the body (Based on Current Armor of each body part)."
 		});
 
-		if (maxTotal <= 200)
+		if (maxTotal <= 250)
 		{
 			ret.push({
 			    id = 11,
@@ -156,7 +156,7 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 	    local maxTotal = headMax + bodyMax;
 
 	    // Exclude low-armor entities (no effect magnitude)
-	    if (maxTotal <= 200.0)
+	    if (maxTotal <= 250.0)
 	    {
 	        return 0.0;
 	    }
@@ -184,19 +184,19 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 	    progress = this.Math.minf(1.0, this.Math.maxf(0.0, progress));
 
 	    // Scale penalty with total max armor (with linear interpolation)
-	    // 200 total armor -> 0.15
+	    // 250 total armor -> 0.15
 	    // 1000 total armor -> 0.35
-	    local t = (maxTotal - 200.0) / (1000.0 - 200.0);
+	    local t = (maxTotal - 250.0) / (1000.0 - 250.0);
 	    t = this.Math.minf(1.0, this.Math.maxf(0.0, t));
 
-	    local maxEffect = 0.15 + (0.35 - 0.15) * t; // 0.25 .. 0.35 (min 0.05, see below)
+	    local maxEffect = 0.15 + (0.35 - 0.15) * t; // 0.15 .. 0.35 (min 0.05, see below)
 
     	// Start scaling from 5% penalty at the threshold (progress=0), up to maxEffect at full loss (progress=1)
     	local minEffect = 0.05;
     	local effect = minEffect + ((maxEffect - minEffect) * progress);
 
     	// --- Player-only softening (90% effect) 
-    	local playerScale = actor.isPlayerControlled() ? 0.90 : 1.0; // only slight difference for now
+    	local playerScale = actor.isPlayerControlled() ? 0.85 : 1.0; // only slight difference for now
 
 	    // Return the effect magnitude
 	    return effect * playerScale;
@@ -244,7 +244,7 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 	    // Convert reduction into final damage multiplier
 	    // Example: 30% reduction → multiplier = 0.70
 	    // Player gets 70% of the benefits (for 30% base reduction, get ~21% instead)
-	    local playerScale = actor.isPlayerControlled() ? 0.70 : 1.0;
+	    local playerScale = actor.isPlayerControlled() ? 0.80 : 1.0;
 		
 		return 1.0 - (reduction * playerScale);
 	}
@@ -289,8 +289,8 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 
 	    // Convert reduction into final damage multiplier
 	    // Example: 35% reduction → multiplier = 0.65
-	    // Player gets 70% of the benefits (for 35% base reduction, get ~25% instead)
-	    local scale = actor.isPlayerControlled() ? 0.70 : 1.0;
+	    // Player gets 80% of the benefits (for 35% base reduction, get ~27% instead)
+	    local scale = actor.isPlayerControlled() ? 0.80 : 1.0;
 		
 		return 1.0 - (reduction * scale);
 	}
@@ -376,7 +376,7 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	/*function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{	
 		local headMod = getHeadArmorMult();
 		local bodyMod = getBodyArmorMult();		
@@ -384,13 +384,44 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 		if (_hitInfo.BodyPart == this.Const.BodyPart.Head)
 		{
 			//hehe
-			_properties.DamageRegularMult *= headMod;
+			_properties.DamageReceivedDirectMult *= headMod;
 		}
 		else if (_hitInfo.BodyPart == this.Const.BodyPart.Body)
 		{
 			//xd
-			_properties.DamageRegularMult *= bodyMod;
+			_properties.DamageReceivedDirectMult *= bodyMod;
 		}
+	}*/
+
+	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	{
+	    local headMod = getHeadArmorMult();
+	    local bodyMod = getBodyArmorMult();
+
+	    local partMod = 1.0;
+	    // Change modifier depending on body part hit
+	    if (_hitInfo.BodyPart == this.Const.BodyPart.Head)
+	    {
+	        partMod = headMod;
+	    }
+	    else if (_hitInfo.BodyPart == this.Const.BodyPart.Body)
+	    {
+	        partMod = bodyMod;
+	    }
+
+	    // If the hit is fully "direct" (ignores armor), scale TOTAL so it always applies.
+	    // Exclude DOT effects
+	    if (_hitInfo.DamageDirect >= 1.0 && _skill != null && _skill.isAttack())
+	    {
+	    	//maybe scale partMod in this case? (better resistance vs direct)
+	    	//partMod = 0.1; // test
+	        _properties.DamageReceivedTotalMult *= partMod;
+	    }
+	    else
+	    {
+	        // Otherwise scale just the direct portion (or swap to Regular if that's what you want)
+	        _properties.DamageReceivedDirectMult *= partMod;
+	    }
 	}
 
 });

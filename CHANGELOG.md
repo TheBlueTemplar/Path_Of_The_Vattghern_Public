@@ -1,4 +1,17 @@
-# v2.2.0 "Armored" Edition
+# v2.2.1 "Armored" Edition
+
+## Changelog V2.2.1 "Armored" Edition:
+
+## FIXES / TWEAKS
+
+*This is a new system, so its bound to have issues, and will definetly need some rebalancing, open to feedback*
+* The new armor overhaul was a liiiitle bit bugged. Fixed some stuff around it
+   * It will properly not apply when playing with Fotn
+   * The damage resistance calculations were also wrong, and were fixed
+* Tweaks:
+   * The damage of direct damage SKILLS (like puncture or PoV bront) will now be reduced against users with very high armor (this is a necessary change, in order for armor to be able to reduce damage with 100% armor penetration)  
+   * This does not apply to effects though, like miasma, poison, bleed etc
+   * The player-side penalties of losing armor were slightly reduced
 
 ## Changelog V2.2.0 "Armored" Edition:
 
