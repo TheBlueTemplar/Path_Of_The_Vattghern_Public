@@ -12,6 +12,8 @@
    * The damage of direct damage SKILLS (like puncture or PoV bront) will now be reduced against users with very high armor (this is a necessary change, in order for armor to be able to reduce damage with 100% armor penetration)  
    * This does not apply to effects though, like miasma, poison, bleed etc
    * The player-side penalties of losing armor were slightly reduced
+* Sidenote:
+   * These armor rework effects do not apply just to worn armor, but natural armor as well (monster fur/scales, ifrit mutation etc.)
 
 ## Changelog V2.2.0 "Armored" Edition:
 
