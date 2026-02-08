@@ -6,4 +6,4 @@
 
 **Credits - List of Contributors**
 
-* none for now xd
+* **HIYUN1137** - Player Mutations Table
