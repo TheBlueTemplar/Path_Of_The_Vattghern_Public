@@ -237,7 +237,7 @@
 				],
 				Vanity = [ // 10, 0, 0
 					[1, "vanity/legend_helmet_faction_helmet_2"], // 10,0,0
-					[1, "vanity/legend_helmet_fencerhat"], // 10,0,0
+					[1, "vanity/legend_helmet_fencer_hat"], // 15,0,0
 					[1, "vanity/legend_helmet_feathered_hat"], // 10,0,0
 					[1, "vanity/legend_helmet_noble_floppy_hat"] // 10,0,0
 				]
@@ -267,7 +267,7 @@
 					[1, "top/legend_helmet_headband_side"] //50, -3, 0
 				],
 				Vanity = [ // avg, 10 , 0 , 0
-					[1, "vanity/legend_helmet_fencerhat"], // 10,0,0
+					[1, "vanity/legend_helmet_fencer_hat"], // 15,0,0
 					[1, "vanity/legend_helmet_feathered_hat"], // 10,0,0
 					[1, "vanity/legend_helmet_faceplate_raised"] // 10,0,0
 				]

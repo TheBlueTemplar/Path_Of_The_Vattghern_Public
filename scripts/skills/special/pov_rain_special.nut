@@ -1,14 +1,20 @@
-::TLW.HooksMod.hook("scripts/skills/special/legend_rain_effect", function (q) {
-// OLD EDIT, IM NOW MAKING THIS REMOVE ITSELF - CHECK POV RAIN INSTEAD
-	q.create = @(__original) function ()
+this.pov_rain_special <- this.inherit("scripts/skills/skill", {
+	m = {},
+	function create()
 	{
-		__original();
+		this.m.ID = "special.pov_rain";
 		this.m.Name = "Rainfall";
-		this.m.Description = "The rain obscures vision and makes everything slippery, but it can protect against fire";
+		this.m.Description = "The rain obscures vision and makes everything slippery,  but it can protect against fire";
 		this.m.Icon = "skills/pov_rain_effect.png";
+		this.m.IconMini = "status_effect_35_mini";
+		this.m.Type = this.Const.SkillType.StatusEffect | this.Const.SkillType.Special;
+		this.m.IsActive = false;
+		this.m.IsSerialized = false;
+		this.m.IsRemovedAfterBattle = false;
+		this.m.IsHidden = false;
 	}
 
-	q.getTooltip = @(__original) function ()
+	function getTooltip()
 	{
 		local ret = [
 			{
@@ -49,13 +55,9 @@
 		return ret;
 	}
 
-	q.onUpdate = @(__original) function (_properties)
+	function onUpdate( _properties )
 	{
-		// AAAAAA BYEEE
-		this.removeSelf();
-
-		
-		if (this.Tactical.getWeather().IsRaining)
+		if (this.Tactical.isActive() && this.Tactical.getWeather().IsRaining)
 		{
 			this.m.IsHidden = !_properties.IsAffectedByRain;
 			if (_properties.IsAffectedByRain)
@@ -70,10 +72,8 @@
 		}	
 	}
 
-	q.onBeforeDamageReceived = @(__original) function ( _attacker, _skill, _hitInfo, _properties )
+	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		__original(_attacker, _skill, _hitInfo, _properties)
-
 		if (this.Tactical.getWeather().IsRaining && _hitInfo.DamageType == this.Const.Damage.DamageType.Burning)
 		{
 			_properties.DamageReceivedTotalMult *= 0.70;

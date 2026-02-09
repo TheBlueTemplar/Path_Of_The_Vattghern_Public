@@ -60,6 +60,9 @@
 			{
 				this.getSkills().add(this.new("scripts/skills/special/pov_armor_changes_special"));
 			}
+			
+			// Rain kinda rework
+			this.getSkills().add(this.new("scripts/skills/special/pov_rain_special"));
 		}
 
 		// If SSU Tweaks enabled, remove their Armor Encumburance Effect
@@ -71,8 +74,6 @@
 			}
 		}
 
-		// Rain kinda rework
-		::Legends.Effects.grant(this, ::Legends.Effect.LegendRain);
 	}
 
 

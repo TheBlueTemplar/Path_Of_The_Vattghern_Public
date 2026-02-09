@@ -116,8 +116,8 @@ this.pov_enemy_mutation_sandgolem <- this.inherit("scripts/skills/skill", {
 		// DEBUFFS
 		_properties.Initiative *= 0.70;
 		_properties.StaminaMult *= 0.90;
-		_properties.FatigueEffectMult *= 1.15;
-		_properties.FatigueRecoveryRate += -3;
+		_properties.FatigueEffectMult *= 1.10;
+		_properties.FatigueRecoveryRate += -2;
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )

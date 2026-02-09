@@ -1,8 +1,8 @@
 this.pov_sandgolem_mutagen_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		HeadArmorBoost = 80,
+		HeadArmorBoost = 100,
 		HeadDamageTaken = 0,
-		BodyArmorBoost = 80,
+		BodyArmorBoost = 100,
 		BodyDamageTaken = 0
 	},
 	function create()
@@ -47,13 +47,13 @@ this.pov_sandgolem_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_body.png",
-				text = "This character\'s skin is hard and stone-like, granting [color=" + this.Const.UI.Color.PositiveValue + "]80[/color] points of natural armor"
+				text = "This character\'s skin is hard and stone-like, granting [color=" + this.Const.UI.Color.PositiveValue + "]100[/color] points of natural armor (which is affected by PoV\'s armor rework)"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_body.png",
-				text = "This character also gets [color=" + this.Const.UI.Color.PositiveValue + "]12%[/color] Total Damage Reduction."
+				text = "This character also gets [color=" + this.Const.UI.Color.PositiveValue + "]12%[/color] Total Damage Reduction (from any damage source)."
 			},
 			{
 				id = 11,
@@ -65,13 +65,13 @@ this.pov_sandgolem_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "All skills now cost [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color] more Fatigue."
+				text = "All skills now cost [color=" + this.Const.UI.Color.NegativeValue + "]5%[/color] more Fatigue."
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "Fatigue recovery is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]2[/color] Points."
+				text = "Fatigue recovery is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] Points."
 			}
 
 		];
@@ -108,8 +108,8 @@ this.pov_sandgolem_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		_properties.ArmorMax[this.Const.BodyPart.Body] += this.m.BodyArmorBoost;
 		// Debuffs
 		_properties.Initiative *= 0.75;
-		_properties.FatigueEffectMult *= 1.10;
-		_properties.FatigueRecoveryRate += -2;
+		_properties.FatigueEffectMult *= 1.05;
+		_properties.FatigueRecoveryRate += -1;
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )

@@ -1,8 +1,8 @@
 this.pov_sandgolem_weak_mutagen_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		HeadArmorBoost = 60,
+		HeadArmorBoost = 70,
 		HeadDamageTaken = 0,
-		BodyArmorBoost = 60,
+		BodyArmorBoost = 70,
 		BodyDamageTaken = 0
 	},
 	function create()
@@ -47,13 +47,13 @@ this.pov_sandgolem_weak_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_body.png",
-				text = "This character\'s skin is hard and stone-like, granting [color=" + this.Const.UI.Color.PositiveValue + "]60[/color] points of natural armor"
+				text = "This character\'s skin is hard and stone-like, granting [color=" + this.Const.UI.Color.PositiveValue + "]70[/color] points of natural armor"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_body.png",
-				text = "This character also gets [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] Total Damage Reduction."
+				text = "This character also gets [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] Total Damage Reduction (from any damage source)."
 			},
 			{
 				id = 11,
@@ -65,7 +65,7 @@ this.pov_sandgolem_weak_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "All skills now cost [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color] more Fatigue."
+				text = "All skills now cost [color=" + this.Const.UI.Color.NegativeValue + "]8%[/color] more Fatigue."
 			},
 			{
 				id = 11,
@@ -108,7 +108,7 @@ this.pov_sandgolem_weak_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		_properties.ArmorMax[this.Const.BodyPart.Body] += this.m.BodyArmorBoost;
 		// Debuffs
 		_properties.Initiative *= 0.85;
-		_properties.FatigueEffectMult *= 1.10;
+		_properties.FatigueEffectMult *= 1.08;
 		_properties.FatigueRecoveryRate += -2;
 	}
 

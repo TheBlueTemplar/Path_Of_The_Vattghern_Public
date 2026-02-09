@@ -1,4 +1,22 @@
-# v2.2.2 "Make it Rain" Edition
+# v2.2.3 "Make it Rain" Edition
+
+## Changelog V2.2.3 "Make it Rain" Edition:
+
+### BALANCE
+
+* Iftit mutations tweaked
+   * Vattghern and mutant ifrit mutagens grand more armor
+   * They also have lower penalties (to compensate for the new armor system penalties)
+   * Enemy ifrit mutation has same buffs (they already were higher than player), but also reduced penalties
+
+### FIXES
+
+* Rain debuff will no correctly apply and go away when it needs to. No more climate change!
+
+### MISC
+
+* Tweaked the rain effect icon art
+* Some more preparation was done, for future PoV compatibility with other mods and new legends versions
 
 ## Changelog V2.2.2 "Make it Rain" Edition:
 
