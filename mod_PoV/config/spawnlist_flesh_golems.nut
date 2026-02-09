@@ -17,11 +17,11 @@ if (!("Spawn" in ::Const.World))
 	VisionMult = 0.7,
 	Body = "pov_figure_fault_finder_01",
 	MaxR = 600,
-	MinR = 60,
+	MinR = 100,
 	Fixed = [
 		{
 			Type = this.Const.World.Spawn.Troops.FaultFinder,
-			Cost = 20,
+			Cost = 15,
 			MinGuards = 1,
 			MaxGuards = 2,
 			MaxGuardsWeight = 25,
@@ -37,9 +37,9 @@ if (!("Spawn" in ::Const.World))
 					}
 				},
 				{
-					Type = this.Const.World.Spawn.Troops.GreaterFleshGolem,
+					Type = this.Const.World.Spawn.Troops.LesserFleshGolem,
 					MaxR = 200,
-					Cost = 40,
+					Cost = 10,
 					function Weight(scale) {
 						local c = 100 - (scale * 100);
 						return this.Math.max(0, c);
@@ -54,18 +54,18 @@ if (!("Spawn" in ::Const.World))
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LesserFleshGolem,
-					Cost = 14
+					Cost = 20
 				}
 
 			]
 		},
 		{
 			Weight = 20,
-			MinR = 250,
+			MinR = 475,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.GreaterFleshGolem, 
-					Cost = 40
+					Cost = 65
 				}
 			]
 		}

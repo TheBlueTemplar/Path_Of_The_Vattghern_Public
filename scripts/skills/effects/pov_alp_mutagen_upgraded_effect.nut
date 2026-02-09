@@ -39,6 +39,12 @@ this.pov_alp_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", {
 				text = "Not affected by nighttime penalties"
 			},
 			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/pov_rain.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]Immunity[/color] To rainfall debuffs."
+			},
+			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/vision.png",
@@ -130,6 +136,7 @@ this.pov_alp_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		// Buffs
+		_properties.IsAffectedByRain = false;
 		_properties.IsAffectedByNight = false;
 		_properties.IsResistantToMiasma = true;
 		_properties.Vision += 2;

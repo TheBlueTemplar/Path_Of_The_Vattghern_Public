@@ -1,8 +1,59 @@
-# v2.2.1 "Armored" Edition
+# v2.2.2 "Make it Rain" Edition
+
+## Changelog V2.2.2 "Make it Rain" Edition:
+
+### NEW FEATURES
+
+* 2 New Traits
+   * **Trailblazer**: Character gets bonus stats when fighting in forests and mountains. Also grants some party movement speed on these terrains
+   * **Extremophile**: Character gets bonus stats when fighting in snow and deserts. Also grants some party movement speed on these terrains
+
+### OVERHAUL / REWORKS
+
+* **Rain Overhaul**
+   * Whenever you start a battle and its raining, most entities will get the rainfall effect
+     * This effects reduces vision (-1), ranged skill (-15%), and increases fatigue costs (+15%)
+     * Some entities (beasts, some undead, and some mutants) are resistant to this effect, and will not get it
+   * When its raining, ALL entities get 30% flame resistance
+   * Some Player mutations (alp, direwolf) grant resistance to rain
+   * Wildmen are also immune to rain
+   * Also, heavy cloaks and the crusader cload grant resistance to rain
+* **Falling Damage** 
+   * That damage was tweaked, increasing its damage by 150%, making pushing enemies down much more viable, especially at large heights (2 - 3) 
+* **Tweaked PoV's Armor Rework**
+   * High armor values used to reduce ALL armor ignoring damage, even if that damage was from for example magical origins
+   * Now, some handpicked active skills will ignore armor normally. These are:
+     * (Vanilla) : nightmare, ghost touch
+     * (PoV) : bront sign, pov ghost touch
+     * (Legends) : banshee touch, redback dagger puncture, vala warden attacks
+     * (SSU & Rotu) : smoke and mirrors, electric attack, chain lighting, ghost phase through, ghost spear strike
+   * Notably, physical armor ignoring attacks will still have their damage reduced, mostly includes puncture attacks, and choke. They are still effective, but will require more effort
+* The "lucky" trait now also adds 2% headshot chance      
+
+### BALANCE
+
+* Crusaders cloak was slightly buffed
+* Flesh golem roaming parties: should have less numbers, and greater flesh golems appear later in them
+* Silvering kit: Durability loss of silver weapons reduced from 20% to 15%, value increase buffed from 15% to 20%
+* Rustungheist (armor ghost): +5 Armor
+* Forsaken are stronger in auto battles (on map vs other parties). Thus, they will be also braver
+* Hyena fur cloak armor reduced from 20 to 5, as its meant as a light armor (attachment) piece
+* Swan pauldrons ranged defense bonus raised from +3 to +5
+
+### FIXES
+
+* Fixed a rare issue between PoV and Fotn when using named goblin spiked ballz
+* Fixed a crash related to the new PoV Banner skill
+* Fixed a very rare issue with the scholar perk, where if you got that without knowing to read, you couldnt read (now you can)
+
+### MISC
+
+* Added 2 more loading screen tips related to the rain
+* On a sidenote, PoV also has its wiki under active development, check the wiki in PoV's github
 
 ## Changelog V2.2.1 "Armored" Edition:
 
-## FIXES / TWEAKS
+### FIXES / TWEAKS
 
 *This is a new system, so its bound to have issues, and will definetly need some rebalancing, open to feedback*
 * The new armor overhaul was a liiiitle bit bugged. Fixed some stuff around it

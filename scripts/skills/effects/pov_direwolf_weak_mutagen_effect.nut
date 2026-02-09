@@ -78,6 +78,12 @@ this.pov_direwolf_weak_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				text = "Nighttime penalties are [color=" + this.Const.UI.Color.PositiveValue + "]halved[/color]."
 			},
 			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/pov_rain.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]Immunity[/color] To rainfall debuffs."
+			},
+			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/damage_received.png",
@@ -96,6 +102,7 @@ this.pov_direwolf_weak_mutagen_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		// Buffs
+		_properties.IsAffectedByRain = false;
 		_properties.MovementFatigueCostMult *= 0.75;
 		_properties.FatigueEffectMult *= 0.90;
 		_properties.IsImmuneToBleeding = true;

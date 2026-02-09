@@ -70,6 +70,9 @@
 				this.getSkills().removeByID("effects.ptr_armor_fatigue_recovery");
 			}
 		}
+
+		// Rain kinda rework
+		::Legends.Effects.grant(this, ::Legends.Effect.LegendRain);
 	}
 
 

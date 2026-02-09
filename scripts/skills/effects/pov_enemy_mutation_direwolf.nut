@@ -150,6 +150,7 @@ this.pov_enemy_mutation_direwolf <- this.inherit("scripts/skills/skill", {
 		}
 
 		// Buffs
+		_properties.IsAffectedByRain = false;
 		_properties.MovementFatigueCostMult *= 0.5;
 		_properties.FatigueEffectMult *= 0.75;
 		_properties.StaminaMult *= 1.15;

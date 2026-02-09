@@ -21,6 +21,12 @@
 			icon = "ui/icons/pov_extra_special.png",
 			text = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] on all stats when fighting in [color=" + this.Const.UI.Color.PositiveValue + "]forests[/color]."
 		});
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/pov_rain.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]Immunity[/color] To rainfall debuffs."
+		});
 		return ret;
 	}
 
@@ -39,6 +45,9 @@
 	q.onUpdate = @(__original) function (_properties)
 	{
 		__original(_properties);
+		
+		_properties.IsAffectedByRain = false;
+
 		if (this.World.State.getPlayer() != null)
 		{
 			local currentTile = this.World.State.getPlayer().getTile();

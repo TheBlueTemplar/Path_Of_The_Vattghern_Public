@@ -35,6 +35,14 @@
 		"trait.pov_hate_ghosts",
 		"scripts/skills/traits/pov_hate_ghosts_trait"
 	],
+	[
+		"trait.pov_trailblazer",
+		"scripts/skills/traits/pov_trailblazer_trait"
+	],
+	[
+		"trait.pov_extremophile",
+		"scripts/skills/traits/pov_extremophile_trait"
+	]
 ]);
 
 // Only For Testing!! Remember to disable!

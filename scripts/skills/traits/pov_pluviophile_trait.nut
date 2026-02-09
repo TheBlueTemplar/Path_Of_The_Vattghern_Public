@@ -33,7 +33,7 @@ this.pov_pluviophile_trait <- this.inherit("scripts/skills/traits/character_trai
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/special.png",
+				icon = "ui/icons/pov_rain.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]Immunity[/color] To rainfall debuffs."
 			},
 			{
@@ -59,7 +59,6 @@ this.pov_pluviophile_trait <- this.inherit("scripts/skills/traits/character_trai
 			this.m.Type = ::Const.SkillType.Trait;
 			return;
 		}
-
 
 		if (this.Tactical.getWeather().IsRaining)
 		{

@@ -1,5 +1,5 @@
 local tips = [
-// 60 Total As Of Now
+// 62 Total As Of Now
 // BS - Memes - References etc.
 	"(PoV) The shadows are watching...",
 	"(PoV) Some are whispering that Goblin\'s woodwork ain\'t that good...",
@@ -60,6 +60,8 @@ local tips = [
 	"(PoV) When having high armor, it being damaged lowers its defensive capabilities less than it would light armors.",
 	"(PoV) Heavy armors apply a scaling penalty to the wearer when heavily damaged. Light armors apply none!",
 	"(PoV) The armor mechanics rework affects player and enemy *almost* equally...",
+	"(PoV) Rain can be quite hindering to those who are unprepared...",
+	"(PoV) During rainfall, guns, flame magic and any sort of fire attack are weaker.",
 // Misc
 	"(PoV) I am eager to see your feedback on the mod!",
 	"(PoV) Did you know that the PoV mod adds 2 new company banners?",

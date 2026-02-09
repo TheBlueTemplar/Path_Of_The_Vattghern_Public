@@ -66,6 +66,7 @@ this.pov_enemy_mutation_alp <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		// Buffs
+		_properties.IsAffectedByRain = false;
 		_properties.IsAffectedByNight = false;
 		// Debuffs
 		_properties.FatigueRecoveryRate += -5;

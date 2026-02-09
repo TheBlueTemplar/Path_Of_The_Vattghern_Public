@@ -10,21 +10,21 @@
 	q.setSilvered <- function ()
 	{
 		this.m.Silver = true;
-		local condition_modifier = 0.8;
+		local condition_modifier = 0.85;
 		this.m.ConditionMax = ::Math.floor(this.m.ConditionMax * condition_modifier);
 		this.m.Condition = ::Math.floor(this.m.Condition * condition_modifier);
-		this.m.Name = "Silver " + this.m.Name
-		this.m.Value = this.m.Value * 1.15;
+		this.m.Name = "Silver " + this.m.Name;
+		this.m.Value = this.m.Value * 1.20;
 	}
 
 	q.updateSilvered <- function ()
 	{
-		this.m.Value = this.m.Value * 1.15
+		this.m.Value = this.m.Value * 1.20;
 		if (!isNamed() && this.m.Silver) //named(or legendary) check, if not true - we are in a normal weapon and should edit those values, as they get serialized only in named stuff
 		{
-			local condition_modifier = 0.8
-			this.m.ConditionMax = ::Math.floor(this.m.ConditionMax * condition_modifier)
-			this.m.Name = "Silver " + this.m.Name
+			local condition_modifier = 0.85;
+			this.m.ConditionMax = ::Math.floor(this.m.ConditionMax * condition_modifier);
+			this.m.Name = "Silver " + this.m.Name;
 		}
 	}
 

@@ -184,8 +184,8 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 	    progress = this.Math.minf(1.0, this.Math.maxf(0.0, progress));
 
 	    // Scale penalty with total max armor (with linear interpolation)
-	    // 250 total armor -> 0.15
-	    // 1000 total armor -> 0.35
+	    // 250 total armor -> 0.15 (0.13 for player)
+	    // 1000 total armor -> 0.35 (0.30 for player)
 	    local t = (maxTotal - 250.0) / (1000.0 - 250.0);
 	    t = this.Math.minf(1.0, this.Math.maxf(0.0, t));
 
@@ -196,7 +196,7 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
     	local effect = minEffect + ((maxEffect - minEffect) * progress);
 
     	// --- Player-only softening (90% effect) 
-    	local playerScale = actor.isPlayerControlled() ? 0.85 : 1.0; // only slight difference for now
+    	local playerScale = actor.isPlayerControlled() ? 0.85 : 1.0; 
 
 	    // Return the effect magnitude
 	    return effect * playerScale;
@@ -410,11 +410,37 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 	    }
 
 	    // If the hit is fully "direct" (ignores armor), scale TOTAL so it always applies.
-	    // Exclude DOT effects
-	    if (_hitInfo.DamageDirect >= 1.0 && _skill != null && _skill.isAttack())
+	    // Exclude DOT effects, and some handpicked skills (Puncture, Nightmare, Bront, Ghost Touch (+PoV Version) + some Legends skills (magic, banshee, warden, puncture on legends daggers))
+	    // Also includes checks for skills from other mods
+	    if (_hitInfo.DamageDirect >= 1.0 && _skill != null && _skill.isAttack() 
+	    	// Vanilla
+	    	//&& _skill.getID() != "actives.puncture" // not sure about this one
+	    	&& _skill.getID() != "actives.nightmare" 
+	    	&& _skill.getID() != "actives.ghastly_touch" 
+	    	// PoV
+	    	&& _skill.getID() != "actives.pov_ghastly_touch"
+	    	&& _skill.getID() != "actives.pov_bront" 
+	    	// Legends
+	    	&& _skill.getID() != "actives.legend_deathtouch" 
+	    	&& _skill.getID() != "actives.legend_drain"
+	    	//&& _skill.getID() != "actives.actives.legend_choke"
+	    	&& _skill.getID() != "actives.legend_nightmare_touch"
+	    	&& _skill.getID() != "actives.legend_nightmare_touch_zoc" 
+	    	//&& _skill.getID() != "actives.legend_puncture_parry_dagger_skill" 
+	    	&& _skill.getID() != "actives.legend_redback_puncture" 
+	    	&& _skill.getID() != "actives.legend_vala_warden_pale_touch" 
+	    	&& _skill.getID() != "actives.legend_vala_warden_wail"
+	    	// Rotu (And SSU - same ids)
+	    	&& _skill.getID() == "actives.smoke_and"
+    		&& _skill.getID() == "actives.rotu_electric_skill"
+    		&& _skill.getID() == "actives.rotu_chain_lightning"
+    		&& _skill.getID() == "actives.ghost_phase"
+    		&& _skill.getID() == "actives.ssu_ghost_spear_strike")
 	    {
 	    	//maybe scale partMod in this case? (better resistance vs direct)
 	    	//partMod = 0.1; // test
+
+	    	// in that case, if the right skills are used, set partMod to 1
 	        _properties.DamageReceivedTotalMult *= partMod;
 	    }
 	    else

@@ -72,7 +72,7 @@
 				this.m.Modifiers.Scout += 0.10;
 			}
 
-		// WORLD MOVE SPEED MODIFIERS
+		// WORLD MOVE SPEED MODIFIERS - NON COMPAT
 			// has to be this.m.Modifiers.Terrain[x], where x can be from 0 to 18
 			// terrain in order (dont use ?): 0-?, 1-ocean, 2-plains, 3-swamp, 4-hills, 5/6/7/8-forest,
 			// 9-mountains, 10-?, 11-farmland, 12-snow, 13-badlands, 14-highlands, 15-steppes,
@@ -111,12 +111,31 @@
 			}
 		} // end of sec stuff
 
-		// POV ADDITIONS - ALWAYS APPLY
-		// CAMP MODIFIERS
-			// GATHERING
-			if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovChampionSlayer))
+	// POV ADDITIONS - ALWAYS APPLY
+	// CAMP MODIFIERS
+		// GATHERING
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovChampionSlayer))
+		{
+			this.m.Modifiers.Training += 0.20;
+		}
+
+	// WORLD MOVE SPEED MODIFIERS - COMPAT
+		if (this.getContainer().getActor().getSkills().hasSkill("trait.pov_trailblazer"))
 			{
-				this.m.Modifiers.Training += 0.20;
+				this.m.Modifiers.Terrain[4] += 0.0200;
+				this.m.Modifiers.Terrain[5] += 0.0200;
+				this.m.Modifiers.Terrain[6] += 0.0200;
+				this.m.Modifiers.Terrain[7] += 0.0200;
+				this.m.Modifiers.Terrain[8] += 0.0200;
+				this.m.Modifiers.Terrain[9] += 0.0200;
 			}
+
+		if (this.getContainer().getActor().getSkills().hasSkill("trait.pov_extremophile"))
+			{
+				this.m.Modifiers.Terrain[12] += 0.0150;
+				this.m.Modifiers.Terrain[14] += 0.0150;
+				this.m.Modifiers.Terrain[17] += 0.0150;
+				this.m.Modifiers.Terrain[18] += 0.0150;
+			}	
 	}
 });

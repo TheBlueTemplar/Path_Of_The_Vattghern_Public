@@ -101,10 +101,13 @@ this.pov_named_goblin_spiked_balls <- inherit("scripts/items/weapons/named/named
 	{
 		this.named_weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/throw_balls"));
-		local flail = this.new("scripts/skills/actives/flail_skill");
-		flail.m.IsThrowingWeapon = true;
-		flail.m.ActionPointCost = 3;
-		this.addSkill(flail);
+		if (!::TLW.hasFOTN)
+		{
+			local flail = this.new("scripts/skills/actives/flail_skill");
+			flail.m.IsThrowingWeapon = true;
+			flail.m.ActionPointCost = 3;
+			this.addSkill(flail);
+		}
 	}
 
 	function setAmmo(_a)

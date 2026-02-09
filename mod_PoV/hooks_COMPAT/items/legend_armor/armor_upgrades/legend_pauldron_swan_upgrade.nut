@@ -24,7 +24,7 @@
 			id = 14,
 			type = "text",
 			icon = "ui/icons/ranged_defense.png",
-			text = "[color=%positive%]+3[/color] Ranged Defense"
+			text = "[color=%positive%]+5[/color] Ranged Defense"
 		});
 		return result;
 	}
@@ -56,7 +56,7 @@
 	q.onUpdateProperties = @(__original) function (_properties)
 	{
 		__original(_properties);
-		_properties.RangedDefense += 3;
+		_properties.RangedDefense += 5;
 	}
 });
 

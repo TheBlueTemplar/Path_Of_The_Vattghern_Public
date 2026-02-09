@@ -7,7 +7,7 @@ this.pov_silvering_kit <- this.inherit("scripts/items/item", {
 		this.item.create();
 		this.m.ID = "special.silvering_kit";
 		this.m.Name = "Silvering Kit";
-		this.m.Description = "A special kit, frequently sought after by professional monster hunters. It contains special oils and alloys for coating a weapon with silver. \n\n The special mixture digs into the metals of the weapon itself, giving it potent properties agains monstrous and supernatural enemies, though it overall weakens the weapon's durability, and efficiency against humans.";
+		this.m.Description = "A special kit, frequently sought after by professional monster hunters. It contains special oils and alloys for coating a weapon with silver. \n\n The special mixture digs into the metals of the weapon itself, giving it potent properties agains monstrous and supernatural enemies, though it overall weakens the weapon\'s durability, and efficiency against humans.";
 		this.m.Icon = "special/pov_silvering_kit.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Usable;
@@ -23,7 +23,7 @@ this.pov_silvering_kit <- this.inherit("scripts/items/item", {
 		result.push({
 			id = 3,
 			type = "text",
-			text = "Use to coat a melee weapon in silver, causing it to deal [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] Damage to enemy beasts. Gain [color=" + this.Const.UI.Color.PositiveValue + "]half[/color] of this bonus against Mutants, and the Undead. Deal [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Damage to anything else.\n\n The weapon will also lose [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color] of its maximum durability."
+			text = "Use to coat a melee weapon in silver, causing it to deal [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] Damage to enemy beasts. Gain [color=" + this.Const.UI.Color.PositiveValue + "]half[/color] of this bonus against Mutants, and the Undead. Also increases the weapon\'s value. Deal [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Damage to anything else.\n\n The weapon will also lose [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color] of its maximum durability."
 		});
 		return result;
 	}

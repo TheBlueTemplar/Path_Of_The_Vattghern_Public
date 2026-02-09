@@ -71,7 +71,10 @@ this.pov_banner_exerted_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		this.spawnIcon("pov_medium_banner_exerted_effect", this.getContainer().getActor().getTile());
+		if (this.getContainer().getActor().isPlacedOnMap())
+		{
+			this.spawnIcon("pov_medium_banner_exerted_effect", this.getContainer().getActor().getTile());
+		}
 	}
 
 	function onNewDay()

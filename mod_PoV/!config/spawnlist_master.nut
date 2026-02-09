@@ -62,7 +62,7 @@
 ::Const.World.Spawn.Troops.PovForsaken <- {
 	ID = this.Const.EntityType.PovForsaken,
 	Variant = 0,
-	Strength = 50,
+	Strength = 60,
 	Cost = 50,
 	Row = 0,
 	Script = "scripts/entity/tactical/humans/pov_forsaken",
@@ -73,7 +73,7 @@
 ::Const.World.Spawn.Troops.PovForsaken_High <- {
 	ID = this.Const.EntityType.PovForsaken_High,
 	Variant = 100, // almost guarantees champion spawn
-	Strength = 75,
+	Strength = 85,
 	Cost = 75,
 	Row = 0,
 	Script = "scripts/entity/tactical/humans/pov_forsaken_high",
@@ -84,7 +84,7 @@
 ::Const.World.Spawn.Troops.PovForsaken_Boss <- {
 	ID = this.Const.EntityType.PovForsaken_Boss,
 	Variant = 255, // guarantees champion spawn (Needs to be 255 if for Fixed Spawn?)
-	Strength = 100,
+	Strength = 120,
 	Cost = 100,
 	Row = 0,
 	Script = "scripts/entity/tactical/humans/pov_forsaken_boss",
@@ -97,7 +97,7 @@
 ::Const.World.Spawn.Troops.SwordGhost <- {
 	ID = this.Const.EntityType.SwordGhost,
 	Variant = 0,
-	Strength = 40,
+	Strength = 45,
 	Cost = 35,
 	Row = 2,
 	Script = "scripts/entity/tactical/enemies/pov_sword_ghost"
@@ -107,7 +107,7 @@
 ::Const.World.Spawn.Troops.ArmorGhost <- {
 	ID = this.Const.EntityType.ArmorGhost,
 	Variant = 0,
-	Strength = 55,
+	Strength = 60,
 	Cost = 45,
 	Row = 1,
 	Script = "scripts/entity/tactical/enemies/pov_armor_ghost"

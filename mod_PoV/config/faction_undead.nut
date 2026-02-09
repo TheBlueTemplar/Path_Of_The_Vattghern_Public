@@ -33,7 +33,7 @@
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [ // Body, Head
-		475,
-		425
+		480,
+		430
 	]
 };
