@@ -10,7 +10,6 @@
 * Also, the effects of mutations on the mutant usually have slightly weaker benefits, and stronger penalties. Most also dont grant access to their Added Skills in that case.
 * A player can only have ONE active Hexe mutation in the company!
 # All Vatt'ghern Mutations Table
------
 | Mutagen Name | Type | Effects (Boosts) | Effects (Drawbacks) | Added Skills (Description) | Mutagen Icon |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Alp** | `base` | **Vision & Defense:** Ignores night penalties (`+1` Vision, `50%` resistance to miasma damage, **``50%`` piercing/ranged damage resistance**). | **Endurance & Learning:** `-3` Fatigue Recovery, `-30%` Experience Gain. | **`Third Eye:`** Reveals a large area of the battlefield, granting temporary combat buffs to nearby allies (Once per combat). | <img width="70" height="70" alt="pov_potion_alp" src="https://github.com/user-attachments/assets/84c5bcc1-0274-48c4-a4b4-3fef24c13a52" /> |
