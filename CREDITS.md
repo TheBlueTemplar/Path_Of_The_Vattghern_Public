@@ -8,6 +8,7 @@
 * Pot and Excalibird for their contribution
 * All of the lovely playtesters, and the contributors to PoV!
 * Legends and the broader modding community for all their tools, documentation and support
+* Credits to all the contributors of the wiki [here](https://github.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/wiki/z_Credits#pov-full-credits-and-attributions-here)
 
 ## Included Mods
 
