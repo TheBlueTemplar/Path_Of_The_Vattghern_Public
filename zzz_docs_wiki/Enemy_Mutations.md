@@ -8,11 +8,17 @@
 * Enemy mutations also grant at least one passive effect or active ability to the enemies who get them
   * Refer at the table at the bottom of this document for specific reference to enemy mutations.  
 * Enemy mutants have some distinct characteristics that set them apart: Unique name prefix, in battle visual effect, and of course the effect of the mutation itself
-  * The names themselves depend on the specific mutation. Each one grants a unique prefix (So, a Footman who get the hexe mutation will be called a "Cursing Mutant"). The names are also green colored
+  * The names themselves depend on the specific mutation. Each one grants a unique prefix (So, a Footman who get the hexe mutation will be called a "Cursing Footman"). The names are also green colored
     * If enemies have multiple mutations, and some of them form a specific combination, then they will get a unique prefix instead, with a different, dark brown color
   * The visual effect in battle includes a green effect on their bust, and a soft, animated green glow
   * The name of the effect itself in the tooltip, will also be green
 * Enemy mutants also have a chance to drop their relevant mutagen when killed (eg: spirit mutant can drop spirit mutagen). Refer to the Mutagen Drops section below for details
+* The mutations that appear or enemies are only semi random, as different enemies have diffrent "pools" of mutations to choose from. In general:
+  * Some mutations benefit only melee entities (like the orc one), and as such will not appear on ranged ones. Same thing for "ranged-only" mutations (like goblin)
+  * Some other mutations are also "location based". People in the north cannot have mutations of beasts from the south. This is mainly about barbarians, and the mutations they cant have are the ifrit and serpent ones
+  * Similarly, people of the south cant have the unhold mutations
+  * In general, the mutation groups are divided into (All, South, North), and also the following groups: (Melee, Ranged, Swarm, Tank) Depending on enemy type, and what would most benefit them. (so group examples can be TankNorth, or RangedSouth etc.)
+  * Beasts are an exception on this rule, as the mutation groups for each beast kind are tailored specifically for them. Of course, beasts cannot have their own mutation (no alps with alp mutation)
 -----
 ### Appearance of Enemy Mutations
 * The appearance of enemy mutations depends on multiple different factors, like the game's combat difficulty, mod settings, and other mechanics of PoV
@@ -76,7 +82,33 @@
     * Day 120 - 180 ->   -10%
     * Day 180 - 260 ->   -20%
     * Day 260++     ->   -30% 
-* Also, Mutagen Drop chances can also increase if the player has the "Mutagen Research" retinue, by +20% 
+* Also, Mutagen Drop chances can also increase if the player has the "Mutagen Research" retinue, by +20%
+* Finally, if Chaos Mode is enabled (see below), there is a final modifier of -60%, as with chaos mode on many many more mutations will appear
+* Important note: Until you kill your first mutant, mutagen drop rates are always 0! (so first time killing a mutant will never drop a mutagen)
+----- 
+### Chaos Mode
+* An optional PoV setting, off by default.
+* It pretty much adds lots of chaos to the game, as enemies have no mutation limit, and they can also roll ANY mutation (ignoring the mutagen groups I talk about above)
+  * Seeing an enemy with like 5 mutations is not that uncommon
+* The mutation system here works differently. Each enemy has a set chance to get EACH possible mutations, so all enemies roll for each different mutation once.
+  * Chances are difficulty based:
+    * Beginner:     3%
+    * Veteran:      4%
+    * Expert:       5%
+    * Death March:  8%
+* These chances are further modified by the Enemy Mutation Scaling setting in the following way (steeper curve in general, also easier early game):
+  * Some more specific numbers: (Day range - Modifier)
+    * Day 1 - 15    ->   -45%
+    * Day 15 - 30   ->   -25%
+    * Day 30 - 50   ->   -10%
+    * Day 50 - 80   ->   Default
+    * Day 80 - 120  ->   +15%
+    * Day 120 - 180 ->   +35%
+    * Day 180 - 260 ->   +60%
+    * Day 260++     ->   +100%
+* Mutation chances can also increase if the player has the "Mutagen Research" retinue
+  * The increase is an additional 15% 
+-----
 
 # Enemy Mutations Table
 | Mutagen Name | Effects (Boosts) | Effects (Drawbacks) | Added Skills (Description) | Tips | Effect Icon |
