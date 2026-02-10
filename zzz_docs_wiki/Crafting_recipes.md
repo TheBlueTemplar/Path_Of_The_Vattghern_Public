@@ -16,7 +16,7 @@ A comprehensive guide to the specialized alchemical and forging recipes availabl
 - **Ingredients:** 1x Distilled Alcohol, 1x Alp Third Eye, 1x Sulfurous Rocks, 1x Poison Gland, 1x Unhold Heart, 1x Adrenaline Gland, 1x Ghoul Brain
 - **Cost:** 450 Crowns
 - **Outcome:** **Witcher Potion**: The pinnacle of mutation research. Consuming this potion attempts to turn a battle-hardened brother into a legendary **Vatt'ghern**. It is an extremely dangerous process with a high risk of death, but survivors gain unique traits and access to specialized skills.
-- **Tips**: Getting the ingredients can be a long journey. Main avenue is corpse dissection of the relevant monsters, but one can also find ingredients in special events, or sold at alchemists and black markets
+- **Tips**: Getting the ingredients can be a long journey. Main avenue is corpse dissection of the relevant monsters, but one can also find ingredients in special events, or sold at alchemists and black markets. See how to get distilled alcohol below
 
 ### Vatt'ghern Poison Flask
 
@@ -70,6 +70,7 @@ A comprehensive guide to the specialized alchemical and forging recipes availabl
 - **Additional Requirements:** Someone with the "Potion Brewer" perk
 - **Cost:** 300 Crowns
 - **Outcome:** **Infused Plates Upgrade**: Armor reinforcements infused with rustunggheist essence. They provide exceptional protection against ghosts and are effective at repelling other undead.
+- **Tips:** The "Ghost Plates" is a new crafting item that can be obtained by dissecting Rustunggheist Corpses
 
 ### Silver Ingots
 
