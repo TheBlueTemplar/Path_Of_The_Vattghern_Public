@@ -21,6 +21,7 @@ These recipes are available at the **Taxidermist** or via the **Camp Crafting** 
 <img width="70" height="70" alt="pov_vattghern_poison_flask" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/consumables/pov_vattghern_poison_flask.png" />
 
 - **Ingredients:** 3x Poison Gland
+- **Additional Requirements:** A Vatt'ghern with the Spider Mutagen
 - **Cost:** 100 Crowns
 - **Outcome:** **Vatt'ghern Poison Flask**: A concentrated toxin harvested from monsters, used to coat weapons and ammunition. It allows the user to apply debilitating poison to enemies on hit. **Requires a brother with the Spider Mutagen mutation to craft.**
 
@@ -29,6 +30,7 @@ These recipes are available at the **Taxidermist** or via the **Camp Crafting** 
 <img width="70" height="70" alt="pov_potion_necromancy" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/consumables/pov_potion_necromancy.png" />
 
 - **Ingredients:** 3x Large Red Worm
+- **Additional Requirements:** Someone with the "Potion Brewer" perk
 - **Cost:** 100 Crowns
 - **Outcome:** **Necromancy Mutagen**: A vile mutagen extracted from undead essence. It grants the consumer the dark ability to resurrect corpses and increases physical resilience, at the cost of resolve and fire vulnerability. **Requires the Potion Brewer perk.**
 
@@ -37,8 +39,9 @@ These recipes are available at the **Taxidermist** or via the **Camp Crafting** 
 <img width="70" height="70" alt="pov_vattghern_medallion" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/accessory/pov_vattghern_medallion.png" />
 
 - **Ingredients:** 1x Silver Ingot, 1x Iron Ingot
+- **Additional Requirements:** Complete the ambition to get a Vatt'ghern
 - **Cost:** 240 Crowns
-- **Outcome:** **Vatt'ghern Medallion**: A mark of the Vatt'ghern that hums in the presence of monsters. When worn by a mutant, it bolsters resolve and increases damage dealt to mutants, beasts, and the undead, while unnerving nearby foes.
+- **Outcome:** **Vatt'ghern Medallion**: A mark of the Vatt'ghern that hums in the presence of monsters. When worn by a vattghern, it bolsters resolve and increases damage dealt to mutants, beasts, and the undead, while unnerving nearby foes.
 
 ### Shatterstones
 
@@ -46,13 +49,14 @@ These recipes are available at the **Taxidermist** or via the **Camp Crafting** 
 
 - **Ingredients:** 5x Sulfurous Rocks
 - **Cost:** 200 Crowns
-- **Outcome:** **Shatterstones (8x)**: Heavy sling ammunition crafted from ifrit remains that shatters upon impact. These stones are highly effective against armor and leave enemies distracted and vulnerable.
+- **Outcome:** **Shatterstones (8x)**: Heavy sling ammunition crafted from ifrit remains that shatter upon impact. These stones are highly effective against armor and leave enemies distracted and vulnerable.
 
 ### Flesh Powder Bag
 
 <img width="70" height="70" alt="pov_flesh_powder_bag" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/ammo/pov_flesh_powder_bag.png" />
 
 - **Ingredients:** 1x Powder Bag, 3x Grafted Flesh, 1x Rot Essence
+- **Additional Requirements:** Someone with the "Potion Brewer" perk
 - **Cost:** 200 Crowns
 - **Outcome:** **Rotten Flesh Powder Bag**: Grotesque handgonne ammunition that rains death upon enemies, sickening them with a foul stench and breaking their morale. **Requires the Potion Brewer perk.**
 
@@ -61,6 +65,7 @@ These recipes are available at the **Taxidermist** or via the **Camp Crafting** 
 <img width="70" height="70" alt="pov_upgrade_ghost_plates" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/armor_upgrades/pov_inventory_upgrade_ghost_plates.png" />
 
 - **Ingredients:** 1x Iron Ingots, 1x Ghost Plates
+- **Additional Requirements:** Someone with the "Potion Brewer" perk
 - **Cost:** 300 Crowns
 - **Outcome:** **Infused Plates Upgrade**: Armor reinforcements infused with rustunggheist essence. They provide exceptional protection against ghosts and are effective at repelling other undead. **Requires the Potion Brewer perk.**
 
@@ -69,6 +74,7 @@ These recipes are available at the **Taxidermist** or via the **Camp Crafting** 
 <img width="70" height="70" alt="pov_silver_ingots" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/trade/pov_inventory_trade_silver_bars.png" />
 
 - **Ingredients:** 2x Silverware or 2x Silver Bowls
+- **Additional Requirements:** Someone with the "Spare Parts" perk
 - **Cost:** 180 Crowns
 - **Outcome:** **Silver Ingots**: Pure silver cast into ingots for trade or crafting. Highly sought after by traders. **Requires the Tools and Spares perk.**
 
