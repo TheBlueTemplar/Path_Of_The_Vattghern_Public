@@ -62,7 +62,7 @@ These recipes are available at the **Taxidermist** or via the **Camp Crafting** 
 
 ### Infused Plates
 
-<img width="70" height="70" alt="pov_upgrade_ghost_plates" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/armor_upgrades/pov_inventory_upgrade_ghost_plates.png" />
+<img width="70" height="70" alt="pov_icon_upgrade_ghost_plates" src="https://github.com/user-attachments/assets/5a949fa9-6eb5-4d03-b11f-0018012f7bee" />
 
 - **Ingredients:** 1x Iron Ingots, 1x Ghost Plates
 - **Additional Requirements:** Someone with the "Potion Brewer" perk
