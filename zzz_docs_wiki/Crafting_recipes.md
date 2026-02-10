@@ -1,6 +1,6 @@
 # Vatt'ghern Crafting Recipes
 
-A comprehensive guide to the specialized alchemical and forging recipes available to a Vatt'ghern company. These recipes allow you to transform rare monster remains and common materials into powerful mutagens, unique equipment, and advanced ammunition.
+A comprehensive guide to the specialized alchemical and forging recipes available to a Vatt'ghern company. These recipes allow you to transform rare monster remains and common materials into powerful mutagens, unique equipment, and advanced ammunition. Crafting is a core part of PoV, and as such an important mechanic for the player to engage with.
 
 ## Special Crafting & Alchemy
 
