@@ -1,10 +1,13 @@
 # The Autopsy System
 
-The Autopsy system allows players to dissect the corpses of monsters to extract mutagens and rare crafting components. This process is performed at the **Taxidermist** or **crafting tent** using special "*Corpse*" items obtained from battle.
+The Autopsy system allows players to dissect the corpses of monsters to extract mutagens and rare crafting components. This process is performed at the **Taxidermist** or **crafting tent** using special "*Corpse*" items obtained from battle. It is recommended to do this at the crafting tent, as the taxidermist costs can swiftly stack up.
 
 ## Mechanics
 
-Dissecting a corpse requires a brother with specific skills, typically **Field Triage** for biological creatures or **Potion Brewer** for magical or ethereal ones. Each autopsy has a base chance to yield a **Mutagen** and several other monster-specific parts or loot. Higher-tier "Alphas" or "Champions" (tier 2+ corpses) generally offer higher drop rates and the possibility of **Upgrade Mutagens**.
+* Dissecting a corpse requires a brother with specific skills, typically **Field Triage** for biological creatures or **Potion Brewer** for magical or ethereal ones. 
+* Each autopsy has a base chance to yield a **Mutagen** and several other monster-specific parts or loot. 
+* Higher-tier enemies (tier 2+ corpses, like from white direwolves as example) generally offer higher drop rates
+* High-tier corpses also offer the chance for mutation upgrades
 
 ## Autopsy Catalogue
 
@@ -23,7 +26,7 @@ Dissecting a corpse requires a brother with specific skills, typically **Field T
 <img width="70" height="70" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/consumables/pov_autopsy_alp2.png" />
 
 - **Skill Required:** Field Triage
-- **Mutagen Chance:** Demon Alp Mutagen (`15%`), Alp Mutagen (`40%`)
+- **Mutagen Chance:** Alp Mutagen Upgrade (`15%`), Alp Mutagen (`40%`)
 - **Common Drops:** Soul Splinter (`50%`), Demon Alp Skin (`40%`), Demon Third Eye (`40%`), Petrified Scream (`70%`)
 
 ### Basilisks
@@ -59,7 +62,7 @@ Dissecting a corpse requires a brother with specific skills, typically **Field T
 <img width="70" height="70" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/consumables/pov_autopsy_direwolf2.png" />
 
 - **Skill Required:** Field Triage
-- **Mutagen Chance:** White Direwolf Mutagen (`15%`), Beast Mutagen (`40%`)
+- **Mutagen Chance:** Beast Mutagen Upgrade (`15%`), Beast Mutagen (`40%`)
 - **Common Drops:** Sabertooth (`70%`), Adrenaline Gland (`40%`), White Wolf Pelt (`50%`)
 
 #### Hyena
@@ -88,7 +91,7 @@ Dissecting a corpse requires a brother with specific skills, typically **Field T
 - **Mutagen Chance:** Spirit Mutagen (`30%`)
 - **Common Drops:** Banshee Essence (`40%`)
 
-#### Poltergeist
+#### Swertgeist
 
 <img width="70" height="70" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/consumables/pov_autopsy_ghost3.png" />
 
@@ -104,7 +107,7 @@ Dissecting a corpse requires a brother with specific skills, typically **Field T
 - **Mutagen Chance:** Spirit Mutagen (`25%`)
 - **Common Drops:** Ghost Plates (`20%`), Old Crest (`40%`)
 
-#### Demonhound
+#### Hollenhund
 
 <img width="70" height="70" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/consumables/pov_autopsy_demonhound.png" />
 
@@ -127,7 +130,7 @@ Dissecting a corpse requires a brother with specific skills, typically **Field T
 <img width="70" height="70" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/consumables/pov_autopsy_ghoul2.png" />
 
 - **Skill Required:** Field Triage
-- **Mutagen Chance:** Skin Ghoul Mutagen (`15%`), Nachzehrer Mutagen (`28%`)
+- **Mutagen Chance:** Nachzehrer Mutagen Upgrade (`15%`), Nachzehrer Mutagen (`28%`)
 - **Common Drops:** Ghoul Teeth (`60%`), Ghoul Horn (`60%`), Ghoul Brain (`60%`), Skin Ghoul Skin (`40%`), Growth Pearls (`50%`)
 
 ### Constructs & Rot
@@ -148,7 +151,7 @@ Dissecting a corpse requires a brother with specific skills, typically **Field T
 - **Mutagen Chance:** Rot Mutagen (`30%`)
 - **Common Drops:** Rot Essence (`25%`)
 
-### Hexe
+### Hexen
 
 #### Hexe
 
@@ -181,7 +184,7 @@ Dissecting a corpse requires a brother with specific skills, typically **Field T
 <img width="70" height="70" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/consumables/pov_autopsy_lindwurm2.png" />
 
 - **Skill Required:** Field Triage
-- **Mutagen Chance:** Stollwurm Mutagen (`15%`), Lindwurm Mutagen (`40%`)
+- **Mutagen Chance:** Lindwurm Mutagen Upgrade (`15%`), Lindwurm Mutagen (`40%`)
 - **Common Drops:** Lindwurm Blood (`75%`), Lindwurm Scales (`75%`), Lindwurm Bones (`75%`)
 
 ### Unholds
@@ -215,7 +218,7 @@ Dissecting a corpse requires a brother with specific skills, typically **Field T
 <img width="70" height="70" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/consumables/pov_autopsy_unhold4.png" />
 
 - **Skill Required:** Field Triage
-- **Mutagen Chance:** Rock Unhold Mutagen (`15%`), Unhold Mutagen (`50%`)
+- **Mutagen Chance:** Unhold Mutagen Upgrade (`15%`), Unhold Mutagen (`50%`)
 - **Common Drops:** Unhold Heart (`60%`), Rock Unhold Bones (`60%`), Rock Unhold Hide (`60%`), Deformed Valuables (`60%`), Strange Meat (`100%`)
 
 ### Vampires
@@ -251,7 +254,7 @@ Dissecting a corpse requires a brother with specific skills, typically **Field T
 <img width="70" height="70" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/consumables/pov_autopsy_spider2.png" />
 
 - **Skill Required:** Field Triage
-- **Mutagen Chance:** Redback Spider Mutagen (`15%`), Spider Mutagen (`30%`)
+- **Mutagen Chance:** Spider Mutagen Upgrade (`15%`), Spider Mutagen (`30%`)
 - **Common Drops:** Redback Poison Gland (`50%`), Spider Silk (`100%`)
 
 ### Schrats
@@ -327,7 +330,7 @@ Dissecting a corpse requires a brother with specific skills, typically **Field T
 <img width="70" height="70" src="https://raw.githubusercontent.com/TheBlueTemplar/Path_Of_The_Vattghern_Public/refs/heads/main/gfx/ui/items/consumables/pov_autopsy_forsaken.png" />
 
 - **Skill Required:** Potion Brewer
-- **Mutagen Chance:** Random Mutagen (`10%`)
+- **Mutagen Chance:** Random Mutagen (only the "base" ones) (`10%`)
 - **Common Drops:** -
 
 #### Wiederganger (Zombie)
