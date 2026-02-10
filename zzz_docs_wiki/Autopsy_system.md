@@ -1,3 +1,22 @@
+# Corpses
+*Many enemies can now drop a new item - corpses! These items are very practical, for through their dissection, one can get some very good rewards, some of them being exclusive to this method*
+* Enemy beast, undead, humanoids (like orcs and goblins), and in rare cases some humans (like the necromancers) can all drop corpses
+* The drop chance of these varies greatly, from low numbers like 8% to high ones like 50%
+  * These chances are set per enemy, and usually depend on how strong and rare that enemy is. Weaker/Less Rare enemy = lower corpse drop chance
+  * Corpse drop rates are modified according to game difficulty:
+    * Beginner:     +10%
+    * Veteran:      +5%
+    * Expert:       Default
+    * Death March:  -15%
+  * Corpse drop rates are also modified by starting scenario:
+    * PoV "Path of the Vatt'ghern": +15%
+    * PoV "Solo Vattghern:" +20%
+    * "Poachers": +15%
+    * "Beast Slayers:" +10%
+  * Having the mutagen research table further increases the drop chance
+    * The increase is +20%
+  * Finally, Corpse drops unlock after killing the first enemy mutant (chance is 0 before that)     
+
 # The Autopsy System
 
 The Autopsy system allows players to dissect the corpses of monsters to extract mutagens and rare crafting components. This process is performed at the **Taxidermist** or **crafting tent** using special "*Corpse*" items obtained from battle. It is recommended to do this at the crafting tent, as the taxidermist costs can swiftly stack up.
