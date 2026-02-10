@@ -5,7 +5,7 @@
 ### BALANCE
 
 * Iftit mutations tweaked
-   * Vattghern and mutant ifrit mutagens grand more armor
+   * Vattghern and mutant ifrit mutagens grant more armor
    * They also have lower penalties (to compensate for the new armor system penalties)
    * Enemy ifrit mutation has same buffs (they already were higher than player), but also reduced penalties
 
