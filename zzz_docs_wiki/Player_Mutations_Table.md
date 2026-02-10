@@ -1,4 +1,4 @@
-# All Vatt'ghern Mutations Table
+# Player Mutations
 *Some Important Notes:*
 * `base` mutations are the normal ones you get in your playthrough. Only consumable by the `Vatt'ghern` and `Mutant`. Affected By Mutation Limit
    * They are obtainable by: Dissecting Corpses, Getting them as loot drops from enemy mutants, and buying them from Alchemists and Black Markets. Some PoV starting scenarios also start with a random base mutagen 
@@ -9,6 +9,7 @@
 * The `Mutant` background can only consume *some* of the base mutations, and the special mutations. From the base mutations, the ones excluded are: Hexe, Necromancy, Rot
 * Also, the effects of mutations on the mutant usually have slightly weaker benefits, and stronger penalties. Most also dont grant access to their Added Skills in that case.
 * A player can only have ONE active Hexe mutation in the company!
+# All Vatt'ghern Mutations Table
 -----
 | Mutagen Name | Type | Effects (Boosts) | Effects (Drawbacks) | Added Skills (Description) | Mutagen Icon |
 | :--- | :--- | :--- | :--- | :--- | :--- |
