@@ -35,7 +35,7 @@
    * When its raining, ALL entities get 30% flame resistance
    * Some Player mutations (alp, direwolf) grant resistance to rain
    * Wildmen are also immune to rain
-   * Also, heavy cloaks and the crusader cload grant resistance to rain
+   * Also, heavy cloaks and the crusader cloack grant resistance to rain
 * **Falling Damage** 
    * That damage was tweaked, increasing its damage by 150%, making pushing enemies down much more viable, especially at large heights (2 - 3) 
 * **Tweaked PoV's Armor Rework**
