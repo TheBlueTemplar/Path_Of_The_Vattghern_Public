@@ -1,11 +1,61 @@
-# v2.2.3 "Make it Rain" Edition
+# v2.3.0 "Make it Rain" Edition
+
+## Changelog V2.3.0 "Make it Rain" Edition:
+
+### OVERHAUL
+
+* The different cultist backgrounds in the cultist origin got some love, like other backgrounds
+
+### IMPROVEMENTS
+
+* PoV has now its own Wiki! In the github
+* PoV in-game wiki now has an additional entry, highlighting that fact
+
+### BALANCE / TWEAKS
+
+* Forsaken grant less xp when killed
+* Brigand Gunners will spawn *slightly* later
+* Rogue seers will spawn later in game
+* The mercenaries that appear in caravans, will now appear later
+* Slight increase to Alps HP
+* Hyenas get +1 Ap
+* Hollenhunds will deal more damage (+5% before day 75, +10% after)
+* Skeletons and Mummies have 2 - 3% more chance to get the "Potent Reanimation" effect
+   * That effect grants slightly more HP and Dmg resistance
+* Donkeys Melee Defense reduced by 5
+* Heavy gladiator armor updgrade: +1 Weight
+* Kick skill: capped damage bonus from armor raised from 450 armor to 600. Also gets +5% dmg vs armor
+* Rustungheist: -10 Armor on Beginner diff
+* Noble and Rogue seers: slightly less HP scaling on Legendary
+* The "Too many corpses" even has slightly higher chance of happening
+* Bront base damage reduced by 5
+* PoV mutant background has now very slightly less base Resolve and Initiative
+* Enemy Schrat Mutation: -5 Armor
+* Minor Flesh golems have more HP and Attack, but slightly less Defense
+* Greater flesh golems have more threat, less initiative
+* Hyena pack mentality now scales up to 25 entities, instead of 20
+* Serpentine agility grants +4 Mdef and +2Rdef when engaged with only one enemy (So a total bonus of 14/7 now, from 10/5)
+* Hates mutants trait was slightly buffed
+
+### MISC
+
+* Even more preparation done for upcoming Legends versions
+* Alchemists want mutagen encounter can now happen even if you have a very small party
+* Monster hunter trait will appear a bit more often on bros
+
+### FIXES
+
+* Vast array of typos fixed
+* Miller background had a 60% Hp bonus, instead of 6%, lmao
+* Named Feuerbushe had wrong stats (weaker than intended), fixed
+* Fixed Extremophile trait tooltip to display correct info
 
 ## Changelog V2.2.3 "Make it Rain" Edition:
 
 ### BALANCE
 
 * Iftit mutations tweaked
-   * Vattghern and mutant ifrit mutagens grant more armor
+   * Vattghern and mutant ifrit mutagens grand more armor
    * They also have lower penalties (to compensate for the new armor system penalties)
    * Enemy ifrit mutation has same buffs (they already were higher than player), but also reduced penalties
 
@@ -35,7 +85,7 @@
    * When its raining, ALL entities get 30% flame resistance
    * Some Player mutations (alp, direwolf) grant resistance to rain
    * Wildmen are also immune to rain
-   * Also, heavy cloaks and the crusader cloack grant resistance to rain
+   * Also, heavy cloaks and the crusader cload grant resistance to rain
 * **Falling Damage** 
    * That damage was tweaked, increasing its damage by 150%, making pushing enemies down much more viable, especially at large heights (2 - 3) 
 * **Tweaked PoV's Armor Rework**
