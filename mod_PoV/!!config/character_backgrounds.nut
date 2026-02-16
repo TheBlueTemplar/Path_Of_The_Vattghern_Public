@@ -12,7 +12,9 @@
 // These backgrounds can appear in random start scenarios (solo, trio, company)
 ::Const.CharacterBackgroundsRandom.extend([
 	"pov_vattghern_background",
-	"pov_mutant_background"
+	"pov_mutant_background",
+	"pov_forsaken_background",
+	"pov_caravan_guard_background"
 ]);
 
 // I dont NEED to do this, but oh well why not

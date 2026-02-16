@@ -17,6 +17,11 @@ this.pov_unstable_mutant_trait <- this.inherit("scripts/skills/traits/character_
 		local mutationCount = this.getMutations();
 		local mutationLimit = 2;
 
+		if (actor.getFlags().has("playerMutantPlus"))
+		{
+			mutationLimit = 3;
+		}
+
 		// loop over all mutations defined in ::TLW.PlayerMutation
 	    foreach (key, mut in ::TLW.PlayerMutation)
 	    {
@@ -100,33 +105,39 @@ this.pov_unstable_mutant_trait <- this.inherit("scripts/skills/traits/character_
 			});
 		}
 
-		result.push({
-			id = 19,
-			type = "text",
-			icon = "ui/icons/asset_food.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]+33%[/color] Food Consumption"
-		});
+		if (::World.Assets.getOrigin() != null)
+		{
+			if (this.World.Assets.getOrigin().getID() != "scenario.pov_mutants")
+			{
+				result.push({
+					id = 19,
+					type = "text",
+					icon = "ui/icons/asset_food.png",
+					text = "[color=" + this.Const.UI.Color.NegativeValue + "]+33%[/color] Food Consumption"
+				});
 
-		result.push({
-			id = 11,
-			type = "text",
-			icon = "ui/icons/days_wounded.png",
-			text = "This character\'s lost health recovers [color=" + this.Const.UI.Color.NegativeValue + "]30%[/color] slower."
-		});
+				result.push({
+					id = 11,
+					type = "text",
+					icon = "ui/icons/days_wounded.png",
+					text = "This character\'s lost health recovers [color=" + this.Const.UI.Color.NegativeValue + "]30%[/color] slower."
+				});
 
-		result.push({
-			id = 11,
-			type = "text",
-			icon = "ui/icons/days_wounded.png",
-			text = "Injury threshold reduced by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]."
-		});
+				result.push({
+					id = 11,
+					type = "text",
+					icon = "ui/icons/days_wounded.png",
+					text = "Injury threshold reduced by [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color]."
+				});
 
-		result.push({
-			id = 10,
-			type = "text",
-			icon = "ui/icons/mood_02.png",
-			text = "Periodically suffers [color=" + this.Const.UI.Color.NegativeValue + "]reduced mood[/color] due to the unstable mutations."
-		});
+				result.push({
+					id = 10,
+					type = "text",
+					icon = "ui/icons/mood_02.png",
+					text = "Periodically suffers [color=" + this.Const.UI.Color.NegativeValue + "]reduced mood[/color] due to the unstable mutations."
+				});
+			}
+		}		
 
 		return result;
 
@@ -134,9 +145,15 @@ this.pov_unstable_mutant_trait <- this.inherit("scripts/skills/traits/character_
 
 	function onUpdate( _properties )
 	{
-		_properties.DailyFood *= 1.33;
-		_properties.HitpointsRecoveryRateMult *= 0.7;
-		_properties.ThresholdToReceiveInjuryMult *= 0.9;
+		if (::World.Assets.getOrigin() != null)
+		{
+			if (this.World.Assets.getOrigin().getID() != "scenario.pov_mutants")
+			{
+				_properties.DailyFood *= 1.33;
+				_properties.HitpointsRecoveryRateMult *= 0.7;
+				_properties.ThresholdToReceiveInjuryMult *= 0.9;
+			}
+		}		
 
 		if (!this.getContainer().getActor().isPlacedOnMap())
 		{
@@ -153,15 +170,21 @@ this.pov_unstable_mutant_trait <- this.inherit("scripts/skills/traits/character_
 	function onNewDay()
 	{
 		local actor = this.getContainer().getActor();
-		// 20% chance overall of mood drop
-		if (this.Math.rand(1,100) <= 18)
+		// 20% chance overall of mood drop, if not mutant scenario
+		if (::World.Assets.getOrigin() != null)
 		{
-			actor.worsenMood(0.5, "Feeling discomfort due to mutations");
-		}
-		else if (this.Math.rand(1,100) <= 3)
-		{
-			actor.worsenMood(1, "Hurting due to mutations");
-		}
+			if (this.World.Assets.getOrigin().getID() != "scenario.pov_mutants")
+			{
+				if (this.Math.rand(1,100) <= 18)
+				{
+					actor.worsenMood(0.5, "Feeling discomfort due to mutations");
+				}
+				else if (this.Math.rand(1,100) <= 3)
+				{
+					actor.worsenMood(1, "Hurting due to mutations");
+				}
+			}
+		}		
 	}
 
 	function getMutations()

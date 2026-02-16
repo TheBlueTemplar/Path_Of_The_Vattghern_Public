@@ -106,7 +106,7 @@ this.pov_serpentine_agility_effect <- this.inherit("scripts/skills/skill", {
 		}
 		if (nearbyEnemies == 1)
 		{
-			return 10;
+			return 14;
 		}
 		else
 		{

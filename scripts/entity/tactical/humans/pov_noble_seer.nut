@@ -160,7 +160,7 @@ this.pov_noble_seer <- this.inherit("scripts/entity/tactical/human", {
 			b.RangedDefense  += 1.00 * scale;   // ~+7
 			b.Bravery        += 2.10 * scale;   // ~+15
 			b.Initiative	 += 1.40 * scale;	// ~+10
-			b.Hitpoints      += 1.40 * scale;   // ~+10
+			b.Hitpoints      += 1.00 * scale;   // ~+7
 		}
 
 		// Beginner Modifiers

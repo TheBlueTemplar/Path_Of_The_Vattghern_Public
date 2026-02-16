@@ -70,11 +70,11 @@ this.pov_flesh_golem_buff_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		// Buffs
-		_properties.HitpointsMult *= 1.20;
-		_properties.MeleeSkill += 6;
+		_properties.HitpointsMult *= 1.35;
+		_properties.MeleeSkill += 8;
 		_properties.Threat += 3;
 		// Debuffs
-		_properties.MeleeDefense -= 4;
+		_properties.MeleeDefense -= 5;
 		_properties.RangedDefense -= 8;
 		_properties.Initiative -= 10;
 		// Takes more fire dmg

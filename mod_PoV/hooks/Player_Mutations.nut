@@ -60,7 +60,7 @@
 		if(_mutagen.Limit == true)
 		{
 			// Checks For Mutation Limit 
-			// Vattghern = 1 + 1 per 7 Lvl, Mutant = 2
+			// Vattghern = 1 + 1 per 7 Lvl, Mutant = 2, Forsaken = 3
 			local mutationCount = _actor.getFlags().getAsInt("pov_ActiveMutations");
 			local mutationLimit;
 			if (_actor.getSkills().hasSkill("trait.pov_witcher") || _mutagen.Name == "Vattghern")
@@ -69,7 +69,14 @@
 			}
 			else if(_actor.getSkills().hasSkill("trait.pov_unstable_mutant"))
 			{
-				mutationLimit = 2;				
+				if (actor.getFlags().has("playerMutantPlus"))
+				{
+					mutationLimit = 3;
+				}else
+				{
+					mutationLimit = 2;	
+				}
+							
 			}
 
 			// limit + 1 if has the stabilized mutations perk

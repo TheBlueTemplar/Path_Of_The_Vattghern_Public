@@ -242,6 +242,15 @@ this.pov_sandgolem_in_hole_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		// No corpses in that scenario
+		if (::World.Assets.getOrigin() != null)
+		{
+			if (this.World.Assets.getOrigin().getID() == "scenario.pov_mutants")
+			{
+				return
+			}
+		}
+
 		local brothers = this.World.getPlayerRoster().getAll();
 		local candidates_beastslayer = [];
 

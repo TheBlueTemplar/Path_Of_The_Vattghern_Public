@@ -72,11 +72,11 @@ this.pov_greater_flesh_golem_buff_effect <- this.inherit("scripts/skills/skill",
 		// Buffs
 		_properties.HitpointsMult *= 1.10;
 		_properties.MeleeSkill += 4;
-		_properties.Threat += 3;
+		_properties.Threat += 6;
 		// Debuffs
 		_properties.MeleeDefense -= 6;
 		_properties.RangedDefense -= 12;
-		_properties.Initiative -= 10;
+		_properties.Initiative -= 15;
 		// Takes more fire dmg
 	}
 
@@ -87,7 +87,7 @@ this.pov_greater_flesh_golem_buff_effect <- this.inherit("scripts/skills/skill",
 		// Fire Damage Taken Debuff
 		if (_hitInfo.DamageType == this.Const.Damage.DamageType.Burning)
 		{
-			_properties.DamageReceivedRegularMult *= 1.80;
+			_properties.DamageReceivedRegularMult *= 1.30;
 		}
 	}
 

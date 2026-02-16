@@ -33,14 +33,14 @@
 					damageMax += modifier;
 				}
 
-				// Hardcap on 450 Armor.
-				if (damageMin > 50) {damageMin = 50;}
-				if (damageMax > 55) {damageMax = 55;}
+				// Hardcap on 600 Armor.
+				if (damageMin > 65) {damageMin = 65;}
+				if (damageMax > 70) {damageMax = 70;}
 
 				_properties.DamageRegularMin = this.Math.floor(damageMin);
 				_properties.DamageRegularMax = this.Math.floor(damageMax);
 				//_properties.HitChance[this.Const.BodyPart.Head] += 15.0;
-				_properties.DamageArmorMult = 0.75;
+				_properties.DamageArmorMult = 0.80;
 			}
 		}
 	}

@@ -38,7 +38,7 @@
 		this.m.Skills.update();
 
 		//Stats Changes
-		b.MovementAPCostAdditional += 6; // very limited movement
+		b.MovementAPCostAdditional += 5; // very limited movement
 		b.IsImmuneToBleeding = false;
 		b.IsImmuneToStun = false;
 		b.IsImmuneToRoot = false;
@@ -51,7 +51,7 @@
 			b.Hitpoints += 80;
 			b.MeleeSkill += 75;
 			b.MeleeDamageMult *= 1.10;
-			b.MeleeDefense += 35;
+			b.MeleeDefense += 30;
 			b.Initiative += 40;
 			b.ActionPoints += 9;
 		} else

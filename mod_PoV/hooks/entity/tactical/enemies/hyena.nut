@@ -28,6 +28,9 @@
 		// Chaos Mutation
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
+		// Stats Changes
+		local b = this.m.BaseProperties;
+		b.ActionPoints += 1;
 
 	}
 

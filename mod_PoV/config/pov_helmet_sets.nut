@@ -54,6 +54,33 @@
 			}
 		]
 	},
+	{
+		ID = "caravan_guard_helmet_01", //120 -5 -2 , 70 (armor,fatigue,vision,???) (115 - 130)
+		Script = "",
+		Sets = [
+			{
+				Hoods = [ // avg of 40, -1, 0
+					[1, "hood/legend_helmet_leather_hood"], //45, -2, 0,
+					[1, "hood/legend_helmet_padded_cap"] //40, -1, 0, 200
+				],
+				Helms = [//avg of 55, -3 , -1
+					[1, "helm/legend_helmet_norman_helm"],// 50, -3 , -1
+					[1, "helm/legend_helmet_horsetail"] // 60, -3, -1
+				],
+				Tops = [ // avg of 20 , -1
+					[1, "top/legend_helmet_chain_attachment"], //20, -1, 0
+					[1, "top/legend_helmet_nose_plate"] //20, -1, 0
+				],
+				Vanity = [ // avg of 10 , 0 , 0 (5% for fancy hat lol)
+					[2, "vanity/legend_helmet_hood_cloth_round"], //10
+					[2, "vanity/legend_helmet_hood_cloth_wide"], //10
+					[2, "vanity/legend_helmet_hood_cloth_square"], //10
+					[2, "vanity/legend_helmet_hood_cloth_long"], //10
+					[1, "vanity/legend_helmet_feathered_hat"] // 10
+				]
+			}
+		]
+	},
 	// ENEMIES - MUTANTS
 	{
 		ID = "forsaken_helmet",

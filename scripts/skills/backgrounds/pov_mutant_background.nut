@@ -136,6 +136,18 @@ this.pov_mutant_background <- this.inherit("scripts/skills/backgrounds/character
 
 	function onChangeAttributes()
 	{
+		/* Base values are:
+		Hp 		50 - 60
+		Res 	30 - 40
+		Fat 	90 - 100
+		Msk 	47 - 57
+		Rsk 	32 - 42
+		Mdf 	0  - 5
+		Rdf 	0  - 5
+		Ini 	100 - 110 
+
+		Values below are additions/substractions
+		*/
 		local c = {
 			Hitpoints = [
 				10,
@@ -143,7 +155,7 @@ this.pov_mutant_background <- this.inherit("scripts/skills/backgrounds/character
 			],
 			Bravery = [
 				-7,
-				-3
+				-5
 			],
 			Stamina = [
 				4,
@@ -151,7 +163,7 @@ this.pov_mutant_background <- this.inherit("scripts/skills/backgrounds/character
 			],
 			MeleeSkill = [
 				5,
-				8
+				7
 			],
 			RangedSkill = [
 				6,
@@ -167,7 +179,7 @@ this.pov_mutant_background <- this.inherit("scripts/skills/backgrounds/character
 			],
 			Initiative = [
 				4,
-				10
+				8
 			]
 		};
 		return c;

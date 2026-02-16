@@ -1,5 +1,7 @@
 ::TLW.HooksMod.hook("scripts/entity/tactical/enemies/legend_bandit_warlord", function ( q ) {
-
+// ABYSSS
+// When 19.3 rolls, please comment out this entire file.
+// Do not just delete it plz, as that change might be reverted
 	q.onInit = @(__original) function()
 	{
 		__original()

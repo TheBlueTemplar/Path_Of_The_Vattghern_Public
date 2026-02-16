@@ -150,7 +150,7 @@ this.pov_many_corpses_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (this.Math.rand(1, 100) <= 40)
+					if (this.Math.rand(1, 100) <= 70)
 					{
 						bro.improveMood(0.5, "Happy that the stench is gone");
 						this.List.push({
@@ -337,7 +337,7 @@ this.pov_many_corpses_event <- this.inherit("scripts/events/event", {
 		other_candidates.remove(other_candidates.find(this.m.Rando1));
 		this.m.Rando2 = other_candidates[this.Math.rand(0, other_candidates.len() - 1)];
 
-		this.m.Score = 2 + candidates_items.len();
+		this.m.Score = 6 + candidates_items.len();
 		//this.m.Score = 99999;
 	}
 

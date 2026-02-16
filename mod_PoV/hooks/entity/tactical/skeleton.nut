@@ -29,9 +29,9 @@
 			switch (this.World.Assets.getCombatDifficulty())
 			{
 				case this.Const.Difficulty.Easy: chance = 0; break
-				case this.Const.Difficulty.Normal: chance = 7; break
-				case this.Const.Difficulty.Hard: chance = 10; break
-				case this.Const.Difficulty.Legendary: chance = 15; break
+				case this.Const.Difficulty.Normal: chance = 9; break
+				case this.Const.Difficulty.Hard: chance = 12; break
+				case this.Const.Difficulty.Legendary: chance = 18; break
 			}
 			if (this.Math.rand(1.0, 100.0) <= chance)
 			{

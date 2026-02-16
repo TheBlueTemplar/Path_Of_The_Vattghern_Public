@@ -12,7 +12,7 @@ if (!("Spawn" in ::Const.World))
 this.Const.World.Spawn.BanditArmy.Troops.extend([
     {
         Weight = 7,
-        MinR = 150,
+        MinR = 175,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovBanditGunner,
@@ -22,7 +22,7 @@ this.Const.World.Spawn.BanditArmy.Troops.extend([
     },
     {
         Weight = 3,
-        MinR = 300,
+        MinR = 375,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -36,7 +36,7 @@ this.Const.World.Spawn.BanditArmy.Troops.extend([
 this.Const.World.Spawn.BanditBoss.Troops.extend([
     {
         Weight = 5,
-        MinR = 150,
+        MinR = 175,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovBanditGunner,
@@ -46,7 +46,7 @@ this.Const.World.Spawn.BanditBoss.Troops.extend([
     },
     {
         Weight = 3,
-        MinR = 275,
+        MinR = 350,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -60,7 +60,7 @@ this.Const.World.Spawn.BanditBoss.Troops.extend([
 this.Const.World.Spawn.BanditDefenders.Troops.extend([
     {
         Weight = 4,
-        MinR = 125,
+        MinR = 175,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovBanditGunner,
@@ -71,7 +71,7 @@ this.Const.World.Spawn.BanditDefenders.Troops.extend([
     ,
     {
         Weight = 2,
-        MinR = 280,
+        MinR = 350,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -85,7 +85,7 @@ this.Const.World.Spawn.BanditDefenders.Troops.extend([
 this.Const.World.Spawn.BanditRaiders.Troops.extend([
     {
         Weight = 4, // def 4
-        MinR = 175,
+        MinR = 200,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovBanditGunner,
@@ -95,7 +95,7 @@ this.Const.World.Spawn.BanditRaiders.Troops.extend([
     },
     {
         Weight = 2, // def 2
-        MinR = 300,
+        MinR = 370,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -109,7 +109,7 @@ this.Const.World.Spawn.BanditRaiders.Troops.extend([
 this.Const.World.Spawn.BanditScouts.Troops.extend([
     {
         Weight = 4, // def 4
-        MinR = 175,
+        MinR = 200,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovBanditGunner,
@@ -119,7 +119,7 @@ this.Const.World.Spawn.BanditScouts.Troops.extend([
     },
     {
         Weight = 1, // def 1
-        MinR = 300,
+        MinR = 370,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -133,7 +133,7 @@ this.Const.World.Spawn.BanditScouts.Troops.extend([
 this.Const.World.Spawn.BanditRoamers.Troops.extend([
     {
         Weight = 3, // def 4
-        MinR = 175,
+        MinR = 200,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovBanditGunner,

@@ -29,7 +29,7 @@
 		local b = this.m.BaseProperties;
 		if (this.World.getTime().Days >= 75)
 		{
-			b.Hitpoints *= 1.15;
+			b.Hitpoints *= 1.20;
 			b.MeleeDefenseMult *= 1.10;
 		} else
 		{

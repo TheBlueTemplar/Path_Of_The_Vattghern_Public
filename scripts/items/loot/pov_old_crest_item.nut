@@ -5,7 +5,7 @@ this.pov_old_crest_item <- this.inherit("scripts/items/item", {
 		this.item.create();
 		this.m.ID = "misc.pov_old_crest";
 		this.m.Name = "Old Heirloom Crest";
-		this.m.Description = "You have no idea how this has survived prior combat, and maybe centuries of age, but it is a finely decorated heirloom, with the crest of a lineage you cannot even begin to understand and recognise. \n\n Even if worn out, this could be sold to collectors, and has some innate value if melted down.";
+		this.m.Description = "You have no idea how this has survived prior combat, and maybe centuries of age, but it is a finely decorated heirloom, with the crest of a lineage you cannot even begin to understand and recognize. \n\n Even if worn out, this could be sold to collectors, and has some innate value if melted down.";
 		this.m.Icon = "loot/pov_inventory_loot_old_crest.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Loot;

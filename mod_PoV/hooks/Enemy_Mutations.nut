@@ -36,6 +36,10 @@
 			{
 				chance *= 1.10;
 			}
+			else if (this.World.Assets.getOrigin().getID() == "scenario.pov_mutants")
+			{
+				chance *= 2.50;
+			}
 		}
 		
 		// Mutagen Research Retinue increases mutagen drop rates
@@ -196,6 +200,15 @@
 		if (hasResearch)
 		{
 			mutationChance *= 1.15;
+		}
+
+		// Scenario Based Modifiers
+		if (::World.Assets.getOrigin() != null)
+		{
+			if (this.World.Assets.getOrigin().getID() == "scenario.pov_mutants")
+			{
+				mutationChance *= 1.20;
+			}
 		}
 
 		// Second Mutation Chances Calculation

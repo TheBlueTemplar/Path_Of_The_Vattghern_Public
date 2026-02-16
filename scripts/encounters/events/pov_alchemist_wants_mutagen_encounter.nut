@@ -194,7 +194,7 @@ this.pov_alchemist_wants_mutagen_encounter <- this.inherit("scripts/encounters/e
         this.m.Reward = (this.m.Item.getValue() * 8) + this.Math.rand(-150,150);
         local brothers = this.World.getPlayerRoster().getAll();
 
-        if (brothers.len() < 3)
+        if (brothers.len() < 1)
         {
             return;
         }

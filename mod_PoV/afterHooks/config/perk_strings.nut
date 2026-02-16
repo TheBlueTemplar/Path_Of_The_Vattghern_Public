@@ -17,7 +17,7 @@ if (!::TLW.hasFOTN)
 	::Const.Strings.PerkDescription.LegendPrayerOfLife = "A prayer of hope and love restores wellbeing to your allies and tears at the undead.\n\n[color="+ ::Const.UI.Color.povPerkDarkOrange + "][u]Active:[/u][/color]\n• Unlocks the [color="+ ::Const.UI.Color.povPerkPurple + "]Prayer of Hope[/color] skill.\n\n• When activated adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of your current Resolve as Hitpoints spread out over several turns. Can not heal more than 10 Hitpoints per turn. \n\n• Inflicts a disintegrating ailment on each adjacent undead dealing damage equel to [color=" + this.Const.UI.Color.DamageValue + "]15%[/color] of your current resolve per turn, for two turns.\n\n• Does not work on cultists.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]30[/color] Fatigue.";
 	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendPrayerOfLife].Tooltip = ::Const.Strings.PerkDescription.LegendPrayerOfLife;
 
-	::Const.Strings.PerkDescription.LegendPugilist = "Hit\'em where it hurts!\n\n[color="+ ::Const.UI.Color.povPerkDarkOrange + "][u]Passive:[/u][/color]\n• Increase [color="+ ::Const.UI.Color.povPerkPurple + "]Hand to Hand[/color] damage by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]. \n\n• [color="+ ::Const.UI.Color.povPerkPurple + "]Kick[/color] can now be used without a free hand and will do [color=" + this.Const.UI.Color.PositiveValue + "]5-10, + 10% of current body armor[/color] Damage, with 75% effectiveness against armor.";
+	::Const.Strings.PerkDescription.LegendPugilist = "Hit\'em where it hurts!\n\n[color="+ ::Const.UI.Color.povPerkDarkOrange + "][u]Passive:[/u][/color]\n• Increase [color="+ ::Const.UI.Color.povPerkPurple + "]Hand to Hand[/color] damage by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]. \n\n• [color="+ ::Const.UI.Color.povPerkPurple + "]Kick[/color] can now be used without a free hand and will do [color=" + this.Const.UI.Color.PositiveValue + "]5-10, + 10% of current body armor[/color] Damage, with 75% effectiveness against armor. Damage capped at 600 armor.";
 	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendPugilist].Tooltip = ::Const.Strings.PerkDescription.LegendPugilist;
 
 	::Const.Strings.PerkDescription.ShieldBash = "'Knock them back!'\n\n[color="+ ::Const.UI.Color.povPerkDarkOrange + "][u]Passive:[/u][/color]\n• The [color="+ ::Const.UI.Color.povPerkPurple + "]Knock Back[/color] skill now inflicts [color=" + this.Const.UI.Color.PositiveValue + "]10-25[/color] Damage (90% effective against armor) and [color=" + this.Const.UI.Color.DamageValue + "]10[/color] Fatigue Damage.\n\n• [color="+ ::Const.UI.Color.povPerkPurple + "]Buckler Bash[/color] will do [color=" + this.Const.UI.Color.PositiveValue + "]10-15[/color] damage (115% effective against armor).\n\n• Both skill\'s damage will also scale by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] of your shield\'s maximum condition with a maximum bonus of 15.\n\n• Both skills will also cost [color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] less Fatigue and [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] less Action Point to use.";
@@ -186,16 +186,16 @@ if (!::TLW.hasSSU && !::TLW.hasFOTN)
 		"Caravan",
 		"Southerner",
 		"Nomad",
-		"Beasts",
+		"Beasts", // this is where new shit starts
 		"Occult",
 		"Greenskin",
 		"Undead",
 		"Civilization",
-		"Outlaw"
+		"Outlaw",
+		"Swordmaster"
 	];
 
 	// preparation for new legends versions, list above merged into this one
-	// Abyss Look Here
 	// LIST ALREADY INCLUDED ABOVE, KEPT THIS FOR REFERENCE!
 	local enemiesNew = [
 		"Beasts",
@@ -203,7 +203,8 @@ if (!::TLW.hasSSU && !::TLW.hasFOTN)
 		"Greenskin",
 		"Undead",
 		"Civilization",
-		"Outlaw"
+		"Outlaw",
+		"Swordmaster" //old, kept
 	];
 
 	// The bonus description to append
@@ -215,10 +216,11 @@ if (!::TLW.hasSSU && !::TLW.hasFOTN)
 		local key = "LegendFavouredEnemy" + enemy;
 
 		// Schizo fallback (might actually turn out to be useful :D)
+		// It WAS useful after all...
 		if (!(key in ::Const.Strings.PerkDescription))
 		{
 			// if this floods peoples logs comment it out lel
-		    ::logInfo("[PoV] Tried to edit the following perk text and failed (not a fatal error): " + key);
+		    //::logInfo("[PoV] Tried to edit the following perk text and failed (not a fatal error): " + key);
 		    continue;
 		}
 

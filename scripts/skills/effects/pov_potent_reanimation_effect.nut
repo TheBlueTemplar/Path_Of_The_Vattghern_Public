@@ -36,7 +36,7 @@ this.pov_potent_reanimation_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] hitpoint bonus."
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+18%[/color] hitpoint bonus."
 			},
 			{
 				id = 11,
@@ -57,18 +57,18 @@ this.pov_potent_reanimation_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		// Buffs
-		_properties.HitpointsMult *= 1.15;
+		_properties.HitpointsMult *= 1.18;
 		// Debuffs
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		_properties.DamageReceivedRegularMult *= 0.90;
+		_properties.DamageReceivedRegularMult *= 0.88;
 
 		// Fire Damage Taken Debuff
 		if (_hitInfo.DamageType == this.Const.Damage.DamageType.Burning)
 		{
-			_properties.DamageReceivedRegularMult *= 1.5;
+			_properties.DamageReceivedRegularMult *= 1.3;
 		}
 	}
 

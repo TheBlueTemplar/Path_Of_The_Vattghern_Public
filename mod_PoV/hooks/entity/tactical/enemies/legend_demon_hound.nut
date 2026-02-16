@@ -25,12 +25,14 @@
 			b.Hitpoints *= 1.50;
 			b.MeleeSkillMult *= 1.40;
 			b.MeleeDefenseMult *= 1.35;
+			b.MeleeDamageMult *= 1.10;
 			b.InitiativeMult *= 1.15;
 		} else
 		{
 			b.Hitpoints *= 1.35;
 			b.MeleeSkillMult *= 1.25;
 			b.MeleeDefenseMult *= 1.20;
+			b.MeleeDamageMult *= 1.05;
 			b.InitiativeMult *= 1.075;
 		}
 

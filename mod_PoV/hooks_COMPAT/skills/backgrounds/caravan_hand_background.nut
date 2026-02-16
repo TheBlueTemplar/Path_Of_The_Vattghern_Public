@@ -28,7 +28,7 @@
 		local armorFatPen = actor.getItems().getStaminaModifier(::Const.ItemSlot.Body);
 		local helmetFatPen = actor.getItems().getStaminaModifier(::Const.ItemSlot.Head);
 		local totalPen = armorFatPen + helmetFatPen;
-		local penalty = totalPen * 0.05;
+		local penalty = totalPen * 0.07;
 		return -1 * penalty; // well its a bonus here DUH
 	}
 

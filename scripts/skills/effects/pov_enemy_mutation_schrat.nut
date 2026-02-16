@@ -1,8 +1,8 @@
 this.pov_enemy_mutation_schrat <- this.inherit("scripts/skills/skill", {
 	m = {
-		HeadArmorBoost = 45,
+		HeadArmorBoost = 40,
 		HeadDamageTaken = 0,
-		BodyArmorBoost = 45,
+		BodyArmorBoost = 40,
 		BodyDamageTaken = 0,
 		Spawned = 0
 	},

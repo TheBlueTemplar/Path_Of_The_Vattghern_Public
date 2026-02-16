@@ -29,13 +29,14 @@ this.pov_named_feuerbuchse <- this.inherit("scripts/items/weapons/named/named_we
 		this.m.RangeMaxBonus = 1;
 		// Comparison to (named) handgonne:
 		// -1stam, -5cond, - 7-10dmg, +0.4a.dmg, -0.05a.pen.
-		this.m.StaminaModifier = -15;
+		this.m.StaminaModifier = -17;
 		this.m.Condition = 45.0;
 		this.m.ConditionMax = 45.0;
-		this.m.RegularDamage = 28;
+		this.m.RegularDamage = 30;
 		this.m.RegularDamageMax = 65;
 		this.m.ArmorDamageMult = 1.4;
-		this.m.DirectDamageMult = 0.2;
+		this.m.DirectDamageMult = 0.25; // has to be done like that...
+		this.m.DirectDamageAdd = -0.05; // see above
 		this.m.IsEnforcingRangeLimit = true;
 		this.randomizeValues();
 	}

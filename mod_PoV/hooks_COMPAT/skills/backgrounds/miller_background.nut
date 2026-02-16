@@ -17,6 +17,6 @@
 	q.onUpdate = @(__original) function (_properties)
 	{
 		__original(_properties);
-		_properties.HitpointsMult *= 1.6;
+		_properties.HitpointsMult *= 1.06;
 	}
 })

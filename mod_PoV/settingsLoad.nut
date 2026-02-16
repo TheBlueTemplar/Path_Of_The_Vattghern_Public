@@ -188,11 +188,21 @@ page.addDivider("divider");
 page.addSpacer("Spacer", "72rem", "1rem");
 page.addTitle("Main", "Main");
 
+// Spacer to put this button at the middle
+page.addSpacer("ButtonSpacer", "24rem", "4rem");
+local githubWiki = page.addBooleanSetting(
+        "githubWiki",
+        true,
+        "Github Wiki",
+        "[color=" + this.Const.UI.Color.povTooltipBlue + "] There is a far larger and more complete Wiki in PoV\'s Github Page! [/color].\n\n The wiki you see here ingame is also up to date, but there is much more information in the github, in case you are looking for specific enemy and weapon values, in depth explanation of PoV\'s systems, reworks and such. \n\n [color=" + this.Const.UI.Color.povPainEffect + "] Currently, this Wiki is up-to-date with PoV Version: 2.2.4 [/color]"
+    );
+page.addSpacer("Spacer1", "72rem", "1rem");
+
 local enemyMutationInfo = page.addBooleanSetting(
         "PovVision",
         true,
         "PoV\'s Wiki",
-        "[color=" + this.Const.UI.Color.povTooltipBlue + "]\"Path of the Vatt\'ghern\" (PoV)[/color], is a witcher-inspired legends submod, adding in a variety of new mechanics both related and unrelated to the witcher theme and universe. PoV also tweaks or reworks many vanilla/legends systems, like the injury system.\n\n Generally, the mod is designed to be intuitive, and most of its mechanics are explained ingame via various means. (item descriptions, events etc.) \n\n [color=" + this.Const.UI.Color.povTooltipBlue + "]This page here is meant to be a TLDR wiki of PoV, which you can access during gameplay to keep track of PoV\'s core mechanics. [/color]\n\n For more information, ask around in the PoV discord server."
+        "[color=" + this.Const.UI.Color.povTooltipBlue + "]\"Path of the Vatt\'ghern\" (PoV)[/color], is a witcher-inspired legends submod, adding in a variety of new mechanics both related and unrelated to the witcher theme and universe. PoV also tweaks or reworks many vanilla/legends systems, like the injury system.\n\n Generally, the mod is designed to be intuitive, and most of its mechanics are explained ingame via various means. (item descriptions, events etc.) \n\n [color=" + this.Const.UI.Color.povTooltipBlue + "]This page here is meant to be a TLDR wiki of PoV, which you can access during gameplay to keep track of PoV\'s core mechanics. [/color]\n\n For more information, ask around in the PoV discord server, or check the Github Wiki."
     );
 
 local DiffBasedMechanics = page.addBooleanSetting(

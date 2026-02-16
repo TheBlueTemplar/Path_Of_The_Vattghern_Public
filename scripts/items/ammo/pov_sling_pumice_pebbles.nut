@@ -4,7 +4,7 @@ this.pov_sling_pumice_pebbles <- this.inherit("scripts/items/ammo/ammo", {
 	{
 		this.ammo.create();
 		this.m.ID = "ammo.pov_sling_pumice_pebbles";
-		this.m.Name = "pumice Pebbles";
+		this.m.Name = "Pumice Pebbles";
 		this.m.Description = "A pouch of pumice pebbles, meant to be used as sling ammunition. The lightest ammunition known for slings. It is not normally used to do extensive harm, being light and weak. Instead, it is meant to be shot in volume instead, easily so too, and the unique porous formation of this rock makes a powerful whistling sound, which can intimidate those weak of heart.\n\n When used, they consume and are refilled by ammunition normally, but if they run out, the slinger can still use normal stones";
 		this.m.Icon = "ammo/pov_pouch_pumice.png";
 		this.m.IconEmpty = "ammo/pov_pouch_empty.png";

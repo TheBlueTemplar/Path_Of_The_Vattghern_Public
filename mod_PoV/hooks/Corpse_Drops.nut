@@ -33,6 +33,10 @@
 			else if (this.World.Assets.getOrigin().getID() == "scenario.beast_hunters" || this.World.Assets.getOrigin().getID() == "scenario.anatomists" || this.World.Assets.getOrigin().getID() == "scenario.rangers")
 			{
 				chance *= 1.10;
+			} 
+			else if (this.World.Assets.getOrigin().getID() == "scenario.pov_mutants")
+			{
+				chance *= 0.001;
 			}
 		}		
 

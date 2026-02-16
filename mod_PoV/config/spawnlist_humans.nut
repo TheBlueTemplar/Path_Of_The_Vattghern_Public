@@ -50,7 +50,7 @@ this.Const.World.Spawn.Caravan.MaxR = 375; // + 125
 this.Const.World.Spawn.Caravan.Troops.extend([
     {
         Weight = 3,
-        MinR = 350,
+        MinR = 400,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.Mercenary,
@@ -60,7 +60,7 @@ this.Const.World.Spawn.Caravan.Troops.extend([
     },
     {
         Weight = 3,
-        MinR = 350,
+        MinR = 400,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.MercenaryRanged,

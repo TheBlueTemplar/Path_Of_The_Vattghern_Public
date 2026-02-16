@@ -40,7 +40,7 @@ this.pov_hate_mutants_trait <- this.inherit("scripts/skills/traits/character_tra
 				id = 10,
 				type = "text",
 				icon = "ui/icons/pov_melee_ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] Melee and Ranged Skill when in battle with against mutants."
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Melee and Ranged Skill when in battle with against mutants."
 			},
 			{
 				id = 10,
@@ -74,9 +74,9 @@ this.pov_hate_mutants_trait <- this.inherit("scripts/skills/traits/character_tra
 
 		if (fightingMutants)
 		{
-			_properties.Bravery += 10;
-			_properties.MeleeSkill += 4;
-			_properties.RangedSkill += 4;
+			_properties.Bravery += 8;
+			_properties.MeleeSkill += 5;
+			_properties.RangedSkill += 5;
 			// Make this a status effect so it will be visible for the battle
 			this.m.Type = ::Const.SkillType.StatusEffect;
 		} else {

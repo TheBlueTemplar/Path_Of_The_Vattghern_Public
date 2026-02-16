@@ -64,6 +64,35 @@
 			}
 		]
 	},
+	{
+		ID = "caravan_guard_armor_01", //avg 165, max 205, min 140
+		Script = "",
+		Sets = [
+			{
+				Cloth = [//avg of 50
+					[1, "cloth/wanderers_coat"], // 45
+					[1, "cloth/legend_padded_surcoat"] // 55
+				],
+				Chain = [//avg of 40
+					[1, "chain/legend_armor_mail_shirt"], //50
+					[1, "chain/legend_southern_cloth"] //30
+				],
+				Plate = [//avg of 60
+					[1, "plate/legend_armor_leather_scale"], // 70
+					[1, "plate/legend_armor_leather_brigandine"], // 65
+					[1, "plate/legend_armor_leather_lamellar"] //50
+				],
+				Cloak = [//avg of 15 
+					[4, "cloak/legend_armor_cloak_common"],// 10, -1
+					[1, "cloak/legend_armor_cloak_heavy"]// 30, -4
+				],
+				Tabard = [
+				],
+				Attachments = [
+				]
+			}
+		]
+	},
 	// ENEMIES - MUTANTS
 	{
 		ID = "forsaken_armor",	//??

@@ -226,8 +226,8 @@ this.pov_bront_skill <- this.inherit("scripts/skills/skill", {
 		{
 			this.removeMainhandBonuses(_properties);
 			// Skill Stats
-			_properties.DamageRegularMin += 20 * intensity;
-			_properties.DamageRegularMax += 30 * intensity;
+			_properties.DamageRegularMin += 15 * intensity;
+			_properties.DamageRegularMax += 25 * intensity;
 			_properties.DamageArmorMult *= 0.00;
 		}
 	}

@@ -39,7 +39,7 @@ this.pov_named_rough_staff <- this.inherit("scripts/items/weapons/named/named_we
 			id = 6,
 			type = "text",
 			icon = "ui/icons/damage_dealt.png",
-			text = "Skills used with this staff fo [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] more damage and cost [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] less fatigue."
+			text = "Skills used with this staff do [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] more damage and cost [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] less fatigue."
 		});
 		return result;
 	}

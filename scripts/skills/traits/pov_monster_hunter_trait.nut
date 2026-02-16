@@ -12,18 +12,8 @@ this.pov_monster_hunter_trait <- this.inherit("scripts/skills/traits/character_t
 			"the Beast Slayer"
 		];
 		this.m.Excluded = [
-			"trait.fearless",
-			"trait.brave",
-			"trait.determined",
-			"trait.cocky",
-			"trait.bloodthirsty",
-			"trait.night_owl",
 			"trait.fear_beasts",
 			"trait.fear_undead",
-			"trait.legend_aggressive",
-			"trait.legend_ambitious",
-			"trait.legend_natural",
-			"trait.legend_pragmatic",
 			"trait.pov_fear_mutants",
 			"trait.pov_nyctophobia"
 		];

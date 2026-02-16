@@ -235,10 +235,10 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 			b.MeleeSkill -= 6;
 			//b.Hitpoints += 50;
 			b.Bravery -= 20;
-			b.Armor[this.Const.BodyPart.Head] -= 40;
-			b.ArmorMax[this.Const.BodyPart.Head] -= 40;
-			b.Armor[this.Const.BodyPart.Body] -= 40;
-			b.ArmorMax[this.Const.BodyPart.Body] -= 40;
+			b.Armor[this.Const.BodyPart.Head] -= 50;
+			b.ArmorMax[this.Const.BodyPart.Head] -= 50;
+			b.Armor[this.Const.BodyPart.Body] -= 50;
+			b.ArmorMax[this.Const.BodyPart.Body] -= 50;
 		}
 
 		// CORPSE - MUTATION STUFF

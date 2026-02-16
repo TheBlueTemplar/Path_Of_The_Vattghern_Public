@@ -58,6 +58,15 @@ this.pov_mutants_visit_settlement_situation <- this.inherit("scripts/entity/worl
 				icon = "ui/icons/pov_situation_person.png",
 				text = "The following backgrounds are added to the recruit pool: [color=" + this.Const.UI.Color.povPerkDarkOrange + "]Mutants[/color]"
 			});
+			if (this.World.Assets.getOrigin().getID() == "scenario.pov_mutants")
+			{
+				ret.push({
+					id = 8,
+					type = "text",
+					icon = "ui/icons/pov_situation_person.png",
+					text = "Additional Possible Recruits (Mutants Scenario): [color=" + this.Const.UI.Color.povPerkDarkOrange + "]Forsaken[/color]"
+				});
+			}
 		}
 		return ret;
 	}
@@ -83,6 +92,17 @@ this.pov_mutants_visit_settlement_situation <- this.inherit("scripts/entity/worl
 
 	function onUpdateDraftList( _draftList )
 	{
+		// +7
+		if  (this.World.Assets.getOrigin().getID() == "scenario.pov_mutants") {
+			_draftList.push("pov_forsaken_background");
+			_draftList.push("pov_forsaken_background");
+			_draftList.push("pov_forsaken_background");
+			_draftList.push("pov_forsaken_background");
+			_draftList.push("pov_forsaken_background");
+			_draftList.push("pov_forsaken_background");
+			_draftList.push("pov_forsaken_background");
+		}
+
 		// 20 Total
 		_draftList.push("pov_mutant_background");
 		_draftList.push("pov_mutant_background");

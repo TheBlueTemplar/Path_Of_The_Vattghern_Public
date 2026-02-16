@@ -94,10 +94,10 @@ this.pov_witcher_potion_item <- this.inherit("scripts/items/misc/anatomist/pov_a
 			// Base Death Chance Modified By Game Diff
 			switch (this.World.Assets.getCombatDifficulty())
 			{
-				case this.Const.Difficulty.Easy: deathChanceBase = 80; break
-				case this.Const.Difficulty.Normal: deathChanceBase = 100; break
-				case this.Const.Difficulty.Hard: deathChanceBase = 110; break
-				case this.Const.Difficulty.Legendary: deathChanceBase = 120; break
+				case this.Const.Difficulty.Easy: deathChanceBase = 60; break
+				case this.Const.Difficulty.Normal: deathChanceBase = 80; break
+				case this.Const.Difficulty.Hard: deathChanceBase = 90; break
+				case this.Const.Difficulty.Legendary: deathChanceBase = 100; break
 			}
 			local deathChanceFinal = 0;
 			local deathChanceLevelReduction = _actor.getLevel()*10;

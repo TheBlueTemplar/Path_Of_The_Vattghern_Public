@@ -104,7 +104,7 @@ this.pov_testing_scenario <- this.inherit("scripts/scenarios/world/starting_scen
 		bros[1].m.Level = 6;
 
 		bros[2].setStartValuesEx([
-			"assassin_background"
+			"pov_caravan_guard_background"
 		]);
 		bros[2].getBackground().m.RawDescription = "A young assassin, %name% started by reading books. It is the study and preparation that will give the edge in battle.";
 		//bros[2].setName("Lambert");
@@ -119,7 +119,7 @@ this.pov_testing_scenario <- this.inherit("scripts/scenarios/world/starting_scen
 
 		// THIS IS A TESTING SLOT, PLACE WHATEVER BACKGROUND YOU WANT HERE
 		bros[3].setStartValuesEx([
-			"pov_mutant_background"
+			"pov_forsaken_background"
 		]);
 		//bros[3].getBackground().m.RawDescription = "What is this poor sod even doing here??";
 		bros[3].setName("Broski");
@@ -196,31 +196,33 @@ this.pov_testing_scenario <- this.inherit("scripts/scenarios/world/starting_scen
 		this.World.Assets.getStash().add(this.new("scripts/items/accessory/gloves/pov_silver_gauntlets"));
 
 		// ALL MOD'S NEW THROWN WEAPONS
-		this.World.Assets.getStash().add(this.new("scripts/items/weapons/named/pov_named_goblin_spiked_balls"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/weapons/named/pov_named_goblin_spiked_balls"));
 
 		// ALL MOD'S NEW HANDGUNS
+		/*
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/pov_feuerbuchse"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/named/pov_named_feuerbuchse"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/pov_feuerspeier"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/named/pov_named_feuerspeier"));
-		
+		*/
 		// ALL MOD'S NEW STAVES
-		this.World.Assets.getStash().add(this.new("scripts/items/weapons/pov_rough_staff"));
-		this.World.Assets.getStash().add(this.new("scripts/items/weapons/named/pov_named_rough_staff"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/weapons/pov_rough_staff"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/weapons/named/pov_named_rough_staff"));
 
 		// ALL MOD'S NEW SHIELDS
-		this.World.Assets.getStash().add(this.new("scripts/items/shields/pov_steel_buckler_shield"));
-		this.World.Assets.getStash().add(this.new("scripts/items/shields/named/pov_named_steel_buckler_shield"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/shields/pov_steel_buckler_shield"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/shields/named/pov_named_steel_buckler_shield"));
 
 		// ALL MOD'S NEW ARMOR & UPGRADES
-		this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/pov_ghost_plates_upgrade"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/armor_upgrades/pov_ghost_plates_upgrade"));
 		
 		// ALL MOD'S NEW CONSUMABLES
+		/*
 		this.World.Assets.getStash().add(this.new("scripts/items/special/pov_silvering_kit"));
 		this.World.Assets.getStash().add(this.new("scripts/items/accessory/pov_vattghern_poison_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_rotten_flesh_bag"));
 		this.World.Assets.getStash().add(this.new("scripts/items/special/pov_reading_notes"));
-		
+		*/
 		// NORMAL MUTAGENS
 		for (local i = 0; i < ::TLW.MutagensNormal.len(); i++)
 		{
@@ -290,7 +292,7 @@ this.pov_testing_scenario <- this.inherit("scripts/scenarios/world/starting_scen
 		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_white_wolf_pelt_upgrade"));
 		//this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/armor_upgrades/legend_white_wolf_pelt_upgrade"));
 		*/
-		/*
+		
 		// ARMOR UPGRADES - TIER V (The Rest) 
 		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/armor_upgrades/legend_pauldron_upgrade"));
 		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/armor_upgrades/legend_pauldron_swan_upgrade"));
@@ -312,8 +314,15 @@ this.pov_testing_scenario <- this.inherit("scripts/scenarios/world/starting_scen
 		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_spiked_collar_upgrade"));
 		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_sacred_shield_upgrade"));
 		this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_skull_chain_upgrade"));
-		*/
+		
 
+		// MONSTER SHIELDS TEST
+		/*
+		this.World.Assets.getStash().add(this.new("scripts/items/shields/special/legend_craftable_greenwood_schrat_shield"));
+		this.World.Assets.getStash().add(this.new("scripts/items/shields/special/legend_craftable_schrat_shield"));
+		this.World.Assets.getStash().add(this.new("scripts/items/shields/special/legend_craftable_kraken_shield"));
+		this.World.Assets.getStash().add(this.new("scripts/items/shields/named/named_lindwurm_shield"));
+		*/
 		// BUCKLERS TEST
 		/*
 		this.World.Assets.getStash().add(this.new("scripts/items/shields/buckler_shield"));
@@ -439,7 +448,7 @@ this.pov_testing_scenario <- this.inherit("scripts/scenarios/world/starting_scen
 		//this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 
 		// ALL INGREDIENTS FOR CRAFTING THE ToG
-		
+		/*
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/third_eye_item"));
 		//this.World.Assets.getStash().add(this.new("scripts/items/misc/acidic_saliva_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/poison_gland_item"));
@@ -449,14 +458,13 @@ this.pov_testing_scenario <- this.inherit("scripts/scenarios/world/starting_scen
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/ghoul_brain_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/sulfurous_rocks_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/pov_distilled_alcohol_item"));
-		
+		*/
 		// HOLY WATER TESTING
 		//this.World.Assets.getStash().add(this.new("scripts/items/tools/holy_water_item"));
-		this.World.Assets.getStash().add(this.new("scripts/items/tools/reinforced_throwing_net"));
-		this.World.Assets.getStash().add(this.new("scripts/items/tools/throwing_net"));
 
 		// NETS TESTING
-		this.World.Assets.getStash().add(this.new("scripts/items/tools/holy_water_item"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/tools/reinforced_throwing_net"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/tools/throwing_net"));
 
 		// ORC MUTAGEN TESTING
 		//this.World.Assets.getStash().add(this.new("scripts/items/weapons/greenskins/orc_cleaver"));
@@ -466,14 +474,14 @@ this.pov_testing_scenario <- this.inherit("scripts/scenarios/world/starting_scen
 		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/legend_broad_head_arrows"));
 		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/legend_broad_head_bolts"));
 		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/legend_armor_piercing_arrows"));
-		this.World.Assets.getStash().add(this.new("scripts/items/ammo/legend_armor_piercing_bolts"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/legend_armor_piercing_bolts"));
 		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_silver_arrows"));
 		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_silver_bolts"));
 		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_silver_bullets_bag"));
-		this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_sling_limestone_pebbles"));
-		this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_sling_basalt_rocks"));
-		this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_sling_ifrit_rocks"));
-		this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_sling_pumice_pebbles"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_sling_limestone_pebbles"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_sling_basalt_rocks"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_sling_ifrit_rocks"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_sling_pumice_pebbles"));
 		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/pov_blunt_arrows")); // fail
 
 		// THROWN WEAPONS TESTING
@@ -496,7 +504,7 @@ this.pov_testing_scenario <- this.inherit("scripts/scenarios/world/starting_scen
 		*/
 		
 		// HANDGONNE TESTING
-		this.World.Assets.getStash().add(this.new("scripts/items/weapons/oriental/handgonne"));
+		//this.World.Assets.getStash().add(this.new("scripts/items/weapons/oriental/handgonne"));
 		//this.World.Assets.getStash().add(this.new("scripts/items/ammo/powder_bag"));
 
 		// MISC WEAPON TESTING
@@ -600,7 +608,7 @@ this.pov_testing_scenario <- this.inherit("scripts/scenarios/world/starting_scen
 
 		// Settlement Situation Testing
 		//randomVillage.addSituation(this.new("scripts/entity/world/settlements/situations/pov_anatomists_visit_settlement_situation"));
-		randomVillage.addSituation(this.new("scripts/entity/world/settlements/situations/pov_mutants_visit_settlement_situation"));
+		//randomVillage.addSituation(this.new("scripts/entity/world/settlements/situations/pov_mutants_visit_settlement_situation"));
 
 		// Settlement Situation Transformer
 		//randomVillage.addSituation(this.new("scripts/entity/world/settlements/situations/legend_militant_townsfolk_situation"));	

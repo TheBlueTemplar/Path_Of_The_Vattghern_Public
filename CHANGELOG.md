@@ -1,4 +1,76 @@
-# v2.2.3 "Make it Rain" Edition
+# v2.3.0 "Origins" Edition
+
+## Changelog V2.3.0 "Origins" Edition:
+*Note: you might see some hook errors ("bb class targeted by pov" etc.) in the log close to their top. That is NOT an issue, so no need to report it*
+
+### NEW FEATURES
+
+* New Origin: **Mutants**
+   * "The world is sick, and you are part of that sickness. You do not care, you have accepted it long ago. After conversing with a man of peculiar expertise, you have decided to set out in the world, together, to find like minded individuals, and get yourself what life did not grant you."
+   * The aim here is to make an origin where fighting for your mutations and having multiple people who can use them is much more viable, while also offering some challenge, especially early on. You can still make a vattghern in this origin, even if its harder to do.
+     * An origin where you start with 2 mutants and an anatomist (all slightly buffed). Its twist is that you cannot obtain corpses. Instead, mutagen drop rates from enemies are largely increased (2.5x)
+     * Being a group mostly of mutants, you are not well liked, and as such, you start with some factions being hostile to you, sell for less, and most backgrounds will ask for more to be hired, and as wage.
+     * On the other hand, finding other mutants is much easier, and you can also find anatomists, alchemists, taxidermists and inventors more frequently and cheaply as well. You can also find another background, exclusive to this scenario, which are the Forsaken (like the new enemies). They can take 3 total mutations instead of 2, and are on a strength level similar to hedge knights.
+     * Finally, you will get more loot from enemies, enemy mutants will appear more often, but you will also do more damage to them. The "unstable mutations" effect will not provide debuffs to your mutants in this origin.
+     * Starting supplies are mediocre
+* New Origin: **Donkeys**
+   * "After much deliberation, you understand that being a stablemaster simply was not your calling. Armed with your wit - and with the few better donkeys you did not sell - you decide to set out into the world."
+   * More of a meme to be honest, but still tried making it actually playable and potentially fun xd
+     * Start with a merchant avatar (must not die), and 3 donkeys. Donkeys get substantially buffed in this origin (+15% Hp, +10% Damage Resistance, +10% Melee Attack, +10% Resolve, -25% Food Consumed)
+     * Peddlers, caravan hands and donkeys will be cheaper to hire and maintain, and you can find more of them. Your experience and trusty "steeds" allow for slightly faster map movespeed. You can also find and recruit an exclusive background: caravan guards.
+     * Any other background will not want to bother joining your bizzare company and thus ask for much more money. You also cannot hire outlaws.
+     * You also start with lower tools and ammo, but decent money.
+* Both of the two new backgrounds added are origin exclusive, so they will appear only in their respective origins
+   * ...But, if you play the random solo/trio/party scenarios, these backgrounds might appear there on your starting roster     
+
+### OVERHAUL
+
+* The different cultist backgrounds in the cultist origin got some love, like other backgrounds
+
+### IMPROVEMENTS
+
+* PoV has now its own Wiki! In the github
+* PoV in-game wiki now has an additional entry, highlighting that fact
+
+### BALANCE / TWEAKS
+
+* Forsaken grant less xp when killed
+* Brigand Gunners will spawn *slightly* later
+* Rogue seers will spawn later in game
+* The mercenaries that appear in caravans, will now appear later
+* Slight increase to Alps HP
+* Hyenas get +1 Ap
+* Hollenhunds will deal more damage (+5% before day 75, +10% after)
+* Skeletons and Mummies have 2 - 3% more chance to get the "Potent Reanimation" effect
+   * That effect grants slightly more HP and Dmg resistance
+* Donkeys Melee Defense reduced by 5
+* Heavy gladiator armor updgrade: +1 Weight
+* Kick skill: capped damage bonus from armor raised from 450 armor to 600. Also gets +5% dmg vs armor
+* Rustungheist: -10 Armor on Beginner diff
+* Noble and Rogue seers: slightly less HP scaling on Legendary
+* The "Too many corpses" event has slightly higher chance of happening
+* Bront base damage reduced by 5
+* PoV mutant background has now very slightly less base Resolve and Initiative
+* Enemy Schrat Mutation: -5 Armor
+* Minor Flesh golems have more HP and Attack, but slightly less Defense
+* Greater flesh golems have more threat, less initiative
+* Hyena pack mentality now scales up to 25 entities, instead of 20
+* Serpentine agility grants +4 Mdef and +2Rdef when engaged with only one enemy (So a total bonus of 14/7 now, from 10/5)
+* Hates mutants trait was slightly buffed
+* Reduced the Trial of the Grasses death chance by 20% across all difficulties (to allow earlier vattghern, so they can pick the new perks)
+
+### MISC
+
+* Even more preparation done for upcoming Legends versions
+* Alchemists want mutagen encounter can now happen even if you have a very small party
+* Monster hunter trait will appear a bit more often on bros
+
+### FIXES
+
+* Vast array of typos fixed
+* Miller background had a 60% Hp bonus, instead of 6%, lmao
+* Named Feuerbushe had wrong stats (weaker than intended), fixed
+* Fixed Extremophile trait tooltip to display correct info
 
 ## Changelog V2.2.3 "Make it Rain" Edition:
 

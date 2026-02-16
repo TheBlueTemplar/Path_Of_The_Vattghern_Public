@@ -47,7 +47,7 @@ this.pov_extremophile_trait <- this.inherit("scripts/skills/traits/character_tra
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "Also grant [color=" + this.Const.UI.Color.PositiveValue + "]+2%[/color] party movespeed on these same terrains"
+				text = "Also grant [color=" + this.Const.UI.Color.PositiveValue + "]+1.5%[/color] party movespeed on these same terrains"
 			}
 		];
 	}

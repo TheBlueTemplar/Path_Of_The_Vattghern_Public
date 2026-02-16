@@ -70,24 +70,24 @@ this.pov_enemy_mutation_unhold <- this.inherit("scripts/skills/skill", {
 
 	function getHpDmgPen()
 	{
-			local actor = this.getContainer().getActor();
-			local maxHp = actor.getHitpointsMax();
-			local Hp = actor.getHitpoints();
-			local currentHpPercent = (Hp * 100) / maxHp;
-			local missingHpPercent = 100 - currentHpPercent;
+		local actor = this.getContainer().getActor();
+		local maxHp = actor.getHitpointsMax();
+		local Hp = actor.getHitpoints();
+		local currentHpPercent = (Hp * 100) / maxHp;
+		local missingHpPercent = 100 - currentHpPercent;
 
-			// 50% less damage on 1% health, 25% less dmg on 50% health
-			local damagePenalty = this.Math.maxf(0, missingHpPercent / 2) * 0.01; 
+		// 50% less damage on 1% health, 25% less dmg on 50% health
+		local damagePenalty = this.Math.maxf(0, missingHpPercent / 2) * 0.01; 
 
-			if (damagePenalty >= 1)
-			{	
-				// This is me being paranoic xd
-				damagePenalty = 1;
-			}
+		if (damagePenalty >= 1)
+		{	
+			// This is me being paranoic xd
+			damagePenalty = 1;
+		}
 
-			local finalDamageMult = 1 - damagePenalty;
+		local finalDamageMult = 1 - damagePenalty;
 
-			return finalDamageMult;
+		return finalDamageMult;
 	}
 
 	function onUpdate(_properties)

@@ -195,7 +195,7 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
     	local minEffect = 0.05;
     	local effect = minEffect + ((maxEffect - minEffect) * progress);
 
-    	// --- Player-only softening (90% effect) 
+    	// --- Player-only softening (85% effect) 
     	local playerScale = actor.isPlayerControlled() ? 0.85 : 1.0; 
 
 	    // Return the effect magnitude
@@ -229,12 +229,12 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 	        - Provides diminishing returns at higher armor values
 
 	        Examples: (Head Armor - Reduction% Enemy, Reduction% Player)
-	        50  ->	5.5%		/	4%
-	        100 ->	10.0%		/	7%
-	        150 ->	14.0%		/	10%
-	        250 ->	20.0%		/	14%
-	        375 ->	25.0%		/	17.5%
-			500 ->	30.0%		/	21%
+	        50  ->	5.5%		/	4.5%
+	        100 ->	10.0%		/	8%
+	        150 ->	14.0%		/	12%
+	        250 ->	20.0%		/	16%
+	        375 ->	25.0%		/	20%
+			500 ->	30.0%		/	24%
 	    */
 	    local reduction = maxReduction * log(1.0 + armor / scale) / log(1.0 + capArmor / scale);
 
@@ -243,7 +243,7 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 
 	    // Convert reduction into final damage multiplier
 	    // Example: 30% reduction → multiplier = 0.70
-	    // Player gets 70% of the benefits (for 30% base reduction, get ~21% instead)
+	    // Player gets 70% of the benefits (for 30% base reduction, get ~24% instead)
 	    local playerScale = actor.isPlayerControlled() ? 0.80 : 1.0;
 		
 		return 1.0 - (reduction * playerScale);
@@ -275,12 +275,12 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 	        - Provides diminishing returns at higher armor values
 
 	        Examples: (Body Armor → Reduction% Enemy, Reduction% Player)
-	        50  ->  ~6.0%	/	4.0%
-	        100 -> ~12.0%	/	8.5%
-	        150 -> ~16.0%	/	11.0%
-	        250 -> ~23.0%	/	16.0%
-	        375 -> ~30.0%	/	21.0%
-	        500 ->  35.0%	/	25.0%
+	        50  ->  ~6.0%	/	5.0%
+	        100 -> ~12.0%	/	10.0%
+	        150 -> ~16.0%	/	13.0%
+	        250 -> ~23.0%	/	19.0%
+	        375 -> ~30.0%	/	24.0%
+	        500 ->  35.0%	/	28.0%
 	    */
 	    local reduction =maxReduction * log(1.0 + armor / scale) / log(1.0 + capArmor / scale);
 
@@ -289,7 +289,7 @@ this.pov_armor_changes_special <- this.inherit("scripts/skills/skill", {
 
 	    // Convert reduction into final damage multiplier
 	    // Example: 35% reduction → multiplier = 0.65
-	    // Player gets 80% of the benefits (for 35% base reduction, get ~27% instead)
+	    // Player gets 80% of the benefits (for 35% base reduction, get ~28% instead)
 	    local scale = actor.isPlayerControlled() ? 0.80 : 1.0;
 		
 		return 1.0 - (reduction * scale);

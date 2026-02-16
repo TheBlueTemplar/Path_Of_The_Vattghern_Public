@@ -33,6 +33,15 @@
 
 		local possible_situations = [];
 
+		// Scenario Based Modifiers
+		if (::World.Assets.getOrigin() != null)
+		{
+			if (this.World.Assets.getOrigin().getID() == "scenario.pov_mutants")
+			{
+				possible_situations.push("pov_mutants_visit_settlement_situation");
+			}
+		}
+
 		// added on ALL settlements practically
 		if (this.m.Settlement.getSize() >= 1)
 		{

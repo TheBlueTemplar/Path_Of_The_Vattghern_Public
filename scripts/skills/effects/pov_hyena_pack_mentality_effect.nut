@@ -1,7 +1,7 @@
 this.pov_hyena_pack_mentality_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		//AllyAmount = 0
-		MaxBuff = 20
+		MaxBuff = 25
 	},
 	function create()
 	{
@@ -89,12 +89,12 @@ this.pov_hyena_pack_mentality_effect <- this.inherit("scripts/skills/skill", {
 			_properties.Initiative += allies;
 			_properties.SurroundedBonus += 2;
 		}
-		else if(allies >= 19)
+		else if(allies >= 25)
 		{
-			this.m.Name = "[color=#5c3a01]Pack Mentality (x20)(Max)[/color]";
-			_properties.MeleeSkill += 20;
-			_properties.Bravery += 30;
-			_properties.Initiative += 20;
+			this.m.Name = "[color=#5c3a01]Pack Mentality (x25)(Max)[/color]";
+			_properties.MeleeSkill += 25;
+			_properties.Bravery += 37;
+			_properties.Initiative += 25;
 			_properties.SurroundedBonus += 4;
 		}
 		else if (allies < 5)

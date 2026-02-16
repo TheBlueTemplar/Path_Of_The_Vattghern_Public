@@ -5,7 +5,7 @@
 		this.m.Value = 1500; //up from 800
 		this.m.Condition = 70;
 		this.m.ConditionMax = 70;
-		this.m.StaminaModifier = -4;
+		this.m.StaminaModifier = -5;
 		this.m.ThreatModifier = 3;
 	}
 

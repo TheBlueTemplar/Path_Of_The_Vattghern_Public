@@ -22,6 +22,14 @@ this.pov_mutant_racial <- this.inherit("scripts/skills/skill", {
 			if (hasResearch)
 			{
 				_properties.DamageReceivedTotalMult *= 1.10;
+			}
+
+			if (::World.Assets.getOrigin() != null)
+			{	
+				if (this.World.Assets.getOrigin().getID() == "scenario.pov_mutants")
+				{
+					_properties.DamageReceivedTotalMult *= 1.10;
+				}
 			}	
 		}
 	}

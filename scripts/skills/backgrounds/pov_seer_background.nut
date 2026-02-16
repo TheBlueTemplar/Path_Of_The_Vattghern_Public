@@ -132,6 +132,18 @@ this.pov_seer_background <- this.inherit("scripts/skills/backgrounds/character_b
 
 	function onChangeAttributes()
 	{
+		/* Base values are:
+		Hp 		50 - 60
+		Res 	30 - 40
+		Fat 	90 - 100
+		Msk 	47 - 57
+		Rsk 	32 - 42
+		Mdf 	0  - 5
+		Rdf 	0  - 5
+		Ini 	100 - 110 
+
+		Values below are additions/substractions
+		*/
 		local c = {
 			Hitpoints = [
 				-10,

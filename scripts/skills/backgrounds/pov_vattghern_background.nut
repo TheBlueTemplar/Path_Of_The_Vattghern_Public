@@ -121,13 +121,19 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 			],
 			Enemy = [
 				this.Const.Perks.SchratTree, // ABYSS !!! this will need UPDATE
-				this.Const.Perks.LindwurmTree, // JUST ADD THE BEASTS,UNDEAD,GREENSKINS,OCCULT groups ty :)
-				this.Const.Perks.AlpTree,
+				this.Const.Perks.LindwurmTree, // JUST Comment these out, and remove the comments from the bottom ones
+				this.Const.Perks.AlpTree, 
 				this.Const.Perks.HexenTree,
 				this.Const.Perks.DirewolfTree,
 				this.Const.Perks.SpiderTree,
 				this.Const.Perks.GhoulTree,
 				this.Const.Perks.UnholdTree
+				//this.Const.Perks.LegendFavouredEnemySwordmaster, // start removing comments from here
+				//this.Const.Perks.LegendFavouredEnemyBeast,
+				//this.Const.Perks.LegendFavouredEnemyOccult,
+				//this.Const.Perks.LegendFavouredEnemyGreenskin,
+				//this.Const.Perks.LegendFavouredEnemyUndead,
+
 			],
 			Class = [
 				this.Const.Perks.LongswordClassTree,
@@ -162,6 +168,18 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function onChangeAttributes()
 	{
+		/* Base values are:
+		Hp 		50 - 60
+		Res 	30 - 40
+		Fat 	90 - 100
+		Msk 	47 - 57
+		Rsk 	32 - 42
+		Mdf 	0  - 5
+		Rdf 	0  - 5
+		Ini 	100 - 110 
+
+		Values below are additions/substractions
+		*/
 		local c = {
 			Hitpoints = [
 				13,

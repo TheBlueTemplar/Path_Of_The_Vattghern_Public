@@ -1,6 +1,6 @@
 // Forsaken (Normal Ver.)
 ::Const.Tactical.Actor.PovForsaken <- {
-	XP = 450,
+	XP = 300,
 	ActionPoints = 9,
 	Hitpoints = 100,
 	Bravery = 75,

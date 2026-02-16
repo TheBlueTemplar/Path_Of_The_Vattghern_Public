@@ -9,7 +9,7 @@
 			if (this.getContainer().hasSkill("effects.adrenaline") == false)
 			{
 				local actor = this.getContainer().getActor();
-				if (::MSU.isKindOf(actor, "orc_elite") || ::MSU.isKindOf(actor, "orc_warlord") || ::MSU.isKindOf(actor, "orc_berserker") || actor.getSkills().hasSkill("effects.pov_orc_mutagen") || actor.getSkills().hasSkill("effects.pov_enemy_mutation_orc"))
+				if (::MSU.isKindOf(actor, "orc_elite") || ::MSU.isKindOf(actor, "orc_warlord") || ::MSU.isKindOf(actor, "orc_warlord") || ::MSU.isKindOf(actor, "legend_orc_mad_berserker") || ::MSU.isKindOf(actor, "legend_orc_tyrant") || actor.getSkills().hasSkill("effects.pov_orc_mutagen") || actor.getSkills().hasSkill("effects.pov_enemy_mutation_orc"))
 				{
 					actor.getSkills().add(this.new("scripts/skills/effects/pov_orc_pain_effect"));
 				}
