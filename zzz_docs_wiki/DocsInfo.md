@@ -6,4 +6,5 @@
 
 **Credits - List of Contributors**
 
-* **HIYUN1137** - Player Mutations Table
+* **[HIYUN1137](https://github.com/alfred1137)**
+Player Mutations Table, Crafting Recipes, The Autopsy System
