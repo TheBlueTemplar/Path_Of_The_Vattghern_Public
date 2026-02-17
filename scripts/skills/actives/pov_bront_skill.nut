@@ -225,7 +225,9 @@ this.pov_bront_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			this.removeMainhandBonuses(_properties);
+			_properties.RangedAttackBlockedChanceMult *= 0; // hacky fix for hitchance of blocked stuff
 			// Skill Stats
+			_properties.HitChance[this.Const.BodyPart.Head] = 0; // Always hit body
 			_properties.DamageRegularMin += 15 * intensity;
 			_properties.DamageRegularMax += 25 * intensity;
 			_properties.DamageArmorMult *= 0.00;

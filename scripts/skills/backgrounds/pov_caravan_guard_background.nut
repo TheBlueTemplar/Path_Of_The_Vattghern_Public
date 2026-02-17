@@ -7,7 +7,7 @@ this.pov_caravan_guard_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.ID = "background.pov_caravan_guard";
 		this.m.Name = "Caravan Guard";
 		this.m.Icon = "ui/backgrounds/pov_caravan_guard_background.png";
-		this.m.BackgroundDescription = "Caravan guards are used to long and exhausting travels, and can put up a fight too!.";
+		this.m.BackgroundDescription = "Caravan guards are used to long and exhausting travels, and can put up a fight too!";
 		this.m.GoodEnding = "%name% the once-caravan guard retired from fighting. He used his mercenary money to start a trade-guarding business that specializes in transporting goods through dangerous lands.";
 		this.m.BadEnding = "%name% the caravan guard retired back into guarding trade wagons. He died when defending against an ambush by brigands. They took his shirt and left his body in a ditch.";
 		this.m.HiringCost = 125;
@@ -22,7 +22,6 @@ this.pov_caravan_guard_background <- this.inherit("scripts/skills/backgrounds/ch
 			::Legends.Traits.getID(::Legends.Trait.LegendSeductive),
 			::Legends.Traits.getID(::Legends.Trait.Clubfooted),
 			::Legends.Traits.getID(::Legends.Trait.Gluttonous),
-			::Legends.Traits.getID(::Legends.Trait.Bright),
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
 			::Legends.Traits.getID(::Legends.Trait.Fat),
 			::Legends.Traits.getID(::Legends.Trait.LegendUnpredictable),
@@ -154,8 +153,8 @@ this.pov_caravan_guard_background <- this.inherit("scripts/skills/backgrounds/ch
 				9
 			],
 			RangedSkill = [
-				6,
-				10
+				8,
+				12
 			],
 			MeleeDefense = [
 				3,

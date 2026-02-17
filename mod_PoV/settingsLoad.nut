@@ -6,7 +6,7 @@
 // Gameplay Settings 
 local page = ::TLW.Mod.ModSettings.addPage("Gameplay");
 page.addTitle("title", "Gameplay Settings");
-page.addTitle("title2", "Main - Default Values Recommended");
+page.addTitle("title2", "Main");
 page.addDivider("divider");
 
 
@@ -27,6 +27,10 @@ page.addDivider("divider2");
 local settingEnableEnemyMutation = page.addBooleanSetting(::TLW.EnableEnemyMutationID, true, "Enemy Mutations", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Recommended to keep this on, as it is a core mechanic of PoV.[/color] \n\n All enemies may get various thematic and appropriate mutations, making them stronger and creating interesting adaptive gameplay.\n\n The enemies that get a mutation also have a very low chance to drop relevant mutagens.\n\n Also enables some events, items and traits related to mutated enemies. All chances scale with combat difficulty and enemy strength \n\n [color=" + this.Const.UI.Color.povPainEffect + "] DISABLING THIS WONT CHANGE ANYTHING CURRENTLY [/color] - Enemy mutations will appear normally.");*/
 ::TLW.EnemyMutationScalingID <- "EnemyMutationScaling";
 local settingEnemyMutationScaling = page.addBooleanSetting(::TLW.EnemyMutationScalingID, true, "Enemy Mutations Scaling", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Scales the Enemy Mutations based on passed ingame days. Recommended to keep on, unless you have many other mods making late game more difficult.[/color] \n\n An attempt at keeping the endgame challenging, but also tone down the very early stages of the game - Enemy Mutations will appear less often for the few first days, but then will appear more often, as the playthrough becomes longer. (increments start from -30% on day 5, to +75% on day 280) \n\n With chaos mode enabled, mutations will start appearing much less at the beginning, but over time their frequency will increase by a lot!");
+
+::TLW.EnemyScalingID <- "EnemyScaling";
+local settingEnemyScaling = page.addBooleanSetting(::TLW.EnemyScalingID, false, "Enemy Scaling", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Scales the Enemy stats based on passed ingame days. Off by default. Recommended to turn on, unless playing with mods that also scale enemies, like Rotu, Fotn, or SSU[/color] \n\n An attempt at keeping the late game challenging and interesting. Every 50 days enemies will see their core stats buffed, and with each iteration buffs increase, with a softcap at day 300. This scaling is also affected by chosen combat difficulty. \n\n Can be disabled or enabled at any time you want.");
+
 ::TLW.ChaosID <- "ChaosMode";
 local settingChaos = page.addBooleanSetting(::TLW.ChaosID, false, "Chaos Mode", "[color=" + this.Const.UI.Color.povTooltipBlue + "]PoV is not balanced around this mode, it is only meant as a fun \"Challenge\". Off by default. [/color] \n\n All enemies can have multiple mutations, selected randomly from all of PoV\'s possible effects. Mutagen drop rates from enemy mutants will be lowered. \n\n Recommended to enable \"Enemy Mutations Scaling\" if you enable chaos mode.\n\n [b][color=" + this.Const.UI.Color.povPainEffect + "]MAY CHAOS TAKE THE WORLD![/color][/b]");
 
@@ -70,6 +74,10 @@ local settingRotuTweaks = page.addBooleanSetting(::TLW.RotuTweaksID, false, "Rot
 settingEnemyMutationScaling.addCallback(function(_newValue)
 {
     ::TLW.EnemyMutationScaling = _newValue
+})
+settingEnemyScaling.addCallback(function(_newValue)
+{
+    ::TLW.EnemyScaling = _newValue
 })
 settingChaos.addCallback(function(_newValue)
 {

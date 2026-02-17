@@ -9,7 +9,7 @@
 		}
 		
 		// Rain kinda rework
-		this.getSkills().add(this.new("scripts/skills/special/pov_rain_special"));		
+		this.getSkills().add(this.new("scripts/skills/special/pov_rain_special"));
 	}
 	
     q.getBarterModifier = @() function()
@@ -41,6 +41,11 @@
             }
         }
 
+        // barter 10% weaker on legendary, 5% weaker on expert
+        // Econ Diff Modifier
+		local difficultyModifier = [1.00, 1.00, 0.95, 0.90][::World.Assets.getEconomicDifficulty()];
+		mod *= difficultyModifier;
+
         return mod;
     }
 
@@ -48,6 +53,7 @@
 	{
 		local trymult =  1.0;
 		local bros = this.World.getPlayerRoster().getAll();
+		// Hexemut mods
 		foreach(bro in bros)
 		{
 			if (bro.getSkills().hasSkill("effects.pov_hexe_mutagen"))
@@ -59,6 +65,10 @@
 				//::TLW.Mod.Debug.printLog("Setting trymult: " + trymult);
 		}
 
+		// Econ Diff Modifier
+		local difficultyModifier = [1.00, 1.10, 1.15, 1.20][::World.Assets.getEconomicDifficulty()];
+		trymult *= difficultyModifier;
+
 		//::TLW.Mod.Debug.printLog("Returning tryout cost: " + ::Math.round(__original() * trymult));
 		return ::Math.round(__original() * trymult);
 	}
@@ -67,6 +77,7 @@
 	{
 		local hiremult = 1.0;
 		local bros = this.World.getPlayerRoster().getAll();
+		// Hexemut mods
 		foreach(bro in bros)
 		{
 			if (bro.getSkills().hasSkill("effects.pov_hexe_mutagen"))
@@ -78,8 +89,23 @@
 				//::TLW.Mod.Debug.printLog("Setting hiremult: " + hiremult);
 		}
 
+		// Econ Diff Modifier
+		local difficultyModifier = [1.00, 1.05, 1.10, 1.15][::World.Assets.getEconomicDifficulty()];
+		hiremult *= difficultyModifier;
+
 		//::TLW.Mod.Debug.printLog("Returning hiring cost: " + ::Math.round(__original() * hiremult));
 		return ::Math.round(__original() * hiremult);
+	}
+
+	q.getDailyCost = @(__original) function()
+	{
+		local costmult = 1.0;
+
+		// Econ Diff Modifier
+		local difficultyModifier = [1.00, 1.05, 1.10, 1.15][::World.Assets.getEconomicDifficulty()];
+		costmult *= difficultyModifier;
+
+		return ::Math.round(__original() * costmult);
 	}
 
 });

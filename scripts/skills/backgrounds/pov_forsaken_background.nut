@@ -63,7 +63,7 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Bodies = this.Const.Bodies.Muscular;
-		this.m.Level = this.Math.rand(1, 3);
+		this.m.Level = this.Math.rand(2, 4);
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Lowborn;
 
 		//this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];

@@ -6,7 +6,7 @@ this.pov_mutants_scenario <- this.inherit("scripts/scenarios/world/starting_scen
 		this.m.Name = "(PoV) Mutants";
 		this.m.Description = "[p=c][img]gfx/ui/events/pov_mutants_origin.png[/img][/p][p]The world is sick, and you are part of that sickness. You do not care, you have accepted it long ago. After conversing with a man of peculiar expertise, you have decided to set out in the world, together, to find like minded individuals, and get yourself what life did not grant you.\n\n[color=" + this.Const.UI.Color.povOriginGood + "]Mutants:[/color] Start with an anatomist and two battle-ready mutants. Mutants in this origin do not have the penalties of the \"Unstable Mutations\" trait. \n\n[color=" + this.Const.UI.Color.povOriginGood + "]Like-minded individuals:[/color] Mutants, Anatomists, Alchemists, Taxidermists and Inventors can be found more frequently, and are cheaper to recruit and maintain. You can also find Forsaken, a background exclusive to this origin. \n\n[color=" + this.Const.UI.Color.povOriginGood + "]Mutation Expertise:[/color] You cannot get corpse drops. Instead, mutagen drop rate from enemy mutants is increased x2.5 . Enemy mutants appear 20% more often, and you deal 10% more damage to them. You also get 15% more loot. You can still create a Vatt\'ghern normally if you wish, but you will not get the guiding \"story\" events. \n\n[color=" + this.Const.UI.Color.povOriginBad + "]Repulsive:[/color] Start hostile to a random northern and southern faction. Get 10% worse prices overall. All backgrounds for hire not mentioned above are more expensive.[/p]";
 		this.m.Difficulty = 3;
-		this.m.Order = 38;
+		this.m.Order = 42;
 		this.m.StartingBusinessReputation = 100;
 		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
@@ -51,7 +51,6 @@ this.pov_mutants_scenario <- this.inherit("scripts/scenarios/world/starting_scen
 		bros[0].getBaseProperties().RangedDefense += 4;
 		bros[0].getSkills().add(this.new("scripts/skills/traits/bright_trait"));
 		bros[0].setVeteranPerks(2);
-		bros[0].getFlags().set("IsPlayerCharacter", true);
 
 		// Melee Mutant
 		bros[1].setStartValuesEx([

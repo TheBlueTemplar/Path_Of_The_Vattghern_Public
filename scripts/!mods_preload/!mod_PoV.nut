@@ -20,10 +20,11 @@
 ::TLW <- {
 	ID = "mod_PoV",
 	Name = "Path of the Vatt\'ghern", //PoV
-	Version = "2.3.0", // "Make it Rain" Edition
+	Version = "2.4.0", // "Inflation" Edition
 	//EnableEnemyMutation = true,	//default settings
 	//Overhaul = true,
 	EnemyMutationScaling = true,
+	EnemyScaling = false,
 	ChaosMode = false,
 	PovSituation = true,
 	PovShowArmor = true,

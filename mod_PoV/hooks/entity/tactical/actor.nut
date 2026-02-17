@@ -63,6 +63,13 @@
 			
 			// Rain kinda rework
 			this.getSkills().add(this.new("scripts/skills/special/pov_rain_special"));
+
+			// PoV Extra Scaling (optional)
+			if (::TLW.EnemyScaling && this.getFaction() != this.Const.Faction.Player)
+			{
+				this.m.Skills.add(this.new("scripts/skills/special/pov_scaling_special"));
+			}
+
 		}
 
 		// If SSU Tweaks enabled, remove their Armor Encumburance Effect

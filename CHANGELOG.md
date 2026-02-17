@@ -1,4 +1,103 @@
-# v2.3.0 "Origins" Edition
+# v2.4.0 "Inflation" Edition
+
+## Changelog V2.4.0 "Inflation" Edition:
+
+### NEW FEATURES
+
+* New Optional Setting: **"Enemy Scaling"**
+   * This setting adds an effect to ALL enemies, which depending on combat difficulty and days passed, it scales their core stats (Hp, Attack, Defense, Initiative, Resolve)
+   * Scaling starts at day 50, and from there onwards every 50 days, until day 300 (where it is soft-capped)
+   * Scaling also increases with days passed. Day 0 -> 50 has a smaller difficulty spike than Day 50 -> 100
+   * Scaled bonus has both a flat and a multiplier aspect, to aid both low and high stat enemies
+   * That scaling is also slightly affected by combat difficulty
+     * Beginner: -10%
+     * Veteran: Default
+     * Expert: +10%
+     * Legendary: +15%
+   * Here are some examples of this new scaling system:
+     * A 300 Hp enemy on day 200 will get 340. a 100 Hp enemy will get 126
+     * Similarly, on day 300: 300 Hp -> 364
+     * Another example. Take an enemy with 90 Melee Attack: Day 200 -> 102, 300 -> 109
+     * For a difficulty example: (on Beginner, day 200) 200 Hp -> 240. (on Legendary, day 200) 200Hp -> 250
+   * This system, as you can see from the examples, is relatively mild, especially if you dont really play long games. Its intention is mainly to make the game more interesting for those players, while providing a slight challenge spike after day 50 for smaller runs
+   * This setting is OFF by default, as people usually run mods that also increase difficulty and scaling
+     * In that case, if you are playing with SSU, Rotu or Fotn, you are recommended to keep this setting disabled, UNLESS you like the extra spice!
+     * Other than this, I really recommend turning this on, as base legends does not really have stats scaling for enemies, and this is supposed to partially remedy that.  
+
+### OVERHAUL
+
+* **Economic Difficulty Overhaul**
+*Well, idk if id call it "overhaul" or "tweak", but you know, lots of things changed regardless. To begin with, here are the reasons behind it:*
+   * PoV increases the ways one can make money, which in battle brothers and legends was already something easy to do
+   * PoV is a mod that really comes online in the mid-late game, so I wanted to delay the player snowballing a bit, to keep up the challenge and make early game more interesting as well
+   * Resource and Stash capacities were quite large. There was almost no point to hiring people who could increase that. This overhaul also attempts to remedy that.
+   * Economy settings were kinda mild, barring legendary difficulty
+   * And you know what? I just wanted a harder economy, what about it?
+*Having said all that, here are the changes:*
+   * Generally, All Economic Difficulties saw bigger penalties, with the Beginner one being mostly untouched (so if that part of the patch notes scares you, just play on beginner xd). Here are the changed modifiers in general (in their final values):
+   * General Changes (affect all difficultiess):
+     * Minimum Payment for Contracts was halved for all difficulties (was a low amount already, this mostly nerfs super easy/joke contracts)
+     * Resources Capacity reduced for all difficulties, with the most notable reduction on the easier ones (legendary constricted it enough)
+     * Starting Resources for most origins were also SLIGHTLY lowered for the easier "starting funds" difficulties (Beginner and Vet.)
+   * Beginner: 
+     * Heal and Repair rate out of camp reduced by 20% (from 0)
+   * Veteran:
+     * 5% Worse Prices
+     * 5% Worse Contract Payments
+     * 5% Increased Hiring and Wage costs
+     * 10% Increased Tryout Costs
+     * Healing and Repairing out of camp reduced by 40% (from 34)
+   * Expert (PoV is balanced around that)
+     * 10% Worse Prices
+     * 10% Worse Contract Payments
+     * 10% Increased Hiring and Wage Costs
+     * 15% Increased Tryout Costs
+     * Healing and Repairing out of camp reduced by 75% (from 67)
+     * Barter is 5% weaker
+   * Legendary  
+     * 15% Worse Prices
+     * 20% Worse Contract Payments
+     * 15% Increased Hiring and Wage Costs
+     * 20% Increased Tryout Costs
+     * Healing and Repairing out of camp reduced by 90% (unchanged)
+     * Barter is 10% weaker
+   * A few important notes:
+     * Most of these modifiers are global, and might affect things that you might not initially expect. As an example, the price multiplier affects the costs of treating injuries too! 
+     * To reiterate: these changes are meant to delay the inevitable snowballing, that's it pretty much
+   * All the tooltips of the different economy difficulty options were updated to explain these changes  
+   * The "Legendary" Economic Difficulty was renamed to "Depression"
+   * The "Starting Funds" settings were renamed to "Starting Resources" to better reflect their function
+* **Combat Difficulty Tweaks**
+*Some more changes were also added to combat difficulty, with the same purpose as above*
+   * Contract difficulty balanced out between different settings. Slightly harder across the board, barring Expert, which was kept as-is
+   * Xp Gain was lowered on higher difficulties. Reasoning is to slow down the snowball that could happen, considering that in higher difficulties you face more and stronger enemies. So its meant to balance this out. The numbers:
+     * Beginner: +10% (unchanged)
+     * Veteran: -5% (was 0)
+     * Expert: -10% (was 0)
+     * Legendary: -15% (was 0)
+   * The bonus to defense granted when retreating was also reduced by 5 across most difficulties. Numbers now are:
+     * Beginner: +25
+     * Veteran: +15
+     * Expert: +5
+     * Legendary: 0 (unchanged)        
+
+### IMPROVEMENTS
+
+* Added additional warning in the "Ironman" option....not to use it
+* The New PoV backgrounds will appear in a different order....cause I wanna
+* Improved PoV's information regarding the mod's options, hopefully to help new players navigate them
+
+### BALANCE
+
+* Rogue and Noble Seers" -4 Initiative
+* Bront was overtuned, as it could do headshots for critical damage. Now it will only do bodyshots
+* Very slight buff to caravan guard background (+2 base melee attack)
+* Forsaken background will spawn 1 level higher on average
+
+### FIXES
+
+* Bront will now hit targets in cover as intended
+* PoV Testing scenario no longer available....oops!
 
 ## Changelog V2.3.0 "Origins" Edition:
 *Note: you might see some hook errors ("bb class targeted by pov" etc.) in the log close to their top. That is NOT an issue, so no need to report it*
