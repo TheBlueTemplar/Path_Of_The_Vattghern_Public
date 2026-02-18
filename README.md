@@ -24,7 +24,7 @@ The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which w
 * **Enemies** - 20 Enemies total added to the mod! Expanding the geist, undead, noble, mercenary and bandit factions currently! And of course, with more on the way!
 * **Skills** - More than 35 Skills added, including special mutagen skills, vattghern signs and weapon skills!
 * **Events** -  (and encounters): 45 Total and counting, in an effort to provide narrative and immersion. Some of PoV's mechanics are even "locked" behind certain "story" events
-* **Starting Scenarios** - 3 Different ones, for different tastes (solo start, OP start, normal start), all fitting their niche. 
+* **Starting Scenarios** - 5 Different ones, for different tastes (solo start, OP start, normal start, and some other goodies), all fitting their niche. 
 * **New Items and Weapons** - Quite a few new items like weapons, armor, shields, ammo and accessories to complement a player's options (Currently: 25 Items)
 * **Contracts** - Currently including 2 and counting. Special strong encounters, that do require the assistance of all the goodies PoV has to offer!
 * **Challenging Legendary Difficulty** - Now renamed to "Death March", many of PoV's additions are meant to increase the game's legendary difficulty. PoV might not be the most hardcore mod around, but it sure offers some challenge, if the player wants it.
