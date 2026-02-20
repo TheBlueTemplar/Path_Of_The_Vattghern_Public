@@ -20,7 +20,7 @@
 ::TLW <- {
 	ID = "mod_PoV",
 	Name = "Path of the Vatt\'ghern", //PoV
-	Version = "2.4.0", // "Inflation" Edition
+	Version = "3.0.0", // "Champion" Edition
 	//EnableEnemyMutation = true,	//default settings
 	//Overhaul = true,
 	EnemyMutationScaling = true,

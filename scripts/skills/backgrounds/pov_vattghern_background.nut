@@ -120,20 +120,11 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.IntelligentTree
 			],
 			Enemy = [
-				this.Const.Perks.SchratTree, // ABYSS !!! this will need UPDATE
-				this.Const.Perks.LindwurmTree, // JUST Comment these out, and remove the comments from the bottom ones
-				this.Const.Perks.AlpTree, 
-				this.Const.Perks.HexenTree,
-				this.Const.Perks.DirewolfTree,
-				this.Const.Perks.SpiderTree,
-				this.Const.Perks.GhoulTree,
-				this.Const.Perks.UnholdTree
-				//this.Const.Perks.LegendFavouredEnemySwordmaster, // start removing comments from here
-				//this.Const.Perks.LegendFavouredEnemyBeast,
-				//this.Const.Perks.LegendFavouredEnemyOccult,
-				//this.Const.Perks.LegendFavouredEnemyGreenskin,
-				//this.Const.Perks.LegendFavouredEnemyUndead,
-
+				//this.Const.Perks.SwordmastersTree, // start removing comments from here
+				//this.Const.Perks.BeastTree, 
+				//this.Const.Perks.OccultTree,
+				//this.Const.Perks.GreenskinTree,
+				//this.Const.Perks.UndeadTree
 			],
 			Class = [
 				this.Const.Perks.LongswordClassTree,

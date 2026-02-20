@@ -153,7 +153,7 @@ this.pov_vattghern_sword_ambition <- this.inherit("scripts/ambitions/ambition", 
 			text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]3,000[/color] Crowns"
 		});
 
-		local item = this.new("scripts/items/weapons/pov_witcher_longsword");
+		local item = this.new("scripts/items/weapons/pov_vattghern_longsword");
 		stash.add(item);
 		this.m.SuccessList.push({
 			id = 10,

@@ -67,8 +67,7 @@ this.Const.World.Spawn.BanditDefenders.Troops.extend([
                 Cost = 25
             }
         ]
-    }
-    ,
+    },
     {
         Weight = 2,
         MinR = 350,
@@ -95,14 +94,23 @@ this.Const.World.Spawn.BanditRaiders.Troops.extend([
     },
     {
         Weight = 2, // def 2
-        MinR = 370,
+        MinR = 400,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
                 Cost = 80 // def 80
             }
         ]
-    }
+    }/*,
+    {
+        Weight = 50, // def 0 TEST ONLY
+        Types = [
+            {
+                Type = this.Const.World.Spawn.Troops.Direwolf,
+                Cost = 20 // def 80
+            }
+        ]
+    }*/
 ]);
 
 // Bandit Scouts

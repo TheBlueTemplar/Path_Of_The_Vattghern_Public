@@ -40,6 +40,12 @@
 			}
 		}		
 
+		// Champions have increased corpse rate
+		if(_actor.m.IsMiniboss == true)
+	  	{
+ 			chance *= 1.20;
+	  	}	
+
 		// Mutagen Research Retinue increases corpse drop rates
 		local hasResearch = this.World.Retinue.hasFollower("follower.pov_mutagen_research");
 		if (hasResearch)

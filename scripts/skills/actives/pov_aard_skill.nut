@@ -200,8 +200,17 @@ this.pov_aard_skill <- this.inherit("scripts/skills/skill", {
 	// Apply attacks to a list of TILES (vanilla handgonne approach)
 	function applyEffectToTargets( _tag )
 	{
-		local user = _tag.User;
-		local tiles = _tag.Targets;
+		if (_tag == null) return; //fallback
+		
+	    local user = ("User" in _tag) ? _tag.User : null;
+	    local targets = ("Targets" in _tag) ? _tag.Targets : null;
+
+	    // User might have died in the 200ms delay
+	    if (user == null || !user.isAlive() || user.isDying())
+	        return;
+
+	    if (targets == null || typeof targets != "array" || targets.len() == 0)
+	        return;
 
 		foreach (t in tiles)
 		{

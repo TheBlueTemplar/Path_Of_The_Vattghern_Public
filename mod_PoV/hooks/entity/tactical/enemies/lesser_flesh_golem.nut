@@ -40,4 +40,44 @@
 		}
 	}
 
+	q.makeMiniboss = @(__original) function()
+	{
+		if (!actor.makeMiniboss())
+			return false;
+
+		// Bust
+		this.getSprite("miniboss").setBrush("bust_miniboss");	
+
+		// Bonus Stats
+		local b = m.BaseProperties;
+		b.MeleeSkill += 10;
+		b.Bravery += 15;
+		b.ActionPoints += 1;
+
+		b.Armor[this.Const.BodyPart.Head] += 20;
+		b.ArmorMax[this.Const.BodyPart.Head] += 20;
+		b.Armor[this.Const.BodyPart.Body] += 20;
+		b.ArmorMax[this.Const.BodyPart.Body] += 20;
+
+		b.DamageArmorMult += 0.10;
+
+		// Bonus Skills
+		getSkills().add(::new("scripts/skills/perks/perk_fearsome"));
+
+		// Bonus Skills (Day-Based)
+		if (!::Tactical.State.isScenarioMode()) {
+			if (::World.getTime().Days >= 50)
+				getSkills().add(::new("scripts/skills/perks/perk_overwhelm"));
+
+			if (::World.getTime().Days >= 75)
+				getSkills().add(::new("scripts/skills/perks/perk_nimble"));
+		}
+
+		// Drops
+		this.actor.m.OnDeathLootTable.push([100,"scripts/items/misc/potion_of_knowledge_item"]);
+		this.actor.m.OnDeathLootTable.push([100,"scripts/items/loot/pov_ivory_spine_shard_item"]);
+
+		return true;
+	}
+	
 });

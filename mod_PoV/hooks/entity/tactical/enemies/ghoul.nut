@@ -10,12 +10,6 @@
 			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.Ghoul));
 	  	}
 
-	  	// Other Drops (If Champion)
-	  	if(this.actor.m.IsMiniboss == true)
-	  	{
-	  		this.actor.m.OnDeathLootTable.push([2,"scripts/items/misc/anatomist/pov_ghoul_mutagen_upgrade_item"]);
-	  	}
-
 		// HERE, ADD EFFECTS YOU ALWAYS WANT APPLIED
 		if(this.World.Assets.getCombatDifficulty() != this.Const.Difficulty.Easy)
 		{
@@ -45,7 +39,47 @@
 			b.MeleeSkillMult *= 1.125;
 			b.MeleeDamageMult *= 1.05;
 			b.InitiativeMult *= 1.075;
-		}
+		}	
 
 	}
+
+	// Make Champ (lets MC handle it if its present, AND the player does not enable tweaks)
+	//if(!::TLW.hasMC || ::TLW.McTweaks)
+	//{
+		q.makeMiniboss = @(__original) function()
+		{
+			if (!actor.makeMiniboss())
+				return false;
+
+			// Bust
+			this.getSprite("miniboss").setBrush("bust_miniboss");	
+
+			// Bonus Stats
+			local b = m.BaseProperties;
+			b.MeleeSkill += 5;
+			b.MeleeDefense += 5;
+			b.DamageRegularMax += 5;
+			b.ActionPoints += 1;
+
+			// Bonus Skills
+			getSkills().add(::new("scripts/skills/perks/perk_sundering_strikes"));
+			getSkills().add(::new("scripts/skills/actives/charge"));
+
+			// Bonus Skills (Day-Based)
+			if (!::Tactical.State.isScenarioMode()) {
+				if (::World.getTime().Days >= 50)
+					getSkills().add(::new("scripts/skills/perks/perk_fearsome"));
+
+				if (::World.getTime().Days >= 75)
+					getSkills().add(::new("scripts/skills/perks/perk_nimble"));
+			}
+
+			// Drops
+			this.actor.m.OnDeathLootTable.push([1000,"scripts/items/accessory/named/pov_named_ghoul_trophy_item"]);
+			this.actor.m.OnDeathLootTable.push([1.5,"scripts/items/misc/anatomist/pov_ghoul_mutagen_upgrade_item"]);
+
+			return true;
+		}
+	//}
+		
 });

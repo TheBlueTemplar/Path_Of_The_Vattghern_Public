@@ -54,7 +54,7 @@ this.pov_lindwurm_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/armor_damage.png",
-				text = "Increases effectiveness against armor by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color], with an additional flat bonus of [color=" + this.Const.UI.Color.PositiveValue + "]20[/color]"
+				text = "Increases effectiveness against armor by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color], with an additional flat bonus of [color=" + this.Const.UI.Color.PositiveValue + "]15[/color]"
 			},
 			{
 				id = 11,
@@ -83,7 +83,7 @@ this.pov_lindwurm_mutagen_effect <- this.inherit("scripts/skills/skill", {
 	{
 		// Buffs
 		_properties.DamageArmorMult *= 1.25;
-		_properties.DamageArmorMult += 0.20;
+		_properties.DamageArmorMult += 0.15;
 		// Also causes acid effect on attackers
 		// Also gets coat with acid skill
 

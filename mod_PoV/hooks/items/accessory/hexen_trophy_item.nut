@@ -58,7 +58,7 @@
 				id = 13,
 				type = "text",
 				icon = "ui/icons/pov_luck.png",
-				text = "+ [color=" + this.Const.UI.Color.PositiveValue + "]8%[/color] chance to have any attacker require two successful attack rolls in order to hit.."
+				text = "+ [color=" + this.Const.UI.Color.PositiveValue + "]8%[/color] chance to have any attacker require two successful attack rolls in order to hit."
 			}
 		);
 		return result;

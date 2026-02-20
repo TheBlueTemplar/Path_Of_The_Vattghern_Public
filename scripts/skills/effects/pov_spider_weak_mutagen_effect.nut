@@ -98,7 +98,7 @@ this.pov_spider_weak_mutagen_effect <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_targetEntity.getSkills().getSkillByID("effects.pov_mutant_poison") != null || _targetEntity.getSkills().getSkillByID("effects.pov_vattghern_poison") != null || _targetEntity.getSkills().getSkillByID("effects.spider_poison") != null || _targetEntity.getSkills().getSkillByID("effects.goblin_poison") != null || _targetEntity.getSkills().getSkillByID("effects.legend_basilisk_poison") != null || _targetEntity.getSkills().getSkillByID("effects.pov_vattghern_upgraded_poison") != null || _targetEntity.getSkills().getSkillByID("effects.stench") != null)
+		if (_targetEntity.getSkills().getSkillByID("effects.pov_mutant_poison") != null || _targetEntity.getSkills().getSkillByID("effects.pov_vattghern_poison") != null || _targetEntity.getSkills().getSkillByID("effects.spider_poison") != null || _targetEntity.getSkills().getSkillByID("effects.goblin_poison") != null || _targetEntity.getSkills().getSkillByID("effects.legend_basilisk_poison") != null || _targetEntity.getSkills().getSkillByID("effects.pov_vattghern_upgraded_poison") != null || _targetEntity.getSkills().getSkillByID("effects.pov_stench") != null || _targetEntity.getSkills().getSkillByID("effects.pov_weak_stench") != null)
 		{
 			_properties.DamageRegularMult *= 1.10;
 		}else{

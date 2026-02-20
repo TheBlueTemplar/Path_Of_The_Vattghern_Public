@@ -24,12 +24,6 @@
 	        }
 	  	}
 
-	  	// Other Drops (If Champion)
-	  	if(this.actor.m.IsMiniboss == true)
-	  	{
-	  		this.actor.m.OnDeathLootTable.push([2,"scripts/items/misc/anatomist/pov_unhold_mutagen_upgrade_item"]);
-	  	}
-
 	  	// Racial
 	  	 if (::MSU.isKindOf(this, "unhold_bog")){
 	            this.m.Skills.add(this.new("scripts/skills/racial/pov_bog_unhold_racial"));
@@ -112,5 +106,49 @@
 			}
 		}
 	}
+
+	// Make Champ (lets MC handle it if its present, AND the player does not enable tweaks)
+	//if(!::TLW.hasMC || ::TLW.McTweaks)
+	//{
+		q.makeMiniboss = @(__original) function()
+		{
+			if (!actor.makeMiniboss())
+				return false;
+
+			// Bust
+			this.getSprite("miniboss").setBrush("bust_miniboss");	
+
+			// Bonus Stats
+			local b = m.BaseProperties;
+			b.ActionPoints += 1;
+			b.RangedDefense += 3;
+			b.RangedSkill += 15;
+
+			// Bonus Skills
+			getSkills().add(::new("scripts/skills/perks/perk_colossus"));
+			getSkills().add(::new("scripts/skills/perks/perk_underdog"));
+
+			// Bonus Skills (Day-Based)
+			if (!::Tactical.State.isScenarioMode()) {
+				if (::World.getTime().Days >= 150)
+					getSkills().add(::new("scripts/skills/perks/perk_legend_muscularity"));
+			}
+
+			// Drops
+			if (::MSU.isKindOf(this, "unhold_frost") || ::MSU.isKindOf(this, "unhold_frost_armored"))
+			{
+				this.actor.m.OnDeathLootTable.push([100,"scripts/items/armor_upgrades/named/pov_named_unhold_fur_upgrade"]);
+			}
+			else
+			{
+				this.actor.m.OnDeathLootTable.push([100,"scripts/items/armor_upgrades/named/pov_named_bone_platings_upgrade"]);
+			}
+			
+			this.actor.m.OnDeathLootTable.push([1.5,"scripts/items/misc/anatomist/pov_unhold_mutagen_upgrade_item"]);
+
+			setHitpointsPct(1.0);
+			return true;
+		}
+	//}
 
 });

@@ -38,7 +38,8 @@ this.pov_bront_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 5;
+		this.m.MaxRange = 4;
+		this.m.MaxRangeBonus = 2;
 		//this.m.ChanceDecapitate = 75;
 		//this.m.ChanceDisembowel = 50;
 		//this.m.ChanceSmash = 0;

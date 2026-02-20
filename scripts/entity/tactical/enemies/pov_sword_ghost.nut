@@ -335,5 +335,38 @@ this.pov_sword_ghost <- this.inherit("scripts/entity/tactical/actor", {
 	    }
 	}
 
+	function makeMiniboss()
+	{
+		if (!actor.makeMiniboss())
+			return false;
+
+		// Bust
+		this.getSprite("miniboss").setBrush("bust_miniboss");	
+
+		// Bonus Stats
+		local b = m.BaseProperties;
+		b.Hitpoints += 20;
+		b.MeleeDefense += 5;
+		b.Bravery += 10;
+		b.ActionPoints += 2;
+
+		b.DamageTotalMult += 0.05;
+
+		// Bonus Skills 
+		getSkills().add(::new("scripts/skills/perks/perk_nine_lives"));
+
+		// Bonus Skills (Day-Based)
+		if (!::Tactical.State.isScenarioMode()) {
+
+			if (::World.getTime().Days >= 150)
+				getSkills().add(::new("scripts/skills/perks/perk_nimble"));
+		}
+
+		// Drops
+		this.actor.m.OnDeathLootTable.push([100,"scripts/items/weapons/named/named_greatsword"]);
+
+		return true;
+	}
+
 });
 

@@ -49,7 +49,7 @@ page.addTitle("title4", "Other Mods Tweaks");
 page.addDivider("divider4");
 
 ::TLW.McTweaksID <- "McTweaks";
-local settingMcTweaks = page.addBooleanSetting(::TLW.McTweaksID, false, "MC Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Magic Concept\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between MC and PoV, and removes an annoying enemy ability or two. Look at the PoV server for details.\n\n Will only work with the MC mod installed. Not recommended to turn on and off multiple times during a save.");
+local settingMcTweaks = page.addBooleanSetting(::TLW.McTweaksID, false, "MC Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Magic Concept\" mod[/color] \n\n Secondary option, off by default. Enabling this makes PoV handle the champion beast system. Disabling it allows MC to handle it. Also Enables minor tweaks for better balance between MC and PoV, and removes an annoying enemy ability or two. Look at the PoV server for details.\n\n Will only work with the MC mod installed. Not recommended to turn on and off multiple times during a save. [color=" + this.Const.UI.Color.povPainEffect + "]Requires Restart after toggling![/color]");
 
 ::TLW.FotnTweaksID <- "FotnTweaks";
 local settingFotnTweaks = page.addBooleanSetting(::TLW.FotnTweaksID, false, "FotN Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Fury of the Northmen\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and FotN, mainly messing with some new enemies.\n\n Will only work with the FotN mod installed. Not recommended to turn on and off multiple times during a save.");

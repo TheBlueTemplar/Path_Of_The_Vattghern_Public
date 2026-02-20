@@ -25,6 +25,45 @@
 		// Chaos Mutation
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
-
 	}
+
+	// Make Champ (lets MC handle it if its present, AND the player does not enable tweaks)
+	//if(!::TLW.hasMC || ::TLW.McTweaks)
+	//{
+		q.makeMiniboss = @(__original) function()
+		{
+			if (!actor.makeMiniboss())
+				return false;
+
+			// Bust
+			this.getSprite("miniboss").setBrush("bust_miniboss");	
+
+			// Bonus Stats
+			local b = m.BaseProperties;
+			b.ActionPoints += 1;
+			b.Hitpoints += 25;
+			b.MeleeSkill += 10;
+			b.MeleeDefense += 5;
+			b.RangedDefense += 15;
+
+			// Bonus Skills
+			getSkills().add(::new("scripts/skills/perks/perk_nimble"));
+
+			// Bonus Skills (Day-Based)
+			if (!::Tactical.State.isScenarioMode()) {
+				if (::World.getTime().Days >= 75)
+					getSkills().add(::new("scripts/skills/perks/perk_fearsome"));
+
+				if (::World.getTime().Days >= 160)
+					getSkills().add(::new("scripts/skills/perks/perk_legend_ubernimble"));
+			}
+
+			// Drops
+			this.actor.m.OnDeathLootTable.push([100,"scripts/items/armor_upgrades/named/pov_named_serpent_skin_upgrade"]);
+
+			setHitpointsPct(1.0);
+			return true;
+		}
+	//}
+		
 });

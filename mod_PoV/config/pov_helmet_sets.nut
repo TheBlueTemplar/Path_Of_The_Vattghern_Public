@@ -96,8 +96,7 @@
 				Helms = [
 					[1, "helm/legend_helmet_enclave_kettle"],
 					[1, "helm/legend_helmet_enclave_skullcap"],
-					[2, "helm/legend_helmet_heavy_plate_helm"],
-					[2, "helm/legend_helmet_legend_frogmouth"],					
+					[2, "helm/legend_helmet_heavy_plate_helm"],			
 					[4, "helm/legend_helmet_flat_top_helm_polished"],
 					[1, "helm/legend_helmet_italo_norman_helm"],
 					[6, "helm/legend_helmet_great_helm"]
@@ -134,8 +133,7 @@
 				Helms = [
 					[1, "helm/legend_helmet_enclave_kettle"],
 					[1, "helm/legend_helmet_enclave_skullcap"],
-					[2, "helm/legend_helmet_heavy_plate_helm"],
-					[2, "helm/legend_helmet_legend_frogmouth"],					
+					[2, "helm/legend_helmet_heavy_plate_helm"],				
 					[4, "helm/legend_helmet_flat_top_helm_polished"],
 					[1, "helm/legend_helmet_italo_norman_helm"],
 					[6, "helm/legend_helmet_great_helm"]
@@ -238,7 +236,7 @@
 		]
 	},
 	{
-		ID = "pov_gunner_knight_helmet", // avg 305, -20, -3 (270 - 335)
+		ID = "pov_gunner_knight_helmet", // avg 310, -20, -3 (280 - 335)
 		Script = "",
 		Sets = [
 			{
@@ -249,8 +247,7 @@
 					[1, "hood/legend_helmet_chain_hood_full"] // 80,-4,0
 				],
 				Helms = [ // 175, -12, -2
-					[1, "helm/legend_helmet_heavy_plate_helm"], // 175,-15,-2
-					[1, "helm/legend_helmet_legend_frogmouth"],	// 160,-10,-2			
+					[1, "helm/legend_helmet_heavy_plate_helm"], // 175,-15,-2		
 					[1, "helm/legend_helmet_enclave_great_bascinet"], // 180,-13,-2
 					[1, "helm/legend_helmet_enclave_great_helm"], // 180,-12,-2
 					[1, "helm/legend_helmet_great_helm"] // 175,-12,-2

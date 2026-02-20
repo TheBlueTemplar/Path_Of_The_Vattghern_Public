@@ -72,7 +72,7 @@ this.pov_non_vattghern_sword_effect <- this.inherit("scripts/skills/skill", {
 		//local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local mainhand = actor.getMainhandItem();
 
-		if (mainhand != null && mainhand.getID() != "weapon.pov_witcher_longsword" || actor.getSkills().hasSkill("trait.pov_witcher"))
+		if (mainhand != null && mainhand.getID() != "weapon.pov_vattghern_longsword" || actor.getSkills().hasSkill("trait.pov_witcher"))
 		{
 			this.removeSelf();
 		}	

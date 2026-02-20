@@ -46,7 +46,7 @@ this.pov_silvering_kit <- this.inherit("scripts/items/item", {
 			return false;
 		}
 
-		if (mainhand.m.ID == "weapon.pov_witcher_longsword") 
+		if (mainhand.m.ID == "weapon.pov_vattghern_longsword") 
 		{
 			this.Sound.play("sounds/upgrade/pov_silvered_fail.wav");
 			return false;

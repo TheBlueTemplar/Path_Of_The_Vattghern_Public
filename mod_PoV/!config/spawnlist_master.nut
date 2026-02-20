@@ -96,21 +96,25 @@
 // GHOST SUB - FACTION
 ::Const.World.Spawn.Troops.SwordGhost <- {
 	ID = this.Const.EntityType.SwordGhost,
-	Variant = 0,
+	Variant = 2,//def2
 	Strength = 45,
 	Cost = 35,
 	Row = 2,
-	Script = "scripts/entity/tactical/enemies/pov_sword_ghost"
+	Script = "scripts/entity/tactical/enemies/pov_sword_ghost",
+	NameList = ::Const.Strings.PovGhostNames,
+	TitleList = null
 };
 
 // 0,55,45
 ::Const.World.Spawn.Troops.ArmorGhost <- {
 	ID = this.Const.EntityType.ArmorGhost,
-	Variant = 0,
+	Variant = 3,//def3
 	Strength = 60,
 	Cost = 45,
 	Row = 1,
-	Script = "scripts/entity/tactical/enemies/pov_armor_ghost"
+	Script = "scripts/entity/tactical/enemies/pov_armor_ghost",
+	NameList = ::Const.Strings.PovArmorGhostNames,
+	TitleList = null
 };
 
 // 0,20,15

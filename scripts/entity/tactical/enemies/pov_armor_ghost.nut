@@ -263,7 +263,36 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 	function onRender()
 	{
 	    this.actor.onRender();
+	}
 
+	function makeMiniboss()
+	{
+		if (!actor.makeMiniboss())
+			return false;
+
+		// Bust
+		this.getSprite("miniboss").setBrush("bust_miniboss");	
+
+		// Bonus Stats
+		local b = m.BaseProperties;
+		b.MeleeDefense += 3;
+		b.RangedDefense += 3;
+		b.Bravery += 10;
+		b.ActionPoints += 1;
+
+		// Just a shit ton of armor heheheh
+		b.Armor[this.Const.BodyPart.Head] += 250;
+		b.ArmorMax[this.Const.BodyPart.Head] += 250;
+		b.Armor[this.Const.BodyPart.Body] += 250;
+		b.ArmorMax[this.Const.BodyPart.Body] += 250;
+
+		// Bonus Skills
+		getSkills().add(::new("scripts/skills/perks/perk_nine_lives"));
+		
+		// Drops
+		this.actor.m.OnDeathLootTable.push([100,"scripts/items/armor_upgrades/named/pov_named_ghost_plates_upgrade"]);
+
+		return true;
 	}
 
 });

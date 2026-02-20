@@ -2,7 +2,7 @@ this.pov_rot_mutagen_effect <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "effects.pov_necromancy_mutagen";
+		this.m.ID = "effects.pov_rot_mutagen";
 		this.m.Name = "Mutation: Rot";
 		this.m.Icon = "skills/pov_flesh_golem.png";
 		this.m.IconMini = "";

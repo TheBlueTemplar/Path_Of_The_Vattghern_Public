@@ -1,4 +1,46 @@
-# v2.4.0 "Inflation" Edition
+# v3.0.0 "Champion" Edition
+
+## Changelog V3.0.0 "Champion" Edition:
+
+### NEW FEATURES
+
+* **Vatt'ghern Sword Rework**
+*The Vatt'ghern sword is a weapon that can be quite limited in its use, compared to the versality that all the different mutations offer, making it an underwhelming reward. Here is what changed:*
+   * The Vatt\'ghern sword now gains different buffs, depending on the mutations that the wielding vatt'ghern has.
+   * As an example, the orc mutation will grant the sword bonus damage, the serpent bonus initiative, etc.
+   * The sword gets one buff for each active mutation, so it could end up with 4 different buffs!
+   * Just like mutations can synergise togeather, so can the buffs the sword gets!
+     * All in all, this is meant to make the sword fit much better in different, versalite builds around the mutations themselves
+     * To balance things out, its main stats were slightly lowered, to incentivise and reward getting mutations
+
+* **Champion Beasts!**
+   * Most enemy beasts now can be champions!! They get the typical champion buffs, on top of some handpicked extra perks, and stats.
+   * Different kinds of enemies have slightly less or more chance to be champions, depending on the enemies strength and rarity
+   * These champions of course come with their own shiny new loot. Which is usually either named accessories, or named monster craftables
+     * For example: named alps will drop named alp trophies, with increased, randomised stats. Named direwolves will drop named direwolf pelt mantles
+     * Keep in mind, that such loot is already buffed in PoV, so these drops are things one should strive to get!
+     * Some of these drops also get some new additional stats, compared to their non-named items
+   * All champions, and their drops, have new custom name pools as well (in which of course I memed a bit)
+   * Keep in mind, that the legendary beasts can ALSO be champions!! These ones are of course elite-level challenges, but their loot is very powerful as well, as you get named versions of their normal loot (like demon alp = named demon alp trophy, a direct upgrade to the named alp trophy)
+   * On a side note, Flesh Golems and Fault Finders can also be champions, with some interesting new loot!
+   * The new PoV ghost enemies (sword and armor) also get champion variants...beware!
+   * In case that one plays PoV with MC, PoV's champion system will overwrite MC's, as PoV is way more recent and up to date
+
+### IMPROVEMENTS
+
+* Demon alp trophy has a new in battle sprite
+
+### BALANCE
+
+* Very slight nerf to lindwurm mutation armor damage
+* Minor secret change to the vatt'ghern medallion
+
+### FIXES
+
+* Fixed the bront skill not gaining range when on high ground
+* Fixed a rare crash with igni and aard skills
+* Fixed rot not counting as a poison
+* Fixed an error, where one could not use both a rot and necromancy mutagen on the same person
 
 ## Changelog V2.4.0 "Inflation" Edition:
 

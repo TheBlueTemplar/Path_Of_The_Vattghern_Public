@@ -5,6 +5,7 @@
 		__original();
 		this.m.Value = 2499; // down from 2500
 		this.m.IsPrecious = true;
+		this.m.Sprite = "pov_demon_alp_trophy";
 	}	
 
 	q.getTooltip = @(__original) function()

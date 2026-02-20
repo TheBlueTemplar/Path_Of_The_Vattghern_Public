@@ -184,7 +184,7 @@
 
 	::TLW.PlayerMutation.Rot <- 
 	{
-		Name = "Lindwurm",
+		Name = "Rot",
 		Limit = true,
 		Remove = "",
 		Script = "scripts/skills/effects/pov_rot_mutagen_effect",

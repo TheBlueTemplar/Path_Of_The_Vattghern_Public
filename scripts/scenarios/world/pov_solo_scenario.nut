@@ -78,7 +78,7 @@ this.pov_solo_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-		items.equip(this.new("scripts/items/weapons/pov_witcher_longsword"));
+		items.equip(this.new("scripts/items/weapons/pov_vattghern_longsword"));
 		items.equip(this.new("scripts/items/accessory/pov_vattghern_medallion_item"));
 
 		// Skip PoV story events (already start with vattghern)

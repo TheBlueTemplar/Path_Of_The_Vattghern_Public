@@ -6,7 +6,7 @@ this.pov_ghost_plates_upgrade <- this.inherit("scripts/items/legend_armor/legend
 		this.m.ID = "legend_armor_upgrade.body.pov_ghost_plates";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Infused Plates Reinforcement";
-		this.m.Description = "Sturdy metal reinforcements, infused with the essense of a rustunggheist. On top of providing additional protection against physiucal attacks, it also helps repel the aetherium, weakening spirit\'s attacks against the wearer. Has a similar - but weaker - effect against other undead. ";
+		this.m.Description = "Sturdy metal reinforcements, infused with the essense of a rustunggheist. On top of providing additional protection against physical attacks, it also helps repel the aetherium, weakening spirit\'s attacks against the wearer. Has a similar - but weaker - effect against other undead. ";
 		this.m.ArmorDescription = "Sturdy, infused metal reinforcements have been added to the armor, weakening spirit and undead attacks against the wearer.";
 		this.m.Icon = "armor_upgrades/pov_upgrade_ghost_plates.png";
 		this.m.IconLarge = this.m.Icon;

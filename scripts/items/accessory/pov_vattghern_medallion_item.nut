@@ -89,6 +89,12 @@ this.pov_vattghern_medallion_item <- this.inherit("scripts/items/accessory/acces
 						icon = "ui/icons/warning.png",
 						text = "[color=" + this.Const.UI.Color.NegativeValue + "]Does Nothing[/color] - Not equipped by a vattghern"
 					});
+					result.push({
+						id = 10,
+						type = "text",
+						icon = "ui/icons/bravery.png",
+						text = "...Though pretending to be a Vatt\'ghern grants them some confidence, and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Resolve"
+					});
 				}
 			}
 		}
@@ -157,6 +163,7 @@ this.pov_vattghern_medallion_item <- this.inherit("scripts/items/accessory/acces
 			} else
 			{
 				this.m.Icon = "accessory/pov_vattghern_medallion_danger.png";
+				_properties.Bravery += 3;
 			}
 		}
 	}	
