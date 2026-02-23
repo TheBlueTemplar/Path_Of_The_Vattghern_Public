@@ -16,7 +16,7 @@
 The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which we rewrote, and then I kept adding more and more. Currently, it stands on its own as a substantial overhaul/content mod, with quite a few things on the way. Priority is given to strike a balance between challenge and fun, and to keep some reasonable level of compatibility with other legends Submods.  
 
 ### Main features:
-*(As of PoV Version 2.0.0)*
+*(As of PoV Version 3.1.0)*
 * **Overhaul** -  PoV is also an overhaul mod, touching many different aspects of vanilla and legends. Some of these aspects include: *Injury System, Fire Damage, New Monster Effects, Armor Attachments, Monster Trophies, Skills, Perks, Traits, Backgrounds, Shields, Ranged Weapons, Skill Books, and much more!*
 * **Vatt'ghern** - A powerful mid-late game upgrade for any mercenary, granting access to powerful scaling buffs and effects, special skills, vattghern signs, contracts and more! Tied to most of the mod's mechanics
 * **Mutations** - Mutagenic effects are not just limited to the player, but enemies can also spawn with them, granting them new skills and effects, along with visuals
@@ -26,7 +26,7 @@ The mod begun as a spiritual successor to "TLW" (The Last Witchers) mod, which w
 * **Events** -  (and encounters): 45 Total and counting, in an effort to provide narrative and immersion. Some of PoV's mechanics are even "locked" behind certain "story" events
 * **Starting Scenarios** - 5 Different ones, for different tastes (solo start, OP start, normal start, and some other goodies), all fitting their niche. 
 * **New Items and Weapons** - Quite a few new items like weapons, armor, shields, ammo and accessories to complement a player's options (Currently: 25 Items)
-* **Contracts** - Currently including 3 and counting. Special strong encounters, that do require the assistance of all the goodies PoV has to offer!
+* **Contracts** - Currently including 4 and counting. Special strong encounters, that do require the assistance of all the goodies PoV has to offer!
 * **Challenging Legendary Difficulty** - Now renamed to "Death March", many of PoV's additions are meant to increase the game's legendary difficulty. PoV might not be the most hardcore mod around, but it sure offers some challenge, if the player wants it.
 * **Adaptive Difficulty** - On the other hand, most of PoV's mechanics are directly tied to the game's combat difficulty, meaning that players have some control over tailoring their desired experience
 * **Other Additions** - Include a new retinue, new player background, settlement situations, music, enemy locations, ambitions, and more...
