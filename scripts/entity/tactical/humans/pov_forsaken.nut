@@ -269,8 +269,7 @@ this.pov_forsaken <- this.inherit("scripts/entity/tactical/human", {
 
 			];
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));			
-		}	
-		//::Mod_Sellswords.HookHelper.addTreeOfEquippedWeapon(this);	
+		}		
 
 		// Equipment (Armor, Helmets)
 		local equipmentSets = [
@@ -292,6 +291,7 @@ this.pov_forsaken <- this.inherit("scripts/entity/tactical/human", {
 
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		
+		// Named Weps
 		local weapons = [
 			"weapons/named/named_greataxe",
 			"weapons/named/named_two_handed_flail",
@@ -305,7 +305,7 @@ this.pov_forsaken <- this.inherit("scripts/entity/tactical/human", {
 		
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
-		//::Mod_Sellswords.HookHelper.addTreeOfEquippedWeapon(this);
+		// Bonus Perks
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 
 		//Stats Modifiers

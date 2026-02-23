@@ -1,3 +1,46 @@
+::Const.Strings.PovVattghernNames <- [
+	"Vael\'drath",
+	"Morveth",
+	"Kaer\'thyr",
+	"Istravael",
+	"Tharn\'gul",
+	"Arvaeth",
+	"Gaetan",
+	"Berengar",
+	"Arnaghad",
+	"Korveth",
+	"Maelrun",
+	"Brehen",
+	"Zar\'kael",
+	"Selvaris",
+	"Vaelgrim",
+	"Vorenth",
+	"Thornis",
+	"Draegor",
+	"Kaer\'val",
+	"Vaelrith",
+	"Morvaen"
+];
+
+::Const.Strings.PovVattghernTitles <- [
+	"The Vatt\'ghern",
+	"The Butcher of Black Hollow",
+	"The Severed Path",
+	"The Last Duelist",
+	"Fang of the Forsaken",
+	"He Who Ends Contracts",
+	"Spawn of the Black Trials",
+	"The Wolf",
+	"The Thorned Shadow",
+	"The Hollow-Eyed",
+	"The Coin-Taker",
+	"The Ledger of Blood",
+	"The Auditor of Lives",
+	"Wolf-Among-Wolves",
+	"Twice-Forged"
+];
+
+// Enemy Champs
 ::Const.Strings.PovLindwurmNames <- [
 	"Gorvath the Blackwater Tyrant",
 	"Vargul the Caustic King",
@@ -267,6 +310,7 @@
 	"Chomp-Chomp-burp"
 ];
 
+// Enemy Names
 ::Const.Strings.ForsakenNames <- [
 	"Hugues",
 	"Darriwil",

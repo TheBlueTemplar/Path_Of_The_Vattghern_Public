@@ -2,6 +2,7 @@
 {
 	q.m.PossibleSkills.extend([
 		"actives.pov_throw_dirt",
-		"actives.legend_magic_daze"
+		"actives.legend_magic_daze",
+		"actives.pov_axii"
 	]);
 });

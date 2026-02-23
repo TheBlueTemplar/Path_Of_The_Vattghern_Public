@@ -1,5 +1,5 @@
 local tips = [
-// 62 Total As Of Now
+// 65 Total As Of Now
 // BS - Memes - References etc.
 	"(PoV) The shadows are watching...",
 	"(PoV) Some are whispering that Goblin\'s woodwork ain\'t that good...",
@@ -37,6 +37,9 @@ local tips = [
 	"(PoV) Rumors say that the fire spewing weapons of the east have also found a home north. With some adaptations...",
 	"(PoV) Flesh golems and their creators now roam the land, looking for more victims...",
 	"(PoV) The armor system is now reworked, increasing the protection of high armor, but with a cost...",
+	"(PoV) Rumors say that other vatt\'ghern roam the lands. Powerful, fearsome rogues...",
+	"(PoV) Not all mercenaries are law abiding, to no one\'s surprise. Some especially powerful bands have taken to banditry...",
+	"(PoV) Rogue mercenary companies now roam the land, with quite the quality selection of equipment...",
 // Specific Mechanics Advice
 	"(PoV) Looking for specific crafting materials or mutations? Make sure to check out Alchemists, and Black Markets!",
 	"(PoV) Your crafting options are greatly expanded with PoV, check them out!",

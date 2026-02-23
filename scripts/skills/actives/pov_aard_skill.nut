@@ -1,6 +1,7 @@
 this.pov_aard_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
-
+	m = {
+		Cooldown = 0 // for enemy
+	},
 	function create()
 	{
 		this.m.ID = "actives.pov_aard";
@@ -95,10 +96,37 @@ this.pov_aard_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function onCombatStarted()
+	{
+		this.m.Cooldown = 0;
+	}
+
+	function onCombatFinished()
+	{
+		this.m.Cooldown = 0;
+	}
+
+	function onTurnStart()
+	{
+		this.m.Cooldown = this.Math.max(0, this.m.Cooldown - 1);
+	}
+	
 	function isUsable()
 	{
 		local actor = this.getContainer().getActor();
-		return (!actor.getSkills().hasSkill("effects.pov_sign_cooldown") && this.skill.isUsable());
+
+		if (actor.getSkills().hasSkill("trait.pov_witcher"))
+		{
+			return (!actor.getSkills().hasSkill("effects.pov_sign_cooldown") && this.skill.isUsable());
+		}
+		else if (this.m.Cooldown <= 0 && this.skill.isUsable())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}	
 	}
 
 	function onAfterUpdate( _properties )
@@ -109,6 +137,7 @@ this.pov_aard_skill <- this.inherit("scripts/skills/skill", {
 	
 	function onUse( _user, _targetTile )
 	{
+		this.m.Cooldown = 3;
 		local tag = {
 			Skill = this,
 			User = _user,
@@ -205,14 +234,14 @@ this.pov_aard_skill <- this.inherit("scripts/skills/skill", {
 	    local user = ("User" in _tag) ? _tag.User : null;
 	    local targets = ("Targets" in _tag) ? _tag.Targets : null;
 
-	    // User might have died in the 200ms delay
+	    // User might have died in the 200ms delay (cringe lmao)
 	    if (user == null || !user.isAlive() || user.isDying())
 	        return;
 
 	    if (targets == null || typeof targets != "array" || targets.len() == 0)
 	        return;
 
-		foreach (t in tiles)
+		foreach (t in targets)
 		{
 			if (t == null) continue;
 			if (!t.IsOccupiedByActor) continue;
@@ -381,10 +410,13 @@ this.pov_aard_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			// Sign Cooldown
+			// Sign Cooldown (player only, for enemy its set individually to 3)
 			local actor = this.getContainer().getActor();
-			actor.getSkills().add(this.new("scripts/skills/effects/pov_sign_cooldown_effect"));
-		}
+			if (actor.getSkills().hasSkill("trait.pov_witcher"))
+			{
+		    	actor.getSkills().add(this.new("scripts/skills/effects/pov_sign_cooldown_effect"));
+			}
+		}	
 	}
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )

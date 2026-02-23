@@ -1,5 +1,7 @@
 this.pov_igni_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Cooldown = 0 // for enemy
+	},
 	function create()
 	{
 		this.m.ID = "actives.pov_igni";
@@ -64,7 +66,7 @@ this.pov_igni_skill <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/pov_fire.png",
-			text = "Hits have [color=" + this.Const.UI.Color.PositiveValue + "]"+this.Math.round(chance)+"%[/color] chance of making the enemy [color=" + this.Const.UI.Color.PositiveValue + "]Burn[/color] for [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] of damage dealt, ontop of also debuffing them."
+			text = "Hits have [color=" + this.Const.UI.Color.PositiveValue + "]"+this.Math.round(chance)+"%[/color] chance of making the enemy [color=" + this.Const.UI.Color.PositiveValue + "]Burn[/color] for [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] of damage dealt, on top of also debuffing them."
 		});
 		ret.push({
 			id = 6,
@@ -87,10 +89,37 @@ this.pov_igni_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function onCombatStarted()
+	{
+		this.m.Cooldown = 0;
+	}
+
+	function onCombatFinished()
+	{
+		this.m.Cooldown = 0;
+	}
+
+	function onTurnStart()
+	{
+		this.m.Cooldown = this.Math.max(0, this.m.Cooldown - 1);
+	}
+	
 	function isUsable()
 	{
 		local actor = this.getContainer().getActor();
-		return (!actor.getSkills().hasSkill("effects.pov_sign_cooldown") && this.skill.isUsable())
+
+		if (actor.getSkills().hasSkill("trait.pov_witcher"))
+		{
+			return (!actor.getSkills().hasSkill("effects.pov_sign_cooldown") && this.skill.isUsable());
+		}
+		else if (this.m.Cooldown <= 0 && this.skill.isUsable())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}	
 	}
 
 	function onAfterUpdate( _properties )
@@ -101,6 +130,7 @@ this.pov_igni_skill <- this.inherit("scripts/skills/skill", {
 	
 	function onUse( _user, _targetTile )
 	{
+		this.m.Cooldown = 3;
 	    local tag = {
 	        Skill = this,
 	        User = _user,
@@ -320,10 +350,13 @@ this.pov_igni_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			// Sign Cooldown
+			// Sign Cooldown (player only, for enemy its set individually to 3)
 			local actor = this.getContainer().getActor();
-	    	actor.getSkills().add(this.new("scripts/skills/effects/pov_sign_cooldown_effect"));
-		}	
+			if (actor.getSkills().hasSkill("trait.pov_witcher"))
+			{
+		    	actor.getSkills().add(this.new("scripts/skills/effects/pov_sign_cooldown_effect"));
+			}
+		}		
 	}
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )

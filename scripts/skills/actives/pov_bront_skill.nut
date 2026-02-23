@@ -1,7 +1,8 @@
 this.pov_bront_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		LightningBounceNum = 1,
-		MoraleCheckDifficulty = 1
+		MoraleCheckDifficulty = 1,
+		Cooldown = 0 // for enemy
 	},
 	function create()
 	{
@@ -51,7 +52,7 @@ this.pov_bront_skill <- this.inherit("scripts/skills/skill", {
 
 		local actor = this.getContainer().getActor();
 		local intensity = 100 * actor.getCurrentProperties().SignIntensity;
-		local chance = -10 + intensity; // burn chance = 30 + sign intensity
+		local chance = -10 + intensity; // shit on morale difficulty = -10 + sign intensity
 
 		ret.push({
 			id = 6,
@@ -105,14 +106,42 @@ this.pov_bront_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = _properties.IsSpecializedInSigns ? 3 : 4;
 	}
 	
+	function onCombatStarted()
+	{
+		this.m.Cooldown = 0;
+	}
+
+	function onCombatFinished()
+	{
+		this.m.Cooldown = 0;
+	}
+
+	function onTurnStart()
+	{
+		this.m.Cooldown = this.Math.max(0, this.m.Cooldown - 1);
+	}
+	
 	function isUsable()
 	{
 		local actor = this.getContainer().getActor();
-		return (!actor.getSkills().hasSkill("effects.pov_sign_cooldown") && this.skill.isUsable())
+
+		if (actor.getSkills().hasSkill("trait.pov_witcher"))
+		{
+			return (!actor.getSkills().hasSkill("effects.pov_sign_cooldown") && this.skill.isUsable());
+		}
+		else if (this.m.Cooldown <= 0 && this.skill.isUsable())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}	
 	}
 
 	function onUse( _user, _targetTile )
 	{
+		this.m.Cooldown = 3;
 		local myTile = _user.getTile(), currentTargetTile = _targetTile, selectedTargets = [];
 		local target = currentTargetTile.getEntity();
 		if (target != null)
@@ -239,9 +268,12 @@ this.pov_bront_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			// Sign Cooldown
+			// Sign Cooldown (player only, for enemy its set individually to 3)
 			local actor = this.getContainer().getActor();
-	    	actor.getSkills().add(this.new("scripts/skills/effects/pov_sign_cooldown_effect"));
+			if (actor.getSkills().hasSkill("trait.pov_witcher"))
+			{
+		    	actor.getSkills().add(this.new("scripts/skills/effects/pov_sign_cooldown_effect"));
+			}
 		}	
 	}
 

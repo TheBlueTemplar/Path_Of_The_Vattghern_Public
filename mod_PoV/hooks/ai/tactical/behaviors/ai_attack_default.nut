@@ -6,6 +6,10 @@
 		"actives.pov_headbutt",
 		"actives.pov_ghost_headbutt",
 		"actives.pov_ghost_punch",
-		"actives.pov_ghost_kick"
+		"actives.pov_ghost_kick",
+		"actives.pov_whip_flail_skill",
+		"actives.pov_igni",
+		"actives.pov_aard",
+		"actives.pov_bront"
 	]);
 });

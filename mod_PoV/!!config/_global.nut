@@ -168,6 +168,21 @@
 ::Const.EntityType.PovMercenaryGunner <-
 	::Const.EntityType.addNew("pov_bandit_gunner_orientation", "Mercenary Gunner", "Mercenary Gunners", this.Const.FactionType.NobleHouse);
 
+::Const.EntityType.PovHiredBlade <-
+	::Const.EntityType.addNew("pov_hired_blade_orientation", "Hired Blade", "Hired Blades", this.Const.FactionType.NobleHouse);
+
+::Const.EntityType.PovHeadhunter <-
+	::Const.EntityType.addNew("pov_headhunter_orientation", "Headhunter", "Headhunters", this.Const.FactionType.NobleHouse);	
+
+::Const.EntityType.PovHiredGun <-
+	::Const.EntityType.addNew("pov_hired_gun_orientation", "Hired Gun", "Hired Guns", this.Const.FactionType.NobleHouse);
+
+::Const.EntityType.PovCompanyLeader <-
+	::Const.EntityType.addNew("pov_company_leader_orientation", "Company Leader", "Company Leaders", this.Const.FactionType.NobleHouse);
+
+::Const.EntityType.PovRogueVattghern <-
+	::Const.EntityType.addNew("pov_vattghern_orientation", "Rogue Vatt\'ghern", "Rogue Vatt\'ghern", this.Const.FactionType.NobleHouse);			
+
 // Noble/Military Faction
 ::Const.EntityType.PovNobleSeer <-
 	::Const.EntityType.addNew("pov_noble_seer_orientation", "Noble Seer", "Noble Seers", this.Const.FactionType.NobleHouse);

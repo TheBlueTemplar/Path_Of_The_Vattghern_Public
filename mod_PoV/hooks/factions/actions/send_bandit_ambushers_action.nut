@@ -49,14 +49,20 @@
 		// Mark settlement as having spawned now
 		settlement.setLastSpawnTimeToNow();
 
+		// In General: 
+		//	Day 50 -> Forsaken: 13, Mercs -> 7, Brigands -> 80
+		//  Day 100 -> Forsaken 17, Mercs -> 9, Brigands -> 74
+		//  Day 150 -> Forsaken 21, Mercs -> 12, Brigands -> 67
+		//  Day 200 -> Forsaken 25, Mercs -> 15, Brigands -> 60
+
 		// --- Forsaken chance scaling ---
-		// Chance starts at 10, scales up to 28 at day 200.
+		// Chance starts at 10, scales up to 25 at day 200.
 		local spawnRoll = this.Math.rand(1, 100);
 		local scale = 10;
 
 		if (this.World.getTime().Days >= 50)
 		{
-			scale += 4;
+			scale += 3;
 
 			if (this.World.getTime().Days >= 100)
 			{
@@ -64,46 +70,52 @@
 
 				if (this.World.getTime().Days >= 150)
 				{
-					scale += 5;
+					scale += 4;
 
 					if (this.World.getTime().Days >= 200)
 					{
-						scale += 5;
+						scale += 4;
 					}
 				}
 			}
 		}
 
-		// give a small breathing room
+		// --- Enemy Mercs chance scaling ---
+		// Chance starts at 5, scales up to 15 at day 200.
+		local scale2 = 5;
+		if (this.World.getTime().Days >= 50)
+		{
+			scale2 += 2;
+
+			if (this.World.getTime().Days >= 100)
+			{
+				scale2 += 2;
+
+				if (this.World.getTime().Days >= 150)
+				{
+					scale2 += 3;
+
+					if (this.World.getTime().Days >= 200)
+					{
+						scale2 += 3;
+					}
+				}
+			}
+		}
+
+		// give a small breathing room (extremely low chance instead of 0) 
 		if (this.World.getTime().Days <= 10)
 		{
-			scale = 0;
+			scale = 2;
+			scale2 = 1;
 		}
 
 		//scale += 50; // test
+		//scale2 += 50; // test
 
 		local party;
 
-		if (spawnRoll > scale)
-		{
-			party = this.getFaction().spawnEntity(
-				settlement.getTile(),
-				"Brigands",
-				false,
-				this.Const.World.Spawn.BanditRaiders,
-				this.Math.rand(75, 120) * this.getScaledDifficultyMult() * mult
-			);
-			party.getSprite("banner").setBrush(settlement.getBanner());
-			party.setFootprintType(this.Const.World.FootprintsType.Brigands);
-			party.getFlags().set("IsRandomlySpawned", true);
-			party.setDescription("A rough and tough band of raiders preying on the weak.");
-
-			party.getLoot().Money = this.Math.rand(50, 200);
-			party.getLoot().ArmorParts = this.Math.rand(0, 10);
-			party.getLoot().Medicine = this.Math.rand(0, 2);
-			party.getLoot().Ammo = this.Math.rand(0, 20);
-		}
-		else
+		if (spawnRoll <= scale)
 		{
 			party = this.getFaction().spawnEntity(
 				settlement.getTile(),
@@ -121,6 +133,46 @@
 			party.getLoot().ArmorParts = this.Math.rand(1, 11);
 			party.getLoot().Medicine = this.Math.rand(0, 3);
 			party.getLoot().Ammo = this.Math.rand(0, 22);
+		}
+		// second roll 
+		else if (spawnRoll <= scale + scale2)
+		{
+			party = this.getFaction().spawnEntity(
+				settlement.getTile(),
+				//"Rogue Mercenary Company",
+				this.Const.Strings.MercenaryCompanyNames[this.Math.rand(0, this.Const.Strings.MercenaryCompanyNames.len() - 1)],
+				false,
+				this.Const.World.Spawn.HostileMercenaries,
+				(this.Math.rand(60, 90) + scale2 * 2) * this.getScaledDifficultyMult() * mult
+			);
+			party.getSprite("banner").setBrush(settlement.getBanner());
+			party.setFootprintType(this.Const.World.FootprintsType.Brigands);
+			party.getFlags().set("IsRandomlySpawned", true);
+			party.setDescription("A Mercenary company that has gone rogue, and is preying on the weak.");
+			// Increased loot for merc comps
+			party.getLoot().Money = this.Math.rand(55, 225);
+			party.getLoot().ArmorParts = this.Math.rand(2, 11);
+			party.getLoot().Medicine = this.Math.rand(1, 3);
+			party.getLoot().Ammo = this.Math.rand(2, 22);
+		}
+		else
+		{
+			party = this.getFaction().spawnEntity(
+				settlement.getTile(),
+				"Brigands",
+				false,
+				this.Const.World.Spawn.BanditRaiders,
+				this.Math.rand(75, 120) * this.getScaledDifficultyMult() * mult
+			);
+			party.getSprite("banner").setBrush(settlement.getBanner());
+			party.setFootprintType(this.Const.World.FootprintsType.Brigands);
+			party.getFlags().set("IsRandomlySpawned", true);
+			party.setDescription("A rough and tough band of raiders preying on the weak.");
+
+			party.getLoot().Money = this.Math.rand(50, 200);
+			party.getLoot().ArmorParts = this.Math.rand(0, 10);
+			party.getLoot().Medicine = this.Math.rand(0, 2);
+			party.getLoot().Ammo = this.Math.rand(0, 20);
 		}
 
 		local roll = this.Math.rand(1, 6);

@@ -12,6 +12,61 @@
 	TitleList = null
 };
 
+::Const.World.Spawn.Troops.PovHiredBlade <- {
+	ID = this.Const.EntityType.PovHiredBlade,
+	Variant = 2, // slight increase to champ chance, def2
+	Strength = 45,
+	Cost = 45,
+	Row = 0,
+	Script = "scripts/entity/tactical/humans/pov_hired_blade",
+	NameList = ::Const.Strings.BanditLeaderNames,
+	TitleList = null
+};
+
+::Const.World.Spawn.Troops.PovHeadhunter <- {
+	ID = this.Const.EntityType.PovHeadhunter,
+	Variant = 2, // slight increase to champ chance, def2
+	Strength = 45,
+	Cost = 45,
+	Row = 2,
+	Script = "scripts/entity/tactical/humans/pov_headhunter",
+	NameList = ::Const.Strings.BanditLeaderNames,
+	TitleList = null
+};
+
+::Const.World.Spawn.Troops.PovHiredGun <- {
+	ID = this.Const.EntityType.PovHiredGun,
+	Variant = 2, // slight increase to champ chance, def2
+	Strength = 45,
+	Cost = 45,
+	Row = 1,
+	Script = "scripts/entity/tactical/humans/pov_hired_gun",
+	NameList = ::Const.Strings.BanditLeaderNames,
+	TitleList = null
+};
+
+::Const.World.Spawn.Troops.PovCompanyLeader <- {
+	ID = this.Const.EntityType.PovCompanyLeader,
+	Variant = 5, // slight increase to champ chance, def5
+	Strength = 60,
+	Cost = 60,
+	Row = 0,
+	Script = "scripts/entity/tactical/humans/pov_company_leader",
+	NameList = ::Const.Strings.KnightNames,
+	TitleList = ::Const.Strings.HedgeKnightTitles
+};
+
+::Const.World.Spawn.Troops.PovRogueVattghern <- {
+	ID = this.Const.EntityType.PovRogueVattghern,
+	Variant = 255, // always a champ :)
+	Strength = 90,
+	Cost = 90,
+	Row = 0,
+	Script = "scripts/entity/tactical/humans/pov_rogue_vattghern",
+	NameList = ::Const.Strings.PovVattghernNames,
+	TitleList = ::Const.Strings.PovVattghernTitles
+};
+
 // NOBLE/MILITARY FACTION
 ::Const.World.Spawn.Troops.PovNobleSeer <- {
 	ID = this.Const.EntityType.PovNobleSeer,

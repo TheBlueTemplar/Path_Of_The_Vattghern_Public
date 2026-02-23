@@ -153,6 +153,9 @@
 			return;
 		}
 
+		//Summoned entities currently CAN have mutations (no issue with me)
+		if (_actor.isResurrected()){return;} //Fallback-Fix for enemies getting mutation when rising from dead
+		
 		// With chaos mode enabled, no mutations can come normally
 		// (they are given with add mutation all below instead)
 		if (::TLW.ChaosMode)
@@ -270,6 +273,9 @@
 		{
 			return;
 		}
+
+		//Summoned entities currently CAN have mutations (no issue with me)
+		if (_actor.isResurrected()){return;} //Fallback-Fix for enemies getting mutation when rising from dead
 
 		// Only run with chaos mode
 		if (!::TLW.ChaosMode)

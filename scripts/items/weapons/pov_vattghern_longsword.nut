@@ -52,6 +52,11 @@ this.pov_vattghern_longsword <- this.inherit("scripts/items/weapons/weapon", {
 		return result;
 	}
 
+	function isDroppedAsLoot()
+	{
+	    return true;
+	}
+	
 	function onEquip()
 	{
 		this.weapon.onEquip();
@@ -93,7 +98,7 @@ this.pov_vattghern_longsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onUpdateProperties(_properties);
 		// Add "weak" skill to anyone whos not vattghern and wielding this
 		local actor = this.getContainer().getActor();
-		if (!actor.getSkills().hasSkill("trait.pov_witcher"))
+		if (!actor.getSkills().hasSkill("trait.pov_witcher") && !actor.getSkills().hasSkill("trait.pov_witcher_enemy"))
 		{
 			actor.getSkills().add(this.new("scripts/skills/effects/pov_non_vattghern_sword_effect"));
 		}

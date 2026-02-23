@@ -1,5 +1,7 @@
 this.pov_axii_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Cooldown = 0 // for enemy
+	},
 	function create()
 	{
 		this.m.ID = "actives.pov_axii";
@@ -68,12 +70,45 @@ this.pov_axii_skill <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function onAfterUpdate( _properties )
+	{
+		this.m.FatigueCostMult = _properties.IsSpecializedInSigns ? 0.75 : 1.0;
+		this.m.ActionPointCost = _properties.IsSpecializedInSigns ? 3 : 4;
+	}
+	
+	function onCombatStarted()
+	{
+		this.m.Cooldown = 0;
+	}
+
+	function onCombatFinished()
+	{
+		this.m.Cooldown = 0;
+	}
+
+	function onTurnStart()
+	{
+		this.m.Cooldown = this.Math.max(0, this.m.Cooldown - 1);
+	}
+
 	function isUsable()
 	{
 		local actor = this.getContainer().getActor();
-		return (!actor.getSkills().hasSkill("effects.pov_sign_cooldown") && this.skill.isUsable())
-	}
 
+		if (actor.getSkills().hasSkill("trait.pov_witcher"))
+		{
+			return (!actor.getSkills().hasSkill("effects.pov_sign_cooldown") && this.skill.isUsable());
+		}
+		else if (this.m.Cooldown <= 0 && this.skill.isUsable())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}	
+	}
+	
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInSigns ? 0.75 : 1.0;
@@ -82,6 +117,7 @@ this.pov_axii_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
+		this.m.Cooldown = 3;
 		local actor = this.getContainer().getActor();
 		local intensity = 100 * actor.getCurrentProperties().SignIntensity;
 		local baffleChance = 	65 + intensity * 1.0;	// e.g. 65% base + 1% per intensity
@@ -153,9 +189,12 @@ this.pov_axii_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			// Sign Cooldown
+			// Sign Cooldown (player only, for enemy its set individually to 3)
 			local actor = this.getContainer().getActor();
-	    	actor.getSkills().add(this.new("scripts/skills/effects/pov_sign_cooldown_effect"));
+			if (actor.getSkills().hasSkill("trait.pov_witcher"))
+			{
+		    	actor.getSkills().add(this.new("scripts/skills/effects/pov_sign_cooldown_effect"));
+			}
 		}	
 	}
 });

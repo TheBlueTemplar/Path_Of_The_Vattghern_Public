@@ -167,7 +167,7 @@
 				Helms = [ // avg, 74, -4, -1
 					[1, "helm/legend_helmet_flat_top_helm_low"], // 70, -5, -1				
 					[1, "helm/legend_helmet_flat_top_helm"], // 85, -5, -1
-					[1, "helm/legend_helmet_bascinet"], // 80, -5, -1
+					//[1, "helm/legend_helmet_bascinet"], // 80, -5, -1
 					[1, "helm/legend_helmet_horsetail"] // 60, -3, -1
 				],
 				Tops = [ // avg, 17 , -1 , 0
@@ -261,7 +261,7 @@
 				],
 				Vanity = [ // 10, 0, 0
 					[1, "vanity/legend_helmet_faction_helmet_2"], // 10,0,0
-					[1, "vanity/legend_helmet_fencer_hat"], // 15,0,0
+					//[1, "vanity/legend_helmet_fencer_hat"], // 15,0,0
 					[1, "vanity/legend_helmet_feathered_hat"], // 10,0,0
 					[1, "vanity/legend_helmet_noble_floppy_hat"] // 10,0,0
 				]
@@ -282,22 +282,156 @@
 				Helms = [ // avg, 74, -4, -1
 					[1, "helm/legend_helmet_flat_top_helm_low"], // 70, -5, -1				
 					[1, "helm/legend_helmet_flat_top_helm"], // 85, -5, -1
-					[1, "helm/legend_helmet_bascinet"], // 80, -5, -1
+					//[1, "helm/legend_helmet_bascinet"], // 80, -5, -1
 					[1, "helm/legend_helmet_horsetail"] // 60, -3, -1
 				],
 				Tops = [ // avg, 40 , -2 , -1
 					[1, "top/legend_helmet_faceplate_flat"], //35, -2, -1
 					[1, "top/legend_helmet_faceplate_long"], //35, -2, -1
-					[1, "top/legend_helmet_headband_side"] //50, -3, 0
+					[1, "top/legend_helmet_headband_side"], //50, -3, 0
+					[1, "top/legend_helmet_faceplate_raised"] // 50, -3, 0
 				],
 				Vanity = [ // avg, 10 , 0 , 0
-					[1, "vanity/legend_helmet_fencer_hat"], // 15,0,0
-					[1, "vanity/legend_helmet_feathered_hat"], // 10,0,0
-					[1, "vanity/legend_helmet_faceplate_raised"] // 10,0,0
+					//[1, "vanity/legend_helmet_fencer_hat"], // 15,0,0
+					[1, "vanity/legend_helmet_feathered_hat"] // 10,0,0
 				]
 			}
 		]
-	}
+	},
+	{
+		ID = "pov_hired_blade_helmet", // avg 205, -11, -1 (150 - 265)
+		Script = "",
+		Sets = [
+			{
+				Hoods = [ // avg, 67, -3, 0
+					[1, "hood/legend_helmet_padded_hood"], // 50, -2, 0
+					[1, "hood/legend_helmet_open_chain_hood"], // 65, -3, 0
+					[1, "hood/legend_helmet_chain_hood"], // 75, -4, 0
+					[1, "hood/legend_helmet_chain_hood_full"] // 80,-4,0
+				],
+				Helms = [ // avg, 85, -5, -1
+					[1, "helm/legend_helmet_horsetail"], // 60, -3, -1
+					[1, "helm/legend_helmet_flat_top_helm_low"], // 70, -5, -1
+					//[1, "helm/legend_helmet_bascinet"], // 80, -5, -1				
+					[1, "helm/legend_helmet_flat_top_helm"], // 85, -5, -1
+					[1, "helm/legend_helmet_italo_norman_helm"], // 90, -6, -2		
+					[1, "helm/legend_helmet_deep_sallet"], // 100, -5, -1
+					[1, "helm/legend_helmet_conic_helm"] // 110, -6, -1
+				],
+				Tops = [ // avg, 45 , -3 , -1
+					[1, "top/legend_helmet_faceplate_flat"], //35, -2, -1
+					[1, "top/legend_helmet_faceplate_long"], //35, -2, -1
+					[1, "top/legend_helmet_faceplate_winged"], // 45,-4,-1	
+					[1, "top/legend_helmet_enclave_venitian_bascinet_visor"], // 45,-3,-1
+					[1, "top/legend_helmet_faceplate_pointed"], // 50,-4,-1
+					[1, "top/legend_helmet_headband_side"], //50, -3, 0
+					[1, "top/legend_helmet_faceplate_raised"], // 50, -3, 0
+					[1, "top/legend_helmet_faceplate_full"] // 60,-5,-1
+				],
+				Vanity = [ // avg, 8 , 0 , 0
+					[1, "vanity/legend_helmet_noble_feather"], // 2, 0, 0
+					[1, "vanity/legend_helmet_ponytail"], // 5, 0, 0
+					[1, "vanity/legend_helmet_side_feather"], // 5, 0, 0
+					//[1, "vanity/legend_helmet_fencer_hat"], // 15,0,0
+					[1, "vanity/legend_helmet_feathered_hat"], // 10,0,0
+					[1, "vanity/legend_helmet_hood_cloth_long"], //10
+					[1, "vanity/legend_helmet_metal_bird"] //10
+				]
+			}
+		]
+	},
+	{
+		ID = "pov_headhunter_helmet", // avg 135, -6, -1 (105 - 155)
+		Script = "",
+		Sets = [
+			{
+				Hoods = [ // avg, 35, -1, 0
+					[1, "hood/legend_helmet_simple_hood"], // 30, -1, 0
+					[1, "hood/legend_helmet_leather_cap"], // 35, -1, 0
+					[1, "hood/legend_helmet_padded_hood"] // 40, -1, 0
+				],
+				Helms = [ // avg, 75, -4, -1
+					[1, "helm/legend_helmet_flat_top_helm_low"], // 70, -5, -1				
+					[1, "helm/legend_helmet_flat_top_helm"], // 85, -5, -1
+					//[1, "helm/legend_helmet_bascinet"], // 80, -5, -1
+					[1, "helm/legend_helmet_horsetail"] // 60, -3, -1
+				],
+				Tops = [ // avg, 17 , -1 , 0
+					[1, "top/legend_helmet_chain_attachment"], //20, -1, 0
+					[1, "top/legend_helmet_nose_plate"], //20, -1, 0
+					[1, "top/legend_helmet_headband_side"] //10, 0, 0
+				],
+				Vanity = [ // avg, 8 , 0 , 0
+					[1, "vanity/legend_helmet_noble_feather"], // 2, 0, 0
+					[1, "vanity/legend_helmet_ponytail"], // 5, 0, 0
+					[1, "vanity/legend_helmet_side_feather"], // 5, 0, 0
+					//[1, "vanity/legend_helmet_fencer_hat"], // 15,0,0
+					[1, "vanity/legend_helmet_feathered_hat"], // 10,0,0
+					[1, "vanity/legend_helmet_hood_cloth_long"], //10
+					[1, "vanity/legend_helmet_metal_bird"] //10
+				]
+			}
+		]
+	},
+	{
+		ID = "pov_hired_gun_helmet", // avg 110, -4, -1 (90 - 130)
+		Script = "",
+		Sets = [
+			{
+				Hoods = [ // avg, 40, -1, 0
+					[1, "hood/legend_helmet_southern_niqaab"], // 45, -1, 0
+					[1, "hood/legend_helmet_southern_open_hood"], // 40, -1, 0
+					[1, "hood/legend_helmet_southern_turban_light_hood"] // 40, -1, 0
+				],
+				Helms = [ // avg, 35, -1, -0
+					[1, "helm/legend_helmet_southern_cap_smooth"], // 40, -2, -0				
+					[1, "helm/legend_helmet_southern_cap_spiked"], // 40, -2, -0
+					[1, "helm/legend_helmet_southern_studded_leather_helm"] // 25, -1, -0
+				],
+				Tops = [ // avg, 30 , -2 , -1
+					[1, "top/legend_helmet_southern_faceplate"], //40, -2, -1
+					[1, "top/legend_helmet_facemask"] //20, -1, 0
+				],
+				Vanity = [ // avg, 5 , 0 , 0
+					[1, "vanity/legend_helmet_southern_headband"], // 5,0,0
+					[1, "vanity/legend_helmet_southern_patterned_headwrap"], // 5,0,0
+					[1, "vanity/legend_helmet_southern_patterned_headband"] // 5,0,0
+				]
+			}
+		]
+	},
+	{
+		ID = "pov_company_leader_helmet", // avg 310, -20, -3 (280 - 335)
+		Script = "",
+		Sets = [
+			{
+				Hoods = [// 75, -4, 0
+					[1, "hood/legend_helmet_open_chain_hood"], // 65,-3,0
+					[1, "hood/legend_helmet_chain_hood"], // 75,-4,0
+					[1, "hood/legend_helmet_mail_coif"], // 85,-5,0
+					[1, "hood/legend_helmet_chain_hood_full"] // 80,-4,0
+				],
+				Helms = [ // 175, -12, -2
+					[1, "helm/legend_helmet_heavy_plate_helm"], // 175,-15,-2		
+					[1, "helm/legend_helmet_enclave_great_bascinet"], // 180,-13,-2
+					[1, "helm/legend_helmet_enclave_great_helm"], // 180,-12,-2
+					[1, "helm/legend_helmet_great_helm"] // 175,-12,-2
+				],
+				Tops = [ // 45, -4, -1
+					[1, "top/legend_helmet_enclave_armet_visor"], // 35,-2,-1
+					[1, "top/legend_helmet_enclave_venitian_bascinet_visor"], // 45,-3,-1
+					[1, "top/legend_helmet_faceplate_full"], // 60,-5,-1
+					[1, "top/legend_helmet_faceplate_pointed"], // 50,-4,-1
+					[1, "top/legend_helmet_faceplate_winged"] // 45,-4,-1
+				],
+				Vanity = [ // 10, 0, 0
+					//[1, "vanity/legend_helmet_fencer_hat"], // 15,0,0
+					[1, "vanity/legend_helmet_feathered_hat"], // 10,0,0
+					[1, "vanity/legend_helmet_noble_floppy_hat"] // 10,0,0
+				]
+			}
+		]
+	},
 ]);
 
 

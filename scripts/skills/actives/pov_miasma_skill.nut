@@ -83,6 +83,11 @@ this.pov_miasma_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Cooldown = 0;
 	}
 
+	function onTurnStart()
+	{
+		this.m.Cooldown = this.Math.max(0, this.m.Cooldown - 1);
+	}
+	
 	function isUsable()
 	{
 		local actor = this.getContainer().getActor();
@@ -116,7 +121,7 @@ this.pov_miasma_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.m.Cooldown = 999;
+		this.m.Cooldown = 2;
 		local targets = [];
 		targets.push(_targetTile);
 

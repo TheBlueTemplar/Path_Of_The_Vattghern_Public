@@ -9,7 +9,7 @@ this.pov_merc_guest <- this.inherit("scripts/entity/tactical/player", {
 	{
 		this.m.Type = this.Const.EntityType.Mercenary;
 		this.m.BloodType = this.Const.BloodType.Red;
-		this.m.XP = this.Const.Tactical.Actor.Mercenary.XP
+		this.m.XP = this.Const.Tactical.Actor.Mercenary.XP;
 		this.m.IsGuest = true;
 		this.player.create();
 		this.m.Faces = this.Const.Faces.AllMale;

@@ -22,7 +22,7 @@ this.Const.World.Spawn.BanditArmy.Troops.extend([
     },
     {
         Weight = 3,
-        MinR = 375,
+        MinR = 575,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -46,7 +46,7 @@ this.Const.World.Spawn.BanditBoss.Troops.extend([
     },
     {
         Weight = 3,
-        MinR = 350,
+        MinR = 550,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -70,7 +70,7 @@ this.Const.World.Spawn.BanditDefenders.Troops.extend([
     },
     {
         Weight = 2,
-        MinR = 350,
+        MinR = 550,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -94,7 +94,7 @@ this.Const.World.Spawn.BanditRaiders.Troops.extend([
     },
     {
         Weight = 2, // def 2
-        MinR = 400,
+        MinR = 600,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,
@@ -103,11 +103,11 @@ this.Const.World.Spawn.BanditRaiders.Troops.extend([
         ]
     }/*,
     {
-        Weight = 50, // def 0 TEST ONLY
+        Weight = 80, // def 0 TEST ONLY
         Types = [
             {
-                Type = this.Const.World.Spawn.Troops.Direwolf,
-                Cost = 20 // def 80
+                Type = this.Const.World.Spawn.Troops.PovRogueVattghern,
+                Cost = 5 // def 80
             }
         ]
     }*/
@@ -127,7 +127,7 @@ this.Const.World.Spawn.BanditScouts.Troops.extend([
     },
     {
         Weight = 1, // def 1
-        MinR = 370,
+        MinR = 570,
         Types = [
             {
                 Type = this.Const.World.Spawn.Troops.PovRogueSeer,

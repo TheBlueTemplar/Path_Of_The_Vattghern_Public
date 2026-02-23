@@ -1,4 +1,77 @@
-# v3.0.0 "Champion" Edition
+# v3.1.0 "Farewell" Edition
+
+## Changelog V3.1.0 "Farewell" Edition:
+*Big big update, bringing in 5 new enemies, one of them offering a very interesting challenge, and also 2 new contracts, along with some minor tweaks and fixes. This is the last big update I will be releasing for a while. In this upcoming period of relative calmness and peace for PoV, I cannot way to see your feedback, to further design new stuff and reworks for PoV in the future!*
+
+### NEW FEATURES
+
+* **Enemy Mercenaries**
+*You read that right, now in your travels, you will not just encounter mercenary companies that just mind their own business, but also mercenaries that have turned to roguery, and will attack both you and civilian factions*
+   * These Mercenary companies belong to the bandit faction, and can spawn from bandit camps (in a similar way as forsaken roamers can spawn)
+   * They are quite rare in the early game, but over time they will maintain a stronger presence. They are meant to be strong, dangerous and rewarding encounters
+   * Currently, Brigans, Mercenaries and Forsaken all technically belong in the same faction. They all "compete" about who will spawn, with the early game dominated by brigands, and the later game also including stronger enemies, like the forsaken and the Mercenaries. Here are the general chances:
+     * Until Day 10: -> Forsaken: 2, Mercs -> 1, Brigands -> 97 (%) (Allows for an initial breathing room)
+     * Day 50 -> Forsaken: 13, Mercs -> 7, Brigands -> 80 (%)
+     * Day 100 -> Forsaken 17, Mercs -> 9, Brigands -> 74 (%)
+     * Day 150 -> Forsaken 21, Mercs -> 12, Brigands -> 67 (%)
+     * Day 200 -> Forsaken 25, Mercs -> 15, Brigands -> 60 (%)
+   * These mercenaries do not just come like that, but they are bolstered by 4 brand new enemies (see below)
+* **New Enemies**
+   * **Hired Blade**
+     * A stronger variant of the melee-centric mercenaries, equipped with better armor, higher quality weapons (including new pov equipment), and also able to become a champion! 
+     * They also come with a better selection of perks and skills
+     * They mostly use one handed equipment, sometimes with shields, or with throwing nets. Other times they come with mostly polearms
+     * They also have a chance to have thrown weapons they can use
+   * **Headhunter**
+     * A stronger variant of the ranged mercenaries, equipped with high quality bows or crossbows, nimble, and also able to be champions.
+     * Similar design philosophy to the hired blades
+   * **Hired Gun**
+     * A direct upgrade to the pov Mercenary Gunners. Armed with southern handgonnes this time (better than the northern ones), and also armored with southern armor. Nimble.
+     * They can also be champions
+   * **Company Leader**
+     * One per company. Always appears.
+     * Imagine a very very tanky character, like a powerful sergeant. Vary high resolve, and also boosts the resolve of the other company members. Can be champion.
+     * Also has the rally skill.
+     * While not necessarily a damaging threat, he can keep his partys morale up, thus still being a priority target
+   * There is also one more new enemy I will talk about later
+   * These new enemies appear primarily in the new roaming enemy merc parties. But they can also appear on the neutral mercenary parties, although with less numbers, and in later game
+* **New Vatt'ghern Contract: Rogue Vatt'ghern**
+   * It was about time you got the chance to fight one as well. As this contract is all about fighting a powerful rogue mercenary company, which is led by a fearsome Vatt'ghern. So to kick things off:
+   * New Enemy: **Vatt'ghern**
+     * Powerful new enemy, with starting equipment similar to what the starting vatt'ghern have in some PoV origins, but of course scaled to be far more powerful, kind of reflecting what players can have in the late-game
+     * This Vatt'ghern has: 10% Hp Regen, 12 Ap total, 50% Sign intensity, A Legendary Vatt'ghern sword (the one you can get too), and 4 (rarely less) random mutations!.
+     * On top of these, he also gets a nice selection of different perks and skills
+     * Another thing he has, is access to 5 different signs that he will use against you: Igni, Aard, Bront, Axii, and Quen
+     * Slaying him rewards you with a trial of the grasses potion, and his legendary sword, allowing you to get more than the 1 you normally can from the ambition. You can either use it or sell it for quite the coin!
+   * This contract does not just include a Vatt'ghern as an enemy, but he is accompanied by a Rogue Mercenary Company, part of the new mercenaries added by PoV.
+   * The contract itself functions like the "Return Item" contract, in which after you take it, you have to find a nearby enemy group and fight it. You have 5 ingame days to find them, or the contract fails (idk how one can fail that)
+   * This contract can spawn in almost any settlement, but it has a high "cooldown" before appearing again
+   * Like other Vatt'ghern contracts, it is meant to be a late game challenge, and in a way, it is PoV's second \"Boss Fight\", after the Forsaken Boss from another contract.
+* **New Vatt'ghern Contract: Purge Undeath and Flesh Cults**
+   * "A hidden enclave festers nearby, where forbidden rites twist flesh and bone alike. Destroying that enclave will not only clear the world of their blight, but also grant you their invaluable research..."
+   * This is a contract where you have to go and destroy an enemy location, containing a mix of flesh cultists and their golems, along with necromancers and fallen heroes. Tryly a menacing combination!
+   * The pay of this contract is noticably less than other vatt'ghern contracts, but its loot is well worth it, as on top of the contract's reward, destroying the targeted location will yield its powerful loot, which includes:
+     * 2 Ancient Scrolls (Deciphered)
+     * 2 Random Skill Books
+     * 1 PoV Reading Notes (teach someone to read)
+     * 1 Potion of Knowledge (+exp potion)
+
+### BALANCE
+
+* Enemy (noble and rogue) Seers will appear later in game
+* Enemy Greater Flesh golems will appear later in game
+
+### MISC
+
+* Banshees will appear larger ingame by ~30% (I wanted them more menacing)
+* 3 New loading screen tips were added
+* Minor improvements to my code, might prevent future issues
+
+### FIXES
+
+* Attempt to fix a very rare crash when resurrecting corpses
+* PoV Miasma skill was not properly implemented for the player (had too large cooldown): Fixed
+* Aard sign was unusable and bugged out (appeared like missing enemies always): Fixed
 
 ## Changelog V3.0.0 "Champion" Edition:
 

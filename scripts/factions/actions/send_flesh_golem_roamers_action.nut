@@ -87,7 +87,7 @@ this.send_flesh_golem_roamers_action <- this.inherit("scripts/factions/faction_a
 
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
-		local party = this.getFaction().spawnEntity(settlement.getTile(), "Flesh Golems", false, ::Const.World.Spawn.FleshGolems, this.Math.max(settlement.getResources() * 0.75, this.Math.rand(60, 100) * this.getReputationToDifficultyLightMult()));
+		local party = this.getFaction().spawnEntity(settlement.getTile(), "Flesh Golems", false, ::Const.World.Spawn.PovFleshGolems, this.Math.max(settlement.getResources() * 0.75, this.Math.rand(60, 100) * this.getReputationToDifficultyLightMult()));
 		party.getSprite("banner").setBrush("pov_banner_flesh");
 		party.setDescription("Foul Flesh Golems shambling around, directed to look for new victims.");
 		party.setFootprintType(this.Const.World.FootprintsType.Undead);
