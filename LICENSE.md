@@ -1,6 +1,6 @@
 # Path of the Vattghern (PoV) Mod License Agreement v1.1
 -----
-**Last Updated:** _[26/11/2025]_
+**Last Updated:** _[23/02/2026]_
 
 **Project:** _Path of the Vattghern (PoV)_
 
