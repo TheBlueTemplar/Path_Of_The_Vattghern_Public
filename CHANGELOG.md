@@ -6,6 +6,7 @@
 ### NEW FEATURES
 
 * **Enemy Mercenaries**
+
 *You read that right, now in your travels, you will not just encounter mercenary companies that just mind their own business, but also mercenaries that have turned to roguery, and will attack both you and civilian factions*
    * These Mercenary companies belong to the bandit faction, and can spawn from bandit camps (in a similar way as forsaken roamers can spawn)
    * They are quite rare in the early game, but over time they will maintain a stronger presence. They are meant to be strong, dangerous and rewarding encounters
