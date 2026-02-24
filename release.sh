@@ -4,8 +4,8 @@ set -e
 VERSION_FILE="scripts/!mods_preload/!mod_PoV.nut"
 
 create_zip() {
-    rm -f mod_PoV.zip
-    zip -r mod_PoV.zip . -x 'release.sh' -x '*.git*' -x '*.zip*' -x 'zzz_past_versions/*' -x 'zzz_docs_wiki/Docs_Info.html'
+    rm -f mod_Path_of_the_Vattghern.zip
+    zip -r mod_Path_of_the_Vattghern.zip . -x 'release.sh' -x '*.git*' -x '*.zip*' -x 'zzz_past_versions/*' -x 'zzz_docs_wiki/Docs_Info.html'
 }
 
 update_version() {

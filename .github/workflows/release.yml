@@ -38,8 +38,8 @@ jobs:
         run: |
           set -eux
           VERSION="${{ steps.get_version.outputs.version }}"
-          ZIP_NAME="mod_PoV_${VERSION}.zip"
-          rm -f mod_PoV*.zip
+          ZIP_NAME="mod_Path_of_the_Vattghern_${VERSION}.zip"
+          rm -f mod_Path_of_the_Vattghern*.zip
           zip -r "$ZIP_NAME" . -x 'release.sh' -x '*.git*' -x '*.zip*' -x 'zzz_past_versions/*' -x 'zzz_docs_wiki/Docs_Info.html'
           echo "Created $ZIP_NAME"
 
@@ -69,7 +69,7 @@ jobs:
         run: |
           set -euxo pipefail
           VERSION="${{ steps.get_version.outputs.version }}"
-          ZIP_NAME="mod_PoV_${VERSION}.zip"
+          ZIP_NAME="mod_Path_of_the_Vattghern_${VERSION}.zip"
 
           # Create release with custom changelog
           gh release create "$VERSION" \
