@@ -1,0 +1,80 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Get version from tag
+        id: get_version
+        run: |
+          VERSION="${GITHUB_REF_NAME}"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Verify version matches mod file
+        run: |
+          set -eux
+          VERSION="${{ steps.get_version.outputs.version }}"
+          if ! grep -q "Version = \"$VERSION\"," "scripts/!mods_preload/!mod_PoV.nut"; then
+            echo "Error: Version in tag ($VERSION) does not match version in !mod_PoV.nut"
+            exit 1
+          fi
+          echo "Version verification successful: $VERSION"
+
+      - name: Build release zip
+        run: |
+          set -eux
+          VERSION="${{ steps.get_version.outputs.version }}"
+          ZIP_NAME="mod_PoV_${VERSION}.zip"
+          rm -f mod_PoV*.zip
+          zip -r "$ZIP_NAME" . -x 'release.sh' -x '*.git*' -x '*.zip*' -x 'zzz_past_versions/*' -x 'zzz_docs_wiki/Docs_Info.html'
+          echo "Created $ZIP_NAME"
+
+      - name: Generate changelog
+        run: |
+          set -eux
+          # Ensure full history and tags are available
+          git fetch --force --tags
+          # Get the previous tag
+          PREV_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+
+          if [ -z "$PREV_TAG" ]; then
+            # No previous tag, get all commits
+            git log --pretty=format:"- %s%n%b" > changelog.txt
+          else
+            # Get commits since previous tag
+            git log --pretty=format:"- %s%n%b" ${PREV_TAG}..HEAD > changelog.txt
+          fi
+
+          # Show changelog for debugging
+          echo "Generated changelog:"
+          cat changelog.txt
+
+      - name: Create GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euxo pipefail
+          VERSION="${{ steps.get_version.outputs.version }}"
+          ZIP_NAME="mod_PoV_${VERSION}.zip"
+
+          # Create release with custom changelog
+          gh release create "$VERSION" \
+            "$ZIP_NAME" \
+            --notes-file changelog.txt \
+            --title "Path of the Vatt'ghern $VERSION"
+
+          echo "Release $VERSION created successfully!"

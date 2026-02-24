@@ -1,3 +1,4 @@
 # Ignore past versions folder
 /zzz_past_versions
 zzz_docs_wiki/Docs_Info.html
+*.zip
