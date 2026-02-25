@@ -13,6 +13,7 @@ this.pov_solo_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		this.m.Difficulty = 3;
 		this.m.Order = 38;
 		this.m.IsFixedLook = true;
+		this.m.RosterTierMax = this.Const.Roster.getTierForSize(12); // fix to lock max bros to 12 as your scenario states, Abyss.
 		this.m.StartingBusinessReputation = -100;
 		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
