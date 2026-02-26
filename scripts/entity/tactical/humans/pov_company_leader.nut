@@ -268,7 +268,7 @@ this.pov_company_leader <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([
 			[3, ::Legends.Helmet.Named.legend_frogmouth_helm_crested_painted],
 			[3, ::Legends.Helmet.Named.bascinet_named],
-			[3, ::Legends.Helmet.Named.deep_sallet_named],
+			[3, ::Legends.Helmet.Named.deep_cervelliere_named],
 			[3, ::Legends.Helmet.Named.barbute_named],
 			[3, ::Legends.Helmet.Named.italo_norman_helm_named],
 			[3, ::Legends.Helmet.Named.legend_helm_full_named]

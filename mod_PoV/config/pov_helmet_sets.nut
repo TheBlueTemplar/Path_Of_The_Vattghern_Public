@@ -254,7 +254,7 @@
 				],
 				Tops = [ // 45, -4, -1
 					[1, "top/legend_helmet_enclave_armet_visor"], // 35,-2,-1
-					[1, "top/legend_helmet_enclave_venitian_bascinet_visor"], // 45,-3,-1
+					[1, "top/legend_helmet_enclave_great_bascinet_visor"], // 45,-3,-1
 					[1, "top/legend_helmet_faceplate_full"], // 60,-5,-1
 					[1, "top/legend_helmet_faceplate_pointed"], // 50,-4,-1
 					[1, "top/legend_helmet_faceplate_winged"] // 45,-4,-1
@@ -315,14 +315,14 @@
 					//[1, "helm/legend_helmet_bascinet"], // 80, -5, -1				
 					[1, "helm/legend_helmet_flat_top_helm"], // 85, -5, -1
 					[1, "helm/legend_helmet_italo_norman_helm"], // 90, -6, -2		
-					[1, "helm/legend_helmet_deep_sallet"], // 100, -5, -1
+					[1, "helm/legend_helmet_deep_cervelliere"], // 100, -5, -1
 					[1, "helm/legend_helmet_conic_helm"] // 110, -6, -1
 				],
 				Tops = [ // avg, 45 , -3 , -1
 					[1, "top/legend_helmet_faceplate_flat"], //35, -2, -1
 					[1, "top/legend_helmet_faceplate_long"], //35, -2, -1
 					[1, "top/legend_helmet_faceplate_winged"], // 45,-4,-1	
-					[1, "top/legend_helmet_enclave_venitian_bascinet_visor"], // 45,-3,-1
+					[1, "top/legend_helmet_enclave_great_bascinet_visor"], // 45,-3,-1
 					[1, "top/legend_helmet_faceplate_pointed"], // 50,-4,-1
 					[1, "top/legend_helmet_headband_side"], //50, -3, 0
 					[1, "top/legend_helmet_faceplate_raised"], // 50, -3, 0
@@ -419,7 +419,7 @@
 				],
 				Tops = [ // 45, -4, -1
 					[1, "top/legend_helmet_enclave_armet_visor"], // 35,-2,-1
-					[1, "top/legend_helmet_enclave_venitian_bascinet_visor"], // 45,-3,-1
+					[1, "top/legend_helmet_enclave_great_bascinet_visor"], // 45,-3,-1
 					[1, "top/legend_helmet_faceplate_full"], // 60,-5,-1
 					[1, "top/legend_helmet_faceplate_pointed"], // 50,-4,-1
 					[1, "top/legend_helmet_faceplate_winged"] // 45,-4,-1

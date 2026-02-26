@@ -1,4 +1,4 @@
-::TLW.HooksMod.hook("scripts/items/legend_armor/tabard/legend_fleshcultist_tabard", function (q) {
+::TLW.HooksMod.hook("scripts/items/legend_armor/tabard/legend_armor_fleshcultist_tabard", function (q) {
 	q.create = @(__original) function ()
 	{
 		__original();

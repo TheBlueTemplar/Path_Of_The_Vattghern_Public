@@ -185,7 +185,7 @@ this.pov_merc_guest <- this.inherit("scripts/entity/tactical/player", {
 			[5, ::Legends.Helmet.Standard.kettle_hat_with_mail],
 			[5, ::Legends.Helmet.Standard.rondel_helm],
 			[5, ::Legends.Helmet.Standard.traze_northern_mercenary_cap],
-			[5, ::Legends.Helmet.Standard.deep_sallet],
+			[5, ::Legends.Helmet.Standard.deep_cervelliere],
 			[5, ::Legends.Helmet.Standard.scale_helm],
 			[5, ::Legends.Helmet.Standard.flat_top_helmet],
 			[5, ::Legends.Helmet.Standard.flat_top_with_mail],
