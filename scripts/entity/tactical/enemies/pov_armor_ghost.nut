@@ -13,8 +13,8 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		DistortTargetPrevD = this.createVec(0, 0),
 		DistortAnimationStartTimeD = 0*/
 	},
-	function create()
-	{
+
+	function create() {
 		this.m.Type = this.Const.EntityType.ArmorGhost;
 		this.m.BloodType = this.Const.BloodType.None;
 		this.m.MoraleState = this.Const.MoraleState.Ignore;
@@ -46,17 +46,17 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.AIAgent.setActor(this);
 	}
 
-	function onDeath( _killer, _skill, _tile, _fatalityType )
-	{
+	function onDeath(_killer, _skill, _tile, _fatalityType) {
 		local flip = this.Math.rand(1, 100) < 50; // Necessary shit for droppable loot to work
 
-		if (!this.Tactical.State.isScenarioMode() && _killer != null && _killer.isPlayerControlled())
+		if (!this.Tactical.State.isScenarioMode()
+			&& _killer != null
+			&& _killer.isPlayerControlled())
 		{
 			this.updateAchievement("OvercomingFear", 1, 1);
 		}
 
-		if (_tile != null)
-		{
+		if (_tile != null) {
 			_tile.spawnDetail("pov_bust_armor_ghost_dead", this.Const.Tactical.DetailFlag.Corpse, false);
 		}
 
@@ -69,8 +69,7 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
-	function generateCorpse( _tile, _fatalityType, _killer )
-	{
+	function generateCorpse(_tile, _fatalityType, _killer) {
 		local corpse = clone this.Const.Corpse;
 		corpse.CorpseName = "A " + this.getName();
 		corpse.Value = 1.0;
@@ -78,16 +77,14 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		corpse.IsResurrectable = false;
 		corpse.IsHeadAttached = true;
 
-		if (_tile != null)
-		{
+		if (_tile != null) {
 			corpse.Tile = _tile;
 		}
 
 		return corpse;
 	}
 
-	function onInit()
-	{
+	function onInit() {
 		// INIT BASICS
 		this.actor.onInit();
 		this.setRenderCallbackEnabled(true);
@@ -106,8 +103,7 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 
 		// Scaling stats and skills
 		// scaling points: 50,100,150,200
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 200)
-		{
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 200) {
 			b.DamageTotalMult *= 1.15;
 			b.RangedDefense += 12;
 			b.MeleeDefense += 12;
@@ -117,8 +113,7 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 			b.ArmorMax[this.Const.BodyPart.Head] += 225;
 			b.Armor[this.Const.BodyPart.Body] += 225;
 			b.ArmorMax[this.Const.BodyPart.Body] += 225;
-		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 150)
-		{
+		} else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 150) {
 			b.DamageTotalMult *= 1.10;
 			b.RangedDefense += 7;
 			b.MeleeDefense += 7;
@@ -128,8 +123,7 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 			b.ArmorMax[this.Const.BodyPart.Head] += 125;
 			b.Armor[this.Const.BodyPart.Body] += 125;
 			b.ArmorMax[this.Const.BodyPart.Body] += 125;
-		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 100)
-		{
+		} else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 100) {
 			b.DamageTotalMult *= 1.07;
 			b.RangedDefense += 5;
 			b.MeleeDefense += 5;
@@ -139,8 +133,7 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 			b.ArmorMax[this.Const.BodyPart.Head] += 65;
 			b.Armor[this.Const.BodyPart.Body] += 65;
 			b.ArmorMax[this.Const.BodyPart.Body] += 65;
-		}else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 50)
-		{
+		} else if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 50) {
 			b.DamageTotalMult *= 1.03;
 			b.RangedDefense += 3;
 			b.MeleeDefense += 3;
@@ -151,7 +144,6 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 			b.Armor[this.Const.BodyPart.Body] += 30;
 			b.ArmorMax[this.Const.BodyPart.Body] += 30;
 		}
-
 
 		// On legendary, bonus skills and perks added below
 
@@ -165,7 +157,7 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("socket").setBrush("bust_base_undead");
 		//this.addSprite("fog").setBrush("bust_ghost_fog_02");
 		local body = this.addSprite("body");
-		body.setBrush("pov_bust_armor_ghost_0" + this.Math.rand(0,2));
+		body.setBrush("pov_bust_armor_ghost_0" + this.Math.rand(0, 2));
 		//body.varySaturation(0.1);
 		//body.varyColor(0.1, 0.1, 0.1);
 
@@ -181,42 +173,40 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 		// Actives
-		this.m.Skills.add(this.new("scripts/skills/actives/pov_ghost_punch_skill")); 		// punch (normal atk - stagger)
-		this.m.Skills.add(this.new("scripts/skills/actives/pov_ghost_punch_swing_skill")); 	// wide punch (3tile atk - stagger)
-		this.m.Skills.add(this.new("scripts/skills/actives/pov_ghost_headbutt_skill")); 	// headbutt (piercing - can baffle)
-		this.m.Skills.add(this.new("scripts/skills/actives/pov_ghost_kick_skill"));		 	// kick (knockback - daze)
+		this.m.Skills.add(this.new("scripts/skills/actives/pov_ghost_punch_skill"));   // punch (normal atk - stagger)
+		this.m.Skills.add(this.new("scripts/skills/actives/pov_ghost_punch_swing_skill"));  // wide punch (3tile atk - stagger)
+		this.m.Skills.add(this.new("scripts/skills/actives/pov_ghost_headbutt_skill"));  // headbutt (piercing - can baffle)
+		this.m.Skills.add(this.new("scripts/skills/actives/pov_ghost_kick_skill"));    // kick (knockback - daze)
 
 		// In all non-easy diffs
-		if(this.World.Assets.getCombatDifficulty() != this.Const.Difficulty.Easy)
-		{
+		if (this.World.Assets.getCombatDifficulty() != this.Const.Difficulty.Easy) {
 			// Traits/Perks/Effects
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_push_the_advantage"));
 		}
 
 		// Extra Legendary Buffs n Perks
-		if(this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-		{
+		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary) {
 			// Stats
 			b.DamageTotalMult *= 1.10;
 
 			// Time-based difficulty scaling
 			local day = this.World.getTime().Days;
-			local scale = this.Math.floor(day/50) + this.Math.floor(day/100) + this.Math.floor(day/150);
+			local scale = this.Math.floor(day / 50) + this.Math.floor(day / 100) + this.Math.floor(day / 150);
 
 			// Soft cap so scaling stays controlled
-			scale = this.Math.min(scale, 8 + this.Math.floor(day/100));
+			scale = this.Math.min(scale, 8 + this.Math.floor(day / 100));
 
 			// Core combat stats
-			b.MeleeSkill	+= 1.15 * scale;   // ~+8 at day 200
-			b.MeleeDefense	+= 0.5 * scale;   // ~+4
-			b.RangedDefense	+= 0.5 * scale;   // ~+4
-			b.Bravery		+= 2.0 * scale;   // ~+14
+			b.MeleeSkill += 1.15 * scale;   // ~+8 at day 200
+			b.MeleeDefense += 0.5 * scale;   // ~+4
+			b.RangedDefense += 0.5 * scale;   // ~+4
+			b.Bravery += 2.0 * scale;   // ~+14
 
 			// Armor scaling (heavier late-game pressure)
-			b.Armor[this.Const.BodyPart.Head]		+= 11 * scale; // ~+75
-			b.ArmorMax[this.Const.BodyPart.Head]	+= 11 * scale;
-			b.Armor[this.Const.BodyPart.Body]		+= 11 * scale; // ~+75
-			b.ArmorMax[this.Const.BodyPart.Body]	+= 11 * scale;
+			b.Armor[this.Const.BodyPart.Head] += 11 * scale; // ~+75
+			b.ArmorMax[this.Const.BodyPart.Head] += 11 * scale;
+			b.Armor[this.Const.BodyPart.Body] += 11 * scale; // ~+75
+			b.ArmorMax[this.Const.BodyPart.Body] += 11 * scale;
 
 			// Perks
 			//this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
@@ -226,8 +216,7 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		// Easier on...easy
-		if(this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Easy)
-		{
+		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Easy) {
 			// Stats
 			b.DamageTotalMult *= 0.90;
 			b.RangedDefense -= 4;
@@ -241,18 +230,30 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 			b.ArmorMax[this.Const.BodyPart.Body] -= 50;
 		}
 
+		// Battle Forged damage reduction can go over 100% when armor is > 2000.
+		// This is fixed in Legends 19.3 (max is now 100%), but in the mean time
+		// we need to cap armor.
+		// DamageReceivedArmorMult is also capped to 5% in pov_armor_ghost_racial.nut.
+		if (b.ArmorMax[this.Const.BodyPart.Head] > 800) {
+			b.ArmorMax[this.Const.BodyPart.Head] = 800;
+			b.Armor[this.Const.BodyPart.Head] = 800;
+		}
+		if (b.ArmorMax[this.Const.BodyPart.Body] > 800) {
+			b.ArmorMax[this.Const.BodyPart.Body] = 800;
+			b.Armor[this.Const.BodyPart.Body] = 800;
+		}
+
 		// CORPSE - MUTATION STUFF
-		
+
 		// Corpse Drop
-		if (!::MSU.isKindOf(this.actor, "player")) 
-		{
+		if (!::MSU.isKindOf(this.actor, "player")) {
 			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.ArmorGhost));
 			//this.m.OnDeathLootTable.extend(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.SwordGhost));
-	  	}
+		}
 
 		// HERE, ADD EFFECTS YOU ALWAYS WANT APPLIED
 		//this.m.Skills.add(this.new("scripts/skills/effects/pov_serpentine_agility_effect"));
-		
+
 		// Chaos Mutation
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
@@ -260,18 +261,17 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		//::TLW.MutateEntity.mutate_entity(this.actor,::TLW.EnemyMutChance.Test100,[::TLW.EnemyMut.Goblin,::TLW.EnemyMut.Sandgolem],false); //test
 	}
 
-	function onRender()
-	{
-	    this.actor.onRender();
+	function onRender() {
+		this.actor.onRender();
 	}
 
-	function makeMiniboss()
-	{
-		if (!actor.makeMiniboss())
+	function makeMiniboss() {
+		if (!actor.makeMiniboss()) {
 			return false;
+		}
 
 		// Bust
-		this.getSprite("miniboss").setBrush("bust_miniboss");	
+		this.getSprite("miniboss").setBrush("bust_miniboss");
 
 		// Bonus Stats
 		local b = m.BaseProperties;
@@ -286,14 +286,26 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		b.Armor[this.Const.BodyPart.Body] += 250;
 		b.ArmorMax[this.Const.BodyPart.Body] += 250;
 
+		// Battle Forged damage reduction can go over 100% when armor is > 2000.
+		// This is fixed in Legends 19.3 (max is now 100%), but in the mean time
+		// we need to cap armor.
+		// DamageReceivedArmorMult is also capped to 5% in pov_armor_ghost_racial.nut.
+		if (b.ArmorMax[this.Const.BodyPart.Head] > 800) {
+			b.ArmorMax[this.Const.BodyPart.Head] = 800;
+			b.Armor[this.Const.BodyPart.Head] = 800;
+		}
+		if (b.ArmorMax[this.Const.BodyPart.Body] > 800) {
+			b.ArmorMax[this.Const.BodyPart.Body] = 800;
+			b.Armor[this.Const.BodyPart.Body] = 800;
+		}
+
 		// Bonus Skills
 		getSkills().add(::new("scripts/skills/perks/perk_nine_lives"));
-		
+
 		// Drops
-		this.actor.m.OnDeathLootTable.push([100,"scripts/items/armor_upgrades/named/pov_named_ghost_plates_upgrade"]);
+		this.actor.m.OnDeathLootTable.push([100, "scripts/items/armor_upgrades/named/pov_named_ghost_plates_upgrade"]);
 
 		return true;
 	}
 
 });
-
