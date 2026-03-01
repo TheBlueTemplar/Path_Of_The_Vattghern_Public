@@ -1,7 +1,7 @@
 this.pov_armor_ghost_racial <- this.inherit("scripts/skills/skill", {
 	m = {},
-	function create()
-	{
+
+	function create() {
 		this.m.ID = "racial.pov_armor_ghost";
 		this.m.Name = "";
 		this.m.Description = "";
@@ -13,28 +13,27 @@ this.pov_armor_ghost_racial <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = true;
 	}
 
-	function onUpdate (_properties)
-	{
+	function onUpdate(_properties) {
 		_properties.Threat += 8;
 
 		local actor = this.getContainer().getActor();
-		if (actor.getSkills().hasSkill("effects.holy_water") || actor.getSkills().hasSkill("effects.legend_consecrated_effect"))
+		if (actor.getSkills().hasSkill("effects.holy_water")
+			|| actor.getSkills().hasSkill("effects.legend_consecrated_effect"))
 		{
 			_properties.DamageTotalMult *= 0.80;
 		}
 	}
 
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
-	{
+	function onBeforeDamageReceived(_attacker, _skill, _hitInfo, _properties) {
 		local actor = this.getContainer().getActor();
-		if (actor.getSkills().hasSkill("effects.holy_water") || actor.getSkills().hasSkill("effects.legend_consecrated_effect"))
+		if (actor.getSkills().hasSkill("effects.holy_water")
+			|| actor.getSkills().hasSkill("effects.legend_consecrated_effect"))
 		{
 			_properties.DamageReceivedArmorMult *= 1.30;
 			_properties.DamageReceivedDirectMult *= 0.00;
 		}
 
-		if (actor.getArmor(_hitInfo.BodyPart) > 10)
-		{
+		if (actor.getArmor(_hitInfo.BodyPart) > 10) {
 			// maybe overkill idk
 			_hitInfo.DamageDirect = 0;
 			_hitInfo.DamageMinimum = 0;
@@ -42,7 +41,12 @@ this.pov_armor_ghost_racial <- this.inherit("scripts/skills/skill", {
 			_properties.DamageReceivedDirectMult *= 0.00;
 			_properties.DamageReceivedRegularMult *= 0.00;
 		}
+
+		// Cap armor damage reduction at 95% because it gets a bit stupid
+		// with high armor values.
+		if (_properties.DamageReceivedArmorMult < 0.05) {
+			_properties.DamageReceivedArmorMult = 0.05;
+		}
 	}
 
 });
-

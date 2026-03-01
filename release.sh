@@ -10,7 +10,7 @@ create_zip() {
 
 update_version() {
     local new_version="$1"
-    sed -i '' "s/Version = \"[^\"]*\",/Version = \"$new_version\",/" "$VERSION_FILE"
+    sed -i "s/Version = \"[^\"]*\",/Version = \"$new_version\",/" "$VERSION_FILE"
     if grep -q "Version = \"$new_version\"," "$VERSION_FILE"; then
         echo "Version updated successfully to $new_version"
     else
