@@ -189,3 +189,16 @@
 	"supplies.pov_corpse_forsaken"
 ];
 
+// Events that are skipped by scenarios that start with a Vatt'ghern.
+// Skips story events and unlocks base PoV mechanics (ToG, corpses, mutagens, events,
+// some ambitions complete).
+::TLW.VattghernScenarioSkipFlags <- [
+	"FirstMutantSpawned",
+	"FirstMutantKilledEvent",
+	"FirstMutantKilled",
+	"GotMutagenEvent",
+	"GotMutagen",
+	"GotVattghernEvent",
+	"GotVattghern",
+	"GotMedallion"
+];
