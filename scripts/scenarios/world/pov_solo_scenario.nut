@@ -5,8 +5,8 @@
 
 this.pov_solo_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
-	function create()
-	{
+
+	function create() {
 		this.m.ID = "scenario.pov_solo_last_witchers";
 		this.m.Name = "Lone Vatt\'ghern";
 		this.m.Description = "[p=c][img]gfx/ui/events/pov_solo_vattghern_origin.png[/img][/p][p] You are an experienced Vatt\'ghern, a professional beastslayer who has come to these lands to further your craft! The challenges are many, as most view you and you as a vile mutant, thus it will be hard to earn the people\'s trust and favor, except for those who also fight against vicious beasts...\n\n[color=" + this.Const.UI.Color.povOriginGood + "]Lone Vatt\'ghern:[/color] Start with an experienced and skilled Vatt\'ghern, who has all the knowledge of mutagen creation and corpse dissection and also some strong gear. He is also well supplied with some decent starting gold and medicine. \n\n[color=" + this.Const.UI.Color.povOriginGood + "]Monster Hunter:[/color] Due to your expertise, you can move much faster on the map, and you can spot enemy tracks from much further away. Additionally, beasthunting origins, including some rare ones, will appear more frequently and their skillset will be improved. \n\n[color=" + this.Const.UI.Color.povOriginBad + "]Mutant:[/color] Few people will trust you, and even fewer will want to deal with you. You start with significantly low reputation. Most people will either avoid joining you, or demand exceptionally high wages, save for the few who share your beastslaying interest. Also, you will get 15% worse prices overall. \n\n[color=" + this.Const.UI.Color.povOriginGood + "]Spoils Of The Hunt:[/color] 30% Chance for extra drops from monsters, due to your knowledge and techniques. Corpse and enemy mutagen drop rates are also increased by 15%. \n\n[color=" + this.Const.UI.Color.povOriginGood + "]Specialist Group:[/color] Cannot have more than 12 brothers in the company. If the player character dies, campagin ends. \n\n[color=" + this.Const.UI.Color.povEvent + "]A combination of the main PoV Origin, with the vanilla lone wolf. Meant to be a \"PoV Flavored\" lone wolf scenario. More features planned about this for the future. [/color][/p]";
@@ -18,26 +18,22 @@ this.pov_solo_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
 
-	function isValid()
-	{
+	function isValid() {
 		return this.Const.DLC.Unhold;
 	}
 
-	function onSpawnAssets()
-	{
+	function onSpawnAssets() {
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 1; i = i )
-		{
+		for (local i = 0; i < 1; i = i) {
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			bro.improveMood(2.0, "Eager to start an adventure");
 
-			while (names.find(bro.getNameOnly()) != null)
-			{
+			while (names.find(bro.getNameOnly()) != null) {
 				bro.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
 			}
 
@@ -84,18 +80,10 @@ this.pov_solo_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 
 		// Skip PoV story events (already start with vattghern)
 		// Also unlock base PoV mechanics (ToG,corpses,mutagens,events,some ambitions complete)
-		this.World.Flags.add("FirstMutantSpawned");
-		this.World.Flags.add("FirstMutantKilledEvent");
-		this.World.Flags.add("FirstMutantKilled");
-		this.World.Flags.add("GotMutagenEvent");
-		this.World.Flags.add("GotMutagen");
-		this.World.Flags.add("GotVattghernEvent");
-		this.World.Flags.add("GotVattghern");
-		this.World.Flags.add("GotMedallion");
-		//this.World.Flags.add("GotStrongVattghernEvent");
-		//this.World.Flags.add("GotStrongVattghern");
-		//this.World.Flags.add("DoneVattghernContract");
-		
+		foreach (flag in ::TLW.VattghernScenarioSkipFlags) {
+			this.World.Flags.add(flag);
+		}
+
 		// Reputation and Legends flags
 		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 		this.World.Assets.addBusinessReputation(-100);
@@ -110,10 +98,10 @@ this.pov_solo_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		// Starting Vattghern Items
 		//this.World.Assets.getStash().add(this.new("scripts/items/misc/anatomist/pov_witcher_potion_item"));
 		//this.World.Assets.getStash().add(this.new("scripts/items/misc/anatomist/pov_witcher_potion_item"));
-		
+
 		// Add A Random Mutagen (re-changed)
 		/*local roll = this.Math.rand(1,14);
-		switch (roll) 
+		switch (roll)
 		{
 			case 1: this.World.Assets.getStash().add(this.new("scripts/items/misc/anatomist/pov_alp_mutagen_item")); break;
 			case 2: this.World.Assets.getStash().add(this.new("scripts/items/misc/anatomist/pov_direwolf_mutagen_item")); break;
@@ -136,15 +124,15 @@ this.pov_solo_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		this.World.Assets.m.Medicine = this.Math.round(this.World.Assets.m.Medicine * 2.0);
 	}
 
-	function onSpawnPlayer()
-	{
+	function onSpawnPlayer() {
 		local randomVillage;
 
-		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = i )
-		{
+		for (local i = 0; i != this.World.EntityManager.getSettlements().len(); i = i) {
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
-			if (!randomVillage.isMilitary() && !randomVillage.isIsolatedFromRoads() && randomVillage.getSize() <= 1)
+			if (!randomVillage.isMilitary()
+				&& !randomVillage.isIsolatedFromRoads()
+				&& randomVillage.getSize() <= 1)
 			{
 				break;
 			}
@@ -158,100 +146,74 @@ this.pov_solo_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
 
-		do
-		{
+		do {
 			local x = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.X - 3), this.Math.min(this.Const.World.Settings.SizeX - 2, randomVillageTile.SquareCoords.X + 3));
 			local y = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.Y - 3), this.Math.min(this.Const.World.Settings.SizeY - 2, randomVillageTile.SquareCoords.Y + 3));
 
-			if (!this.World.isValidTileSquare(x, y))
-			{
-			}
-			else
-			{
+			if (!this.World.isValidTileSquare(x, y)) {
+			} else {
 				local tile = this.World.getTileSquare(x, y);
 
-				if (tile.Type == this.Const.World.TerrainType.Ocean || tile.Type == this.Const.World.TerrainType.Shore || tile.IsOccupied)
+				if (tile.Type == this.Const.World.TerrainType.Ocean
+					|| tile.Type == this.Const.World.TerrainType.Shore
+					|| tile.IsOccupied)
 				{
-				}
-				else if (tile.getDistanceTo(randomVillageTile) <= 1)
-				{
-				}
-				else
-				{
+				} else if (tile.getDistanceTo(randomVillageTile) <= 1) {
+				} else {
 					local path = this.World.getNavigator().findPath(tile, randomVillageTile, navSettings, 0);
 
-					if (!path.isEmpty())
-					{
+					if (!path.isEmpty()) {
 						randomVillageTile = tile;
 						break;
 					}
 				}
 			}
-		}
-		while (1);
+		} while (1);
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
 		this.World.Assets.updateLook(11);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
-		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
-		{
-			if (::TLW.EnablePovMainMusic)
-			{
+		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function (_tag) {
+			if (::TLW.EnablePovMainMusic) {
 				this.Music.setTrackList(this.Const.Music.PovMenuTracks, this.Const.Music.CrossFadeTime);
-			}
-			else
-			{
+			} else {
 				this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
 			}
 			this.World.Events.fire("event.pov_solo_scenario_intro");
 		}, null);
 	}
 
-
-	function onGenerateBro(bro)
-	{
+	function onGenerateBro(bro) {
 		local r;
-		r = this.Math.rand(0,6);
-		if (bro.getBackground().getID() == "background.beast_slayer")
-		{
+		r = this.Math.rand(0, 6);
+		if (bro.getBackground().getID() == "background.beast_slayer") {
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.85);
 			bro.getBaseProperties().DailyWageMult *= 0.85;
 			bro.getSprite("socket").setBrush("bust_base_beasthunters");
 			bro.getSkills().add(this.new("scripts/skills/traits/legend_beastslayers_trait"));
 			bro.improveMood(1.5, "Found the right band to join!");
-		}
-		else if (bro.getBackground().getID() == "background.legend_druid")
-		{
+		} else if (bro.getBackground().getID() == "background.legend_druid") {
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0);
 			bro.getBaseProperties().DailyWageMult *= 0.50;
 			bro.getSkills().add(this.new("scripts/skills/traits/legend_beastslayers_trait"));
 			bro.improveMood(1.5, "Feels at one with nature");
-		}
-		else if (bro.getBackground().getID() == "background.legend_vala")
-		{
+		} else if (bro.getBackground().getID() == "background.legend_vala") {
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0);
 			bro.getBaseProperties().DailyWageMult *= 0.50;
 			bro.getSkills().add(this.new("scripts/skills/traits/legend_beastslayers_trait"));
 			bro.improveMood(1.5, "Feels at one with nature");
-		}
-		else if (r == 0 || r == 1 || bro.getSkills().hasSkill("trait.hate_beasts"))
-		{
+		} else if (r == 0 || r == 1 || bro.getSkills().hasSkill("trait.hate_beasts")) {
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.85);
 			bro.getBaseProperties().DailyWageMult *= 0.85;
-			if (!bro.getSkills().hasSkill("trait.hate_beasts"))
-			{
+			if (!bro.getSkills().hasSkill("trait.hate_beasts")) {
 				bro.getSkills().add(this.new("scripts/skills/traits/hate_beasts_trait"));
 			}
 			bro.improveMood(1.5, "Hates beasts as much as you do");
-		}
-		else if (bro.getSkills().hasSkill("trait.pov_hate_everything"))
-		{
+		} else if (bro.getSkills().hasSkill("trait.pov_hate_everything")) {
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.90);
 			bro.getBaseProperties().DailyWageMult *= 0.90;
 			bro.improveMood(1.0, "Their hate includes your enemies");
-		}
-		else
-		{
+		} else {
 			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.50);
 			bro.getBaseProperties().DailyWageMult *= 1.50;
 			bro.worsenMood(1.5, "Has heard terrifying things about your kind...");
@@ -260,9 +222,7 @@ this.pov_solo_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		bro.getSkills().update();
 	}
 
-
-	function onInit()
-	{
+	function onInit() {
 		this.starting_scenario.onInit();
 		this.World.Assets.m.FootprintVision = 1.75;
 		this.World.Assets.m.BuyPriceMult = 1.15;
@@ -270,21 +230,19 @@ this.pov_solo_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		this.World.Assets.m.ExtraLootChance = 30;
 		this.World.Assets.m.BrothersMax = 12;
 		//this.World.State.getPlayer().m.BaseMovementSpeed = 120;
-		if (this.World.State.getPlayer() != null)	//fallback for movespeed multiplier
+		if (this.World.State.getPlayer() != null) //fallback for movespeed multiplier
 		{
 			// No idea why I did the do like it is done
 			//this.World.State.getPlayer().m.BaseMovementSpeed = 125;
 		}
 	}
 
-	function getMovementSpeedMult(){
+	function getMovementSpeedMult() {
 		return 1.064;
 	}
 
-	function onUpdateHiringRoster( _roster )
-	{
+	function onUpdateHiringRoster(_roster) {
 		this.addBroToRoster(_roster, "beast_hunter_background", 7);
 	}
 
 });
-
