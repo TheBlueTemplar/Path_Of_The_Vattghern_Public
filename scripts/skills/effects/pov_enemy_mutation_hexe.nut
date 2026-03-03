@@ -60,7 +60,7 @@ this.pov_enemy_mutation_hexe <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		if (!::MSU.isKindOf(actor, "player")) 
 		{
-			actor.m.OnDeathLootTable.push(::TLW.MutagenDrop.getMutagenDrop(actor, ::TLW.Mutation.Hexe));
+			::TLW.MutagenDrop.addMutagenDrop(actor, ::TLW.Mutation.Hexe);
 	  	}
 	}
 

@@ -54,7 +54,7 @@ this.pov_enemy_mutation_spider <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		if (!::MSU.isKindOf(actor, "player")) 
 		{
-			actor.m.OnDeathLootTable.push(::TLW.MutagenDrop.getMutagenDrop(actor, ::TLW.Mutation.Spider));
+			::TLW.MutagenDrop.addMutagenDrop(actor, ::TLW.Mutation.Spider);
 	  	}
 
 		if (!this.m.Container.hasSkill("actives.web"))

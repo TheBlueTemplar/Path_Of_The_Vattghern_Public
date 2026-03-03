@@ -8,9 +8,7 @@
 		// Corpse Drop
 		if (!::MSU.isKindOf(this.actor, "player")) 
 		{
-			local corpseDrop = ::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.OrcBerserker);
-			corpseDrop[0] += 14; // Increase corpse drop chance
-			this.actor.m.OnDeathLootTable.push([corpseDrop[0],corpseDrop[1]]);
+			::TLW.CorpseDrop.addCorpseDrop(actor, ::TLW.Corpse.OrcBerserker, 14);
 	  	}
 
 	  	/// Enemy Mutation System
