@@ -95,7 +95,7 @@ this.pov_enemy_mutation_goblin <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		if (!::MSU.isKindOf(actor, "player")) 
 		{
-			actor.m.OnDeathLootTable.push(::TLW.MutagenDrop.getMutagenDrop(actor, ::TLW.Mutation.Goblin));
+			::TLW.MutagenDrop.addMutagenDrop(actor, ::TLW.Mutation.Goblin);
 	  	}
 	}
 

@@ -1,8 +1,19 @@
 // New System (but still, credits to Emo for allowing me to "look" at his code for my past system)
-::TLW.MutagenDrop <-
-{
-	getMutagenDrop = function (_actor, _mutagen)
-	{
+::TLW.MutagenDrop <- {
+
+	addMutagenDrop = function (_actor, _mutagen) {
+		local drop = ::TLW.MutagenDrop.getMutagenDrop(_actor, _mutagen);
+		if (drop != null) {
+			_actor.m.OnDeathLootTable.push(drop);
+		}
+	}
+
+	getMutagenDrop = function (_actor, _mutagen) {
+		// Dont drop mutagen before killing first mutant
+		if (!::World.Flags.has("FirstMutantKilled")) {
+			return;
+		}
+
 		local chance = _mutagen.BaseDropChance;
 
 		// Quick way to adjust drop rates, best to keep at 1
@@ -68,12 +79,6 @@
 				//else if (day >= ::TLW.Scaling.Start.Day) {chance *= 0.8;}
 				//else if (day < ::TLW.Scaling.Start.Day) {chance *= 0.7;}
 			}
-		}
-
-		// Dont drop mutagen before killing first mutant
-		if(!::World.Flags.has("FirstMutantKilled"))
-		{
-			chance = 0;
 		}
 
 		//chance = 100; //For Testing Only

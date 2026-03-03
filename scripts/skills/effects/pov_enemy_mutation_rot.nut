@@ -94,7 +94,7 @@ this.pov_enemy_mutation_rot <- this.inherit("scripts/skills/skill", {
 		// Mutagen Drop
 		if (!::MSU.isKindOf(actor, "player")) 
 		{
-			actor.m.OnDeathLootTable.push(::TLW.MutagenDrop.getMutagenDrop(actor, ::TLW.Mutation.Rot));
+			::TLW.MutagenDrop.addMutagenDrop(actor, ::TLW.Mutation.Rot);
 	  	}
 	  	// Custom Effect
 		if (actor.hasSprite("pov_back_socket2"))

@@ -76,7 +76,7 @@ this.pov_enemy_mutation_vampire <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		if (!::MSU.isKindOf(actor, "player")) 
 		{
-			actor.m.OnDeathLootTable.push(::TLW.MutagenDrop.getMutagenDrop(actor, ::TLW.Mutation.Vampire));
+			::TLW.MutagenDrop.addMutagenDrop(actor, ::TLW.Mutation.Vampire);
 	  	}
 
 	  	if (!this.m.Container.hasSkill("actives.pov_darkflight"))
