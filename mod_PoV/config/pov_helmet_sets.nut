@@ -165,7 +165,7 @@
 					[1, "hood/legend_helmet_padded_hood"] // 50, -2, 0
 				],
 				Helms = [ // avg, 74, -4, -1
-					[1, "helm/legend_helmet_flat_top_helm_low"], // 70, -5, -1				
+					[1, "helm/legend_helmet_flat_top_helm_rusted"], // 70, -5, -1				
 					[1, "helm/legend_helmet_flat_top_helm"], // 85, -5, -1
 					//[1, "helm/legend_helmet_bascinet"], // 80, -5, -1
 					[1, "helm/legend_helmet_horsetail"] // 60, -3, -1
@@ -280,7 +280,7 @@
 					[1, "hood/legend_helmet_padded_hood"] // 50, -2, 0
 				],
 				Helms = [ // avg, 74, -4, -1
-					[1, "helm/legend_helmet_flat_top_helm_low"], // 70, -5, -1				
+					[1, "helm/legend_helmet_flat_top_helm_rusted"], // 70, -5, -1				
 					[1, "helm/legend_helmet_flat_top_helm"], // 85, -5, -1
 					//[1, "helm/legend_helmet_bascinet"], // 80, -5, -1
 					[1, "helm/legend_helmet_horsetail"] // 60, -3, -1
@@ -311,7 +311,7 @@
 				],
 				Helms = [ // avg, 85, -5, -1
 					[1, "helm/legend_helmet_horsetail"], // 60, -3, -1
-					[1, "helm/legend_helmet_flat_top_helm_low"], // 70, -5, -1
+					[1, "helm/legend_helmet_flat_top_helm_rusted"], // 70, -5, -1
 					//[1, "helm/legend_helmet_bascinet"], // 80, -5, -1				
 					[1, "helm/legend_helmet_flat_top_helm"], // 85, -5, -1
 					[1, "helm/legend_helmet_italo_norman_helm"], // 90, -6, -2		
@@ -351,7 +351,7 @@
 					[1, "hood/legend_helmet_padded_hood"] // 40, -1, 0
 				],
 				Helms = [ // avg, 75, -4, -1
-					[1, "helm/legend_helmet_flat_top_helm_low"], // 70, -5, -1				
+					[1, "helm/legend_helmet_flat_top_helm_rusted"], // 70, -5, -1				
 					[1, "helm/legend_helmet_flat_top_helm"], // 85, -5, -1
 					//[1, "helm/legend_helmet_bascinet"], // 80, -5, -1
 					[1, "helm/legend_helmet_horsetail"] // 60, -3, -1

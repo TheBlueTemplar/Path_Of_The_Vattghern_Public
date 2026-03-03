@@ -20,7 +20,7 @@
 				Plate = [// 70
 					[1, "plate/legend_armor_leather_riveted_light"], // 80
 					[1, "plate/legend_armor_leather_brigandine"], // 65
-					[1, "plate/legend_armor_leather_noble"], //65
+					[1, "plate/legend_armor_leather_jacket_fine"], //65
 					[1, "plate/legend_armor_leather_scale"] //70
 				],
 				Cloak = [
@@ -83,7 +83,7 @@
 					[1, "plate/legend_armor_leather_lamellar"] //50
 				],
 				Cloak = [//avg of 15 
-					[4, "cloak/legend_armor_cloak_common"],// 10, -1
+					[4, "cloak/legend_armor_cloak"],// 10, -1
 					[1, "cloak/legend_armor_cloak_heavy"]// 30, -4
 				],
 				Tabard = [
@@ -223,7 +223,7 @@
 					[1, "plate/legend_armor_southern_leather_jacket"]// 30, -3		
 				],
 				Cloak = [ // 13, -2
-					[1, "cloak/legend_armor_cloak_common"],// 10, -1
+					[1, "cloak/legend_armor_cloak"],// 10, -1
 					[1, "cloak/legend_armor_cloak_wooly_dark"],// 15, -2
 					[1, "cloak/legend_armor_animal_pelt"]// 15, -2
 				],
@@ -244,7 +244,7 @@
 				],
 				Chain = [],
 				Plate = [// avg 65, -6
-					[1, "plate/legend_armor_leather_noble"]// 65, -6								
+					[1, "plate/legend_armor_leather_jacket_fine"]// 65, -6								
 				],
 				Cloak = [ // 25, -2
 					[1, "cloak/legend_armor_cloak_noble"]// 25, -2
@@ -315,7 +315,7 @@
 					[1, "plate/legend_armor_leather_scale"],// 70, -9		
 				],
 				Cloak = [ // avg 5, 0
-					[1, "cloak/legend_armor_cloak_common"],// 10, -1
+					[1, "cloak/legend_armor_cloak"],// 10, -1
 					[1, "cloak/legend_armor_sash"],// 3, 0
 					[1, "cloak/legend_armor_southern_scarf"],// 5, 0			
 				],
@@ -361,7 +361,7 @@
 					[1, "plate/legend_armor_plate_chest"] // 125,-17			
 				],
 				Cloak = [ // 10, -2
-					[1, "cloak/legend_armor_cloak_common"],// 10, -1
+					[1, "cloak/legend_armor_cloak"],// 10, -1
 					[1, "cloak/legend_armor_cloak_heavy"],// 30, -5
 					[1, "cloak/legend_armor_sash"],// 3, 0
 					[1, "cloak/legend_armor_southern_scarf"],// 5, 0	
@@ -402,7 +402,7 @@
 					[1, "plate/legend_armor_leather_lamellar"]// 50, -6		
 				],
 				Cloak = [ // 8, -1
-					[1, "cloak/legend_armor_cloak_common"],// 10, -1
+					[1, "cloak/legend_armor_cloak"],// 10, -1
 					[1, "cloak/legend_armor_sash"],// 3, 0
 					[1, "cloak/legend_armor_southern_scarf"],// 5, 0	
 					[1, "cloak/legend_armor_animal_pelt"] // 15, -2
@@ -436,7 +436,7 @@
 					[1, "plate/legend_armor_southern_leather_plates"]// 50, -5		
 				],
 				Cloak = [ // avg 7, 0
-					[1, "cloak/legend_armor_cloak_common"],// 10, -1
+					[1, "cloak/legend_armor_cloak"],// 10, -1
 					[1, "cloak/legend_armor_sash"],// 3, 0
 					[1, "cloak/legend_armor_southern_scarf"]// 5, 0			
 				],
