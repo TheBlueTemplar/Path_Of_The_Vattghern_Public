@@ -97,7 +97,7 @@
 					[1, "helm/legend_helmet_enclave_kettle"],
 					[1, "helm/legend_helmet_enclave_skullcap"],
 					[2, "helm/legend_helmet_heavy_plate_helm"],			
-					[4, "helm/legend_helmet_flat_top_helm_polished"],
+					[4, "helm/legend_helmet_flat_top_helm"],
 					[1, "helm/legend_helmet_italo_norman_helm"],
 					[6, "helm/legend_helmet_great_helm"]
 				],
@@ -134,7 +134,7 @@
 					[1, "helm/legend_helmet_enclave_kettle"],
 					[1, "helm/legend_helmet_enclave_skullcap"],
 					[2, "helm/legend_helmet_heavy_plate_helm"],				
-					[4, "helm/legend_helmet_flat_top_helm_polished"],
+					[4, "helm/legend_helmet_flat_top_helm"],
 					[1, "helm/legend_helmet_italo_norman_helm"],
 					[6, "helm/legend_helmet_great_helm"]
 				],
