@@ -2,10 +2,10 @@ this.pov_orc_pain_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 2
 	},
-	function create()
-	{
+
+	function create() {
 		this.m.ID = "effects.pov_orc_pain";
-		this.m.Name = "[color="+ ::Const.UI.Color.povPainEffect + "]Raging Pain[/color]";
+		this.m.Name = "[color=" + ::Const.UI.Color.povPainEffect + "]Raging Pain[/color]";
 		this.m.Icon = "skills/pov_orcber.png";
 		this.m.IconMini = "pov_mini_orcber";
 		this.m.Overlay = "pov_medium_orcber";
@@ -15,13 +15,11 @@ this.pov_orc_pain_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 
-	function getDescription()
-	{
+	function getDescription() {
 		return "This character gets a surge of strength and rage when injured, boosting their agressiveness, but their freshly received injury still slows them down. Stacking. \n\n Will wear off in [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).";
 	}
 
-	function getTooltip()
-	{
+	function getTooltip() {
 		return [
 			{
 				id = 1,
@@ -60,26 +58,21 @@ this.pov_orc_pain_effect <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-	function onAdded()
-	{
-		if (this.Tactical.isActive())
-		{
-			this.m.TurnsLeft = this.Math.max(1, 2 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
-			this.spawnIcon("pov_medium_orcber", this.getContainer().getActor().getTile());
-		}	
-	}
-
-	function onRefresh()
-	{
-		if (this.Tactical.isActive())
-		{
+	function onAdded() {
+		if (this.Tactical.isActive() && this.getContainer().getActor().isPlacedOnMap()) {
 			this.m.TurnsLeft = this.Math.max(1, 2 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
 			this.spawnIcon("pov_medium_orcber", this.getContainer().getActor().getTile());
 		}
 	}
 
-	function onUpdate( _properties )
-	{
+	function onRefresh() {
+		if (this.Tactical.isActive() && this.getContainer().getActor().isPlacedOnMap()) {
+			this.m.TurnsLeft = this.Math.max(1, 2 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
+			this.spawnIcon("pov_medium_orcber", this.getContainer().getActor().getTile());
+		}
+	}
+
+	function onUpdate(_properties) {
 		//Buffs
 		_properties.DamageTotalMult *= 1.08;
 		_properties.MeleeSkillMult *= 1.08;
@@ -88,13 +81,10 @@ this.pov_orc_pain_effect <- this.inherit("scripts/skills/skill", {
 		_properties.InitiativeMult *= 0.80;
 	}
 
-	function onTurnEnd()
-	{
-		if (--this.m.TurnsLeft <= 0)
-		{
+	function onTurnEnd() {
+		if (--this.m.TurnsLeft <= 0) {
 			this.removeSelf();
 		}
 	}
 
 });
-
