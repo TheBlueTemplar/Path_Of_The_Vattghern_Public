@@ -2,8 +2,8 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 	m = {
 		MutationAdded = false
 	},
-	function create()
-	{
+
+	function create() {
 		// yolo
 		this.character_background.create();
 		this.m.ID = "background.pov_forsaken";
@@ -38,7 +38,7 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
 			::Legends.Traits.getID(::Legends.Trait.LegendLight),
 			::Legends.Traits.getID(::Legends.Trait.LegendFrail),
-			::Legends.Traits.getID(::Legends.Trait.LegendSeductive)
+			::Legends.Traits.getID(::Legends.Trait.LegendSeductive),
 			"trait.pov_fear_mutants",
 			"trait.pov_hate_mutants",
 			"trait.pov_nyctophobia"
@@ -78,7 +78,7 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Modifiers.Terrain = [
 			0.0, // ?
 			0.0, //ocean
-			0.005,//plains
+			0.005, //plains
 			0.020, //swamp
 			0.000, //hills
 			0.010, //forest
@@ -98,7 +98,8 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 		];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.TwoHandedTree,
+				// Removed in 19.3
+				// this.Const.Perks.TwoHandedTree,
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.MaceTree,
@@ -120,17 +121,22 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.SturdyTree
 			],
 			Enemy = [],
-			Class = [],// maybe add "mutant" class, with bonuses here and there?
+			Class = [], // maybe add "mutant" class, with bonuses here and there?
 			Magic = []
 		}
 	}
 
 	//Default Male
-	function setGender(_gender = -1)
-	{
-		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
+	function setGender(_gender = -1) {
+		if (_gender == -1) {
+			_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled"
+				? 0
+				: ::Math.rand(0, 1);
+		}
 
-		if (_gender != 1) return;
+		if (_gender != 1) {
+			return;
+		}
 		//this.m.Ethnicity = this.Math.rand(0, 2);
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
@@ -140,13 +146,11 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
-	function onBuildDescription()
-	{
+	function onBuildDescription() {
 		return "{Once a simple farmer, %name% learned early how to endure hardship. | Raised among steel and soot, %name% spent years as a blacksmith\'s apprentice. | Born into a family of warriors, %name% was trained in battle before learning mercy. | %name% once lived a quiet life as a hunter, tracking beasts rather than people. | %name% grew up in the shadows of the city, surviving through wit and labor.} {When %their% mutations became impossible to hide, staying was no longer an option. | Fear and whispers followed %name%, until leaving became the only choice. | Once the change revealed itself, %name% was driven away from everything familiar. | %Their% presence unsettled others, and the place %they% called home slowly turned hostile.} { %Their% mutations granted strength beyond the ordinary, and conflict soon followed. | What set %name% apart also made %them% dangerous, drawing %them% into battle. | Survival demanded that %they% learn to fight, and fight well. | Through skirmishes and desperate encounters, %name% refined %their% unnatural abilities.} {For all %their% power, the mutations weighs heavily on %them%. | %They% wields strength at the cost of pain, strain, or control. | Each use of %their% abilities leaves marks unseen by others. | %Name% endures constant tension, as if something inside resists being contained. | It is clear that this power is as much a curse as it is a weapon.} {Now, %they% have lost most of %their% humanity, having become a maddened, dangerous weapon of war.}";
 	}
 
-	function onChangeAttributes()
-	{
+	function onChangeAttributes() {
 		/* Base values are:
 		Hp 		50 - 60
 		Res 	30 - 40
@@ -155,8 +159,7 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 		Rsk 	32 - 42
 		Mdf 	0  - 5
 		Rdf 	0  - 5
-		Ini 	100 - 110 
-
+		Ini 	100 - 110
 		Values below are additions/substractions
 		*/
 		local c = {
@@ -196,30 +199,25 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 		return c;
 	}
 
-	function onAdded() 
-	{
+	function onAdded() {
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 
 		// for possible combat interactions
-		if (!actor.getFlags().has("mutant"))
-		{
+		if (!actor.getFlags().has("mutant")) {
 			actor.getFlags().add("mutant");
 		}
 		// for player mechanics interactions (eg.mutagens)
-		if (!actor.getFlags().has("playerMutant"))
-		{
+		if (!actor.getFlags().has("playerMutant")) {
 			actor.getFlags().add("playerMutant");
 		}
 		// for forsaken limit bonuses
-		if (!actor.getFlags().has("playerMutantPlus"))
-		{
+		if (!actor.getFlags().has("playerMutantPlus")) {
 			actor.getFlags().add("playerMutantPlus");
 		}
 
 		// Add Mutant Trait
-		if (!actor.getSkills().hasSkill("trait.pov_unstable_mutant"))
-		{
+		if (!actor.getSkills().hasSkill("trait.pov_unstable_mutant")) {
 			actor.getSkills().add(this.new("scripts/skills/traits/pov_unstable_mutant_trait"));
 		}
 
@@ -227,21 +225,19 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 		actor.getSkills().add(this.new("scripts/skills/traits/mad_trait"));
 
 		// Add Random Mutation (Weak Version)
-		if (this.m.MutationAdded == false)
-		{
+		if (this.m.MutationAdded == false) {
 			local possibleMutations = ::TLW.PlayerMutationsWeak;
-			local randomMutation = possibleMutations[this.Math.rand(0 , possibleMutations.len() - 1)];
+			local randomMutation = possibleMutations[this.Math.rand(0, possibleMutations.len() - 1)];
 			actor.getSkills().add(this.new(randomMutation));
 			actor.getFlags().increment("pov_ActiveMutations");
 			this.m.MutationAdded = true;
-		}	
+		}
 
 		// Sound change, slightly lower pitch, varied
 		actor.m.SoundPitch = this.Math.rand(75, 85) * 0.01;
 	}
 
-	function onSetAppearance()
-	{
+	function onSetAppearance() {
 		local actor = this.getContainer().getActor();
 		local tattoo_body = actor.getSprite("tattoo_body");
 		local tattoo_head = actor.getSprite("tattoo_head");
@@ -249,16 +245,14 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 		local head = actor.getSprite("head");
 
 		// Scar 'em up hehe
-		if (this.Math.rand(1, 100) <= 75)
-		{
+		if (this.Math.rand(1, 100) <= 75) {
 			tattoo_body.setBrush("scar_02_" + body.getBrush().Name);
 			tattoo_body.Visible = true;
 		}
 
-		if (this.Math.rand(1, 100) <= 75)
-		{
+		if (this.Math.rand(1, 100) <= 75) {
 			tattoo_head.setBrush("scar_02_head");
-			tattoo_head.Visible = true;	
+			tattoo_head.Visible = true;
 		}
 		// Mutant body hue recolor....PUKESKIN
 		// Color options: #a8c470 - Light Effect || #a1bf63 - kinda orky || #b4c754 - in between
@@ -272,8 +266,7 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 		::TLW.MutantEffect.addForsakenEffect(actor);
 	}
 
-	function onAddEquipment()
-	{
+	function onAddEquipment() {
 		local items = this.getContainer().getActor().getItems();
 		local r;
 
@@ -282,32 +275,19 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 		// Also gets a knife at bag
 		r = this.Math.rand(0, 4);
 
-		if (r == 0)
-		{
+		if (r == 0) {
 			items.equip(this.new("scripts/items/weapons/two_handed_flail"));
-		}
-		else if (r == 1)
-		{
+		} else if (r == 1) {
 			items.equip(this.new("scripts/items/weapons/two_handed_mace"));
-		}
-		else if (r == 2)
-		{
+		} else if (r == 2) {
 			items.equip(this.new("scripts/items/weapons/legend_two_handed_club"));
-		}
-		else if (r == 3)
-		{
+		} else if (r == 3) {
 			items.equip(this.new("scripts/items/weapons/warbrand"));
-		}
-		else if (r == 4)
-		{
+		} else if (r == 4) {
 			items.equip(this.new("scripts/items/weapons/billhook"));
-		}
-		else if (r == 5)
-		{
+		} else if (r == 5) {
 			items.equip(this.new("scripts/items/weapons/longaxe"));
-		}
-		else if (r == 6)
-		{
+		} else if (r == 6) {
 			items.equip(this.new("scripts/items/weapons/greatsword"));
 		}
 
@@ -315,60 +295,57 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 
 		// Equipment (Armor, Helmets)
 		local equipmentSets = [
-			{ armor = "forsaken_armor", helmet = "forsaken_helmet" }
+			{
+				armor = "forsaken_armor",
+				helmet = "forsaken_helmet"
+			}
 		];
 
 		local r = this.Math.rand(0, equipmentSets.len() - 1);
 		local selectedSet = equipmentSets[r];
-		items.equip(this.Const.World.Common.pickArmor([[ 1, selectedSet.armor ]]));
-		items.equip(this.Const.World.Common.pickHelmet([[ 1, selectedSet.helmet ]]));
-		
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, selectedSet.armor]
+		]));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, selectedSet.helmet]
+		]));
+
 	}
 
-	function getTooltip()
-	{
+	function getTooltip() {
 		local ret = this.character_background.getTooltip();
-		ret.push(
-			{
-				id = 13,
-				type = "text",
-				icon = "ui/icons/bravery.png",
-				text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.PositiveValue + "]-10[/color]."
-			}
-		);
-		ret.push(
-			{
-				id = 13,
-				type = "text",
-				icon = "ui/icons/pov_mutagen_shard_icon.png",
-				text = "Starts with a random [color=" + this.Const.UI.Color.povPerkPurple + "]Mutation[/color]. Such mutations are similar to - but weaker - than Vatt\'ghern ones."
-			}
-		);
-		ret.push(
-			{
-				id = 13,
-				type = "text",
-				icon = "ui/icons/pov_mutagen_shard_icon.png",
-				text = "Gets the [color=" + this.Const.UI.Color.povPerkPurple + "]Unstable Mutant[/color] trait, granting access to more mutations.."
-			}
-		);
+		ret.push({
+			id = 13,
+			type = "text",
+			icon = "ui/icons/bravery.png",
+			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.PositiveValue + "]-10[/color]."
+		});
+		ret.push({
+			id = 13,
+			type = "text",
+			icon = "ui/icons/pov_mutagen_shard_icon.png",
+			text = "Starts with a random [color=" + this.Const.UI.Color.povPerkPurple + "]Mutation[/color]. Such mutations are similar to - but weaker - than Vatt\'ghern ones."
+		});
+		ret.push({
+			id = 13,
+			type = "text",
+			icon = "ui/icons/pov_mutagen_shard_icon.png",
+			text = "Gets the [color=" + this.Const.UI.Color.povPerkPurple + "]Unstable Mutant[/color] trait, granting access to more mutations.."
+		});
 		return ret;
 	}
 
-	function onUpdate(_properties)
-	{
+	function onUpdate(_properties) {
 		this.character_background.onUpdate(_properties);
 		_properties.Threat += 10;
 	}
 
-	function onSerialize( _out )
-	{
+	function onSerialize(_out) {
 		this.character_background.onSerialize(_out);
 		_out.writeBool(this.m.MutationAdded);
 	}
 
-	function onDeserialize( _in )
-	{
+	function onDeserialize(_in) {
 		this.character_background.onDeserialize(_in);
 		this.m.MutationAdded = _in.readBool();
 	}

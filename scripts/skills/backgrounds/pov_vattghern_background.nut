@@ -1,7 +1,7 @@
 this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
-	function create()
-	{
+
+	function create() {
 		// Mutations OP
 		// Beat my meat solo
 		this.character_background.create();
@@ -73,30 +73,31 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[1];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[3];
 		this.m.Modifiers.Terrain = [
-				0.0, // ?
-				0.0, //ocean
-				0.005,//plains
-				0.025, //swamp
-				0.005, //hills
-				0.020, //forest
-				0.020, //forest
-				0.020, //forest_leaves
-				0.020, //autumn_forest
-				0.010, //mountains
-				0.0, // ?
-				0.00, //farmland
-				0.010, // snow
-				0.015, // badlands
-				0.015, //highlands
-				0.010, //stepps
-				0.0, //ocean
-				0.010, //desert
-				0.0 //oasis
-			];
+			0.0, // ?
+			0.0, //ocean
+			0.005, //plains
+			0.025, //swamp
+			0.005, //hills
+			0.020, //forest
+			0.020, //forest
+			0.020, //forest_leaves
+			0.020, //autumn_forest
+			0.010, //mountains
+			0.0, // ?
+			0.00, //farmland
+			0.010, // snow
+			0.015, // badlands
+			0.015, //highlands
+			0.010, //stepps
+			0.0, //ocean
+			0.010, //desert
+			0.0 //oasis
+		];
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.TwoHandedTree,
+				// Removed in 19.3
+				// this.Const.Perks.TwoHandedTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.AxeTree,
@@ -121,7 +122,7 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 			],
 			Enemy = [
 				//this.Const.Perks.SwordmastersTree, // start removing comments from here
-				//this.Const.Perks.BeastTree, 
+				//this.Const.Perks.BeastTree,
 				//this.Const.Perks.OccultTree,
 				//this.Const.Perks.GreenskinTree,
 				//this.Const.Perks.UndeadTree
@@ -138,11 +139,16 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 	}
 
 	//Default Male
-	function setGender(_gender = -1)
-	{
-		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
+	function setGender(_gender = -1) {
+		if (_gender == -1) {
+			_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled"
+				? 0
+				: ::Math.rand(0, 1);
+		}
 
-		if (_gender != 1) return;
+		if (_gender != 1) {
+			return;
+		}
 		//this.m.Ethnicity = this.Math.rand(0, 2);
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
@@ -152,13 +158,11 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
-	function onBuildDescription()
-	{
+	function onBuildDescription() {
 		return "{Little is known of where the vattghern comes from. | %They% never speak of %their% origins, and few dare to ask. | Rumors surround %their% past, each more uncertain than the last. | Whatever life %they% lived before, it has long since been abandoned. | Even among witchers, %their% beginnings remain obscure.} {%Their% movements defy common training, sharp and unnervingly precise. | %They% react faster than thought, as if instinct has replaced hesitation. | There is something unnatural in the way %they% fight, beyond talent alone. | Steel seems to follow %their% will without conscious effort. | Watching %them% in combat feels like witnessing something engineered rather than taught.} {Such ability was not born - it was carved through relentless discipline. | %They% have subjected mind and body to trials few could survive. | Countless hours of training hardened %them% beyond exhaustion. | Pain, repetition, and focus shaped %them% into what %they% are now. | Every motion reflects years of refinement, not chance.} {%They% specialize in threats others refuse to name. | Creatures of curse, spirit, and nightmare fall to %their% blade. | %They% understand the unnatural, not as myth, but as prey. | From twisted beasts to metaphysical horrors, %they% know how to kill what should not exist. | Where superstition fails, %their% knowledge prevails.} {Even so, %their% limits remain untested. | There is a sense that %they% are far from finished. | Experience has tempered %them%, but not exhausted %their% growth. | What %they% have mastered so far may only be the foundation. | In time, %they% could become something even legends struggle to describe.}";
 	}
 
-	function onChangeAttributes()
-	{
+	function onChangeAttributes() {
 		/* Base values are:
 		Hp 		50 - 60
 		Res 	30 - 40
@@ -167,8 +171,7 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 		Rsk 	32 - 42
 		Mdf 	0  - 5
 		Rdf 	0  - 5
-		Ini 	100 - 110 
-
+		Ini 	100 - 110
 		Values below are additions/substractions
 		*/
 		local c = {
@@ -210,42 +213,36 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	// enables relationships
 	// the only relationship that was enabled was between me and alcohol...for me to find out that this trait made wage = 0
-	function onAdded() 
-	{
+	function onAdded() {
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		//::Legends.Traits.grant(this, ::Legends.Trait.LegendLWRelationship); // fu,trait
 
 		// Add Vattghern Trait
-		if (!actor.getSkills().hasSkill("trait.pov_witcher"))
-		{
+		if (!actor.getSkills().hasSkill("trait.pov_witcher")) {
 			actor.getSkills().add(this.new("scripts/skills/traits/pov_vattghern_trait"));
 			actor.getFlags().increment("pov_ActiveMutations");
 		}
 	}
 
-	function onSetAppearance()
-	{
+	function onSetAppearance() {
 		local actor = this.getContainer().getActor();
 		local tattoo_body = actor.getSprite("tattoo_body");
 		local tattoo_head = actor.getSprite("tattoo_head");
 
-		if (this.Math.rand(1, 100) <= 60)
-		{
+		if (this.Math.rand(1, 100) <= 60) {
 			local body = actor.getSprite("body");
 			tattoo_body.setBrush("scar_02_" + body.getBrush().Name);
 			tattoo_body.Visible = true;
 		}
 
-		if (this.Math.rand(1, 100) <= 60)
-		{
+		if (this.Math.rand(1, 100) <= 60) {
 			tattoo_head.setBrush("scar_02_head");
 			tattoo_head.Visible = true;
 		}
 	}
 
-	function onAddEquipment()
-	{
+	function onAddEquipment() {
 		//---
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
@@ -261,57 +258,53 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 		// Equipment (Weapons, Shields)
 		r = this.Math.rand(0, 2);
 
-		if (r == 0)
-		{
+		if (r == 0) {
 			items.equip(this.new("scripts/items/weapons/greatsword"));
-		}
-		else if (r == 1)
-		{
+		} else if (r == 1) {
 			items.equip(this.new("scripts/items/weapons/oriental/polemace"));
-		}
-		else if (r == 2)
-		{
+		} else if (r == 2) {
 			items.equip(this.new("scripts/items/weapons/bardiche"));
 		}
 
 		// Equipment (Armor, Helmets)
 		local equipmentSets = [
-			{ armor = "vattghern_armor_01", helmet = "vattghern_helmet_01" }
+			{
+				armor = "vattghern_armor_01",
+				helmet = "vattghern_helmet_01"
+			}
 		];
 
 		local r = this.Math.rand(0, equipmentSets.len() - 1);
 		local selectedSet = equipmentSets[r];
-		items.equip(this.Const.World.Common.pickArmor([[ 1, selectedSet.armor ]]));
-		items.equip(this.Const.World.Common.pickHelmet([[ 1, selectedSet.helmet ]]));
-		
+		items.equip(this.Const.World.Common.pickArmor([
+			[1, selectedSet.armor]
+		]));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[1, selectedSet.helmet]
+		]));
+
 		//items.equip(this.Const.World.Common.pickArmor([[ 1, "vattghern_armor_01" ]]));
 		//items.equip(this.Const.World.Common.pickHelmet([[ 1, "vattghern_helmet_01" ]]));
 	}
 
-	function getTooltip()
-	{
+	function getTooltip() {
 		local ret = this.character_background.getTooltip();
-		ret.push(
-			{
-				id = 13,
-				type = "text",
-				icon = "ui/icons/bravery.png",
-				text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.PositiveValue + "]-5[/color]."
-			}
-		);
-		ret.push(
-			{
-				id = 13,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Gets the [color=" + this.Const.UI.Color.povPerkBurgundy + "]Field Triage[/color] and the [color=" + this.Const.UI.Color.povPerkBurgundy + "]Potion Brewer[/color] perks."
-			}
-		);
+		ret.push({
+			id = 13,
+			type = "text",
+			icon = "ui/icons/bravery.png",
+			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.PositiveValue + "]-5[/color]."
+		});
+		ret.push({
+			id = 13,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Gets the [color=" + this.Const.UI.Color.povPerkBurgundy + "]Field Triage[/color] and the [color=" + this.Const.UI.Color.povPerkBurgundy + "]Potion Brewer[/color] perks."
+		});
 		return ret;
 	}
 
-	function onUpdate(_properties)
-	{
+	function onUpdate(_properties) {
 		this.character_background.onUpdate(_properties);
 		_properties.Threat += 5;
 	}
