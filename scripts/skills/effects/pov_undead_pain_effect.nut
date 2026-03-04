@@ -2,10 +2,10 @@ this.pov_undead_pain_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 2
 	},
-	function create()
-	{
+
+	function create() {
 		this.m.ID = "effects.pov_undead_pain";
-		this.m.Name = "[color="+ ::Const.UI.Color.povPainEffect + "]Destabilised[/color]";
+		this.m.Name = "[color=" + ::Const.UI.Color.povPainEffect + "]Destabilised[/color]";
 		this.m.Icon = "skills/pov_skeleton.png";
 		this.m.IconMini = "pov_mini_skeleton";
 		this.m.Overlay = "pov_medium_skeleton";
@@ -15,13 +15,11 @@ this.pov_undead_pain_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 
-	function getDescription()
-	{
+	function getDescription() {
 		return "While this character cannot feel severe pain from their recent Injury, the magic keeping them together has been severely destabilised, and will need time to recover, resulting in reduced speed and increased fragility. Stacking. \n\n Will wear off in [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).";
 	}
 
-	function getTooltip()
-	{
+	function getTooltip() {
 		return [
 			{
 				id = 1,
@@ -54,44 +52,35 @@ this.pov_undead_pain_effect <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-	function onAdded()
-	{
-		if (this.Tactical.isActive())
-		{
+	function onAdded() {
+		if (this.Tactical.isActive() && this.getContainer().getActor().isPlacedOnMap()) {
 			this.m.TurnsLeft = this.Math.max(1, 2 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
 			this.spawnIcon("pov_medium_skeleton", this.getContainer().getActor().getTile());
 		}
-	}	
+	}
 
-	function onRefresh()
-	{
-		if (this.Tactical.isActive())
-		{
+	function onRefresh() {
+		if (this.Tactical.isActive() && this.getContainer().getActor().isPlacedOnMap()) {
 			this.m.TurnsLeft = this.Math.max(1, 2 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
 			this.spawnIcon("pov_medium_skeleton", this.getContainer().getActor().getTile());
 		}
-	}	
+	}
 
-	function onUpdate( _properties )
-	{
+	function onUpdate(_properties) {
 		//Debuffs
 		_properties.MeleeDefenseMult *= 0.88;
 		_properties.RangedDefenseMult *= 0.88;
 		_properties.InitiativeMult *= 0.80;
 	}
 
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
-	{
+	function onBeforeDamageReceived(_attacker, _skill, _hitInfo, _properties) {
 		_properties.DamageReceivedRegularMult *= 1.12;
 	}
 
-	function onTurnEnd()
-	{
-		if (--this.m.TurnsLeft <= 0)
-		{
+	function onTurnEnd() {
+		if (--this.m.TurnsLeft <= 0) {
 			this.removeSelf();
 		}
 	}
 
 });
-
