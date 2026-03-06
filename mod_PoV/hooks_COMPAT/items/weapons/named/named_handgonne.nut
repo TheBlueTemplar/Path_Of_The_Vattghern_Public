@@ -1,15 +1,13 @@
 ::TLW.HooksMod.hook("scripts/items/weapons/named/named_handgonne", function (q) {
-	
-	q.create = @(__original) function ()
-	{
+
+	q.create = @(__original) function () {
 		__original();
-		this.m.Condition = 50.0;
-		this.m.ConditionMax = 50.0;
-		this.m.ArmorDamageMult = 1.0;
+		this.m.Condition -= 10.0;
+		this.m.ConditionMax -= 10.0;
+		this.m.ArmorDamageMult += 0.10;
 	}
-	
-	q.onEquip = @(__original) function ()
-	{
+
+	q.onEquip = @(__original) function () {
 		__original();
 		// AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 		local strike = this.new("scripts/skills/actives/knock_out");
@@ -17,8 +15,7 @@
 		this.addSkill(strike);
 	}
 
-	q.getTooltip = @(__original) function()
-	{
+	q.getTooltip = @(__original) function () {
 		local ret = __original();
 		ret.push({
 			id = 11,
@@ -29,14 +26,11 @@
 		return ret;
 	}
 
-	q.onAnySkillUsed = @(__original) function ( _skill, _targetEntity, _properties)
-	{
+	q.onAnySkillUsed = @(__original) function (_skill, _targetEntity, _properties) {
 		__original(_skill, _targetEntity, _properties);
-		if(_skill != null && _skill.getID() == "actives.knock_out")
-		{
+		if (_skill != null && _skill.getID() == "actives.knock_out") {
 			_properties.DamageTotalMult *= 1.20;
 		}
 	}
 
 });
-
