@@ -1,13 +1,11 @@
 ::TLW.HooksMod.hook("scripts/items/weapons/named/legend_named_military_goedendag", function (q) {
-	
-	q.create = @(__original) function ()
-	{
+
+	q.create = @(__original) function () {
 		__original();
-		this.m.ArmorDamageMult = 1.20;	//-0.05
+		this.m.ArmorDamageMult = ::Math.max(0.0, this.m.ArmorDamageMult - 0.05);
 	}
 
-	q.onEquip = @(__original) function ()
-	{
+	q.onEquip = @(__original) function () {
 		__original();
 
 		::Legends.Actives.grant(this, ::Legends.Active.Cudgel, function (_skill) {
@@ -19,4 +17,3 @@
 	}
 
 });
-
