@@ -261,7 +261,7 @@ this.pov_sword_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		// Corpse Drop
 		if (!::MSU.isKindOf(this.actor, "player")) 
 		{
-			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.SwordGhost));
+			::TLW.CorpseDrop.addCorpseDrop(this.actor, ::TLW.Corpse.SwordGhost);
 			//this.m.OnDeathLootTable.extend(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.SwordGhost));
 	  	}
 

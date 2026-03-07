@@ -18,7 +18,7 @@
 			//local corpseDrop = ::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.FleshGolem);
 			//corpseDrop[0] += 12; // Increase corpse drop chance
 			//this.actor.m.OnDeathLootTable.push([corpseDrop[0],corpseDrop[1]]);
-			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.GreaterFleshGolem));
+			::TLW.CorpseDrop.addCorpseDrop(this.actor, ::TLW.Corpse.GreaterFleshGolem);
 	  	}
 		
 		/// Enemy Mutation System
