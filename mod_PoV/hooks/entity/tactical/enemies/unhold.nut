@@ -18,7 +18,7 @@
 	        }
 
 	        if (corpse != null) {
-	            this.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(this, corpse));
+	            ::TLW.CorpseDrop.addCorpseDrop(this, corpse);
 	        } else {
 	            ::TLW.Mod.Debug.printLog("No corpse found for " + this.getName());
 	        }

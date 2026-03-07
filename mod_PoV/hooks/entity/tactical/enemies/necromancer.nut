@@ -8,7 +8,7 @@
 		// Corpse Drop
 		if (!::MSU.isKindOf(this.actor, "player")) 
 		{
-			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.ZombieNecromancer));
+			::TLW.CorpseDrop.addCorpseDrop(this.actor, ::TLW.Corpse.ZombieNecromancer);
 	  	}
 
 	  	/// Enemy Mutation System

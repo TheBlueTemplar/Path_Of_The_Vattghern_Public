@@ -7,7 +7,7 @@
 		// Corpse Drop
 		if (!::MSU.isKindOf(this.actor, "player")) 
 		{
-			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.LegendMummy));
+			::TLW.CorpseDrop.addCorpseDrop(this.actor, ::TLW.Corpse.LegendMummy);
 	  	}
 
 	  	// HERE, ADD EFFECTS YOU ALWAYS WANT APPLIED

@@ -7,7 +7,7 @@
 		// Corpse Drop
 		if (!::MSU.isKindOf(this.actor, "player")) 
 		{
-			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.OrcBehemoth));
+			::TLW.CorpseDrop.addCorpseDrop(this.actor, ::TLW.Corpse.OrcBehemoth);
 	  	}
 
 	  	/// Enemy Mutation System

@@ -12,7 +12,7 @@
 		if (!::MSU.isKindOf(this.actor, "player")) 
 		{
 			// Keep normal ghost corpse? idk maybe yes xd
-			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.Ghost));
+			::TLW.CorpseDrop.addCorpseDrop(this.actor, ::TLW.Corpse.Ghost);
 	  	}
 		
 		// Chaos Mutation

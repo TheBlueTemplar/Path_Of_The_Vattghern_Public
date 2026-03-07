@@ -9,7 +9,7 @@
 		if (!::MSU.isKindOf(this.actor, "player")) 
 		{
 			//IDK WTF THIS FILE IS AND WHO TIS ABOUT
-			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.SkeletonBoss));
+			::TLW.CorpseDrop.addCorpseDrop(this.actor, ::TLW.Corpse.SkeletonBoss);
 	  	}
 
 	  	// Chaos Mutation

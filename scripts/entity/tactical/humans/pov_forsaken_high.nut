@@ -167,7 +167,7 @@ this.pov_forsaken_high <- this.inherit("scripts/entity/tactical/human", {
 		// Corpse Drop
 		if (!::MSU.isKindOf(this.actor, "player")) 
 		{
-			this.actor.m.OnDeathLootTable.push(::TLW.CorpseDrop.getCorpseDrop(actor, ::TLW.Corpse.Forsaken));
+			::TLW.CorpseDrop.addCorpseDrop(this.actor, ::TLW.Corpse.Forsaken);
 	  	}
 		
 		// Chaos Mutation
