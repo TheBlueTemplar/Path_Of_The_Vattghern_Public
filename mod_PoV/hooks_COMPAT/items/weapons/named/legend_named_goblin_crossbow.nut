@@ -2,7 +2,7 @@
 
 	q.create = @(__original) function () {
 		__original();
-		this.m.DirectDamageMult = ::Math.max(0.0, this.m.DirectDamageMult - 0.15);
+		this.m.DirectDamageMult = ::Math.maxf(0.0, this.m.DirectDamageMult - 0.15);
 		this.m.ArmorDamageMult += 0.20;
 	}
 

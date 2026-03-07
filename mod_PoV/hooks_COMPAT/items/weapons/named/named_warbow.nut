@@ -4,7 +4,7 @@
 		__original();
 		this.m.RegularDamage -= 5;
 		this.m.RegularDamageMax -= 5;
-		this.m.ArmorDamageMult = ::Math.max(0.0, this.m.ArmorDamageMult - 0.05);
+		this.m.ArmorDamageMult = ::Math.maxf(0.0, this.m.ArmorDamageMult - 0.05);
 	}
 
 });

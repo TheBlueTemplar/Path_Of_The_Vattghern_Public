@@ -4,7 +4,7 @@
 		__original();
 		this.m.RegularDamage += 5;
 		this.m.RegularDamageMax += 5;
-		this.m.DirectDamageMult = ::Math.min(1.0, this.m.DirectDamageMult + 0.20);
+		this.m.DirectDamageMult = ::Math.minf(1.0, this.m.DirectDamageMult + 0.20);
 	}
 
 });
