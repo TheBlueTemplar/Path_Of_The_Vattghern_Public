@@ -28,8 +28,8 @@
 				Tabard = [
 				],
 				Attachments = [// 10
-					[1, "armor_upgrades/legend_direwolf_pelt_upgrade"], // 10
-					[1, "armor_upgrades/legend_hyena_fur_upgrade"] // 10
+					[1, "cloak/legend_direwolf_pelt_cloak"], // 10
+					[1, "cloak/legend_hyena_fur_cloak"] // 10
 				]
 			}
 		]
@@ -127,7 +127,7 @@
 				Tabard = [],
 				Attachments = [
 					[2, "armor_upgrades/legend_armor_skull_chain_upgrade"],
-					[1, "armor_upgrades/legend_direwolf_pelt_upgrade"],
+					[1, "cloak/legend_direwolf_pelt_cloak"],
 					[1, "armor_upgrades/legend_pauldron_upgrade"],				
 					[1, "armor_upgrades/legend_metal_plating_upgrade"],
 					[1, "armor_upgrades/legend_joint_cover_upgrade"],					
@@ -167,7 +167,7 @@
 				Tabard = [],
 				Attachments = [
 					[2, "armor_upgrades/legend_armor_skull_chain_upgrade"],
-					[1, "armor_upgrades/legend_direwolf_pelt_upgrade"],
+					[1, "cloak/legend_direwolf_pelt_cloak"],
 					[1, "armor_upgrades/legend_pauldron_upgrade"],				
 					[1, "armor_upgrades/legend_metal_plating_upgrade"],
 					[1, "armor_upgrades/legend_joint_cover_upgrade"],					
@@ -321,7 +321,7 @@
 				],
 				Tabard = [],
 				Attachments = [ // avg 20, -2
-					[1, "armor_upgrades/legend_direwolf_pelt_upgrade"], //25, -1, 7 threat
+					[1, "cloak/legend_direwolf_pelt_cloak"], //25, -1, 7 threat
 					[1, "armor_upgrades/legend_leather_neckguard_upgrade"], //15, -2, 10% ranged res.
 					[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"], //30, -2, none
 				]
@@ -375,7 +375,7 @@
 					[1, "armor_upgrades/legend_pauldron_strong_upgrade"], //40, -4, 20% direct res
 					[1, "armor_upgrades/legend_pauldron_upgrade"],	// 50, -7			
 					[1, "armor_upgrades/legend_joint_cover_upgrade"], // 15, -3	
-					[1, "armor_upgrades/legend_direwolf_pelt_upgrade"], // 10		
+					[1, "cloak/legend_direwolf_pelt_cloak"], // 10		
 					[1, "armor_upgrades/legend_double_mail_upgrade"] // 30, -4
 				]
 			}
@@ -412,7 +412,7 @@
 					[1, "armor_upgrades/legend_leather_neckguard_upgrade"], // 15, -2, 10% ranged res.
 					[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"], // 30, -2, none		
 					[1, "armor_upgrades/legend_joint_cover_upgrade"], // 15, -3	
-					[1, "armor_upgrades/legend_direwolf_pelt_upgrade"] // 10 -2
+					[1, "cloak/legend_direwolf_pelt_cloak"] // 10 -2
 				]
 			}
 		]

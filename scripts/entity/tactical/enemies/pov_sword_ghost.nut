@@ -363,7 +363,7 @@ this.pov_sword_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		// Drops
-		this.actor.m.OnDeathLootTable.push([100,"scripts/items/weapons/named/named_greatsword"]);
+		this.actor.m.OnDeathLootTable.push([100,"scripts/items/weapons/named/legend_named_zweihander"]);
 
 		return true;
 	}

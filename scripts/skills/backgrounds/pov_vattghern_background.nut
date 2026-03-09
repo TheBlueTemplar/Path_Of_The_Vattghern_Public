@@ -259,7 +259,7 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 		r = this.Math.rand(0, 2);
 
 		if (r == 0) {
-			items.equip(this.new("scripts/items/weapons/greatsword"));
+			items.equip(this.new("scripts/items/weapons/legend_zweihander"));
 		} else if (r == 1) {
 			items.equip(this.new("scripts/items/weapons/oriental/polemace"));
 		} else if (r == 2) {

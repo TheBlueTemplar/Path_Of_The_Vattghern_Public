@@ -288,7 +288,7 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 		} else if (r == 5) {
 			items.equip(this.new("scripts/items/weapons/longaxe"));
 		} else if (r == 6) {
-			items.equip(this.new("scripts/items/weapons/greatsword"));
+			items.equip(this.new("scripts/items/weapons/legend_zweihander"));
 		}
 
 		items.addToBag(this.new("scripts/items/weapons/knife"));
