@@ -208,7 +208,7 @@ this.pov_hired_blade <- this.inherit("scripts/entity/tactical/human", {
 			// 1 2h, 5 poles, 9 1h: 60%1h, 40%2h
 			local weapons = [
 				"weapons/pike", //
-				"weapons/legend_longsword", //
+				"weapons/longsword", //
 				"weapons/fighting_axe",
 				"weapons/fighting_spear",
 				"weapons/legend_battle_glaive", //
