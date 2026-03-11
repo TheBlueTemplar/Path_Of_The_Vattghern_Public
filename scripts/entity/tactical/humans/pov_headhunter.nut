@@ -44,8 +44,8 @@ this.pov_headhunter <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 
 		// Gain Either Lithe or Battleforged
-		local b = this.Math.rand(1,2);
-		if (b == 1)
+		local r = this.Math.rand(1,2);
+		if (r == 1)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		}
