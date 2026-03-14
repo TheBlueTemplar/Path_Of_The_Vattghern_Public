@@ -204,7 +204,7 @@ this.pov_ai_defend_knock_back <- this.inherit("scripts/ai/tactical/behavior", {
 
 			foreach( o in opponents )
 			{
-				if (o.Actor.getID() == t.getID())
+				if (::Legends.S.isEntityNullOrDead(o.Actor) || o.Actor.getID() == t.getID())
 				{
 					continue;
 				}
