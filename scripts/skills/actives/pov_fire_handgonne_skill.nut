@@ -4,13 +4,12 @@ this.pov_fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 		AdditionalHitChance = 0,
 		SoundOnFire = []
 	},
-	function onItemSet()
-	{
+
+	function onItemSet() {
 		this.m.MaxRange = this.m.Item.getRangeMax();
 	}
 
-	function create()
-	{
+	function create() {
 		this.m.ID = "actives.pov_fire_handgonne";
 		this.m.Name = "Ignite Feuerspeier";
 		this.m.Description = "Ignite the fuse of your Feuerspeier. Does major fire damage. Can hit 2 targets at once, but targets farther away are less likely to be hit. Can also be used while engaged in melee.";
@@ -59,8 +58,7 @@ this.pov_fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxLevelDifference = 4;
 	}
 
-	function getTooltip()
-	{
+	function getTooltip() {
 		local ret = this.getDefaultTooltip();
 		ret.push({
 			id = 10,
@@ -75,17 +73,14 @@ this.pov_fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on flat ground and [color=" + this.Const.UI.Color.PositiveValue + "]" + (this.getMaxRange() + this.m.MaxRangeBonus) + "[/color] tiles if shooting downhill"
 		});
 
-		if (this.m.AdditionalAccuracy >= 0)
-		{
+		if (this.m.AdditionalAccuracy >= 0) {
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
 				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalHitChance) + "%[/color] per tile of distance. This chance is unaffected by objects or characters in the line of fire."
 			});
-		}
-		else
-		{
+		} else {
 			ret.push({
 				id = 7,
 				type = "text",
@@ -96,17 +91,14 @@ this.pov_fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 
 		local ammo = this.getAmmo();
 
-		if (ammo > 0)
-		{
+		if (ammo > 0) {
 			ret.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
 				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] shots left"
 			});
-		}
-		else
-		{
+		} else {
 			ret.push({
 				id = 8,
 				type = "text",
@@ -115,8 +107,7 @@ this.pov_fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (!this.getItem().isLoaded())
-		{
+		if (!this.getItem().isLoaded()) {
 			ret.push({
 				id = 9,
 				type = "text",
@@ -125,58 +116,49 @@ this.pov_fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (this.getContainer().hasPerk(::Legends.Perk.LegendPiercingShot))
-		{
-			local perk = ::Legends.Perks.get(this, ::Legends.Perk.LegendPiercingShot);
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/tooltips/positive.png",
-				text = "Max Range [color=%positive%]+" + perk.m.BonusRange + "[/color] from " + perk.getName()
-			});
-		}
+		// Removed in 19.3
+		// if (this.getContainer().hasPerk(::Legends.Perk.LegendPiercingShot)) {
+		// 	local perk = ::Legends.Perks.get(this, ::Legends.Perk.LegendPiercingShot);
+		// 	ret.push({
+		// 		id = 6,
+		// 		type = "text",
+		// 		icon = "ui/tooltips/positive.png",
+		// 		text = "Max Range [color=%positive%]+" + perk.m.BonusRange + "[/color] from " + perk.getName()
+		// 	});
+		// }
 
 		return ret;
 	}
 
-	function isUsable()
-	{
+	function isUsable() {
 		return this.skill.isUsable() && this.getItem().isLoaded();
 	}
 
-	function getAmmo()
-	{
+	function getAmmo() {
 		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Ammo);
 
-		if (item == null)
-		{
+		if (item == null) {
 			return 0;
 		}
 
-		if (item.getAmmoType() == this.Const.Items.AmmoType.Powder)
-		{
+		if (item.getAmmoType() == this.Const.Items.AmmoType.Powder) {
 			return item.getAmmo();
 		}
 	}
 
-	function applyEffectToTargets( _tag )
-	{
+	function applyEffectToTargets(_tag) {
 		local user = _tag.User;
 		local targets = _tag.Targets;
 
-		foreach( t in targets )
-		{
-			if (!t.isAlive() || t.isDying())
-			{
+		foreach (t in targets) {
+			if (!t.isAlive() || t.isDying()) {
 				continue;
 			}
 
 			local success = this.attackEntity(user, t, false);
 
-			if (success && t.isAlive() && !t.isDying() && t.getTile().IsVisibleForPlayer)
-			{
-				for( local i = 0; i < this.Const.Tactical.BurnParticles.len() - 1; i = ++i )
-				{
+			if (success && t.isAlive() && !t.isDying() && t.getTile().IsVisibleForPlayer) {
+				for (local i = 0; i < this.Const.Tactical.BurnParticles.len() - 1; i = ++i) {
 					local effect = this.Const.Tactical.BurnParticles[i];
 					this.Tactical.spawnParticleEffect(false, effect.Brushes, t.getTile(), effect.Delay, effect.Quantity * 0.1, effect.LifeTimeQuantity * 0.1, effect.SpawnRate * 0.1, effect.Stages, this.createVec(0, 0));
 				}
@@ -184,40 +166,35 @@ this.pov_fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_skill == this)
-		{
+	function onAnySkillUsed(_skill, _targetEntity, _properties) {
+		if (_skill == this) {
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += -10 + this.m.AdditionalHitChance;
 		}
 	}
 
-	function onTargetSelected( _targetTile )
-	{
+	function onTargetSelected(_targetTile) {
 		this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, _targetTile, _targetTile.Pos.X, _targetTile.Pos.Y);
 		local ownTile = this.m.Container.getActor().getTile();
 		local dir = ownTile.getDirectionTo(_targetTile);
 
-		if (_targetTile.hasNextTile(dir))
-		{
+		if (_targetTile.hasNextTile(dir)) {
 			local forwardTile = _targetTile.getNextTile(dir);
 
-			if (this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
-			{
+			if (this.Math.abs(forwardTile.Level - ownTile.Level) <= 1) {
 				this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, forwardTile, forwardTile.Pos.X, forwardTile.Pos.Y);
 			}
 		}
 	}
 
-	function onAfterUpdate( _properties )
-	{
+	function onAfterUpdate(_properties) {
 		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
-		this.m.FatigueCostMult = _properties.IsSpecializedInCrossbows ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.FatigueCostMult = _properties.IsSpecializedInCrossbows
+			? this.Const.Combat.WeaponSpecFatigueMult
+			: 1.0;
 	}
 
-	function onUse( _user, _targetTile )
-	{
+	function onUse(_user, _targetTile) {
 		this.Sound.play(this.m.SoundOnFire[this.Math.rand(0, this.m.SoundOnFire.len() - 1)], this.Const.Sound.Volume.Skill * this.m.SoundVolume, _user.getPos());
 		local tag = {
 			Skill = this,
@@ -233,8 +210,7 @@ this.pov_fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
-	function onDelayedEffect( _tag )
-	{
+	function onDelayedEffect(_tag) {
 
 		local user = _tag.User;
 		local targetTile = _tag.TargetTile;
@@ -242,20 +218,14 @@ this.pov_fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 		local dir = myTile.getDirectionTo(targetTile);
 		//this.consumeAmmo();
 
-		if (myTile.IsVisibleForPlayer)
-		{
-			if (user.isAlliedWithPlayer())
-			{
-				for( local i = 0; i < this.Const.Tactical.FireLanceRightParticles.len(); i = ++i )
-				{
+		if (myTile.IsVisibleForPlayer) {
+			if (user.isAlliedWithPlayer()) {
+				for (local i = 0; i < this.Const.Tactical.FireLanceRightParticles.len(); i = ++i) {
 					local effect = this.Const.Tactical.FireLanceRightParticles[i];
 					this.Tactical.spawnParticleEffect(false, effect.Brushes, myTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
 				}
-			}
-			else
-			{
-				for( local i = 0; i < this.Const.Tactical.FireLanceLeftParticles.len(); i = ++i )
-				{
+			} else {
+				for (local i = 0; i < this.Const.Tactical.FireLanceLeftParticles.len(); i = ++i) {
 					local effect = this.Const.Tactical.FireLanceLeftParticles[i];
 					this.Tactical.spawnParticleEffect(false, effect.Brushes, myTile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 0));
 				}
@@ -264,16 +234,16 @@ this.pov_fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 
 		local targets = [];
 
-		if (targetTile.IsOccupiedByActor && targetTile.getEntity().isAttackable())
-		{
+		if (targetTile.IsOccupiedByActor && targetTile.getEntity().isAttackable()) {
 			targets.push(targetTile.getEntity());
 		}
 
-		if (targetTile.hasNextTile(dir))
-		{
+		if (targetTile.hasNextTile(dir)) {
 			local nextTile = targetTile.getNextTile(dir);
 
-			if (nextTile.IsOccupiedByActor && nextTile.getEntity().isAttackable() && this.Math.abs(nextTile.Level - myTile.Level) <= 1)
+			if (nextTile.IsOccupiedByActor
+				&& nextTile.getEntity().isAttackable()
+				&& this.Math.abs(nextTile.Level - myTile.Level) <= 1)
 			{
 				targets.push(nextTile.getEntity());
 			}
@@ -288,10 +258,8 @@ this.pov_fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
-	function onRemoved()
-	{
+	function onRemoved() {
 		this.getContainer().removeByID("actives.reload_handgonne");
 	}
 
 });
-
