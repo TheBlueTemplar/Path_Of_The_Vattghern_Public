@@ -37,7 +37,8 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 			::Legends.Traits.getID(::Legends.Trait.Insecure),
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
 			::Legends.Traits.getID(::Legends.Trait.LegendLight),
-			::Legends.Traits.getID(::Legends.Trait.LegendFrail),
+			// Removed in 19.3
+			// ::Legends.Traits.getID(::Legends.Trait.LegendFrail),
 			::Legends.Traits.getID(::Legends.Trait.LegendSeductive),
 			"trait.pov_fear_mutants",
 			"trait.pov_hate_mutants",
