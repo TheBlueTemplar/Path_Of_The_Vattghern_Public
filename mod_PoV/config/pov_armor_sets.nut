@@ -8,7 +8,7 @@
 			{
 				Cloth = [//avg of 65
 					[1, "cloth/legend_armor_gambeson"], // 65
-					[1, "cloth/legend_armor_padded_surcoat"], // 55
+					[1, "cloth/legend_armor_quilted_aketon"], // 55
 					[1, "cloth/legend_armor_gambeson_wolf"] // 70
 				],
 				Chain = [// 70
@@ -42,7 +42,7 @@
 				Cloth = [//avg of 40
 					[1, "cloth/legend_armor_wanderers_coat"], // 45
 					[1, "cloth/legend_armor_tunic"], // 20
-					[1, "cloth/legend_armor_padded_surcoat"] // 55
+					[1, "cloth/legend_armor_quilted_aketon"] // 55
 				],
 				Chain = [//avg of 35
 					[1, "chain/legend_armor_mail_shirt_simple"], //25
@@ -71,7 +71,7 @@
 			{
 				Cloth = [//avg of 50
 					[1, "cloth/legend_armor_wanderers_coat"], // 45
-					[1, "cloth/legend_armor_padded_surcoat"] // 55
+					[1, "cloth/legend_armor_quilted_aketon"] // 55
 				],
 				Chain = [//avg of 40
 					[1, "chain/legend_armor_mail_shirt"], //50
@@ -184,7 +184,7 @@
 			{
 				Cloth = [// avg 60, -7
 					[1, "cloth/legend_armor_gambeson"],// 65,-8
-					[1, "cloth/legend_armor_padded_surcoat"],// 55,-6
+					[1, "cloth/legend_armor_quilted_aketon"],// 55,-6
 				],
 				Chain = [// avg 63, -8
 					[1,"chain/legend_armor_mail_shirt"], // 50, -6
@@ -262,7 +262,7 @@
 			{
 				Cloth = [// avg 60, -3
 					[4, "cloth/legend_armor_knightly_robe"],// 60,-2
-					[1, "cloth/legend_armor_padded_surcoat"]// 55,-6
+					[1, "cloth/legend_armor_quilted_aketon"]// 55,-6
 				],
 				Chain = [// avg 100, -12
 					[1, "chain/legend_armor_hauberk"], // 95, -11
@@ -302,7 +302,7 @@
 			{
 				Cloth = [// avg 60, -7
 					[1, "cloth/legend_armor_gambeson"],// 65,-8
-					[1, "cloth/legend_armor_padded_surcoat"],// 55,-6
+					[1, "cloth/legend_armor_quilted_aketon"],// 55,-6
 				],
 				Chain = [// avg 63, -8
 					[1,"chain/legend_armor_mail_shirt"], // 50, -6
@@ -338,7 +338,7 @@
 					[1, "cloth/legend_armor_wanderers_coat"],// 45,-4
 					[1, "cloth/legend_armor_thick_tunic"],// 30,-3
 					[1, "cloth/legend_armor_wanderers_coat"],// 45,-4
-					[1, "cloth/legend_armor_padded_surcoat"],// 55,-6
+					[1, "cloth/legend_armor_quilted_aketon"],// 55,-6
 					[1, "cloth/legend_armor_gambeson"],// 65,-8
 					[1, "cloth/legend_armor_gambeson"],// 65,-8
 				],
@@ -455,7 +455,7 @@
 			{
 				Cloth = [// avg 60, -3
 					[4, "cloth/legend_armor_knightly_robe"],// 60,-2
-					[1, "cloth/legend_armor_padded_surcoat"]// 55,-6
+					[1, "cloth/legend_armor_quilted_aketon"]// 55,-6
 				],
 				Chain = [// avg 100, -12
 					[1, "chain/legend_armor_hauberk"], // 95, -11
