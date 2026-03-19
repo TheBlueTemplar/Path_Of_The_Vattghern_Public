@@ -27,7 +27,7 @@ this.pov_mutant_background <- this.inherit("scripts/skills/backgrounds/character
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
 			::Legends.Traits.getID(::Legends.Trait.LegendLight),
 			// Removed in 19.3
-			::Legends.Traits.getID(::Legends.Trait.LegendFrail),
+			// ::Legends.Traits.getID(::Legends.Trait.LegendFrail),
 			::Legends.Traits.getID(::Legends.Trait.LegendSeductive),
 			::Legends.Traits.getID(::Legends.Trait.Hesistant),
 			"trait.pov_fear_mutants",

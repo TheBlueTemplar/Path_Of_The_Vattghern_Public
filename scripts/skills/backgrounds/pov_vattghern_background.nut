@@ -34,7 +34,7 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 			::Legends.Traits.getID(::Legends.Trait.Asthmatic),
 			::Legends.Traits.getID(::Legends.Trait.LegendLight),
 			// Removed in 19.3
-			::Legends.Traits.getID(::Legends.Trait.LegendFrail),
+			// ::Legends.Traits.getID(::Legends.Trait.LegendFrail),
 			::Legends.Traits.getID(::Legends.Trait.Dumb),
 			::Legends.Traits.getID(::Legends.Trait.Superstitious),
 			"trait.pov_fear_mutants",
