@@ -1,9 +1,9 @@
 this.pov_basilisk_mutagen_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		IsSpent = false
-		},
-	function create()
-	{
+	},
+
+	function create() {
 		this.m.ID = "effects.pov_basilisk_mutagen";
 		this.m.Name = "Mutation: Basilisk";
 		this.m.Icon = "skills/pov_basilisk.png";
@@ -16,13 +16,11 @@ this.pov_basilisk_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 	}
 
-	function getDescription()
-	{
+	function getDescription() {
 		return "[color=" + this.Const.UI.Color.povPerkBlue + "]Enhanced Optics[/color]: The vatt'ghern's mutated eyes glow with an unnatural intensity, granting them the ability to perceive even the subtlest vulnerabilities in their foes. With deadly precision, they target weak points, turning every strike to the head into a calculated execution. However, this heightened focus comes at a cost—draining their stamina and diminishing their effectiveness in broader combat. A fearsome gift, but one that demands careful control.\n\n[color=" + this.Const.UI.Color.povPerkBlue + "]Unnatural Glare[/color]: The vatt'ghern's unnatural eyes emit an intimidating brilliance. When focused on an enemy, it deeply unsettles them, throwing them off balance.";
 	}
 
-	function getTooltip()
-	{
+	function getTooltip() {
 		local ret = [
 			{
 				id = 1,
@@ -74,8 +72,7 @@ this.pov_basilisk_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onUpdate( _properties )
-	{
+	function onUpdate(_properties) {
 		// Buffs
 		// Glare Ability and fat regen on hdsh
 		_properties.HitChance[this.Const.BodyPart.Head] += 7;
@@ -85,54 +82,44 @@ this.pov_basilisk_mutagen_effect <- this.inherit("scripts/skills/skill", {
 		_properties.FatigueEffectMult *= 1.15;
 	}
 
-	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
-	{
-		if (_targetEntity.isAlive() && !_targetEntity.isDying())
-		{
-			local targetTile = _targetEntity.getTile();
-			local user = this.getContainer().getActor();
+	function onTargetHit(_skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor) {
+		if (::Legends.S.isEntityNullOrDead(_targetEntity)) {
+			return;
+		}
+		local targetTile = _targetEntity.getTile();
+		local user = this.getContainer().getActor();
 
-			if (_bodyPart == this.Const.BodyPart.Head)
-			{
-				// was *0.7, changed it to 0.07 cause it made sense, hope I did not bork stuff xd
-				if (!this.m.IsSpent)
-				{
-					this.m.IsSpent = true;
-					local actor = this.getContainer().getActor();
-					actor.setFatigue(this.Math.max(0, actor.getFatigue() - actor.getBaseProperties().Stamina * actor.getBaseProperties().StaminaMult * 0.10));
-					actor.setDirty(true);
-				}
-				if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer)
-				{
-					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " regenerated fatigue by hitting " + this.Const.UI.getColorizedEntityName(_targetEntity) + " in the head");
-				}
+		if (_bodyPart == this.Const.BodyPart.Head) {
+			// was *0.7, changed it to 0.07 cause it made sense, hope I did not bork stuff xd
+			if (!this.m.IsSpent) {
+				this.m.IsSpent = true;
+				local actor = this.getContainer().getActor();
+				actor.setFatigue(this.Math.max(0, actor.getFatigue() - actor.getBaseProperties().Stamina * actor.getBaseProperties().StaminaMult * 0.10));
+				actor.setDirty(true);
+			}
+			if (!user.isHiddenToPlayer() && targetTile.IsVisibleForPlayer) {
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " regenerated fatigue by hitting " + this.Const.UI.getColorizedEntityName(_targetEntity) + " in the head");
 			}
 		}
 	}
 
-	function isHidden()
-	{
+	function isHidden() {
 		return this.inBattleHiddenCheck();
 	}
 
-	function onAdded()
-	{
+	function onAdded() {
 		// ADD GLARE SKILL HERE
-		if (!this.m.Container.hasSkill("actives.pov_glare"))
-		{
+		if (!this.m.Container.hasSkill("actives.pov_glare")) {
 			this.m.Container.add(::new("scripts/skills/actives/pov_glare_skill"));
 		}
 	}
 
-	function onTurnStart()
-	{
+	function onTurnStart() {
 		this.m.IsSpent = false;
 	}
 
-	function inBattleHiddenCheck()
-	{
-		if (!("State" in this.Tactical) || this.Tactical.State == null)
-		{
+	function inBattleHiddenCheck() {
+		if (!("State" in this.Tactical) || this.Tactical.State == null) {
 			return false;
 		}
 
@@ -140,4 +127,3 @@ this.pov_basilisk_mutagen_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
-
