@@ -1,6 +1,6 @@
 local tips = [
-// 65 Total As Of Now
-// BS - Memes - References etc.
+	// 65 Total As Of Now
+	// BS - Memes - References etc.
 	"(PoV) The shadows are watching...",
 	"(PoV) Some are whispering that Goblin\'s woodwork ain\'t that good...",
 	"(PoV) Donkeys make for great Vatt\'gherns...",
@@ -14,7 +14,7 @@ local tips = [
 	"(PoV) Rumors say templar was drunk asf when writing these...",
 	"(PoV) Yes, use breditor, and make sure to tell the Legends Devs about it...",
 	"(PoV) It is said there are wise women in the south too, but they don\'t know shit about spirits and rune stones...",
-// General Advice
+	// General Advice
 	"(PoV) Want some spice in your life? Try Chaos Mode...",
 	"(PoV) Legendary Difficulty is supposed to be hard, so only complain if it isn\'t.",
 	"(PoV) PoV has its own wiki! A condensed version with important details is in PoV\'s mod settings, and a detailed one in the github page (wip).",
@@ -40,7 +40,7 @@ local tips = [
 	"(PoV) Rumors say that other vatt\'ghern roam the lands. Powerful, fearsome rogues...",
 	"(PoV) Not all mercenaries are law abiding, to no one\'s surprise. Some especially powerful bands have taken to banditry...",
 	"(PoV) Rogue mercenary companies now roam the land, with quite the quality selection of equipment...",
-// Specific Mechanics Advice
+	// Specific Mechanics Advice
 	"(PoV) Looking for specific crafting materials or mutations? Make sure to check out Alchemists, and Black Markets!",
 	"(PoV) Your crafting options are greatly expanded with PoV, check them out!",
 	"(PoV) Vatt\'ghern contracts are generally very difficult, meant for the late game. They are available if you have at least one vatt\'ghern on your group.",
@@ -53,7 +53,7 @@ local tips = [
 	"(PoV) Vatt\'gherns get their own new Perks! Be sure to check them out.",
 	"(PoV) Many enemies are now resistant or vulnerable to fire damage. Experiment!",
 	"(PoV) Many options to deal fire damage were added, which might prove very useful against mutants, undead, beasts and more!",
-	"(PoV) Vatt\'ghers may not be wizards, but they can still use *some* magic in the form of \"signs\"...",
+	"(PoV) Vatt\'gherns may not be wizards, but they can still use *some* magic in the form of \"signs\"...",
 	"(PoV) \"Sign Intensity\" increase the overall power of signs. Both their damage, and their chance to inflict ailments.",
 	"(PoV) Enemy Seer\'s damage scales with their initiative, so reducing that is their counter.",
 	"(PoV) Enemy forsaken are always mutated, which could be used against them...",
@@ -65,7 +65,7 @@ local tips = [
 	"(PoV) The armor mechanics rework affects player and enemy *almost* equally...",
 	"(PoV) Rain can be quite hindering to those who are unprepared...",
 	"(PoV) During rainfall, guns, flame magic and any sort of fire attack are weaker.",
-// Misc
+	// Misc
 	"(PoV) I am eager to see your feedback on the mod!",
 	"(PoV) Did you know that the PoV mod adds 2 new company banners?",
 	"(PoV) Have a cool looking Vatt\'ghern? Come show off your fashion in our discord server!"
