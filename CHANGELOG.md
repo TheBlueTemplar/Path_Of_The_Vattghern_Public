@@ -1,4 +1,52 @@
-# v3.1.0 "Farewell" Edition
+# v3.1.8 "Bugszz in Absentia" Edition
+
+## Changelog v3.1.8 "Bugszz in Absentia" Edition:
+
+* Fix golem throw (thanks Dupin)
+* Full credits to Celestial for this patch
+
+## Changelog v3.1.7 "Bugszz in Absentia" Edition:
+
+* Fix crash caused by delayed hit on dead basilisk mutant (thanks Gahlan)
+* Fix crash in ai defend knock back (thanks Marader66)
+* Fix Lithe/Battleforged roll on head hunters
+* Full credits to Celestial for this patch
+
+## Changelog v3.1.6 "Bugszz in Absentia" Edition:
+
+* Fixed rounding for armor/damage multipliers in named weapons. This won´t fix existing weapons, apologies!
+* Fix drops when no mutants have been killed yet
+* Full credits to Celestial for this patch
+
+## Changelog v3.1.5 "Bugszz in Absentia" Edition:
+
+* Fix a bunch of named items stat adjustments (check release for details)
+* Full credits to Celestial for this patch
+
+## Changelog v3.1.4 "Bugszz in Absentia" Edition:
+
+* Fix injury (all 3 pain effects) transfer crash when permanently charming an unit (MC)
+* Prevent a noisy error in logs when calculating drops before the first mutant is killed
+* Full credits to Celestial for this patch
+
+## Changelog v3.1.3 "Bugszz in Absentia" Edition:
+
+* Prevent crash when possessed nobles die with a surcoat that has no brush (city states)
+* Fix hired blade init bug
+* Full credits to Celestial for this patch
+
+## Changelog v3.1.2 "Bugszz in Absentia" Edition:
+
+* Fix rüstunggheist having negative armor damage multiplier
+* Update pov_solo_scenario, max bros 12 (ty abyss)
+* Full credits to Celestial for this patch
+
+## Changelog v3.1.1 "Bugszz in Absentia" Edition:
+
+* Fix crash with Rogue Seer AI agent
+* Fix Igni Sign not checking if the user is dead after each target
+* Fix for race condition when playing with SSU
+* Full credits to Celestial for this patch
 
 ## Changelog V3.1.0 "Farewell" Edition:
 *Big big update, bringing in 5 new enemies, one of them offering a very interesting challenge, and also 2 new contracts, along with some minor tweaks and fixes. This is the last big update I will be releasing for a while. In this upcoming period of relative calmness and peace for PoV, I cannot way to see your feedback, to further design new stuff and reworks for PoV in the future!*
