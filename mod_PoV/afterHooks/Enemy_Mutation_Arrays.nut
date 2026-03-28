@@ -38,7 +38,7 @@
 ::TLW.EnemyMut.DirewolfGroup <- ::TLW.EnemyMut.AllExcept(::TLW.EnemyMut.Direwolf,::TLW.EnemyMut.Goblin);
 ::TLW.EnemyMut.SchratGroup <- ::TLW.EnemyMut.AllExcept(::TLW.EnemyMut.Vampire,::TLW.EnemyMut.Spider,::TLW.EnemyMut.Orc,::TLW.EnemyMut.Lindwurm,::TLW.EnemyMut.Ghost,::TLW.EnemyMut.Ghoul,::TLW.EnemyMut.Basilisk,::TLW.EnemyMut.Direwolf,::TLW.EnemyMut.Goblin, ::TLW.EnemyMut.Schrat,::TLW.EnemyMut.Rot);
 ::TLW.EnemyMut.HyenaGroup <- ::TLW.EnemyMut.AllExcept(::TLW.EnemyMut.Unhold,::TLW.EnemyMut.Direwolf,::TLW.EnemyMut.Goblin);
-::TLW.EnemyMut.SpiderGroup <- ::TLW.EnemyMut.AllExcept(::TLW.EnemyMut.Direwolf,::TLW.EnemyMut.Goblin,::TLW.EnemyMut.Schrat,::TLW.EnemyMut.Alp);
+::TLW.EnemyMut.SpiderGroup <- ::TLW.EnemyMut.AllExcept(::TLW.EnemyMut.Spider,::TLW.EnemyMut.Direwolf,::TLW.EnemyMut.Goblin,::TLW.EnemyMut.Schrat,::TLW.EnemyMut.Alp);
 ::TLW.EnemyMut.AlpGroup <- ::TLW.EnemyMut.Only(::TLW.EnemyMut.Unhold,::TLW.EnemyMut.Lindwurm,::TLW.EnemyMut.Sandgolem,::TLW.EnemyMut.Serpent,::TLW.EnemyMut.Schrat,::TLW.EnemyMut.Hexe);
 ::TLW.EnemyMut.HexeGroup <- ::TLW.EnemyMut.Only(::TLW.EnemyMut.Unhold,::TLW.EnemyMut.Sandgolem,::TLW.EnemyMut.Serpent,::TLW.EnemyMut.Schrat,::TLW.EnemyMut.Skeleton,::TLW.EnemyMut.Alp);
 ::TLW.EnemyMut.SandgolemGroup <- ::TLW.EnemyMut.Only(::TLW.EnemyMut.Unhold,::TLW.EnemyMut.Orc,::TLW.EnemyMut.Ghost,::TLW.EnemyMut.Ghoul,::TLW.EnemyMut.Basilisk,::TLW.EnemyMut.Hexe);

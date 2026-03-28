@@ -31,6 +31,7 @@
 		// Stats Changes
 		local b = this.m.BaseProperties;
 		b.ActionPoints += 1;
+		b.IsAffectedByRain = false;	
 
 	}
 

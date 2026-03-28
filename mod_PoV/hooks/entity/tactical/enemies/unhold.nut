@@ -105,6 +105,10 @@
 				this.actor.m.Name = "[color="+ ::Const.UI.Color.povEnemyMutation + "]Farthold[/color]";
 			}
 		}
+
+		// Stats Changes
+		local b = this.m.BaseProperties;
+		b.IsAffectedByRain = false;
 	}
 
 	// Make Champ (lets MC handle it if its present, AND the player does not enable tweaks)

@@ -4,18 +4,20 @@
 	{
 		__original();
 		local b = this.m.BaseProperties;
-		if (this.World.getTime().Days <= 30)
+		if (this.World.getTime().Days <= 35)
 		{
-			b.Hitpoints *= 0.75;
+			b.Hitpoints *= 0.70;
 			b.MeleeSkillMult *= 0.75;
 			b.MeleeDefenseMult *= 0.80;
 		} 
-		else if (this.World.getTime().Days <= 50)
+		else if (this.World.getTime().Days <= 55)
 		{
-			b.Hitpoints *= 0.90;
+			b.Hitpoints *= 0.85;
 			b.MeleeSkillMult *= 0.90;
 			b.MeleeDefenseMult *= 0.90;
 		}
+
+		b.IsAffectedByRain = false;	
 	}
 
 });

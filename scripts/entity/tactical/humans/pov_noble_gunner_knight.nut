@@ -140,12 +140,12 @@ this.pov_noble_gunner_knight <- this.inherit("scripts/entity/tactical/human", {
 
 			// Apply the scaling to stats
 			// Example: at day 200 → scale = 7
-			b.MeleeSkill     += 1.40 * scale;   // ~+10
-			b.MeleeDefense   += 1.00 * scale;   // ~+7
-			b.RangedSkill    += 2.10 * scale;   // ~+15
-			b.RangedDefense  += 1.00 * scale;   // ~+7
-			b.Bravery        += 2.10 * scale;   // ~+15
-			b.Hitpoints      += 3.50 * scale;   // ~+25
+			b.MeleeSkill     += ::Math.floor(1.45 * scale);   // ~+10
+			b.MeleeDefense   += ::Math.floor(1.00 * scale);   // ~+7
+			b.RangedSkill    += ::Math.floor(2.15 * scale);   // ~+15
+			b.RangedDefense  += ::Math.floor(1.00 * scale);   // ~+7
+			b.Bravery        += ::Math.floor(2.15 * scale);   // ~+15
+			b.Hitpoints      += ::Math.floor(3.50 * scale);   // ~+25
 		}
 
 		// Beginner Modifiers

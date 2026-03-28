@@ -83,7 +83,8 @@ this.pov_enemy_mutation_skeleton <- this.inherit("scripts/skills/skill", {
 	{
 		// Buffs
 		_properties.StaminaMult *= 1.25;
-		_properties.BraveryMult *= 1.50;
+		_properties.BraveryMult *= 1.45;
+		_properties.Bravery += 10;
 		// Debuffs
 		_properties.Hitpoints += 1; // Fallback for enemies with 1 maxHp
 		_properties.HitpointsMult *= 0.85;
@@ -101,7 +102,7 @@ this.pov_enemy_mutation_skeleton <- this.inherit("scripts/skills/skill", {
 			case this.Const.Damage.DamageType.Piercing:
 				if (_skill == null)
 				{
-					_properties.DamageReceivedRegularMult *= 0.6;
+					_properties.DamageReceivedRegularMult *= 0.7;
 				}
 				else
 				{
@@ -110,12 +111,12 @@ this.pov_enemy_mutation_skeleton <- this.inherit("scripts/skills/skill", {
 						local weapon = _skill.getItem();
 						if (weapon != null && weapon.isItemType(this.Const.Items.ItemType.Weapon))
 						{
-							_properties.DamageReceivedRegularMult *= 0.6;
+							_properties.DamageReceivedRegularMult *= 0.7;
 						}
 					}
 					else
 					{
-						_properties.DamageReceivedRegularMult *= 0.6;
+						_properties.DamageReceivedRegularMult *= 0.7;
 					}
 				}
 				break;
@@ -123,7 +124,7 @@ this.pov_enemy_mutation_skeleton <- this.inherit("scripts/skills/skill", {
 			case this.Const.Damage.DamageType.Cutting:
 				if (_skill == null)
 				{
-					_properties.DamageReceivedRegularMult *= 0.75;
+					_properties.DamageReceivedRegularMult *= 0.8;
 				}
 				else
 				{
@@ -132,12 +133,12 @@ this.pov_enemy_mutation_skeleton <- this.inherit("scripts/skills/skill", {
 						local weapon = _skill.getItem();
 						if (weapon != null && weapon.isItemType(this.Const.Items.ItemType.Weapon))
 						{
-							_properties.DamageReceivedRegularMult *= 0.75;
+							_properties.DamageReceivedRegularMult *= 0.8;
 						}
 					}
 					else
 					{
-						_properties.DamageReceivedRegularMult *= 0.75;
+						_properties.DamageReceivedRegularMult *= 0.8;
 					}
 				}
 				break;

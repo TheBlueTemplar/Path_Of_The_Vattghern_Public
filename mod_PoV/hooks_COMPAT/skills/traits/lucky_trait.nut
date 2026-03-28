@@ -16,6 +16,7 @@
 
 	q.onUpdate = @(__original) function( _properties )
 	{
+		__original(_properties);
 		_properties.HitChance[this.Const.BodyPart.Head] += 2;
 	}
 })

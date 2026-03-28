@@ -152,13 +152,13 @@ this.pov_rogue_seer <- this.inherit("scripts/entity/tactical/human", {
 
 			// Apply the scaling to stats
 			// Example: at day 200 → scale = 7
-			b.MeleeSkill     += 0.70 * scale;   // ~+5
-			b.MeleeDefense   += 0.70 * scale;   // ~+5
-			b.RangedSkill    += 1.00 * scale;   // ~+7
-			b.RangedDefense  += 1.00 * scale;   // ~+7
-			b.Bravery        += 2.10 * scale;   // ~+15
-			b.Initiative	 += 1.40 * scale;	// ~+10
-			b.Hitpoints      += 1.40 * scale;   // ~+10
+			b.MeleeSkill     += ::Math.floor(0.75 * scale);   // ~+5
+			b.MeleeDefense   += ::Math.floor(0.75 * scale);   // ~+5
+			b.RangedSkill    += ::Math.floor(1.05 * scale);   // ~+7
+			b.RangedDefense  += ::Math.floor(1.05 * scale);   // ~+7
+			b.Bravery        += ::Math.floor(2.15 * scale);   // ~+15
+			b.Initiative     += ::Math.floor(1.45 * scale);   // ~+10
+			b.Hitpoints      += ::Math.floor(1.45 * scale);   // ~+10
 		}
 
 		// Beginner Modifiers

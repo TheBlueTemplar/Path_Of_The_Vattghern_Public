@@ -99,6 +99,7 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToFire = true;
 		//b.IsIgnoringArmorOnAttack = true;
 		b.IsAffectedByNight = false;
+		b.IsAffectedByRain = false;	
 		b.IsAffectedByInjuries = false;
 
 		// Scaling stats and skills
@@ -197,16 +198,16 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 			scale = this.Math.min(scale, 8 + this.Math.floor(day / 100));
 
 			// Core combat stats
-			b.MeleeSkill += 1.15 * scale;   // ~+8 at day 200
-			b.MeleeDefense += 0.5 * scale;   // ~+4
-			b.RangedDefense += 0.5 * scale;   // ~+4
-			b.Bravery += 2.0 * scale;   // ~+14
+			b.MeleeSkill     += ::Math.floor(1.20 * scale);   // ~+8 at day 200
+			b.MeleeDefense   += ::Math.floor(0.60 * scale);    // ~+4
+			b.RangedDefense  += ::Math.floor(0.60 * scale);    // ~+4
+			b.Bravery        += ::Math.floor(2.00 * scale);    // ~+14
 
 			// Armor scaling (heavier late-game pressure)
-			b.Armor[this.Const.BodyPart.Head] += 11 * scale; // ~+75
-			b.ArmorMax[this.Const.BodyPart.Head] += 11 * scale;
-			b.Armor[this.Const.BodyPart.Body] += 11 * scale; // ~+75
-			b.ArmorMax[this.Const.BodyPart.Body] += 11 * scale;
+			b.Armor[this.Const.BodyPart.Head] += ::Math.floor(10 * scale); // ~+70
+			b.ArmorMax[this.Const.BodyPart.Head] += ::Math.floor(10 * scale);
+			b.Armor[this.Const.BodyPart.Body] += ::Math.floor(10 * scale); // ~+70
+			b.ArmorMax[this.Const.BodyPart.Body] += ::Math.floor(10 * scale);
 
 			// Perks
 			//this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
@@ -233,14 +234,14 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		// Battle Forged damage reduction can go over 100% when armor is > 2000.
 		// This is fixed in Legends 19.3 (max is now 100%), but in the mean time
 		// we need to cap armor.
-		// DamageReceivedArmorMult is also capped to 5% in pov_armor_ghost_racial.nut.
-		if (b.ArmorMax[this.Const.BodyPart.Head] > 800) {
-			b.ArmorMax[this.Const.BodyPart.Head] = 800;
-			b.Armor[this.Const.BodyPart.Head] = 800;
+		// DamageReceivedArmorMult is also capped to 15% in pov_armor_ghost_racial.nut.
+		if (b.ArmorMax[this.Const.BodyPart.Head] > 900) {
+			b.ArmorMax[this.Const.BodyPart.Head] = 900;
+			b.Armor[this.Const.BodyPart.Head] = 900;
 		}
-		if (b.ArmorMax[this.Const.BodyPart.Body] > 800) {
-			b.ArmorMax[this.Const.BodyPart.Body] = 800;
-			b.Armor[this.Const.BodyPart.Body] = 800;
+		if (b.ArmorMax[this.Const.BodyPart.Body] > 900) {
+			b.ArmorMax[this.Const.BodyPart.Body] = 900;
+			b.Armor[this.Const.BodyPart.Body] = 900;
 		}
 
 		// CORPSE - MUTATION STUFF
@@ -290,13 +291,13 @@ this.pov_armor_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		// This is fixed in Legends 19.3 (max is now 100%), but in the mean time
 		// we need to cap armor.
 		// DamageReceivedArmorMult is also capped to 5% in pov_armor_ghost_racial.nut.
-		if (b.ArmorMax[this.Const.BodyPart.Head] > 800) {
-			b.ArmorMax[this.Const.BodyPart.Head] = 800;
-			b.Armor[this.Const.BodyPart.Head] = 800;
+		if (b.ArmorMax[this.Const.BodyPart.Head] > 900) {
+			b.ArmorMax[this.Const.BodyPart.Head] = 900;
+			b.Armor[this.Const.BodyPart.Head] = 900;
 		}
-		if (b.ArmorMax[this.Const.BodyPart.Body] > 800) {
-			b.ArmorMax[this.Const.BodyPart.Body] = 800;
-			b.Armor[this.Const.BodyPart.Body] = 800;
+		if (b.ArmorMax[this.Const.BodyPart.Body] > 900) {
+			b.ArmorMax[this.Const.BodyPart.Body] = 900;
+			b.Armor[this.Const.BodyPart.Body] = 900;
 		}
 
 		// Bonus Skills

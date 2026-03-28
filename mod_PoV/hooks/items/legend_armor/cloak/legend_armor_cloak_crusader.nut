@@ -16,7 +16,7 @@
 			id = 7,
 			type = "text",
 			icon = "ui/icons/pov_rain.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]Immunity[/color] To rainfall debuffs."
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]Immunity[/color] To harsh weather debuffs."
 		});
 		return result;
 	}
@@ -27,7 +27,7 @@
 			id = 7,
 			type = "text",
 			icon = "ui/icons/pov_rain.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]Immunity[/color] To rainfall debuffs."
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]Immunity[/color] To harsh weather debuffs."
 		});
 	}
 

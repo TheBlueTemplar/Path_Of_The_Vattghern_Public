@@ -8,7 +8,7 @@
 			local actor = this.getContainer().getActor();
 			if (actor.getFaction() == this.Const.Faction.Player)
 			{
-				if (actor.getSkills().hasTrait(::Legends.Trait.Dumb) || actor.getSkills().hasSkill("injury.brain_damage") || actor.getBackground().getID() == "background.wildman")
+				if (actor.getSkills().hasTrait(::Legends.Trait.Dumb) || actor.getSkills().hasSkill("injury.brain_damage") || actor.getBackground().getID() == "background.wildman" || actor.getBackground().getID() == "background.legend_berserker" || actor.getBackground().getID() == "background.legend_commander_berserker")
 				{
 					return;
 				}

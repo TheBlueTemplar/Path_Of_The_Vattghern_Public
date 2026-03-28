@@ -31,6 +31,9 @@
 		// Chaos Mutation
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
+		// Stats Changes
+		local b = this.m.BaseProperties;
+		b.IsAffectedByRain = false;
 	}
 
 	// Make Champ (lets MC handle it if its present, AND the player does not enable tweaks)
@@ -72,5 +75,5 @@
 			return true;
 		}
 	//}
-
+	
 });

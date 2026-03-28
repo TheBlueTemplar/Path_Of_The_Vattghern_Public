@@ -73,7 +73,7 @@ this.pov_enemy_mutation_ghost <- this.inherit("scripts/skills/skill", {
 			_properties.DamageDirectAdd += 0.05;
 			_properties.DamageDirectMult += 0.15;
 			_properties.RangedDefenseMult *= 1.20;
-			_properties.RangedDefense += 4;
+			_properties.RangedDefense += 8;
 		}	
 		// Debuffs
 		_properties.DamageArmorMult *= 0.5;

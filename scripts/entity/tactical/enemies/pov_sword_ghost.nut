@@ -141,6 +141,7 @@ this.pov_sword_ghost <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToFire = true;
 		//b.IsIgnoringArmorOnAttack = true;
 		b.IsAffectedByNight = false;
+		b.IsAffectedByRain = false;	
 		b.IsAffectedByInjuries = false;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 200)
@@ -234,11 +235,11 @@ this.pov_sword_ghost <- this.inherit("scripts/entity/tactical/actor", {
 			scale = this.Math.min(scale, 8 + this.Math.floor(day/100));
 
 			// Apply scaled bonuses
-			b.MeleeSkill	+= 1.3 * scale;  // ~+10 at day 200
-			b.MeleeDefense	+= 0.7 * scale;  // ~+5
-			b.RangedDefense	+= 1.0 * scale;  // ~+7
-			b.Hitpoints		+= 6.7 * scale;  // ~+50
-			b.Bravery		+= 3.3 * scale;  // ~+25
+			b.MeleeSkill     += ::Math.floor(1.35 * scale);   // ~+10 at day 200
+			b.MeleeDefense   += ::Math.floor(0.75 * scale);   // ~+5
+			b.RangedDefense  += ::Math.floor(1.00 * scale);   // ~+7
+			b.Hitpoints      += ::Math.floor(7.20 * scale);   // ~+50
+			b.Bravery        += ::Math.floor(3.60 * scale);   // ~+25
 			// Perks
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));

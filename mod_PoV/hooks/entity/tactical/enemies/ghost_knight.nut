@@ -22,6 +22,11 @@
 
 		// No Mutation For Ghosts Currently
 
+		// Stats Changes
+		local b = this.m.BaseProperties;
+		b.IsAffectedByRain = false;	
+		
 	}
+
 
 });

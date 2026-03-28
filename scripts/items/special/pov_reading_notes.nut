@@ -56,7 +56,7 @@ this.pov_reading_notes <- this.inherit("scripts/items/item", {
         }
 
         // if knows how to read, or cant learn to read
-		if (_actor.getFlags().has("PovCanRead") || _actor.getSkills().hasTrait(::Legends.Trait.Dumb) || _actor.getSkills().hasSkill("injury.brain_damage") || _actor.getBackground().getID() == "background.wildman")
+		if (_actor.getFlags().has("PovCanRead") || _actor.getSkills().hasTrait(::Legends.Trait.Dumb) || _actor.getSkills().hasSkill("injury.brain_damage") || _actor.getBackground().getID() == "background.wildman" || _actor.getBackground().getID() == "background.legend_berserker" || _actor.getBackground().getID() == "background.legend_commander_berserker")
 		{
 			::Sound.play("sounds/scribble.wav", ::Const.Sound.Volume.Inventory);
 			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip("This character cannot benefit from using this item."));
