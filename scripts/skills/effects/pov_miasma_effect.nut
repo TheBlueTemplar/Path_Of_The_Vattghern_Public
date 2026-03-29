@@ -36,19 +36,19 @@ this.pov_miasma_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "Gain [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color] Ranged Defense."
+				text = "Lose [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color] Ranged Defense."
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "Gain [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color] Ranged Skill."
+				text = "Lose [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color] Ranged Skill."
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "Gain [color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Vision."
+				text = "Lose [color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Vision."
 			}
 
 		];

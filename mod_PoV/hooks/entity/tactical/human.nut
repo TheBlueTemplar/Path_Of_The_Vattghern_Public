@@ -1,5 +1,16 @@
 ::TLW.HooksMod.hook("scripts/entity/tactical/human", function (q) {
 
+	q.onInit = @(__original) function()
+	{
+		__original();
+
+		// Random Trait!
+		if (!::MSU.isKindOf(this.actor, "player")) 
+		{
+			::TLW.EntityTraits.add_random_traits(this.actor);
+	  	}
+	}
+
 	q.onDeath = @(__original) function (_killer, _skill, _tile, _fatalityType) {
 		if (this.m.Surcoat != null) {
 			local brushName = "surcoat_" + (this.m.Surcoat < 10

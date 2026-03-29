@@ -31,6 +31,14 @@ this.pov_ghastly_touch_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
+		ret.extend([
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/ranged_defense.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]Ignores[/color] the defense bonus granted by shields."
+			}
+		]);	
 		if (this.m.Cooldown >= 1)
 		{
 			ret.extend([
@@ -76,6 +84,17 @@ this.pov_ghastly_touch_skill <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMax = 40;
 			_properties.DamageArmorMult *= 0;
 			_properties.IsIgnoringArmorOnAttack = true;	
+		}
+
+		if (_targetEntity != null)
+		{
+			local shield = _targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+			if (shield != null && shield.isItemType(this.Const.Items.ItemType.Shield))
+			{
+				local bonusHit = this.Math.max(1,shield.getRangedDefense());
+				_properties.MeleeSkill += bonusHit;
+				_properties.RangedSkill += bonusHit;
+			}
 		}
 	}
 

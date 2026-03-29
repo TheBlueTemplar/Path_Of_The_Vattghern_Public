@@ -8,7 +8,7 @@ this.pov_teach_to_read_camp_encounter <- this.inherit("scripts/encounters/encoun
         this.createScreens();
         this.m.Type = "encounter.pov_teach_to_read_camp_encounter";
         this.m.Name = "A company member wants to speak";
-        this.m.Cooldown = 12.0 * this.World.getTime().SecondsPerDay;
+        this.m.Cooldown = 24.0 * this.World.getTime().SecondsPerDay;
     }
 
     function createScreens() 
@@ -98,7 +98,7 @@ this.pov_teach_to_read_camp_encounter <- this.inherit("scripts/encounters/encoun
                 teacher_candidates.push(bro);
             }
 
-            if (!bro.getFlags().has("PovCanRead") && (!bro.getSkills().hasTrait(::Legends.Trait.Dumb) || !bro.getSkills().hasSkill("injury.brain_damage") || !bro.getBackground().getID() == "background.wildman"))
+            if (!bro.getFlags().has("PovCanRead") && (!bro.getSkills().hasTrait(::Legends.Trait.Dumb) || !bro.getSkills().hasSkill("injury.brain_damage") || !bro.getBackground().getID() == "background.wildman") || bro.getBackground().getID() == "background.legend_berserker" || bro.getBackground().getID() == "background.legend_commander_berserker")
             {
                 non_readers.push(bro);
             }

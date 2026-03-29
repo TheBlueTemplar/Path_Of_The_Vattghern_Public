@@ -42,7 +42,7 @@ this.pov_alp_mutagen_upgraded_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/pov_rain.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]Immunity[/color] To rainfall debuffs."
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]Immunity[/color] To harsh weather debuffs."
 			},
 			{
 				id = 11,

@@ -70,17 +70,18 @@ this.pov_scaling_special <- this.inherit("scripts/skills/skill", {
 		scale = this.Math.min(scale, 8 + this.Math.floor(day/100));
 
 		// Additional difficulty modifier to the scaling - Minor effect
-		local dMod = [0.90, 1.00, 1.10, 1.15][::World.Assets.getCombatDifficulty()];
+		local dMod = [0.90, 1.00, 1.20, 1.35][::World.Assets.getCombatDifficulty()];
 
 		// Apply the scaling to stats (Flat Bonuses)
 		// Example: at day 200 → scale = 7, 300 -> scale = 11
-		_properties.MeleeSkill     += (1.00 * scale) * dMod;   // ~+7  - 11
-		_properties.MeleeDefense   += (0.70 * scale) * dMod;   // ~+5  - 8
-		_properties.RangedSkill    += (1.00 * scale) * dMod;   // ~+7  - 11
-		_properties.RangedDefense  += (0.70 * scale) * dMod;   // ~+5  - 8
-		_properties.Initiative	   += (1.00 * scale) * dMod;   // ~+7  - 11
-		_properties.Bravery        += (1.50 * scale) * dMod;   // ~+10 - 16
-		_properties.Hitpoints      += (2.50 * scale) * dMod;   // ~+17 - 27
+		// Math floored to avoid dumb numbers
+		_properties.MeleeSkill     += ::Math.floor((1.00 * scale) * dMod);   // ~+7  - 11
+		_properties.MeleeDefense   += ::Math.floor((0.70 * scale) * dMod);   // ~+5  - 8
+		_properties.RangedSkill    += ::Math.floor((1.00 * scale) * dMod);   // ~+7  - 11
+		_properties.RangedDefense  += ::Math.floor((0.70 * scale) * dMod);   // ~+5  - 8
+		_properties.Initiative     += ::Math.floor((1.00 * scale) * dMod);   // ~+7  - 11
+		_properties.Bravery        += ::Math.floor((1.50 * scale) * dMod);   // ~+10 - 16
+		_properties.Hitpoints      += ::Math.floor((2.50 * scale) * dMod);   // ~+17 - 27
 
 		// Apply the scaling to stats (Multipliers)
 		_properties.MeleeSkillMult     *= 1.0 + (((0.70 * scale) * dMod) / 100.0);   // ~+5  - 8 %

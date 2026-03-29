@@ -148,12 +148,12 @@ this.pov_forsaken_boss <- this.inherit("scripts/entity/tactical/human", {
 
 			// Apply the scaling to stats
 			// Example: at day 200 → scale = 7
-			b.MeleeSkill     += 1.70 * scale;   // ~+12
-			b.MeleeDefense   += 1.00 * scale;   // ~+7
-			b.RangedSkill    += 1.70 * scale;   // ~+12
-			b.RangedDefense  += 1.00 * scale;   // ~+7
-			b.Bravery        += 1.70 * scale;   // ~+12
-			b.Hitpoints      += 3.50 * scale;   // ~+25
+			b.MeleeSkill     += ::Math.floor(1.75 * scale);   // ~+12
+			b.MeleeDefense   += ::Math.floor(1.00 * scale);   // ~+7
+			b.RangedSkill    += ::Math.floor(1.75 * scale);   // ~+12
+			b.RangedDefense  += ::Math.floor(1.00 * scale);   // ~+7
+			b.Bravery        += ::Math.floor(1.75 * scale);   // ~+12
+			b.Hitpoints      += ::Math.floor(3.60 * scale);   // ~+25
 		}
 
 		// Beginner Modifiers

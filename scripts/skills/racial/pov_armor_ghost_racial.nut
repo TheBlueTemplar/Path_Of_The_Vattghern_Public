@@ -14,6 +14,7 @@ this.pov_armor_ghost_racial <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onUpdate(_properties) {
+
 		_properties.Threat += 8;
 
 		local actor = this.getContainer().getActor();
@@ -22,6 +23,8 @@ this.pov_armor_ghost_racial <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.DamageTotalMult *= 0.80;
 		}
+
+		_properties.DamageReceivedArmorMult *= 0.95; // add some bonus resistance to overcome the 20% limit of legends
 	}
 
 	function onBeforeDamageReceived(_attacker, _skill, _hitInfo, _properties) {
@@ -42,10 +45,10 @@ this.pov_armor_ghost_racial <- this.inherit("scripts/skills/skill", {
 			_properties.DamageReceivedRegularMult *= 0.00;
 		}
 
-		// Cap armor damage reduction at 95% because it gets a bit stupid
+		// Cap armor damage reduction at 88% because it gets a bit stupid
 		// with high armor values.
-		if (_properties.DamageReceivedArmorMult < 0.05) {
-			_properties.DamageReceivedArmorMult = 0.05;
+		if (_properties.DamageReceivedArmorMult < 0.15) {
+			_properties.DamageReceivedArmorMult = 0.15;
 		}
 	}
 

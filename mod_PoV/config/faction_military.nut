@@ -23,7 +23,7 @@
 ::Const.Tactical.Actor.PovGunnerKnight <- {
 	XP = 525,
 	ActionPoints = 9,
-	Hitpoints = 175,
+	Hitpoints = 200,
 	Bravery = 120,
 	Stamina = 185,
 	MeleeSkill = 75,

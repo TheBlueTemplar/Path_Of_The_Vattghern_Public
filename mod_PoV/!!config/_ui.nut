@@ -5,6 +5,8 @@
 ::Const.UI.Color.povEnemyMutation <- "#01420d"; // GREEN - Mutant names, mutant effects
 ::Const.UI.Color.povSpecialEnemyMutation <- "#632004"; // TERRACOTTA - Special Mutant names
 ::Const.UI.Color.povEnemyEffect <- "#5c3a01"; // BEIGE/BROWN - New enemy effects
+::Const.UI.Color.povEnemyTraitPositive <- "#753c0b"; // ORANGE/BROWN - Enemy Traits (Positive)
+::Const.UI.Color.povEnemyTraitNegative <- "#75250b"; // ORANGE/BROWN - Enemy Traits (Negative)
 ::Const.UI.Color.povPainEffect <- "#5c0101"; // BORDEUX - Pain from injury effects
 // Skills / Perks
 ::Const.UI.Color.povMutationUpgrade <- "#012810"; // DARK GREEN - Vattghern Mutation Upgrade

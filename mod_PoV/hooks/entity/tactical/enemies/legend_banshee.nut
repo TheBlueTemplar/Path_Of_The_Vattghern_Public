@@ -41,6 +41,10 @@
 		blur_1.Scale = 1.3;
 		local blur_2 = this.getSprite("blur_2");
 		blur_2.Scale = 1.3;
+
+		// Stats Changes
+		local b = this.m.BaseProperties;
+		b.IsAffectedByRain = false;	
 	}
 
 	// Make Champ (lets MC handle it if its present, AND the player does not enable tweaks)

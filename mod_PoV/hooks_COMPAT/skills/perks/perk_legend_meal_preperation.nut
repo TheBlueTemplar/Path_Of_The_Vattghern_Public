@@ -12,7 +12,7 @@
 			{
 				if (actor.getBackground() != null)
 				{
-					actor.getBackground().m.Modifiers.Gathering += 0.10;
+					actor.getBackground().m.Modifiers.Hunting += 0.05;
 					//actor.getBackground().onAdded();
 				}
 			}		

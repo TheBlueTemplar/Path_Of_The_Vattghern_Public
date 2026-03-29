@@ -63,8 +63,8 @@ local tips = [
 	"(PoV) When having high armor, it being damaged lowers its defensive capabilities less than it would light armors.",
 	"(PoV) Heavy armors apply a scaling penalty to the wearer when heavily damaged. Light armors apply none!",
 	"(PoV) The armor mechanics rework affects player and enemy *almost* equally...",
-	"(PoV) Rain can be quite hindering to those who are unprepared...",
-	"(PoV) During rainfall, guns, flame magic and any sort of fire attack are weaker.",
+	"(PoV) Harsh Weather can be quite hindering to those who are unprepared...",
+	"(PoV) During rainfall and other harsh weather, guns, flame magic and any sort of fire attacks are weaker.",
 	// Misc
 	"(PoV) I am eager to see your feedback on the mod!",
 	"(PoV) Did you know that the PoV mod adds 2 new company banners?",

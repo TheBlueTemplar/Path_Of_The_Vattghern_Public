@@ -135,7 +135,7 @@
 		}
 
 		// Cant read if you are Dumb/Brain Damaged/Wildman
-		if (_actor.getSkills().hasTrait(::Legends.Trait.Dumb) || _actor.getSkills().hasSkill("injury.brain_damage") || _actor.getBackground().getID() == "background.wildman")
+		if (_actor.getSkills().hasTrait(::Legends.Trait.Dumb) || _actor.getSkills().hasSkill("injury.brain_damage") || _actor.getBackground().getID() == "background.wildman" || _actor.getBackground().getID() == "background.legend_berserker" || _actor.getBackground().getID() == "background.legend_commander_berserker")
 			return "It is impossible for this character to read, and hopeless to try teaching them!";
 
 		// Cant read if....well....cant read! (PovCannotRead flag currently unused)

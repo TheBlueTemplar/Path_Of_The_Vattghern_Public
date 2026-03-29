@@ -40,6 +40,7 @@
 			b.InitiativeMult *= 1.075;
 		}
 
+		b.IsAffectedByRain = false;	
 	}
 
 	// Make Champ (lets MC handle it if its present, AND the player does not enable tweaks)

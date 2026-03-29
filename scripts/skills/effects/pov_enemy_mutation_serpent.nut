@@ -191,6 +191,7 @@ this.pov_enemy_mutation_serpent <- this.inherit("scripts/skills/skill", {
 		local surrAmount = this.getPenalty();
 		_properties.MeleeDefense += - surrAmount;
 		_properties.InitiativeMult *= 1.15;
+		_properties.Initiative += 5;
 	}
 
 	function onAfterUpdate( _properties )

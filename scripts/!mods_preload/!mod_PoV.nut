@@ -20,7 +20,7 @@
 ::TLW <- {
 	ID = "mod_PoV",
 	Name = "Path of the Vatt\'ghern", //PoV
-	Version = "3.1.8", // "Farewell" Edition
+	Version = "3.2.0", // "Farewell, again" Edition
 	//EnableEnemyMutation = true,	//default settings
 	//Overhaul = true,
 	EnemyMutationScaling = true,

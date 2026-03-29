@@ -173,8 +173,8 @@
 		// Some debug and fallbacks
 		if (possibleMutations == null || possibleMutations.len() <= 0)
 		{
-    	::TLW.Mod.Debug.printLog("Possible Error: Mutation array is empty. Skipping mutation.");
-    	return;
+    		::TLW.Mod.Debug.printLog("Possible Error: Mutation array is empty. Skipping mutation.");
+    		return;
 		}
 
 		// Mutation Chances Calculations Based on CombatDiff (from ez to legenddary)

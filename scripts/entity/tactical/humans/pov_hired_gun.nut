@@ -140,12 +140,12 @@ this.pov_hired_gun <- this.inherit("scripts/entity/tactical/human", {
 
 			// Apply the scaling to stats
 			// Example: at day 200 → scale = 7
-			b.MeleeSkill     += 1.00 * scale;   // ~+7
-			b.MeleeDefense   += 0.70 * scale;   // ~+5
-			b.RangedSkill    += 1.00 * scale;   // ~+7
-			b.RangedDefense  += 1.00 * scale;   // ~+7
-			b.Bravery        += 1.40 * scale;   // ~+10
-			b.Hitpoints      += 1.40 * scale;   // ~+10
+			b.MeleeSkill     += ::Math.floor(1.00 * scale);   // ~+7
+			b.MeleeDefense   += ::Math.floor(0.75 * scale);   // ~+5
+			b.RangedSkill    += ::Math.floor(1.00 * scale);   // ~+7
+			b.RangedDefense  += ::Math.floor(1.00 * scale);   // ~+7
+			b.Bravery        += ::Math.floor(1.45 * scale);   // ~+10
+			b.Hitpoints      += ::Math.floor(1.45 * scale);   // ~+10
 		}
 
 		// Beginner Modifiers

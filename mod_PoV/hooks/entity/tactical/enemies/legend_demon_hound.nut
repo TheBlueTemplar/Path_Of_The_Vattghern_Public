@@ -36,6 +36,7 @@
 			b.InitiativeMult *= 1.075;
 		}
 
+		b.IsAffectedByRain = false;	
 	}
 
 });

@@ -28,6 +28,9 @@
 		// Chaos Mutation
 		::TLW.Chaos.add_mutation_all(this.actor, false)
 
+		// Stats Changes
+		local b = this.m.BaseProperties;
+		b.IsAffectedByRain = false;
 	}
 
 	// Make Champ (lets MC handle it if its present, AND the player does not enable tweaks)
@@ -45,7 +48,7 @@
 			local b = m.BaseProperties;
 			b.MeleeDefense += 3;
 			b.Bravery += 5;
-			b.ActionPoints += 1;
+			b.ActionPoints += 2;
 
 			b.Armor[this.Const.BodyPart.Head] += 50;
 			b.ArmorMax[this.Const.BodyPart.Head] += 50;
@@ -75,5 +78,5 @@
 			return true;
 		}
 	//}
-
+	
 });

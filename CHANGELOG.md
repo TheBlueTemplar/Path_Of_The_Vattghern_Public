@@ -1,4 +1,100 @@
-# v3.1.8 "Bugszz in Absentia" Edition
+# v3.2.0 "Farewell, again" Edition
+
+## Changelog v3.2.0 "Farewell, again" Edition:
+
+### NEW FEATURES
+
+* Human Enemies have a small, difficulty based chance of getting random Traits! (A selection of them, specifically - Also include Negative Ones!) (Separate rolls for positive and negative ones. Chances based on diff, increasing and decreasing respectively. Chances range from 3% to 8%)
+  * Included Traits (Positive): Pluviophile, Strong, Tough, Dexterous, Sure Footing, Iron Lungs, Athletic, Brute, Iron Jaw, Weasel, Evasive, Huge, Steady Hands, Unpredictable, Pragmatic, Lumbering, Martial, Agressive
+  * Included Traits (Negative): Hesitant, Tiny, Clumsy, Fat, Ailing, Bleeder, Fragile, Asthmatic, Light, Clubfooted, Fainthearted, Paranoid, Craven, Predictable
+
+### OVERHAUL
+
+* **Helmet Vanity Layer soft Rework**
+* For more than half of the vanity layer helmet items, there have been various new effects added, for additional flavor, roleplay - and for those who want it - minmaxxing. The edited item's prices were adjusted accordingly
+* Note that these listed changes affect *anyone* who wears them, including enemies. Here are the changes in detail:
+   * Many armor numbers were also normalised a bit (so you got more 5s and 10s, and less 6s, 8s, etc.)
+     * Wizard Cowl: +3 Initiative, MUCH higher cost
+     * Impaled Head: +3 Threat, +1 Weight
+     * FleshCultist Book n' Straps: -4 Resolve, +4% Damage Resistance
+     * Crown: +4 Resolve, +25% Target Prio, +++ Cost
+     * Chaperon: +4% Damage Dealt, +20% Target Prio
+     * Beret, Zweihander Hat Ancient Southern Crown, Feathered Hat, Lion Pelt, Floppy Noble Hat,  Noble Hat,  Vizier Hat, Vizier Peak, Feathered Turban, Vizier Turban: +2 Resolve, +15% Target Prio
+     * Felt Chaperon, Northern Headband, Thick Braid, Ponytail, Nun Headcloth, Faction Adornment : +1 Resolve, +5% Target Prio
+     * Metal Bird, Wreath: +1 Resolve
+     * Antler, Bull Horns, Goat Horns, Horn Decorations, Ram Horns, Orc Great Horns, Sack (also gets 5 armor instead of 2): +2 Threat
+     * Common Hoods: -5 to 10% Target Prio
+     * Fencer Hat: +2 Initiative, 1 Res, 20% Target Prio
+     * Straw Hat: +10% Damage with Pitchforks (kinda meme)
+     * Warlock Hood: +2 Threat, Weather Resistance
+     * Ancient Lich Crown + Ancient Southern Crested Crown: +2 Res, +5% Dmg res. vs undead
+     * Undertaker's Hat,  Full Turban,  Royal Hood, Physician Hood, Noble Hood: Weather Resistance (+1 Vision, +5% Ranged Skill, -7% fat costs during harsh weather - so now penalty is -10% Ranged skill and +8% fat costs)
+
+* **Traits Soft Rework**
+* A number of traits saw the tweaking and addition of some stats, to make them more impactful, whether that "impact" is good or bad. Here are the details:
+   * Eagle Eyed: +3 Rdef
+   * Short Sighted: -3Rdef
+   * Tough: -5Hp, -5% Damage Taken (HP)
+   * Strong: +3 Flat Dmg bonus
+   * Hesitant: -4% Resolve
+   * Quick: +1 AP at the first turn of combat
+   * Bleeder: -7% Hp
+   * Dastard: +5 Morale Check Penalty
+   * Ailing: -7% Hp
+   * Fragile: +5Hp +5% Dmg Taken
+   * Sure Footing: Less fat for moving around
+   * Fearless: +2 Threat
+   * Clubfooted: -2Mdef
+   * Impatient: also -5% Rdef, but +5% Initiative overall
+   * Iron Lungs: Miasma Resistance
+   * Bloodthirsty: +3Threat
+   * Dexterous: +2 Mdef
+   * Swift: +2RSkill
+   * Craven: -2Resolve, +4MDef
+   * Huge: Dmg Bonus increase to 8%
+   * Hate Traits: Also +5% Dmg
+   * Fear Traits: Also -5% Dmg
+   * NightBlind: also -10% Rskill and Def when fighting at night
+   * Steady Hands: also +4 Max Dmg (Ranged Only)
+   * Weasel: -5% Resolve
+   * Light:  +4% Damage (so its now -6% Dmg)
+   * Seductive: -10% Enemy Attention
+
+* **Other Edits:**
+   * Magician's Robe: +10 Armor, +3 Resolve, ++ Value
+   * Monk's Robe: +1 Resolve, 20 armor (Same for nun, but reduce its armor to 10)
+   * Vala Clothes: +2 Resolve
+   * Cursed Crystal Skull: +5 Threat (Now 15 total),  +8% Damage Dealt, -15% Resolve, marked as precious, +++ Value (I wanted this item to actually feel unique and legendary)
+
+### BALANCE
+
+* **Rainfall Mechanics Tweaks**
+  * Rename "rainfall" related debuffs to "Harsh Weather" (cause this applies to various weather conditions)
+  * Fire Resistance set to 25% instead of 30%
+  * Barbarians immune to harsh weather (including berserker and the barb backgrounds)
+  * Most beasts immune to harsh weather (alp, direwolf, spirits, ghouls, basilisks, hyenas, bears, unholds, lindwurms, schrats, serpents, spiders
+* Increase the flat buffs and nerfs of some mutations, so they affect low tier enemies more without making stringer enemies too op
+   * (Unhold +10 Hp, Serpent +5 Ini, Undeath: +10 flat resolve, % bonus to 45 from 50%, Rot +10 Hp, Ghost: +8 rdef)
+   * Undeath Mut: Reduced dmg resistances by 10%
+   * Lindwurm +5% dmg vs armor  
+* Teach to read camp encounter now happens less often (doubled cooldown)
+* All ghost touch melee attacks + the vala warden's ranged one (pov, vanilla and legends ones) cannot be blocked by shields (ghastly touch, PoV ghastly touch, nightmare touch, vala warden pale touch, vala warden wail)
+* Vala Warden's touch ability does not have its damage reduced by armor!  
+* Alcohol brewing perk, grant hunting instead (5)
+* Meal preparation perk, grant hunting instead (5)
+* White Direwold Champ: +1 Ap
+* Flammenritter: + HP (25)
+* Slightly reduce overall beast champion chances
+
+### FIXES
+
+* Fixed Lucky Trait not working properly
+* Attempted to fix a Corpse Explosion Skill bug
+* Spiders can no longer get Spider Mutation
+* Rustunggheist armor damage cap: set to 15% (Cap armor damage reduction at 85% because it gets a bit stupid)
+* Undead miasma skill text, change "gain" to "lose"
+* Fixed mini rainfall icon
+* Fixed enemy scaling code to have smoother numbers and not shit like 2.67467. This will aid compatibility and QoL with mods like MC, where you can charm enemies
 
 ## Changelog v3.1.8 "Bugszz in Absentia" Edition:
 

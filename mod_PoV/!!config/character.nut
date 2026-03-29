@@ -4,3 +4,4 @@
 ::Const.CharacterProperties.SignIntensity <- 0;
 ::Const.CharacterProperties.YrdenTrapped <- false;
 ::Const.CharacterProperties.IsSpecializedInSigns <- false;
+::Const.CharacterProperties.IsResistantToRain <- false;

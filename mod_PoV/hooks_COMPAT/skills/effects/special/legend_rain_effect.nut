@@ -3,9 +3,10 @@
 	q.create = @(__original) function ()
 	{
 		__original();
-		this.m.Name = "Rainfall";
-		this.m.Description = "The rain obscures vision and makes everything slippery, but it can protect against fire";
+		this.m.Name = "Harsh Weather";
+		this.m.Description = "The current weather conditions obscure vision and make most actions more cubersome, but can protect against fire";
 		this.m.Icon = "skills/pov_rain_effect.png";
+		this.m.IconMini = "status_effect_35_mini";
 	}
 
 	q.getTooltip = @(__original) function ()
@@ -38,13 +39,13 @@
 			id = 13,
 			type = "text",
 			icon = "ui/icons/fatigue.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]+15%[/color] Fatigue Costs"
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]+12%[/color] Fatigue Costs"
 		});
 		ret.push({
 			id = 13,
 			type = "text",
 			icon = "ui/icons/pov_fire.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] Fire Resistance"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Fire Resistance"
 		});
 		return ret;
 	}
@@ -62,7 +63,7 @@
 			{
 				_properties.Vision -= 1;
 				_properties.RangedSkillMult *= 0.85;
-				_properties.FatigueEffectMult *= 1.15;
+				_properties.FatigueEffectMult *= 1.12;
 			}
 		}else
 		{
@@ -76,7 +77,7 @@
 
 		if (this.Tactical.getWeather().IsRaining && _hitInfo.DamageType == this.Const.Damage.DamageType.Burning)
 		{
-			_properties.DamageReceivedTotalMult *= 0.70;
+			_properties.DamageReceivedTotalMult *= 0.75;
 		}
 	}
 

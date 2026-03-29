@@ -99,7 +99,7 @@ this.pov_corpse_explosion_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		local isFleshCradle = _targetTile.getEntity() != null && _targetTile.getEntity().getType() == this.Const.EntityType.FleshCradle && !_targetTile.getEntity().getIsDestroyed();
+		local isFleshCradle = _targetTile != null && _targetTile.getEntity() != null && _targetTile.getEntity().getType() == this.Const.EntityType.FleshCradle && !_targetTile.getEntity().getIsDestroyed();
 
 		if ((!_targetTile.IsCorpseSpawned || !_targetTile.Properties.get("Corpse").IsConsumable) && !isFleshCradle)
 		{

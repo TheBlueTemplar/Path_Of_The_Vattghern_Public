@@ -68,7 +68,7 @@ this.pov_enemy_mutation_lindwurm <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		// Buffs
-		_properties.DamageArmorMult *= 1.20;
+		_properties.DamageArmorMult *= 1.25;
 		// Debuffs
 		_properties.MeleeDefense += -10;
 		_properties.RangedDefense += -5;

@@ -58,12 +58,12 @@
 			// CRAFTING
 			if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendCampCook))
 			{
-				this.m.Modifiers.Crafting += 0.10;
+				this.m.Modifiers.Hunting += 0.05;
 			}
 
 			if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendAlcoholBrewing))
 			{
-				this.m.Modifiers.Crafting += 0.15;
+				this.m.Modifiers.Hunting += 0.05;
 			}
 
 			// SCOUTING

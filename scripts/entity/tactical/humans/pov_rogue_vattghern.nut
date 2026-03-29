@@ -180,12 +180,12 @@ this.pov_rogue_vattghern <- this.inherit("scripts/entity/tactical/human", {
 
 			// Apply the scaling to stats
 			// Example: at day 200 → scale = 7
-			b.MeleeSkill     += 1.80 * scale;   // ~+13
-			b.MeleeDefense   += 1.80 * scale;   // ~+13
-			b.RangedSkill    += 1.80 * scale;   // ~+13
-			b.RangedDefense  += 1.80 * scale;   // ~+13
-			b.Bravery        += 1.80 * scale;   // ~+13
-			b.Hitpoints      += 3.25 * scale;   // ~+25
+			b.MeleeSkill     += ::Math.floor(1.85 * scale);   // ~+13
+			b.MeleeDefense   += ::Math.floor(1.85 * scale);   // ~+13
+			b.RangedSkill    += ::Math.floor(1.85 * scale);   // ~+13
+			b.RangedDefense  += ::Math.floor(1.85 * scale);   // ~+13
+			b.Bravery        += ::Math.floor(1.85 * scale);   // ~+13
+			b.Hitpoints      += ::Math.floor(3.30 * scale);   // ~+25
 		}
 
 		// Beginner Modifiers

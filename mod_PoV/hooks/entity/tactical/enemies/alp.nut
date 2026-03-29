@@ -30,6 +30,8 @@
 			b.Hitpoints *= 1.10;
 			b.MeleeDefenseMult *= 1.05;
 		}
+
+		b.IsAffectedByRain = false;	
 		
 	}
 

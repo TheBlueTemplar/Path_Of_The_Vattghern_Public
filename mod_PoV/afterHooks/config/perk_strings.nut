@@ -47,7 +47,7 @@ if (!::TLW.hasFOTN)
 	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendMedPackages].Tooltip = ::Const.Strings.PerkDescription.LegendMedPackages;
 
 	::Const.Strings.PerkDescription.LegendMealPreperation +=@"
-	• Grants [color="+ ::Const.UI.Color.PositiveValue + "]+10%[/color] [color="+ ::Const.UI.Color.povPerkOrange + "]Gathering[/color] when assigned in the gathering tent.";
+	• Grants [color="+ ::Const.UI.Color.PositiveValue + "]+5%[/color] [color="+ ::Const.UI.Color.povPerkOrange + "]Hunting[/color] when assigned in the camp kitchen.";
 	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendMealPreperation].Tooltip = ::Const.Strings.PerkDescription.LegendMealPreperation;
 
 	::Const.Strings.PerkDescription.LegendHerbcraft +=@"
@@ -71,7 +71,7 @@ if (!::TLW.hasFOTN)
 	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendCampCook].Tooltip = ::Const.Strings.PerkDescription.LegendCampCook;
 
 	::Const.Strings.PerkDescription.LegendAlcoholBrewing +=@"
-	• Grants [color="+ ::Const.UI.Color.PositiveValue + "]+15%[/color] [color="+ ::Const.UI.Color.povPerkOrange + "]Crafting[/color] when assigned in the crafting tent.";
+	• Grants [color="+ ::Const.UI.Color.PositiveValue + "]+5%[/color] [color="+ ::Const.UI.Color.povPerkOrange + "]Hunting[/color] when assigned in the camp kitchen.";
 	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendAlcoholBrewing].Tooltip = ::Const.Strings.PerkDescription.LegendAlcoholBrewing;
 
 	::Const.Strings.PerkDescription.LegendSummonFalcon +=@"

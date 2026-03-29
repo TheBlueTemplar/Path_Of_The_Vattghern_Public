@@ -239,9 +239,10 @@ this.pov_enemy_mutation_rot <- this.inherit("scripts/skills/skill", {
 		// Buffs
 		_properties.Threat += 6;
 		// Debuffs
-		_properties.MeleeDefense -= 4;
-		_properties.RangedDefense -= 4;
+		_properties.MeleeDefense -= 5;
+		_properties.RangedDefense -= 5;
 		_properties.HitpointsMult *= 1.05;
+		_properties.Hitpoints += 10;
 		_properties.InitiativeMult *= 0.85;
 		_properties.BraveryMult *= 0.85;
 		// Takes more fire dmg
