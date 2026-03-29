@@ -52,8 +52,8 @@
 			"cocky_trait"
 		];
 
-		local positiveChance = [3, 4, 5, 100][::World.Assets.getCombatDifficulty()];
-		local negativeChance = [8, 5, 4, 100][::World.Assets.getCombatDifficulty()];
+		local positiveChance = [3, 4, 5, 8][::World.Assets.getCombatDifficulty()];
+		local negativeChance = [8, 5, 4, 3][::World.Assets.getCombatDifficulty()];
 
 		// Test(s)
 		//positiveChance = 100;
