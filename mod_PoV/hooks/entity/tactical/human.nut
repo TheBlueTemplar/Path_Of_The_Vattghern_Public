@@ -1,14 +1,12 @@
 ::TLW.HooksMod.hook("scripts/entity/tactical/human", function (q) {
 
-	q.onInit = @(__original) function()
-	{
+	q.onInit = @(__original) function () {
 		__original();
 
 		// Random Trait!
-		if (!::MSU.isKindOf(this.actor, "player")) 
-		{
-			::TLW.EntityTraits.add_random_traits(this.actor);
-	  	}
+		if (!::MSU.isKindOf(this, "player")) {
+			::TLW.EntityTraits.add_random_traits(this);
+		}
 	}
 
 	q.onDeath = @(__original) function (_killer, _skill, _tile, _fatalityType) {
