@@ -274,9 +274,7 @@
 					[1, "plate/legend_armor_plate_cuirass"],// 150, -21						
 					[1, "plate/legend_armor_plate_full"],// 160, -22
 					[1, "plate/legend_armor_plate_full_greaves"],// 170, -26
-					[1, "plate/legend_armor_plate_krastenbrust"],// 170, -26
-					[1, "plate/legend_armor_plate_milanese"],// 170, -26
-					[1, "plate/legend_armor_plate_triangle"],// 170, -26		
+					[1, "plate/legend_armor_plate_chest"],// 130, -18
 				],
 				Cloak = [ // 15, -1
 					[1, "cloak/legend_armor_noble_shawl"],// 10, -0
@@ -467,9 +465,7 @@
 					[1, "plate/legend_armor_plate_cuirass"],// 150, -21						
 					[1, "plate/legend_armor_plate_full"],// 160, -22
 					[1, "plate/legend_armor_plate_full_greaves"],// 170, -26
-					[1, "plate/legend_armor_plate_krastenbrust"],// 170, -26
-					[1, "plate/legend_armor_plate_milanese"],// 170, -26
-					[1, "plate/legend_armor_plate_triangle"],// 170, -26		
+					[1, "plate/legend_armor_plate_chest"],// 130, -18
 				],
 				Cloak = [ // 15, -1
 					[1, "cloak/legend_armor_noble_shawl"],// 10, -0
