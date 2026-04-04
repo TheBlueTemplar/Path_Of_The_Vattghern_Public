@@ -1,4 +1,4 @@
-::TLW.HooksMod.hook("scripts/items/legend_armor/armor_upgrades/legend_hyena_fur_upgrade", function (q) {
+::TLW.HooksMod.hook("scripts/items/legend_armor/cloak/legend_hyena_fur_cloak", function (q) {
 	q.create = @(__original) function ()
 	{
 		__original();

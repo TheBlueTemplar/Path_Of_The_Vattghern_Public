@@ -1,4 +1,4 @@
-::TLW.HooksMod.hook("scripts/items/legend_armor/armor_upgrades/legend_armor_white_wolf_pelt_upgrade", function (q) {
+::TLW.HooksMod.hook("scripts/items/legend_armor/cloak/legend_armor_white_wolf_pelt_cloak", function (q) {
 	q.create = @(__original) function ()
 	{
 		__original();

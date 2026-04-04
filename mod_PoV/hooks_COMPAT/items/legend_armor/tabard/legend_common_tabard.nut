@@ -1,4 +1,4 @@
-::TLW.HooksMod.hook("scripts/items/legend_armor/tabard/legend_common_tabard", function (q) {
+::TLW.HooksMod.hook("scripts/items/legend_armor/tabard/legend_armor_tabard", function (q) {
 	q.create = @(__original) function ()
 	{
 		__original();
