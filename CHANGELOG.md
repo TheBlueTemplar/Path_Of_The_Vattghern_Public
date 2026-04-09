@@ -43,7 +43,7 @@
 * **New Skills Soft Rework**
    * Halfsword, Change damage, make it non 100% Ap, more similar to spear's heartpiercer skill. Dmg increase with thrust mastery. Slightly lower chance to hit. Stronger with 2h weapons
    * Mordhau: More Dmg, More armor dmg, more ap and fat cost, reduce armor ignore. Slightly lower chance to hit. Stronger with 2h weapons
-   * HaftStrike: Change damage back to 30% and increase armor damage by 15%, but reduce ap cost to 3. Slightly lower chance to hit. Added this to most polearms and goedendags
+   * HaftStrike: Change damage back to 30% and increase armor damage by 15%, but reduce ap cost to 3. Slightly lower chance to hit. Damage type converted to blunt (from piercing). Effects when used also updated according to that. Added this to most polearms and goedendags
    * Obliterate: Removed
    * Line them Up: Removed
    * Throw Bola -> Constrain effect: -1Ap instead of -2. -3 fat instead of -5 (for each tile travelled)
