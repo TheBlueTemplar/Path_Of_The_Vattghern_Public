@@ -36,7 +36,7 @@ this.pov_rot_weak_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gain the [color=" + this.Const.UI.Color.povTooltipBlue + "]Unbearable Stench[/color] passive effect in battle."
+				text = "Gain the [color=" + this.Const.UI.Color.povTooltipBlue + "]Unbearable Stench[/color] passive effect in battle, and gain [color=" + this.Const.UI.Color.PositiveValue + "]Immunity[/color] to rot."
 			},
 			{
 				id = 11,

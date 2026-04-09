@@ -28,8 +28,8 @@ if (::TLW.hasSSU){::includeFiles(::IO.enumerateFiles("mod_PoV/hooks_SSU"));}
 if (::TLW.hasROTU){::includeFiles(::IO.enumerateFiles("mod_PoV/hooks_ROTU"));}
 // Load MC shit, if exists
 if (::TLW.hasMC){::includeFiles(::IO.enumerateFiles("mod_PoV/hooks_MC"));}
-// Load FOTN shit, if exists
-if (::TLW.hasFOTN){::includeFiles(::IO.enumerateFiles("mod_PoV/hooks_FOTN"));}
+// Load FOTN shit, if exists RELOCATED TO OTHER LOAD FILE SO IT WORKS
+//if (::TLW.hasFOTN){::includeFiles(::IO.enumerateFiles("mod_PoV/hooks_FOTN"));}
 
 // Load the rest of PoV: If some mods are not present (for compatibility)
 // Current mod list: Fotn

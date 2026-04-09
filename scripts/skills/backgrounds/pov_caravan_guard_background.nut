@@ -95,9 +95,29 @@ this.pov_caravan_guard_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.FitTree,
 				this.Const.Perks.LargeTree
 			],
-			Enemy = [],
-			Class = [],// maybe add "mutant" class, with bonuses here and there?
+			Enemy = [
+				::Const.Perks.OutlawTree
+			],
+			Class = [],
 			Magic = []
+		}
+
+		local r = this.Math.rand(1,3);
+		if (r == 1)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovPitchforkClassTree,
+			]);
+		} else if (r == 2)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovMilitiaClassTree,
+			]);
+		} else if (r == 3)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovSickleClassTree,
+			]);
 		}
 	}
 

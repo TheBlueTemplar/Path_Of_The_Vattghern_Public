@@ -66,9 +66,6 @@ this.pov_enemy_mutation_orc <- this.inherit("scripts/skills/skill", {
 	  	if (!this.m.Container.hasSkill("actives.pov_charge"))
 		{
 			local charge = this.new("scripts/skills/actives/pov_charge_skill");
-			charge.m.ActionPointCost = 5;
-			charge.m.FatigueCost = 30;
-			charge.m.MaxRange = 3;
 			this.m.Container.add(charge);
 
 			if (actor.getAIAgent().findBehavior(::Const.AI.Behavior.ID.Charge) == null)

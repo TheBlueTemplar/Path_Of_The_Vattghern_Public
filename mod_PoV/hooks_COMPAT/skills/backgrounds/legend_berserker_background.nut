@@ -1,5 +1,13 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/legend_berserker_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.PerkTreeDynamic.Class.extend([
+			::Const.Perks.PovWoodaxeClassTree,
+		]);
+	}
+	
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();

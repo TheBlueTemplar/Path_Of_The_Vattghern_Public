@@ -14,13 +14,14 @@
 
 // Included Mods
 
-// Silver Weapons is included and tweaked in PoV, credits to Excalibird
-// Pain from injuries is included, tweaked and rewritten in PoV, creadits to Darxo
+// Silver Weapons is included and tweaked in PoV 					credits to Excalibird
+// Pain from injuries is included, tweaked and rewritten in PoV 	creadits to Darxo
+// Vomit mod is included, tweaked for PoV							credits to Chopeks
 
 ::TLW <- {
 	ID = "mod_PoV",
 	Name = "Path of the Vatt\'ghern", //PoV
-	Version = "3.2.1", // "Farewell, again" Edition
+	Version = "4.0.0", // "Special" Edition
 	//EnableEnemyMutation = true,	//default settings
 	//Overhaul = true,
 	EnemyMutationScaling = true,
@@ -33,13 +34,14 @@
 	SSUTweaks = false,
 	RotuTweaks = false,
 	EnableMainMenuArt = true,
+	EnableMainMenuLogo = true,
 	EnablePovMainMusic = true,
 	EnablePovIntroEvent = true
 };
 
 ::TLW.HooksMod <- ::Hooks.register(::TLW.ID, ::TLW.Version, ::TLW.Name);
-::TLW.HooksMod.require("mod_legends >= 19.2.41", "mod_modern_hooks >= 0.4.0", "mod_msu >= 1.2.7");
-::TLW.HooksMod.conflictWith("mod_silver_weapons", "mod_PFI", "mod_TLW", "mod_weapons_updated", "mod_weapons", "mod_reforged");
+::TLW.HooksMod.require("mod_legends >= 19.3.5", "mod_modern_hooks >= 0.4.0", "mod_msu >= 1.2.7");
+::TLW.HooksMod.conflictWith("mod_silver_weapons", "mod_PFI", "mod_TLW", "mod_weapons_updated", "mod_weapons", "mod_reforged", "mod_cccp_vomit");
 
 ::TLW.HooksMod.queue(">mod_legends", ">mod_msu", ">mod_nggh_magic_concept", ">mod_sellswords", ">mod_ROTUC", function () {
 	// Register with MSU so people know to update (Public Branch)
@@ -53,6 +55,11 @@
 	::include("mod_PoV/settingsLoad.nut");
 	// Load later (Depend on Settings being loaded)
 	//::include("mod_PoV/afterLoad.nut");
+});
+
+::TLW.HooksMod.queue(">mod_legends", ">mod_msu", ">mod_nggh_magic_concept", ">mod_sellswords", ">mod_ROTUC", ">mod_fury_of_the_northmen", function () {
+	// load fotn hooks files (has to be loaded here, as fotn typically loads after pov)
+	::include("mod_PoV/hooks_FOTN/load_fotn.nut");
 });
 
 ::TLW.HooksMod.queue(">mod_legends", ">mod_msu", ">mod_nggh_magic_concept", ">mod_sellswords", ">mod_ROTUC", function () {

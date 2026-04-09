@@ -37,18 +37,21 @@ this.pov_silvering_kit <- this.inherit("scripts/items/item", {
 		if (!mainhand.isItemType(this.Const.Items.ItemType.MeleeWeapon)) 
 		{
 			this.Sound.play("sounds/upgrade/pov_silvered_fail.wav");
+			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip("Can only be used on melee weapons."));
 			return false;
 		}
 
 		if (mainhand.isSilvered()) 
 		{
 			this.Sound.play("sounds/upgrade/pov_silvered_fail.wav");
+			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip("This weapon is already silvered."));
 			return false;
 		}
 
-		if (mainhand.m.ID == "weapon.pov_vattghern_longsword") 
+		if (mainhand.m.ID == "weapon.pov_vattghern_longsword" || mainhand.m.ID == "weapon.pov_vattghern_sword") 
 		{
 			this.Sound.play("sounds/upgrade/pov_silvered_fail.wav");
+			::World.State.m.CharacterScreen.m.JSHandle.asyncCall("openPopupDialog", ::Legends.tooltip("This weapon is unique and cannot be modified."));
 			return false;
 		}
 

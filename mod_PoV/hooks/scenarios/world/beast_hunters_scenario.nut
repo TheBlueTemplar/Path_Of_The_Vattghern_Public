@@ -8,7 +8,8 @@
 
 	q.onSpawnAssets = @(__original) function()
 	{
-		__original();	
+		__original();
+		this.World.Assets.getStash().add(this.new("scripts/items/special/pov_silvering_kit"));	
 		this.World.Assets.getStash().add(this.new("scripts/items/tools/holy_water_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/tools/throwing_net"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_wooden_stake"));

@@ -2,7 +2,16 @@
 
 	q.fillStash = @( __original ) function(_list, _stash, _priceMult, _allowDamagedEquipment = false)
 	{
-		// SEASONAL
+
+		_list.extend([
+			{
+				R = 90,
+				P = 1.0,
+				S = "accessory/pov_rock_item"
+			}
+		]);
+
+		// SEASONAL (XMAS)
 		/*_list.extend([
 			{
 				R = 40,

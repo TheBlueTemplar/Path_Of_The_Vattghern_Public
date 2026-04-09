@@ -1,4 +1,109 @@
-# v3.2.0 "Farewell, again" Edition
+# v4.0.0 "Special" Edition
+
+## Changelog v4.0.0 "Special" Edition:
+*Ok that is another big one, and I did take my time to make it...but keep in mind that I do all these between my military service. I will be gone once more, this time for a much longer period, but I think ive left pov in more than a decent state, and hopefully celestial will not have a headache fixing my broken shit. A patch or two with fixes and rebalance might happen before I leave, but for now that's it. Enjoy everyone, and happy easter! (Sadly I could not do sth special this time...next year!)*
+
+### NEW FEATURES
+
+* **Specialist Perks!** (Yes! Comeback!!)
+   * Specialist perks are re-implemented, into a new pov system, which is built on the legends one. Most effects should be quite familiar, but there were lots of tweaks, changes, and redistribution being done. The changes are:
+     * Tweaked art, make them stand out more
+     * Their effects are overall slightly weaker, but more varied as well, some perks will grant world move speed, others specific bonuses to camping interactions, etc. They can still make a rando peasant quite strong without overshadowing stronger backgrounds
+     * Their scaling works differently: if you do not use their specific weapons (so for example, if you use a fighting axe instead of a hatchet), then you will get from 10% up to 50% of the bonuses. This % scales with character level, up to level 10.
+     * Some of these perks saw their weapon selection slightly expanded
+     * These perks were redistributed, generally to more backgrounds. Some backgrounds can have different possible perks, from a tailored selection (so for example, daytaler can get either knife, or club specialty)
+     * These perks can also appear randomly on any background
+     * Their names and descriptions were also redone
+     * Finally, new PoV backgrounds also get access to some of these goodies...
+   * As for the legends ones, PoV "hides" and disables the ones the player has, but it keeps their effects if they appear on enemies, to retain some balance of Legends and possibly other mods  
+* **Player and Enemy Busts** (the little circular things entities sit on)
+   * All were retouched quite a bit, and now have new fresh appearances
+   * Additionally, player busts will be visible in party, recruitment and turn order screen
+* **One Handed Vatt'ghern Sword!**
+   * Only obtainable by crafting a 2h Vattghern sword into it
+   * You can later revert that change, by crafting the 1h back to the 2h version
+   * The two swords were also differenciated in skills
+      * The Vattghern Longsword loses riposte, gains slight damage boost
+      * The Vattghern Sword gets Lunge and Riposte, but no aoe skills
+      * Both swords get the new (and reworked by pov) Halfsword and Mordhau skills
+* **PoV Background Favored Enemy Perk Tree Additions**:
+   * Vattghern: Swordmasters, Beasts, Occult, Greenskins, Undead
+   * Caravan Guard: Outlaws
+   * Mutant and Forsaken: Civilization
+   * Seer: Occult
+* **Donkeys!** (would I not give some love to them?)
+   * Donkeys can equip accessories!! (and thus, they can enter the arena!!!)
+   * Donkeys got a bunch of additional perk options, including quick step, berserk, feint, etc.
+* Sick Entities (With sickness or mutation sickness) get the ability to **Puke!** Wow!   
+* Added a new accessory: "Big Rock"....that's all ill say   
+* Vatt'ghern now get a perk point when they reach softcap of their scaling (200 kills)
+
+### OVERHAUL
+
+* **New Skills Soft Rework**
+   * Halfsword, Change damage, make it non 100% Ap, more similar to spear's heartpiercer skill. Dmg increase with thrust mastery. Slightly lower chance to hit. Stronger with 2h weapons
+   * Mordhau: More Dmg, More armor dmg, more ap and fat cost, reduce armor ignore. Slightly lower chance to hit. Stronger with 2h weapons
+   * HaftStrike: Change damage back to 30% and increase armor damage by 15%, but reduce ap cost to 3. Slightly lower chance to hit. Added this to most polearms and goedendags
+   * Obliterate: Removed
+   * Line them Up: Removed
+   * Throw Bola -> Constrain effect: -1Ap instead of -2. -3 fat instead of -5 (for each tile travelled)
+   * Into the Fray: Fatigue cost set to 25 (from 10)
+* **Dual Wielding Tweaks:**
+   * While dual wielding, damage and defences are reduced by 10%
+   * Double swing does -5% damage on top of that (-15% in total)
+* **More Traits Reworks**
+   * Cocky trait, updated tooltip, +5% stats when at confident morale
+   * Weasel trait: also gain +10 rdef when fleeing. Also added as a possible enemy trait
+   * Determined: +10% resolve on confident morale
+   * Tiny: Reduce damage penalty to -10%, increase +rdef to +7
+   * Eagle Eyes: Vision stays at +1 (not 2)
+   * Greedy: Reduce its new effect (1 per 15 instead of 10), also make the tooltip show the wage increase from that trait
+   * Hesitant: Reverted latest legends changes
+   * Impatient: Reverted latest legends changes
+* **Throw Backup Weapon Skills**
+   * Throw Backup Axe: Increase dmg by 15%, Reduce base chance to hit by 5%
+   * Throw Backup Knife:  Slight dmg and armor dmg increase, reduce ap and fat cost, reduce chance to hit by 5%
+   * Throw Backup Spear: Removed
+* "Flesh-y w/ fur beasts get 15 - 20% Blunt Damage Resistance (Direwolves, Hyenas, Bears, Unholds)
+* Removed the new Gold and Silver Ingot crafting recipes (pov has its own economy balance)
+* Wichts are removed (PoV has its own "Armored Ghost" enemy)
+   * On that note, the spawnlists of all undead were tweaked
+
+### BALANCE
+
+* Undead are now immune to harsh weather (maybe they already were I dont remember lol)
+* Beast Hunters Scenario: Also start with a silvering kit now
+* With Fotn Tweaks enabled, Fotn's changes to dw are reverted to the Legends + PoV effect
+* Crusader sword does +20% more dmg vs undead, spirits, cultists, hexen
+* Lion Pelt Vanilty Item: +2 Threat, resolve bonus set to 1
+* Slightly nerf armor bonus of some monster craftables
+* Orc Mutants: tried to make ai use the charge skill more
+* Rot mutation: now grants immunity to unbearable stench
+
+### IMPROVEMENTS
+
+* New Main Menu Logo!, Toggleable
+* Logo also appears on the World and Tactical menu, toggleable with the same setting
+* Silvering Kit: Added some popups, explaining its failed use, in case that happens
+* 10 New tips added
+* Improved the Vatt'ghern trait icon, so it stands out more
+* Improve armor numbers: Noble Hood (no more 6s and 4s and stuff)
+* Enforce (almost) the Latest Legends Version
+
+### FIXES
+
+* Included all of Cel's updates and fixes
+* Huge amount of renaming took place in legends, PoV updated its files according to these changes
+* Fixed an issue where the game would not remember if you had PoV main menu art enabled or not, and it would enable it anyway on launch (it still does not remember, its just.....forced to). Now these settings are also toggleable even when in the campaign or battle!
+* Fixed errors related to the Gunner Knights and Noble Seers
+* Fix tooltip of fleshcultist helmet vanity things
+* Fixed Brushes and GFX for PoV Tabards
+* Fix small tooltip typo in PoV named accessory items
+* Direwolf, Hyena, Lindwurm Cloaks. From Armor Upgrades -> Cloaks
+
+## Changelog v3.2.1 "Farewell, again" Edition:
+
+* Fix random traits appearing on party bros (thanks Cool)
 
 ## Changelog v3.2.0 "Farewell, again" Edition:
 

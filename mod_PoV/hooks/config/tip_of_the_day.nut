@@ -1,5 +1,5 @@
 local tips = [
-	// 65 Total As Of Now
+	// 75 Total As Of Now
 	// BS - Memes - References etc.
 	"(PoV) The shadows are watching...",
 	"(PoV) Some are whispering that Goblin\'s woodwork ain\'t that good...",
@@ -65,6 +65,16 @@ local tips = [
 	"(PoV) The armor mechanics rework affects player and enemy *almost* equally...",
 	"(PoV) Harsh Weather can be quite hindering to those who are unprepared...",
 	"(PoV) During rainfall and other harsh weather, guns, flame magic and any sort of fire attacks are weaker.",
+	"(PoV) There are ways to reduce the effects of harsh weather, or even ignore them",
+	"(PoV) The Vatt\'ghern sword can be re-crafted into a one-handed version, and back to a two-handed one at will!",
+	"(PoV) Specialist perks not only appear on some specific backgrounds, but can also appear randomly on almost anyone",
+	"(PoV) Some backgrounds can appear with different specialist perks, and rarely with multiple ones",
+	"(PoV) Traits are not just for the player, enemies can have them too! Good, or bad...",
+	"(PoV) Many beasts with thick skin and fur are now resistant to blunt damage, but weak to fire...",
+	"(PoV) Enemy beasts, spirits and undead can be champions too, dropping some unique loot!",
+	"(PoV) Did you know, that somehow donkeys can wear.... accessories?",
+	"(PoV) Reaching max scaling with the Vatt\'ghern trait also grants a perk point!",
+	"(PoV) Most beasts, and many undead and spirits are immune to harsh weather conditions",
 	// Misc
 	"(PoV) I am eager to see your feedback on the mod!",
 	"(PoV) Did you know that the PoV mod adds 2 new company banners?",

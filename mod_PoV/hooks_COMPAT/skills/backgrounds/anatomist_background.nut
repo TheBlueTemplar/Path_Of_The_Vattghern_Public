@@ -1,5 +1,13 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/anatomist_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.PerkTreeDynamic.Class.extend([
+			::Const.Perks.PovButcherClassTree,
+		]);
+	}
+
 	q.onAdded = @(__original) function()
 	{
 		__original();

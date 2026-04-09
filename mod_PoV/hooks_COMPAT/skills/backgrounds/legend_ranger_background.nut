@@ -1,5 +1,13 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/legend_ranger_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.PerkTreeDynamic.Class.extend([
+			::Const.Perks.PovShortbowClassTree,
+		]);
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
@@ -8,7 +16,7 @@
 				id = 13,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "Ranged Damage ignoring armor increased by [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color]."
+				text = "Ranged Damage increased by [color=" + this.Const.UI.Color.PositiveValue + "]8%[/color]."
 			}
 		);
 		return ret;
@@ -22,7 +30,7 @@
 		{
 			if (_skill.isAttack() && item.isItemType(this.Const.Items.ItemType.Weapon) && _skill.isRanged())
 			{
-				_properties.DamageTotalMult *= 1.05;		
+				_properties.DamageTotalMult *= 1.08;		
 			}
 		}	
 	}

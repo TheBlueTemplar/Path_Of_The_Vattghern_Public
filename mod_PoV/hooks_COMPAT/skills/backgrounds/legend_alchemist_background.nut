@@ -1,5 +1,14 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/legend_alchemist_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.PerkTreeDynamic.Class.extend([
+			::Const.Perks.PovSickleClassTree,
+			::Const.Perks.PovInventorClassTree,
+		]);
+	}
+
 	q.onAdded = @(__original) function()
 	{
 		__original();

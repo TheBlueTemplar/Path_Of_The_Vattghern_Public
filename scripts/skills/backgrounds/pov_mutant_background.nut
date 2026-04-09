@@ -109,10 +109,30 @@ this.pov_mutant_background <- this.inherit("scripts/skills/backgrounds/character
 				this.Const.Perks.FitTree,
 				this.Const.Perks.SturdyTree
 			],
-			Enemy = [],
+			Enemy = [
+				::Const.Perks.CivilizationTree
+			],
 			Class = [], // maybe add "mutant" class, with bonuses here and there?
 			Magic = []
 		}
+
+		local r = this.Math.rand(1,3);
+		if (r == 1)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovRaiderClassTree,
+			]);
+		} else if (r == 2)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovClubClassTree,
+			]);
+		} else if (r == 3)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovInquisitionClassTree,
+			]);
+		} 
 	}
 
 	//Default Male

@@ -45,7 +45,7 @@ this.pov_new_company_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].m.PerkPoints = 0;
 		bros[0].m.LevelUps = 0;
 		bros[0].m.Level = 1;
-		bros[0].getBackground().addPerkGroup(::Const.Perks.MilitiaClassTree.Tree);
+		//bros[0].getBackground().addPerkGroup(::Const.Perks.MilitiaClassTree.Tree);
 		bros[0].getBackground().addPerkGroup(::Const.Perks.SpearTree.Tree);
 		bros[0].getBackground().m.Excluded.extend(
 			[

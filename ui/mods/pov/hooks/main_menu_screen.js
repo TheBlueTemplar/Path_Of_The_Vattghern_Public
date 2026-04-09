@@ -14,6 +14,64 @@ MainMenuScreen.prototype.updatePOVBackgroundImage = function (_isShow) {
     }
 }
 
+// I need bot this and the func below on MainMenuModule, cause screen is the one that comms with module...
+MainMenuScreen.prototype.updatePOVLogoImage = function (_isShow)
+{
+    if (this.mMainMenuModule !== null &&
+        this.mMainMenuModule !== undefined &&
+        this.mMainMenuModule.updatePOVLogoImage !== undefined)
+    {
+        this.mMainMenuModule.updatePOVLogoImage(_isShow);
+    }
+};
+
+IngameMenuScreen.prototype.updatePOVLogoImage = function (_isShow)
+{
+    if (this.mMainMenuModule !== null &&
+        this.mMainMenuModule !== undefined &&
+        this.mMainMenuModule.updatePOVLogoImage !== undefined)
+    {
+        this.mMainMenuModule.updatePOVLogoImage(_isShow);
+    }
+};
+
+// Logo in main menu
+mod_PoV.Hooks.MainMenuModule_createDIV = MainMenuModule.prototype.createDIV;
+MainMenuModule.prototype.createDIV = function (_parentDiv)
+{
+    mod_PoV.Hooks.MainMenuModule_createDIV.call(this, _parentDiv);
+
+    this.mLogoImage = this.mContainer.find('.header img');
+    this.mOriginalLogoUrl = this.mLogoImage.attr('src');
+    //this.mLogoImage.attr('src', Path.GFX + 'ui/skin/pov_main_menu_logo.png');
+    //this.mLogoImage.css('transform', 'translateY(-40px)');
+    this.updatePOVLogoImage(true);
+    //mod_PoV.Hooks.MainMenuScreen_notifyBackendOnShown.call(this);
+}
+
+// Logo in-game
+/*mod_PoV.Hooks.MainMenuModule_createWorldMapMenuButtons = MainMenuModule.prototype.createWorldMapMenuButtons;
+MainMenuModule.prototype.createWorldMapMenuButtons = function (_isSavingAllowed)
+{
+    mod_PoV.Hooks.MainMenuModule_createWorldMapMenuButtons.call(this, _isSavingAllowed);
+
+    this.mLogoImage = this.mContainer.find('.header img');
+    this.mOriginalLogoUrl = this.mLogoImage.attr('src');
+
+    this.updatePOVLogoImage(false);
+};*/
+
+MainMenuModule.prototype.updatePOVLogoImage = function (_isShow) {
+    if (_isShow) {
+        this.mLogoImage.attr('src', Path.GFX + 'ui/skin/pov_main_menu_logo.png');
+        this.mLogoImage.css('transform', 'translateY(-40px)');
+    } else if (this.mOriginalLogoUrl !== null && this.mOriginalLogoUrl !== undefined) {
+        this.mLogoImage.attr("src", this.mOriginalLogoUrl);
+        this.mLogoImage.css('transform', '');
+    }
+}
+
+
 // Old Shet
 /*mod_PoV.Hooks.MainMenuScreen_show = MainMenuScreen.prototype.show;
 MainMenuScreen.prototype.show = function (_animate)

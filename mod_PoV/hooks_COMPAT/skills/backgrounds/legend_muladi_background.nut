@@ -1,5 +1,13 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/legend_muladi_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.PerkTreeDynamic.Class.extend([
+			::Const.Perks.PovShortbowClassTree,
+		]);
+	}
+	
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();

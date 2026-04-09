@@ -4,6 +4,8 @@
 	{
 		__original()
 		
+		//this.getSprite("socket").setBrush("pov_bust_base_beasts");
+
 		// Corpse Drop
 		if (!::MSU.isKindOf(this.actor, "player")) 
 		{

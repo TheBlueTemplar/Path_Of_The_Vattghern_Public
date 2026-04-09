@@ -12,7 +12,7 @@
 			id = 7,
 			type = "text",
 			icon = "ui/icons/bravery.png",
-			text = "Lose [color=" + this.Const.UI.Color.PositiveValue + "]-4[/color] resolve."
+			text = "Lose [color=" + this.Const.UI.Color.NegativeValue + "]- 4[/color] resolve."
 		});
 		result.push({
 			id = 7,

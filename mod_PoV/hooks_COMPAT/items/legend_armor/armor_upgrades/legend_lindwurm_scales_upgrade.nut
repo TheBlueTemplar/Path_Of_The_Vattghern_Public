@@ -1,4 +1,4 @@
-// Removed in 19.3
+// Removed in 19.3 - now cloak
 // ::TLW.HooksMod.hook("scripts/items/legend_armor/armor_upgrades/legend_lindwurm_scales_upgrade", function (q) {
 // 	q.create = @(__original) function () {
 // 		__original();

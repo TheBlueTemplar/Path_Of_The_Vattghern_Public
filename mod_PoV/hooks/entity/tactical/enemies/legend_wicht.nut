@@ -2,6 +2,7 @@
 {
 	q.onInit = @(__original) function()
 	{
+		// REMOVED FROM SPAWNLISTS - SHOULD NOT APPEAR INGAME
 		__original()
 		
 		// Additional Flags

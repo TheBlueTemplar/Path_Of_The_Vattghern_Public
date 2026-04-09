@@ -19,6 +19,11 @@ this.pov_unhold_racial <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.DamageReceivedTotalMult *= 1.30;
 		}
+
+		if (_hitInfo.DamageType == this.Const.Damage.DamageType.Blunt)
+		{
+			_properties.DamageReceivedTotalMult *= 0.80;
+		}
 	}
 
 });

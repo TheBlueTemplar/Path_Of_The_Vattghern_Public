@@ -49,10 +49,10 @@ page.addTitle("title4", "Other Mods Tweaks");
 page.addDivider("divider4");
 
 ::TLW.McTweaksID <- "McTweaks";
-local settingMcTweaks = page.addBooleanSetting(::TLW.McTweaksID, false, "MC Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Magic Concept\" mod[/color] \n\n Secondary option, off by default. Enabling this makes PoV handle the champion beast system. Disabling it allows MC to handle it. Also Enables minor tweaks for better balance between MC and PoV, and removes an annoying enemy ability or two. Look at the PoV server for details.\n\n Will only work with the MC mod installed. Not recommended to turn on and off multiple times during a save. [color=" + this.Const.UI.Color.povPainEffect + "]Requires Restart after toggling![/color]");
+local settingMcTweaks = page.addBooleanSetting(::TLW.McTweaksID, false, "MC Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Magic Concept\" mod[/color] \n\n Secondary option, off by default. Enabling this makes PoV handle the champion beast system. Disabling it allows MC to handle it. Also Enables minor tweaks for better balance between MC and PoV, and removes an annoying enemy ability or two. \n\n Will only work with the MC mod installed. Not recommended to turn on and off multiple times during a save. [color=" + this.Const.UI.Color.povPainEffect + "]Requires Restart after toggling![/color]");
 
 ::TLW.FotnTweaksID <- "FotnTweaks";
-local settingFotnTweaks = page.addBooleanSetting(::TLW.FotnTweaksID, false, "FotN Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Fury of the Northmen\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and FotN, mainly messing with some new enemies.\n\n Will only work with the FotN mod installed. Not recommended to turn on and off multiple times during a save.");
+local settingFotnTweaks = page.addBooleanSetting(::TLW.FotnTweaksID, false, "FotN Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Fury of the Northmen\" mod[/color] \n\n Secondary option, off by default. Reverts fotn changes in the dual wielding effect back to the Legends and PoV version.\n\n Will only work with the FotN mod installed.");
 
 ::TLW.SSUTweaksID <- "SSUTweaks";
 local settingSSUTweaks = page.addBooleanSetting(::TLW.SSUTweaksID, false, "SSU Tweaks", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Optional tweaks to the \"Sellswords Updated\" mod[/color] \n\n Secondary option, off by default. Enables minor tweaks for better balance between PoV and SSU. Removes sequences (drops,shop and effects) from players and enemies. Tones down the crazy lategame scaling. Also removes the \"Encumbrance\" effect from everyone, as pov has its own version of armor balance.\n\n Will only work with the SSU mod installed. Not recommended to turn on and off multiple times during a save. \n\n [color=" + this.Const.UI.Color.povPainEffect + "]Only toggle in main menu before a new game --- Requires Restart![/color]");
@@ -115,7 +115,10 @@ page.addDivider("divider");
 page.addSpacer("Spacer", "72rem", "1rem");
 
 ::TLW.EnableMainMenuArtID <- "EnableMainMenuArt"
-local settingEnableMainMenuArt = page.addBooleanSetting(::TLW.EnableMainMenuArtID, true, "PoV Main Menu Art", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Toggle the display of PoV\'s main menu art.[/color] \n\n Disable this if you want another mod\'s or Vanilla art. Immediately works, no restart required. \n\n [color=" + this.Const.UI.Color.povPainEffect + "]Only toggle this while in the main menu screen. It will not work if you toggle ingame.[/color]");
+local settingEnableMainMenuArt = page.addBooleanSetting(::TLW.EnableMainMenuArtID, true, "PoV Main Menu Art", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Toggle the display of PoV\'s main menu art.[/color] \n\n Disable this if you want another mod\'s or Vanilla art. Immediately works, no restart required.");
+
+::TLW.EnableMainMenuLogoID <- "EnableMainMenuLogo"
+local settingEnableMainMenuLogo = page.addBooleanSetting(::TLW.EnableMainMenuLogoID, true, "PoV Logo", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Toggle the display of PoV\'s logo in various game menus.[/color] \n\n Disable this if you want another mod\'s or Vanilla art. Immediately works, no restart required.");
 
 ::TLW.EnablePovMainMusicID <- "EnablePovMainMusic"
 local settingEnablePovMainMusic = page.addBooleanSetting(::TLW.EnablePovMainMusicID, true, "PoV Main Menu Music", "[color=" + this.Const.UI.Color.povTooltipBlue + "]Toggle PoV\'s main menu music.[/color] \n\n Disable this if you want another mod\'s or Vanilla music.\n\n All music used is legally obtained and licensed, credits at the mod\'s github page. \n\n [color=" + this.Const.UI.Color.povPainEffect + "]Only toggle this while in the main menu screen.[/color]");
@@ -130,6 +133,23 @@ settingEnableMainMenuArt.addAfterChangeCallback(function(_oldValue)
     local main_menu = ::MSU.Utils.getState("main_menu_state").m.MainMenuScreen;
     if (::MSU.isNull(main_menu) || main_menu.m.JSHandle == null) return;
     main_menu.m.JSHandle.asyncCall("updatePOVBackgroundImage", getValue());
+})
+
+settingEnableMainMenuLogo.addAfterChangeCallback(function(_oldValue)
+{
+    if (_oldValue == getValue()) return;
+
+    local main_menu = ::MSU.Utils.getState("main_menu_state").m.MainMenuScreen;
+    if (::MSU.isNull(main_menu) || main_menu.m.JSHandle == null) return;
+    main_menu.m.JSHandle.asyncCall("updatePOVLogoImage", getValue());
+
+    local world_menu = ::MSU.Utils.getState("world_state").m.WorldMenuScreen;
+    if (::MSU.isNull(world_menu) || world_menu.m.JSHandle == null) return;
+    world_menu.m.JSHandle.asyncCall("updatePOVLogoImage", getValue());
+
+    local tactical_menu = ::MSU.Utils.getState("tactical_state").m.TacticalMenuScreen;
+    if (::MSU.isNull(tactical_menu) || tactical_menu.m.JSHandle == null) return;
+    tactical_menu.m.JSHandle.asyncCall("updatePOVLogoImage", getValue());
 })
 
 settingEnablePovMainMusic.addBeforeChangeCallback(function(_newValue)

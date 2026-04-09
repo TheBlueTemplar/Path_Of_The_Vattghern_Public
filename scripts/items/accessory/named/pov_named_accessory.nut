@@ -120,7 +120,7 @@ this.pov_named_accessory <- ::inherit("scripts/items/accessory/accessory", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "Reduces the Resolve of any opponent engaged in melee by [color=" + ::Const.UI.Color.PositiveValue + "]+" + this.m.Threat + "%[/color]."
+				text = "Reduces the Resolve of any opponent engaged in melee by [color=" + ::Const.UI.Color.NegativeValue + "]+" + this.m.Threat + "[/color]."
 			});
 		}
 

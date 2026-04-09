@@ -2,21 +2,38 @@
 {
 	q.getTooltip = @(__original) function()
 	{
-		local ret = __original();
-		ret.push(
+		return [
 			{
-				id = 13,
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 10,
 				type = "text",
-				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] resolve."
+				icon = "ui/icons/pov_melee_ranged_defense.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25[/color] Melee Defense and [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Ranged Defense while retreating"
 			}
-		);
-		return ret;
+		];
 	}
 
-	q.onUpdate = @(__original) function( _properties )
+	q.onBeingAttacked = @(__original) function( _attacker, _skill, _properties )
 	{
-		__original(_properties);
-		_properties.BraveryMult *= 1.05;
+		if (("State" in this.Tactical) && this.Tactical.State != null && this.Tactical.State.isScenarioMode())
+		{
+			return;
+		}
+
+		if (this.getContainer().getActor().isPlacedOnMap() && this.Tactical.State.isAutoRetreat() && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == this.getContainer().getActor().getID())
+		{
+			_properties.MeleeDefense += 25;
+			_properties.RangedDefense += 10;
+		}
 	}
+
 })

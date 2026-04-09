@@ -62,7 +62,7 @@ this.pov_vattghern_trait <- this.inherit("scripts/skills/traits/character_trait"
 		this.m.ID = "trait.pov_witcher";
 		this.m.Name = "Vatt'ghern";
 		this.m.Icon = "ui/traits/pov_vattghern.png";
-		this.m.Description = "%name% has survived the [color=" + this.Const.UI.Color.povPerkBlue + "]Trial of the grasses[/color] and became a Vatt\'ghern. They now are faster and stronger than normal humans, and can ingest special [color=" + this.Const.UI.Color.povPerkBlue + "]mutagens[/color]. The amount of mutagens depends on the character\'s level [color=" + this.Const.UI.Color.povTooltipGray + "](1 + 1 per 7 Levels), but there are exceptions[/color]. They also get access to the vatt\'ghern perk group. \n\n Their skills further improve over time as they get kills and mutations. [color=" + this.Const.UI.Color.povTooltipGray + "]Softcap at 200 kills - no cap for mutations scaling[/color]. \n\n Due to the Vatt'ghern's skillset, they demand much larger pay and attract stronger opponents. [color=" + this.Const.UI.Color.povPerkBlue + "] Also, your company can now take special Vatt\'ghern contracts[/color]";
+		this.m.Description = "%name% has survived the [color=" + this.Const.UI.Color.povPerkBlue + "]Trial of the grasses[/color] and became a Vatt\'ghern. They now are faster and stronger than normal humans, and can ingest special [color=" + this.Const.UI.Color.povPerkBlue + "]mutagens[/color]. The amount of mutagens depends on the character\'s level [color=" + this.Const.UI.Color.povTooltipGray + "](1 + 1 per 7 Levels), but there are exceptions[/color]. They also get access to the vatt\'ghern perk group. \n\n Their skills further improve over time as they get kills and mutations. [color=" + this.Const.UI.Color.povTooltipGray + "]Softcap at 200 kills - no cap for mutations scaling[/color] [color=" + this.Const.UI.Color.povPerkBlue + "]Gain a perk point[/color] when you reach that cap. \n\n Due to the Vatt'ghern's skillset, they demand much larger pay and attract stronger opponents. [color=" + this.Const.UI.Color.povPerkBlue + "] Also, your company can now take special Vatt\'ghern contracts[/color]";
 		this.m.Order = this.Const.SkillOrder.Background - 3;
 	}
 
@@ -290,6 +290,8 @@ this.pov_vattghern_trait <- this.inherit("scripts/skills/traits/character_trait"
 
 	function onUpdate( _properties )
 	{
+		local actor = this.getContainer().getActor();
+
 		_properties.InitiativeMult *= (1+ (0.01 * (this.getInitiativeBonus())));
 		_properties.ActionPoints += this.getActionBonus();
 		_properties.DamageTotalMult *= (1+ (0.01 * (this.getDamageBonus())));
@@ -298,7 +300,7 @@ this.pov_vattghern_trait <- this.inherit("scripts/skills/traits/character_trait"
 		_properties.SignIntensity += (0.01 * (this.getIntensityBonus()));
 		_properties.SurviveWithInjuryChanceMult = 2.00; // +33% chance --> 2 x 33 = 66%	
 
-		if (!this.getContainer().getActor().isPlacedOnMap())
+		if (!actor.isPlacedOnMap())
 		{
 			// If not in battle, then this should be a trait and not a status effect
 			this.m.Type = ::Const.SkillType.Trait;
@@ -309,12 +311,22 @@ this.pov_vattghern_trait <- this.inherit("scripts/skills/traits/character_trait"
 			this.m.Order = this.Const.SkillOrder.Background - 3;
 		}
 
-		local actor = this.getContainer().getActor();
 		if (!::World.Flags.has("GotStrongVattghernEvent"))
 		{
 			if (actor.getLevel() >= 12 && this.getMutations() >= 2)
 			{
 				::World.Flags.add("GotStrongVattghernEvent");
+			}
+		}
+
+		// Add a perk point at max scaling
+		local kills = actor.getLifetimeStats().Kills;
+		if (!actor.getFlags().has("GrantedVattghernPerkPoint"))
+		{
+			if (kills >= (this.m.MaxScale - 1))
+			{
+				actor.m.PerkPoints += 1;
+				actor.getFlags().add("GrantedVattghernPerkPoint");
 			}
 		}
 	}

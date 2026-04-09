@@ -122,16 +122,16 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.IntelligentTree
 			],
 			Enemy = [
-				//this.Const.Perks.SwordmastersTree, // start removing comments from here
-				//this.Const.Perks.BeastTree,
-				//this.Const.Perks.OccultTree,
-				//this.Const.Perks.GreenskinTree,
-				//this.Const.Perks.UndeadTree
+				this.Const.Perks.SwordmastersTree,
+				this.Const.Perks.BeastTree,
+				this.Const.Perks.OccultTree,
+				this.Const.Perks.GreenskinTree,
+				this.Const.Perks.UndeadTree
 			],
 			Class = [
-				this.Const.Perks.LongswordClassTree,
+				this.Const.Perks.PovLongswordClassTree,
 				this.Const.Perks.HealerClassTree,
-				this.Const.Perks.HerbalistProfessionTree
+				this.Const.Perks.HerbalistProfessionTree,
 			],
 			Magic = [
 				this.Const.Perks.VattghernMagicTree

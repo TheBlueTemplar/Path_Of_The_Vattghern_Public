@@ -1,5 +1,27 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/hedge_knight_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		local r = this.Math.rand(1,3);
+		if (r == 1)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovRaiderClassTree,
+			]);
+		} else if (r == 2)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovClubClassTree,
+			]);
+		} else if (r == 3)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovLongswordClassTree,
+			]);
+		} 
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		//local ret = __original();

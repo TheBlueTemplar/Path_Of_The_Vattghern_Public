@@ -273,8 +273,7 @@
 				Plate = [// avg 165, -25
 					[1, "plate/legend_armor_plate_cuirass"],// 150, -21						
 					[1, "plate/legend_armor_plate_full"],// 160, -22
-					[1, "plate/legend_armor_plate_full_greaves"],// 170, -26
-					[1, "plate/legend_armor_plate_chest"],// 130, -18
+					[1, "plate/legend_armor_plate_full_greaves"],// 170, -26		
 				],
 				Cloak = [ // 15, -1
 					[1, "cloak/legend_armor_noble_shawl"],// 10, -0
@@ -464,8 +463,7 @@
 				Plate = [// avg 165, -25
 					[1, "plate/legend_armor_plate_cuirass"],// 150, -21						
 					[1, "plate/legend_armor_plate_full"],// 160, -22
-					[1, "plate/legend_armor_plate_full_greaves"],// 170, -26
-					[1, "plate/legend_armor_plate_chest"],// 130, -18
+					[1, "plate/legend_armor_plate_full_greaves"],// 170, -26		
 				],
 				Cloak = [ // 15, -1
 					[1, "cloak/legend_armor_noble_shawl"],// 10, -0

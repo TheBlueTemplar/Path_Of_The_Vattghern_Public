@@ -4,11 +4,11 @@ this.pov_named_lindwurm_scales_upgrade <- ::inherit("scripts/items/armor_upgrade
 	{
 		this.pov_named_armor_upgrade.create();
 		this.m.ID = "legend_armor.lindwurm_scales";
+		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.NameList = this.Const.Strings.PovLindwurmArmorNames;
 		this.m.PrefixList = [""];
 		this.m.SuffixList = [""];
 		//this.m.DefaultName = "Scale Cloak";
-		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.Description = "A cloak made out of the scales of a Lindwurm. Not only is it a rare and impressive trophy, it also offers additional protection and is untouchable by corroding Lindwurm blood.";
 		this.m.ArmorDescription = "A cloak made out of Lindwurm scales is worn over this armor for additional protection, including from the corrosive effects of Lindwurm blood.";
 		this.m.Icon = "armor_upgrades/pov_named_upgrade_lindwurm.png";
@@ -22,8 +22,8 @@ this.pov_named_lindwurm_scales_upgrade <- ::inherit("scripts/items/armor_upgrade
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_04_back_dead";
 		this.m.Value = 5000;
-		this.m.Condition = 45; // +5
-		this.m.ConditionMax = 45; // +5
+		this.m.Condition = 45;
+		this.m.ConditionMax = 45;
 		this.m.StaminaModifier = -3;
 		this.m.DirectDamageModifier = -15.0; // +5
 		this.randomizeValues();

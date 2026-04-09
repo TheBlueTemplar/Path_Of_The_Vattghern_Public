@@ -17,7 +17,7 @@ this.pov_distracted_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character was on the receiving end of a dirty trick. With sand in their eyes, they are distracted for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s). Their vision is obscured, making landing strikes much harder, and not hit as hard";
+		return "This character was on the receiving end of a dirty trick. With something in their eyes, they are distracted for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s). Their vision is obscured, making landing strikes much harder, and not hit as hard";
 	}
 
 	function getTooltip()

@@ -15,15 +15,15 @@ this.pov_named_stollwurm_scales_upgrade <- ::inherit("scripts/items/armor_upgrad
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/pov_icon_named_upgrade_stollwurm.png";
 		this.m.OverlayIconLarge = "armor_upgrades/pov_inventory_named_upgrade_stollwurm.png";
-		this.m.SpriteFront = null;
-		this.m.SpriteBack = "upgrade_stollwurm_back_01";
-		this.m.SpriteDamagedFront = null;
-		this.m.SpriteDamagedBack = "upgrade_stollwurm_back_01_damaged";
-		this.m.SpriteCorpseFront = null;
-		this.m.SpriteCorpseBack = "upgrade_stollwurm_back_01_dead";
+		//this.m.SpriteFront = "cloak_stollwurm_01";
+		this.m.SpriteBack = "cloak_stollwurm_01";
+		//this.m.SpriteDamagedFront = "cloak_stollwurm_01_damaged";
+		this.m.SpriteDamagedBack = "cloak_stollwurm_01_damaged";
+		//this.m.SpriteCorpseFront = "cloak_stollwurm_01_dead";
+		this.m.SpriteCorpseBack = "cloak_stollwurm_01_dead";
 		this.m.Value = 10000;
-		this.m.Condition = 80; //+5
-		this.m.ConditionMax = 80; //+5
+		this.m.Condition = 70;
+		this.m.ConditionMax = 70; 
 		this.m.DirectDamageModifier = -20.0; //+5
 		this.m.StaminaModifier = -5;
 		this.randomizeValues();

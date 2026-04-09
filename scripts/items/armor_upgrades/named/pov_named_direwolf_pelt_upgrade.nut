@@ -4,10 +4,10 @@ this.pov_named_direwolf_pelt_upgrade <- ::inherit("scripts/items/armor_upgrades/
 	{
 		this.pov_named_armor_upgrade.create();
 		this.m.ID = "legend_armor.pov_named_direwolf_pelt";
+		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.NameList = this.Const.Strings.PovDirewolfArmorNames;
 		this.m.PrefixList = [""];
 		this.m.SuffixList = [""];
-		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Description = "Pelts taken from ferocious direwolves, cured and sewn together to be worn as a beast hunter\'s trophy around the neck. Donning the skin of a beast like this can turn one into an imposing figure.";
 		this.m.ArmorDescription = "A mantle of direwolf pelts has been attached to this armor, which transforms the wearer into an imposing figure.";
 		this.m.Icon = "armor_upgrades/pov_named_upgrade_direwolf.png";

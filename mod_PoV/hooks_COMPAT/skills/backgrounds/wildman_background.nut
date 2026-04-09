@@ -1,5 +1,13 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/wildman_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.PerkTreeDynamic.Class.extend([
+			::Const.Perks.PovClubClassTree,
+		]);
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
@@ -63,4 +71,16 @@
 			}
 		}		
 	}
+
+	q.onAddEquipment = @(__original) function ()
+	{
+		__original();
+		local items = this.getContainer().getActor().getItems();
+		local r = this.Math.rand(0,100);
+		if (r < 50)
+		{
+			items.equip(this.new("scripts/items/accessory/pov_rock_item"));
+		}	
+	}
+
 })

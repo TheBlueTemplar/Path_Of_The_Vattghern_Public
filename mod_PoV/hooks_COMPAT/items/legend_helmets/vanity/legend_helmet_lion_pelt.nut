@@ -2,7 +2,7 @@
 	q.create = @(__original) function ()
 	{
 		__original();
-		this.m.Value = 400;
+		this.m.Value = 600;
 	}
 
 	q.getTooltip = @(__original) function()
@@ -12,7 +12,13 @@
 			id = 7,
 			type = "text",
 			icon = "ui/icons/bravery.png",
-			text = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] resolve."
+			text = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] resolve."
+		});
+		result.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/bravery.png",
+			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-2[/color]."
 		});
 		result.push({
 			id = 7,
@@ -29,7 +35,13 @@
 			id = 7,
 			type = "text",
 			icon = "ui/icons/bravery.png",
-			text = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] resolve."
+			text = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] resolve."
+		});
+		_result.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/bravery.png",
+			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-2[/color]."
 		});
 		_result.push({
 			id = 7,
@@ -42,7 +54,8 @@
 	q.onUpdateProperties = @(__original) function ( _properties )
 	{
 		__original(_properties);
-		_properties.Bravery += 2;
+		_properties.Bravery += 1;
+		_properties.Threat += 2;
 		_properties.TargetAttractionMult *= 1.15;
 	}
 

@@ -1,5 +1,33 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/beast_hunter_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		local r = this.Math.rand(1,4);
+		if (r == 1)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovShortbowClassTree,
+			]);
+		} else if (r == 2)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovSpearfisherClassTree,
+			]);
+		} else if (r == 3)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovMilitiaClassTree,
+			]);
+		} else if (r == 4)
+		{
+			this.m.PerkTreeDynamic.Class.extend([
+				::Const.Perks.PovPitchforkClassTree,
+			]);
+		}
+
+	}
+		
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();

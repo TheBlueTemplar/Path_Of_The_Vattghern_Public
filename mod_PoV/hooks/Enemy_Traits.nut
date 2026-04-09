@@ -13,7 +13,7 @@
 			return;
 		}
 
-		local possiblePositiveTraits = [ // List of all possible Positive Traits
+		local possiblePositiveTraits = [ // List of all possible Positive Traits (18)
 			"pov_pluviophile_trait",
 			"strong_trait",
 			"tough_trait",
@@ -34,7 +34,7 @@
 			"swift_trait"
 		];
 
-		local possibleNegativeTraits = [ // List of all possible Negative Traits
+		local possibleNegativeTraits = [ // List of all possible Negative Traits (15)
 			"hesitant_trait",
 			"tiny_trait",
 			"clumsy_trait",
@@ -49,7 +49,8 @@
 			"craven_trait",
 			"legend_predictable_trait",
 			"legend_light_trait",
-			"cocky_trait"
+			"cocky_trait",
+			"weasel_trait"
 		];
 
 		local positiveChance = [3, 4, 5, 8][::World.Assets.getCombatDifficulty()];

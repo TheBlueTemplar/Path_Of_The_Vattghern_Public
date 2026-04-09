@@ -10,16 +10,16 @@ this.pov_named_armor_redback_cloak_upgrade <- this.inherit("scripts/items/armor_
 		this.m.SuffixList = [""];
 		this.m.Description = "This flowing cloak is made from the finest spider web, and offers excellent protection against ranged attacks.";
 		this.m.ArmorDescription = "A cloak of spider silk offers extra protection";
-		this.m.SpriteBack = "bust_cloak_spider";
-		this.m.SpriteDamagedBack = "bust_cloak_spider_damaged";
-		this.m.SpriteCorpseBack = "bust_cloak_spider_dead";
-		this.m.Icon = "legend_armor/icon_cloak_spider.png";
+		this.m.SpriteBack = "pov_cloak_spider";
+		this.m.SpriteDamagedBack = "pov_cloak_spider_damaged";
+		this.m.SpriteCorpseBack = "pov_cloak_spider_dead";
+		this.m.Icon = "armor_upgrades/pov_named_upgrade_cloak_black.png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/icon_cloak_spider.png";
-		this.m.OverlayIconLarge = "legend_armor/inventory_cloak_spider.png";
+		this.m.OverlayIcon = "armor_upgrades/pov_named_upgrade_cloak_black.png";
+		this.m.OverlayIconLarge = "armor_upgrades/pov_inventory_named_upgrade_cloak_black.png";
 		this.m.Value = 10000;
-		this.m.Condition = 35;
-		this.m.ConditionMax = 35;
+		this.m.Condition = 30;
+		this.m.ConditionMax = 30;
 		this.m.SpecialValue = 25; // ranged def.
 		this.m.StaminaModifier = -3;
 		this.randomizeValues();

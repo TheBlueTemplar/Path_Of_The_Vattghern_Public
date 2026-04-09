@@ -40,6 +40,16 @@
 	    	__original();
 	    	::logInfo("[PoV] Vanilla Main Menu music applied");
 	    }
+
+	    // Check and Update PoV Main Menu logo on screen load
+	    local main_menu = ::MSU.Utils.getState("main_menu_state").m.MainMenuScreen;
+	    if (::MSU.isNull(main_menu) || main_menu.m.JSHandle == null) return;
+	    main_menu.m.JSHandle.asyncCall("updatePOVLogoImage", ::TLW.Mod.ModSettings.getSetting(::TLW.EnableMainMenuLogoID).getValue());
+
+	    // Check and Update PoV Main Menu Background Art on screen load
+	    local main_menu = ::MSU.Utils.getState("main_menu_state").m.MainMenuScreen;
+	    if (::MSU.isNull(main_menu) || main_menu.m.JSHandle == null) return;
+	    main_menu.m.JSHandle.asyncCall("updatePOVBackgroundImage", ::TLW.Mod.ModSettings.getSetting(::TLW.EnableMainMenuArtID).getValue());
 	}
 
 });	

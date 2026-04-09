@@ -3,6 +3,8 @@
 	{
 		__original();
 		this.m.Value = 300;
+		this.m.Condition = 10;
+		this.m.ConditionMax = 10;
 	}
 
 	q.getTooltip = @(__original) function()

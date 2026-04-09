@@ -11,8 +11,8 @@ this.pov_vattghern_longsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.pov_vattghern_longsword";
 		this.m.Name = "[color="+ ::Const.UI.Color.povLegendaryWeapon + "]" + NameList[this.Math.rand(0, NameList.len() - 1)] + "[/color]";
 		this.m.Description = "A long silver sword. Much lighter than its counterparts, carefully crafted and perfectly balanced, this sword truly shines when wielded by a vatt\'ghern.\n\nIts reinforced silver structure and coating perfect for fighting anything beastly and supernatural. It is said that such swords inherit the properties of their wielders...\n\n [color=" + this.Const.UI.Color.DamageValue + "]Not as effective when wielded by someone who is not a Vatt\'ghern[/color]";
-		this.m.IconLarge = "weapons/melee/pov_witchersword.png";
-		this.m.Icon = "weapons/melee/pov_witchersword_70x70.png";
+		this.m.IconLarge = "weapons/melee/pov_witcher_longsword.png";
+		this.m.Icon = "weapons/melee/pov_witcher_longsword_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
@@ -23,16 +23,16 @@ this.pov_vattghern_longsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "pov_icon_witchersword";
+		this.m.ArmamentIcon = "pov_icon_witcher_longsword";
 		this.m.Value = 10000;
 		this.m.IsPrecious = true;
 		//this.m.ShieldDamage = 12;
 		this.m.Condition = 150.0;
 		this.m.ConditionMax = 150.0;
 		this.m.StaminaModifier = -10;
-		this.m.RegularDamage = 75;
-		this.m.RegularDamageMax = 85;
-		this.m.ArmorDamageMult = 1.05;
+		this.m.RegularDamage = 80;
+		this.m.RegularDamageMax = 95;
+		this.m.ArmorDamageMult = 1.10;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 10;
 	}
@@ -86,11 +86,28 @@ this.pov_vattghern_longsword <- this.inherit("scripts/items/weapons/weapon", {
 		swing.m.Overlay = "pov_active_silver_swing";
 		this.addSkill(swing);
 
-		local riposte = this.new("scripts/skills/actives/riposte");
+		/*local riposte = this.new("scripts/skills/actives/riposte");
 		riposte.m.Icon = "skills/pov_active_silver_riposte.png";
 		riposte.m.IconDisabled = "skills/pov_active_silver_riposte_sw.png";
 		riposte.m.Overlay = "pov_active_silver_riposte";
-		this.addSkill(riposte);
+		this.addSkill(riposte);*/
+
+		local halfsword = this.new("scripts/skills/actives/thrust");
+		halfsword.m.IsGreatSword = true;
+		// PoV Icons added in hammer.nut
+		//halfsword.m.Icon = "skills/pov_active_silver_halfsword.png";
+		//halfsword.m.IconDisabled = "skills/pov_active_silver_halfsword_sw.png";
+		//halfsword.m.Overlay = "pov_active_silver_halfsword";
+		this.addSkill(halfsword);
+
+		local mordhau = this.new("scripts/skills/actives/hammer");
+		mordhau.m.IsMordhau = true;
+		mordhau.m.IsGreatMordhau = true;
+		// PoV Icons added in hammer.nut
+		//mordhau.m.Icon = "skills/pov_active_silver_mordhau.png"; 
+		//mordhau.m.IconDisabled = "skills/pov_active_silver_mordhau_sw.png";
+		//mordhau.m.Overlay = "pov_active_silver_mordhau";
+		this.addSkill(mordhau);
 	}
 
 	function onUpdateProperties(_properties)

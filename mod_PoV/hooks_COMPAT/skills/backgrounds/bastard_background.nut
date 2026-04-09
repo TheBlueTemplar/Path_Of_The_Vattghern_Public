@@ -1,5 +1,13 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/bastard_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.PerkTreeDynamic.Class.extend([
+			::Const.Perks.PovRaiderClassTree,
+		]);
+	}
+	
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();

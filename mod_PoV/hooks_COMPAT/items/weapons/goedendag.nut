@@ -4,6 +4,7 @@
 	{
 		__original();
 
+		::Legends.Actives.grant(this, ::Legends.Active.LegendHaftstrike);
 		::Legends.Actives.grant(this, ::Legends.Active.Cudgel, function (_skill) {
 			//_skill.m.Icon = "skills/active_132.png";
 			//_skill.m.IconDisabled = "skills/active_132_sw.png";

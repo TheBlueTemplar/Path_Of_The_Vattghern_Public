@@ -1,7 +1,63 @@
-/*
 ::TLW.HooksMod.hook("scripts/entity/world/camp/buildings/gatherer_building", function( q ) {
 
-	q.getModifiers <- function()
+	q.getAllLevels = @(__original) function()
+	{
+		// __original(); // dont call it!
+		local map = {
+			Brewer = 0,
+			Woodsman = 0,
+			Miner = 0,
+			Apothecary = 0
+		};
+		local roster = this.World.getPlayerRoster().getAll();
+
+		foreach( bro in roster )
+		{
+			if (bro.getCampAssignment() != this.m.ID)
+			{
+				continue;
+			}
+
+			if (bro.getSkills().hasPerk(::Legends.Perk.LegendPotionBrewer))
+			{
+				map.Brewer += bro.getLevel();
+			}
+
+			if (bro.getSkills().hasPerk(::Legends.Perk.LegendSpecialistWoodsman))
+			{
+				map.Woodsman += bro.getLevel(); // left here just in case lol
+			}
+
+			if (bro.getSkills().hasPerk(::Legends.Perk.PovSpecialistWoodsman))
+			{
+				map.Woodsman += bro.getLevel(); // edit to make it use pov perk instead
+			}
+
+			if (bro.getSkills().hasPerk(::Legends.Perk.LegendOreHunter))
+			{
+				map.Miner += bro.getLevel();
+			}
+
+			switch(bro.getBackground().getID())
+			{
+				case "background.legend_vala":
+				case "background.legend_herbalist":
+				case "background.legend_alchemist":
+				case "background.legend_druid":
+				case "background.legend_commander_druid":
+					map.Apothecary += bro.getLevel();
+			}
+
+			if (bro.getSkills().hasPerk(::Legends.Perk.LegendGatherer))
+			{
+				map.Apothecary += bro.getLevel();
+			}
+		}
+
+		return map;
+	}
+
+	/*q.getModifiers <- function()
 	{
 		local ret =
 		{
@@ -55,6 +111,7 @@
 		}
 		return ret;		
 	}
+	*/
 
 });
-*/
+

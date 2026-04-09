@@ -41,6 +41,7 @@
 			{
 				this.m.Modifiers.Gathering += 0.10;
 			}
+
 				// Gathering + Healing
 			if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendHerbcraft))
 			{
@@ -55,7 +56,7 @@
 				this.m.Modifiers.Injury += 0.03;
 			}
 
-			// CRAFTING
+			// HUNTING
 			if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendCampCook))
 			{
 				this.m.Modifiers.Hunting += 0.05;
@@ -113,10 +114,45 @@
 
 	// POV ADDITIONS - ALWAYS APPLY
 	// CAMP MODIFIERS
-		// GATHERING
+		// TRAINING
 		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovChampionSlayer))
 		{
 			this.m.Modifiers.Training += 0.20;
+		}
+
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistMilitia))
+		{
+			this.m.Modifiers.Training += 0.10;
+		}
+
+		// GATHERING
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistHerbalist))
+		{
+			this.m.Modifiers.Gathering += 0.05;
+		}
+
+		// REPAIRING
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistBlacksmith))
+		{
+			this.m.Modifiers.Repair += 0.05;
+		}
+
+		// SALVAGING
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistBlacksmith))
+		{
+			this.m.Modifiers.Salvage += 0.05;
+		}
+
+		// HUNTING
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistPoacher))
+		{
+			this.m.Modifiers.Hunting += 0.05;
+		}
+
+		// SCOUTING
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistShepherd))
+		{
+			this.m.Modifiers.Scout += 0.05;
 		}
 
 	// WORLD MOVE SPEED MODIFIERS - COMPAT
@@ -136,6 +172,11 @@
 				this.m.Modifiers.Terrain[14] += 0.0150;
 				this.m.Modifiers.Terrain[17] += 0.0150;
 				this.m.Modifiers.Terrain[18] += 0.0150;
+			}
+
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistFarmhand))
+			{
+				this.m.Modifiers.Terrain[11] += 0.0100;
 			}	
 	}
 });

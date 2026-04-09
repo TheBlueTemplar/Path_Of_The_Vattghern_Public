@@ -194,7 +194,7 @@
 					[1, "hood/legend_helmet_padded_hood"] // 40, -1, 0
 				],
 				Helms = [ // avg, 42, -2, -1
-					[1, "helm/legend_helmet_southern_cap_smooth"], // 40, -2, 0
+					[1, "helm/legend_helmet_southern_cap_smooth"], // 40, -2, 0				
 					[1, "helm/legend_helmet_norman_helm"], // 50, -3, -1
 					[1, "helm/legend_helmet_barb_metal_cap"] // 40, -2, 0
 				],
@@ -223,7 +223,7 @@
 					[1, "hood/legend_helmet_padded_hood"] // 40, -1, 0
 				],
 				Helms = [ // avg, 45, -2, -1
-					[1, "helm/legend_helmet_southern_cap_smooth"], // 40, -2, 0
+					[1, "helm/legend_helmet_southern_cap_smooth"], // 40, -2, 0				
 					[1, "helm/legend_helmet_norman_helm"] // 50, -3, -1
 				],
 				Tops = [ // avg, 15 , -1 , 0

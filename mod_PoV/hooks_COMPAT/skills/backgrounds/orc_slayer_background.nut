@@ -1,5 +1,13 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/orc_slayer_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.PerkTreeDynamic.Class.extend([
+			::Const.Perks.PovWoodaxeClassTree,
+		]);
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
@@ -8,7 +16,7 @@
 				id = 13,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "Damage done against greenskins increased by [color=" + this.Const.UI.Color.PositiveValue + "]14%[/color]."
+				text = "Damage done against greenskins increased by [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color]."
 			}
 		);
 		return ret;
@@ -21,7 +29,7 @@
 		{
 			if(this.Const.EntityType.getDefaultFaction(_targetEntity.getType()) == this.Const.FactionType.Orcs || this.Const.EntityType.getDefaultFaction(_targetEntity.getType()) == this.Const.FactionType.Goblins || _targetEntity.getFlags().has("pov_mutant_orc") || _targetEntity.getFlags().has("pov_mutant_goblin"))
 			{
-				_properties.DamageTotalMult *= 1.14;
+				_properties.DamageTotalMult *= 1.15;
 			}
 		}	
 	}

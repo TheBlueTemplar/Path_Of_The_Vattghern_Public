@@ -1,5 +1,13 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/legend_druid_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.PerkTreeDynamic.Class.extend([
+			::Const.Perks.PovSickleClassTree,
+		]);
+	}
+
 	q.onAdded = @(__original) function()
 	{
 		__original();

@@ -1,5 +1,13 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/legend_herbalist_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.PerkTreeDynamic.Class.extend([
+			::Const.Perks.PovSickleClassTree,
+		]);
+	}
+	
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();
@@ -8,7 +16,7 @@
 				id = 13,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
-				text = "Damage done using sickles increased by [color=" + this.Const.UI.Color.PositiveValue + "]10[/color]."
+				text = "Damage done using sickles increased by [color=" + this.Const.UI.Color.PositiveValue + "]6[/color]."
 			}
 		);
 		return ret;
@@ -24,8 +32,8 @@
 			{
 				if (item.getID() == "weapon.sickle" || item.getID() == "weapon.goblin_notched_blade" || item.getID() == "weapon.legend_named_sickle")
 				{	
-					_properties.DamageRegularMin += 10;
-					_properties.DamageRegularMax += 10;	
+					_properties.DamageRegularMin += 6;
+					_properties.DamageRegularMax += 6;	
 				}			
 			}
 		}	

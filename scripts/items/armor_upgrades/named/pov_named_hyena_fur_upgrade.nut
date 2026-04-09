@@ -4,10 +4,10 @@ this.pov_named_hyena_fur_upgrade <- ::inherit("scripts/items/armor_upgrades/name
 	{
 		this.pov_named_armor_upgrade.create();
 		this.m.ID = "legend_armor.hyena_fur";
+		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.NameList = this.Const.Strings.PovDirewolfArmorNames; // same shit pretty much lol
 		this.m.PrefixList = [""];
 		this.m.SuffixList = [""];
-		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Description = "Furs taken from ferocious hyenas, cured and sewn together to be worn as a beast hunter\'s trophy around the neck. Donning the skin of a beast like this bolsters one\'s drive to action.";
 		this.m.ArmorDescription = "A mantle of hyena furs has been attached to this armor, which bolsters the wearer\'s drive to action.";
 		this.m.Icon = "armor_upgrades/pov_named_upgrade_hyena.png";

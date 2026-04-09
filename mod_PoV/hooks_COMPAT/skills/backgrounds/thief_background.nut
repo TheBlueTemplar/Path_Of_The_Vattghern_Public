@@ -1,5 +1,13 @@
 ::TLW.HooksMod.hook("scripts/skills/backgrounds/thief_background", function(q)
 {
+	q.create = @(__original) function()
+	{
+		__original();
+		this.m.PerkTreeDynamic.Class.extend([
+			::Const.Perks.PovKnifeClassTree,
+		]);
+	}
+
 	q.getTooltip = @(__original) function()
 	{
 		local ret = __original();

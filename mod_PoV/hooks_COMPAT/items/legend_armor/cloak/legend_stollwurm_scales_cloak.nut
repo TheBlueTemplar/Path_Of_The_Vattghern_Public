@@ -3,8 +3,8 @@
 	{
 		__original();
 		this.m.Value = 5000; //down from 9000
-		this.m.Condition = 75;
-		this.m.ConditionMax = 75;
+		this.m.Condition = 70;
+		this.m.ConditionMax = 70;
 		this.m.DirectDamageModifier = -15.0;
 	}
 

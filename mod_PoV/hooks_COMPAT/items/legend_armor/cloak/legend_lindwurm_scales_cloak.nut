@@ -3,8 +3,8 @@
 	{
 		__original();
 		this.m.Value = 1800; //kept as is
-		this.m.Condition = 40;
-		this.m.ConditionMax = 40;
+		this.m.Condition = 45;
+		this.m.ConditionMax = 45;
 		this.m.StaminaModifier = -3;
 		this.m.DirectDamageModifier = -10.0;
 	}

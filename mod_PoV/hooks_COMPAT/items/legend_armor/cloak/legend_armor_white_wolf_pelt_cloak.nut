@@ -3,8 +3,8 @@
 	{
 		__original();
 		this.m.Value = 5000; //down from 6000
-		this.m.Condition = 50;
-		this.m.ConditionMax = 50;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
 		this.m.StaminaModifier = -2;
 		this.m.ThreatModifier = 15;
 	}

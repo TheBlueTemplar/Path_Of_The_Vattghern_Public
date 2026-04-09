@@ -31,6 +31,12 @@ this.pov_sickness2_injury <- this.inherit("scripts/skills/injury/injury", {
 			{
 				id = 10,
 				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Gain the ability to [color=" + this.Const.UI.Color.povPerkBlue + "]Puke[/color]"
+			},
+			{
+				id = 10,
+				type = "text",
 				icon = "ui/icons/health.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] Hitpoints"
 			},
@@ -104,6 +110,8 @@ this.pov_sickness2_injury <- this.inherit("scripts/skills/injury/injury", {
 		this.injury.onAdded();
 		local bro = this.getContainer().getActor();
 
+		this.getContainer().add(::new("scripts/skills/actives/pov_vomit_skill")); // add puke
+
 		if (bro.isPlacedOnMap())
 		{
 			this.Sound.play("sounds/vomit_01.wav", this.Const.Sound.Volume.Actor, bro.getPos());
@@ -173,6 +181,11 @@ this.pov_sickness2_injury <- this.inherit("scripts/skills/injury/injury", {
 		myTile = candidates[this.Math.rand(0, candidates.len() - 1)];
 		myTile.spawnDetail("detail_vomit");
 		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(bro) + " vomits");
+	}
+
+	function onRemoved()
+	{
+		this.getContainer().removeByID("actives.pov_vomit")
 	}
 
 	function onUpdate( _properties )

@@ -194,7 +194,7 @@ this.pov_enemy_mutation_rot <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (a.getFlags().has("undead") || a.getSkills().hasSkill("effects.pov_alp_mutagen") || a.getSkills().hasSkill("effects.pov_skeleton_mutagen") || a.getSkills().hasSkill("effects.pov_necromancy_mutagen") || a.getSkills().hasSkill("effects.pov_ghoul_mutagen") || a.getSkills().hasSkill("effects.pov_enemy_mutation_alp"))
+			if (a.getFlags().has("undead") || a.getSkills().hasSkill("effects.pov_alp_mutagen") || a.getSkills().hasSkill("effects.pov_skeleton_mutagen") || a.getSkills().hasSkill("effects.pov_necromancy_mutagen") || a.getSkills().hasSkill("effects.pov_ghoul_mutagen") || a.getSkills().hasSkill("effects.pov_enemy_mutation_alp") || a.getSkills().hasSkill("effects.pov_rot_weak_mutagen") || a.getSkills().hasSkill("effects.pov_rot_mutagen") || a.getSkills().hasSkill("effects.pov_enemy_mutation_rot"))
 			{
 				continue;
 			}

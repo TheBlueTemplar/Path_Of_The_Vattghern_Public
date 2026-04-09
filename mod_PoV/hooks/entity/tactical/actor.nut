@@ -1,4 +1,5 @@
 ::TLW.HooksMod.hook("scripts/entity/tactical/actor", function (q) {
+// THERE IS ANOTHER TREE HOOK BELOW!
 
 	// Custom Srprite Layers Addition
 	q.onInit = @(__original) function () {
@@ -17,12 +18,14 @@
 
 			// puts shit over these layers
 			// if you want to put shit below layers, do the same above without the ret (see commented out example)
+			// The lower additions are added on top of the previous ones
 			local ret = old_addSprite(_layerID);
 
 			if (_layerID == "socket") {
 				old_addSprite("pov_back_socket"); // Reserved for mutant effect
 				old_addSprite("pov_back_socket2");
-				old_addSprite("pov_bust");
+				old_addSprite("pov_bust_replacement"); // for replacing base busts
+				old_addSprite("pov_bust"); // for on-top effects like mutant, vattghern etc.
 			}
 
 			if (_layerID == "head") {
@@ -66,11 +69,25 @@
 
 	}
 
+	// Add some of my own sprite layers, so they dont appear in party screen, turn order images etc.
+	q.getImagePath = @(__original) function ()
+	{
+		if (!this.isPlacedOnMap() || this.isDiscovered())
+		{
+			return "tacticalentity(" + this.m.ContentID + "," + this.getID() + ",pov_bust_replacement,socket,miniboss,arrow)";
+		}
+		else
+		{
+			return "ui/images/undiscovered_opponent.png";
+		}
+	}
+
 	// If SSU Tweaks enabled, remove their Armor Encumburance Effect
 	// Done in onAfterInit rather than onInit because removeByID calls
 	// update() which calls onUpdateInjuryLayer(), and that requires
 	// sprites (e.g. "body") that child classes add after actor.onInit()
 	q.onAfterInit = @(__original) function () {
+		
 		__original();
 
 		if (::TLW.hasSSU && ::TLW.SSUTweaks) {
@@ -78,6 +95,83 @@
 				this.getSkills().removeByID("effects.ptr_armor_fatigue_recovery");
 			}
 		}
+
+		// Replace various busts with shit I like more
+		/*if (this.getSprite("socket").getBrush().Name == "bust_base_beasts")
+		{
+			this.getSprite("pov_bust_replacement").setBrush("pov_bust_base_beasts")
+		}*/
+		local socket = this.getSprite("socket");
+		local replacement = this.getSprite("pov_bust_replacement");
+		local brush = socket.getBrush().Name;
+
+		switch (brush)
+		{
+			case "bust_base_assassin":
+				replacement.setBrush("pov_bust_base_assassin");
+				break;
+
+			case "bust_base_bandits":
+				replacement.setBrush("pov_bust_base_bandits");
+				break;
+
+			case "bust_base_player":
+				replacement.setBrush("pov_bust_base_player");
+				break;
+
+			case "bust_base_beasts":
+				replacement.setBrush("pov_bust_base_beasts");
+				break;
+
+			case "bust_base_beasthunters":
+				replacement.setBrush("pov_bust_base_beasthunters");
+				break;
+
+			case "bust_base_caravan":
+				replacement.setBrush("pov_bust_base_caravan");
+				break;
+
+			case "bust_base_crusader":
+				replacement.setBrush("pov_bust_base_crusader");
+				break;
+
+			case "bust_base_military":
+				replacement.setBrush("pov_bust_base_military");
+				break;
+
+			case "bust_base_militia":
+				replacement.setBrush("pov_bust_base_militia");
+				break;
+
+			case "bust_base_nomads":
+				replacement.setBrush("pov_bust_base_nomads");
+				break;
+
+			case "bust_base_southern":
+				replacement.setBrush("pov_bust_base_southern");
+				break;
+
+			case "bust_base_troupe":
+				replacement.setBrush("pov_bust_base_troupe");
+				break;
+
+			case "bust_base_undead":
+				replacement.setBrush("pov_bust_base_undead");
+				break;
+
+			case "bust_base_wildmen_01":
+				replacement.setBrush("pov_bust_base_wildmen_01");
+				break;
+
+			case "bust_base_orcs":
+				replacement.setBrush("pov_bust_base_orcs");
+				break;
+
+			case "bust_base_goblins":
+				replacement.setBrush("pov_bust_base_goblins");
+				break;
+		}
+
 	}
 
 	q.onDeath = @(__original) function (_killer, _skill, _tile, _fatalityType) {
@@ -127,3 +221,4 @@
 		}
 	}
 });
+
