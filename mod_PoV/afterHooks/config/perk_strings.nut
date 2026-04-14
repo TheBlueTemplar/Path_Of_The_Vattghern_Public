@@ -29,6 +29,360 @@ if (!::TLW.hasFOTN)
 	::Const.Strings.PerkDescription.LegendSpecialistPoacher = "From small game to big bounties.\n\n[color="+ ::Const.UI.Color.povPerkDarkOrange + "][u]Passive:[/u][/color]\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] chance to hit while using a Wonky Bow or Short Bow.\n\n• When taking [color="+ ::Const.UI.Color.povPerkPurple + "]Bow Mastery[/color] you will also gain [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] bonus damage. \n\n• For other weapons classified as Bows, you can get a scaling percentage of these bonuses, starting from 25% and increasing gradually to 100% according to your choice in campaign generation. \n\n• The bonus will be doubled against Wolves and Hyenas.";
 	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistPoacher].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistPoacher;
 
+	// Replacements (Specialist Perks)
+
+	::Const.Strings.PerkName.LegendSpecialistButcher = "Slaughterman";
+	::Const.Strings.PerkDescription.LegendSpecialistButcher = @"
+	A brutal expert in carving flesh, now striking where armor fails and leaving wounds that refuse to close.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit, [color=%positive%]+10%[/color] damage ignoring armor and [color=%positive%]+2[/color] Bleed damage while using a Butcher's Cleaver, or a saw.
+
+	• When taking [color=%perk%]Cleaver Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
+
+	• For other weapons classified as Cleavers, but not Whips, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistButcher].Name = ::Const.Strings.PerkName.LegendSpecialistButcher;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistButcher].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistButcher;
+
+
+	::Const.Strings.PerkName.LegendSpecialistBlacksmith = "Ironbreaker";
+	::Const.Strings.PerkDescription.LegendSpecialistBlacksmith = @"
+	A master of hammer and anvil, breaking armor apart with the same skill used to forge it.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• While using a Blacksmith's Hammer gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]+20%[/color] effectiveness vs armor.
+
+	• When taking [color=%perk%]Hammer Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
+
+	• Grants [color=%positive%]+5%[/color] [color=%skill%]Repairing[/color] and [color=%skill%]Scavenging[/color] in camp.
+
+	• For other weapons classified as One Handed Hammers, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistBlacksmith].Name = ::Const.Strings.PerkName.LegendSpecialistBlacksmith;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistBlacksmith].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistBlacksmith;
+
+
+	::Const.Strings.PerkName.LegendSpecialistPrisoner = "Cutthroat";
+	::Const.Strings.PerkDescription.LegendSpecialistPrisoner = @"
+	A lurking predator, finding the smallest openings to drive steel where armor offers no protection.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]+20%[/color] damage ignoring armor while using any Knife.
+
+	• When taking [color=%perk%]Dagger Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
+
+	• Gain [color=%positive%]+5[/color] Melee and Ranged defense while hidden.
+
+	• For other weapons classified as Daggers, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistPrisoner].Name = ::Const.Strings.PerkName.LegendSpecialistPrisoner;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistPrisoner].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistPrisoner;
+
+
+	::Const.Strings.PerkName.LegendSpecialistMilitia = "Phalanx";
+	::Const.Strings.PerkDescription.LegendSpecialistMilitia = @"
+	A disciplined fighter trained to hold the line, striking swiftly at any who dare close the distance.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]15%[/color] Melee Damage on Attacks of Opportunity while using a Militia Spear, Wooden Spear and Ancient spear.
+
+	• When taking [color=%perk%]Spear Mastery[/color] you will also gain [color=%positive%]8%[/color] bonus damage.
+
+	• Grants [color=%positive%]+10%[/color] [color=%skill%]Training[/color] while in camp.
+
+	• For other weapons classified as Spears, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistMilitia].Name = ::Const.Strings.PerkName.LegendSpecialistMilitia;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistMilitia].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistMilitia;
+
+	::Const.Strings.PerkName.LegendSpecialistBodyguard = "Reaver";
+	::Const.Strings.PerkDescription.LegendSpecialistBodyguard = @"
+	One must have some guts to apprach a big raging dude with an even bigger sword.
+
+	[color=%passive%][u]Specialist Weapon Perk:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit, [color=%positive%]10%[/color] damage for all Melee area of effect attacks and [color=%positive%]15%[/color] damage when [color=%status%]Riposting[/color] when using a Longsword.
+
+	• When taking [color=%perk%]Sword Mastery[/color] gain [color=%positive%]8%[/color] damage.
+
+	• For other weapons classified as a Two-Handed Sword, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistBodyguard].Name = ::Const.Strings.PerkName.LegendSpecialistBodyguard;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistBodyguard].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistBodyguard;
+
+	::Const.Strings.PerkName.LegendSpecialistMiner = "Stonebreaker";
+	::Const.Strings.PerkDescription.LegendSpecialistMiner = @"
+	Trained to shatter stone and armor alike, striking with force that few defenses can withstand.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit and always do at least [color=%positive%]10[/color] damage while using a Pickaxe or Military Pick.
+
+	• When taking [color=%perk%]Hammer Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
+
+	• For other weapons classified as Two Handed Hammers, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+
+	• The bonus will be doubled against Ifrits and Rock Unholds.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistMiner].Name = ::Const.Strings.PerkName.LegendSpecialistMiner;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistMiner].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistMiner;
+
+
+	::Const.Strings.PerkName.LegendSpecialistFarmhand = "Haymaker";
+	::Const.Strings.PerkDescription.LegendSpecialistFarmhand = @"
+	A worker of the fields turned killer, wielding long tools to reap both harvest and heads alike.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]+20%[/color] Armor Damage and [color=%positive%]+5%[/color] Chance to hit the head while using a Pitchfork, Wooden Pitchfork, Hoe or Scythe.
+
+	• When taking [color=%perk%]Polearm Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
+
+	• Grants [color=%positive%]+1%[/color] movespeed at [color=%skill%]farmlands[/color] when in the world map.
+
+	• For other weapons classified as Polearms, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistFarmhand].Name = ::Const.Strings.PerkName.LegendSpecialistFarmhand;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistFarmhand].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistFarmhand;
+
+	::Const.Strings.PerkName.LegendSpecialistPoacher = "Game Hunter";
+	::Const.Strings.PerkDescription.LegendSpecialistPoacher = @"
+	ALiving off forbidden kills, striking true and finishing beasts before they can flee.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]+10[/color] minimum damage while using a Wonky Bow , Short Bow or goblin bow.
+
+	• When taking [color=%perk%]Bow Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
+
+	• Grants [color=%positive%]+5%[/color] [color=%skill%]Hunting[/color] while in camp.
+
+	• For other weapons classified as Bows, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+
+	• The bonus will be doubled against Wolves and Hyenas.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistPoacher].Name = ::Const.Strings.PerkName.LegendSpecialistPoacher;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistPoacher].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistPoacher;
+
+
+	::Const.Strings.PerkName.LegendSpecialistGravedigger = "Corpsewarden";
+	::Const.Strings.PerkDescription.LegendSpecialistGravedigger = @"
+	Used to burying the dead, now thrives among them, growing stronger as bodies pile up.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+12[/color] chance to hit while using a Shovel.
+
+	• When taking [color=%perk%]Mace Mastery[/color] you will also gain [color=%positive%]12%[/color] bonus damage.
+
+	• For other weapons classified as Two Handed Mace, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+
+	• If you are using a Shovel you will also receive the Knock Out skill.
+
+	• While using a Two Handed Mace, you will also receive the Gravedigging effect, which provides bonuses to Initiative, Damage and Resolve based on the amount of corpses on the battlefield.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistGravedigger].Name = ::Const.Strings.PerkName.LegendSpecialistGravedigger;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistGravedigger].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistGravedigger;
+
+
+	::Const.Strings.PerkName.LegendSpecialistWoodsman = "Woodsman";
+	::Const.Strings.PerkDescription.LegendSpecialistWoodsman = @"
+	Timbeeeer!
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit while using a Woodcutter's Axe or Handsaw.
+
+	• When taking [color=%perk%]Axe Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
+
+	• For non-specialist weapons classified as Two Handed Axes, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+
+	• Allows this character to harvest wood while gathering in camp.
+
+	• The bonus will be doubled against Schrats.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistWoodsman].Name = ::Const.Strings.PerkName.LegendSpecialistWoodsman;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistWoodsman].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistWoodsman;
+
+
+	::Const.Strings.PerkName.LegendSpecialistHerbalist = "Harvester";
+	::Const.Strings.PerkDescription.LegendSpecialistHerbalist = @"
+	Used to gathering the yield of the land, now reaps the wounded with precise and merciless cuts.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]30%[/color] of lowered threshold to inflict injuries as additional damage to hitpoints while using a Sickle or a goblin notched blade.
+
+	• When taking [color=%perk%]Sword Mastery[/color] you will also gain [color=%positive%]12%[/color] bonus damage. Additionally reduces the Action Point cost of [color=%skill%]Slash[/color] by [color=%negative%]1[/color] when using a Sickle.
+
+	• Grants [color=%positive%]+5%[/color] [color=%skill%]Gathering[/color] while in camp.
+
+	• For other weapons classified as One Handed Swords, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistHerbalist].Name = ::Const.Strings.PerkName.LegendSpecialistHerbalist;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistHerbalist].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistHerbalist;
+
+
+	::Const.Strings.PerkName.LegendSpecialistShepherd = "Skirmisher";
+	::Const.Strings.PerkDescription.LegendSpecialistShepherd = @"
+	Fights at range with speed and awareness, pelting enemies and exploiting weaknesses in their defenses.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]20%[/color] additional armor damage when using a Sling , Slingshot or Sturdy Sling.
+
+	• When taking [color=%perk%]Sling Mastery[/color] you will also gain [color=%positive%]10%[/color] bonus damage.
+
+	• Grants [color=%positive%]+5%[/color] [color=%skill%]Scouting[/color] while in camp.
+
+	• For other weapons classified as Slings, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistShepherd].Name = ::Const.Strings.PerkName.LegendSpecialistShepherd;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistShepherd].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistShepherd;
+
+
+	::Const.Strings.PerkName.LegendSpecialistCultist = "Tormentor";
+	::Const.Strings.PerkDescription.LegendSpecialistCultist = @"
+	A ruthless wielder of lash and chain, striking past defenses to deliver pain where it hurts most.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]+10%[/color] Chance to hit the head, effectiveness against armor and [color=%positive%]+5%[/color] damage ignoring armor while using Cat o nine tails or wooden flail.
+
+	• When taking [color=%perk%]Flail Mastery[/color] or [color=%positive%]Cleaver Mastery[/color] you will also gain [color=%positive%]12%[/color] bonus damage.
+
+	• For other weapons classified as Flails or Whips, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistCultist].Name = ::Const.Strings.PerkName.LegendSpecialistCultist;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistCultist].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistCultist;
+
+
+	::Const.Strings.PerkName.LegendSpecialistReaper = "Reaper";
+	::Const.Strings.PerkDescription.LegendSpecialistReaper = @"
+	Once used to harvest the fields, now swings with practiced ease to cut down the living.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+15[/color] chance to hit while using a Scythe or Warscythe.
+
+	• Also gain [color=%positive%]+25%[/color] effectiveness against armor and [color=%positive%]+10%[/color] armor penetration while using a Scythe or Warscythe.
+
+	• Reduce resolve of nearby opponents by [color=%negative%]5[/color].
+
+	• When taking [color=%perk%]Polearm Mastery[/color] or [color=%perk%]Cleaver Mastery[/color] you will also gain [color=%positive%]15%[/color] bonus damage.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistReaper].Name = ::Const.Strings.PerkName.LegendSpecialistReaper;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistReaper].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistReaper;
+
+
+	::Const.Strings.PerkName.LegendSpecialistSelfdefense = "Stick Fighting";
+	::Const.Strings.PerkDescription.LegendSpecialistSelfdefense = @"
+	Twist and thrust with your staff to deflect blows and intercept strikes.
+
+	[color=%passive%][u]Passive:[/u][/color]
+	• Gain [color=%positive%]+16[/color] Melee Skill and [color=%positive%]+16[/color] Defense while wielding a staves or magic staves.
+
+	• When wielding slingstaves, musical instruments and other hybrid staves the bonus is only [color=%positive%]+8[/color].
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistSelfdefense].Name = ::Const.Strings.PerkName.LegendSpecialistSelfdefense;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistSelfdefense].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistSelfdefense;
+
+
+	::Const.Strings.PerkName.LegendSpecialistInventor = "Bombardier";
+	::Const.Strings.PerkDescription.LegendSpecialistInventor = @"
+	A trained wielder of crude gunpowder weapons, striking with thunderous force and deadly precision.
+
+	[color=%passive%][u]Specialist Weapon Perk:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit while using a Firearm.
+
+	• Reduce AP cost for Handgonne [color=%skill%]Reload[/color] by [color=%negative%]1[/color] and [color=%positive%]10%[/color] bonus damage when taking [color=%perk%]Crossbow Mastery[/color].
+
+	• Gain [color=%positive%]+10[/color] chance to hit while using a Firelance.
+
+	• When taking [color=%perk%]Spear Mastery[/color] you will also gain [color=%positive%]14%[/color] bonus damage.
+
+	• For other weapons classified as Firearms, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistInventor].Name = ::Const.Strings.PerkName.LegendSpecialistInventor;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistInventor].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistInventor;
+
+
+	::Const.Strings.PerkName.LegendSpecialistInquisition = "Hexenjäger";
+	::Const.Strings.PerkDescription.LegendSpecialistInquisition = @"
+	A hardened hunter of the unnatural, striking down witches and spirits with steady aim and an unbreakable will.
+
+	[color=%passive%][u]Specialist Weapon Perk:[/u][/color]
+	• Gain [color=%positive%]+8[/color] chance to hit while using Wooden Stakes, Hand Crossbows or Spiked Impaler.
+
+	• Gain [color=%positive%]+10[/color] chance to hit while using a Wooden Stake.
+
+	• When taking [color=%perk%]Crossbow Mastery[/color] gain [color=%positive%]10%[/color] damage.
+
+	• [color=%positive%]+5[/color] Resolve at morale checks against fear, panic or mind control effects.
+
+	• For other weapons classified as Crossbows, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+
+	• While using Crossbows the bonus will be doubled against Hexe and Alps.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistInquisition].Name = ::Const.Strings.PerkName.LegendSpecialistInquisition;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistInquisition].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistInquisition;
+
+
+	::Const.Strings.PerkName.LegendSpecialistClub = "Enforcer";
+	::Const.Strings.PerkDescription.LegendSpecialistClub = @"
+	A rough fighter who batters opponents into exhaustion, breaking their strength with relentless blows.
+
+	[color=%passive%][u]Specialist Weapon Perk:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]+5[/color] fatigue per hit while using a Wooden Stick or Bludgeon.
+
+	• When taking [color=%perk%]Mace Mastery[/color] gain [color=%positive%]14%[/color] damage.
+
+	• For other weapons classified as One-Handed Mace, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistClub].Name = ::Const.Strings.PerkName.LegendSpecialistClub;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistClub].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistClub;
+
+
+	::Const.Strings.PerkName.LegendSpecialistRaider = "Skullsplitter";
+	::Const.Strings.PerkDescription.LegendSpecialistRaider = @"
+	Trained to aim for the head, delivering deadly blows that few can survive.
+
+	[color=%passive%][u]Specialist Weapon Perk:[/u][/color]
+	• Gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]+15%[/color] damage when hitting the head, while using a Hatchet, Crude Axe or Throwing Axe.
+
+	• When taking [color=%perk%]Axe Mastery[/color] or [color=%perk%]Throwing Mastery[/color] gain [color=%positive%]10%[/color] damage.
+
+	• For other weapons classified as One-Handed Axes, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistRaider].Name = ::Const.Strings.PerkName.LegendSpecialistRaider;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistRaider].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistRaider;
+
+
+	::Const.Strings.PerkName.LegendSpecialistSpearfisher = "Fowler";
+	::Const.Strings.PerkDescription.LegendSpecialistSpearfisher = @"
+	Throwing a spear and throwing a net is just muscle memory at this point.
+
+	[color=%passive%][u]Specialist Weapon Perk:[/u][/color]
+	• Gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]+6[/color] maximum damage while using Javelins.
+
+	• When taking [color=%perk%]Throwing Specialization[/color] gain [color=%positive%]10%[/color] damage.
+
+	• Each time you use a throwing weapon, you can use [color=%skill%]Throw Net[/color] for free.
+
+	• For other weapons classified as Throwing, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+	";
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistSpearfisher].Name = ::Const.Strings.PerkName.LegendSpecialistSpearfisher;
+	::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistSpearfisher].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistSpearfisher;
+
+	::Const.Strings.PerkName.LegendSpecialistSharpshooter = "Sharpshooter";
+	::Const.Strings.PerkDescription.LegendSpecialistSharpshooter = @"
+	Hitting a mark at distance is second nature, with shots that rarely miss their target.
+
+	[color=%passive%][u]Specialist Weapon Perk:[/u][/color]
+	• Gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]1[/color] additional range while using a Warbow.
+
+	• When taking [color=%perk%]Bow Mastery[/color] gain [color=%positive%]10%[/color] damage.
+
+	• For other weapons classified as Longbows, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
+
+	• The additional range gained is still subject to vision penalties.
+	";
+
+::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistSharpshooter].Name = ::Const.Strings.PerkName.LegendSpecialistSharpshooter;
+::Const.Perks.PerkDefObjects[::Legends.Perk.LegendSpecialistSharpshooter].Tooltip = ::Const.Strings.PerkDescription.LegendSpecialistSharpshooter;
+
 	// Additions to Perks (very compatible)
 	::Const.Strings.PerkDescription.SpecCrossbow +=@"
 	• The [color="+ ::Const.UI.Color.povPerkPurple + "]\"Improvised Strike\"[/color] skill costs 50% less fatigue, and does [color="+ ::Const.UI.Color.PositiveValue + "]5 - 10[/color] more damage.";

@@ -106,17 +106,17 @@ this.pov_caravan_guard_background <- this.inherit("scripts/skills/backgrounds/ch
 		if (r == 1)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovPitchforkClassTree,
+				::Const.Perks.PitchforkClassTree,
 			]);
 		} else if (r == 2)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovMilitiaClassTree,
+				::Const.Perks.MilitiaClassTree,
 			]);
 		} else if (r == 3)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovSickleClassTree,
+				::Const.Perks.SickleClassTree,
 			]);
 		}
 	}

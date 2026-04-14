@@ -74,7 +74,7 @@ this.pov_seer_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.OccultTree
 			],
 			Class = [
-				::Const.Perks.PovScytheClassTree
+				::Const.Perks.ScytheClassTree
 			],
 			Profession = [
 				::Const.Perks.HealerProfessionTree,

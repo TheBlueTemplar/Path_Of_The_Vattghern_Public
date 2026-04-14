@@ -7,17 +7,17 @@
 		if (r == 1)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovRaiderClassTree,
+				::Const.Perks.RaiderClassTree,
 			]);
 		} else if (r == 2)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovClubClassTree,
+				::Const.Perks.ClubClassTree,
 			]);
 		} else if (r == 3)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovLongswordClassTree,
+				::Const.Perks.LongswordClassTree,
 			]);
 		} 
 	}

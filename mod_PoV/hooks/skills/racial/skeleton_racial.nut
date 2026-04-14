@@ -2,7 +2,7 @@
 {
 	q.onBeforeDamageReceived = @(__original) function ( _attacker, _skill, _hitInfo, _properties )
 	{
-		__original(_attacker, _skill, _hitInfo, _properties)
+		__original(_attacker, _skill, _hitInfo, _properties);
 		
 		if (_hitInfo.DamageType == this.Const.Damage.DamageType.Burning)
 		{

@@ -65,8 +65,8 @@
 
 			b.Armor[this.Const.BodyPart.Head] += 50;
 			b.ArmorMax[this.Const.BodyPart.Head] += 50;
-			b.Armor[this.Const.BodyPart.Body] += 50;
-			b.ArmorMax[this.Const.BodyPart.Body] += 50;
+			b.Armor[this.Const.BodyPart.Body] += 55;
+			b.ArmorMax[this.Const.BodyPart.Body] += 55;
 
 			b.DamageArmorMult += 0.12;
 			b.DamageTotalMult += 0.08;

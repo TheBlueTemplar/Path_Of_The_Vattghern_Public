@@ -4,7 +4,7 @@
 	{
 		__original();
 		this.m.PerkTreeDynamic.Class.extend([
-			::Const.Perks.PovInquisitionClassTree,
+			::Const.Perks.InquisitionClassTree,
 		]);
 	}
 

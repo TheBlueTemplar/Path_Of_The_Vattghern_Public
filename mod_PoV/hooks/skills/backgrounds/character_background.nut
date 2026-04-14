@@ -120,37 +120,37 @@
 			this.m.Modifiers.Training += 0.20;
 		}
 
-		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistMilitia))
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendSpecialistMilitia))
 		{
 			this.m.Modifiers.Training += 0.10;
 		}
 
 		// GATHERING
-		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistHerbalist))
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendSpecialistHerbalist))
 		{
 			this.m.Modifiers.Gathering += 0.05;
 		}
 
 		// REPAIRING
-		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistBlacksmith))
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendSpecialistBlacksmith))
 		{
 			this.m.Modifiers.Repair += 0.05;
 		}
 
 		// SALVAGING
-		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistBlacksmith))
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendSpecialistBlacksmith))
 		{
 			this.m.Modifiers.Salvage += 0.05;
 		}
 
 		// HUNTING
-		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistPoacher))
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendSpecialistPoacher))
 		{
 			this.m.Modifiers.Hunting += 0.05;
 		}
 
 		// SCOUTING
-		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistShepherd))
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendSpecialistShepherd))
 		{
 			this.m.Modifiers.Scout += 0.05;
 		}
@@ -174,7 +174,7 @@
 				this.m.Modifiers.Terrain[18] += 0.0150;
 			}
 
-		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.PovSpecialistFarmhand))
+		if (this.getContainer().getActor().getSkills().hasPerk(::Legends.Perk.LegendSpecialistFarmhand))
 			{
 				this.m.Modifiers.Terrain[11] += 0.0100;
 			}	

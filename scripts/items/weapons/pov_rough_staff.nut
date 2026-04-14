@@ -36,16 +36,16 @@ this.pov_rough_staff <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		
 		local bash = this.new("scripts/skills/actives/bash");
-		bash.m.Icon = "skills/pov_active_rough_staff_bash.png";
-		bash.m.IconDisabled = "skills/pov_active_rough_staff_bash_sw.png";
-		bash.m.Overlay = "skills/pov_active_rough_staff_bash";
+		//bash.m.Icon = "skills/pov_active_rough_staff_bash.png";
+		//bash.m.IconDisabled = "skills/pov_active_rough_staff_bash_sw.png";
+		//bash.m.Overlay = "skills/pov_active_rough_staff_bash";
 		bash.m.IsStaffBash = true;
 		this.addSkill(bash);
 
 		local knockOut = this.new("scripts/skills/actives/knock_out");
-		knockOut.m.Icon = "skills/pov_active_rough_staff_knock_out.png";
-		knockOut.m.IconDisabled = "skills/pov_active_rough_staff_knock_out_sw.png";
-		knockOut.m.Overlay = "skills/pov_active_rough_staff_knock_out";
+		//knockOut.m.Icon = "skills/pov_active_rough_staff_knock_out.png";
+		//knockOut.m.IconDisabled = "skills/pov_active_rough_staff_knock_out_sw.png";
+		//knockOut.m.Overlay = "skills/pov_active_rough_staff_knock_out";
 		knockOut.m.IsStaffKnockOut = true;
 		this.addSkill(knockOut);
 

@@ -5,7 +5,7 @@
 		this.m.Value = 80;
 	}
 
-	q.getTooltip = @(__original) function()
+	/*q.getTooltip = @(__original) function()
 	{
 		local result = __original();
 		result.push({
@@ -41,7 +41,7 @@
 				}
 			}
 		}	
-	}
+	}*/
 
 });
 

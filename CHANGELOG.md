@@ -1,4 +1,31 @@
-# v4.0.0 "Special" Edition
+# v4.1.0 "Special" Edition
+
+## Changelog v4.1.0 "Special" Edition:
+*Just some fixes, did not have time for much else. Once more, im departing for my duty and this time ill be likely away for much longer, enjoy everyone!*
+
+### Improvements
+
+* Specialist Perks were properly re-done in PoV, as they were wrongly implemented the last time
+   * On a sidenote, naturally, the Submod that re-enables them is not compatible with PoV
+* Changed the color of the sea, more saturated
+* Changed the color of the Fog of war, higher contrast mainly
+* Minor improvements to the new PoV logo
+* Removed some redudant files from PoV (-1.2Mb size)
+* Enforce Latest Vanilla Build
+* Enforce Latest Legends
+
+### Balance
+
+* Direwolf Champions: +5 Armor
+* Ghost touch: not able to do headshots
+
+### Fixes
+
+* Fix text in the starting event of the "Path of the Vatt'ghern" Origin
+* Fix spear specialist
+* Fix a bunch of PoV Hooks
+* Fixed some missing brush files related to pov seer weapons
+* Straw hat: remove effect as I cant bother to fix it
 
 ## Changelog v4.0.0 "Special" Edition:
 *Ok that is another big one, and I did take my time to make it...but keep in mind that I do all these between my military service. I will be gone once more, this time for a much longer period, but I think ive left pov in more than a decent state, and hopefully celestial will not have a headache fixing my broken shit. A patch or two with fixes and rebalance might happen before I leave, but for now that's it. Enjoy everyone, and happy easter! (Sadly I could not do sth special this time...next year!)*

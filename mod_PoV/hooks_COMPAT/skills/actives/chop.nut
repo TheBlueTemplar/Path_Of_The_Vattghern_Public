@@ -15,7 +15,7 @@
 	q.isUsable = @(__original) function()
 	{
 		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item.isItemType(this.Const.Items.ItemType.RangedWeapon))
+		if (item != null && item.isItemType(this.Const.Items.ItemType.RangedWeapon))
 		{
 			return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 0;
 		}

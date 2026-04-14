@@ -4,8 +4,8 @@
 	{
 		__original();
 		this.m.PerkTreeDynamic.Class.extend([
-			::Const.Perks.PovSickleClassTree,
-			::Const.Perks.PovInventorClassTree,
+			::Const.Perks.SickleClassTree,
+			::Const.Perks.InventorClassTree,
 		]);
 	}
 

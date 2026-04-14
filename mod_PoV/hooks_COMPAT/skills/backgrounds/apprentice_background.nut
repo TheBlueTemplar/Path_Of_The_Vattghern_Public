@@ -7,32 +7,32 @@
 		if (r == 1)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovHammerClassTree,
+				::Const.Perks.HammerClassTree,
 			]);
 		} else if (r == 2)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovMilitiaClassTree,
+				::Const.Perks.MilitiaClassTree,
 			]);
 		} else if (r == 3)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovPitchforkClassTree,
+				::Const.Perks.PitchforkClassTree,
 			]);
 		} else if (r == 4)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovClubClassTree,
+				::Const.Perks.ClubClassTree,
 			]);
 		} else if (r == 5)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovRaiderClassTree,
+				::Const.Perks.RaiderClassTree,
 			]);
 		} else if (r == 6)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovPickaxeClassTree,
+				::Const.Perks.PickaxeClassTree,
 			]);
 		}	
 	}

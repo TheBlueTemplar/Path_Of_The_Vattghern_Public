@@ -129,7 +129,7 @@ this.pov_vattghern_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.UndeadTree
 			],
 			Class = [
-				this.Const.Perks.PovLongswordClassTree,
+				this.Const.Perks.LongswordClassTree,
 				this.Const.Perks.HealerClassTree,
 				this.Const.Perks.HerbalistProfessionTree,
 			],

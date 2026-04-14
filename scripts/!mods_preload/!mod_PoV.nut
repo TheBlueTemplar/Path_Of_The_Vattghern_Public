@@ -17,11 +17,12 @@
 // Silver Weapons is included and tweaked in PoV 					credits to Excalibird
 // Pain from injuries is included, tweaked and rewritten in PoV 	creadits to Darxo
 // Vomit mod is included, tweaked for PoV							credits to Chopeks
+// Specialist Skills Reinstated, included and tweaked in PoV 		credits to Breaky
 
 ::TLW <- {
 	ID = "mod_PoV",
 	Name = "Path of the Vatt\'ghern", //PoV
-	Version = "4.0.0", // "Special" Edition
+	Version = "4.1.0", // "Special" Edition
 	//EnableEnemyMutation = true,	//default settings
 	//Overhaul = true,
 	EnemyMutationScaling = true,
@@ -40,8 +41,8 @@
 };
 
 ::TLW.HooksMod <- ::Hooks.register(::TLW.ID, ::TLW.Version, ::TLW.Name);
-::TLW.HooksMod.require("mod_legends >= 19.3.5", "mod_modern_hooks >= 0.4.0", "mod_msu >= 1.2.7");
-::TLW.HooksMod.conflictWith("mod_silver_weapons", "mod_PFI", "mod_TLW", "mod_weapons_updated", "mod_weapons", "mod_reforged", "mod_cccp_vomit");
+::TLW.HooksMod.require("mod_legends >= 19.3.5", "mod_modern_hooks >= 0.4.0", "vanilla(>=1.5.8)", "mod_msu >= 1.2.7");
+::TLW.HooksMod.conflictWith("mod_silver_weapons", "mod_PFI", "mod_TLW", "mod_weapons_updated", "mod_weapons", "mod_reforged", "mod_cccp_vomit", "mod_specialist_skills_reinstated");
 
 ::TLW.HooksMod.queue(">mod_legends", ">mod_msu", ">mod_nggh_magic_concept", ">mod_sellswords", ">mod_ROTUC", function () {
 	// Register with MSU so people know to update (Public Branch)

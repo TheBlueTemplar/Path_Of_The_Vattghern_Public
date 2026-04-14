@@ -6,7 +6,7 @@ this.pov_ghastly_touch_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.pov_ghastly_touch";
 		this.m.Name = "Ghastly Touch";
-		this.m.Description = "Focus aetherial energy at the edge of your hand, driving it into an enemy. Does some damage that completely ignores armor.\n\n Can use once per turn.";
+		this.m.Description = "Focus aetherial energy at the edge of your hand, driving it into an enemy. Does some damage that completely ignores armor.\n\n Cannot do critical hits, has a cooldown of 1 turn.";
 		this.m.KilledString = "Touched to death"; //hehe...
 		this.m.Icon = "skills/pov_active_ghastly_touch.png";
 		this.m.IconDisabled = "skills/pov_active_ghastly_touch_sw.png";
@@ -77,6 +77,7 @@ this.pov_ghastly_touch_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
+			_properties.HitChance[this.Const.BodyPart.Head] = 0; // Always hit body
 			// Hit Chance Mod
 			_properties.MeleeSkill -= 5;
 			// Skill Stats

@@ -1,4 +1,4 @@
-::TLW.HooksMod.hook("scripts/skills/actives/slash", function ( q ) {
+/*::TLW.HooksMod.hook("scripts/skills/actives/slash", function ( q ) {
 
 	q.onAfterUpdate = @(__original) function( _properties )
 	{
@@ -9,4 +9,4 @@
 		}
 	}
 
-});	
+});	*/

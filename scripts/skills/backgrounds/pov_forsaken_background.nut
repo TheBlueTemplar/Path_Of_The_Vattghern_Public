@@ -132,17 +132,17 @@ this.pov_forsaken_background <- this.inherit("scripts/skills/backgrounds/charact
 		if (r == 1)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovRaiderClassTree,
+				::Const.Perks.RaiderClassTree,
 			]);
 		} else if (r == 2)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovClubClassTree,
+				::Const.Perks.ClubClassTree,
 			]);
 		} else if (r == 3)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovWoodaxeClassTree,
+				::Const.Perks.WoodaxeClassTree,
 			]);
 		}
 	}

@@ -101,75 +101,79 @@
 		{
 			this.getSprite("pov_bust_replacement").setBrush("pov_bust_base_beasts")
 		}*/
-		local socket = this.getSprite("socket");
-		local replacement = this.getSprite("pov_bust_replacement");
-		local brush = socket.getBrush().Name;
 
-		switch (brush)
+		if (this.hasSprite("socket") && this.hasSprite("pov_bust_replacement"))
 		{
-			case "bust_base_assassin":
-				replacement.setBrush("pov_bust_base_assassin");
-				break;
+			local socket = this.getSprite("socket");
+			local replacement = this.getSprite("pov_bust_replacement");
+			local brush = socket.getBrush().Name;
 
-			case "bust_base_bandits":
-				replacement.setBrush("pov_bust_base_bandits");
-				break;
+			switch (brush)
+			{
+				case "bust_base_assassin":
+					replacement.setBrush("pov_bust_base_assassin");
+					break;
 
-			case "bust_base_player":
-				replacement.setBrush("pov_bust_base_player");
-				break;
+				case "bust_base_bandits":
+					replacement.setBrush("pov_bust_base_bandits");
+					break;
 
-			case "bust_base_beasts":
-				replacement.setBrush("pov_bust_base_beasts");
-				break;
+				case "bust_base_player":
+					replacement.setBrush("pov_bust_base_player");
+					break;
 
-			case "bust_base_beasthunters":
-				replacement.setBrush("pov_bust_base_beasthunters");
-				break;
+				case "bust_base_beasts":
+					replacement.setBrush("pov_bust_base_beasts");
+					break;
 
-			case "bust_base_caravan":
-				replacement.setBrush("pov_bust_base_caravan");
-				break;
+				case "bust_base_beasthunters":
+					replacement.setBrush("pov_bust_base_beasthunters");
+					break;
 
-			case "bust_base_crusader":
-				replacement.setBrush("pov_bust_base_crusader");
-				break;
+				case "bust_base_caravan":
+					replacement.setBrush("pov_bust_base_caravan");
+					break;
 
-			case "bust_base_military":
-				replacement.setBrush("pov_bust_base_military");
-				break;
+				case "bust_base_crusader":
+					replacement.setBrush("pov_bust_base_crusader");
+					break;
 
-			case "bust_base_militia":
-				replacement.setBrush("pov_bust_base_militia");
-				break;
+				case "bust_base_military":
+					replacement.setBrush("pov_bust_base_military");
+					break;
 
-			case "bust_base_nomads":
-				replacement.setBrush("pov_bust_base_nomads");
-				break;
+				case "bust_base_militia":
+					replacement.setBrush("pov_bust_base_militia");
+					break;
 
-			case "bust_base_southern":
-				replacement.setBrush("pov_bust_base_southern");
-				break;
+				case "bust_base_nomads":
+					replacement.setBrush("pov_bust_base_nomads");
+					break;
 
-			case "bust_base_troupe":
-				replacement.setBrush("pov_bust_base_troupe");
-				break;
+				case "bust_base_southern":
+					replacement.setBrush("pov_bust_base_southern");
+					break;
 
-			case "bust_base_undead":
-				replacement.setBrush("pov_bust_base_undead");
-				break;
+				case "bust_base_troupe":
+					replacement.setBrush("pov_bust_base_troupe");
+					break;
 
-			case "bust_base_wildmen_01":
-				replacement.setBrush("pov_bust_base_wildmen_01");
-				break;
+				case "bust_base_undead":
+					replacement.setBrush("pov_bust_base_undead");
+					break;
 
-			case "bust_base_orcs":
-				replacement.setBrush("pov_bust_base_orcs");
-				break;
+				case "bust_base_wildmen_01":
+					replacement.setBrush("pov_bust_base_wildmen_01");
+					break;
 
-			case "bust_base_goblins":
-				replacement.setBrush("pov_bust_base_goblins");
-				break;
+				case "bust_base_orcs":
+					replacement.setBrush("pov_bust_base_orcs");
+					break;
+
+				case "bust_base_goblins":
+					replacement.setBrush("pov_bust_base_goblins");
+					break;
+			}
 		}
 
 	}
@@ -195,6 +199,10 @@
 
 		if (this.hasSprite("pov_front_socket")) {
 			this.getSprite("pov_front_socket").Visible = false;
+		}
+
+		if (this.hasSprite("pov_bust_replacement")) {
+			this.getSprite("pov_bust_replacement").Visible = false;
 		}
 
 		__original(_killer, _skill, _tile, _fatalityType);

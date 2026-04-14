@@ -7,32 +7,32 @@
 		if (r == 1)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovKnifeClassTree,
+				::Const.Perks.KnifeClassTree,
 			]);
 		} else if (r == 2)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovButcherClassTree,
+				::Const.Perks.ButcherClassTree,
 			]);
 		} else if (r == 3)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovShovelClassTree,
+				::Const.Perks.ShovelClassTree,
 			]);
 		} else if (r == 4)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovPitchforkClassTree,
+				::Const.Perks.PitchforkClassTree,
 			]);
 		} else if (r == 5)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovSlingClassTree,
+				::Const.Perks.SlingClassTree,
 			]);
 		} else if (r == 6)
 		{
 			this.m.PerkTreeDynamic.Class.extend([
-				::Const.Perks.PovScytheClassTree,
+				::Const.Perks.ScytheClassTree,
 			]);
 		}	
 	}
