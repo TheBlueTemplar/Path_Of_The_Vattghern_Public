@@ -41,7 +41,7 @@
 };
 
 ::TLW.HooksMod <- ::Hooks.register(::TLW.ID, ::TLW.Version, ::TLW.Name);
-::TLW.HooksMod.require("mod_legends >= 19.3.5", "mod_modern_hooks >= 0.4.0", "vanilla(>=1.5.8)", "mod_msu >= 1.2.7");
+::TLW.HooksMod.require("mod_legends >= 19.3.14", "mod_modern_hooks >= 0.4.0", "vanilla(>=1.5.8)", "mod_msu >= 1.2.7");
 ::TLW.HooksMod.conflictWith("mod_silver_weapons", "mod_PFI", "mod_TLW", "mod_weapons_updated", "mod_weapons", "mod_reforged", "mod_cccp_vomit", "mod_specialist_skills_reinstated");
 
 ::TLW.HooksMod.queue(">mod_legends", ">mod_msu", ">mod_nggh_magic_concept", ">mod_sellswords", ">mod_ROTUC", function () {
