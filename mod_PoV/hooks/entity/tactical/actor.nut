@@ -1,5 +1,5 @@
 ::TLW.HooksMod.hook("scripts/entity/tactical/actor", function (q) {
-// THERE IS ANOTHER TREE HOOK BELOW!
+	// THERE IS ANOTHER TREE HOOK BELOW!
 
 	// Custom Srprite Layers Addition
 	q.onInit = @(__original) function () {
@@ -70,14 +70,18 @@
 	}
 
 	// Add some of my own sprite layers, so they dont appear in party screen, turn order images etc.
-	q.getImagePath = @(__original) function ()
-	{
-		if (!this.isPlacedOnMap() || this.isDiscovered())
-		{
-			return "tacticalentity(" + this.m.ContentID + "," + this.getID() + ",pov_bust_replacement,socket,miniboss,arrow)";
-		}
-		else
-		{
+	q.getImagePath = @(__original) function () {
+		if (!this.isPlacedOnMap() || this.isDiscovered()) {
+			local result = "tacticalentity(" + this.m.ContentID + "," + this.getID();
+			if (this.hasSprite("pov_bust_replacement")) {
+				result += ",pov_bust_replacement";
+			}
+			if (this.hasSprite("socket")) {
+				result += ",socket";
+			}
+			result += ",miniboss,arrow)";
+			return result;
+		} else {
 			return "ui/images/undiscovered_opponent.png";
 		}
 	}
@@ -87,7 +91,7 @@
 	// update() which calls onUpdateInjuryLayer(), and that requires
 	// sprites (e.g. "body") that child classes add after actor.onInit()
 	q.onAfterInit = @(__original) function () {
-		
+
 		__original();
 
 		if (::TLW.hasSSU && ::TLW.SSUTweaks) {
@@ -102,14 +106,12 @@
 			this.getSprite("pov_bust_replacement").setBrush("pov_bust_base_beasts")
 		}*/
 
-		if (this.hasSprite("socket") && this.hasSprite("pov_bust_replacement"))
-		{
+		if (this.hasSprite("socket") && this.hasSprite("pov_bust_replacement")) {
 			local socket = this.getSprite("socket");
 			local replacement = this.getSprite("pov_bust_replacement");
 			local brush = socket.getBrush().Name;
 
-			switch (brush)
-			{
+			switch (brush) {
 				case "bust_base_assassin":
 					replacement.setBrush("pov_bust_base_assassin");
 					break;
@@ -229,4 +231,3 @@
 		}
 	}
 });
-
