@@ -37,7 +37,7 @@
 			icon = "ui/icons/special.png",
 			text = "Reduces any ranged damage to the body by [color=%negative%]-20%[/color]"
 		});
-		result.push({
+		_result.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/ranged_defense.png",

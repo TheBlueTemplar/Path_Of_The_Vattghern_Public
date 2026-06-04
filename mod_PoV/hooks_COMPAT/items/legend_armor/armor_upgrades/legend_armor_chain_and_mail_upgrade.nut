@@ -27,13 +27,13 @@
 
 	q.onArmorTooltip = @(__original) function( _result )
 	{
-		result.push({
+		_result.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/bravery.png",
 			text = "[color=%positive%]+5[/color] Resolve"
 		});
-		result.push({
+		_result.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
