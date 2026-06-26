@@ -569,7 +569,7 @@ this.pov_dev_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/longsword"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/noble_sword"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_crusader_sword"));
-		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_estoc"));
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/estoc"));
 
 		// Arrow/Bolt/Bullet Testing
 
