@@ -69,7 +69,7 @@
 			}
 			else if(_actor.getSkills().hasSkill("trait.pov_unstable_mutant"))
 			{
-				if (actor.getFlags().has("playerMutantPlus"))
+				if (_actor.getFlags().has("playerMutantPlus"))
 				{
 					mutationLimit = 3;
 				}else
