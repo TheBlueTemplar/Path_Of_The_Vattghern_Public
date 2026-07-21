@@ -2,6 +2,11 @@
 
 	q.fillStash = @( __original ) function(_list, _stash, _priceMult, _allowDamagedEquipment = false)
 	{
+        // some mods can call fillStash with a null list
+        if (_list == null) {
+            __original(_list, _stash, _priceMult, _allowDamagedEquipment);
+            return;
+        }
 
 		_list.extend([
 			{
