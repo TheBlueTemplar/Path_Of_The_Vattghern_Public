@@ -180,6 +180,22 @@
 
 	}
 
+	// Dying while the entity is still moving crashes the game, so we delay it until 
+	// tactical_state can handle it.
+    q.kill = @(__original) function (_killer = null, _skill = null, _fatalityType = ::Const.FatalityType.None, _silent = false) {
+		if (this.isAlive()
+            && ("State" in ::Tactical)
+            && ::Tactical.State != null
+            && ::Tactical.getNavigator().isTravelling(this))
+        {
+            this.m.IsDying = true;
+            ::Tactical.State.addPendingDeath(this, _killer, _skill, _fatalityType, _silent);
+            return;
+        }
+
+        __original(_killer, _skill, _fatalityType, _silent);
+    }
+
 	q.onDeath = @(__original) function (_killer, _skill, _tile, _fatalityType) {
 		// First mutant killed flag
 		if (this.getFlags().has("mutant") && !::World.Flags.has("FirstMutantKilledEvent")) {
