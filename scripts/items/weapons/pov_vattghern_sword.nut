@@ -120,7 +120,7 @@ this.pov_vattghern_sword <- this.inherit("scripts/items/weapons/weapon", {
 		}*/
 		local actor = this.getContainer().getActor();
 
-		if (_targetEntity != null)
+		if (_targetEntity != null && this.isKindOf(_targetEntity, "actor"))
 		{
 			if(this.Const.EntityType.getDefaultFaction(_targetEntity.getType()) == this.Const.FactionType.Beasts || _targetEntity.getFlags().has("ghost"))
 			{

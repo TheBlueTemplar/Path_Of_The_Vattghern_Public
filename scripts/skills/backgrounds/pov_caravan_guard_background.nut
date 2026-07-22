@@ -321,7 +321,7 @@ this.pov_caravan_guard_background <- this.inherit("scripts/skills/backgrounds/ch
 	function onAnySkillUsed(_skill, _targetEntity, _properties)
 	{
 		this.character_background.onAnySkillUsed(_skill, _targetEntity, _properties);
-		if (_skill != null && _targetEntity != null)
+		if (_skill != null && _targetEntity != null && this.isKindOf(_targetEntity, "actor"))
 		{
 			if(this.Const.EntityType.getDefaultFaction(_targetEntity.getType()) == this.Const.FactionType.Bandits)
 			{

@@ -50,7 +50,7 @@ this.pov_monster_hunter_trait <- this.inherit("scripts/skills/traits/character_t
 	function onAnySkillUsed( _skill, _targetEntity, _properties, )
 	{
 
-		if (_targetEntity != null)
+		if (_targetEntity != null && this.isKindOf(_targetEntity, "actor"))
 		{
 			if(this.Const.EntityType.getDefaultFaction(_targetEntity.getType()) == this.Const.FactionType.Beasts || _targetEntity.getFlags().has("ghost"))
 			{

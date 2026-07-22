@@ -39,7 +39,7 @@ this.pov_silver_gauntlets <- this.inherit("scripts/items/accessory/gloves/legend
 	function onAnySkillUsed( _skill, _targetEntity, _properties)
 	{
 		this.accessory.onAnySkillUsed(_skill, _targetEntity, _properties);
-		if (_targetEntity != null && _skill != null)
+		if (_targetEntity != null && _skill != null && this.isKindOf(_targetEntity, "actor"))
 		{
 			local actor = this.getContainer().getActor();
 			if (actor != null)

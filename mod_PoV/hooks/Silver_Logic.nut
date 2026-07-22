@@ -67,7 +67,7 @@
 	q.onAnySkillUsed = @(__original) function ( _skill, _targetEntity, _properties )
 	{
 	__original( _skill, _targetEntity, _properties )
-		if (!this.m.Silver || _targetEntity == null)
+		if (!this.m.Silver || _targetEntity == null || !this.isKindOf(_targetEntity, "actor"))
 			return
 		else
         {

@@ -143,7 +143,7 @@ this.pov_bront_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.Cooldown = 3;
 		local myTile = _user.getTile(), currentTargetTile = _targetTile, selectedTargets = [];
-		local target = currentTargetTile.getEntity();
+		local target = currentTargetTile.IsOccupiedByActor ? currentTargetTile.getEntity() : null;
 		if (target != null)
 		{
 			selectedTargets.push(target.getID());
@@ -241,6 +241,9 @@ this.pov_bront_skill <- this.inherit("scripts/skills/skill", {
 		::Time.scheduleEvent(this.TimeUnit.Virtual, _delay + 200, function( _tag )
 		{
 			if (::MSU.isNull(_tag.User) || !_tag.User.isAlive())
+				return;
+
+			if (_tag.Target == null || !_tag.Target.isAlive())
 				return;
 
 			_tag.Skill.attackEntity(_tag.User, _tag.Target);

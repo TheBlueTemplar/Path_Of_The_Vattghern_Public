@@ -90,7 +90,7 @@ this.pov_silver_arrows <- this.inherit("scripts/items/ammo/ammo", {
 			_properties.DamageArmorMult *= 0.80;
 		}
 
-		if (_targetEntity != null)
+		if (_targetEntity != null && this.isKindOf(_targetEntity, "actor"))
 		{
 			if (_skill.isAttack() && item != null && item.isItemType(this.Const.Items.ItemType.Weapon) && item.isWeaponType(this.Const.Items.WeaponType.Bow))
 			{
