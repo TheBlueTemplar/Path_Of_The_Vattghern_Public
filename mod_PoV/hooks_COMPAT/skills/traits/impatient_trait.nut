@@ -30,6 +30,12 @@
 				type = "text",
 				icon = "ui/icons/initiative.png",
 				text = "[color=%positive%]+5%[/color] Initiative"
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/warning.png",
+				text = "Is unable to use wait in combat"
 			}
 		];
 	}
