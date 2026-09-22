@@ -48,7 +48,10 @@ this.pov_fault_finder_racial <- this.inherit("scripts/skills/skill", {
 				return;
 			}
 
-			_properties.DamageArmorReduction += this.m.HeadArmorBoost - this.m.HeadDamageTaken;
+			// Only absorb armor damage not already reduced by another effect.
+			local cap = this.m.HeadArmorBoost - this.m.HeadDamageTaken;
+			cap = this.Math.min(cap, this.Math.max(0.0, _hitInfo.DamageArmor - _properties.DamageArmorReduction));
+			_properties.DamageArmorReduction += cap;
 			this.m.HeadDamageTaken += _hitInfo.DamageArmor;
 		}
 		else if (_hitInfo.BodyPart == this.Const.BodyPart.Body)
@@ -58,7 +61,10 @@ this.pov_fault_finder_racial <- this.inherit("scripts/skills/skill", {
 				return;
 			}
 
-			_properties.DamageArmorReduction += this.m.BodyArmorBoost - this.m.BodyDamageTaken;
+			// Only absorb armor damage not already reduced by another effect.
+			local cap = this.m.BodyArmorBoost - this.m.BodyDamageTaken;
+			cap = this.Math.min(cap, this.Math.max(0.0, _hitInfo.DamageArmor - _properties.DamageArmorReduction));
+			_properties.DamageArmorReduction += cap;
 			this.m.BodyDamageTaken += _hitInfo.DamageArmor;
 		}
 

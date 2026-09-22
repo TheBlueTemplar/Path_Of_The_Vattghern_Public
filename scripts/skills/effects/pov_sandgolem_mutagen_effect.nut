@@ -123,12 +123,13 @@ this.pov_sandgolem_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				return;
 			}
 
-			// weird fix to weird issue
+			// Absorb at most half the armor boost per hit, without making armor damage negative.
 			local cap = this.m.HeadArmorBoost - this.m.HeadDamageTaken;
 			if (cap > this.m.HeadArmorBoost/2)
 			{
 				cap = this.m.HeadArmorBoost/2;
 			}
+			cap = this.Math.min(cap, this.Math.max(0.0, _hitInfo.DamageArmor - _properties.DamageArmorReduction));
 			_properties.DamageArmorReduction += cap;
 			this.m.HeadDamageTaken += _hitInfo.DamageArmor;
 		}
@@ -139,12 +140,13 @@ this.pov_sandgolem_mutagen_effect <- this.inherit("scripts/skills/skill", {
 				return;
 			}
 
-			// weird fix to weird issue
+			// Absorb at most half the armor boost per hit, without making armor damage negative.
 			local cap = this.m.BodyArmorBoost - this.m.BodyDamageTaken;
 			if (cap > this.m.BodyArmorBoost/2)
 			{
 				cap = this.m.BodyArmorBoost/2;
 			}
+			cap = this.Math.min(cap, this.Math.max(0.0, _hitInfo.DamageArmor - _properties.DamageArmorReduction));
 			_properties.DamageArmorReduction += cap;
 			this.m.BodyDamageTaken += _hitInfo.DamageArmor;
 		}
