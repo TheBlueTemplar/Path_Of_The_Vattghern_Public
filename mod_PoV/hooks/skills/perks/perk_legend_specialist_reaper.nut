@@ -9,6 +9,10 @@
 	q.m.BonusMelee = 15;
 	q.m.BonusDamage = 15;
 
+	q.hasBonus = @(__original) function (_item) {
+		return this.hasSpecialistWeapon(_item);
+	}
+
 	q.create = @(__original) function () {
 		__original();
 
@@ -21,8 +25,10 @@
 		//__original(_skill, _targetEntity, _properties);
 		this.legend_specialist_abstract.onAnySkillUsed(_skill, _targetEntity, _properties);
 		if (this.onAnySkillUsedSpecialistChecks(_skill)) {
-			_properties.DamageArmorMult += 0.01 * this.calculateSpecialistBonus(20, _skill.getItem());
-			_properties.DamageDirectMult += 0.01 * this.calculateSpecialistBonus(10, _skill.getItem());
+			_properties.DamageArmorMult += 0.01
+				* this.calculateSpecialistBonus(20, _skill.getItem());
+			_properties.DamageDirectMult += 0.01
+				* this.calculateSpecialistBonus(10, _skill.getItem());
 		}
 	}
 
@@ -30,5 +36,4 @@
 		__original(_properties);
 		_properties.Threat += 4;
 	}
-
 });
