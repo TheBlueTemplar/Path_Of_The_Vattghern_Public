@@ -101,9 +101,9 @@ if (!::TLW.hasFOTN)
 	One must have some guts to apprach a big raging dude with an even bigger sword.
 
 	[color=%passive%][u]Specialist Weapon Perk:[/u][/color]
-	• Gain [color=%positive%]+10[/color] chance to hit, [color=%positive%]10%[/color] damage for all Melee area of effect attacks and [color=%positive%]15%[/color] damage when [color=%status%]Riposting[/color] when using a Longsword.
+	• Gain [color=%positive%]+12[/color] chance to hit, [color=%positive%]10%[/color] damage for all Melee area of effect attacks and [color=%positive%]20%[/color] damage when [color=%status%]Riposting[/color] when using a Longsword.
 
-	• When taking [color=%perk%]Sword Mastery[/color] gain [color=%positive%]8%[/color] damage.
+	• When taking [color=%perk%]Sword Mastery[/color] gain [color=%positive%]10%[/color] damage.
 
 	• For other weapons classified as a Two-Handed Sword, get a percentage of these bonuses, starting from 10% and increasing up to 50% according to the character's level, up to level 10.
 	";
@@ -206,7 +206,7 @@ if (!::TLW.hasFOTN)
 	Used to gathering the yield of the land, now reaps the wounded with precise and merciless cuts.
 
 	[color=%passive%][u]Passive:[/u][/color]
-	• Gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]30%[/color] of lowered threshold to inflict injuries as additional damage to hitpoints while using a Sickle or a goblin notched blade.
+	• Gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]25%[/color] of lowered threshold to inflict injuries as additional damage to hitpoints while using a Sickle or a goblin notched blade.
 
 	• When taking [color=%perk%]Sword Mastery[/color] you will also gain [color=%positive%]12%[/color] bonus damage. Additionally reduces the Action Point cost of [color=%skill%]Slash[/color] by [color=%negative%]1[/color] when using a Sickle.
 
@@ -257,9 +257,9 @@ if (!::TLW.hasFOTN)
 	[color=%passive%][u]Passive:[/u][/color]
 	• Gain [color=%positive%]+15[/color] chance to hit while using a Scythe or Warscythe.
 
-	• Also gain [color=%positive%]+25%[/color] effectiveness against armor and [color=%positive%]+10%[/color] armor penetration while using a Scythe or Warscythe.
+	• Also gain [color=%positive%]+20%[/color] effectiveness against armor and [color=%positive%]+10%[/color] armor penetration while using a Scythe or Warscythe.
 
-	• Reduce resolve of nearby opponents by [color=%negative%]5[/color].
+	• Reduce resolve of nearby opponents by [color=%negative%]4[/color].
 
 	• When taking [color=%perk%]Polearm Mastery[/color] or [color=%perk%]Cleaver Mastery[/color] you will also gain [color=%positive%]15%[/color] bonus damage.
 	";
@@ -287,7 +287,7 @@ if (!::TLW.hasFOTN)
 	[color=%passive%][u]Specialist Weapon Perk:[/u][/color]
 	• Gain [color=%positive%]+10[/color] chance to hit while using a Firearm.
 
-	• Reduce AP cost for Handgonne [color=%skill%]Reload[/color] by [color=%negative%]1[/color] and [color=%positive%]10%[/color] bonus damage when taking [color=%perk%]Crossbow Mastery[/color].
+	• Reduce AP cost for Handgonne [color=%skill%]Reload[/color] by [color=%negative%]1[/color] and [color=%positive%]14%[/color] bonus damage when taking [color=%perk%]Crossbow Mastery[/color].
 
 	• Gain [color=%positive%]+10[/color] chance to hit while using a Firelance.
 
@@ -355,7 +355,7 @@ if (!::TLW.hasFOTN)
 	Throwing a spear and throwing a net is just muscle memory at this point.
 
 	[color=%passive%][u]Specialist Weapon Perk:[/u][/color]
-	• Gain [color=%positive%]+12[/color] chance to hit and [color=%positive%]+6[/color] maximum damage while using Javelins.
+	• Gain [color=%positive%]+10[/color] chance to hit and [color=%positive%]+6[/color] minimum damage while using Javelins.
 
 	• When taking [color=%perk%]Throwing Specialization[/color] gain [color=%positive%]10%[/color] damage.
 

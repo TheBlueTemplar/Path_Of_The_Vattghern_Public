@@ -1,12 +1,16 @@
 ::TLW.HooksMod.hook("scripts/skills/perks/perk_legend_specialist_inventor", function (q) {
 
+	q.m.SpecialistWeaponTypes = [];
+	q.m.SpecialistWeaponIds.extend([
+		"weapon.handgonne",
+		"weapon.named_handgonne",
+		"weapon.firelance",
+	]);
+	q.m.ApplicableWeaponTypes = [::Const.Items.WeaponType.Firearm];
+
 	q.m.BonusMelee = 10;
 	q.m.BonusRanged = 10;
 	q.m.BonusDamage = 14;
-
-	q.hasBonus = @(__original) function (_item) {
-		return this.hasSpecialistWeapon(_item);
-	}
 
 	q.create = @(__original) function () {
 		__original();
